@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechNews PRO - Inovação, Ciência & Negócios</title>
+    <style>
+        :root {
+            --bg-color: #f4f6f9;
+            --card-bg: #ffffff;
+            --text-main: #111827;
+            --text-muted: #6b7280;
+            --primary: #ef4444; /* Vermelho de Alta Atenção (Estilo G1/CNN) */
+            --accent: #2563eb;
+            --dark: #0f172a;
+            --ad-bg: #e2e8f0;
+            --border: #e5e7eb;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; }
+
+        /* BARRA DE PROGRESSO DE LEITURA (Gatilho de Retenção) */
+        #progress-bar { position: fixed; top: 0; left: 0; height: 4px; background: var(--primary); width: 0%; z-index: 9999; transition: width 0.2s; }
+
+        /* TICKER DE ÚLTIMAS NOTÍCIAS (Urgência) */
+        .breaking-ticker { background: var(--primary); color: #fff; padding: 0.4rem 5%; font-size: 0.85rem; font-weight: 600; display: flex; align-items: center; gap: 1rem; overflow: hidden; white-space: nowrap; }
+        .breaking-badge { background: #000; color: #fff; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; animation: pulse 1.5s infinite; }
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.6; } 100% { opacity: 1; } }
+
+        /* HEADER FIXO (Sticky) */
+        header { background: var(--dark); color: #fff; padding: 1.2rem 5%; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+        .nav-container { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 2rem; font-weight: 900; letter-spacing: -1px; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 5px; }
+        .logo span { color: var(--primary); }
+        .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+        .nav-links a { color: #cbd5e1; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: color 0.2s; }
+        .nav-links a:hover { color: #fff; }
+        .cta-btn { background: var(--primary); color: #fff; border: none; padding: 0.6rem 1.4rem; border-radius: 6px; font-weight: 700; cursor: pointer; transition: 0.3s; text-decoration: none; font-size: 0.9rem; }
+        .cta-btn:hover { background: #dc2626; transform: scale(1.03); }
+
+        /* ESPAÇO PUBLICITÁRIO TOPO (Alto CPM) */
+        .ad-banner-top { max-width: 970px; min-height: 90px; background: var(--ad-bg); margin: 1.8rem auto; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--text-muted); border: 2px dashed #cbd5e1; border-radius: 8px; padding: 10px; text-align: center; }
+        .ad-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1.5px; color: #94a3b8; margin-bottom: 4px; }
+
+        /* ESTRUTURA PRINCIPAL EM GRID (Padrão F de Leitura) */
+        .main-container { max-width: 1400px; margin: 0 auto 4rem auto; padding: 0 5%; display: grid; grid-template-columns: 7fr 3fr; gap: 2.5rem; }
+
+        /* HERO POST (Notícia Principal) */
+        .hero-card { position: relative; border-radius: 14px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1); margin-bottom: 2.5rem; display: block; text-decoration: none; background: #000; }
+        .hero-card img { width: 100%; height: 460px; object-fit: cover; opacity: 0.85; transition: transform 0.5s ease, opacity 0.3s; }
+        .hero-card:hover img { transform: scale(1.03); opacity: 0.7; }
+        .hero-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.95) 10%, rgba(0,0,0,0.5) 60%, transparent 100%); padding: 2.5rem; color: #fff; }
+        .badge-source { background: var(--primary); color: #fff; padding: 4px 12px; border-radius: 4px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; display: inline-block; margin-bottom: 0.8rem; }
+        .hero-overlay h1 { font-size: 2.2rem; line-height: 1.25; margin-bottom: 0.8rem; font-weight: 800; }
+        .hero-overlay p { color: #e2e8f0; font-size: 1.05rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+
+        /* GRID DE NOTÍCIAS */
+        .section-title { font-size: 1.4rem; font-weight: 800; margin-bottom: 1.5rem; border-left: 5px solid var(--primary); padding-left: 12px; color: var(--dark); }
+        .feed-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.8rem; }
+        .news-card { background: var(--card-bg); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.04); border: 1px solid var(--border); display: flex; flex-direction: column; transition: transform 0.25s ease, box-shadow 0.25s ease; }
+        .news-card:hover { transform: translateY(-6px); box-shadow: 0 12px 24px rgba(0,0,0,0.1); }
+        .card-img-wrapper { position: relative; width: 100%; height: 200px; overflow: hidden; background: #e5e7eb; }
+        .card-img-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+        .news-card:hover .card-img-wrapper img { transform: scale(1.06); }
+        .card-tag { position: absolute; top: 12px; left: 12px; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(4px); color: #fff; padding: 4px 10px; border-radius: 6px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; }
+        .card-body { padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; }
+        .card-meta { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0.6rem; display: flex; justify-content: space-between; font-weight: 600; }
+        .card-title { font-size: 1.15rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.8rem; line-height: 1.35; }
+        .card-desc { font-size: 0.92rem; color: var(--text-muted); margin-bottom: 1.4rem; flex-grow: 1; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+        .read-btn { display: inline-flex; align-items: center; justify-content: center; background: #f1f5f9; color: var(--dark); font-weight: 700; font-size: 0.88rem; padding: 0.75rem 1rem; border-radius: 8px; text-decoration: none; transition: 0.2s; margin-top: auto; }
+        .read-btn:hover { background: var(--primary); color: #fff; }
+
+        /* ANÚNCIO NATIVO IN-FEED (Altíssima Conversão) */
+        .native-ad-card { background: linear-gradient(145deg, #ffffff, #fff5f5); border: 2px solid #fecaca; border-radius: 12px; padding: 1.8rem; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; box-shadow: 0 4px 15px rgba(239, 68, 68, 0.08); }
+        .native-ad-card .ad-badge { background: #fee2e2; color: #b91c1c; font-size: 0.7rem; font-weight: 800; padding: 3px 10px; border-radius: 20px; text-transform: uppercase; margin-bottom: 1rem; }
+        .native-ad-card h3 { font-size: 1.25rem; color: var(--dark); margin-bottom: 0.8rem; }
+        .native-ad-card p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+
+        /* SIDEBAR DE RETENÇÃO E MONETIZAÇÃO */
+        .sidebar { display: flex; flex-direction: column; gap: 2rem; }
+        .widget { background: var(--card-bg); border-radius: 12px; padding: 1.6rem; border: 1px solid var(--border); box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
+        .widget-title { font-size: 1.1rem; font-weight: 800; margin-bottom: 1.2rem; padding-bottom: 0.6rem; border-bottom: 2px solid var(--primary); display: flex; align-items: center; justify-content: space-between; }
+        
+        /* WIDGET MAIS LIDAS (Prova Social) */
+        .trending-list { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
+        .trending-item { display: flex; gap: 1rem; align-items: flex-start; text-decoration: none; color: inherit; }
+        .trending-num { font-size: 1.6rem; font-weight: 900; color: #cbd5e1; line-height: 1; }
+        .trending-item:hover .trending-text { color: var(--primary); }
+        .trending-text { font-size: 0.92rem; font-weight: 700; line-height: 1.35; transition: 0.2s; }
+
+        /* WIDGET CAPTURA DE LEADS (Newsletter) */
+        .newsletter-box { background: var(--dark); color: #fff; border-radius: 12px; padding: 1.8rem; text-align: center; }
+        .newsletter-box h3 { font-size: 1.25rem; margin-bottom: 0.6rem; }
+        .newsletter-box p { font-size: 0.88rem; color: #94a3b8; margin-bottom: 1.2rem; }
+        .newsletter-box input { width: 100%; padding: 0.8rem; border-radius: 6px; border: none; margin-bottom: 0.8rem; font-size: 0.9rem; }
+        .newsletter-box button { width: 100%; padding: 0.85rem; background: var(--primary); color: #fff; border: none; border-radius: 6px; font-weight: 800; cursor: pointer; transition: 0.2s; }
+        .newsletter-box button:hover { background: #dc2626; }
+
+        /* ANÚNCIO STICKY LATERAL (Acompanha o Scroll) */
+        .sticky-ad-container { position: sticky; top: 90px; }
+        .ad-sidebar-box { width: 100%; height: 600px; background: var(--ad-bg); border: 2px dashed #cbd5e1; border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--text-muted); text-align: center; padding: 1rem; }
+
+        footer { background: var(--dark); color: #94a3b8; text-align: center; padding: 3rem 5%; font-size: 0.9rem; border-top: 4px solid var(--primary); }
+
+        @media (max-width: 992px) {
+            .main-container { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            .hero-card img { height: 320px; }
+            .hero-overlay h1 { font-size: 1.6rem; }
+        }
+    </style>
+</head>
+<body>
+    <div id="progress-bar"></div>
+
+    <div class="breaking-ticker">
+        <span class="breaking-badge">Ao Vivo</span>
+        <span>🚀 Mercado em Alerta: Múltiplas fontes de dados sincronizadas em tempo real • Atualizado em: 24/10/2026 às 18:54</span>
+    </div>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">TechNews<span>.PRO</span></a>
+            <ul class="nav-links">
+                <li><a href="#">Tecnologia</a></li>
+                <li><a href="#">Negócios & Finanças</a></li>
+                <li><a href="#">Ciência & Espaço</a></li>
+                <li><a href="#">Inteligência Artificial</a></li>
+            </ul>
+            <a href="#newsletter" class="cta-btn">Assinar VIP</a>
+        </div>
+    </header>
+
+    <!-- MONETIZAÇÃO 1: Leaderboard AdSense (Topo) -->
+    <div class="ad-banner-top">
+        <span class="ad-label">Publicidade • Espaço AdSense (970x90)</span>
+        <strong>[ Insira seu Código Google AdSense ou Banner de Afiliado Aqui ]</strong>
+    </div>
+
+    <main class="main-container">
+        <!-- COLUNA PRINCIPAL DE CONTEÚDO -->
+        <div class="content-column">
+            
+    <a href="https://dev.to/geekecia/planning-poker-em-chamadas-do-teams-meet-ou-slack-como-estimar-sem-atrito-180d" target="_blank" rel="noopener noreferrer" class="hero-card">
+        <img src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fxuqrfrmebqsh5bm6f60l.png" alt="Destaque" onerror="this.src='https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80'">
+        <div class="hero-overlay">
+            <span class="badge-source">🔥 Destaque • Dev.to Tech</span>
+            <h1>Planning Poker em chamadas do Teams, Meet ou Slack: como estimar sem atrito</h1>
+            <p>Como simplificar a dinâmica de estimativa de histórias de usuário em reuniões remotas sem exigir cadastro ou licenças por assento.</p>
+        </div>
+    </a>
+    
+
+            <h2 class="section-title">Últimas Atualizações do Ecossistema</h2>
+            <div class="feed-grid">
+                
+        <article class="news-card">
+            <div class="card-img-wrapper">
+                <span class="card-tag">Dev.to Tech</span>
+                <img src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fyk2y0zovegop5i1tmzm4.png" alt="Capa" onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80'">
+            </div>
+            <div class="card-body">
+                <div class="card-meta">
+                    <span>📅 Oct 24</span>
+                    <span>⚡ Leitura Rápida</span>
+                </div>
+                <h3 class="card-title">Apps para bloquear Reels do Instagram no iPhone sem perder as DMs (comparativo 2026)</h3>
+                <p class="card-desc">O app oficial do Instagram não deixa tirar os Reels. Contas de adulto não têm nenhum ajuste para...</p>
+                <a href="https://dev.to/ayumu_kitabayashi_8e0de96/apps-para-bloquear-reels-do-instagram-no-iphone-sem-perder-as-dms-comparativo-2026-33ko" target="_blank" rel="noopener noreferrer" class="read-btn">Ler Artigo Completo &rarr;</a>
+            </div>
+        </article>
+        
+        <article class="news-card">
+            <div class="card-img-wrapper">
+                <span class="card-tag">Metropoles.com</span>
+                <img src="https://i.metroimg.com/RcEZKcW3OKH10o1GU-2Axxm3C1RvDjOnCbN-p6GTGnU/rs:fill:1200:800:1/g:no/q:85/f:webp/plain/https://images.metroimg.com/2025/08/27182856/Javier-Milei-10.jpg" alt="Capa" onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80'">
+            </div>
+            <div class="card-body">
+                <div class="card-meta">
+                    <span>📅 2026-10-23</span>
+                    <span>⚡ Leitura Rápida</span>
+                </div>
+                <h3 class="card-title">Javier Milei culpa cenário externo por piora econômica na Argentina</h3>
+                <p class="card-desc">Javier Milei cita guerras e juros dos EUA ao admitir piora dos indicadores econômicos da Argentina. Pobreza atinge 32,3% da população</p>
+                <a href="https://www.metropoles.com/mundo/javier-milei-culpa-cenario-externo-por-piora-economica-na-argentina" target="_blank" rel="noopener noreferrer" class="read-btn">Ler Artigo Completo &rarr;</a>
+            </div>
+        </article>
+        
+            <div class="native-ad-card">
+                <span class="ad-badge">Conteúdo Patrocinado • Native Ad</span>
+                <h3>🚀 Descubra a Ferramenta de IA que Automatiza Negócios</h3>
+                <p>Espaço estratégico para link de afiliado (Hotmart, Kiwify, Amazon) ou bloco In-Feed do Google AdSense.</p>
+                <a href="#newsletter" class="cta-btn" style="width: 100%;">Conhecer Oferta Agora &rarr;</a>
+            </div>
+            
+        <article class="news-card">
+            <div class="card-img-wrapper">
+                <span class="card-tag">IBGE Brasil</span>
+                <img src="https://agenciadenoticias.ibge.gov.br/images/agenciadenoticias/ibge/2026_10/capa-noticia-espaco-geociencias.jpg" alt="Capa" onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80'">
+            </div>
+            <div class="card-body">
+                <div class="card-meta">
+                    <span>📅 21/10/2026</span>
+                    <span>⚡ Leitura Rápida</span>
+                </div>
+                <h3 class="card-title">Espaço Geociências da CONFEST/CONFEGE 2026 debate território, meio ambiente e geotecnologias</h3>
+                <p class="card-desc">A Conferência Nacional dos Agentes Produtores e Usuários de Dados (CONFEST/CONFEGE) 2026 contará com espaços temáticos dedicados a diferentes áreas do conhecimento e da produção de informações estatísticas e geocientíficas. A programação dedicada às...</p>
+                <a href="http://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/48339-espaco-geociencias-da-confest-confege-2026-debate-territorio-meio-ambiente-e-geotecnologias.html" target="_blank" rel="noopener noreferrer" class="read-btn">Ler Artigo Completo &rarr;</a>
+            </div>
+        </article>
+        
+        <article class="news-card">
+            <div class="card-img-wrapper">
+                <span class="card-tag">Terra.com.br</span>
+                <img src="https://p2.trrsf.com/image/fget/cf/1200/630/middle/images.terra.com/2026/10/23/837250907-ffsmr24t2productsiloff-hair-bodymist1200x150072dpi1.jpg" alt="Capa" onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80'">
+            </div>
+            <div class="card-body">
+                <div class="card-meta">
+                    <span>📅 2026-10-23</span>
+                    <span>⚡ Leitura Rápida</span>
+                </div>
+                <h3 class="card-title">6 Perfumes de Celebridades para Conhecer e Amar</h3>
+                <p class="card-desc">Além de lançar hits e conquistar fãs pelo mundo, algumas celebridades também investem no mercado ...</p>
+                <a href="https://www.terra.com.br/vida-e-estilo/autocuidado/6-perfumes-de-celebridades-para-conhecer-e-amar,dfdb9861510c6334b864d26e9a76ed88156tatz9.html" target="_blank" rel="noopener noreferrer" class="read-btn">Ler Artigo Completo &rarr;</a>
+            </div>
+        </article>
+        
+        <article class="news-card">
+            <div class="card-img-wrapper">
+                <span class="card-tag">IBGE Brasil</span>
+                <img src="https://agenciadenoticias.ibge.gov.br/images/agenciadenoticias/ibge/2026_10/foto_caatinga.png" alt="Capa" onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80'">
+            </div>
+            <div class="card-body">
+                <div class="card-meta">
+                    <span>📅 22/10/2026</span>
+                    <span>⚡ Leitura Rápida</span>
+                </div>
+                <h3 class="card-title">IBGE apresenta metodologia de avaliação de ecossistemas no Rio de Janeiro e na Caatinga</h3>
+                <p class="card-desc">Região da Caatinga em Pernambuco. - Foto: Sudene. O IBGE divulga hoje (22) um estudo experimental para integrar informações sobre a extensão e a condição dos ecossistemas protegidos utilizando a metodologia das Contas Econômicas Ambientais - Contas de...</p>
+                <a href="http://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/48335-ibge-apresenta-metodologia-de-avaliacao-de-ecossistemas-no-rio-de-janeiro-e-na-caatinga.html" target="_blank" rel="noopener noreferrer" class="read-btn">Ler Artigo Completo &rarr;</a>
+            </div>
+        </article>
+        
+        <article class="news-card">
+            <div class="card-img-wrapper">
+                <span class="card-tag">Terra.com.br</span>
+                <img src="https://p2.trrsf.com/image/fget/cf/1200/630/middle/images.terra.com/2026/10/23/220458541-1792791647371-mkwe2b.jpg" alt="Capa" onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80'">
+            </div>
+            <div class="card-body">
+                <div class="card-meta">
+                    <span>📅 2026-10-23</span>
+                    <span>⚡ Leitura Rápida</span>
+                </div>
+                <h3 class="card-title">Entre shows e streaming, finanças entram na carreira musical</h3>
+                <p class="card-desc">Com receitas variáveis, artistas precisam planejar despesas, acompanhar direitos autorais e preparar os próximos passos</p>
+                <a href="https://www.terra.com.br/economia/entre-shows-e-streaming-financas-entram-na-carreira-musical,ec6ffff12f56b705ed261d618d2a643b0xy9x4rk.html" target="_blank" rel="noopener noreferrer" class="read-btn">Ler Artigo Completo &rarr;</a>
+            </div>
+        </article>
+        
+        <article class="news-card">
+            <div class="card-img-wrapper">
+                <span class="card-tag">Dev.to Tech</span>
+                <img src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F7mizvhzw7ziongg9l7ro.png" alt="Capa" onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80'">
+            </div>
+            <div class="card-body">
+                <div class="card-meta">
+                    <span>📅 Oct 19</span>
+                    <span>⚡ Leitura Rápida</span>
+                </div>
+                <h3 class="card-title">Como reduzir o tempo da Sprint Planning pela metade com estimativas em tempo real</h3>
+                <p class="card-desc">Dicas práticas e decisões de arquitetura em Next.js para transformar reuniões de estimativa arrastadas em alinhamentos técnicos ágeis e eficientes.</p>
+                <a href="https://dev.to/geekecia/como-reduzir-o-tempo-da-sprint-planning-pela-metade-com-estimativas-em-tempo-real-2a6m" target="_blank" rel="noopener noreferrer" class="read-btn">Ler Artigo Completo &rarr;</a>
+            </div>
+        </article>
+        
+        <article class="news-card">
+            <div class="card-img-wrapper">
+                <span class="card-tag">IBGE Brasil</span>
+                <img src="https://agenciadenoticias.ibge.gov.br/images/agenciadenoticias/ibge/2026_10/reuniao-ibge-embaixada-brasil-china.jpg" alt="Capa" onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80'">
+            </div>
+            <div class="card-body">
+                <div class="card-meta">
+                    <span>📅 21/10/2026</span>
+                    <span>⚡ Leitura Rápida</span>
+                </div>
+                <h3 class="card-title">IBGE e Embaixada do Brasil na China discutem cooperação em datificação e inteligência artificial</h3>
+                <p class="card-desc">O presidente do IBGE, Marcio Pochmann, e o diretor do Centro de Documentação e Disseminação de Informações (CDDI) do IBGE, José Daniel Castro, reuniram-se nesta quarta-feira (21), em Pequim, com o embaixador do Brasil na China, Marcos Galvão, e...</p>
+                <a href="http://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/48336-ibge-e-embaixada-do-brasil-na-china-discutem-cooperacao-em-datificacao-e-inteligencia-artificial.html" target="_blank" rel="noopener noreferrer" class="read-btn">Ler Artigo Completo &rarr;</a>
+            </div>
+        </article>
+        
+            </div>
+        </div>
+
+        <!-- BARRA LATERAL (Retenção + Captura + Sticky Ad) -->
+        <aside class="sidebar">
+            <div class="widget">
+                <div class="widget-title">
+                    <span>🔥 Mais Lidas Hoje</span>
+                </div>
+                <ul class="trending-list">
+                    
+        <li>
+            <a href="https://dev.to/ayumu_kitabayashi_8e0de96/apps-para-bloquear-reels-do-instagram-no-iphone-sem-perder-as-dms-comparativo-2026-33ko" target="_blank" rel="noopener noreferrer" class="trending-item">
+                <span class="trending-num">01</span>
+                <span class="trending-text">Apps para bloquear Reels do Instagram no iPhone sem perder as DMs (comparativo 2026)</span>
+            </a>
+        </li>
+        
+        <li>
+            <a href="https://www.metropoles.com/mundo/javier-milei-culpa-cenario-externo-por-piora-economica-na-argentina" target="_blank" rel="noopener noreferrer" class="trending-item">
+                <span class="trending-num">02</span>
+                <span class="trending-text">Javier Milei culpa cenário externo por piora econômica na Argentina</span>
+            </a>
+        </li>
+        
+        <li>
+            <a href="http://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/48339-espaco-geociencias-da-confest-confege-2026-debate-territorio-meio-ambiente-e-geotecnologias.html" target="_blank" rel="noopener noreferrer" class="trending-item">
+                <span class="trending-num">03</span>
+                <span class="trending-text">Espaço Geociências da CONFEST/CONFEGE 2026 debate território, meio ambiente e geotecnologias</span>
+            </a>
+        </li>
+        
+        <li>
+            <a href="https://www.terra.com.br/vida-e-estilo/autocuidado/6-perfumes-de-celebridades-para-conhecer-e-amar,dfdb9861510c6334b864d26e9a76ed88156tatz9.html" target="_blank" rel="noopener noreferrer" class="trending-item">
+                <span class="trending-num">04</span>
+                <span class="trending-text">6 Perfumes de Celebridades para Conhecer e Amar</span>
+            </a>
+        </li>
+        
+        <li>
+            <a href="http://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/48335-ibge-apresenta-metodologia-de-avaliacao-de-ecossistemas-no-rio-de-janeiro-e-na-caatinga.html" target="_blank" rel="noopener noreferrer" class="trending-item">
+                <span class="trending-num">05</span>
+                <span class="trending-text">IBGE apresenta metodologia de avaliação de ecossistemas no Rio de Janeiro e na Caatinga</span>
+            </a>
+        </li>
+        
+                </ul>
+            </div>
+
+            <div class="newsletter-box" id="newsletter">
+                <h3>💰 Newsletter Lucrativa</h3>
+                <p>Receba análises exclusivas de tecnologia, IA e oportunidades de negócios todas as manhãs.</p>
+                <input type="email" placeholder="Digite seu melhor e-mail...">
+                <button onclick="alert('Inscrição simulada com sucesso!')">Quero Receber Grátis</button>
+            </div>
+
+            <!-- MONETIZAÇÃO 3: Sticky Ad 300x600 (Maior RPM do mercado) -->
+            <div class="sticky-ad-container">
+                <div class="ad-sidebar-box">
+                    <span class="ad-label">Publicidade Fixa (300x600)</span>
+                    <strong>[ Espaço Google AdSense Half-Page ]</strong>
+                    <p style="font-size: 0.8rem; margin-top: 10px;">Este anúncio acompanha a rolagem do leitor, gerando a maior taxa de cliques (CTR) do portal.</p>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <p><strong>TechNews.PRO</strong> &copy; 2026 — Portal Automatizado via Python Multi-API.</p>
+        <p style="margin-top: 8px; font-size: 0.8rem;">Fontes Integradas: NewsAPI • IBGE Notícias • Spaceflight News • Dev.to</p>
+    </footer>
+
+    <script>
+        // Script para barra de progresso de leitura
+        window.onscroll = function() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+        };
+    </script>
+</body>
+</html>
