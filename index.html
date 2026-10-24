@@ -10,7 +10,7 @@
             --card-bg: #ffffff;
             --text-main: #111827;
             --text-muted: #6b7280;
-            --primary: #ef4444; /* Vermelho de Alta Atenção (Estilo G1/CNN) */
+            --primary: #ef4444; 
             --accent: #2563eb;
             --dark: #0f172a;
             --ad-bg: #e2e8f0;
@@ -19,15 +19,12 @@
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
         body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; }
 
-        /* BARRA DE PROGRESSO DE LEITURA (Gatilho de Retenção) */
         #progress-bar { position: fixed; top: 0; left: 0; height: 4px; background: var(--primary); width: 0%; z-index: 9999; transition: width 0.2s; }
 
-        /* TICKER DE ÚLTIMAS NOTÍCIAS (Urgência) */
         .breaking-ticker { background: var(--primary); color: #fff; padding: 0.4rem 5%; font-size: 0.85rem; font-weight: 600; display: flex; align-items: center; gap: 1rem; overflow: hidden; white-space: nowrap; }
         .breaking-badge { background: #000; color: #fff; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; animation: pulse 1.5s infinite; }
         @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.6; } 100% { opacity: 1; } }
 
-        /* HEADER FIXO (Sticky) */
         header { background: var(--dark); color: #fff; padding: 1.2rem 5%; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
         .nav-container { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
         .logo { font-size: 2rem; font-weight: 900; letter-spacing: -1px; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 5px; }
@@ -38,14 +35,11 @@
         .cta-btn { background: var(--primary); color: #fff; border: none; padding: 0.6rem 1.4rem; border-radius: 6px; font-weight: 700; cursor: pointer; transition: 0.3s; text-decoration: none; font-size: 0.9rem; }
         .cta-btn:hover { background: #dc2626; transform: scale(1.03); }
 
-        /* ESPAÇO PUBLICITÁRIO TOPO (Alto CPM) */
-        .ad-banner-top { max-width: 970px; min-height: 90px; background: var(--ad-bg); margin: 1.8rem auto; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--text-muted); border: 2px dashed #cbd5e1; border-radius: 8px; padding: 10px; text-align: center; }
-        .ad-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1.5px; color: #94a3b8; margin-bottom: 4px; }
+        /* ESPAÇO PUBLICITÁRIO DO TOPO (Com o seu Banner Adsterra 728x90) */
+        .ad-banner-top { max-width: 970px; min-height: 90px; margin: 1.8rem auto; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
 
-        /* ESTRUTURA PRINCIPAL EM GRID (Padrão F de Leitura) */
         .main-container { max-width: 1400px; margin: 0 auto 4rem auto; padding: 0 5%; display: grid; grid-template-columns: 7fr 3fr; gap: 2.5rem; }
 
-        /* HERO POST (Notícia Principal) */
         .hero-card { position: relative; border-radius: 14px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1); margin-bottom: 2.5rem; display: block; text-decoration: none; background: #000; }
         .hero-card img { width: 100%; height: 460px; object-fit: cover; opacity: 0.85; transition: transform 0.5s ease, opacity 0.3s; }
         .hero-card:hover img { transform: scale(1.03); opacity: 0.7; }
@@ -54,7 +48,6 @@
         .hero-overlay h1 { font-size: 2.2rem; line-height: 1.25; margin-bottom: 0.8rem; font-weight: 800; }
         .hero-overlay p { color: #e2e8f0; font-size: 1.05rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 
-        /* GRID DE NOTÍCIAS */
         .section-title { font-size: 1.4rem; font-weight: 800; margin-bottom: 1.5rem; border-left: 5px solid var(--primary); padding-left: 12px; color: var(--dark); }
         .feed-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.8rem; }
         .news-card { background: var(--card-bg); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.04); border: 1px solid var(--border); display: flex; flex-direction: column; transition: transform 0.25s ease, box-shadow 0.25s ease; }
@@ -70,25 +63,21 @@
         .read-btn { display: inline-flex; align-items: center; justify-content: center; background: #f1f5f9; color: var(--dark); font-weight: 700; font-size: 0.88rem; padding: 0.75rem 1rem; border-radius: 8px; text-decoration: none; transition: 0.2s; margin-top: auto; }
         .read-btn:hover { background: var(--primary); color: #fff; }
 
-        /* ANÚNCIO NATIVO IN-FEED (Altíssima Conversão) */
         .native-ad-card { background: linear-gradient(145deg, #ffffff, #fff5f5); border: 2px solid #fecaca; border-radius: 12px; padding: 1.8rem; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; box-shadow: 0 4px 15px rgba(239, 68, 68, 0.08); }
         .native-ad-card .ad-badge { background: #fee2e2; color: #b91c1c; font-size: 0.7rem; font-weight: 800; padding: 3px 10px; border-radius: 20px; text-transform: uppercase; margin-bottom: 1rem; }
         .native-ad-card h3 { font-size: 1.25rem; color: var(--dark); margin-bottom: 0.8rem; }
         .native-ad-card p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem; }
 
-        /* SIDEBAR DE RETENÇÃO E MONETIZAÇÃO */
         .sidebar { display: flex; flex-direction: column; gap: 2rem; }
         .widget { background: var(--card-bg); border-radius: 12px; padding: 1.6rem; border: 1px solid var(--border); box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
         .widget-title { font-size: 1.1rem; font-weight: 800; margin-bottom: 1.2rem; padding-bottom: 0.6rem; border-bottom: 2px solid var(--primary); display: flex; align-items: center; justify-content: space-between; }
         
-        /* WIDGET MAIS LIDAS (Prova Social) */
         .trending-list { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
         .trending-item { display: flex; gap: 1rem; align-items: flex-start; text-decoration: none; color: inherit; }
         .trending-num { font-size: 1.6rem; font-weight: 900; color: #cbd5e1; line-height: 1; }
         .trending-item:hover .trending-text { color: var(--primary); }
         .trending-text { font-size: 0.92rem; font-weight: 700; line-height: 1.35; transition: 0.2s; }
 
-        /* WIDGET CAPTURA DE LEADS (Newsletter) */
         .newsletter-box { background: var(--dark); color: #fff; border-radius: 12px; padding: 1.8rem; text-align: center; }
         .newsletter-box h3 { font-size: 1.25rem; margin-bottom: 0.6rem; }
         .newsletter-box p { font-size: 0.88rem; color: #94a3b8; margin-bottom: 1.2rem; }
@@ -96,7 +85,6 @@
         .newsletter-box button { width: 100%; padding: 0.85rem; background: var(--primary); color: #fff; border: none; border-radius: 6px; font-weight: 800; cursor: pointer; transition: 0.2s; }
         .newsletter-box button:hover { background: #dc2626; }
 
-        /* ANÚNCIO STICKY LATERAL (Acompanha o Scroll) */
         .sticky-ad-container { position: sticky; top: 90px; }
         .ad-sidebar-box { width: 100%; height: 600px; background: var(--ad-bg); border: 2px dashed #cbd5e1; border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--text-muted); text-align: center; padding: 1rem; }
 
@@ -115,7 +103,7 @@
 
     <div class="breaking-ticker">
         <span class="breaking-badge">Ao Vivo</span>
-        <span>🚀 Mercado em Alerta: Múltiplas fontes de dados sincronizadas em tempo real • Atualizado em: 24/10/2026 às 22:40</span>
+        <span>🚀 Portal Automatizado • Sincronizado via Multi-API • Atualizado em: 24/10/2026 às 23:38</span>
     </div>
 
     <header>
@@ -131,22 +119,30 @@
         </div>
     </header>
 
-    <!-- MONETIZAÇÃO 1: Leaderboard AdSense (Topo) -->
+    <!-- SEU ANÚNCIO REAL ADSTERRA (728x90) NO TOPO -->
     <div class="ad-banner-top">
-        <span class="ad-label">Publicidade • Espaço AdSense (970x90)</span>
-        <strong>[ Insira seu Código Google AdSense ou Banner de Afiliado Aqui ]</strong>
+        <script>
+          atOptions = {
+            'key' : '06959dfe796ac17610a3027d9ede544f',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+          };
+        </script>
+        <script src="https://bicea.org/22/06959dfe796ac17610a3027d9ede544f"></script>
     </div>
 
     <main class="main-container">
-        <!-- COLUNA PRINCIPAL DE CONTEÚDO -->
         <div class="content-column">
             
-    <a href="https://www.terra.com.br/diversao/spotify-mira-nova-fase-como-agente-de-ia-com-integracoes-externas,adcd92ef8fca59468c3046bea48b3458hpt8fvhj.html" target="_blank" rel="noopener noreferrer" class="hero-card">
-        <img src="https://p2.trrsf.com/image/fget/cf/1200/630/middle/images.terra.com/2026/10/23/450972076-1792782690493-uirky6.jpg" alt="Destaque" onerror="this.src='https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80'">
+    <a href="https://catracalivre.com.br/noticias/francis-bacon-desafiou-a-ideia-de-que-a-sabedoria-serve-apenas-para-contemplar-o-mundo-ao-defender-sua-utilidade-pratica-conhecimento-e-poder/" target="_blank" rel="noopener noreferrer" class="hero-card">
+        <img src="https://catracalivre.com.br/i/vl37D-LtUYAM22mMgECQq0E2GaGes1pUykqRHItLHhs/rs:fill:1200:630:1/g:sm/q:80/bG9jYWw6Ly8vMjAyNi8xMC9mcmFuY2lzLWJhY29uLWtub3dsZWRnZS1pcy1wb3dlci0yMDI2MTAyMjEzNTgwNC5qcGc" alt="Destaque" onerror="this.src='https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80'">
         <div class="hero-overlay">
-            <span class="badge-source">🔥 Destaque • Terra.com.br</span>
-            <h1>Spotify mira nova fase como agente de IA com integrações externas</h1>
-            <p>Executivos da plataforma garantem que reprodução e dados permanecem protegidos durante conexão com outros sistemas.</p>
+            <span class="badge-source">🔥 Destaque • Catracalivre.com.br</span>
+            <h1>Francis Bacon desafiou a ideia de que a sabedoria serve apenas para contemplar o mundo ao defender sua utilidade prática: “Conhecimento é poder”.</h1>
+            <p>Francis Bacon redefiniu a ciência moderna ao propor que o conhecimento prático transforma a natureza e supera a mera contemplação teórica.
+O post Francis Bacon desafiou a ideia de que a sabedoria serve apenas para contemplar o mundo ao defender sua utilidade …</p>
         </div>
     </a>
     
@@ -156,43 +152,76 @@
                 
         <article class="news-card">
             <div class="card-img-wrapper">
-                <span class="card-tag">Dev.to Tech</span>
-                <img src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fyk2y0zovegop5i1tmzm4.png" alt="Capa" onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80'">
-            </div>
-            <div class="card-body">
-                <div class="card-meta">
-                    <span>📅 Oct 24</span>
-                    <span>⚡ Leitura Rápida</span>
-                </div>
-                <h3 class="card-title">Apps para bloquear Reels do Instagram no iPhone sem perder as DMs (comparativo 2026)</h3>
-                <p class="card-desc">O app oficial do Instagram não deixa tirar os Reels. Contas de adulto não têm nenhum ajuste para...</p>
-                <a href="https://dev.to/ayumu_kitabayashi_8e0de96/apps-para-bloquear-reels-do-instagram-no-iphone-sem-perder-as-dms-comparativo-2026-33ko" target="_blank" rel="noopener noreferrer" class="read-btn">Ler Artigo Completo &rarr;</a>
-            </div>
-        </article>
-        
-        <article class="news-card">
-            <div class="card-img-wrapper">
-                <span class="card-tag">Observador.pt</span>
-                <img src="https://bordalo.observador.pt/v2/rs:fill:770:403/c:770:433:nowe:0:0/q:70/f:webp/plain/https://s3.observador.pt/wp-content/uploads/2026/06/15153459/770-podcast-noticiario.png" alt="Capa" onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80'">
+                <span class="card-tag">Globo</span>
+                <img src="https://s2-valor.glbimg.com/O_xehgbgn1hxFy16qv3oqL4cmXQ=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/Q/V/mEBgzxRNSK8aSPMFADqw/437717578.jpg" alt="Capa" onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80'">
             </div>
             <div class="card-body">
                 <div class="card-meta">
                     <span>📅 2026-10-23</span>
                     <span>⚡ Leitura Rápida</span>
                 </div>
-                <h3 class="card-title">As notícias das 23h</h3>
-                <p class="card-desc">O secretário-geral do PS fala em declarações infelizes de Benjamim Pereira. Ainda, já terminou a acampada de apoio a uma viúva com dois filhos que está a ser despejada, em Lisboa.</p>
-                <a href="https://observador.pt/programas/noticiario/as-noticias-das-23h-2200/" target="_blank" rel="noopener noreferrer" class="read-btn">Ler Artigo Completo &rarr;</a>
+                <h3 class="card-title">Às vésperas do 2º turno, Nunes Marques fará pronunciamento na TV sobre mudança nos locais de votação</h3>
+                <p class="card-desc">O presidente do Tribunal Superior Eleitoral (TSE), Kassio Nunes Marques, fará um pronunciamento no sábado (24), às vésperas do segundo turno de votação das eleições, em que falará sobre as alterações nos locais de votação. A declaração será transmitida em red…</p>
+                <a href="https://valor.globo.com/politica/eleicoes-2026/noticia/2026/10/23/as-vesperas-do-2o-turno-nunes-marques-fara-pronunciamento-na-tv-sobre-mudanca-nos-locais-de-votacao.ghtml" target="_blank" rel="noopener noreferrer" class="read-btn">Ler Artigo Completo &rarr;</a>
+            </div>
+        </article>
+        
+        <article class="news-card">
+            <div class="card-img-wrapper">
+                <span class="card-tag">Dev.to Tech</span>
+                <img src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F788ka9fqt8fvk0qlkgy2.png" alt="Capa" onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80'">
+            </div>
+            <div class="card-body">
+                <div class="card-meta">
+                    <span>📅 Oct 24</span>
+                    <span>⚡ Leitura Rápida</span>
+                </div>
+                <h3 class="card-title">Apps para bloquear o YouTube Shorts no iPhone sem perder os vídeos normais (comparativo 2026)</h3>
+                <p class="card-desc">No app do YouTube, não dá para desligar os Shorts de vez se a sua conta é de adulto. O mais perto...</p>
+                <a href="https://dev.to/ayumu_kitabayashi_8e0de96/apps-para-bloquear-o-youtube-shorts-no-iphone-sem-perder-os-videos-normais-comparativo-2026-4kdc" target="_blank" rel="noopener noreferrer" class="read-btn">Ler Artigo Completo &rarr;</a>
             </div>
         </article>
         
             <div class="native-ad-card">
                 <span class="ad-badge">Conteúdo Patrocinado • Native Ad</span>
                 <h3>🚀 Descubra a Ferramenta de IA que Automatiza Negócios</h3>
-                <p>Espaço estratégico para link de afiliado (Hotmart, Kiwify, Amazon) ou bloco In-Feed do Google AdSense.</p>
+                <p>Espaço estratégico para link de afiliado (Hotmart, Kiwify, Amazon) ou bloco In-Feed.</p>
                 <a href="#newsletter" class="cta-btn" style="width: 100%;">Conhecer Oferta Agora &rarr;</a>
             </div>
             
+        <article class="news-card">
+            <div class="card-img-wrapper">
+                <span class="card-tag">Edivaldobrito.com.br</span>
+                <img src="https://www.edivaldobrito.com.br/wp-content/uploads/2026/10/conheca-o-linksy-alternativa-open-source-poderosa-ao-kde-connect-para-linux.webp" alt="Capa" onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80'">
+            </div>
+            <div class="card-body">
+                <div class="card-meta">
+                    <span>📅 2026-10-23</span>
+                    <span>⚡ Leitura Rápida</span>
+                </div>
+                <h3 class="card-title">Conheça o Linksy: alternativa open-source poderosa ao KDE Connect para Linux</h3>
+                <p class="card-desc">Linksy é a nova ferramenta open-source para conectividade entre dispositivos Linux e Android, sem complicações ou nuvens.
+O post Conheça o Linksy: alternativa open-source poderosa ao KDE Connect para Linux apareceu primeiro em Blog do Edivaldo - Informações e…</p>
+                <a href="https://www.edivaldobrito.com.br/conheca-o-linksy-alternativa-open-source-poderosa-ao-kde-connect-para-linux/" target="_blank" rel="noopener noreferrer" class="read-btn">Ler Artigo Completo &rarr;</a>
+            </div>
+        </article>
+        
+        <article class="news-card">
+            <div class="card-img-wrapper">
+                <span class="card-tag">SpaceTech Global</span>
+                <img src="https://assets.science.nasa.gov/dynamicimage/assets/science/cds/apod/apod/2026/october/ESA_Rosetta_Philae_CIVA_141007.png" alt="Capa" onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80'">
+            </div>
+            <div class="card-body">
+                <div class="card-meta">
+                    <span>📅 2026-10-24</span>
+                    <span>⚡ Leitura Rápida</span>
+                </div>
+                <h3 class="card-title">APOD: 2026 October 24 – Rosetta’s Selfie</h3>
+                <p class="card-desc">APOD Science APOD APOD: 2026 October 24 –… Today’s APOD Archive Submissions Index Search Calendar RSS Education About Discuss   APOD Astronomy Picture of the Day Discover the cosmos! Each day a different image or photograph of our fascinating universe is featured, along with a brief explanation written by a professional astronomer. Rosetta’s Selfie Explanation: […]</p>
+                <a href="https://science.nasa.gov/image-article/apod-2026-october-24-rosettas-selfie/" target="_blank" rel="noopener noreferrer" class="read-btn">Ler Artigo Completo &rarr;</a>
+            </div>
+        </article>
+        
         <article class="news-card">
             <div class="card-img-wrapper">
                 <span class="card-tag">SpaceTech Global</span>
@@ -211,33 +240,17 @@
         
         <article class="news-card">
             <div class="card-img-wrapper">
-                <span class="card-tag">Globo</span>
-                <img src="https://s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/public/fb_marca.png" alt="Capa" onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80'">
+                <span class="card-tag">Metropoles.com</span>
+                <img src="https://i.metroimg.com/bnKLsP-pCLs51ZhBWlWscvkRKfwJ-jC0ZKLF7jVSFmA/rs:fill:1200:800:1/g:no/q:85/f:webp/plain/https://images.metroimg.com/2023/12/11130504/Karina-Milei-3.jpg" alt="Capa" onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80'">
             </div>
             <div class="card-body">
                 <div class="card-meta">
                     <span>📅 2026-10-23</span>
                     <span>⚡ Leitura Rápida</span>
                 </div>
-                <h3 class="card-title">Eleições e mercado financeiro: assessor de investimentos deve priorizar estratégia de longo prazo em cenário de volatilidade</h3>
-                <p class="card-desc">A disputa presidencial entre Flávio Bolsonaro (PL) e Luiz Inácio Lula da Silva (PT) coloca o mercado financeiro diante de um período de incertezas, no qual expectativas sobre a condução da economia podem provocar oscilações significativas nos preços dos ativo…</p>
-                <a href="https://valor.globo.com/patrocinado/pressworks/noticia/2026/10/23/eleicoes-e-mercado-financeiro-assessor-de-investimentos-deve-priorizar-estrategia-de-longo-prazo-em-cenario-de-volatilidade-1.ghtml" target="_blank" rel="noopener noreferrer" class="read-btn">Ler Artigo Completo &rarr;</a>
-            </div>
-        </article>
-        
-        <article class="news-card">
-            <div class="card-img-wrapper">
-                <span class="card-tag">Revistabula.com</span>
-                <img src="https://www.revistabula.com/wp/wp-content/uploads/2026/10/The-Angels-Share.webp" alt="Capa" onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80'">
-            </div>
-            <div class="card-body">
-                <div class="card-meta">
-                    <span>📅 2026-10-23</span>
-                    <span>⚡ Leitura Rápida</span>
-                </div>
-                <h3 class="card-title">Ken Loach escalou um ex-detento e levou o Prêmio do Júri em Cannes: a comédia no canal Filmelier+ do Prime Video</h3>
-                <p class="card-desc">Em “A Parte dos Anjos”, Robbie tenta se afastar da violência que marcou sua vida e encontrar uma maneira de sustentar a família que está formando. Durante o cumprimento de uma pena de serviços comunitários, o jovem conhece pessoas que o aproximam do universo …</p>
-                <a href="https://www.revistabula.com/170368-ken-loach-escalou-um-ex-detento-e-levou-o-premio-do-juri-em-cannes-a-comedia-no-canal-filmelier-do-prime-video/" target="_blank" rel="noopener noreferrer" class="read-btn">Ler Artigo Completo &rarr;</a>
+                <h3 class="card-title">Argentina arquiva investigação contra Milei e irmã em caso de criptomoeda</h3>
+                <p class="card-desc">Caso apurava suspeita de fraude após criptomoeda divulgada pelo presidente disparar de preço e despencar em fevereiro de 2025</p>
+                <a href="https://www.metropoles.com/mundo/argentina-arquiva-investigacao-contra-milei-e-irma-em-caso-de-criptomoeda" target="_blank" rel="noopener noreferrer" class="read-btn">Ler Artigo Completo &rarr;</a>
             </div>
         </article>
         
@@ -273,26 +286,9 @@
             </div>
         </article>
         
-        <article class="news-card">
-            <div class="card-img-wrapper">
-                <span class="card-tag">Dev.to Tech</span>
-                <img src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F7mizvhzw7ziongg9l7ro.png" alt="Capa" onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80'">
-            </div>
-            <div class="card-body">
-                <div class="card-meta">
-                    <span>📅 Oct 19</span>
-                    <span>⚡ Leitura Rápida</span>
-                </div>
-                <h3 class="card-title">Como reduzir o tempo da Sprint Planning pela metade com estimativas em tempo real</h3>
-                <p class="card-desc">Dicas práticas e decisões de arquitetura em Next.js para transformar reuniões de estimativa arrastadas em alinhamentos técnicos ágeis e eficientes.</p>
-                <a href="https://dev.to/geekecia/como-reduzir-o-tempo-da-sprint-planning-pela-metade-com-estimativas-em-tempo-real-2a6m" target="_blank" rel="noopener noreferrer" class="read-btn">Ler Artigo Completo &rarr;</a>
-            </div>
-        </article>
-        
             </div>
         </div>
 
-        <!-- BARRA LATERAL (Retenção + Captura + Sticky Ad) -->
         <aside class="sidebar">
             <div class="widget">
                 <div class="widget-title">
@@ -301,37 +297,37 @@
                 <ul class="trending-list">
                     
         <li>
-            <a href="https://dev.to/ayumu_kitabayashi_8e0de96/apps-para-bloquear-reels-do-instagram-no-iphone-sem-perder-as-dms-comparativo-2026-33ko" target="_blank" rel="noopener noreferrer" class="trending-item">
+            <a href="https://valor.globo.com/politica/eleicoes-2026/noticia/2026/10/23/as-vesperas-do-2o-turno-nunes-marques-fara-pronunciamento-na-tv-sobre-mudanca-nos-locais-de-votacao.ghtml" target="_blank" rel="noopener noreferrer" class="trending-item">
                 <span class="trending-num">01</span>
-                <span class="trending-text">Apps para bloquear Reels do Instagram no iPhone sem perder as DMs (comparativo 2026)</span>
+                <span class="trending-text">Às vésperas do 2º turno, Nunes Marques fará pronunciamento na TV sobre mudança nos locais de votação</span>
             </a>
         </li>
         
         <li>
-            <a href="https://observador.pt/programas/noticiario/as-noticias-das-23h-2200/" target="_blank" rel="noopener noreferrer" class="trending-item">
+            <a href="https://dev.to/ayumu_kitabayashi_8e0de96/apps-para-bloquear-o-youtube-shorts-no-iphone-sem-perder-os-videos-normais-comparativo-2026-4kdc" target="_blank" rel="noopener noreferrer" class="trending-item">
                 <span class="trending-num">02</span>
-                <span class="trending-text">As notícias das 23h</span>
+                <span class="trending-text">Apps para bloquear o YouTube Shorts no iPhone sem perder os vídeos normais (comparativo 2026)</span>
+            </a>
+        </li>
+        
+        <li>
+            <a href="https://www.edivaldobrito.com.br/conheca-o-linksy-alternativa-open-source-poderosa-ao-kde-connect-para-linux/" target="_blank" rel="noopener noreferrer" class="trending-item">
+                <span class="trending-num">03</span>
+                <span class="trending-text">Conheça o Linksy: alternativa open-source poderosa ao KDE Connect para Linux</span>
+            </a>
+        </li>
+        
+        <li>
+            <a href="https://science.nasa.gov/image-article/apod-2026-october-24-rosettas-selfie/" target="_blank" rel="noopener noreferrer" class="trending-item">
+                <span class="trending-num">04</span>
+                <span class="trending-text">APOD: 2026 October 24 – Rosetta’s Selfie</span>
             </a>
         </li>
         
         <li>
             <a href="https://arstechnica.com/space/2026/10/nasa-updates-lander-plans-for-moon-landings-finally-solves-long-festering-orion-issue/" target="_blank" rel="noopener noreferrer" class="trending-item">
-                <span class="trending-num">03</span>
-                <span class="trending-text">NASA updates lander plans for Moon landings, finally solves long-festering Orion issue</span>
-            </a>
-        </li>
-        
-        <li>
-            <a href="https://valor.globo.com/patrocinado/pressworks/noticia/2026/10/23/eleicoes-e-mercado-financeiro-assessor-de-investimentos-deve-priorizar-estrategia-de-longo-prazo-em-cenario-de-volatilidade-1.ghtml" target="_blank" rel="noopener noreferrer" class="trending-item">
-                <span class="trending-num">04</span>
-                <span class="trending-text">Eleições e mercado financeiro: assessor de investimentos deve priorizar estratégia de longo prazo em cenário de volatilidade</span>
-            </a>
-        </li>
-        
-        <li>
-            <a href="https://www.revistabula.com/170368-ken-loach-escalou-um-ex-detento-e-levou-o-premio-do-juri-em-cannes-a-comedia-no-canal-filmelier-do-prime-video/" target="_blank" rel="noopener noreferrer" class="trending-item">
                 <span class="trending-num">05</span>
-                <span class="trending-text">Ken Loach escalou um ex-detento e levou o Prêmio do Júri em Cannes: a comédia no canal Filmelier+ do Prime Video</span>
+                <span class="trending-text">NASA updates lander plans for Moon landings, finally solves long-festering Orion issue</span>
             </a>
         </li>
         
@@ -345,12 +341,11 @@
                 <button onclick="alert('Inscrição simulada com sucesso!')">Quero Receber Grátis</button>
             </div>
 
-            <!-- MONETIZAÇÃO 3: Sticky Ad 300x600 (Maior RPM do mercado) -->
             <div class="sticky-ad-container">
                 <div class="ad-sidebar-box">
                     <span class="ad-label">Publicidade Fixa (300x600)</span>
-                    <strong>[ Espaço Google AdSense Half-Page ]</strong>
-                    <p style="font-size: 0.8rem; margin-top: 10px;">Este anúncio acompanha a rolagem do leitor, gerando a maior taxa de cliques (CTR) do portal.</p>
+                    <strong>[ Próximo Bloco de Anúncio ]</strong>
+                    <p style="font-size: 0.8rem; margin-top: 10px;">Anúncio lateral fixo para maximizar sua receita por visualização.</p>
                 </div>
             </div>
         </aside>
@@ -362,7 +357,6 @@
     </footer>
 
     <script>
-        // Script para barra de progresso de leitura
         window.onscroll = function() {
             var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
             var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
