@@ -1,114 +1,171 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechNews PRO - Inovação, Ciência & Negócios</title>
+    <title>TechNews PRO | Terminal de Inteligência, IA & Mercado</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --bg-color: #f4f6f9;
-            --card-bg: #ffffff;
-            --text-main: #111827;
-            --text-muted: #6b7280;
-            --primary: #ef4444; 
-            --accent: #2563eb;
-            --dark: #0f172a;
-            --ad-bg: #e2e8f0;
-            --border: #e5e7eb;
+        :root[data-theme="dark"] {
+            --bg-color: #070b14;
+            --card-bg: rgba(17, 25, 40, 0.85);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --primary: #ef4444;
+            --accent: #3b82f6;
+            --neon: #00f2fe;
+            --dark-bar: #03060c;
+            --border: rgba(255, 255, 255, 0.08);
+            --glass: rgba(15, 23, 42, 0.75);
         }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
-        body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; }
+        :root[data-theme="light"] {
+            --bg-color: #f1f5f9;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --primary: #ef4444;
+            --accent: #2563eb;
+            --neon: #2563eb;
+            --dark-bar: #0f172a;
+            --border: #e2e8f0;
+            --glass: rgba(255, 255, 255, 0.9);
+        }
 
-        #progress-bar { position: fixed; top: 0; left: 0; height: 4px; background: var(--primary); width: 0%; z-index: 9999; transition: width 0.2s; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; transition: background-color 0.25s, color 0.2s; }
+        body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
 
-        .breaking-ticker { background: var(--primary); color: #fff; padding: 0.4rem 5%; font-size: 0.85rem; font-weight: 600; display: flex; align-items: center; gap: 1rem; overflow: hidden; white-space: nowrap; }
-        .breaking-badge { background: #000; color: #fff; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; animation: pulse 1.5s infinite; }
-        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.6; } 100% { opacity: 1; } }
+        #progress-bar { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, var(--primary), var(--neon)); width: 0%; z-index: 99999; }
 
-        header { background: var(--dark); color: #fff; padding: 1.2rem 5%; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
-        .nav-container { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 2rem; font-weight: 900; letter-spacing: -1px; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 5px; cursor: pointer; }
+        /* BARRA DE COTAÇÕES FINANCEIRAS AO VIVO */
+        .market-ticker { background: var(--dark-bar); color: #e2e8f0; padding: 0.45rem 5%; font-size: 0.8rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; font-family: 'JetBrains Mono', monospace; }
+        .market-items { display: flex; gap: 1.5rem; align-items: center; overflow-x: auto; white-space: nowrap; }
+        .market-item { display: flex; align-items: center; gap: 6px; }
+        .up { color: #10b981; font-weight: 700; }
+        .down { color: #ef4444; font-weight: 700; }
+        .live-dot { width: 8px; height: 8px; background: #10b981; border-radius: 50%; display: inline-block; animation: blink 1.2s infinite; }
+        @keyframes blink { 0%, 100% { opacity: 1; box-shadow: 0 0 8px #10b981; } 50% { opacity: 0.3; } }
+
+        /* HEADER GLASSMORPHISM */
+        header { background: var(--glass); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); padding: 1rem 5%; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--border); }
+        .nav-container { max-width: 1440px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
+        .logo { font-size: 1.85rem; font-weight: 900; letter-spacing: -1px; color: var(--text-main); text-decoration: none; display: flex; align-items: center; gap: 6px; cursor: pointer; }
         .logo span { color: var(--primary); }
+        .logo-badge { font-size: 0.65rem; background: rgba(239, 68, 68, 0.15); color: var(--primary); border: 1px solid var(--primary); padding: 2px 6px; border-radius: 4px; font-weight: 800; letter-spacing: 0.5px; }
+
+        .nav-links { display: flex; gap: 0.5rem; list-style: none; background: rgba(255,255,255,0.03); padding: 5px; border-radius: 10px; border: 1px solid var(--border); }
+        .nav-links button { background: none; border: none; color: var(--text-muted); font-weight: 700; font-size: 0.88rem; cursor: pointer; padding: 0.45rem 1rem; border-radius: 7px; transition: 0.2s; }
+        .nav-links button:hover { color: var(--text-main); }
+        .nav-links button.active { background: var(--primary); color: #fff; box-shadow: 0 4px 12px rgba(239, 68, 68, 0.35); }
+
+        .header-actions { display: flex; align-items: center; gap: 0.8rem; }
+        .search-box { position: relative; }
+        .search-box input { background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: var(--text-main); padding: 0.5rem 1rem 0.5rem 2.2rem; border-radius: 8px; font-size: 0.85rem; width: 190px; outline: none; transition: 0.3s; }
+        .search-box input:focus { width: 240px; border-color: var(--primary); }
+        .search-icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); font-size: 0.8rem; color: var(--text-muted); }
+
+        /* BOTÃO DE TEMA COM SOL / LUA */
+        .theme-btn { background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--text-main); padding: 0.45rem 0.8rem; border-radius: 8px; cursor: pointer; font-weight: 700; font-size: 0.85rem; display: flex; align-items: center; gap: 6px; }
+        .theme-btn:hover { border-color: var(--primary); }
+
+        .cta-btn { background: linear-gradient(135deg, #ef4444, #b91c1c); color: #fff; border: none; padding: 0.55rem 1.2rem; border-radius: 8px; font-weight: 800; cursor: pointer; text-decoration: none; font-size: 0.85rem; box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3); display: inline-flex; align-items: center; gap: 6px; }
+        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(239, 68, 68, 0.5); }
+
+        /* RADAR DE TAGS QUENTES */
+        .tags-bar { max-width: 1440px; margin: 1.2rem auto 0 auto; padding: 0 5%; display: flex; align-items: center; gap: 0.6rem; overflow-x: auto; white-space: nowrap; }
+        .tag-pill { background: var(--card-bg); border: 1px solid var(--border); color: var(--text-muted); padding: 4px 12px; border-radius: 20px; font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: 0.2s; }
+        .tag-pill:hover { border-color: var(--primary); color: var(--text-main); transform: scale(1.05); }
+
+        .ad-banner-top { max-width: 970px; min-height: 90px; margin: 1.5rem auto; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+
+        .main-container { max-width: 1440px; margin: 0 auto 4rem auto; padding: 0 5%; display: grid; grid-template-columns: 7.2fr 2.8fr; gap: 2.5rem; }
+
+        /* HERO CARD */
+        .hero-card { position: relative; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.35); margin-bottom: 2.5rem; display: block; border: 1px solid var(--border); background: #000; }
+        .hero-card img { width: 100%; height: 470px; object-fit: cover; opacity: 0.75; transition: transform 0.6s ease, opacity 0.3s; }
+        .hero-card:hover img { transform: scale(1.04); opacity: 0.65; }
+        .hero-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(3,6,12,0.98) 15%, rgba(3,6,12,0.65) 65%, transparent 100%); padding: 2.5rem; color: #fff; }
+        .badge-source { background: var(--primary); color: #fff; padding: 5px 12px; border-radius: 6px; font-size: 0.72rem; font-weight: 900; text-transform: uppercase; display: inline-block; margin-bottom: 0.8rem; letter-spacing: 0.5px; }
+        .hero-overlay h1 { font-size: 2.2rem; line-height: 1.2; margin-bottom: 0.8rem; font-weight: 900; }
+        .hero-overlay p { color: #cbd5e1; font-size: 1.02rem; margin-bottom: 1.2rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+        .section-title { font-size: 1.35rem; font-weight: 900; margin-bottom: 1.5rem; border-left: 4px solid var(--primary); padding-left: 12px; display: flex; justify-content: space-between; align-items: center; }
+        .feed-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 1.8rem; }
         
-        .nav-links { display: flex; gap: 1.5rem; list-style: none; }
-        .nav-links button { background: none; border: none; color: #cbd5e1; font-weight: 600; font-size: 0.95rem; cursor: pointer; transition: color 0.2s; padding-bottom: 4px; }
-        .nav-links button:hover, .nav-links button.active { color: #fff; border-bottom: 2px solid var(--primary); }
+        /* CARDS DE NOTÍCIAS */
+        .news-card { background: var(--card-bg); border-radius: 14px; overflow: hidden; border: 1px solid var(--border); display: flex; flex-direction: column; transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s; backdrop-filter: blur(10px); }
+        .news-card:hover { transform: translateY(-6px); box-shadow: 0 15px 30px rgba(0,0,0,0.25); border-color: rgba(239, 68, 68, 0.4); }
+        .card-img-wrapper { position: relative; width: 100%; height: 195px; overflow: hidden; background: #1e293b; }
+        .card-img-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .news-card:hover .card-img-wrapper img { transform: scale(1.08); }
+        .card-tag { position: absolute; top: 12px; left: 12px; background: rgba(3, 6, 12, 0.85); backdrop-filter: blur(6px); color: #fff; padding: 4px 10px; border-radius: 6px; font-size: 0.68rem; font-weight: 800; text-transform: uppercase; border: 1px solid rgba(255,255,255,0.15); }
+        .audio-btn { position: absolute; bottom: 10px; right: 10px; background: rgba(239, 68, 68, 0.9); color: #fff; border: none; padding: 5px 10px; border-radius: 20px; font-size: 0.72rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+        .audio-btn:hover { background: #dc2626; transform: scale(1.05); }
 
-        .cta-btn { background: var(--primary); color: #fff; border: none; padding: 0.6rem 1.4rem; border-radius: 6px; font-weight: 700; cursor: pointer; transition: 0.3s; text-decoration: none; font-size: 0.9rem; display: inline-block; text-align: center; }
-        .cta-btn:hover { background: #dc2626; transform: scale(1.03); }
-
-        .ad-banner-top { max-width: 970px; min-height: 90px; margin: 1.8rem auto; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
-
-        .main-container { max-width: 1400px; margin: 0 auto 4rem auto; padding: 0 5%; display: grid; grid-template-columns: 7fr 3fr; gap: 2.5rem; }
-
-        .hero-card { position: relative; border-radius: 14px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1); margin-bottom: 2.5rem; display: block; text-decoration: none; background: #000; }
-        .hero-card img { width: 100%; height: 460px; object-fit: cover; opacity: 0.85; transition: transform 0.5s ease, opacity 0.3s; }
-        .hero-card:hover img { transform: scale(1.03); opacity: 0.7; }
-        .hero-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.95) 10%, rgba(0,0,0,0.5) 60%, transparent 100%); padding: 2.5rem; color: #fff; }
-        .badge-source { background: var(--primary); color: #fff; padding: 4px 12px; border-radius: 4px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; display: inline-block; margin-bottom: 0.8rem; }
-        .hero-overlay h1 { font-size: 2.2rem; line-height: 1.25; margin-bottom: 0.8rem; font-weight: 800; }
-        .hero-overlay p { color: #e2e8f0; font-size: 1.05rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-
-        .section-title { font-size: 1.4rem; font-weight: 800; margin-bottom: 1.5rem; border-left: 5px solid var(--primary); padding-left: 12px; color: var(--dark); display: flex; justify-content: space-between; align-items: center; }
-        .feed-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.8rem; }
+        .card-body { padding: 1.4rem; display: flex; flex-direction: column; flex-grow: 1; }
+        .card-meta { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.6rem; display: flex; justify-content: space-between; font-weight: 600; }
+        .card-title { font-size: 1.12rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.75rem; line-height: 1.35; }
+        .card-desc { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.3rem; flex-grow: 1; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
         
-        .news-card { background: var(--card-bg); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.04); border: 1px solid var(--border); display: flex; flex-direction: column; transition: transform 0.25s ease, box-shadow 0.25s ease; }
-        .news-card:hover { transform: translateY(-6px); box-shadow: 0 12px 24px rgba(0,0,0,0.1); }
-        .card-img-wrapper { position: relative; width: 100%; height: 200px; overflow: hidden; background: #e5e7eb; }
-        .card-img-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
-        .news-card:hover .card-img-wrapper img { transform: scale(1.06); }
-        .card-tag { position: absolute; top: 12px; left: 12px; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(4px); color: #fff; padding: 4px 10px; border-radius: 6px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; }
-        .card-body { padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; }
-        .card-meta { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0.6rem; display: flex; justify-content: space-between; font-weight: 600; }
-        .card-title { font-size: 1.15rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.8rem; line-height: 1.35; }
-        .card-desc { font-size: 0.92rem; color: var(--text-muted); margin-bottom: 1.4rem; flex-grow: 1; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-        .read-btn { display: inline-flex; align-items: center; justify-content: center; background: #f1f5f9; color: var(--dark); font-weight: 700; font-size: 0.88rem; padding: 0.75rem 1rem; border-radius: 8px; text-decoration: none; transition: 0.2s; margin-top: auto; }
-        .read-btn:hover { background: var(--primary); color: #fff; }
+        .card-footer-btns { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-top: auto; }
+        .btn-outline { background: rgba(255,255,255,0.04); color: var(--text-main); border: 1px solid var(--border); padding: 0.65rem; border-radius: 8px; font-weight: 700; font-size: 0.8rem; cursor: pointer; text-align: center; text-decoration: none; transition: 0.2s; }
+        .btn-outline:hover { border-color: var(--primary); color: var(--primary); }
+        .read-btn { background: var(--primary); color: #fff; font-weight: 700; font-size: 0.8rem; padding: 0.65rem; border-radius: 8px; text-decoration: none; text-align: center; transition: 0.2s; }
+        .read-btn:hover { background: #dc2626; }
 
-        .native-ad-card { background: linear-gradient(145deg, #ffffff, #fff5f5); border: 2px solid #fecaca; border-radius: 12px; padding: 1.8rem; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; box-shadow: 0 4px 15px rgba(239, 68, 68, 0.08); }
-        .native-ad-card .ad-badge { background: #fee2e2; color: #b91c1c; font-size: 0.7rem; font-weight: 800; padding: 3px 10px; border-radius: 20px; text-transform: uppercase; margin-bottom: 1rem; }
-        .native-ad-card h3 { font-size: 1.25rem; color: var(--dark); margin-bottom: 0.8rem; }
-        .native-ad-card p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+        /* NATIVE AD CARD */
+        .native-ad-card { background: linear-gradient(145deg, rgba(239,68,68,0.12), rgba(15,23,42,0.9)); border: 2px solid rgba(239, 68, 68, 0.5); border-radius: 14px; padding: 1.8rem; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; position: relative; }
+        .native-ad-card .ad-badge { background: var(--primary); color: #fff; font-size: 0.68rem; font-weight: 900; padding: 3px 10px; border-radius: 20px; text-transform: uppercase; margin-bottom: 1rem; }
+        .native-ad-card h3 { font-size: 1.22rem; color: var(--text-main); margin-bottom: 0.8rem; font-weight: 900; }
+        .native-ad-card p { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.4rem; }
 
+        /* SIDEBAR */
         .sidebar { display: flex; flex-direction: column; gap: 2rem; }
-        .widget { background: var(--card-bg); border-radius: 12px; padding: 1.6rem; border: 1px solid var(--border); box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
-        .widget-title { font-size: 1.1rem; font-weight: 800; margin-bottom: 1.2rem; padding-bottom: 0.6rem; border-bottom: 2px solid var(--primary); display: flex; align-items: center; justify-content: space-between; }
+        .widget { background: var(--card-bg); border-radius: 14px; padding: 1.5rem; border: 1px solid var(--border); }
+        .widget-title { font-size: 1.05rem; font-weight: 900; margin-bottom: 1.2rem; padding-bottom: 0.6rem; border-bottom: 2px solid var(--primary); display: flex; align-items: center; justify-content: space-between; }
         
         .trending-list { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
-        .trending-item { display: flex; gap: 1rem; align-items: flex-start; text-decoration: none; color: inherit; }
-        .trending-num { font-size: 1.6rem; font-weight: 900; color: #cbd5e1; line-height: 1; }
+        .trending-item { display: flex; gap: 0.9rem; align-items: flex-start; text-decoration: none; color: inherit; cursor: pointer; }
+        .trending-num { font-size: 1.4rem; font-weight: 900; color: var(--primary); opacity: 0.8; line-height: 1; font-family: 'JetBrains Mono', monospace; }
         .trending-item:hover .trending-text { color: var(--primary); }
-        .trending-text { font-size: 0.92rem; font-weight: 700; line-height: 1.35; transition: 0.2s; }
+        .trending-text { font-size: 0.88rem; font-weight: 700; line-height: 1.35; }
 
-        .newsletter-box { background: var(--dark); color: #fff; border-radius: 12px; padding: 1.8rem; text-align: center; }
-        .newsletter-box h3 { font-size: 1.25rem; margin-bottom: 0.6rem; }
-        .newsletter-box p { font-size: 0.88rem; color: #94a3b8; margin-bottom: 1.2rem; }
-        .newsletter-box input { width: 100%; padding: 0.8rem; border-radius: 6px; border: none; margin-bottom: 0.8rem; font-size: 0.9rem; }
-        .newsletter-box button { width: 100%; padding: 0.85rem; background: var(--primary); color: #fff; border: none; border-radius: 6px; font-weight: 800; cursor: pointer; transition: 0.2s; }
-        .newsletter-box button:hover { background: #dc2626; }
+        .newsletter-box { background: linear-gradient(135deg, #111827, #03060c); color: #fff; border-radius: 14px; padding: 1.8rem; text-align: center; border: 1px solid rgba(239, 68, 68, 0.3); }
+        .newsletter-box h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+        .newsletter-box p { font-size: 0.84rem; color: #94a3b8; margin-bottom: 1.2rem; }
+        .newsletter-box input { width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.05); color: #fff; margin-bottom: 0.8rem; font-size: 0.88rem; }
+        .newsletter-box button { width: 100%; padding: 0.85rem; background: var(--primary); color: #fff; border: none; border-radius: 8px; font-weight: 800; cursor: pointer; }
 
         .sticky-ad-container { position: sticky; top: 90px; }
         .ad-sidebar-box { width: 100%; min-height: 280px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
 
-        footer { background: var(--dark); color: #94a3b8; text-align: center; padding: 3rem 5%; font-size: 0.9rem; border-top: 4px solid var(--primary); }
+        /* MODAL DE LEITURA RÁPIDA */
+        #reader-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(3, 6, 12, 0.88); z-index: 9999; justify-content: center; align-items: center; backdrop-filter: blur(8px); padding: 1rem; }
+        .reader-box { background: var(--bg-color); border: 1px solid var(--border); width: 100%; max-width: 680px; border-radius: 16px; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,0.6); animation: popIn 0.3s ease; max-height: 90vh; display: flex; flex-direction: column; }
+        .reader-img { width: 100%; height: 240px; object-fit: cover; }
+        .reader-body { padding: 2rem; overflow-y: auto; }
+        .reader-ai-box { background: rgba(59, 130, 246, 0.1); border-left: 4px solid var(--accent); padding: 1rem; border-radius: 6px; margin: 1.2rem 0; font-size: 0.92rem; }
+        .reader-promo { background: rgba(239, 68, 68, 0.1); border: 1px dashed var(--primary); padding: 1rem; border-radius: 8px; text-align: center; margin-top: 1.5rem; }
 
-        /* ESTILO DO MODAL ANTI-ADBLOCK (MANGÁ) */
-        #adblock-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.9); z-index: 10000; justify-content: center; align-items: center; backdrop-filter: blur(6px); }
-        .adblock-content { background: #fff; width: 90%; max-width: 420px; border-radius: 20px; padding: 2.5rem 2rem; text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,0.3); animation: popIn 0.5s ease-out; }
-        @keyframes popIn { 0% { transform: scale(0.8); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
-        .adblock-img { width: 160px; height: 160px; object-fit: cover; border-radius: 50%; margin: 0 auto 1.2rem auto; border: 4px solid #fecaca; padding: 4px; box-shadow: 0 4px 15px rgba(239,68,68,0.2); }
-        .adblock-title { font-size: 1.4rem; font-weight: 800; color: var(--dark); margin-bottom: 0.8rem; }
-        .adblock-text { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.8rem; line-height: 1.6; }
-        .adblock-btn { display: inline-block; background: var(--primary); color: #fff; padding: 0.9rem 2rem; border-radius: 8px; font-weight: 800; text-decoration: none; transition: 0.3s; width: 100%; border: none; cursor: pointer; font-size: 1rem; }
-        .adblock-btn:hover { background: #dc2626; transform: translateY(-3px); box-shadow: 0 8px 15px rgba(239,68,68,0.3); }
-        .adblock-close { display: block; margin-top: 1.2rem; font-size: 0.8rem; color: #94a3b8; text-decoration: underline; cursor: pointer; background: none; border: none; width: 100%; }
-        .adblock-close:hover { color: var(--dark); }
+        /* MODAL ANTI-ADBLOCK PROFISSIONAL (SEM GIFS QUEBRADOS) */
+        #adblock-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(3, 6, 12, 0.92); z-index: 10000; justify-content: center; align-items: center; backdrop-filter: blur(6px); }
+        .adblock-content { background: var(--card-bg); color: var(--text-main); border: 1px solid rgba(239,68,68,0.4); width: 90%; max-width: 420px; border-radius: 20px; padding: 2.5rem 1.8rem; text-align: center; box-shadow: 0 25px 50px rgba(0,0,0,0.5); }
+        @keyframes popIn { 0% { transform: scale(0.9); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+        
+        /* ÍCONE SVG DE ALERTA MODERNO E ROBUSTO */
+        .adblock-icon-wrapper { width: 80px; height: 80px; background: rgba(239, 68, 68, 0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.2rem auto; color: var(--primary); }
+        
+        .adblock-btn { background: var(--primary); color: #fff; padding: 0.85rem; border-radius: 8px; font-weight: 800; width: 100%; border: none; cursor: pointer; margin-top: 1.2rem; transition: 0.2s; }
+        .adblock-btn:hover { background: #dc2626; }
+        .adblock-close { margin-top: 1rem; font-size: 0.8rem; color: var(--text-muted); text-decoration: underline; cursor: pointer; background: none; border: none; width: 100%; }
+
+        footer { background: var(--dark-bar); color: #64748b; text-align: center; padding: 3rem 5%; font-size: 0.85rem; border-top: 1px solid var(--border); }
 
         @media (max-width: 992px) {
             .main-container { grid-template-columns: 1fr; }
-            .nav-links { display: none; }
+            .nav-links { width: 100%; overflow-x: auto; justify-content: flex-start; }
             .hero-card img { height: 320px; }
-            .hero-overlay h1 { font-size: 1.6rem; }
+            .hero-overlay h1 { font-size: 1.5rem; }
         }
     </style>
 </head>
@@ -118,35 +175,86 @@
     <!-- HONEYPOT DO ADBLOCK -->
     <div id="ad-honeypot" class="ad-banner adsbox doubleclick sponsor" style="position:absolute; top:-999px; left:-999px; width:10px; height:10px;"></div>
 
-    <!-- MODAL DA MENINA TRISTE ANTI-ADBLOCK -->
+    <!-- MODAL ANTI-ADBLOCK MODAL (SVG ROBUSTO) -->
     <div id="adblock-modal">
         <div class="adblock-content">
-            <img src="https://media.giphy.com/media/L95W4wv8nnb9K/giphy.gif" alt="Menina triste" class="adblock-img">
-            <h3 class="adblock-title">Poxa... Você usa AdBlock? 🥺</h3>
-            <p class="adblock-text">O <strong>TechNews.PRO</strong> é 100% gratuito! São os anúncios que mantêm nossos servidores e a Inteligência Artificial funcionando. Por favor, desative o bloqueador para nos apoiar.</p>
+            <div class="adblock-icon-wrapper">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>
+            </div>
+            <h3 style="font-size:1.35rem; font-weight:900; margin-bottom:0.6rem;">Bloqueador de Anúncios Detectado</h3>
+            <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.5;">O <strong>TechNews.PRO</strong> é mantido por patrocínios e anúncios para continuar 100% gratuito. Por favor, apoie nosso trabalho desativando o AdBlock.</p>
             <button class="adblock-btn" onclick="location.reload()">Já desativei! (Atualizar página)</button>
-            <button class="adblock-close" onclick="fecharAdBlock()">Vou desativar depois (Fechar)</button>
+            <button class="adblock-close" onclick="fecharAdBlock()">Continuar mesmo assim (Fechar)</button>
         </div>
     </div>
 
-    <div class="breaking-ticker">
-        <span class="breaking-badge">IA Ativa</span>
-        <span>🚀 Portal Automatizado • Conteúdo reescrito por IA • Atualizado em: 25/10/2026 às 16:22</span>
+    <!-- MODAL DE LEITURA RÁPIDA -->
+    <div id="reader-modal" onclick="fecharReader(event)">
+        <div class="reader-box" onclick="event.stopPropagation()">
+            <img id="r-img" src="" class="reader-img" alt="Capa">
+            <div class="reader-body">
+                <span id="r-source" class="badge-source">Fonte</span>
+                <h2 id="r-title" style="margin-bottom: 1rem; line-height: 1.3;">Título</h2>
+                <div class="reader-ai-box">
+                    <strong>🤖 Síntese Executiva IA:</strong>
+                    <p id="r-desc" style="margin-top: 6px;"></p>
+                </div>
+                <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:1.2rem;">
+                    <a id="r-url" href="#" target="_blank" rel="noopener noreferrer" class="cta-btn" style="flex:1; justify-content:center;">Ler Matéria Completa na Fonte &rarr;</a>
+                    <button onclick="fecharReader()" class="btn-outline" style="padding:0.6rem 1.2rem;">Fechar</button>
+                </div>
+                <div class="reader-promo">
+                    <p style="font-size:0.82rem; margin-bottom:8px;">🔥 <strong>Recomendado para você:</strong> Domine Inteligência Artificial e multiplique sua produtividade.</p>
+                    <a href="https://pay.kiwify.com.br/TO0iLa6" target="_blank" style="color:var(--primary); font-weight:800; font-size:0.85rem;">Acessar Método Oficial com Desconto &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BARRA DE MERCADO E COTAÇÕES AO VIVO -->
+    <div class="market-ticker">
+        <div class="market-items">
+            <span><span class="live-dot"></span> <strong>TERMINAL AO VIVO</strong></span>
+            <span class="market-item">💵 Dólar Comercial • 💶 Euro • ₿ Bitcoin em monitoramento</span>
+        </div>
+        <div>
+            <span>⚡ Sincronizado: 25/10/2026 às 16:37</span>
+        </div>
     </div>
 
     <header>
         <div class="nav-container">
-            <a class="logo" onclick="filtrarCategoria('todos', event)">TechNews<span>.PRO</span></a>
+            <a class="logo" onclick="filtrarCategoria('todos', event)">
+                TechNews<span>.PRO</span>
+                <span class="logo-badge">IA v3.1</span>
+            </a>
             <ul class="nav-links">
-                <li><button onclick="filtrarCategoria('todos', event)" class="active" id="btn-todos">Geral</button></li>
-                <li><button onclick="filtrarCategoria('Tecnologia', event)" id="btn-Tecnologia">Tecnologia</button></li>
-                <li><button onclick="filtrarCategoria('Finanças', event)" id="btn-Finanças">Negócios & Finanças</button></li>
-                <li><button onclick="filtrarCategoria('Ciência', event)" id="btn-Ciência">Ciência & Espaço</button></li>
+                <li><button onclick="filtrarCategoria('todos', event)" class="active">🔥 Tudo</button></li>
+                <li><button onclick="filtrarCategoria('Tecnologia', event)">💻 Tech & IA</button></li>
+                <li><button onclick="filtrarCategoria('Finanças', event)">📈 Mercado & Cripto</button></li>
+                <li><button onclick="filtrarCategoria('Ciência', event)">🚀 Espaço & Ciência</button></li>
             </ul>
-            <!-- SMARTLINK ADSTERRA NO BOTÃO VIP -->
-            <a href="https://asiafilm.org/4/78ed9deb10feac05c15347b414e171ab" target="_blank" rel="noopener noreferrer" class="cta-btn">Assinar VIP</a>
+            <div class="header-actions">
+                <div class="search-box">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="search-input" placeholder="Buscar notícia..." onkeyup="buscarNoticia()">
+                </div>
+                <!-- BOTÃO DE TEMA SOL / LUA -->
+                <button class="theme-btn" id="theme-toggle-btn" onclick="alternarTema()" title="Alternar Modo Escuro / Claro">🌙 Escuro</button>
+                <a href="https://asiafilm.org/4/78ed9deb10feac05c15347b414e171ab" target="_blank" rel="noopener noreferrer" class="cta-btn">💎 Área VIP</a>
+            </div>
         </div>
     </header>
+
+    <!-- RADAR DE TAGS INTERATIVAS -->
+    <div class="tags-bar">
+        <span style="font-size:0.75rem; font-weight:800; color:var(--primary); text-transform:uppercase;">Em Alta:</span>
+        <span class="tag-pill" onclick="filtrarPorPalavra('Inteligência Artificial')">#InteligênciaArtificial</span>
+        <span class="tag-pill" onclick="filtrarPorPalavra('Brasil')">#MercadoBrasil</span>
+        <span class="tag-pill" onclick="filtrarPorPalavra('Python')">#Dev&Código</span>
+        <span class="tag-pill" onclick="filtrarPorPalavra('Satélite')">#Aeroespacial</span>
+        <span class="tag-pill" onclick="filtrarCategoria('todos', event)">🔄 Limpar Filtros</span>
+    </div>
 
     <!-- BANNER TOPO ADSTERRA (728x90) -->
     <div class="ad-banner-top">
@@ -164,203 +272,55 @@
 
     <main class="main-container">
         <div class="content-column">
-            <div id="hero-container">
-                
-    <a href="https://www.bbc.com/portuguese/articles/cm62yvnkdwk7o" target="_blank" rel="noopener noreferrer" class="hero-card">
-        <img src="https://ichef.bbci.co.uk/news/1200/branded_portuguese/9bb2/live/43c807c0-ced3-11f1-8507-45cb00a1c41c.jpg" alt="Destaque" onerror="this.src='https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80'">
-        <div class="hero-overlay">
-            <span class="badge-source">🔥 Destaque • BBC News</span>
-            <h1>Por que duelo entre Lula e Flávio é crucial para a América Latina — e para Trump</h1>
-            <p>Especialistas dizem que resultado do segundo turno da eleição pode trazer consequências para toda a geopolítica, a segurança e o meio ambiente da região.</p>
-        </div>
-    </a>
-    
-            </div>
+            <div id="hero-container"></div>
 
             <h2 class="section-title">
-                <span id="titulo-secao">Últimas Atualizações do Ecossistema</span>
+                <span id="titulo-secao">Radar Global em Tempo Real</span>
+                <span style="font-size:0.75rem; color:var(--text-muted); font-weight:600;">🔊 Clique no ícone de áudio para ouvir</span>
             </h2>
             
-            <div class="feed-grid" id="feed-container">
-                
-        <article class="news-card">
-            <div class="card-img-wrapper">
-                <span class="card-tag">Dev.to Tech</span>
-                <img src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fb76y36034ch2w1fbl9f8.png" alt="Capa" onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80'">
-            </div>
-            <div class="card-body">
-                <div class="card-meta">
-                    <span>📅 Oct 24</span>
-                    <span>⚡ Conteúdo IA</span>
-                </div>
-                <h3 class="card-title">Como parar de rolar o feed à noite no iPhone: 6 ajustes, do mais fácil ao mais firme</h3>
-                <p class="card-desc">Você deita, pega o celular só para responder uma mensagem e, quando olha o relógio, já passou da...</p>
-                <a href="https://dev.to/ayumu_kitabayashi_8e0de96/como-parar-de-rolar-o-feed-a-noite-no-iphone-6-ajustes-do-mais-facil-ao-mais-firme-295j" target="_blank" rel="noopener noreferrer" class="read-btn">Ler Artigo Completo &rarr;</a>
-            </div>
-        </article>
-        
-        <article class="news-card">
-            <div class="card-img-wrapper">
-                <span class="card-tag">Dev.to Tech</span>
-                <img src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F7mizvhzw7ziongg9l7ro.png" alt="Capa" onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80'">
-            </div>
-            <div class="card-body">
-                <div class="card-meta">
-                    <span>📅 Oct 19</span>
-                    <span>⚡ Conteúdo IA</span>
-                </div>
-                <h3 class="card-title">Como reduzir o tempo da Sprint Planning pela metade com estimativas em tempo real</h3>
-                <p class="card-desc">Dicas práticas e decisões de arquitetura em Next.js para transformar reuniões de estimativa arrastadas em alinhamentos técnicos ágeis e eficientes.</p>
-                <a href="https://dev.to/geekecia/como-reduzir-o-tempo-da-sprint-planning-pela-metade-com-estimativas-em-tempo-real-2a6m" target="_blank" rel="noopener noreferrer" class="read-btn">Ler Artigo Completo &rarr;</a>
-            </div>
-        </article>
-        
-            <div class="native-ad-card">
-                <span class="ad-badge">Conteúdo Patrocinado • Recomendação</span>
-                <h3>🚀 Domine Inteligência Artificial e Automação de Negócios</h3>
-                <p>Descubra o método completo para criar sistemas automáticos e alavancar a sua carreira no mercado de tecnologia.</p>
-                <a href="https://pay.kiwify.com.br/TO0iLa6" target="_blank" rel="noopener noreferrer" class="cta-btn" style="width: 100%;">Conhecer Oferta com Desconto &rarr;</a>
-            </div>
-            
-        <article class="news-card">
-            <div class="card-img-wrapper">
-                <span class="card-tag">Metropoles.com</span>
-                <img src="https://i.metroimg.com/hTStqWhAMZ8AR4YuEdJTvTfTKugpK9MTnTpH8siQlBI/rs:fill:1200:800:1/g:no/q:85/f:webp/plain/https://images.metroimg.com/2026/10/gettyimages-2301707383.jpg" alt="Capa" onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80'">
-            </div>
-            <div class="card-body">
-                <div class="card-meta">
-                    <span>📅 2026-10-24</span>
-                    <span>⚡ Conteúdo IA</span>
-                </div>
-                <h3 class="card-title">Colunistas do Metrópoles analisam quem venceu debate da Globo; veja notas</h3>
-                <p class="card-desc">Flávio Bolsonaro e Lula fizeram o último confronto televisivo antes do segundo turno, em uma das disputas mais acirradas da história</p>
-                <a href="https://www.metropoles.com/brasil/flavio-bolsonaro-ou-lula-colunistas-do-metropoles-analisam-quem-venceu-debate-da-globo-veja-notas" target="_blank" rel="noopener noreferrer" class="read-btn">Ler Artigo Completo &rarr;</a>
-            </div>
-        </article>
-        
-        <article class="news-card">
-            <div class="card-img-wrapper">
-                <span class="card-tag">Sapo.pt</span>
-                <img src="https://pplware.sapo.pt/wp-content/uploads/2026/10/voice_studio.webp" alt="Capa" onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80'">
-            </div>
-            <div class="card-body">
-                <div class="card-meta">
-                    <span>📅 2026-10-24</span>
-                    <span>⚡ Conteúdo IA</span>
-                </div>
-                <h3 class="card-title">VoiceStudio: esta alternativa gratuita ao ElevenLabs funciona diretamente no seu PC</h3>
-                <p class="card-desc">O VoiceStudio é uma aplicação open-source para clonar vozes, dobrar vídeos e transformar texto em fala diretamente no computador, sem depender de serviços na nuvem. É uma alternativa gratuita ao ElevenLabs e já ultrapassa as 83 mil estrelas no GitHub. O que f…</p>
-                <a href="https://pplware.sapo.pt/truques-dicas/voicestudio-esta-alternativa-gratuita-ao-elevenlabs-funciona-diretamente-no-seu-pc/" target="_blank" rel="noopener noreferrer" class="read-btn">Ler Artigo Completo &rarr;</a>
-            </div>
-        </article>
-        
-        <article class="news-card">
-            <div class="card-img-wrapper">
-                <span class="card-tag">SpaceTech Global</span>
-                <img src="https://cdn.arstechnica.net/wp-content/uploads/2026/10/centaur.jpg" alt="Capa" onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80'">
-            </div>
-            <div class="card-body">
-                <div class="card-meta">
-                    <span>📅 2026-10-23</span>
-                    <span>⚡ Conteúdo IA</span>
-                </div>
-                <h3 class="card-title">NASA updates lander plans for Moon landings, finally solves long-festering Orion issue</h3>
-                <p class="card-desc">"We have the mandate, we have the resources, and the support from our stakeholders."</p>
-                <a href="https://arstechnica.com/space/2026/10/nasa-updates-lander-plans-for-moon-landings-finally-solves-long-festering-orion-issue/" target="_blank" rel="noopener noreferrer" class="read-btn">Ler Artigo Completo &rarr;</a>
-            </div>
-        </article>
-        
-        <article class="news-card">
-            <div class="card-img-wrapper">
-                <span class="card-tag">Catracalivre.com.br</span>
-                <img src="https://catracalivre.com.br/i/UttXFcVj8dAA2E7w5Y1aZWBNN0pmEoY1ajkipTfEVfQ/rs:fill:1200:630:1/g:sm/q:80/bG9jYWw6Ly8vMjAyNi8xMC9maW5nZXJzLXBhcnRpbmctY2xlYW4taGFpci1yb290LTIwMjYxMDIzMTY1OTE3LWUxNzkyNzg1NzM5NTMwLmpwZw" alt="Capa" onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80'">
-            </div>
-            <div class="card-body">
-                <div class="card-meta">
-                    <span>📅 2026-10-24</span>
-                    <span>⚡ Conteúdo IA</span>
-                </div>
-                <h3 class="card-title">Adeus, caspa: deixar o xampu anticaspa agir de 5 a 10 minutos antes de enxaguar muda o resultado, segundo dermatologistas</h3>
-                <p class="card-desc">Xampu anticaspa precisa ficar alguns minutos no couro cabeludo? Entenda o tempo de ação, os principais ativos e por que seguir a embalagem importa.
-O post Adeus, caspa: deixar o xampu anticaspa agir de 5 a 10 minutos antes de enxaguar muda o resultado, segund…</p>
-                <a href="https://catracalivre.com.br/noticias/adeus-caspa-deixar-o-xampu-anticaspa-agir-de-5-a-10-minutos-antes-de-enxaguar-muda-o-resultado-segundo-dermatologistas/" target="_blank" rel="noopener noreferrer" class="read-btn">Ler Artigo Completo &rarr;</a>
-            </div>
-        </article>
-        
-        <article class="news-card">
-            <div class="card-img-wrapper">
-                <span class="card-tag">SpaceTech Global</span>
-                <img src="https://assets.science.nasa.gov/dynamicimage/assets/science/cds/apod/apod/2026/october/ESA_Rosetta_Philae_CIVA_141007.png" alt="Capa" onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80'">
-            </div>
-            <div class="card-body">
-                <div class="card-meta">
-                    <span>📅 2026-10-24</span>
-                    <span>⚡ Conteúdo IA</span>
-                </div>
-                <h3 class="card-title">APOD: 2026 October 24 – Rosetta’s Selfie</h3>
-                <p class="card-desc">APOD Science APOD APOD: 2026 October 24 –… Today’s APOD Archive Submissions Index Search Calendar RSS Education About Discuss   APOD Astronomy Picture of the Day Discover the cosmos! Each day a different image or photograph of our fascinating universe is featured, along with a brief explanation written by a professional astronomer. Rosetta’s Selfie Explanation: […]</p>
-                <a href="https://science.nasa.gov/image-article/apod-2026-october-24-rosettas-selfie/" target="_blank" rel="noopener noreferrer" class="read-btn">Ler Artigo Completo &rarr;</a>
-            </div>
-        </article>
-        
-        <article class="news-card">
-            <div class="card-img-wrapper">
-                <span class="card-tag">Hardware.com.br</span>
-                <img src="https://www.hardware.com.br/wp-content/uploads/2026/10/servidor-IA-local.jpg" alt="Capa" onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80'">
-            </div>
-            <div class="card-body">
-                <div class="card-meta">
-                    <span>📅 2026-10-24</span>
-                    <span>⚡ Conteúdo IA</span>
-                </div>
-                <h3 class="card-title">Homem monta PC com quatro placas Radeon e 128 GB de VRAM para rodar IA local e alcança 1.192 tokens por segundo</h3>
-                <p class="card-desc">Entusiasta monta PC com quatro Radeon AI PRO R9700 e 128 GB de VRAM para rodar IA local, alcançando 1.192 tokens por segundo.</p>
-                <a href="https://www.hardware.com.br/noticias/pc-quatro-radeon-128-gb-vram-ia-local/" target="_blank" rel="noopener noreferrer" class="read-btn">Ler Artigo Completo &rarr;</a>
-            </div>
-        </article>
-        
-            </div>
+            <div class="feed-grid" id="feed-container"></div>
         </div>
 
         <aside class="sidebar">
             <div class="widget">
                 <div class="widget-title">
-                    <span>🔥 Mais Lidas Hoje</span>
+                    <span>🔥 Mais Lidas no Terminal</span>
                 </div>
                 <ul class="trending-list">
                     
         <li>
-            <a href="https://dev.to/ayumu_kitabayashi_8e0de96/como-parar-de-rolar-o-feed-a-noite-no-iphone-6-ajustes-do-mais-facil-ao-mais-firme-295j" target="_blank" rel="noopener noreferrer" class="trending-item">
+            <a onclick="abrirReader(1)" class="trending-item">
                 <span class="trending-num">01</span>
-                <span class="trending-text">Como parar de rolar o feed à noite no iPhone: 6 ajustes, do mais fácil ao mais firme</span>
+                <span class="trending-text">Apps para bloquear Reels do Instagram no iPhone sem perder as DMs (comparativo 2026)</span>
             </a>
         </li>
         
         <li>
-            <a href="https://dev.to/geekecia/como-reduzir-o-tempo-da-sprint-planning-pela-metade-com-estimativas-em-tempo-real-2a6m" target="_blank" rel="noopener noreferrer" class="trending-item">
+            <a onclick="abrirReader(2)" class="trending-item">
                 <span class="trending-num">02</span>
-                <span class="trending-text">Como reduzir o tempo da Sprint Planning pela metade com estimativas em tempo real</span>
-            </a>
-        </li>
-        
-        <li>
-            <a href="https://www.metropoles.com/brasil/flavio-bolsonaro-ou-lula-colunistas-do-metropoles-analisam-quem-venceu-debate-da-globo-veja-notas" target="_blank" rel="noopener noreferrer" class="trending-item">
-                <span class="trending-num">03</span>
-                <span class="trending-text">Colunistas do Metrópoles analisam quem venceu debate da Globo; veja notas</span>
-            </a>
-        </li>
-        
-        <li>
-            <a href="https://pplware.sapo.pt/truques-dicas/voicestudio-esta-alternativa-gratuita-ao-elevenlabs-funciona-diretamente-no-seu-pc/" target="_blank" rel="noopener noreferrer" class="trending-item">
-                <span class="trending-num">04</span>
-                <span class="trending-text">VoiceStudio: esta alternativa gratuita ao ElevenLabs funciona diretamente no seu PC</span>
-            </a>
-        </li>
-        
-        <li>
-            <a href="https://arstechnica.com/space/2026/10/nasa-updates-lander-plans-for-moon-landings-finally-solves-long-festering-orion-issue/" target="_blank" rel="noopener noreferrer" class="trending-item">
-                <span class="trending-num">05</span>
                 <span class="trending-text">NASA updates lander plans for Moon landings, finally solves long-festering Orion issue</span>
+            </a>
+        </li>
+        
+        <li>
+            <a onclick="abrirReader(3)" class="trending-item">
+                <span class="trending-num">03</span>
+                <span class="trending-text">APOD: 2026 October 25 – Dark Matter in a Simulated Universe</span>
+            </a>
+        </li>
+        
+        <li>
+            <a onclick="abrirReader(4)" class="trending-item">
+                <span class="trending-num">04</span>
+                <span class="trending-text">3 cortes que dão mais volume ao cabelo fino quase sem estilização</span>
+            </a>
+        </li>
+        
+        <li>
+            <a onclick="abrirReader(5)" class="trending-item">
+                <span class="trending-num">05</span>
+                <span class="trending-text">APOD: 2026 October 24 – Rosetta’s Selfie</span>
             </a>
         </li>
         
@@ -368,26 +328,26 @@ O post Adeus, caspa: deixar o xampu anticaspa agir de 5 a 10 minutos antes de en
             </div>
 
             <!-- SMARTLINK DE TEXTO DESTACADO NA LATERAL -->
-            <div class="widget" style="background: linear-gradient(135deg, #1e293b, #0f172a); color: #fff; text-align: center;">
-                <h3 style="color: #fff; margin-bottom: 0.6rem; font-size: 1.1rem;">⚡ Oferta Recomendada</h3>
-                <p style="font-size: 0.85rem; color: #cbd5e1; margin-bottom: 1rem;">Acesse agora as principais ferramentas e oportunidades exclusivas da web.</p>
-                <a href="https://asiafilm.org/4/78ed9deb10feac05c15347b414e171ab" target="_blank" rel="noopener noreferrer" class="cta-btn" style="width: 100%;">Acessar Conteúdo Exclusivo &rarr;</a>
+            <div class="widget" style="background: linear-gradient(135deg, rgba(239,68,68,0.15), rgba(15,23,42,0.95)); border-color: rgba(239,68,68,0.4); text-align: center;">
+                <h3 style="margin-bottom: 0.5rem; font-size: 1.05rem;">⚡ Ferramenta Secreta do Dia</h3>
+                <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1rem;">Desbloqueie recursos exclusivos e oportunidades selecionadas pela nossa rede.</p>
+                <a href="https://asiafilm.org/4/78ed9deb10feac05c15347b414e171ab" target="_blank" rel="noopener noreferrer" class="cta-btn" style="width: 100%; justify-content: center;">Acessar Agora &rarr;</a>
             </div>
 
             <!-- NEWSLETTER REAL CONECTADA AO SYSTEME.IO -->
             <div class="newsletter-box" id="newsletter">
-                <h3>💰 Newsletter Lucrativa</h3>
-                <p>Receba análises exclusivas de tecnologia e IA todas as manhãs.</p>
+                <h3>💰 Briefing Matinal VIP</h3>
+                <p>Receba os insights de IA e Negócios antes do mercado abrir.</p>
                 <form action="https://devanildobeeny146.systeme.io/3ed9605c" method="GET" target="_blank">
-                    <input type="email" name="email" placeholder="Digite seu melhor e-mail..." required>
-                    <button type="submit">Quero Receber Grátis</button>
+                    <input type="email" name="email" placeholder="Digite seu e-mail principal..." required>
+                    <button type="submit">Liberar Acesso Gratuito &rarr;</button>
                 </form>
             </div>
 
             <!-- BANNER LATERAL ADSTERRA (300x250) -->
             <div class="sticky-ad-container">
                 <div class="ad-sidebar-box">
-                    <span style="font-size: 0.7rem; color: #94a3b8; display: block; margin-bottom: 5px;">Publicidade (300x250)</span>
+                    <span style="font-size: 0.7rem; color: var(--text-muted); display: block; margin-bottom: 5px;">Patrocinado</span>
                     <script type="text/javascript">
                         atOptions = {
                             'key' : '8169727725318cd706b493da46602d6f',
@@ -404,78 +364,107 @@ O post Adeus, caspa: deixar o xampu anticaspa agir de 5 a 10 minutos antes de en
     </main>
 
     <footer>
-        <p><strong>TechNews.PRO</strong> &copy; 2026 — Portal Automatizado via Python e Inteligência Artificial.</p>
-        <p style="margin-top: 8px; font-size: 0.8rem;">Fontes Integradas: NewsAPI • IBGE Notícias • Spaceflight News • Dev.to</p>
+        <p><strong>TechNews.PRO</strong> &copy; 2026 — Terminal Automatizado via Python, Multi-API & OpenAI.</p>
+        <p style="margin-top: 8px; font-size: 0.78rem;">Dados de Mercado: AwesomeAPI • Notícias: NewsAPI, IBGE, Spaceflight, Dev.to</p>
     </footer>
 
     <script>
+        const todasNoticias = [{"title": "Jogadores conseguem rodar games da Steam diretamente no PS5, incluindo Cyberpunk 2077, sem precisar de streaming", "desc": "Homem consegue rodar jogos da Steam diretamente no PS5, sem PC ou streaming. Projeto Playden permite executar até Cyberpunk 2077 no console.", "img": "https://www.hardware.com.br/wp-content/uploads/2026/10/steam.jpg", "url": "https://www.hardware.com.br/noticias/homem-roda-jogos-steam-ps5-sem-pc/", "source": "Hardware.com.br", "date": "2026-10-24", "categoria": "Tecnologia"}, {"title": "Apps para bloquear Reels do Instagram no iPhone sem perder as DMs (comparativo 2026)", "desc": "O app oficial do Instagram não deixa tirar os Reels. Contas de adulto não têm nenhum ajuste para...", "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fyk2y0zovegop5i1tmzm4.png", "url": "https://dev.to/ayumu_kitabayashi_8e0de96/apps-para-bloquear-reels-do-instagram-no-iphone-sem-perder-as-dms-comparativo-2026-33ko", "source": "Dev.to Brasil", "date": "Oct 24", "categoria": "Tecnologia"}, {"title": "NASA updates lander plans for Moon landings, finally solves long-festering Orion issue", "desc": "\"We have the mandate, we have the resources, and the support from our stakeholders.\"", "img": "https://cdn.arstechnica.net/wp-content/uploads/2026/10/centaur.jpg", "url": "https://arstechnica.com/space/2026/10/nasa-updates-lander-plans-for-moon-landings-finally-solves-long-festering-orion-issue/", "source": "SpaceTech", "date": "2026-10-23", "categoria": "Ciência"}, {"title": "APOD: 2026 October 25 – Dark Matter in a Simulated Universe", "desc": "APOD Science APOD APOD: 2026 October 25 – Dark… Today’s APOD Archive Submissions Index Search Calendar RSS Education About Discuss   APOD Astronomy Picture of the Day Discover the cosmos! Each day a different image or photograph of our fascinating universe is featured, along with a brief explanation written by a professional astronomer. Dark Matter […]", "img": "https://assets.science.nasa.gov/content/dam/science/cds/apod/apod/2021/october/DarkMatter_KipacAmnh_1200.jpg", "url": "https://science.nasa.gov/image-article/apod-2026-october-25-dark-matter-in-a-simulated-universe/", "source": "SpaceTech", "date": "2026-10-25", "categoria": "Ciência"}, {"title": "3 cortes que dão mais volume ao cabelo fino quase sem estilização", "desc": "Cabelo fino pode parecer mais cheio com o corte certo. Chanel, camadas longas e versões curtas criam movimento sem exigir muita finalização diária.\nO post 3 cortes que dão mais volume ao cabelo fino quase sem estilização apareceu primeiro em Catraca Livre.", "img": "https://catracalivre.com.br/i/qvVfLiwnnWn9G9XcB_wHVGabPus6Y046F0pW8VQ6Z1k/rs:fill:1200:630:1/g:sm/q:80/bG9jYWw6Ly8vMjAyNi8xMC8zLWNvcnRlcy1xdWUtZGFvLW1haXMtdm9sdW1lLWFvLWNhYmVsby1maW5vLXF1YXNlLXNlbS1lLmpwZw", "url": "https://catracalivre.com.br/saude-bem-estar/3-cortes-que-dao-mais-volume-ao-cabelo-fino-quase-sem-estilizacao/", "source": "Catracalivre.com.br", "date": "2026-10-24", "categoria": "Finanças"}, {"title": "APOD: 2026 October 24 – Rosetta’s Selfie", "desc": "APOD Science APOD APOD: 2026 October 24 –… Today’s APOD Archive Submissions Index Search Calendar RSS Education About Discuss   APOD Astronomy Picture of the Day Discover the cosmos! Each day a different image or photograph of our fascinating universe is featured, along with a brief explanation written by a professional astronomer. Rosetta’s Selfie Explanation: […]", "img": "https://assets.science.nasa.gov/dynamicimage/assets/science/cds/apod/apod/2026/october/ESA_Rosetta_Philae_CIVA_141007.png", "url": "https://science.nasa.gov/image-article/apod-2026-october-24-rosettas-selfie/", "source": "SpaceTech", "date": "2026-10-24", "categoria": "Ciência"}, {"title": "A geladeira pode estar funcionando normalmente e ainda assim conservar mal os alimentos: o erro de organização que dificulta a circulação do ar frio", "desc": "O excesso de itens na geladeira bloqueia o ar frio, prejudica a conservação dos alimentos e eleva o consumo diário de energia elétrica.\nO post A geladeira pode estar funcionando normalmente e ainda assim conservar mal os alimentos: o erro de organização que d…", "img": "https://catracalivre.com.br/i/3ZffdS4pVmUy3Ok1K1x59HvBipiFAG7EcPjA-hdoDq0/rs:fill:1200:630:1/g:sm/q:80/bG9jYWw6Ly8vMjAyNi8xMC9wZXJzb24tb3JnYW5pemluZy1mb29kLWluLXJlZnJpZy0yMDI2MTAyNDAyMzI0OC5qcGc", "url": "https://catracalivre.com.br/noticias/a-geladeira-pode-estar-funcionando-normalmente-e-ainda-assim-conservar-mal-os-alimentos-o-erro-de-organizacao-que-dificulta-a-circulacao-do-ar-frio/", "source": "Catracalivre.com.br", "date": "2026-10-24", "categoria": "Finanças"}, {"title": "Colunistas do Metrópoles analisam quem venceu debate da Globo; veja notas", "desc": "Flávio Bolsonaro e Lula fizeram o último confronto televisivo antes do segundo turno, em uma das disputas mais acirradas da história", "img": "https://i.metroimg.com/hTStqWhAMZ8AR4YuEdJTvTfTKugpK9MTnTpH8siQlBI/rs:fill:1200:800:1/g:no/q:85/f:webp/plain/https://images.metroimg.com/2026/10/gettyimages-2301707383.jpg", "url": "https://www.metropoles.com/brasil/flavio-bolsonaro-ou-lula-colunistas-do-metropoles-analisam-quem-venceu-debate-da-globo-veja-notas", "source": "Metropoles.com", "date": "2026-10-24", "categoria": "Tecnologia"}, {"title": "Como reduzir o tempo da Sprint Planning pela metade com estimativas em tempo real", "desc": "Dicas práticas e decisões de arquitetura em Next.js para transformar reuniões de estimativa arrastadas em alinhamentos técnicos ágeis e eficientes.", "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F7mizvhzw7ziongg9l7ro.png", "url": "https://dev.to/geekecia/como-reduzir-o-tempo-da-sprint-planning-pela-metade-com-estimativas-em-tempo-real-2a6m", "source": "Dev.to Brasil", "date": "Oct 19", "categoria": "Tecnologia"}, {"title": "NASA Artemis Update: SLS Stacking, Sortie Suit, Dual 2028 Paths", "desc": "NASA released its October Artemis Update on Friday, covering the near-term status of the Space…\r\nThe post NASA Artemis Update: SLS Stacking, Sortie Suit, Dual 2028 Paths appeared first on NASASpaceFlight.com.", "img": "https://www.nasaspaceflight.com/wp-content/uploads/2026/10/NSF-2026-10-24-03-48-44-239.jpg", "url": "https://www.nasaspaceflight.com/2026/10/nasa-artemis-sls-sortie-suit-dual-paths/", "source": "SpaceTech", "date": "2026-10-24", "categoria": "Ciência"}, {"title": "Como parar de rolar o feed à noite no iPhone: 6 ajustes, do mais fácil ao mais firme", "desc": "Você deita, pega o celular só para responder uma mensagem e, quando olha o relógio, já passou da...", "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fb76y36034ch2w1fbl9f8.png", "url": "https://dev.to/ayumu_kitabayashi_8e0de96/como-parar-de-rolar-o-feed-a-noite-no-iphone-6-ajustes-do-mais-facil-ao-mais-firme-295j", "source": "Dev.to Brasil", "date": "Oct 24", "categoria": "Tecnologia"}, {"title": "Adeus, caspa: deixar o xampu anticaspa agir de 5 a 10 minutos antes de enxaguar muda o resultado, segundo dermatologistas", "desc": "Xampu anticaspa precisa ficar alguns minutos no couro cabeludo? Entenda o tempo de ação, os principais ativos e por que seguir a embalagem importa.\nO post Adeus, caspa: deixar o xampu anticaspa agir de 5 a 10 minutos antes de enxaguar muda o resultado, segund…", "img": "https://catracalivre.com.br/i/UttXFcVj8dAA2E7w5Y1aZWBNN0pmEoY1ajkipTfEVfQ/rs:fill:1200:630:1/g:sm/q:80/bG9jYWw6Ly8vMjAyNi8xMC9maW5nZXJzLXBhcnRpbmctY2xlYW4taGFpci1yb290LTIwMjYxMDIzMTY1OTE3LWUxNzkyNzg1NzM5NTMwLmpwZw", "url": "https://catracalivre.com.br/noticias/adeus-caspa-deixar-o-xampu-anticaspa-agir-de-5-a-10-minutos-antes-de-enxaguar-muda-o-resultado-segundo-dermatologistas/", "source": "Catracalivre.com.br", "date": "2026-10-24", "categoria": "Tecnologia"}, {"title": "As notícias das 17h", "desc": "Vários políticos marcam presença nas manifestações em Lisboa. Ainda, em França, mais de 130 pessoas foram detidas nos protestos.", "img": "https://bordalo.observador.pt/v2/rs:fill:770:403/c:770:433:nowe:0:0/q:70/f:webp/plain/https://s3.observador.pt/wp-content/uploads/2026/06/15153459/770-podcast-noticiario.png", "url": "https://observador.pt/programas/noticiario/as-noticias-das-17h-2317/", "source": "Observador.pt", "date": "2026-10-24", "categoria": "Tecnologia"}, {"title": "Planning Poker em chamadas do Teams, Meet ou Slack: como estimar sem atrito", "desc": "Como simplificar a dinâmica de estimativa de histórias de usuário em reuniões remotas sem exigir cadastro ou licenças por assento.", "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fxuqrfrmebqsh5bm6f60l.png", "url": "https://dev.to/geekecia/planning-poker-em-chamadas-do-teams-meet-ou-slack-como-estimar-sem-atrito-180d", "source": "Dev.to Brasil", "date": "Oct 23", "categoria": "Tecnologia"}, {"title": "Dolby Atmos no carro: por que o som virou o novo luxo dos automóveis premium", "desc": "Com mais de 150 modelos de 40 marcas já equipados, o áudio imersivo vira arma da indústria para diferenciar carros em um mercado que cresce 14% no Brasil", "img": "https://p2.trrsf.com/image/fget/cf/1200/630/middle/images.terra.com/2026/10/24/1864527589-13662000.jpeg", "url": "https://www.xataka.com.br/mobilidade/dolby-atmos-no-carro-que-som-virou-novo-luxo-dos-automoveis-premium", "source": "Xataka.com.br", "date": "2026-10-24", "categoria": "Tecnologia"}, {"title": "Apps para bloquear o YouTube Shorts no iPhone sem perder os vídeos normais (comparativo 2026)", "desc": "No app do YouTube, não dá para desligar os Shorts de vez se a sua conta é de adulto. O mais perto...", "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F788ka9fqt8fvk0qlkgy2.png", "url": "https://dev.to/ayumu_kitabayashi_8e0de96/apps-para-bloquear-o-youtube-shorts-no-iphone-sem-perder-os-videos-normais-comparativo-2026-4kdc", "source": "Dev.to Brasil", "date": "Oct 24", "categoria": "Tecnologia"}, {"title": "Novo CNPJ Alfanumérico da Receita Federal: Como preparar seus testes e sistemas", "desc": "A transição para o CNPJ Alfanumérico regulamentada pela Receita Federal é uma das mudanças...", "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fc3smwggy9jpa9ypss802.png", "url": "https://dev.to/geekecia/novo-cnpj-alfanumerico-da-receita-federal-como-preparar-seus-testes-e-sistemas-6mm", "source": "Dev.to Brasil", "date": "Oct 22", "categoria": "Tecnologia"}, {"title": "Ferver casca de limão com folhas de louro: por que é indicado e qual sua finalidade", "desc": "Aprenda a ferver casca de limão com folhas de louro e fazer um aromatizador natural que tira o cheiro de fritura e perfuma a casa em minutos.\nO post Ferver casca de limão com folhas de louro: por que é indicado e qual sua finalidade apareceu primeiro em Catra…", "img": "https://catracalivre.com.br/i/ZFznYnc0kmoGpwvd5zHCPXyRBgLI-Is7Gy633lzqA1g/rs:fill:1200:630:1/g:sm/q:80/bG9jYWw6Ly8vMjAyNi8xMC9mZXJ2ZXItY2FzY2EtZGUtbGltYW8tY29tLWZvbGhhcy1kZS1sb3Vyby1wb3ItcXVlLWUtaW5kLmpwZw", "url": "https://catracalivre.com.br/noticias/ferver-casca-de-limao-com-folhas-de-louro-por-que-e-indicado-e-qual-sua-finalidade/", "source": "Catracalivre.com.br", "date": "2026-10-24", "categoria": "Tecnologia"}];
+
+        // Barra de progresso
         window.onscroll = function() {
             var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
             var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            var scrolled = (winScroll / height) * 100;
-            document.getElementById("progress-bar").style.width = scrolled + "%";
+            document.getElementById("progress-bar").style.width = ((winScroll / height) * 100) + "%";
         };
 
-        // DETETOR DE ADBLOCK
-        setTimeout(function() {
-            var honeypot = document.getElementById('ad-honeypot');
-            if (!honeypot || honeypot.offsetHeight === 0 || window.getComputedStyle(honeypot).display === 'none') {
-                document.getElementById('adblock-modal').style.display = 'flex';
-                document.body.style.overflow = 'hidden';
+        // Alternar Tema (Sol / Lua com texto)
+        function alternarTema() {
+            const html = document.documentElement;
+            const btn = document.getElementById('theme-toggle-btn');
+            const atual = html.getAttribute('data-theme');
+            if (atual === 'dark') {
+                html.setAttribute('data-theme', 'light');
+                btn.innerHTML = '☀️ Claro';
+            } else {
+                html.setAttribute('data-theme', 'dark');
+                btn.innerHTML = '🌙 Escuro';
             }
-        }, 1500);
-
-        function fecharAdBlock() {
-            document.getElementById('adblock-modal').style.display = 'none';
-            document.body.style.overflow = 'auto';
         }
 
-        const todasNoticias = [{"title": "Por que duelo entre Lula e Flávio é crucial para a América Latina — e para Trump", "desc": "Especialistas dizem que resultado do segundo turno da eleição pode trazer consequências para toda a geopolítica, a segurança e o meio ambiente da região.", "img": "https://ichef.bbci.co.uk/news/1200/branded_portuguese/9bb2/live/43c807c0-ced3-11f1-8507-45cb00a1c41c.jpg", "url": "https://www.bbc.com/portuguese/articles/cm62yvnkdwk7o", "source": "BBC News", "date": "2026-10-24", "categoria": "Tecnologia"}, {"title": "Como parar de rolar o feed à noite no iPhone: 6 ajustes, do mais fácil ao mais firme", "desc": "Você deita, pega o celular só para responder uma mensagem e, quando olha o relógio, já passou da...", "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fb76y36034ch2w1fbl9f8.png", "url": "https://dev.to/ayumu_kitabayashi_8e0de96/como-parar-de-rolar-o-feed-a-noite-no-iphone-6-ajustes-do-mais-facil-ao-mais-firme-295j", "source": "Dev.to Tech", "date": "Oct 24", "categoria": "Tecnologia"}, {"title": "Como reduzir o tempo da Sprint Planning pela metade com estimativas em tempo real", "desc": "Dicas práticas e decisões de arquitetura em Next.js para transformar reuniões de estimativa arrastadas em alinhamentos técnicos ágeis e eficientes.", "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F7mizvhzw7ziongg9l7ro.png", "url": "https://dev.to/geekecia/como-reduzir-o-tempo-da-sprint-planning-pela-metade-com-estimativas-em-tempo-real-2a6m", "source": "Dev.to Tech", "date": "Oct 19", "categoria": "Tecnologia"}, {"title": "Colunistas do Metrópoles analisam quem venceu debate da Globo; veja notas", "desc": "Flávio Bolsonaro e Lula fizeram o último confronto televisivo antes do segundo turno, em uma das disputas mais acirradas da história", "img": "https://i.metroimg.com/hTStqWhAMZ8AR4YuEdJTvTfTKugpK9MTnTpH8siQlBI/rs:fill:1200:800:1/g:no/q:85/f:webp/plain/https://images.metroimg.com/2026/10/gettyimages-2301707383.jpg", "url": "https://www.metropoles.com/brasil/flavio-bolsonaro-ou-lula-colunistas-do-metropoles-analisam-quem-venceu-debate-da-globo-veja-notas", "source": "Metropoles.com", "date": "2026-10-24", "categoria": "Tecnologia"}, {"title": "VoiceStudio: esta alternativa gratuita ao ElevenLabs funciona diretamente no seu PC", "desc": "O VoiceStudio é uma aplicação open-source para clonar vozes, dobrar vídeos e transformar texto em fala diretamente no computador, sem depender de serviços na nuvem. É uma alternativa gratuita ao ElevenLabs e já ultrapassa as 83 mil estrelas no GitHub. O que f…", "img": "https://pplware.sapo.pt/wp-content/uploads/2026/10/voice_studio.webp", "url": "https://pplware.sapo.pt/truques-dicas/voicestudio-esta-alternativa-gratuita-ao-elevenlabs-funciona-diretamente-no-seu-pc/", "source": "Sapo.pt", "date": "2026-10-24", "categoria": "Tecnologia"}, {"title": "NASA updates lander plans for Moon landings, finally solves long-festering Orion issue", "desc": "\"We have the mandate, we have the resources, and the support from our stakeholders.\"", "img": "https://cdn.arstechnica.net/wp-content/uploads/2026/10/centaur.jpg", "url": "https://arstechnica.com/space/2026/10/nasa-updates-lander-plans-for-moon-landings-finally-solves-long-festering-orion-issue/", "source": "SpaceTech Global", "date": "2026-10-23", "categoria": "Ciência"}, {"title": "Adeus, caspa: deixar o xampu anticaspa agir de 5 a 10 minutos antes de enxaguar muda o resultado, segundo dermatologistas", "desc": "Xampu anticaspa precisa ficar alguns minutos no couro cabeludo? Entenda o tempo de ação, os principais ativos e por que seguir a embalagem importa.\nO post Adeus, caspa: deixar o xampu anticaspa agir de 5 a 10 minutos antes de enxaguar muda o resultado, segund…", "img": "https://catracalivre.com.br/i/UttXFcVj8dAA2E7w5Y1aZWBNN0pmEoY1ajkipTfEVfQ/rs:fill:1200:630:1/g:sm/q:80/bG9jYWw6Ly8vMjAyNi8xMC9maW5nZXJzLXBhcnRpbmctY2xlYW4taGFpci1yb290LTIwMjYxMDIzMTY1OTE3LWUxNzkyNzg1NzM5NTMwLmpwZw", "url": "https://catracalivre.com.br/noticias/adeus-caspa-deixar-o-xampu-anticaspa-agir-de-5-a-10-minutos-antes-de-enxaguar-muda-o-resultado-segundo-dermatologistas/", "source": "Catracalivre.com.br", "date": "2026-10-24", "categoria": "Tecnologia"}, {"title": "APOD: 2026 October 24 – Rosetta’s Selfie", "desc": "APOD Science APOD APOD: 2026 October 24 –… Today’s APOD Archive Submissions Index Search Calendar RSS Education About Discuss   APOD Astronomy Picture of the Day Discover the cosmos! Each day a different image or photograph of our fascinating universe is featured, along with a brief explanation written by a professional astronomer. Rosetta’s Selfie Explanation: […]", "img": "https://assets.science.nasa.gov/dynamicimage/assets/science/cds/apod/apod/2026/october/ESA_Rosetta_Philae_CIVA_141007.png", "url": "https://science.nasa.gov/image-article/apod-2026-october-24-rosettas-selfie/", "source": "SpaceTech Global", "date": "2026-10-24", "categoria": "Ciência"}, {"title": "Homem monta PC com quatro placas Radeon e 128 GB de VRAM para rodar IA local e alcança 1.192 tokens por segundo", "desc": "Entusiasta monta PC com quatro Radeon AI PRO R9700 e 128 GB de VRAM para rodar IA local, alcançando 1.192 tokens por segundo.", "img": "https://www.hardware.com.br/wp-content/uploads/2026/10/servidor-IA-local.jpg", "url": "https://www.hardware.com.br/noticias/pc-quatro-radeon-128-gb-vram-ia-local/", "source": "Hardware.com.br", "date": "2026-10-24", "categoria": "Tecnologia"}, {"title": "NASA Artemis Update: SLS Stacking, Sortie Suit, Dual 2028 Paths", "desc": "NASA released its October Artemis Update on Friday, covering the near-term status of the Space…\r\nThe post NASA Artemis Update: SLS Stacking, Sortie Suit, Dual 2028 Paths appeared first on NASASpaceFlight.com.", "img": "https://www.nasaspaceflight.com/wp-content/uploads/2026/10/NSF-2026-10-24-03-48-44-239.jpg", "url": "https://www.nasaspaceflight.com/2026/10/nasa-artemis-sls-sortie-suit-dual-paths/", "source": "SpaceTech Global", "date": "2026-10-24", "categoria": "Ciência"}, {"title": "Apps para bloquear Reels do Instagram no iPhone sem perder as DMs (comparativo 2026)", "desc": "O app oficial do Instagram não deixa tirar os Reels. Contas de adulto não têm nenhum ajuste para...", "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fyk2y0zovegop5i1tmzm4.png", "url": "https://dev.to/ayumu_kitabayashi_8e0de96/apps-para-bloquear-reels-do-instagram-no-iphone-sem-perder-as-dms-comparativo-2026-33ko", "source": "Dev.to Tech", "date": "Oct 24", "categoria": "Tecnologia"}, {"title": "Apps para bloquear o YouTube Shorts no iPhone sem perder os vídeos normais (comparativo 2026)", "desc": "No app do YouTube, não dá para desligar os Shorts de vez se a sua conta é de adulto. O mais perto...", "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F788ka9fqt8fvk0qlkgy2.png", "url": "https://dev.to/ayumu_kitabayashi_8e0de96/apps-para-bloquear-o-youtube-shorts-no-iphone-sem-perder-os-videos-normais-comparativo-2026-4kdc", "source": "Dev.to Tech", "date": "Oct 24", "categoria": "Tecnologia"}, {"title": "Novo CNPJ Alfanumérico da Receita Federal: Como preparar seus testes e sistemas", "desc": "A transição para o CNPJ Alfanumérico regulamentada pela Receita Federal é uma das mudanças...", "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fc3smwggy9jpa9ypss802.png", "url": "https://dev.to/geekecia/novo-cnpj-alfanumerico-da-receita-federal-como-preparar-seus-testes-e-sistemas-6mm", "source": "Dev.to Tech", "date": "Oct 22", "categoria": "Tecnologia"}, {"title": "Dolby Atmos no carro: por que o som virou o novo luxo dos automóveis premium", "desc": "Com mais de 150 modelos de 40 marcas já equipados, o áudio imersivo vira arma da indústria para diferenciar carros em um mercado que cresce 14% no Brasil", "img": "https://p2.trrsf.com/image/fget/cf/1200/630/middle/images.terra.com/2026/10/24/1864527589-13662000.jpeg", "url": "https://www.xataka.com.br/mobilidade/dolby-atmos-no-carro-que-som-virou-novo-luxo-dos-automoveis-premium", "source": "Xataka.com.br", "date": "2026-10-24", "categoria": "Tecnologia"}, {"title": "APOD: 2026 October 25 – Dark Matter in a Simulated Universe", "desc": "APOD Science APOD APOD: 2026 October 25 – Dark… Today’s APOD Archive Submissions Index Search Calendar RSS Education About Discuss   APOD Astronomy Picture of the Day Discover the cosmos! Each day a different image or photograph of our fascinating universe is featured, along with a brief explanation written by a professional astronomer. Dark Matter […]", "img": "https://assets.science.nasa.gov/content/dam/science/cds/apod/apod/2021/october/DarkMatter_KipacAmnh_1200.jpg", "url": "https://science.nasa.gov/image-article/apod-2026-october-25-dark-matter-in-a-simulated-universe/", "source": "SpaceTech Global", "date": "2026-10-25", "categoria": "Ciência"}, {"title": "Planning Poker em chamadas do Teams, Meet ou Slack: como estimar sem atrito", "desc": "Como simplificar a dinâmica de estimativa de histórias de usuário em reuniões remotas sem exigir cadastro ou licenças por assento.", "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fxuqrfrmebqsh5bm6f60l.png", "url": "https://dev.to/geekecia/planning-poker-em-chamadas-do-teams-meet-ou-slack-como-estimar-sem-atrito-180d", "source": "Dev.to Tech", "date": "Oct 23", "categoria": "Tecnologia"}, {"title": "A geladeira pode estar funcionando normalmente e ainda assim conservar mal os alimentos: o erro de organização que dificulta a circulação do ar frio", "desc": "O excesso de itens na geladeira bloqueia o ar frio, prejudica a conservação dos alimentos e eleva o consumo diário de energia elétrica.\nO post A geladeira pode estar funcionando normalmente e ainda assim conservar mal os alimentos: o erro de organização que d…", "img": "https://catracalivre.com.br/i/3ZffdS4pVmUy3Ok1K1x59HvBipiFAG7EcPjA-hdoDq0/rs:fill:1200:630:1/g:sm/q:80/bG9jYWw6Ly8vMjAyNi8xMC9wZXJzb24tb3JnYW5pemluZy1mb29kLWluLXJlZnJpZy0yMDI2MTAyNDAyMzI0OC5qcGc", "url": "https://catracalivre.com.br/noticias/a-geladeira-pode-estar-funcionando-normalmente-e-ainda-assim-conservar-mal-os-alimentos-o-erro-de-organizacao-que-dificulta-a-circulacao-do-ar-frio/", "source": "Catracalivre.com.br", "date": "2026-10-24", "categoria": "Finanças"}];
-
-        function filtrarCategoria(categoria, event) {
-            if (event) event.preventDefault();
-            
-            document.querySelectorAll('.nav-links button').forEach(btn => btn.classList.remove('active'));
-            if (event && event.target) {
-                event.target.classList.add('active');
+        // Sintetizador de Voz Nativo (Leitor de Áudio)
+        function falarNoticia(idx, event) {
+            if (event) event.stopPropagation();
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+                const art = todasNoticias[idx];
+                const msg = new SpeechSynthesisUtterance(art.title + ". " + art.desc);
+                msg.lang = 'pt-BR';
+                msg.rate = 1.08;
+                window.speechSynthesis.speak(msg);
+            } else {
+                alert("Seu navegador não suporta leitura por voz.");
             }
+        }
 
-            let filtradas = todasNoticias;
-            if (categoria !== 'todos') {
-                filtradas = todasNoticias.filter(n => n.categoria === categoria);
-                if (filtradas.length === 0) filtradas = todasNoticias; 
-            }
+        // Modal de Leitura Rápida
+        function abrirReader(idx) {
+            const art = todasNoticias[idx];
+            document.getElementById('r-img').src = art.img;
+            document.getElementById('r-source').innerText = art.source + " • " + art.categoria;
+            document.getElementById('r-title').innerText = art.title;
+            document.getElementById('r-desc').innerText = art.desc;
+            document.getElementById('r-url').href = art.url;
+            document.getElementById('reader-modal').style.display = 'flex';
+        }
+        function fecharReader() {
+            document.getElementById('reader-modal').style.display = 'none';
+            if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+        }
 
-            document.getElementById('titulo-secao').innerText = categoria === 'todos' ? 'Últimas Atualizações do Ecossistema' : 'Categoria: ' + categoria;
+        // Renderizador Principal
+        function renderizarLista(lista) {
+            if (!lista || lista.length === 0) lista = todasNoticias;
+            const hero = lista[0];
+            const heroIdx = todasNoticias.indexOf(hero);
 
-            const hero = filtradas[0];
             document.getElementById('hero-container').innerHTML = `
-                <a href="${hero.url}" target="_blank" rel="noopener noreferrer" class="hero-card">
+                <div class="hero-card">
                     <img src="${hero.img}" alt="Destaque" onerror="this.src='https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80'">
                     <div class="hero-overlay">
                         <span class="badge-source">🔥 Destaque • ${hero.source}</span>
                         <h1>${hero.title}</h1>
                         <p>${hero.desc}</p>
+                        <div class="hero-actions">
+                            <button onclick="abrirReader(${heroIdx})" class="cta-btn">⚡ Resumo Expandido</button>
+                            <button onclick="falarNoticia(${heroIdx}, event)" class="btn-outline" style="background:rgba(0,0,0,0.6); color:#fff;">🔊 Ouvir Notícia</button>
+                            <a href="${hero.url}" target="_blank" rel="noopener noreferrer" class="btn-outline" style="background:rgba(255,255,255,0.1); color:#fff;">Fonte Oficial &rarr;</a>
+                        </div>
                     </div>
-                </a>
+                </div>
             `;
 
             let feedHtml = '';
-            filtradas.slice(1, 9).forEach((art, idx) => {
+            lista.slice(1, 10).forEach((art, idx) => {
+                const globalIdx = todasNoticias.indexOf(art);
                 feedHtml += `
                 <article class="news-card">
                     <div class="card-img-wrapper">
                         <span class="card-tag">${art.source}</span>
                         <img src="${art.img}" alt="Capa" onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80'">
+                        <button class="audio-btn" onclick="falarNoticia(${globalIdx}, event)">🔊 Ouvir</button>
                     </div>
                     <div class="card-body">
                         <div class="card-meta">
                             <span>📅 ${art.date}</span>
-                            <span>⚡ Conteúdo IA</span>
+                            <span style="color:var(--primary)">● ${art.categoria}</span>
                         </div>
                         <h3 class="card-title">${art.title}</h3>
                         <p class="card-desc">${art.desc}</p>
-                        <a href="${art.url}" target="_blank" rel="noopener noreferrer" class="read-btn">Ler Artigo Completo &rarr;</a>
+                        <div class="card-footer-btns">
+                            <button onclick="abrirReader(${globalIdx})" class="btn-outline">⚡ Resumo IA</button>
+                            <a href="${art.url}" target="_blank" rel="noopener noreferrer" class="read-btn">Ler Fonte &rarr;</a>
+                        </div>
                     </div>
                 </article>
                 `;
@@ -483,17 +472,54 @@ O post Adeus, caspa: deixar o xampu anticaspa agir de 5 a 10 minutos antes de en
                 if (idx === 1) {
                     feedHtml += `
                     <div class="native-ad-card">
-                        <span class="ad-badge">Conteúdo Patrocinado • Recomendação</span>
-                        <h3>🚀 Domine Inteligência Artificial e Automação de Negócios</h3>
-                        <p>Descubra o método completo para criar sistemas automáticos e alavancar a sua carreira no mercado de tecnologia.</p>
-                        <a href="https://pay.kiwify.com.br/TO0iLa6" target="_blank" rel="noopener noreferrer" class="cta-btn" style="width: 100%;">Conhecer Oferta com Desconto &rarr;</a>
+                        <span class="ad-badge">Destaque Patrocinado</span>
+                        <h3>🚀 Domine Inteligência Artificial e Automação</h3>
+                        <p>Descubra o método completo para criar sistemas automáticos e escalar seus resultados em tecnologia.</p>
+                        <a href="https://pay.kiwify.com.br/TO0iLa6" target="_blank" rel="noopener noreferrer" class="cta-btn" style="width: 100%; justify-content:center;">Acessar Oferta Oficial &rarr;</a>
                     </div>
                     `;
                 }
             });
-
             document.getElementById('feed-container').innerHTML = feedHtml;
         }
+
+        function filtrarCategoria(categoria, event) {
+            if (event) {
+                event.preventDefault();
+                document.querySelectorAll('.nav-links button').forEach(btn => btn.classList.remove('active'));
+                if (event.target.tagName === 'BUTTON') event.target.classList.add('active');
+            }
+            document.getElementById('titulo-secao').innerText = categoria === 'todos' ? 'Radar Global em Tempo Real' : 'Setor: ' + categoria;
+            const filtradas = categoria === 'todos' ? todasNoticias : todasNoticias.filter(n => n.categoria === categoria);
+            renderizarLista(filtradas);
+        }
+
+        function buscarNoticia() {
+            const termo = document.getElementById('search-input').value.toLowerCase();
+            const filtradas = todasNoticias.filter(n => n.title.toLowerCase().includes(termo) || n.desc.toLowerCase().includes(termo));
+            document.getElementById('titulo-secao').innerText = termo ? 'Resultados para: "' + termo + '"' : 'Radar Global em Tempo Real';
+            renderizarLista(filtradas);
+        }
+
+        function filtrarPorPalavra(palavra) {
+            document.getElementById('search-input').value = palavra;
+            buscarNoticia();
+        }
+
+        // DETETOR DE ADBLOCK
+        setTimeout(function() {
+            var honeypot = document.getElementById('ad-honeypot');
+            if (!honeypot || honeypot.offsetHeight === 0 || window.getComputedStyle(honeypot).display === 'none') {
+                document.getElementById('adblock-modal').style.display = 'flex';
+            }
+        }, 1800);
+
+        function fecharAdBlock() {
+            document.getElementById('adblock-modal').style.display = 'none';
+        }
+
+        // Inicializar Portal
+        renderizarLista(todasNoticias);
     </script>
 
     <!-- SOCIAL BAR FLUTUANTE ADSTERRA -->
