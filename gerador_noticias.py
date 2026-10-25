@@ -10,7 +10,7 @@ from datetime import datetime
 NEWS_API_KEY = os.getenv("NEWS_API_KEY", "4e42db8a8a6645fbad1039ba84a6ea4f")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
 
-# CHAVES DA META (Configure META_ACCESS_TOKEN nos Secrets do GitHub)
+# CHAVES DA META (Lidas dos Secrets do GitHub)
 META_ACCESS_TOKEN = os.getenv("META_ACCESS_TOKEN", "")
 META_PAGE_ID = os.getenv("META_PAGE_ID", "")
 ARQUIVO_MEMORIA_META = ".ultimo_post_meta.txt"
@@ -67,6 +67,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 
         #progress-bar { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, var(--primary), var(--neon)); width: 0%; z-index: 99999; }
 
+        /* BARRA DE COTAÇÕES FINANCEIRAS AO VIVO */
         .market-ticker { background: var(--dark-bar); color: #e2e8f0; padding: 0.45rem 5%; font-size: 0.8rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; font-family: 'JetBrains Mono', monospace; }
         .market-items { display: flex; gap: 1.5rem; align-items: center; overflow-x: auto; white-space: nowrap; }
         .market-item { display: flex; align-items: center; gap: 6px; }
@@ -75,6 +76,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         .live-dot { width: 8px; height: 8px; background: #10b981; border-radius: 50%; display: inline-block; animation: blink 1.2s infinite; }
         @keyframes blink { 0%, 100% { opacity: 1; box-shadow: 0 0 8px #10b981; } 50% { opacity: 0.3; } }
 
+        /* HEADER GLASSMORPHISM */
         header { background: var(--glass); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); padding: 1rem 5%; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--border); }
         .nav-container { max-width: 1440px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
         .logo { font-size: 1.85rem; font-weight: 900; letter-spacing: -1px; color: var(--text-main); text-decoration: none; display: flex; align-items: center; gap: 6px; cursor: pointer; }
@@ -92,12 +94,14 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         .search-box input:focus { width: 230px; border-color: var(--primary); }
         .search-icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); font-size: 0.8rem; color: var(--text-muted); }
 
+        /* BOTÃO DE TEMA SOL / LUA */
         .theme-btn { background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--text-main); padding: 0.45rem 0.85rem; border-radius: 8px; cursor: pointer; font-weight: 700; font-size: 0.85rem; display: flex; align-items: center; gap: 6px; }
         .theme-btn:hover { border-color: var(--primary); }
 
         .cta-btn { background: linear-gradient(135deg, #ef4444, #b91c1c); color: #fff; border: none; padding: 0.55rem 1.2rem; border-radius: 8px; font-weight: 800; cursor: pointer; text-decoration: none; font-size: 0.85rem; box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3); display: inline-flex; align-items: center; gap: 6px; }
         .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(239, 68, 68, 0.5); }
 
+        /* RADAR DE TAGS QUENTES */
         .tags-bar { max-width: 1440px; margin: 1.2rem auto 0 auto; padding: 0 5%; display: flex; align-items: center; gap: 0.6rem; overflow-x: auto; white-space: nowrap; }
         .tag-pill { background: var(--card-bg); border: 1px solid var(--border); color: var(--text-muted); padding: 4px 12px; border-radius: 20px; font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: 0.2s; }
         .tag-pill:hover { border-color: var(--primary); color: var(--text-main); transform: scale(1.05); }
@@ -106,6 +110,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 
         .main-container { max-width: 1440px; margin: 0 auto 4rem auto; padding: 0 5%; display: grid; grid-template-columns: 7.2fr 2.8fr; gap: 2.5rem; }
 
+        /* HERO CARD */
         .hero-card { position: relative; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.35); margin-bottom: 2.5rem; display: block; border: 1px solid var(--border); background: #000; }
         .hero-card img { width: 100%; height: 470px; object-fit: cover; opacity: 0.75; transition: transform 0.6s ease, opacity 0.3s; }
         .hero-card:hover img { transform: scale(1.04); opacity: 0.65; }
@@ -118,6 +123,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         .section-title { font-size: 1.35rem; font-weight: 900; margin-bottom: 1.5rem; border-left: 4px solid var(--primary); padding-left: 12px; display: flex; justify-content: space-between; align-items: center; }
         .feed-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 1.8rem; }
         
+        /* CARDS DE NOTÍCIAS */
         .news-card { background: var(--card-bg); border-radius: 14px; overflow: hidden; border: 1px solid var(--border); display: flex; flex-direction: column; transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s; backdrop-filter: blur(10px); }
         .news-card:hover { transform: translateY(-6px); box-shadow: 0 15px 30px rgba(0,0,0,0.25); border-color: rgba(239, 68, 68, 0.4); }
         .card-img-wrapper { position: relative; width: 100%; height: 195px; overflow: hidden; background: #1e293b; }
@@ -141,11 +147,13 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         .read-btn { background: var(--primary); color: #fff; font-weight: 700; font-size: 0.8rem; padding: 0.65rem; border-radius: 8px; text-decoration: none; text-align: center; transition: 0.2s; }
         .read-btn:hover { background: #dc2626; }
 
+        /* NATIVE AD CARD */
         .native-ad-card { background: linear-gradient(145deg, rgba(239,68,68,0.14), rgba(15,23,42,0.92)); border: 2px solid rgba(239, 68, 68, 0.55); border-radius: 14px; padding: 1.8rem; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; position: relative; }
         .native-ad-card .ad-badge { background: var(--primary); color: #fff; font-size: 0.68rem; font-weight: 900; padding: 3px 10px; border-radius: 20px; text-transform: uppercase; margin-bottom: 1rem; }
         .native-ad-card h3 { font-size: 1.22rem; color: var(--text-main); margin-bottom: 0.8rem; font-weight: 900; }
         .native-ad-card p { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.4rem; }
 
+        /* SIDEBAR */
         .sidebar { display: flex; flex-direction: column; gap: 2rem; }
         .widget { background: var(--card-bg); border-radius: 14px; padding: 1.5rem; border: 1px solid var(--border); }
         .widget-title { font-size: 1.05rem; font-weight: 900; margin-bottom: 1.2rem; padding-bottom: 0.6rem; border-bottom: 2px solid var(--primary); display: flex; align-items: center; justify-content: space-between; }
@@ -165,6 +173,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         .sticky-ad-container { position: sticky; top: 90px; }
         .ad-sidebar-box { width: 100%; min-height: 280px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
 
+        /* MODAIS */
         #reader-modal, #exit-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(3, 6, 12, 0.88); z-index: 9999; justify-content: center; align-items: center; backdrop-filter: blur(8px); padding: 1rem; }
         .reader-box { background: var(--bg-color); border: 1px solid var(--border); width: 100%; max-width: 680px; border-radius: 16px; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,0.6); animation: popIn 0.3s ease; max-height: 90vh; display: flex; flex-direction: column; }
         .reader-img { width: 100%; height: 240px; object-fit: cover; }
@@ -179,6 +188,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         .adblock-btn { background: var(--primary); color: #fff; padding: 0.9rem; border-radius: 8px; font-weight: 800; width: 100%; border: none; cursor: pointer; margin-top: 1.2rem; font-size: 0.95rem; }
         .adblock-close { margin-top: 1rem; font-size: 0.8rem; color: var(--text-muted); text-decoration: underline; cursor: pointer; background: none; border: none; width: 100%; }
 
+        /* TOAST DE PROVA SOCIAL AO VIVO */
         #social-proof-toast { position: fixed; bottom: 20px; left: 20px; background: var(--card-bg); border: 1px solid var(--border); border-left: 4px solid #10b981; padding: 0.85rem 1.2rem; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.35); z-index: 8000; display: flex; align-items: center; gap: 12px; font-size: 0.8rem; max-width: 340px; transform: translateY(150%); transition: transform 0.4s ease; backdrop-filter: blur(12px); cursor: pointer; }
         #social-proof-toast.show { transform: translateY(0); }
 
@@ -195,8 +205,10 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 <body>
     <div id="progress-bar"></div>
 
+    <!-- HONEYPOT DO ADBLOCK -->
     <div id="ad-honeypot" class="ad-banner adsbox doubleclick sponsor" style="position:absolute; top:-999px; left:-999px; width:10px; height:10px;"></div>
 
+    <!-- MODAL ANTI-ADBLOCK (SVG EMBUTIDO) -->
     <div id="adblock-modal">
         <div class="adblock-content">
             <div class="adblock-icon-wrapper">
@@ -213,6 +225,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         </div>
     </div>
 
+    <!-- MODAL DE INTENÇÃO DE SAÍDA -->
     <div id="exit-modal" onclick="document.getElementById('exit-modal').style.display='none'">
         <div class="adblock-content" onclick="event.stopPropagation()" style="max-width:480px;">
             <span class="badge-source">⚡ ESPERE! NÃO SAIA DE MÃOS VAZIAS</span>
@@ -223,6 +236,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         </div>
     </div>
 
+    <!-- MODAL DE LEITURA RÁPIDA (INSIGHT IA) -->
     <div id="reader-modal" onclick="fecharReader(event)">
         <div class="reader-box" onclick="event.stopPropagation()">
             <img id="r-img" src="" class="reader-img" alt="Capa">
@@ -245,6 +259,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         </div>
     </div>
 
+    <!-- TOAST DE PROVA SOCIAL AO VIVO -->
     <div id="social-proof-toast" onclick="window.open('{link_kiwify_1}', '_blank')">
         <span style="font-size:1.5rem;">🔥</span>
         <div>
@@ -253,6 +268,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         </div>
     </div>
 
+    <!-- BARRA DE MERCADO E COTAÇÕES AO VIVO -->
     <div class="market-ticker">
         <div class="market-items">
             <span><span class="live-dot"></span> <strong>TERMINAL AO VIVO</strong></span>
@@ -267,7 +283,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         <div class="nav-container">
             <a class="logo" onclick="filtrarCategoria('todos', event)">
                 TechNews<span>.PRO</span>
-                <span class="logo-badge">IA v5.1</span>
+                <span class="logo-badge">IA v5.2</span>
             </a>
             <ul class="nav-links">
                 <li><button onclick="filtrarCategoria('todos', event)" class="active">🔥 Tudo</button></li>
@@ -295,6 +311,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         <span class="tag-pill" onclick="filtrarCategoria('todos', event)">🔄 Mostrar Tudo</span>
     </div>
 
+    <!-- BANNER TOPO ADSTERRA (728x90) -->
     <div class="ad-banner-top">
         <script>
           atOptions = {
@@ -330,6 +347,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
                 </ul>
             </div>
 
+            <!-- OFERTA KIWIFY 2 NA LATERAL -->
             <div class="widget" style="background: linear-gradient(135deg, rgba(239,68,68,0.16), rgba(15,23,42,0.95)); border-color: rgba(239,68,68,0.45); text-align: center;">
                 <span class="badge-source" style="margin-bottom:0.5rem;">🔥 Recomendação PRO</span>
                 <h3 style="margin-bottom: 0.5rem; font-size: 1.08rem;">⚡ Destrave Novas Fontes de Renda Digital</h3>
@@ -337,6 +355,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
                 <a href="{link_kiwify_2}" target="_blank" rel="noopener noreferrer" class="cta-btn" style="width: 100%; justify-content: center;">Conhecer Método Oficial &rarr;</a>
             </div>
 
+            <!-- NEWSLETTER REAL CONECTADA AO SYSTEME.IO -->
             <div class="newsletter-box" id="newsletter">
                 <h3>💰 Briefing Matinal VIP</h3>
                 <p>Receba os insights de IA, Negócios e Ferramentas Secretas no seu e-mail.</p>
@@ -346,11 +365,13 @@ HTML_TEMPLATE = """<!DOCTYPE html>
                 </form>
             </div>
 
+            <!-- SMARTLINK EXTRA DE TEXTO -->
             <div class="widget" style="text-align: center; padding: 1.2rem;">
                 <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.6rem;">🔗 <strong>Links Patrocinados Rápidos:</strong></p>
                 <a href="{smartlink_url}" target="_blank" rel="noopener noreferrer" style="color: var(--neon); font-size: 0.85rem; font-weight: 700; text-decoration: underline;">Descubra os Aplicativos e Recursos em Alta de Hoje &rarr;</a>
             </div>
 
+            <!-- BANNER LATERAL ADSTERRA (300x250) -->
             <div class="sticky-ad-container">
                 <div class="ad-sidebar-box">
                     <span style="font-size: 0.7rem; color: var(--text-muted); display: block; margin-bottom: 5px;">Publicidade</span>
@@ -579,6 +600,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         renderizarLista(todasNoticias);
     </script>
 
+    <!-- SOCIAL BAR FLUTUANTE ADSTERRA -->
     <script data-cfasync="false" src="https://bicea.org/14/7843682dc41b2077e8d78d48efd6360a"></script>
 </body>
 </html>
@@ -627,7 +649,7 @@ def reescrever_com_ia(texto):
     return texto 
 
 # ==============================================================================
-# AGENTE DE POSTAGEM AUTOMÁTICA META COM MEMÓRIA ANTI-DUPLICIDADE
+# AGENTE DE POSTAGEM AUTOMÁTICA META (CORRIGIDO CONTRA ERRO #100 GLOBAL ID)
 # ==============================================================================
 def gerar_copy_persuasiva_meta(noticia):
     titulo = noticia.get("title", "")
@@ -670,30 +692,29 @@ def gerar_copy_persuasiva_meta(noticia):
 
     return f"🚨 URGENTE: {titulo}!\n\n{resumo}{cta_padrao}"
 
-def obter_credenciais_pagina(token_inicial, page_id_configurado):
-    if page_id_configurado:
-        return page_id_configurado, token_inicial
+def obter_credenciais_pagina(token_inicial):
+    """
+    Evita o erro '(#100) The global id is not allowed for this call':
+    Sempre tenta buscar o Page Token e o ID interno via /me/accounts primeiro.
+    """
     try:
-        url_acc = f"https://graph.facebook.com/v20.0/me/accounts?access_token={token_inicial}"
-        r = requests.get(url_acc, timeout=8)
+        url_acc = "https://graph.facebook.com/v20.0/me/accounts"
+        r = requests.get(url_acc, params={"access_token": token_inicial}, timeout=10)
         if r.status_code == 200:
             dados = r.json().get("data", [])
             if len(dados) > 0:
                 pagina = dados[0]
-                print(f"Agente Meta: Página detectada -> {pagina.get('name')} (ID: {pagina.get('id')})")
-                return pagina.get("id"), pagina.get("access_token", token_inicial)
-
-        url_me = f"https://graph.facebook.com/v20.0/me?access_token={token_inicial}"
-        r_me = requests.get(url_me, timeout=8)
-        if r_me.status_code == 200 and r_me.json().get("id"):
-            pid = r_me.json().get("id")
-            return pid, token_inicial
+                pid = pagina.get("id")
+                ptoken = pagina.get("access_token", token_inicial)
+                print(f"Agente Meta: Página obtida via me/accounts -> {pagina.get('name')} (ID Interno: {pid})")
+                return pid, ptoken
     except Exception as e:
-        print(f"Agente Meta: Aviso na autodescoberta de página: {e}")
-    return None, token_inicial
+        print(f"Agente Meta: Aviso ao consultar me/accounts: {e}")
+
+    # Se não retornou em me/accounts, o token já é um Page Access Token direto
+    return "me", token_inicial
 
 def escolher_noticia_inedita(lista_noticias):
-    """ Garante que o robô não poste a mesma notícia duas vezes seguidas no Facebook """
     ultimo_titulo = ""
     if os.path.exists(ARQUIVO_MEMORIA_META):
         try:
@@ -720,38 +741,54 @@ def publicar_no_facebook(lista_noticias):
         return False
 
     noticia = escolher_noticia_inedita(lista_noticias)
-    page_id, token_pagina = obter_credenciais_pagina(META_ACCESS_TOKEN, META_PAGE_ID)
-    if not page_id:
-        print("Agente Meta: ❌ Não foi possível identificar o ID da Página. Verifique o Token.")
-        return False
-
+    alvo_id, token_pagina = obter_credenciais_pagina(META_ACCESS_TOKEN)
+    
     mensagem = gerar_copy_persuasiva_meta(noticia)
     img_url = noticia.get("img", "")
 
-    if img_url and img_url.startswith("http"):
-        try:
-            url_photo = f"https://graph.facebook.com/v20.0/{page_id}/photos"
-            payload_photo = {"url": img_url, "caption": mensagem, "access_token": token_pagina}
-            r_photo = requests.post(url_photo, data=payload_photo, timeout=12)
-            if r_photo.status_code == 200:
-                salvar_memoria_meta(noticia.get("title", ""))
-                print(f"Agente Meta: ✅ Post com IMAGEM publicado! ID: {r_photo.json().get('id')}")
-                return True
-        except Exception as e:
-            print(f"Agente Meta: Erro ao enviar foto: {e}")
+    # Lista de alvos para tentar postar ('me' com Page Token funciona sem conflito de Global ID)
+    alvos_tentativa = [alvo_id]
+    if "me" not in alvos_tentativa:
+        alvos_tentativa.append("me")
 
-    try:
-        url_feed = f"https://graph.facebook.com/v20.0/{page_id}/feed"
-        payload_feed = {"message": mensagem, "access_token": token_pagina}
-        r_feed = requests.post(url_feed, data=payload_feed, timeout=12)
-        if r_feed.status_code == 200:
-            salvar_memoria_meta(noticia.get("title", ""))
-            print(f"Agente Meta: ✅ Post publicado no Feed! ID: {r_feed.json().get('id')}")
-            return True
-        else:
-            print(f"Agente Meta: ❌ Erro na API da Meta: {r_feed.text}")
-    except Exception as e:
-        print(f"Agente Meta: ❌ Erro de conexão com o Facebook: {e}")
+    # 1. Tenta postar com IMAGEM (/photos)
+    if img_url and img_url.startswith("http"):
+        for alvo in alvos_tentativa:
+            try:
+                url_photo = f"https://graph.facebook.com/v20.0/{alvo}/photos"
+                payload_photo = {
+                    "url": img_url,
+                    "caption": mensagem,
+                    "access_token": token_pagina
+                }
+                r_photo = requests.post(url_photo, data=payload_photo, timeout=15)
+                if r_photo.status_code == 200:
+                    salvar_memoria_meta(noticia.get("title", ""))
+                    print(f"Agente Meta: ✅ Post com IMAGEM publicado com sucesso via '{alvo}'! ID: {r_photo.json().get('id')}")
+                    return True
+                else:
+                    print(f"Agente Meta: Tentativa de foto em '{alvo}' retornou {r_photo.status_code}: {r_photo.text}")
+            except Exception as e:
+                print(f"Agente Meta: Erro ao enviar foto em '{alvo}': {e}")
+
+    # 2. Fallback: Postar texto no Feed (/feed)
+    for alvo in alvos_tentativa:
+        try:
+            url_feed = f"https://graph.facebook.com/v20.0/{alvo}/feed"
+            payload_feed = {
+                "message": mensagem,
+                "access_token": token_pagina
+            }
+            r_feed = requests.post(url_feed, data=payload_feed, timeout=15)
+            if r_feed.status_code == 200:
+                salvar_memoria_meta(noticia.get("title", ""))
+                print(f"Agente Meta: ✅ Post publicado no Feed com sucesso via '{alvo}'! ID: {r_feed.json().get('id')}")
+                return True
+            else:
+                print(f"Agente Meta: ❌ Erro na API da Meta em '{alvo}': {r_feed.text}")
+        except Exception as e:
+            print(f"Agente Meta: ❌ Erro de conexão com o Facebook em '{alvo}': {e}")
+
     return False
 
 # ==============================================================================
@@ -865,6 +902,33 @@ FALLBACK_NEWS = [
         "source": "Destaque IA",
         "date": "Hoje",
         "categoria": "Tecnologia"
+    },
+    {
+        "title": "Fintechs brasileiras batem recorde de captação e expandem soluções de pagamento instantâneo",
+        "desc": "Novos relatórios apontam crescimento expressivo no setor financeiro digital com foco em crédito inteligente.",
+        "img": "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=800&q=80",
+        "url": "https://agenciadenoticias.ibge.gov.br",
+        "source": "Finanças & Negócios",
+        "date": "Hoje",
+        "categoria": "Finanças"
+    },
+    {
+        "title": "Computação em Nuvem e Cibersegurança lideram os investimentos de TI neste trimestre",
+        "desc": "Proteção de dados críticos e infraestrutura escalável tornam-se prioridade máxima para startups e bancos.",
+        "img": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80",
+        "url": "https://dev.to",
+        "source": "Cibersegurança",
+        "date": "Hoje",
+        "categoria": "Tecnologia"
+    },
+    {
+        "title": "Nova geração de satélites de baixa órbita promete internet de alta velocidade em áreas remotas",
+        "desc": "Avanços na indústria aeroespacial reduzem o custo de lançamento e conectam regiões agrícolas.",
+        "img": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80",
+        "url": "https://spaceflightnewsapi.net",
+        "source": "SpaceTech",
+        "date": "Hoje",
+        "categoria": "Ciência"
     }
 ]
 
@@ -931,7 +995,7 @@ def gerar_portal():
 
     with open("index.html", "w", encoding="utf-8") as f:
         f.write(html_final)
-    print("Terminal TechNews PRO v5.1 e Agente Meta executados com sucesso!")
+    print("Terminal TechNews PRO v5.2 e Agente Meta executados com sucesso!")
 
 if __name__ == "__main__":
     gerar_portal()
