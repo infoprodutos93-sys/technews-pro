@@ -2,9 +2,8 @@ name: Atualizar Portal TechNews PRO
 
 on:
   schedule:
-    # Roda automaticamente a cada 6 horas (00:00, 06:00, 12:00, 18:00 UTC)
     - cron: '0 */6 * * *'
-  workflow_dispatch: # Cria um botão para você atualizar manualmente quando quiser
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -25,16 +24,16 @@ jobs:
       - name: 3. Instalar biblioteca requests
         run: pip install requests
 
-      - name: 4. Executar gerador de notícias Multi-API
+      - name: 4. Executar gerador de notícias e Agente Meta
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
           META_PAGE_ID: ${{ secrets.META_PAGE_ID }}
         run: python gerador_noticias.py
 
-      - name: 5. Salvar o novo index.html atualizado no site
+      - name: 5. Salvar o novo index.html e histórico no site
         run: |
           git config --global user.name "Robô TechNews"
           git config --global user.email "bot@technews.pro"
-          git add index.html
-          git diff --quiet && git diff --staged --quiet || (git commit -m "🔄 Atualização automática de notícias" && git push)
+          git add index.html .ultimo_post_meta.txt || git add index.html
+          git diff --quiet && git diff --staged --quiet || (git commit -m "🔄 Atualização automática de notícias e Social" && git push)
