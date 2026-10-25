@@ -26,6 +26,8 @@ jobs:
         run: pip install requests
 
       - name: 4. Executar gerador de notícias Multi-API
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: python gerador_noticias.py
 
       - name: 5. Salvar o novo index.html atualizado no site
