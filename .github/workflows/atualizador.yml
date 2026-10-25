@@ -28,6 +28,8 @@ jobs:
       - name: 4. Executar gerador de notícias Multi-API
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
+          META_PAGE_ID: ${{ secrets.META_PAGE_ID }}
         run: python gerador_noticias.py
 
       - name: 5. Salvar o novo index.html atualizado no site
