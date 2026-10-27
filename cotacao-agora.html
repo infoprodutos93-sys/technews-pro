@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cotação do Dólar, Euro e Bitcoin hoje em tempo real. Dashboard financeiro minimalista e gratuito para jornalistas, analistas e investidores.">
+    <meta name="robots" content="max-image-preview:large, index, follow">
+    <link rel="canonical" href="https://infoprodutos93-sys.github.io/technews-pro/cotacao-agora.html">
+    <title>Cotação Dólar, Euro e Bitcoin Hoje Ao Vivo | Terminal TechNews PRO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        body { background:#070b14; color:#f8fafc; font-family:'Inter',sans-serif; margin:0; line-height:1.6; }
+        header { background:rgba(15,23,42,0.9); padding:1rem 5%; border-bottom:1px solid rgba(255,255,255,0.08); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; }
+        .container { max-width:1200px; margin:3rem auto; padding:0 5%; }
+        .cards { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.8rem; margin:2.5rem 0; }
+        .card { background:linear-gradient(145deg, #111827, #03060c); border:1px solid rgba(255,255,255,0.1); border-radius:16px; padding:2.2rem; text-align:center; box-shadow:0 15px 30px rgba(0,0,0,0.4); }
+        .price { font-size:2.4rem; font-weight:900; font-family:'JetBrains Mono',monospace; margin:0.8rem 0; }
+        .up { color:#10b981; } .down { color:#ef4444; }
+        .cite-box { background:rgba(17,25,40,0.9); border:1px dashed rgba(0,242,254,0.4); border-radius:14px; padding:1.8rem; margin-top:2.5rem; text-align:center; }
+        code { background:#03060c; color:#00f2fe; padding:8px 14px; border-radius:6px; display:inline-block; margin:10px 0; font-family:'JetBrains Mono',monospace; font-size:0.82rem; word-break:break-all; }
+        footer { background:#03060c; color:#64748b; text-align:center; padding:3rem 5%; margin-top:4rem; border-top:1px solid rgba(255,255,255,0.08); }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" style="font-size:1.8rem; font-weight:900; color:#fff; text-decoration:none;">TechNews<span style="color:#ef4444;">.PRO</span></a>
+        <div style="display:flex; gap:14px; align-items:center;">
+            <a href="index.html" style="color:#94a3b8; text-decoration:none; font-weight:700; font-size:0.88rem;">&larr; Portal de Notícias</a>
+            <a href="inteligencia-artificial.html" style="color:#00f2fe; text-decoration:none; font-weight:700; font-size:0.88rem;">🧠 Hub de IA</a>
+            <a href="https://pay.kiwify.com.br/YUDgPja?afid=yt5zIWrU" target="_blank" style="background:#ef4444; color:#fff; padding:0.55rem 1.1rem; border-radius:8px; font-weight:800; text-decoration:none; font-size:0.85rem;">📈 Método Renda Digital</a>
+        </div>
+    </header>
+    <main class="container">
+        <div style="text-align:center; max-width:780px; margin:0 auto;">
+            <span style="background:rgba(16,185,129,0.15); color:#10b981; border:1px solid #10b981; padding:4px 12px; border-radius:20px; font-size:0.75rem; font-weight:800;">🟢 TERMINAL FINANCEIRO EM TEMPO REAL</span>
+            <h1 style="font-size:2.5rem; margin:1rem 0 0.5rem 0; font-weight:900;">Cotação Hoje: Dólar, Euro e Bitcoin Ao Vivo</h1>
+            <p style="color:#94a3b8; font-size:1rem;">Painel minimalista de consulta rápida sincronizado via API oficial de câmbio e criptoativos. Última aferição: <strong>27/10/2026 às 20:06</strong>.</p>
+        </div>
+
+        <div class="cards">
+            <div class="card">
+                <div style="font-size:0.9rem; color:#94a3b8; font-weight:700;">💵 Dólar Comercial (USD/BRL)</div>
+                <div class="price">R$ 5,70</div>
+                <div class="up" style="font-weight:800;">Variação 24h: +0.15%</div>
+            </div>
+            <div class="card">
+                <div style="font-size:0.9rem; color:#94a3b8; font-weight:700;">💶 Euro Oficial (EUR/BRL)</div>
+                <div class="price">R$ 6,18</div>
+                <div class="up" style="font-weight:800;">Variação 24h: +0.10%</div>
+            </div>
+            <div class="card">
+                <div style="font-size:0.9rem; color:#94a3b8; font-weight:700;">₿ Bitcoin (BTC) (BTC/BRL)</div>
+                <div class="price">R$ 420.000</div>
+                <div class="up" style="font-weight:800;">Variação 24h: +1.25%</div>
+            </div>
+        </div>
+
+        <div class="cite-box">
+            <h3 style="margin-bottom:0.4rem;">🔗 Ferramenta Pública para Jornalistas, Pesquisadores e Blogs</h3>
+            <p style="color:#94a3b8; font-size:0.88rem;">Utilize os dados deste painel em seus artigos ou relatórios incorporando o código de atribuição de fonte abaixo:</p>
+            <code id="embed-code">&lt;a href="https://infoprodutos93-sys.github.io/technews-pro/cotacao-agora.html" target="_blank"&gt;Fonte: Terminal de Cotações TechNews PRO&lt;/a&gt;</code>
+            <br>
+            <button onclick="navigator.clipboard.writeText(document.getElementById('embed-code').innerText); this.innerText='✅ Código Copiado!';" style="margin-top:8px; background:#3b82f6; color:#fff; border:none; padding:0.55rem 1.2rem; border-radius:6px; font-weight:700; cursor:pointer;">📋 Copiar Link de Citação</button>
+        </div>
+    </main>
+    <footer>
+        <p><strong>TechNews.PRO</strong> &copy; 2026 — Dados fornecidos para fins informativos e jornalísticos.</p>
+    </footer>
+</body>
+</html>

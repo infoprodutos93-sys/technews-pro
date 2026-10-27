@@ -5,10 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Terminal avançado de notícias sobre Inteligência Artificial, Tecnologia, Ciência e Mercado Financeiro em tempo real.">
     
+    <!-- REGRA DE OURO GOOGLE DISCOVER (IMAGENS GIGANTES NO MOBILE) -->
+    <meta name="robots" content="max-image-preview:large, index, follow">
+    <link rel="canonical" href="https://infoprodutos93-sys.github.io/technews-pro/">
+
     <!-- META TAGS OPEN GRAPH PARA PRÉVIA RICA E CARD CLICÁVEL NO FACEBOOK -->
-    <meta property="og:title" content="Comunidade de Open Source do Reddit proíbe projetos com IA e gera revolta">
-    <meta property="og:description" content="Novas regras do r/opensource também restringem desenvolvedores solo e falantes não nativos de inglês.">
-    <meta property="og:image" content="https://www.hardware.com.br/wp-content/uploads/2026/10/OPEN-SOURCE-IA-BANIDA-1592x896.jpg">
+    <meta property="og:title" content="Como reduzir o tempo da Sprint Planning pela metade com estimativas em tempo real">
+    <meta property="og:description" content="Dicas práticas e decisões de arquitetura em Next.js para transformar reuniões de estimativa arrastadas em alinhamentos técnicos ágeis e eficientes.">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F7mizvhzw7ziongg9l7ro.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:url" content="https://infoprodutos93-sys.github.io/technews-pro/">
@@ -45,10 +49,8 @@
 
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; transition: background-color 0.25s, color 0.2s; }
         body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
-
         #progress-bar { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, var(--primary), var(--neon)); width: 0%; z-index: 99999; }
 
-        /* BARRA DE COTAÇÕES FINANCEIRAS AO VIVO */
         .market-ticker { background: var(--dark-bar); color: #e2e8f0; padding: 0.45rem 5%; font-size: 0.8rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; font-family: 'JetBrains Mono', monospace; }
         .market-items { display: flex; gap: 1.5rem; align-items: center; overflow-x: auto; white-space: nowrap; }
         .market-item { display: flex; align-items: center; gap: 6px; }
@@ -57,173 +59,131 @@
         .live-dot { width: 8px; height: 8px; background: #10b981; border-radius: 50%; display: inline-block; animation: blink 1.2s infinite; }
         @keyframes blink { 0%, 100% { opacity: 1; box-shadow: 0 0 8px #10b981; } 50% { opacity: 0.3; } }
 
-        /* HEADER GLASSMORPHISM */
         header { background: var(--glass); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); padding: 1rem 5%; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--border); }
         .nav-container { max-width: 1440px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
         .logo { font-size: 1.85rem; font-weight: 900; letter-spacing: -1px; color: var(--text-main); text-decoration: none; display: flex; align-items: center; gap: 6px; cursor: pointer; }
         .logo span { color: var(--primary); }
         .logo-badge { font-size: 0.65rem; background: rgba(239, 68, 68, 0.15); color: var(--primary); border: 1px solid var(--primary); padding: 2px 6px; border-radius: 4px; font-weight: 800; letter-spacing: 0.5px; }
 
-        .nav-links { display: flex; gap: 0.5rem; list-style: none; background: rgba(255,255,255,0.03); padding: 5px; border-radius: 10px; border: 1px solid var(--border); }
-        .nav-links button { background: none; border: none; color: var(--text-muted); font-weight: 700; font-size: 0.88rem; cursor: pointer; padding: 0.45rem 1rem; border-radius: 7px; transition: 0.2s; }
-        .nav-links button:hover { color: var(--text-main); }
+        .nav-links { display: flex; gap: 0.4rem; list-style: none; background: rgba(255,255,255,0.03); padding: 5px; border-radius: 10px; border: 1px solid var(--border); align-items: center; flex-wrap: wrap; }
+        .nav-links button, .nav-links a { background: none; border: none; color: var(--text-muted); font-weight: 700; font-size: 0.84rem; cursor: pointer; padding: 0.45rem 0.85rem; border-radius: 7px; transition: 0.2s; text-decoration: none; }
+        .nav-links button:hover, .nav-links a:hover { color: var(--text-main); }
         .nav-links button.active { background: var(--primary); color: #fff; box-shadow: 0 4px 12px rgba(239, 68, 68, 0.35); }
+        .nav-links a.hub-link { color: var(--neon); border: 1px solid rgba(0, 242, 254, 0.25); }
 
         .header-actions { display: flex; align-items: center; gap: 0.8rem; }
         .search-box { position: relative; }
-        .search-box input { background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: var(--text-main); padding: 0.5rem 1rem 0.5rem 2.2rem; border-radius: 8px; font-size: 0.85rem; width: 185px; outline: none; transition: 0.3s; }
-        .search-box input:focus { width: 230px; border-color: var(--primary); }
+        .search-box input { background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: var(--text-main); padding: 0.5rem 1rem 0.5rem 2.2rem; border-radius: 8px; font-size: 0.85rem; width: 175px; outline: none; transition: 0.3s; }
+        .search-box input:focus { width: 220px; border-color: var(--primary); }
         .search-icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); font-size: 0.8rem; color: var(--text-muted); }
 
         .theme-btn { background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--text-main); padding: 0.45rem 0.85rem; border-radius: 8px; cursor: pointer; font-weight: 700; font-size: 0.85rem; display: flex; align-items: center; gap: 6px; }
-        .theme-btn:hover { border-color: var(--primary); }
-
         .cta-btn { background: linear-gradient(135deg, #ef4444, #b91c1c); color: #fff; border: none; padding: 0.55rem 1.2rem; border-radius: 8px; font-weight: 800; cursor: pointer; text-decoration: none; font-size: 0.85rem; box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3); display: inline-flex; align-items: center; gap: 6px; }
-        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(239, 68, 68, 0.5); }
 
         .tags-bar { max-width: 1440px; margin: 1.2rem auto 0 auto; padding: 0 5%; display: flex; align-items: center; gap: 0.6rem; overflow-x: auto; white-space: nowrap; }
-        .tag-pill { background: var(--card-bg); border: 1px solid var(--border); color: var(--text-muted); padding: 4px 12px; border-radius: 20px; font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: 0.2s; }
-        .tag-pill:hover { border-color: var(--primary); color: var(--text-main); transform: scale(1.05); }
+        .tag-pill { background: var(--card-bg); border: 1px solid var(--border); color: var(--text-muted); padding: 4px 12px; border-radius: 20px; font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: 0.2s; text-decoration: none; }
+        .tag-pill:hover { border-color: var(--primary); color: var(--text-main); }
 
         .ad-banner-top { max-width: 970px; min-height: 90px; margin: 1.5rem auto; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
-
         .main-container { max-width: 1440px; margin: 0 auto 4rem auto; padding: 0 5%; display: grid; grid-template-columns: 7.2fr 2.8fr; gap: 2.5rem; }
 
-        /* HERO CARD */
         .hero-card { position: relative; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.35); margin-bottom: 2.5rem; display: block; border: 1px solid var(--border); background: #000; }
-        .hero-card img { width: 100%; height: 470px; object-fit: cover; opacity: 0.75; transition: transform 0.6s ease, opacity 0.3s; }
-        .hero-card:hover img { transform: scale(1.04); opacity: 0.65; }
+        .hero-card img { width: 100%; height: 470px; object-fit: cover; opacity: 0.75; transition: transform 0.6s ease; }
+        .hero-card:hover img { transform: scale(1.03); }
         .hero-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(3,6,12,0.98) 15%, rgba(3,6,12,0.65) 65%, transparent 100%); padding: 2.5rem; color: #fff; }
-        .badge-source { background: var(--primary); color: #fff; padding: 5px 12px; border-radius: 6px; font-size: 0.72rem; font-weight: 900; text-transform: uppercase; display: inline-block; margin-bottom: 0.8rem; letter-spacing: 0.5px; }
-        .hero-overlay h1 { font-size: 2.2rem; line-height: 1.2; margin-bottom: 0.8rem; font-weight: 900; }
-        .hero-overlay p { color: #cbd5e1; font-size: 1.02rem; margin-bottom: 1.2rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .badge-source { background: var(--primary); color: #fff; padding: 5px 12px; border-radius: 6px; font-size: 0.72rem; font-weight: 900; text-transform: uppercase; display: inline-block; margin-bottom: 0.8rem; }
+        .hero-overlay h1 { font-size: 2.15rem; line-height: 1.2; margin-bottom: 0.8rem; font-weight: 900; }
+        .hero-overlay p { color: #cbd5e1; font-size: 1.02rem; margin-bottom: 1.2rem; }
         .hero-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; }
 
         .section-title { font-size: 1.35rem; font-weight: 900; margin-bottom: 1.5rem; border-left: 4px solid var(--primary); padding-left: 12px; display: flex; justify-content: space-between; align-items: center; }
         .feed-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 1.8rem; }
-        
-        /* CARDS DE NOTÍCIAS */
-        .news-card { background: var(--card-bg); border-radius: 14px; overflow: hidden; border: 1px solid var(--border); display: flex; flex-direction: column; transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s; backdrop-filter: blur(10px); }
-        .news-card:hover { transform: translateY(-6px); box-shadow: 0 15px 30px rgba(0,0,0,0.25); border-color: rgba(239, 68, 68, 0.4); }
+
+        .news-card { background: var(--card-bg); border-radius: 14px; overflow: hidden; border: 1px solid var(--border); display: flex; flex-direction: column; transition: transform 0.25s ease; backdrop-filter: blur(10px); }
+        .news-card:hover { transform: translateY(-6px); border-color: rgba(239, 68, 68, 0.4); }
         .card-img-wrapper { position: relative; width: 100%; height: 195px; overflow: hidden; background: #1e293b; }
-        .card-img-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-        .news-card:hover .card-img-wrapper img { transform: scale(1.08); }
-        .card-tag { position: absolute; top: 12px; left: 12px; background: rgba(3, 6, 12, 0.85); backdrop-filter: blur(6px); color: #fff; padding: 4px 10px; border-radius: 6px; font-size: 0.68rem; font-weight: 800; text-transform: uppercase; border: 1px solid rgba(255,255,255,0.15); }
-        
+        .card-img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+        .card-tag { position: absolute; top: 12px; left: 12px; background: rgba(3, 6, 12, 0.85); color: #fff; padding: 4px 10px; border-radius: 6px; font-size: 0.68rem; font-weight: 800; text-transform: uppercase; }
         .card-floating-btns { position: absolute; bottom: 10px; right: 10px; display: flex; gap: 6px; }
-        .audio-btn { background: rgba(239, 68, 68, 0.92); color: #fff; border: none; padding: 5px 10px; border-radius: 20px; font-size: 0.72rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
-        .audio-btn:hover { background: #dc2626; transform: scale(1.05); }
-        .zap-btn { background: rgba(16, 185, 129, 0.92); color: #fff; border: none; padding: 5px 9px; border-radius: 20px; font-size: 0.72rem; font-weight: 700; cursor: pointer; text-decoration: none; display: flex; align-items: center; }
+        .audio-btn { background: rgba(239, 68, 68, 0.92); color: #fff; border: none; padding: 5px 10px; border-radius: 20px; font-size: 0.72rem; font-weight: 700; cursor: pointer; }
+        .zap-btn { background: rgba(16, 185, 129, 0.92); color: #fff; border: none; padding: 5px 9px; border-radius: 20px; font-size: 0.72rem; font-weight: 700; text-decoration: none; }
 
         .card-body { padding: 1.4rem; display: flex; flex-direction: column; flex-grow: 1; }
         .card-meta { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.6rem; display: flex; justify-content: space-between; font-weight: 600; }
         .card-title { font-size: 1.12rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.75rem; line-height: 1.35; }
-        .card-desc { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.3rem; flex-grow: 1; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-        
+        .card-desc { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.3rem; flex-grow: 1; }
+        .seo-internal-link { color: var(--neon); font-weight: 700; text-decoration: underline; }
+
         .card-footer-btns { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-top: auto; }
-        .btn-outline { background: rgba(255,255,255,0.04); color: var(--text-main); border: 1px solid var(--border); padding: 0.65rem; border-radius: 8px; font-weight: 700; font-size: 0.8rem; cursor: pointer; text-align: center; text-decoration: none; transition: 0.2s; }
-        .btn-outline:hover { border-color: var(--primary); color: var(--primary); }
-        .read-btn { background: var(--primary); color: #fff; font-weight: 700; font-size: 0.8rem; padding: 0.65rem; border-radius: 8px; text-decoration: none; text-align: center; transition: 0.2s; }
-        .read-btn:hover { background: #dc2626; }
+        .btn-outline { background: rgba(255,255,255,0.04); color: var(--text-main); border: 1px solid var(--border); padding: 0.65rem; border-radius: 8px; font-weight: 700; font-size: 0.8rem; cursor: pointer; text-align: center; text-decoration: none; }
+        .read-btn { background: var(--primary); color: #fff; font-weight: 700; font-size: 0.8rem; padding: 0.65rem; border-radius: 8px; text-decoration: none; text-align: center; }
 
-        /* NATIVE AD CARD */
-        .native-ad-card { background: linear-gradient(145deg, rgba(239,68,68,0.14), rgba(15,23,42,0.92)); border: 2px solid rgba(239, 68, 68, 0.55); border-radius: 14px; padding: 1.8rem; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; position: relative; }
+        .native-ad-card { background: linear-gradient(145deg, rgba(239,68,68,0.14), rgba(15,23,42,0.92)); border: 2px solid rgba(239, 68, 68, 0.55); border-radius: 14px; padding: 1.8rem; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
         .native-ad-card .ad-badge { background: var(--primary); color: #fff; font-size: 0.68rem; font-weight: 900; padding: 3px 10px; border-radius: 20px; text-transform: uppercase; margin-bottom: 1rem; }
-        .native-ad-card h3 { font-size: 1.22rem; color: var(--text-main); margin-bottom: 0.8rem; font-weight: 900; }
-        .native-ad-card p { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.4rem; }
 
-        /* SIDEBAR */
         .sidebar { display: flex; flex-direction: column; gap: 2rem; }
         .widget { background: var(--card-bg); border-radius: 14px; padding: 1.5rem; border: 1px solid var(--border); }
-        .widget-title { font-size: 1.05rem; font-weight: 900; margin-bottom: 1.2rem; padding-bottom: 0.6rem; border-bottom: 2px solid var(--primary); display: flex; align-items: center; justify-content: space-between; }
-        
+        .widget-title { font-size: 1.05rem; font-weight: 900; margin-bottom: 1.2rem; padding-bottom: 0.6rem; border-bottom: 2px solid var(--primary); }
         .trending-list { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
         .trending-item { display: flex; gap: 0.9rem; align-items: flex-start; text-decoration: none; color: inherit; cursor: pointer; }
-        .trending-num { font-size: 1.4rem; font-weight: 900; color: var(--primary); opacity: 0.8; line-height: 1; font-family: 'JetBrains Mono', monospace; }
-        .trending-item:hover .trending-text { color: var(--primary); }
+        .trending-num { font-size: 1.4rem; font-weight: 900; color: var(--primary); font-family: 'JetBrains Mono', monospace; }
         .trending-text { font-size: 0.88rem; font-weight: 700; line-height: 1.35; }
 
         .newsletter-box { background: linear-gradient(135deg, #111827, #03060c); color: #fff; border-radius: 14px; padding: 1.8rem; text-align: center; border: 1px solid rgba(239, 68, 68, 0.35); }
-        .newsletter-box h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
-        .newsletter-box p { font-size: 0.84rem; color: #94a3b8; margin-bottom: 1.2rem; }
-        .newsletter-box input { width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.05); color: #fff; margin-bottom: 0.8rem; font-size: 0.88rem; }
+        .newsletter-box input { width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.05); color: #fff; margin: 0.8rem 0; font-size: 0.88rem; }
         .newsletter-box button { width: 100%; padding: 0.85rem; background: var(--primary); color: #fff; border: none; border-radius: 8px; font-weight: 800; cursor: pointer; }
 
-        .sticky-ad-container { position: sticky; top: 90px; }
-        .ad-sidebar-box { width: 100%; min-height: 280px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
-
-        /* MODAIS */
-        #reader-modal, #exit-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(3, 6, 12, 0.88); z-index: 9999; justify-content: center; align-items: center; backdrop-filter: blur(8px); padding: 1rem; }
-        .reader-box { background: var(--bg-color); border: 1px solid var(--border); width: 100%; max-width: 680px; border-radius: 16px; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,0.6); animation: popIn 0.3s ease; max-height: 90vh; display: flex; flex-direction: column; }
+        #reader-modal, #exit-modal, #adblock-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(3, 6, 12, 0.9); z-index: 9999; justify-content: center; align-items: center; backdrop-filter: blur(8px); padding: 1rem; }
+        .reader-box { background: var(--bg-color); border: 1px solid var(--border); width: 100%; max-width: 680px; border-radius: 16px; overflow: hidden; max-height: 90vh; display: flex; flex-direction: column; }
         .reader-img { width: 100%; height: 240px; object-fit: cover; }
         .reader-body { padding: 2rem; overflow-y: auto; }
         .reader-ai-box { background: rgba(59, 130, 246, 0.1); border-left: 4px solid var(--accent); padding: 1rem; border-radius: 6px; margin: 1.2rem 0; font-size: 0.92rem; }
         .reader-promo { background: rgba(239, 68, 68, 0.1); border: 1px dashed var(--primary); padding: 1rem; border-radius: 8px; text-align: center; margin-top: 1.5rem; }
-
-        #adblock-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(3, 6, 12, 0.94); z-index: 10000; justify-content: center; align-items: center; backdrop-filter: blur(8px); }
-        .adblock-content { background: var(--card-bg); color: var(--text-main); border: 1px solid rgba(239,68,68,0.45); width: 90%; max-width: 430px; border-radius: 20px; padding: 2.5rem 1.8rem; text-align: center; box-shadow: 0 25px 50px rgba(0,0,0,0.6); }
-        @keyframes popIn { 0% { transform: scale(0.9); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
-        .adblock-icon-wrapper { width: 84px; height: 84px; background: rgba(239, 68, 68, 0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.2rem auto; color: var(--primary); border: 2px solid rgba(239,68,68,0.3); }
-        .adblock-btn { background: var(--primary); color: #fff; padding: 0.9rem; border-radius: 8px; font-weight: 800; width: 100%; border: none; cursor: pointer; margin-top: 1.2rem; font-size: 0.95rem; }
+        .adblock-content { background: var(--card-bg); color: var(--text-main); border: 1px solid rgba(239,68,68,0.45); width: 90%; max-width: 440px; border-radius: 20px; padding: 2.2rem 1.8rem; text-align: center; }
+        .adblock-btn { background: var(--primary); color: #fff; padding: 0.9rem; border-radius: 8px; font-weight: 800; width: 100%; border: none; cursor: pointer; margin-top: 1.2rem; }
         .adblock-close { margin-top: 1rem; font-size: 0.8rem; color: var(--text-muted); text-decoration: underline; cursor: pointer; background: none; border: none; width: 100%; }
 
-        /* TOAST DE PROVA SOCIAL AO VIVO */
-        #social-proof-toast { position: fixed; bottom: 20px; left: 20px; background: var(--card-bg); border: 1px solid var(--border); border-left: 4px solid #10b981; padding: 0.85rem 1.2rem; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.35); z-index: 8000; display: flex; align-items: center; gap: 12px; font-size: 0.8rem; max-width: 340px; transform: translateY(150%); transition: transform 0.4s ease; backdrop-filter: blur(12px); cursor: pointer; }
+        #social-proof-toast { position: fixed; bottom: 20px; left: 20px; background: var(--card-bg); border: 1px solid var(--border); border-left: 4px solid #10b981; padding: 0.85rem 1.2rem; border-radius: 12px; z-index: 8000; display: flex; align-items: center; gap: 12px; font-size: 0.8rem; max-width: 340px; transform: translateY(150%); transition: transform 0.4s ease; cursor: pointer; }
         #social-proof-toast.show { transform: translateY(0); }
 
         footer { background: var(--dark-bar); color: #64748b; text-align: center; padding: 3rem 5%; font-size: 0.85rem; border-top: 1px solid var(--border); }
-
-        @media (max-width: 992px) {
-            .main-container { grid-template-columns: 1fr; }
-            .nav-links { width: 100%; overflow-x: auto; justify-content: flex-start; }
-            .hero-card img { height: 320px; }
-            .hero-overlay h1 { font-size: 1.5rem; }
-        }
+        @media (max-width: 992px) { .main-container { grid-template-columns: 1fr; } .hero-card img { height: 320px; } .hero-overlay h1 { font-size: 1.5rem; } }
     </style>
 </head>
 <body>
     <div id="progress-bar"></div>
-
-    <!-- HONEYPOT DO ADBLOCK -->
     <div id="ad-honeypot" class="ad-banner adsbox doubleclick sponsor" style="position:absolute; top:-999px; left:-999px; width:10px; height:10px;"></div>
 
-    <!-- MODAL ANTI-ADBLOCK (SVG EMBUTIDO) -->
+    <!-- MODAL ANTI-ADBLOCK -->
     <div id="adblock-modal">
         <div class="adblock-content">
-            <div class="adblock-icon-wrapper">
-                <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                    <line x1="12" y1="8" x2="12" y2="12"></line>
-                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
-                </svg>
-            </div>
             <h3 style="font-size:1.35rem; font-weight:900; margin-bottom:0.6rem;">Acesso Restrito pelo AdBlock 🛡️</h3>
-            <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.5;">O <strong>TechNews.PRO</strong> mantém servidores de Inteligência Artificial gratuitos graças aos nossos patrocinadores. Desative seu bloqueador para liberar o terminal completo.</p>
+            <p style="font-size:0.9rem; color:var(--text-muted);">O <strong>TechNews.PRO</strong> mantém servidores de IA gratuitos graças aos patrocinadores. Desative seu bloqueador para liberar o terminal completo.</p>
             <button class="adblock-btn" onclick="location.reload()">Já desativei! Liberar Terminal &rarr;</button>
-            <button class="adblock-close" onclick="fecharAdBlock()">Continuar leitura limitada (Fechar)</button>
+            <button class="adblock-close" onclick="document.getElementById('adblock-modal').style.display='none'">Continuar leitura limitada (Fechar)</button>
         </div>
     </div>
 
     <!-- MODAL DE INTENÇÃO DE SAÍDA -->
     <div id="exit-modal" onclick="document.getElementById('exit-modal').style.display='none'">
-        <div class="adblock-content" onclick="event.stopPropagation()" style="max-width:480px;">
+        <div class="adblock-content" onclick="event.stopPropagation()">
             <span class="badge-source">⚡ ESPERE! NÃO SAIA DE MÃOS VAZIAS</span>
-            <h3 style="font-size:1.45rem; font-weight:900; margin-bottom:0.6rem;">Quer Automatizar sua Renda com IA?</h3>
-            <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:1.4rem;">Antes de sair, resgate seu acesso ao treinamento oficial que revela como criar máquinas automáticas de vendas e tráfego na internet.</p>
-            <a href="https://kiwify.app/ek8xMMl?afid=1rxg1P58" target="_blank" rel="noopener noreferrer" class="cta-btn" style="width:100%; justify-content:center; padding:0.9rem; font-size:0.95rem;">🎁 Resgatar Acesso com Desconto VIP &rarr;</a>
-            <button class="adblock-close" onclick="document.getElementById('exit-modal').style.display='none'">Não, prefiro continuar sem automação</button>
+            <h3 style="font-size:1.4rem; font-weight:900; margin-bottom:0.6rem;">Quer Automatizar sua Renda com IA?</h3>
+            <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:1.4rem;">Resgate seu acesso ao treinamento oficial que revela como criar máquinas automáticas de vendas e tráfego na internet.</p>
+            <a href="https://kiwify.app/ek8xMMl?afid=1rxg1P58" target="_blank" rel="noopener noreferrer" class="cta-btn" style="width:100%; justify-content:center; padding:0.9rem;">🎁 Resgatar Acesso VIP &rarr;</a>
+            <button class="adblock-close" onclick="document.getElementById('exit-modal').style.display='none'">Fechar janela</button>
         </div>
     </div>
 
-    <!-- MODAL DE LEITURA RÁPIDA (INSIGHT IA) -->
-    <div id="reader-modal" onclick="fecharReader(event)">
+    <!-- MODAL DE LEITURA RÁPIDA (TIME-TO-VALUE IA) -->
+    <div id="reader-modal" onclick="fecharReader()">
         <div class="reader-box" onclick="event.stopPropagation()">
             <img id="r-img" src="" class="reader-img" alt="Capa">
             <div class="reader-body">
                 <span id="r-source" class="badge-source">Fonte</span>
                 <h2 id="r-title" style="margin-bottom: 1rem; line-height: 1.3;">Título</h2>
                 <div class="reader-ai-box">
-                    <strong>🤖 Síntese Executiva IA:</strong>
+                    <strong>🤖 Síntese Executiva IA (Time-to-Value):</strong>
                     <p id="r-desc" style="margin-top: 6px;"></p>
                 </div>
                 <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:1.2rem;">
@@ -238,7 +198,6 @@
         </div>
     </div>
 
-    <!-- TOAST DE PROVA SOCIAL AO VIVO -->
     <div id="social-proof-toast" onclick="window.open('https://kiwify.app/bFEoJ38?afid=u7GyGPOM', '_blank')">
         <span style="font-size:1.5rem;">🔥</span>
         <div>
@@ -251,10 +210,11 @@
     <div class="market-ticker">
         <div class="market-items">
             <span><span class="live-dot"></span> <strong>TERMINAL AO VIVO</strong></span>
-            <span class="market-item">💵 Dólar Comercial • 💶 Euro • ₿ Bitcoin em monitoramento</span>
+            <span class="market-item">💵 Dólar Comercial: <strong>R$ 5,70</strong> <span class="up">(+0.15%)</span></span> • <span class="market-item">💶 Euro Oficial: <strong>R$ 6,18</strong> <span class="up">(+0.10%)</span></span> • <span class="market-item">₿ Bitcoin (BTC): <strong>R$ 420.000</strong> <span class="up">(+1.25%)</span></span>
         </div>
         <div>
-            <span>⚡ Sincronizado: 27/10/2026 às 16:59</span>
+            <a href="cotacao-agora.html" style="color:var(--neon); text-decoration:underline; margin-right:12px;">📊 Abrir Dashboard de Cotações</a>
+            <span>⚡ Sincronizado: 27/10/2026 às 20:06</span>
         </div>
     </div>
 
@@ -262,29 +222,31 @@
         <div class="nav-container">
             <a class="logo" onclick="filtrarCategoria('todos', event)">
                 TechNews<span>.PRO</span>
-                <span class="logo-badge">IA v5.5</span>
+                <span class="logo-badge">IA v6.1</span>
             </a>
             <ul class="nav-links">
                 <li><button onclick="filtrarCategoria('todos', event)" class="active">🔥 Tudo</button></li>
                 <li><button onclick="filtrarCategoria('Tecnologia', event)">💻 Tech & IA</button></li>
-                <li><button onclick="filtrarCategoria('Finanças', event)">📈 Mercado & Cripto</button></li>
-                <li><button onclick="filtrarCategoria('Ciência', event)">🚀 Espaço & Ciência</button></li>
+                <li><button onclick="filtrarCategoria('Finanças', event)">📈 Mercado</button></li>
+                <li><button onclick="filtrarCategoria('Ciência', event)">🚀 Ciência</button></li>
+                <li><a href="inteligencia-artificial.html" class="hub-link">🧠 Dossiê IA (Hub)</a></li>
+                <li><a href="cotacao-agora.html" class="hub-link">💵 Cotações Ao Vivo</a></li>
             </ul>
             <div class="header-actions">
                 <div class="search-box">
                     <span class="search-icon">🔍</span>
                     <input type="text" id="search-input" placeholder="Buscar notícia..." onkeyup="buscarNoticia()">
                 </div>
-                <button class="theme-btn" id="theme-toggle-btn" onclick="alternarTema()" title="Alternar Modo Escuro / Claro">🌙 Escuro</button>
+                <button class="theme-btn" id="theme-toggle-btn" onclick="alternarTema()">🌙 Escuro</button>
                 <a href="https://asiafilm.org/4/78ed9deb10feac05c15347b414e171ab" target="_blank" rel="noopener noreferrer" class="cta-btn">💎 Área VIP</a>
             </div>
         </div>
     </header>
 
     <div class="tags-bar">
-        <span style="font-size:0.75rem; font-weight:800; color:var(--primary); text-transform:uppercase;">Radar Quente:</span>
-        <span class="tag-pill" onclick="filtrarPorPalavra('Inteligência Artificial')">#InteligênciaArtificial</span>
-        <span class="tag-pill" onclick="filtrarPorPalavra('Brasil')">#EconomiaBrasil</span>
+        <span style="font-size:0.75rem; font-weight:800; color:var(--primary); text-transform:uppercase;">Topic Clusters SEO:</span>
+        <a href="inteligencia-artificial.html" class="tag-pill">#HubInteligênciaArtificial</a>
+        <a href="cotacao-agora.html" class="tag-pill">#TerminalDólar&Bitcoin</a>
         <span class="tag-pill" onclick="filtrarPorPalavra('Python')">#Dev&Automação</span>
         <span class="tag-pill" onclick="filtrarPorPalavra('Satélite')">#Espaço</span>
         <span class="tag-pill" onclick="filtrarCategoria('todos', event)">🔄 Mostrar Tudo</span>
@@ -307,61 +269,54 @@
     <main class="main-container">
         <div class="content-column">
             <div id="hero-container"></div>
-
             <h2 class="section-title">
                 <span id="titulo-secao">Radar Global em Tempo Real</span>
                 <span style="font-size:0.75rem; color:var(--text-muted); font-weight:600;">🔊 Ouça as matérias em áudio</span>
             </h2>
-            
             <div class="feed-grid" id="feed-container"></div>
         </div>
 
         <aside class="sidebar">
             <div class="widget">
-                <div class="widget-title">
-                    <span>🔥 Mais Lidas no Terminal</span>
-                </div>
+                <div class="widget-title">🔥 Mais Lidas no Terminal</div>
                 <ul class="trending-list">
-                    
         <li>
             <a onclick="abrirReader(1)" class="trending-item">
                 <span class="trending-num">01</span>
-                <span class="trending-text">Anthropic é processada por uso de músicas do Elvis Presley em treinamento do Claude</span>
+                <span class="trending-text">TipTools: Por que e como construímos +100 ferramentas para devs 100% client-side</span>
             </a>
         </li>
         
         <li>
             <a onclick="abrirReader(2)" class="trending-item">
                 <span class="trending-num">02</span>
-                <span class="trending-text">Planning Poker em chamadas do Teams, Meet ou Slack: como estimar sem atrito</span>
+                <span class="trending-text">Como eliminamos o viés de ancoragem em reuniões de Sprint com WebSockets e Voto Cego Real</span>
             </a>
         </li>
         
         <li>
             <a onclick="abrirReader(3)" class="trending-item">
                 <span class="trending-num">03</span>
-                <span class="trending-text">GraphQL para Iniciantes: Guia Completo com .NET</span>
+                <span class="trending-text">A small star is eating a brown dwarf so slowly that the meal could last billions of years, and the two orbit each other every 87 minutes inside a space that would fit within the Sun</span>
             </a>
         </li>
         
         <li>
             <a onclick="abrirReader(4)" class="trending-item">
                 <span class="trending-num">04</span>
-                <span class="trending-text">Russian Military Satellite Flies Within Kilometer of American Satellite Supporting Ukrainian Military</span>
+                <span class="trending-text">GraphQL para Iniciantes: Guia Completo com .NET</span>
             </a>
         </li>
         
         <li>
             <a onclick="abrirReader(5)" class="trending-item">
                 <span class="trending-num">05</span>
-                <span class="trending-text">Como reduzir o tempo da Sprint Planning pela metade com estimativas em tempo real</span>
+                <span class="trending-text">NASA Invites Media to Crew Completion of Yearlong Mars Simulation</span>
             </a>
         </li>
-        
-                </ul>
+        </ul>
             </div>
 
-            <!-- OFERTA KIWIFY 2 NA LATERAL -->
             <div class="widget" style="background: linear-gradient(135deg, rgba(239,68,68,0.16), rgba(15,23,42,0.95)); border-color: rgba(239,68,68,0.45); text-align: center;">
                 <span class="badge-source" style="margin-bottom:0.5rem;">🔥 Recomendação PRO</span>
                 <h3 style="margin-bottom: 0.5rem; font-size: 1.08rem;">⚡ Destrave Novas Fontes de Renda Digital</h3>
@@ -369,71 +324,64 @@
                 <a href="https://pay.kiwify.com.br/YUDgPja?afid=yt5zIWrU" target="_blank" rel="noopener noreferrer" class="cta-btn" style="width: 100%; justify-content: center;">Conhecer Método Oficial &rarr;</a>
             </div>
 
-            <!-- NEWSLETTER REAL CONECTADA AO SYSTEME.IO -->
             <div class="newsletter-box" id="newsletter">
                 <h3>💰 Briefing Matinal VIP</h3>
-                <p>Receba os insights de IA, Negócios e Ferramentas Secretas no seu e-mail.</p>
+                <p style="font-size:0.84rem; color:#94a3b8;">Receba os insights de IA, Negócios e Ferramentas Secretas no seu e-mail.</p>
                 <form action="https://devanildobeeny146.systeme.io/3ed9605c" method="GET" target="_blank">
                     <input type="email" name="email" placeholder="Digite seu melhor e-mail..." required>
                     <button type="submit">Liberar Acesso Gratuito &rarr;</button>
                 </form>
             </div>
 
-            <!-- SMARTLINK EXTRA DE TEXTO -->
             <div class="widget" style="text-align: center; padding: 1.2rem;">
-                <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.6rem;">🔗 <strong>Links Patrocinados Rápidos:</strong></p>
-                <a href="https://asiafilm.org/4/78ed9deb10feac05c15347b414e171ab" target="_blank" rel="noopener noreferrer" style="color: var(--neon); font-size: 0.85rem; font-weight: 700; text-decoration: underline;">Descubra os Aplicativos e Recursos em Alta de Hoje &rarr;</a>
+                <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.6rem;">🔗 <strong>Ferramentas & Páginas Hub:</strong></p>
+                <p style="margin-bottom:8px;"><a href="inteligencia-artificial.html" style="color: var(--neon); font-size: 0.85rem; font-weight: 700; text-decoration: underline;">🧠 Acessar Enciclopédia & Hub de IA &rarr;</a></p>
+                <p><a href="cotacao-agora.html" style="color: #10b981; font-size: 0.85rem; font-weight: 700; text-decoration: underline;">📊 Monitor de Cotações em Tempo Real &rarr;</a></p>
             </div>
 
             <!-- BANNER LATERAL ADSTERRA (300x250) -->
-            <div class="sticky-ad-container">
-                <div class="ad-sidebar-box">
-                    <span style="font-size: 0.7rem; color: var(--text-muted); display: block; margin-bottom: 5px;">Publicidade</span>
-                    <script type="text/javascript">
-                        atOptions = {
-                            'key' : '8169727725318cd706b493da46602d6f',
-                            'format' : 'iframe',
-                            'height' : 250,
-                            'width' : 300,
-                            'params' : {}
-                        };
-                    </script>
-                    <script type="text/javascript" src="https://bicea.org/22/8169727725318cd706b493da46602d6f"></script>
-                </div>
+            <div style="position: sticky; top: 90px; text-align: center;">
+                <span style="font-size: 0.7rem; color: var(--text-muted); display: block; margin-bottom: 5px;">Publicidade</span>
+                <script type="text/javascript">
+                    atOptions = {
+                        'key' : '8169727725318cd706b493da46602d6f',
+                        'format' : 'iframe',
+                        'height' : 250,
+                        'width' : 300,
+                        'params' : {}
+                    };
+                </script>
+                <script type="text/javascript" src="https://bicea.org/22/8169727725318cd706b493da46602d6f"></script>
             </div>
         </aside>
     </main>
 
     <footer>
-        <p><strong>TechNews.PRO</strong> &copy; 2026 — Ecossistema Automatizado via Python, Multi-API, OpenAI & Meta Graph API.</p>
-        <p style="margin-top: 8px; font-size: 0.78rem;">Cotações: AwesomeAPI • Fontes: NewsAPI, IBGE, Spaceflight, Dev.to</p>
+        <p><strong>TechNews.PRO</strong> &copy; 2026 — Ecossistema Automatizado via Python, Topic Clusters SEO, OpenAI, Telegram & Meta Graph API.</p>
+        <p style="margin-top: 8px; font-size: 0.78rem;">
+            <a href="index.html" style="color:#94a3b8; margin:0 8px;">Início</a> |
+            <a href="inteligencia-artificial.html" style="color:#94a3b8; margin:0 8px;">Hub Inteligência Artificial</a> |
+            <a href="cotacao-agora.html" style="color:#94a3b8; margin:0 8px;">API & Cotações Ao Vivo</a> |
+            <a href="sitemap.xml" style="color:#94a3b8; margin:0 8px;">Sitemap XML</a>
+        </p>
     </footer>
 
     <script>
-        const todasNoticias = [{"title": "Comunidade de Open Source do Reddit proíbe projetos com IA e gera revolta", "desc": "Novas regras do r/opensource também restringem desenvolvedores solo e falantes não nativos de inglês.", "img": "https://www.hardware.com.br/wp-content/uploads/2026/10/OPEN-SOURCE-IA-BANIDA-1592x896.jpg", "url": "https://www.hardware.com.br/noticias/r-opensource-proibe-projetos-ia-exclui-falantes-nao-nativos/", "source": "Hardware.com.br", "date": "2026-10-26", "categoria": "Tecnologia"}, {"title": "Anthropic é processada por uso de músicas do Elvis Presley em treinamento do Claude", "desc": "Um grupo de entidades detentoras dos direitos autorais do catálogo de canções de Elvis Presley abriu uma ação contra a Anthropic no Estado americano da Califórnia por utilizar suas obras sem permissão para treinar o chatbot de inteligência artificial Claude.\n…", "img": "https://s2-valor.glbimg.com/ipbrnd_WDik2lw0I-gY_dPuvXKI=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/3/W/xV09qUQ8mVicSHSDEAQA/449665231.jpg", "url": "https://valor.globo.com/empresas/noticia/2026/10/26/anthropic-e-processada-por-uso-de-musicas-do-elvis-presley-em-treinamento-do-claude.ghtml", "source": "Globo", "date": "2026-10-26", "categoria": "Tecnologia"}, {"title": "Planning Poker em chamadas do Teams, Meet ou Slack: como estimar sem atrito", "desc": "Como simplificar a dinâmica de estimativa de histórias de usuário em reuniões remotas sem exigir cadastro ou licenças por assento.", "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fxuqrfrmebqsh5bm6f60l.png", "url": "https://dev.to/geekecia/planning-poker-em-chamadas-do-teams-meet-ou-slack-como-estimar-sem-atrito-180d", "source": "Dev.to Brasil", "date": "Oct 23", "categoria": "Tecnologia"}, {"title": "GraphQL para Iniciantes: Guia Completo com .NET", "desc": "Aprenda como GraphQL organiza schemas, queries e resolvers, execute uma API com .NET 10 e escolha entre GraphQL, REST e gRPC.", "img": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fzocate.li%2Fposts%2F2026%2Fgraphql-tutorial%2Fimages%2Fcover_hu_662274f337eb8622.jpg", "url": "https://dev.to/lzocate-li/graphql-para-iniciantes-guia-completo-com-net-1id1", "source": "Dev.to Brasil", "date": "Oct 26", "categoria": "Tecnologia"}, {"title": "Russian Military Satellite Flies Within Kilometer of American Satellite Supporting Ukrainian Military", "desc": "This is the first known instance of a satellite conducting a close rendezvous with a non-consenting target, and likely represents a serious violation of international law.", "img": "https://i0.wp.com/www.spacescout.info/wp-content/uploads/2026/10/image-18.png", "url": "https://www.spacescout.info/2026/10/russian-military-satellite-flies-within-kilometer-of-american-satellite-supporting-ukrainian-military/", "source": "SpaceTech", "date": "2026-10-27", "categoria": "Ciência"}, {"title": "Como reduzir o tempo da Sprint Planning pela metade com estimativas em tempo real", "desc": "Dicas práticas e decisões de arquitetura em Next.js para transformar reuniões de estimativa arrastadas em alinhamentos técnicos ágeis e eficientes.", "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F7mizvhzw7ziongg9l7ro.png", "url": "https://dev.to/geekecia/como-reduzir-o-tempo-da-sprint-planning-pela-metade-com-estimativas-em-tempo-real-2a6m", "source": "Dev.to Brasil", "date": "Oct 19", "categoria": "Tecnologia"}, {"title": "Meta prevê captar mais de 31.000 milhões de euros em ações", "desc": "Nvidia, AMD e Broadcom já manifestaram interesse em comprar ações. A Meta prevê gastar até 145 mil milhões de dólares em centros de dados só em 2026.", "img": "https://wm.observador.pt/wm/l/https%3A%2F%2Fbordalo.observador.pt%2Fv2%2Frs%3Afill%3A770%3A403%2Fc%3A2000%3A1123%3Anowe%3A0%3A114%2Fq%3A70%2Ff%3Awebp%2Fplain%2Fhttps%3A%2F%2Fs3.observador.pt%2Fwp-content%2Fuploads%2F2023%2F08%2F29184515%2F41153672.jpg?layer=obstop:T", "url": "https://observador.pt/2026/10/26/meta-preve-captar-mais-de-31-000-milhoes-de-euros-em-emissao-de-acoes-para-financiar-ia/", "source": "Observador.pt", "date": "2026-10-26", "categoria": "Tecnologia"}, {"title": "Samsung apresenta ‘Design Is an Act of Love’ na Seoul Design Week 2026", "desc": "Resumo IA A Samsung apresenta a exposição “Design Is an Act of Love” na Seoul Design Week 2026, com 14 obras de artistas italianos emergentes inspiradas em produtos da marca. A exposição reúne criações que reinterpretam dispositivos móveis, eletrodomésticos e…", "img": "https://img.global.news.samsung.com/br/wp-content/uploads/2026/10/26152240/Samsung-Seul-Design-Week-2026-Design-is-an-Act-of-Love_728x410.jpg", "url": "https://news.samsung.com/br/samsung-apresenta-design-is-an-act-of-love-na-seoul-design-week-2026", "source": "Samsung.com", "date": "2026-10-26", "categoria": "Tecnologia"}, {"title": "First light: Hera resolves two asteroids instead of one", "desc": "The European Space Agency’s Hera spacecraft for planetary defence has resolved its two target asteroids separately for the very first time, revealing the binary nature of the Didymos system, currently some 197 million km away from Earth.", "img": "https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2026/10/hera_s_first_view_of_the_separate_didymos_and_dimorphos_asteroids/27592324-1-eng-GB/Hera_s_first_view_of_the_separate_Didymos_and_Dimorphos_asteroids_card_full.png", "url": "https://www.esa.int/Space_Safety/Hera/First_light_Hera_resolves_two_asteroids_instead_of_one", "source": "SpaceTech", "date": "2026-10-27", "categoria": "Ciência"}, {"title": "Starliner to Return to Flight by January, Fly Crew in 2028", "desc": "On September 28, NASA and Boeing provided an update on the Starliner spacecraft’s Return to Flight, progress made since the", "img": "https://i0.wp.com/www.spacescout.info/wp-content/uploads/2026/10/image-14.png", "url": "https://www.spacescout.info/2026/10/starliner-to-return-to-flight-by-january-fly-crew-in-2028/", "source": "SpaceTech", "date": "2026-10-27", "categoria": "Ciência"}, {"title": "ESA’s INVICTUS Hypersonic Programme Clears First Major Review", "desc": "The European Space Agency’s (ESA) INVICTUS hypersonic aircraft programme has cleared its first major requirements review and moved into the next phase of development, with a second review expected in October 2027. Stephan Carroll, INVICTUS chief engineer at Frazer-Nash, confirmed on LinkedIn on 23 October that the programme had successfully completed its first System Requirements […]\nThe post ESA’s INVICTUS Hypersonic Programme Clears First Major Review appeared first on European Spaceflight.", "img": "https://europeanspaceflight.com/wp-content/uploads/2026/10/ESAs-INVICTUS-Hypersonic-Programme-Clears-First-Design-Review.webp", "url": "https://europeanspaceflight.com/esas-invictus-hypersonic-programme-clears-first-major-review/", "source": "SpaceTech", "date": "2026-10-27", "categoria": "Ciência"}, {"title": "Story Points vs Horas: por que o debate de estimativa se perde e como o consenso real resolve", "desc": "Por que times perdem tanto tempo debatendo números em Sprints e como focar em divergências técnicas acelera as cerimônias ágeis.", "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flgl5tv2oae3ec09v8apt.png", "url": "https://dev.to/geekecia/story-points-vs-horas-por-que-o-debate-de-estimativa-se-perde-e-como-o-consenso-real-resolve-51m1", "source": "Dev.to Brasil", "date": "Oct 27", "categoria": "Tecnologia"}, {"title": "Este projeto open-source permite ao iPhone correr jogos da Xbox One", "desc": "Um projeto open-source está a permitir que dispositivos Apple, como o iPhone, iPad e Mac, executem jogos originalmente concebidos para a Xbox One. O primeiro grande marco é o funcionamento do Minecraft: Xbox One Edition. Uma camada de tradução em vez de emula…", "img": "http://pplware.sapo.pt/wp-content/uploads/2026/10/emulador_iphone_utsuro.webp", "url": "https://pplware.sapo.pt/?p=1149312", "source": "Sapo.pt", "date": "2026-10-26", "categoria": "Tecnologia"}, {"title": "Huawei prepara flagship de imagem com tela Pro mais larga para 2027", "desc": "Huawei Pura terá tela Pro mais larga e diferente formato em 2027, oferecendo nova experiência em smartphones imaging flagship.\nO post Huawei prepara flagship de imagem com tela Pro mais larga para 2027 apareceu primeiro em Blog do Edivaldo - Informações e Not…", "img": "https://www.edivaldobrito.com.br/wp-content/uploads/2026/10/huawei-prepara-flagship-de-imagem-com-tela-pro-mais-larga-para-2027.webp", "url": "https://www.edivaldobrito.com.br/huawei-prepara-flagship-de-imagem-com-tela-pro-mais-larga-para-2027/", "source": "Edivaldobrito.com.br", "date": "2026-10-26", "categoria": "Tecnologia"}, {"title": "TipTools: Por que e como construímos +100 ferramentas para devs 100% client-side", "desc": "Quantas vezes você já precisou formatar um JSON com dados sensíveis de produção, visualizar um...", "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fmi53nwc0hygjc7w9lrxu.png", "url": "https://dev.to/geekecia/tiptools-por-que-e-como-construimos-100-ferramentas-para-devs-100-client-side-5hmk", "source": "Dev.to Brasil", "date": "Oct 16", "categoria": "Tecnologia"}, {"title": "gRPC sem mistério: o que é e quando usar no .NET 10", "desc": "Entenda gRPC no .NET 10, Protocol Buffers, streaming e critérios para escolher o protocolo certo entre serviços.", "img": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fzocate.li%2Fposts%2F2026%2Fgrpc-net-10-implementacao%2Fimages%2Fcover_hu_ad8662646bb5dc15.jpg", "url": "https://dev.to/lzocate-li/grpc-sem-misterio-o-que-e-e-quando-usar-no-net-10-1fjk", "source": "Dev.to Brasil", "date": "Oct 18", "categoria": "Tecnologia"}, {"title": "Como eliminamos o viés de ancoragem em reuniões de Sprint com WebSockets e Voto Cego Real", "desc": "Entenda como construímos uma ferramenta de Planning Poker em tempo real com Next.js, sub-100ms e isolamento de votos antes do reveal.", "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flqclihesd36sqk0x56s2.png", "url": "https://dev.to/geekecia/como-eliminamos-o-vies-de-ancoragem-em-reunioes-de-sprint-com-websockets-e-voto-cego-real-3c5a", "source": "Dev.to Brasil", "date": "Oct 16", "categoria": "Tecnologia"}, {"title": "Um aerogel transparente desenvolvido por pesquisadores pode melhorar o isolamento de janelas: como combinar passagem de luz e proteção térmica", "desc": "Cientistas desenvolvem aerogel de celulose transparente para janelas, unindo alta passagem de luz natural e isolamento térmico eficiente.\nO post Um aerogel transparente desenvolvido por pesquisadores pode melhorar o isolamento de janelas: como combinar passag…", "img": "https://catracalivre.com.br/i/ZObSS3Cy8QlTvuFLcw35ZxDmwB2C7289jldyVIURRQw/rs:fill:1200:630:1/g:sm/q:80/bG9jYWw6Ly8vMjAyNi8xMC9oYW5kLWFwcGx5aW5nLWFlcm9nZWwtdG8tZ2xhc3MtMjAyNjEwMjQyMTQwNTMuanBn", "url": "https://catracalivre.com.br/noticias/um-aerogel-transparente-desenvolvido-por-pesquisadores-pode-melhorar-o-isolamento-de-janelas-como-combinar-passagem-de-luz-e-protecao-termica/", "source": "Catracalivre.com.br", "date": "2026-10-26", "categoria": "Tecnologia"}, {"title": "Novo CNPJ Alfanumérico da Receita Federal: Como preparar seus testes e sistemas", "desc": "A transição para o CNPJ Alfanumérico regulamentada pela Receita Federal é uma das mudanças...", "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fc3smwggy9jpa9ypss802.png", "url": "https://dev.to/geekecia/novo-cnpj-alfanumerico-da-receita-federal-como-preparar-seus-testes-e-sistemas-6mm", "source": "Dev.to Brasil", "date": "Oct 22", "categoria": "Finanças"}, {"title": "Estados Unidos adotam biometria como novo registro em passaportes", "desc": "Os agentes de proteção alfandegária americana vem aumentando o uso de tecnologias para agilizar processos e otimizar os custos do trabalho", "img": "https://i0.statig.com.br/bancodeimagens/65/fp/h4/65fph4oz9k4unrvpc3lso958j.jpg", "url": "https://turismo.ig.com.br/2026-10-26/estados-unidos-adotam-biometria-como-novo-registro-em-passaportes.html", "source": "Ig.com.br", "date": "2026-10-26", "categoria": "Tecnologia"}, {"title": "Coca-Cola Femsa tem crescimento de lucro e receitas no 3º trimestre e Brasil é destaque nos resultados", "desc": "A Coca-Cola Femsa, maior engarrafadora da marca Coca-Cola no mundo em volume de vendas, encerrou o terceiro trimestre com lucro líquido de 6,22 bilhões de pesos mexicanos (US$ 352,4 milhões), alta de 5,5% na comparação anual.\n\nAs vendas da companhia mexicana …", "img": "https://s2-valor.glbimg.com/-hx7wyaZX4MDOIeqP2wtVUgQlgk=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2019/s/G/ZIOkc2RoAE6F6berdMSA/foto28emp-201-coca-b6.jpg", "url": "https://valor.globo.com/empresas/noticia/2026/10/26/coca-cola-femsa-tem-crescimento-de-lucro-e-receitas-no-3o-trimestre-e-brasil-e-destaque-nos-resultados.ghtml", "source": "Globo", "date": "2026-10-26", "categoria": "Tecnologia"}, {"title": "Universidades de Tomar e Autónoma de Lisboa criam consórcio", "desc": "Acordo prevê novos ciclos de estudos, unidades de investigação, intercâmbio de estudantes e docentes e serviços à comunidade, podendo ainda criar unidades orgânicas fora de ambas as instituições.", "img": "https://wm.observador.pt/wm/l/https%3A%2F%2Fbordalo.observador.pt%2Fv2%2Frs%3Afill%3A770%3A403%2Fc%3A4096%3A2303%3Anowe%3A0%3A214%2Fq%3A70%2Ff%3Awebp%2Fplain%2Fhttps%3A%2F%2Fs3.observador.pt%2Fwp-content%2Fuploads%2F2026%2F08%2F27150530%2Fistock-959622488-scaled.jpg?layer=obstop:T", "url": "https://observador.pt/2026/10/26/universidades-de-tomar-e-autonoma-de-lisboa-criam-consorcio-para-reforcar-ensino-e-investigacao/", "source": "Observador.pt", "date": "2026-10-26", "categoria": "Tecnologia"}];
+        const todasNoticias = [{"title": "Como reduzir o tempo da Sprint Planning pela metade com estimativas em tempo real", "desc": "Dicas práticas e decisões de arquitetura em Next.js para transformar reuniões de estimativa arrastadas em alinhamentos técnicos ágeis e eficientes.", "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F7mizvhzw7ziongg9l7ro.png", "url": "https://dev.to/geekecia/como-reduzir-o-tempo-da-sprint-planning-pela-metade-com-estimativas-em-tempo-real-2a6m", "source": "Dev.to Brasil", "date": "Oct 19", "categoria": "Tecnologia"}, {"title": "TipTools: Por que e como construímos +100 ferramentas para devs 100% client-side", "desc": "Quantas vezes você já precisou formatar um JSON com dados sensíveis de produção, visualizar um...", "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fmi53nwc0hygjc7w9lrxu.png", "url": "https://dev.to/geekecia/tiptools-por-que-e-como-construimos-100-ferramentas-para-devs-100-client-side-5hmk", "source": "Dev.to Brasil", "date": "Oct 16", "categoria": "Tecnologia"}, {"title": "Como eliminamos o viés de ancoragem em reuniões de Sprint com WebSockets e Voto Cego Real", "desc": "Entenda como construímos uma ferramenta de Planning Poker em tempo real com Next.js, sub-100ms e isolamento de votos antes do reveal.", "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flqclihesd36sqk0x56s2.png", "url": "https://dev.to/geekecia/como-eliminamos-o-vies-de-ancoragem-em-reunioes-de-sprint-com-websockets-e-voto-cego-real-3c5a", "source": "Dev.to Brasil", "date": "Oct 16", "categoria": "Tecnologia"}, {"title": "A small star is eating a brown dwarf so slowly that the meal could last billions of years, and the two orbit each other every 87 minutes inside a space that would fit within the Sun", "desc": "A small red star is pulling gas from a brown dwarf as the pair circles every 87 minutes, packed into an orbit that could fit inside the Sun. Material strikes the star’s surface and lights up a hot spot, marking a meal that could continue for billions of years. The system, ZTF J0440+2325, lies a […]\nThe post A small star is eating a brown dwarf so slowly that the meal could last billions of years, and the two orbit each other every 87 minutes inside a space that would fit within the Sun appeared first on Space Daily.", "img": "https://spacedaily.com/wp-content/uploads/2026/10/Keck_obervatories.jpg", "url": "https://spacedaily.com/a-small-star-is-eating-a-brown-dwarf-so-slowly-that-the-meal-could-last-billions-of-years-and-the-two-orbit-each-other-every-87-minutes-inside-a-space-that-would-fit-within-the-sun/", "source": "SpaceTech", "date": "2026-10-27", "categoria": "Ciência"}, {"title": "GraphQL para Iniciantes: Guia Completo com .NET", "desc": "Aprenda como GraphQL organiza schemas, queries e resolvers, execute uma API com .NET 10 e escolha entre GraphQL, REST e gRPC.", "img": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fzocate.li%2Fposts%2F2026%2Fgraphql-tutorial%2Fimages%2Fcover_hu_662274f337eb8622.jpg", "url": "https://dev.to/lzocate-li/graphql-para-iniciantes-guia-completo-com-net-1id1", "source": "Dev.to Brasil", "date": "Oct 26", "categoria": "Tecnologia"}, {"title": "NASA Invites Media to Crew Completion of Yearlong Mars Simulation", "desc": "The four volunteers who lived and worked in a simulated NASA Mars mission for more than a year will exit their habitat on Saturday, Oct. 31, after 378 days of isolation in a facility at the agency’s Johnson Space Center in Houston. Health and performance data collected from the simulation can help NASA develop methods […]", "img": "https://www.nasa.gov/wp-content/uploads/2026/10/chapeamission2.jpg", "url": "https://www.nasa.gov/news-release/nasa-invites-media-to-crew-completion-of-yearlong-mars-simulation/", "source": "SpaceTech", "date": "2026-10-27", "categoria": "Ciência"}, {"title": "NASA’s Neo Surveyor Sunshade", "desc": "A technician inspects the large sunshade of NASA’s Near-Earth Object (NEO) Surveyor mission in this image released on Oct. 26, 2026. The sunshade structure, which stands 20 feet (6 meters) tall and measures 8 feet (2.4 meters) wide at its base, will keep the infrared space telescope cool as it searches for near-Earth asteroids and […]", "img": "https://www.nasa.gov/wp-content/uploads/2026/10/1-pia26715-bae-sunshade-inspection-1.jpg", "url": "https://www.nasa.gov/image-article/nasas-neo-surveyor-sunshade/", "source": "SpaceTech", "date": "2026-10-27", "categoria": "Ciência"}, {"title": "Story Points vs Horas: por que o debate de estimativa se perde e como o consenso real resolve", "desc": "Por que times perdem tanto tempo debatendo números em Sprints e como focar em divergências técnicas acelera as cerimônias ágeis.", "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flgl5tv2oae3ec09v8apt.png", "url": "https://dev.to/geekecia/story-points-vs-horas-por-que-o-debate-de-estimativa-se-perde-e-como-o-consenso-real-resolve-51m1", "source": "Dev.to Brasil", "date": "Oct 27", "categoria": "Tecnologia"}, {"title": "gRPC sem mistério: o que é e quando usar no .NET 10", "desc": "Entenda gRPC no .NET 10, Protocol Buffers, streaming e critérios para escolher o protocolo certo entre serviços.", "img": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fzocate.li%2Fposts%2F2026%2Fgrpc-net-10-implementacao%2Fimages%2Fcover_hu_ad8662646bb5dc15.jpg", "url": "https://dev.to/lzocate-li/grpc-sem-misterio-o-que-e-e-quando-usar-no-net-10-1fjk", "source": "Dev.to Brasil", "date": "Oct 18", "categoria": "Tecnologia"}, {"title": "Planning Poker em chamadas do Teams, Meet ou Slack: como estimar sem atrito", "desc": "Como simplificar a dinâmica de estimativa de histórias de usuário em reuniões remotas sem exigir cadastro ou licenças por assento.", "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fxuqrfrmebqsh5bm6f60l.png", "url": "https://dev.to/geekecia/planning-poker-em-chamadas-do-teams-meet-ou-slack-como-estimar-sem-atrito-180d", "source": "Dev.to Brasil", "date": "Oct 23", "categoria": "Tecnologia"}, {"title": "Novo CNPJ Alfanumérico da Receita Federal: Como preparar seus testes e sistemas", "desc": "A transição para o CNPJ Alfanumérico regulamentada pela Receita Federal é uma das mudanças...", "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fc3smwggy9jpa9ypss802.png", "url": "https://dev.to/geekecia/novo-cnpj-alfanumerico-da-receita-federal-como-preparar-seus-testes-e-sistemas-6mm", "source": "Dev.to Brasil", "date": "Oct 22", "categoria": "Finanças"}, {"title": "ESA’s INVICTUS Hypersonic Programme Clears First Major Review", "desc": "The European Space Agency’s (ESA) INVICTUS hypersonic aircraft programme has cleared its first major requirements review and moved into the next phase of development, with a second review expected in October 2027. Stephan Carroll, INVICTUS chief engineer at Frazer-Nash, confirmed on LinkedIn on 23 October that the programme had successfully completed its first System Requirements […]\nThe post ESA’s INVICTUS Hypersonic Programme Clears First Major Review appeared first on European Spaceflight.", "img": "https://europeanspaceflight.com/wp-content/uploads/2026/10/ESAs-INVICTUS-Hypersonic-Programme-Clears-First-Design-Review.webp", "url": "https://europeanspaceflight.com/esas-invictus-hypersonic-programme-clears-first-major-review/", "source": "SpaceTech", "date": "2026-10-27", "categoria": "Ciência"}];
         const ofertasKiwify = [
-            {
-                badge: "Destaque Patrocinado",
-                titulo: "🚀 Método IA & Automação Lucrativa",
-                desc: "Aprenda a construir sistemas automáticos na internet e escale resultados todos os dias.",
-                url: "https://kiwify.app/bFEoJ38?afid=u7GyGPOM",
-                cta: "Acessar Treinamento VIP &rarr;"
-            },
-            {
-                badge: "Ferramenta Recomendada",
-                titulo: "💎 Escale seus Resultados no Digital",
-                desc: "O guia definitivo para transformar atenção e tecnologia em vendas recorrentes no piloto automático.",
-                url: "https://pay.kiwify.com.br/YUDgPja?afid=yt5zIWrU",
-                cta: "Desbloquear Oferta Especial &rarr;"
-            },
-            {
-                badge: "Acesso Exclusivo",
-                titulo: "⚡ Domine as Novas Tecnologias de 2026",
-                desc: "Saia na frente de 99% do mercado aplicando estratégias validadas de negócios digitais.",
-                url: "https://kiwify.app/ek8xMMl?afid=1rxg1P58",
-                cta: "Quero Garantir Minha Vaga &rarr;"
-            }
+            { badge: "Destaque Patrocinado", titulo: "🚀 Método IA & Automação Lucrativa", desc: "Aprenda a construir sistemas automáticos na internet e escale resultados todos os dias.", url: "https://kiwify.app/bFEoJ38?afid=u7GyGPOM", cta: "Acessar Treinamento VIP &rarr;" },
+            { badge: "Ferramenta Recomendada", titulo: "💎 Escale seus Resultados no Digital", desc: "O guia definitivo para transformar atenção e tecnologia em vendas recorrentes no piloto automático.", url: "https://pay.kiwify.com.br/YUDgPja?afid=yt5zIWrU", cta: "Desbloquear Oferta Especial &rarr;" },
+            { badge: "Acesso Exclusivo", titulo: "⚡ Domine as Novas Tecnologias de 2026", desc: "Saia na frente de 99% do mercado aplicando estratégias validadas de negócios digitais.", url: "https://kiwify.app/ek8xMMl?afid=1rxg1P58", cta: "Quero Garantir Minha Vaga &rarr;" }
         ];
+
+        // TEIA DE ARANHA SEO (Linkagem Interna Forçada Automática nos Textos)
+        function aplicarTeiaSEO(texto) {
+            if (!texto) return "";
+            let t = texto;
+            t = t.replace(/\b(inteligência artificial|IA)\b/i, '<a href="inteligencia-artificial.html" class="seo-internal-link">$1</a>');
+            t = t.replace(/\b(dólar|bitcoin|criptomoedas|mercado financeiro)\b/i, '<a href="cotacao-agora.html" class="seo-internal-link">$1</a>');
+            return t;
+        }
 
         window.onscroll = function() {
             var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
@@ -442,23 +390,13 @@
         };
 
         function alternarTema() {
-            const html = document.documentElement;
+            const htmlEl = document.documentElement;
             const btn = document.getElementById('theme-toggle-btn');
-            const atual = html.getAttribute('data-theme');
-            const novo = atual === 'dark' ? 'light' : 'dark';
-            html.setAttribute('data-theme', novo);
+            const novo = htmlEl.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            htmlEl.setAttribute('data-theme', novo);
             btn.innerHTML = novo === 'dark' ? '🌙 Escuro' : '☀️ Claro';
             localStorage.setItem('technews_theme', novo);
         }
-
-        (function() {
-            const salvo = localStorage.getItem('technews_theme');
-            if (salvo) {
-                document.documentElement.setAttribute('data-theme', salvo);
-                const btn = document.getElementById('theme-toggle-btn');
-                if (btn) btn.innerHTML = salvo === 'dark' ? '🌙 Escuro' : '☀️ Claro';
-            }
-        })();
 
         function falarNoticia(idx, event) {
             if (event) event.stopPropagation();
@@ -469,8 +407,6 @@
                 msg.lang = 'pt-BR';
                 msg.rate = 1.08;
                 window.speechSynthesis.speak(msg);
-            } else {
-                alert("Seu navegador não suporta leitura por voz.");
             }
         }
 
@@ -479,7 +415,7 @@
             document.getElementById('r-img').src = art.img;
             document.getElementById('r-source').innerText = art.source + " • " + art.categoria;
             document.getElementById('r-title').innerText = art.title;
-            document.getElementById('r-desc').innerText = art.desc;
+            document.getElementById('r-desc').innerHTML = aplicarTeiaSEO(art.desc);
             document.getElementById('r-url').href = art.url;
             document.getElementById('reader-modal').style.display = 'flex';
         }
@@ -495,15 +431,15 @@
 
             document.getElementById('hero-container').innerHTML = `
                 <div class="hero-card">
-                    <img src="${hero.img}" alt="Destaque" onerror="this.src='https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80'">
+                    <img src="${hero.img}" alt="Destaque" onerror="this.src='https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80'">
                     <div class="hero-overlay">
                         <span class="badge-source">🔥 Manchete Principal • ${hero.source}</span>
                         <h1>${hero.title}</h1>
-                        <p>${hero.desc}</p>
+                        <p>${aplicarTeiaSEO(hero.desc)}</p>
                         <div class="hero-actions">
-                            <button onclick="abrirReader(${heroIdx})" class="cta-btn">⚡ Resumo Expandido IA</button>
-                            <button onclick="falarNoticia(${heroIdx}, event)" class="btn-outline" style="background:rgba(0,0,0,0.65); color:#fff;">🔊 Ouvir Notícia</button>
-                            <a href="${hero.url}" target="_blank" rel="noopener noreferrer" class="btn-outline" style="background:rgba(255,255,255,0.12); color:#fff;">Matéria Original &rarr;</a>
+                            <button onclick="abrirReader(${heroIdx})" class="cta-btn">⚡ Síntese Executiva IA</button>
+                            <button onclick="falarNoticia(${heroIdx}, event)" class="btn-outline" style="background:rgba(0,0,0,0.65); color:#fff;">🔊 Ouvir</button>
+                            <a href="${hero.url}" target="_blank" rel="noopener noreferrer" class="btn-outline" style="background:rgba(255,255,255,0.12); color:#fff;">Fonte Oficial &rarr;</a>
                         </div>
                     </div>
                 </div>
@@ -518,7 +454,7 @@
                 <article class="news-card">
                     <div class="card-img-wrapper">
                         <span class="card-tag">${art.source}</span>
-                        <img src="${art.img}" alt="Capa" onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80'">
+                        <img src="${art.img}" alt="Capa" onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80'">
                         <div class="card-floating-btns">
                             <button class="audio-btn" onclick="falarNoticia(${globalIdx}, event)">🔊 Ouvir</button>
                             <a href="https://api.whatsapp.com/send?text=${zapTexto}" target="_blank" class="zap-btn" title="Compartilhar no WhatsApp">📲</a>
@@ -530,7 +466,7 @@
                             <span style="color:var(--primary)">● ${art.categoria}</span>
                         </div>
                         <h3 class="card-title">${art.title}</h3>
-                        <p class="card-desc">${art.desc}</p>
+                        <p class="card-desc">${aplicarTeiaSEO(art.desc)}</p>
                         <div class="card-footer-btns">
                             <button onclick="abrirReader(${globalIdx})" class="btn-outline">⚡ Resumo IA</button>
                             <a href="${art.url}" target="_blank" rel="noopener noreferrer" class="read-btn">Ler Fonte &rarr;</a>
@@ -545,8 +481,8 @@
                     feedHtml += `
                     <div class="native-ad-card">
                         <span class="ad-badge">${oferta.badge}</span>
-                        <h3>${oferta.titulo}</h3>
-                        <p>${oferta.desc}</p>
+                        <h3 style="margin-bottom:0.6rem;">${oferta.titulo}</h3>
+                        <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:1.2rem;">${oferta.desc}</p>
                         <a href="${oferta.url}" target="_blank" rel="noopener noreferrer" class="cta-btn" style="width: 100%; justify-content:center;">${oferta.cta}</a>
                     </div>
                     `;
@@ -569,7 +505,6 @@
         function buscarNoticia() {
             const termo = document.getElementById('search-input').value.toLowerCase();
             const filtradas = todasNoticias.filter(n => n.title.toLowerCase().includes(termo) || n.desc.toLowerCase().includes(termo));
-            document.getElementById('titulo-secao').innerText = termo ? 'Resultados para: "' + termo + '"' : 'Radar Global em Tempo Real';
             renderizarLista(filtradas);
         }
 
@@ -585,10 +520,6 @@
             }
         }, 1800);
 
-        function fecharAdBlock() {
-            document.getElementById('adblock-modal').style.display = 'none';
-        }
-
         let exitMostrado = false;
         document.addEventListener('mouseleave', function(e) {
             if (e.clientY < 0 && !exitMostrado) {
@@ -596,20 +527,6 @@
                 document.getElementById('exit-modal').style.display = 'flex';
             }
         });
-
-        const mensagensProva = [
-            "🔥 Rafael (SP) acabou de desbloquear o Treinamento de IA",
-            "⚡ Camila (MG) entrou para o Briefing Matinal VIP",
-            "💎 +42 leitores estão ativos no Terminal agora",
-            "🚀 Marcos (PR) acessou a Ferramenta Recomendada do Dia"
-        ];
-        setInterval(function() {
-            const toast = document.getElementById('social-proof-toast');
-            const texto = document.getElementById('toast-text');
-            texto.innerText = mensagensProva[Math.floor(Math.random() * mensagensProva.length)];
-            toast.classList.add('show');
-            setTimeout(() => toast.classList.remove('show'), 4500);
-        }, 16000);
 
         renderizarLista(todasNoticias);
     </script>
