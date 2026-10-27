@@ -1,4 +1,5 @@
 import os
+import sys
 import requests
 import json
 import random
@@ -14,6 +15,7 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
 META_ACCESS_TOKEN = os.getenv("META_ACCESS_TOKEN", "")
 META_PAGE_ID = os.getenv("META_PAGE_ID", "")
 ARQUIVO_MEMORIA_META = ".ultimo_post_meta.txt"
+ARQUIVO_FILA_POST = ".fila_post_meta.json"
 # ==============================================================================
 
 # URL OFICIAL DO SEU PORTAL
@@ -35,10 +37,12 @@ HTML_TEMPLATE = """<!DOCTYPE html>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Terminal avançado de notícias sobre Inteligência Artificial, Tecnologia, Ciência e Mercado Financeiro em tempo real.">
     
-    <!-- META TAGS OPEN GRAPH PARA PRÉVIA RICA NO FACEBOOK E WHATSAPP -->
+    <!-- META TAGS OPEN GRAPH PARA PRÉVIA RICA E CARD CLICÁVEL NO FACEBOOK -->
     <meta property="og:title" content="{og_title}">
     <meta property="og:description" content="{og_desc}">
     <meta property="og:image" content="{og_img}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:url" content="{url_portal}">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
@@ -290,7 +294,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         <div class="nav-container">
             <a class="logo" onclick="filtrarCategoria('todos', event)">
                 TechNews<span>.PRO</span>
-                <span class="logo-badge">IA v5.4</span>
+                <span class="logo-badge">IA v5.5</span>
             </a>
             <ul class="nav-links">
                 <li><button onclick="filtrarCategoria('todos', event)" class="active">🔥 Tudo</button></li>
@@ -656,7 +660,7 @@ def reescrever_com_ia(texto):
     return texto 
 
 # ==============================================================================
-# AGENTE DE POSTAGEM AUTOMÁTICA META (BLINDADO COM LINK CLICÁVEL + FALLBACK)
+# AGENTE DE POSTAGEM AUTOMÁTICA META (SINCRONIZADO PÓS-DEPLOY)
 # ==============================================================================
 def gerar_copy_persuasiva_meta(noticia):
     titulo = noticia.get("title", "")
@@ -666,7 +670,7 @@ def gerar_copy_persuasiva_meta(noticia):
         f"\n\n👉 ACESSE A MATÉRIA COMPLETA AQUI:\n"
         f"🔗 {URL_PORTAL_OFICIAL}\n\n"
         f"🛑 O detalhe mais importante (e como isso impacta o mercado) acabou de ser atualizado no nosso Terminal Oficial!\n\n"
-        f"👇 Clique no link acima ou comente 'LINK', 'QUERO' ou 'VIP' que te envio o acesso + uma Ferramenta Secreta direto no seu Direct! 🚀"
+        f"👇 Clique no Card/Link acima ou comente 'LINK', 'QUERO' ou 'VIP' que te envio o acesso + uma Ferramenta Secreta direto no seu Direct! 🚀"
     )
 
     if not OPENAI_API_KEY:
@@ -682,7 +686,7 @@ def gerar_copy_persuasiva_meta(noticia):
             "1. GANCHO EXPLOSIVO com emojis na primeira linha.\n"
             f"2. LOGO ABAIXO DO GANCHO, coloque: 👉 Leia completo no portal: {URL_PORTAL_OFICIAL}\n"
             "3. OPEN LOOP (Curiosidade): Conte o início da notícia de forma envolvente, mas pare no melhor momento dizendo que os detalhes completos estão no portal.\n"
-            f"4. FECHAMENTO: Repita o link ({URL_PORTAL_OFICIAL}) e peça também para comentarem 'LINK' ou 'VIP' para receberem uma ferramenta secreta no Direct."
+            f"4. FECHAMENTO: Convide a clicar na imagem/card abaixo ou no link ({URL_PORTAL_OFICIAL}) e peça também para comentarem 'LINK' ou 'VIP' para receberem uma ferramenta secreta no Direct."
         )
         payload = {
             "model": "gpt-4o-mini",
@@ -743,7 +747,8 @@ def salvar_memoria_meta(titulo):
             with open(ARQUIVO_MEMORIA_META, "r", encoding="utf-8") as f:
                 historico = [linha.strip() for linha in f.readlines() if linha.strip()]
         
-        historico.append(titulo.strip())
+        if titulo.strip() not in historico:
+            historico.append(titulo.strip())
         historico = historico[-20:]
         
         with open(ARQUIVO_MEMORIA_META, "w", encoding="utf-8") as f:
@@ -763,31 +768,46 @@ def publicar_no_facebook(noticia):
     stamp = datetime.now().strftime("%Y%m%d%H%M")
     link_com_cache_buster = f"{URL_PORTAL_OFICIAL}?v={stamp}"
 
+    # PASSO DE OURO: Força o robô da Meta a raspar (scrape) o novo index.html no ar para carregar a foto og:image!
+    try:
+        requests.post(
+            "https://graph.facebook.com/v20.0/",
+            data={"id": link_com_cache_buster, "scrape": "true", "access_token": token_pagina},
+            timeout=12
+        )
+        requests.post(
+            "https://graph.facebook.com/v20.0/",
+            data={"id": URL_PORTAL_OFICIAL, "scrape": "true", "access_token": token_pagina},
+            timeout=12
+        )
+        print("Agente Meta: Cache de imagem Open Graph atualizado com sucesso no servidor da Meta!")
+    except Exception as e:
+        print(f"Agente Meta: Aviso ao atualizar scrape Open Graph: {e}")
+
     alvos_tentativa = [alvo_id]
     if "me" not in alvos_tentativa:
         alvos_tentativa.append("me")
 
-    # 1. Tenta publicar como CARD DE LINK CLICÁVEL COM IMAGEM EXPLÍCITA (/feed)
+    # 1. Publicação Oficial de Link (Gera o Card Clicável com a Imagem puxada do og:image do site)
     for alvo in alvos_tentativa:
         try:
             url_feed = f"https://graph.facebook.com/v20.0/{alvo}/feed"
             payload_feed = {
                 "message": mensagem,
                 "link": link_com_cache_buster,
-                "picture": img_url,  # <--- FORÇA A IMAGEM DA NOTÍCIA A APARECER NO CARD CLICÁVEL
                 "access_token": token_pagina
             }
             r_feed = requests.post(url_feed, data=payload_feed, timeout=15)
             if r_feed.status_code == 200:
                 salvar_memoria_meta(noticia.get("title", ""))
-                print(f"Agente Meta: ✅ Card de Link Clicável COM IMAGEM publicado via '{alvo}'! ID: {r_feed.json().get('id')}")
+                print(f"Agente Meta: ✅ Card de Link Clicável com prévia do site publicado via '{alvo}'! ID: {r_feed.json().get('id')}")
                 return True
             else:
-                print(f"Agente Meta: Link Post com picture em '{alvo}' retornou {r_feed.status_code}: {r_feed.text}")
+                print(f"Agente Meta: Link Post em '{alvo}' retornou {r_feed.status_code}: {r_feed.text}")
         except Exception as e:
-            print(f"Agente Meta: Erro no Link Post com picture: {e}")
+            print(f"Agente Meta: Erro no Link Post: {e}")
 
-    # 2. FALLBACK: Foto isolada com link na legenda
+    # 2. FALLBACK: Se por algum motivo o link post falhar, posta como foto com link na legenda
     if img_url and img_url.startswith("http"):
         for alvo in alvos_tentativa:
             try:
@@ -804,28 +824,6 @@ def publicar_no_facebook(noticia):
                     return True
             except Exception as e:
                 print(f"Agente Meta: Erro no fallback de foto: {e}")
-
-    return False
-
-    # 2. FALLBACK BLINDADO: Foto de alta resolução da notícia + Link Clicável no topo e fim do texto
-    if img_url and img_url.startswith("http"):
-        for alvo in alvos_tentativa:
-            try:
-                url_photo = f"https://graph.facebook.com/v20.0/{alvo}/photos"
-                payload_photo = {
-                    "url": img_url,
-                    "caption": mensagem,
-                    "access_token": token_pagina
-                }
-                r_photo = requests.post(url_photo, data=payload_photo, timeout=15)
-                if r_photo.status_code == 200:
-                    salvar_memoria_meta(noticia.get("title", ""))
-                    print(f"Agente Meta: ✅ Post com IMAGEM + Link Clicável publicado via '{alvo}'! ID: {r_photo.json().get('id')}")
-                    return True
-                else:
-                    print(f"Agente Meta: Erro ao postar foto em '{alvo}': {r_photo.text}")
-            except Exception as e:
-                print(f"Agente Meta: Erro no fallback de foto em '{alvo}': {e}")
 
     return False
 
@@ -1002,7 +1000,7 @@ def deduplicar_noticias(lista):
             unicas.append(n)
     return unicas
 
-def gerar_portal():
+def gerar_portal(apenas_site=False):
     brutas = []
     brutas.extend(fetch_devto_pt())
     brutas.extend(fetch_newsapi())
@@ -1016,7 +1014,6 @@ def gerar_portal():
     else:
         random.shuffle(todas_noticias)
 
-    # SINCRONIA PERFEITA: Escolhe a notícia inédita e coloca ela no topo (Hero) do site e nas tags Open Graph!
     noticia_destaque = escolher_noticia_inedita(todas_noticias)
     if noticia_destaque in todas_noticias:
         todas_noticias.remove(noticia_destaque)
@@ -1027,8 +1024,10 @@ def gerar_portal():
     for i in range(limite):
         todas_noticias[i]['desc'] = reescrever_com_ia(todas_noticias[i]['desc'])
 
-    # PUBLICA NO FACEBOOK A MESMA NOTÍCIA QUE ESTÁ EM DESTAQUE NO TOPO DO PORTAL
-    publicar_no_facebook(todas_noticias[0])
+    # Salva a notícia de destaque no histórico e na fila para o Passo 6 postar após o deploy
+    salvar_memoria_meta(todas_noticias[0].get("title", ""))
+    with open(ARQUIVO_FILA_POST, "w", encoding="utf-8") as f:
+        json.dump(todas_noticias[0], f, ensure_ascii=False)
 
     trending_html = ""
     for idx, art in enumerate(todas_noticias[1:6], start=1):
@@ -1070,7 +1069,20 @@ def gerar_portal():
 
     with open("index.html", "w", encoding="utf-8") as f:
         f.write(html_final)
-    print("Terminal TechNews PRO v5.4 e Agente Meta executados com sucesso!")
+    print("Portal index.html v5.5 gerado com sucesso!")
+
+    if not apenas_site:
+        publicar_no_facebook(todas_noticias[0])
 
 if __name__ == "__main__":
-    gerar_portal()
+    if "--gerar-site" in sys.argv:
+        gerar_portal(apenas_site=True)
+    elif "--postar-meta" in sys.argv:
+        if os.path.exists(ARQUIVO_FILA_POST):
+            with open(ARQUIVO_FILA_POST, "r", encoding="utf-8") as f:
+                noticia_pronta = json.load(f)
+            publicar_no_facebook(noticia_pronta)
+        else:
+            print("Agente Meta: Fila de postagem não encontrada.")
+    else:
+        gerar_portal(apenas_site=False)
