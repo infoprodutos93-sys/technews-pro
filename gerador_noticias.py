@@ -760,7 +760,6 @@ def publicar_no_facebook(noticia):
     mensagem = gerar_copy_persuasiva_meta(noticia)
     img_url = noticia.get("img", "")
 
-    # Cache-buster para o Facebook sempre puxar a versão fresca do portal
     stamp = datetime.now().strftime("%Y%m%d%H%M")
     link_com_cache_buster = f"{URL_PORTAL_OFICIAL}?v={stamp}"
 
@@ -768,24 +767,45 @@ def publicar_no_facebook(noticia):
     if "me" not in alvos_tentativa:
         alvos_tentativa.append("me")
 
-    # 1. Tenta publicar como CARD DE LINK CLICÁVEL (/feed)
+    # 1. Tenta publicar como CARD DE LINK CLICÁVEL COM IMAGEM EXPLÍCITA (/feed)
     for alvo in alvos_tentativa:
         try:
             url_feed = f"https://graph.facebook.com/v20.0/{alvo}/feed"
             payload_feed = {
                 "message": mensagem,
                 "link": link_com_cache_buster,
+                "picture": img_url,  # <--- FORÇA A IMAGEM DA NOTÍCIA A APARECER NO CARD CLICÁVEL
                 "access_token": token_pagina
             }
             r_feed = requests.post(url_feed, data=payload_feed, timeout=15)
             if r_feed.status_code == 200:
                 salvar_memoria_meta(noticia.get("title", ""))
-                print(f"Agente Meta: ✅ Card de Link Clicável publicado com sucesso via '{alvo}'! ID: {r_feed.json().get('id')}")
+                print(f"Agente Meta: ✅ Card de Link Clicável COM IMAGEM publicado via '{alvo}'! ID: {r_feed.json().get('id')}")
                 return True
             else:
-                print(f"Agente Meta: Link Post em '{alvo}' retornou {r_feed.status_code}, acionando modo Imagem + Link na Legenda...")
+                print(f"Agente Meta: Link Post com picture em '{alvo}' retornou {r_feed.status_code}: {r_feed.text}")
         except Exception as e:
-            print(f"Agente Meta: Aviso em Link Post '{alvo}': {e}")
+            print(f"Agente Meta: Erro no Link Post com picture: {e}")
+
+    # 2. FALLBACK: Foto isolada com link na legenda
+    if img_url and img_url.startswith("http"):
+        for alvo in alvos_tentativa:
+            try:
+                url_photo = f"https://graph.facebook.com/v20.0/{alvo}/photos"
+                payload_photo = {
+                    "url": img_url,
+                    "caption": mensagem,
+                    "access_token": token_pagina
+                }
+                r_photo = requests.post(url_photo, data=payload_photo, timeout=15)
+                if r_photo.status_code == 200:
+                    salvar_memoria_meta(noticia.get("title", ""))
+                    print(f"Agente Meta: ✅ Post com IMAGEM e Link publicado via '{alvo}'! ID: {r_photo.json().get('id')}")
+                    return True
+            except Exception as e:
+                print(f"Agente Meta: Erro no fallback de foto: {e}")
+
+    return False
 
     # 2. FALLBACK BLINDADO: Foto de alta resolução da notícia + Link Clicável no topo e fim do texto
     if img_url and img_url.startswith("http"):
