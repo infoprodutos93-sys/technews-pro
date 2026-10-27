@@ -24,24 +24,27 @@ jobs:
       - name: 3. Instalar biblioteca requests
         run: pip install requests
 
-      - name: 4. Gerar portal index.html com IA
+      - name: 4. Gerar Ecossistema Multi-Páginas (Index, Hub IA, Cotações e Sitemap)
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}
         run: python gerador_noticias.py --gerar-site
 
-      - name: 5. Publicar novo index.html no GitHub Pages
+      - name: 5. Publicar páginas e Sitemap no GitHub Pages
         run: |
           git config --global user.name "Robô TechNews"
           git config --global user.email "bot@technews.pro"
-          git add index.html .ultimo_post_meta.txt || git add index.html
-          git diff --quiet && git diff --staged --quiet || (git commit -m "🔄 Atualização automática do portal TechNews PRO" && git push)
+          git add index.html inteligencia-artificial.html cotacao-agora.html sitemap.xml .ultimo_post_meta.txt || git add *.html
+          git diff --quiet && git diff --staged --quiet || (git commit -m "🚀 Deploy v6.1: Portal, Hub IA, Cotações & SEO" && git push)
 
-      - name: 6. Aguardar 45s para o GitHub Pages atualizar a foto no ar e Postar no Facebook
+      - name: 6. Aguardar 45s para propagação do GitHub Pages e Disparar Facebook + Telegram
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
           META_PAGE_ID: ${{ secrets.META_PAGE_ID }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: |
           echo "Aguardando 45 segundos para o GitHub Pages atualizar as tags Open Graph (og:image)..."
           sleep 45
-          python gerador_noticias.py --postar-meta
+          python gerador_noticias.py --postar-redes
