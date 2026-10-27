@@ -6,3 +6,4 @@ West Coast Falcon 9 rocket to launch 27 Starlink satellites
 Huawei Watch D3 chega a Portugal com monitorização da pressão arterial durante 24h
 Comunidade de Open Source do Reddit proíbe projetos com IA e gera revolta
 Como reduzir o tempo da Sprint Planning pela metade com estimativas em tempo real
+gRPC sem mistério: o que é e quando usar no .NET 10
