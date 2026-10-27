@@ -24,16 +24,24 @@ jobs:
       - name: 3. Instalar biblioteca requests
         run: pip install requests
 
-      - name: 4. Executar gerador de notícias e Agente Meta
+      - name: 4. Gerar portal index.html com IA
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
-          META_PAGE_ID: ${{ secrets.META_PAGE_ID }}
-        run: python gerador_noticias.py
+        run: python gerador_noticias.py --gerar-site
 
-      - name: 5. Salvar o novo index.html e histórico no site
+      - name: 5. Publicar novo index.html no GitHub Pages
         run: |
           git config --global user.name "Robô TechNews"
           git config --global user.email "bot@technews.pro"
           git add index.html .ultimo_post_meta.txt || git add index.html
-          git diff --quiet && git diff --staged --quiet || (git commit -m "🔄 Atualização automática de notícias e Social" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "🔄 Atualização automática do portal TechNews PRO" && git push)
+
+      - name: 6. Aguardar 45s para o GitHub Pages atualizar a foto no ar e Postar no Facebook
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
+          META_PAGE_ID: ${{ secrets.META_PAGE_ID }}
+        run: |
+          echo "Aguardando 45 segundos para o GitHub Pages atualizar as tags Open Graph (og:image)..."
+          sleep 45
+          python gerador_noticias.py --postar-meta
