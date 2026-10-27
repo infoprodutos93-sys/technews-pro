@@ -24,20 +24,21 @@ jobs:
       - name: 3. Instalar biblioteca requests
         run: pip install requests
 
-      - name: 4. Gerar Ecossistema Multi-Páginas (Index, Hub IA, Cotações e Sitemap)
+      - name: 4. Gerar Ecossistema Completo (Index, Hubs SEO, Cotações, Sitemap e RSS)
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}
+          ONESIGNAL_APP_ID: ${{ secrets.ONESIGNAL_APP_ID }}
         run: python gerador_noticias.py --gerar-site
 
-      - name: 5. Publicar páginas, Sitemap e Feed RSS no GitHub Pages
+      - name: 5. Publicar todas as páginas, Sitemap e Feed RSS no GitHub Pages
         run: |
           git config --global user.name "Robô TechNews"
           git config --global user.email "bot@technews.pro"
           git add *.html *.xml .ultimo_post_meta.txt
-          git diff --quiet && git diff --staged --quiet || (git commit -m "🚀 Deploy v7.0: SEO Programático, OneSignal e RSS" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "🚀 Deploy Master v7.5: Portal Completo, SEO Clusters, RSS & Monetização Total" && git push)
 
-      - name: 6. Aguardar 45s para propagação e Disparar Redes + OneSignal Push
+      - name: 6. Aguardar 45s para propagação do GitHub Pages e Disparar Facebook + Telegram + OneSignal
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
@@ -47,6 +48,6 @@ jobs:
           ONESIGNAL_APP_ID: ${{ secrets.ONESIGNAL_APP_ID }}
           ONESIGNAL_REST_KEY: ${{ secrets.ONESIGNAL_REST_KEY }}
         run: |
-          echo "Aguardando 45 segundos para o GitHub Pages atualizar as tags..."
+          echo "Aguardando 45 segundos para o GitHub Pages atualizar as tags Open Graph (og:image)..."
           sleep 45
           python gerador_noticias.py --postar-redes
