@@ -16,6 +16,9 @@ META_PAGE_ID = os.getenv("META_PAGE_ID", "")
 ARQUIVO_MEMORIA_META = ".ultimo_post_meta.txt"
 # ==============================================================================
 
+# URL OFICIAL DO SEU PORTAL
+URL_PORTAL_OFICIAL = "https://infoprodutos93-sys.github.io/technews-pro/"
+
 # LINKS DE MONETIZAÇÃO E FUNIL
 SMARTLINK_ADSTERRA = "https://asiafilm.org/4/78ed9deb10feac05c15347b414e171ab"
 SYSTEME_OPTIN_URL = "https://devanildobeeny146.systeme.io/3ed9605c"
@@ -31,9 +34,15 @@ HTML_TEMPLATE = """<!DOCTYPE html>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Terminal avançado de notícias sobre Inteligência Artificial, Tecnologia, Ciência e Mercado Financeiro em tempo real.">
-    <meta property="og:title" content="TechNews PRO | Terminal de Inteligência, IA & Mercado">
-    <meta property="og:description" content="Acompanhe em tempo real as notícias mais impactantes de Tecnologia, IA e Finanças.">
+    
+    <!-- META TAGS OPEN GRAPH PARA PRÉVIA RICA NO FACEBOOK E WHATSAPP -->
+    <meta property="og:title" content="{og_title}">
+    <meta property="og:description" content="{og_desc}">
+    <meta property="og:image" content="{og_img}">
+    <meta property="og:url" content="{url_portal}">
     <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
     <title>TechNews PRO | Terminal de Inteligência, IA & Mercado</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
     <style>
@@ -94,14 +103,12 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         .search-box input:focus { width: 230px; border-color: var(--primary); }
         .search-icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); font-size: 0.8rem; color: var(--text-muted); }
 
-        /* BOTÃO DE TEMA SOL / LUA */
         .theme-btn { background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--text-main); padding: 0.45rem 0.85rem; border-radius: 8px; cursor: pointer; font-weight: 700; font-size: 0.85rem; display: flex; align-items: center; gap: 6px; }
         .theme-btn:hover { border-color: var(--primary); }
 
         .cta-btn { background: linear-gradient(135deg, #ef4444, #b91c1c); color: #fff; border: none; padding: 0.55rem 1.2rem; border-radius: 8px; font-weight: 800; cursor: pointer; text-decoration: none; font-size: 0.85rem; box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3); display: inline-flex; align-items: center; gap: 6px; }
         .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(239, 68, 68, 0.5); }
 
-        /* RADAR DE TAGS QUENTES */
         .tags-bar { max-width: 1440px; margin: 1.2rem auto 0 auto; padding: 0 5%; display: flex; align-items: center; gap: 0.6rem; overflow-x: auto; white-space: nowrap; }
         .tag-pill { background: var(--card-bg); border: 1px solid var(--border); color: var(--text-muted); padding: 4px 12px; border-radius: 20px; font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: 0.2s; }
         .tag-pill:hover { border-color: var(--primary); color: var(--text-main); transform: scale(1.05); }
@@ -283,7 +290,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         <div class="nav-container">
             <a class="logo" onclick="filtrarCategoria('todos', event)">
                 TechNews<span>.PRO</span>
-                <span class="logo-badge">IA v5.2</span>
+                <span class="logo-badge">IA v5.4</span>
             </a>
             <ul class="nav-links">
                 <li><button onclick="filtrarCategoria('todos', event)" class="active">🔥 Tudo</button></li>
@@ -649,54 +656,55 @@ def reescrever_com_ia(texto):
     return texto 
 
 # ==============================================================================
-# AGENTE DE POSTAGEM AUTOMÁTICA META (CORRIGIDO CONTRA ERRO #100 GLOBAL ID)
+# AGENTE DE POSTAGEM AUTOMÁTICA META (BLINDADO COM LINK CLICÁVEL + FALLBACK)
 # ==============================================================================
 def gerar_copy_persuasiva_meta(noticia):
     titulo = noticia.get("title", "")
     resumo = noticia.get("desc", "")
 
     cta_padrao = (
-        "\n\n🛑 Mas o detalhe mais importante (e como isso afeta o seu bolso e carreira) "
-        "acabou de ser atualizado no nosso Terminal Oficial!\n\n"
-        "👇 Comente 'LINK', 'QUERO' ou 'VIP' aqui embaixo que te envio a matéria completa "
-        "+ uma Ferramenta Secreta direto no seu Direct, ou acesse agora pelo LINK NA BIO! 🔗🚀"
+        f"\n\n👉 ACESSE A MATÉRIA COMPLETA AQUI:\n"
+        f"🔗 {URL_PORTAL_OFICIAL}\n\n"
+        f"🛑 O detalhe mais importante (e como isso impacta o mercado) acabou de ser atualizado no nosso Terminal Oficial!\n\n"
+        f"👇 Clique no link acima ou comente 'LINK', 'QUERO' ou 'VIP' que te envio o acesso + uma Ferramenta Secreta direto no seu Direct! 🚀"
     )
 
     if not OPENAI_API_KEY:
-        return f"🚨 BOMBA NO MERCADO: {titulo}!\n\n{resumo}{cta_padrao}"
+        return f"🚨 URGENTE: {titulo}!\n\n{resumo}{cta_padrao}"
 
     try:
         url = "https://api.openai.com/v1/chat/completions"
         headers = {"Content-Type": "application/json", "Authorization": f"Bearer {OPENAI_API_KEY}"}
         prompt = (
-            f"Notícia: {titulo}. Resumo: {resumo}.\n\n"
-            "Crie um post altamente persuasivo para o Facebook seguindo esta estrutura exata:\n"
-            "1. GANCHO EXPLOSIVO com emojis que prenda a atenção na primeira linha.\n"
-            "2. OPEN LOOP (Curiosidade): Conte o início da notícia verdadeira de forma envolvente, mas PARE no melhor momento sem entregar a conclusão total, dizendo que a análise completa está no blog.\n"
-            "3. CTA OBRIGATÓRIO: Termine exatamente mandando o leitor comentar a palavra 'LINK' ou 'QUERO' para receber a matéria completa e uma ferramenta secreta no Direct (DM), ou clicar direto no LINK DA BIO."
+            f"Notícia: {titulo}. Resumo: {resumo}.\n"
+            f"Link Oficial do Portal: {URL_PORTAL_OFICIAL}\n\n"
+            "Crie um post altamente magnético para o Facebook seguindo esta estrutura exata:\n"
+            "1. GANCHO EXPLOSIVO com emojis na primeira linha.\n"
+            f"2. LOGO ABAIXO DO GANCHO, coloque: 👉 Leia completo no portal: {URL_PORTAL_OFICIAL}\n"
+            "3. OPEN LOOP (Curiosidade): Conte o início da notícia de forma envolvente, mas pare no melhor momento dizendo que os detalhes completos estão no portal.\n"
+            f"4. FECHAMENTO: Repita o link ({URL_PORTAL_OFICIAL}) e peça também para comentarem 'LINK' ou 'VIP' para receberem uma ferramenta secreta no Direct."
         )
         payload = {
             "model": "gpt-4o-mini",
             "messages": [
-                {"role": "system", "content": "Você é um copywriter especialista em retenção e viralização nas redes sociais."},
+                {"role": "system", "content": "Você é um copywriter especialista em tráfego direto, retenção e cliques no Facebook."},
                 {"role": "user", "content": prompt}
             ],
-            "max_tokens": 220,
+            "max_tokens": 260,
             "temperature": 0.75
         }
         r = requests.post(url, headers=headers, json=payload, timeout=10)
         if r.status_code == 200:
-            return r.json()["choices"][0]["message"]["content"].strip().replace('"', '')
+            copy_ia = r.json()["choices"][0]["message"]["content"].strip().replace('"', '')
+            if URL_PORTAL_OFICIAL not in copy_ia:
+                copy_ia += f"\n\n👉 Acesse a matéria completa aqui: {URL_PORTAL_OFICIAL}"
+            return copy_ia
     except:
         pass
 
     return f"🚨 URGENTE: {titulo}!\n\n{resumo}{cta_padrao}"
 
 def obter_credenciais_pagina(token_inicial):
-    """
-    Evita o erro '(#100) The global id is not allowed for this call':
-    Sempre tenta buscar o Page Token e o ID interno via /me/accounts primeiro.
-    """
     try:
         url_acc = "https://graph.facebook.com/v20.0/me/accounts"
         r = requests.get(url_acc, params={"access_token": token_inicial}, timeout=10)
@@ -711,47 +719,75 @@ def obter_credenciais_pagina(token_inicial):
     except Exception as e:
         print(f"Agente Meta: Aviso ao consultar me/accounts: {e}")
 
-    # Se não retornou em me/accounts, o token já é um Page Access Token direto
     return "me", token_inicial
 
 def escolher_noticia_inedita(lista_noticias):
-    ultimo_titulo = ""
+    historico = []
     if os.path.exists(ARQUIVO_MEMORIA_META):
         try:
             with open(ARQUIVO_MEMORIA_META, "r", encoding="utf-8") as f:
-                ultimo_titulo = f.read().strip()
+                historico = [linha.strip().lower() for linha in f.readlines() if linha.strip()]
         except:
             pass
 
     for n in lista_noticias:
-        if n.get("title") and n.get("title") != ultimo_titulo:
+        tit = n.get("title", "").strip().lower()
+        if tit and tit not in historico:
             return n
     return lista_noticias[0]
 
 def salvar_memoria_meta(titulo):
     try:
+        historico = []
+        if os.path.exists(ARQUIVO_MEMORIA_META):
+            with open(ARQUIVO_MEMORIA_META, "r", encoding="utf-8") as f:
+                historico = [linha.strip() for linha in f.readlines() if linha.strip()]
+        
+        historico.append(titulo.strip())
+        historico = historico[-20:]
+        
         with open(ARQUIVO_MEMORIA_META, "w", encoding="utf-8") as f:
-            f.write(titulo.strip())
+            f.write("\n".join(historico))
     except:
         pass
 
-def publicar_no_facebook(lista_noticias):
-    if not META_ACCESS_TOKEN or not lista_noticias:
+def publicar_no_facebook(noticia):
+    if not META_ACCESS_TOKEN or not noticia:
         print("Agente Meta: META_ACCESS_TOKEN ausente nos Secrets. Pulando publicação social.")
         return False
 
-    noticia = escolher_noticia_inedita(lista_noticias)
     alvo_id, token_pagina = obter_credenciais_pagina(META_ACCESS_TOKEN)
-    
     mensagem = gerar_copy_persuasiva_meta(noticia)
     img_url = noticia.get("img", "")
 
-    # Lista de alvos para tentar postar ('me' com Page Token funciona sem conflito de Global ID)
+    # Cache-buster para o Facebook sempre puxar a versão fresca do portal
+    stamp = datetime.now().strftime("%Y%m%d%H%M")
+    link_com_cache_buster = f"{URL_PORTAL_OFICIAL}?v={stamp}"
+
     alvos_tentativa = [alvo_id]
     if "me" not in alvos_tentativa:
         alvos_tentativa.append("me")
 
-    # 1. Tenta postar com IMAGEM (/photos)
+    # 1. Tenta publicar como CARD DE LINK CLICÁVEL (/feed)
+    for alvo in alvos_tentativa:
+        try:
+            url_feed = f"https://graph.facebook.com/v20.0/{alvo}/feed"
+            payload_feed = {
+                "message": mensagem,
+                "link": link_com_cache_buster,
+                "access_token": token_pagina
+            }
+            r_feed = requests.post(url_feed, data=payload_feed, timeout=15)
+            if r_feed.status_code == 200:
+                salvar_memoria_meta(noticia.get("title", ""))
+                print(f"Agente Meta: ✅ Card de Link Clicável publicado com sucesso via '{alvo}'! ID: {r_feed.json().get('id')}")
+                return True
+            else:
+                print(f"Agente Meta: Link Post em '{alvo}' retornou {r_feed.status_code}, acionando modo Imagem + Link na Legenda...")
+        except Exception as e:
+            print(f"Agente Meta: Aviso em Link Post '{alvo}': {e}")
+
+    # 2. FALLBACK BLINDADO: Foto de alta resolução da notícia + Link Clicável no topo e fim do texto
     if img_url and img_url.startswith("http"):
         for alvo in alvos_tentativa:
             try:
@@ -764,41 +800,36 @@ def publicar_no_facebook(lista_noticias):
                 r_photo = requests.post(url_photo, data=payload_photo, timeout=15)
                 if r_photo.status_code == 200:
                     salvar_memoria_meta(noticia.get("title", ""))
-                    print(f"Agente Meta: ✅ Post com IMAGEM publicado com sucesso via '{alvo}'! ID: {r_photo.json().get('id')}")
+                    print(f"Agente Meta: ✅ Post com IMAGEM + Link Clicável publicado via '{alvo}'! ID: {r_photo.json().get('id')}")
                     return True
                 else:
-                    print(f"Agente Meta: Tentativa de foto em '{alvo}' retornou {r_photo.status_code}: {r_photo.text}")
+                    print(f"Agente Meta: Erro ao postar foto em '{alvo}': {r_photo.text}")
             except Exception as e:
-                print(f"Agente Meta: Erro ao enviar foto em '{alvo}': {e}")
-
-    # 2. Fallback: Postar texto no Feed (/feed)
-    for alvo in alvos_tentativa:
-        try:
-            url_feed = f"https://graph.facebook.com/v20.0/{alvo}/feed"
-            payload_feed = {
-                "message": mensagem,
-                "access_token": token_pagina
-            }
-            r_feed = requests.post(url_feed, data=payload_feed, timeout=15)
-            if r_feed.status_code == 200:
-                salvar_memoria_meta(noticia.get("title", ""))
-                print(f"Agente Meta: ✅ Post publicado no Feed com sucesso via '{alvo}'! ID: {r_feed.json().get('id')}")
-                return True
-            else:
-                print(f"Agente Meta: ❌ Erro na API da Meta em '{alvo}': {r_feed.text}")
-        except Exception as e:
-            print(f"Agente Meta: ❌ Erro de conexão com o Facebook em '{alvo}': {e}")
+                print(f"Agente Meta: Erro no fallback de foto em '{alvo}': {e}")
 
     return False
 
 # ==============================================================================
-# MULTI-APIS DE NOTÍCIAS
+# FILTRO DE NICHO E MULTI-APIS DE NOTÍCIAS
 # ==============================================================================
+PALAVRAS_BLOQUEADAS = [
+    "futebol", "gol", "campeonato", "brasileirão", "z-4", "botafogo", "flamengo",
+    "corinthians", "palmeiras", "grêmio", "inter ", "internacional", "vinagre",
+    "limpar janela", "faxina", "receita caseira", "fofoca", "bbb", "novela",
+    "horóscopo", "astrologia", "manifestantes", "cacetadas"
+]
+
+def noticia_relevante_nicho(titulo, desc=""):
+    texto = f"{titulo} {desc}".lower()
+    if any(b in texto for b in PALAVRAS_BLOQUEADAS):
+        return False
+    return True
+
 def classificar_noticia(titulo):
     t = titulo.lower()
-    if any(k in t for k in ["finança", "banco", "mercado", "ação", "investimento", "startup", "economia", "negócio", "dólar", "cripto", "bitcoin", "ibge"]):
+    if any(k in t for k in ["finança", "banco", "mercado", "ação", "investimento", "startup", "economia", "negócio", "dólar", "cripto", "bitcoin", "ibge", "cnpj", "receita federal", "imposto", "pib"]):
         return "Finanças"
-    elif any(k in t for k in ["espaço", "nasa", "satélite", "ciência", "física", "astronomia", "foguete"]):
+    elif any(k in t for k in ["espaço", "nasa", "satélite", "ciência", "física", "astronomia", "foguete", "órbita"]):
         return "Ciência"
     return "Tecnologia"
 
@@ -808,6 +839,10 @@ def fetch_ibge_noticias():
         r = requests.get("https://servicodados.ibge.gov.br/api/v3/noticias/?qtd=6", timeout=8)
         if r.status_code == 200:
             for item in r.json().get("items", []):
+                titulo = item.get("titulo", "")
+                desc = item.get("introducao", "Confira os dados completos divulgados pelo portal oficial.")
+                if not noticia_relevante_nicho(titulo, desc):
+                    continue
                 img_url = "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=800&q=80"
                 try:
                     imagens_json = json.loads(item.get("imagens", "{}"))
@@ -815,10 +850,9 @@ def fetch_ibge_noticias():
                         img_url = "https://agenciadenoticias.ibge.gov.br/" + imagens_json["image_intro"]
                 except:
                     pass
-                titulo = item.get("titulo")
                 noticias.append({
                     "title": titulo,
-                    "desc": item.get("introducao", "Confira os dados completos divulgados pelo portal oficial."),
+                    "desc": desc,
                     "img": img_url,
                     "url": item.get("link", "#"),
                     "source": "IBGE Oficial",
@@ -832,18 +866,21 @@ def fetch_ibge_noticias():
 def fetch_devto_pt():
     noticias = []
     try:
-        r = requests.get("https://dev.to/api/articles?tag=portuguese&per_page=6", headers={'User-Agent': 'Mozilla/5.0'}, timeout=8)
+        r = requests.get("https://dev.to/api/articles?tag=portuguese&per_page=8", headers={'User-Agent': 'Mozilla/5.0'}, timeout=8)
         if r.status_code == 200:
             for item in r.json():
-                titulo = item.get("title")
+                titulo = item.get("title", "")
+                desc = item.get("description") or "Artigo técnico publicado na comunidade global de desenvolvedores."
+                if not noticia_relevante_nicho(titulo, desc):
+                    continue
                 noticias.append({
                     "title": titulo,
-                    "desc": item.get("description") or "Artigo técnico publicado na comunidade global de desenvolvedores.",
+                    "desc": desc,
                     "img": item.get("cover_image") or item.get("social_image") or "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
                     "url": item.get("url", "#"),
                     "source": "Dev.to Brasil",
                     "date": item.get("readable_publish_date", "Recente"),
-                    "categoria": "Tecnologia"
+                    "categoria": classificar_noticia(titulo)
                 })
     except:
         pass
@@ -855,10 +892,11 @@ def fetch_spaceflight_news():
         r = requests.get("https://api.spaceflightnewsapi.net/v4/articles/?limit=4", timeout=8)
         if r.status_code == 200:
             for item in r.json().get("results", []):
-                titulo = item.get("title")
+                titulo = item.get("title", "")
+                desc = item.get("summary", "")
                 noticias.append({
                     "title": titulo,
-                    "desc": item.get("summary", ""),
+                    "desc": desc,
                     "img": item.get("image_url") or "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80",
                     "url": item.get("url", "#"),
                     "source": "SpaceTech",
@@ -874,15 +912,17 @@ def fetch_newsapi():
     if not NEWS_API_KEY:
         return noticias
     try:
-        url = f"https://newsapi.org/v2/everything?q=tecnologia OR inteligencia artificial OR mercado&language=pt&sortBy=publishedAt&pageSize=8&apiKey={NEWS_API_KEY}"
+        query = '("inteligencia artificial" OR tecnologia OR ciberseguranca OR criptomoedas OR bitcoin OR startups OR software)'
+        url = f"https://newsapi.org/v2/everything?q={query}&language=pt&sortBy=publishedAt&pageSize=10&apiKey={NEWS_API_KEY}"
         r = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'}, timeout=8)
         if r.status_code == 200:
             for item in r.json().get("articles", []):
-                if item.get("title") and item.get("title") != "[Removed]":
-                    titulo = item.get("title")
+                titulo = item.get("title") or ""
+                desc = item.get("description") or "Clique para ler a matéria completa na fonte oficial."
+                if titulo and titulo != "[Removed]" and noticia_relevante_nicho(titulo, desc):
                     noticias.append({
                         "title": titulo,
-                        "desc": item.get("description") or "Clique para ler a matéria completa na fonte oficial.",
+                        "desc": desc,
                         "img": item.get("urlToImage") or "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80",
                         "url": item.get("url", "#"),
                         "source": item.get("source", {}).get("name", "TechPress"),
@@ -944,9 +984,9 @@ def deduplicar_noticias(lista):
 
 def gerar_portal():
     brutas = []
+    brutas.extend(fetch_devto_pt())
     brutas.extend(fetch_newsapi())
     brutas.extend(fetch_ibge_noticias())
-    brutas.extend(fetch_devto_pt())
     brutas.extend(fetch_spaceflight_news())
 
     todas_noticias = deduplicar_noticias(brutas)
@@ -955,14 +995,20 @@ def gerar_portal():
         todas_noticias.extend(FALLBACK_NEWS)
     else:
         random.shuffle(todas_noticias)
-        
+
+    # SINCRONIA PERFEITA: Escolhe a notícia inédita e coloca ela no topo (Hero) do site e nas tags Open Graph!
+    noticia_destaque = escolher_noticia_inedita(todas_noticias)
+    if noticia_destaque in todas_noticias:
+        todas_noticias.remove(noticia_destaque)
+    todas_noticias.insert(0, noticia_destaque)
+
     print("Iniciando reescrita de notícias com IA (ChatGPT)...")
     limite = min(len(todas_noticias), 10)
     for i in range(limite):
         todas_noticias[i]['desc'] = reescrever_com_ia(todas_noticias[i]['desc'])
 
-    # PUBLICA AUTOMATICAMENTE NOTÍCIA INÉDITA NO FACEBOOK
-    publicar_no_facebook(todas_noticias)
+    # PUBLICA NO FACEBOOK A MESMA NOTÍCIA QUE ESTÁ EM DESTAQUE NO TOPO DO PORTAL
+    publicar_no_facebook(todas_noticias[0])
 
     trending_html = ""
     for idx, art in enumerate(todas_noticias[1:6], start=1):
@@ -979,8 +1025,17 @@ def gerar_portal():
     noticias_json_str = json.dumps(todas_noticias, ensure_ascii=False)
     cotacoes_html = fetch_cotacoes()
 
+    destaque = todas_noticias[0]
+    og_title = destaque.get("title", "TechNews PRO | Terminal de Inteligência, IA & Mercado").replace('"', '&quot;')
+    og_desc = destaque.get("desc", "Acompanhe em tempo real as notícias mais impactantes de Tecnologia, IA e Finanças.").replace('"', '&quot;')
+    og_img = destaque.get("img", "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80")
+
     html_final = (
         HTML_TEMPLATE
+        .replace("{og_title}", og_title)
+        .replace("{og_desc}", og_desc)
+        .replace("{og_img}", og_img)
+        .replace("{url_portal}", URL_PORTAL_OFICIAL)
         .replace("{cotacoes_html}", cotacoes_html)
         .replace("{trending_section}", trending_html)
         .replace("{noticias_json}", noticias_json_str)
@@ -995,7 +1050,7 @@ def gerar_portal():
 
     with open("index.html", "w", encoding="utf-8") as f:
         f.write(html_final)
-    print("Terminal TechNews PRO v5.2 e Agente Meta executados com sucesso!")
+    print("Terminal TechNews PRO v5.4 e Agente Meta executados com sucesso!")
 
 if __name__ == "__main__":
     gerar_portal()
