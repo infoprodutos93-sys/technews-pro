@@ -10,3 +10,4 @@ gRPC sem mistério: o que é e quando usar no .NET 10
 Story Points vs Horas: por que o debate de estimativa se perde e como o consenso real resolve
 TipTools: Por que e como construímos +100 ferramentas para devs 100% client-side
 Ukrainian startup, GomSpace test satellite for future communications network
+APOD: 2026 October 28 – The Mutual Occultation of Ganymede and Io

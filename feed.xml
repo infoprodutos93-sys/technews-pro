@@ -6,11 +6,14 @@
   <description>Notícias em tempo real sobre Inteligência Artificial, Tecnologia, Ciência e Mercado Financeiro.</description>
   <language>pt-BR</language>
   <item>
-    <title>Ukrainian startup, GomSpace test satellite for future communications network</title>
-    <link>https://spacenews.com/ukrainian-startup-gomspace-test-satellite-for-future-communications-network/</link>
-    <description>
-The companies said the experimental spacecraft, launched Oct. 1, could lead to a Ukrainian-controlled satellite network 
-The post Ukrainian startup, GomSpace test satellite for future communications network appeared first on SpaceNews.</description>
+    <title>APOD: 2026 October 28 – The Mutual Occultation of Ganymede and Io</title>
+    <link>https://science.nasa.gov/image-article/apod-2026-october-28-the-mutual-occultation-of-ganymede-and-io/</link>
+    <description>APOD Science APOD APOD: 2026 October 28 – The… Today’s APOD Archive Submissions Index Search Calendar RSS Education About Discuss   APOD Astronomy Picture of the Day Discover the cosmos! Each day a different image or photograph of our fascinating universe is featured, along with a brief explanation written by a professional astronomer. To view […]</description>
+  </item>
+  <item>
+    <title>Novo CNPJ Alfanumérico da Receita Federal: Como preparar seus testes e sistemas</title>
+    <link>https://dev.to/geekecia/novo-cnpj-alfanumerico-da-receita-federal-como-preparar-seus-testes-e-sistemas-6mm</link>
+    <description>A transição para o CNPJ Alfanumérico regulamentada pela Receita Federal é uma das mudanças...</description>
   </item>
   <item>
     <title>gRPC sem mistério: o que é e quando usar no .NET 10</title>
@@ -23,35 +26,31 @@ The post Ukrainian startup, GomSpace test satellite for future communications ne
     <description>Por que times perdem tanto tempo debatendo números em Sprints e como focar em divergências técnicas acelera as cerimônias ágeis.</description>
   </item>
   <item>
-    <title>TipTools: Por que e como construímos +100 ferramentas para devs 100% client-side</title>
-    <link>https://dev.to/geekecia/tiptools-por-que-e-como-construimos-100-ferramentas-para-devs-100-client-side-5hmk</link>
-    <description>Quantas vezes você já precisou formatar um JSON com dados sensíveis de produção, visualizar um...</description>
-  </item>
-  <item>
-    <title>Novo CNPJ Alfanumérico da Receita Federal: Como preparar seus testes e sistemas</title>
-    <link>https://dev.to/geekecia/novo-cnpj-alfanumerico-da-receita-federal-como-preparar-seus-testes-e-sistemas-6mm</link>
-    <description>A transição para o CNPJ Alfanumérico regulamentada pela Receita Federal é uma das mudanças...</description>
-  </item>
-  <item>
-    <title>A small star is eating a brown dwarf so slowly that the meal could last billions of years, and the two orbit each other every 87 minutes inside a space that would fit within the Sun</title>
-    <link>https://spacedaily.com/a-small-star-is-eating-a-brown-dwarf-so-slowly-that-the-meal-could-last-billions-of-years-and-the-two-orbit-each-other-every-87-minutes-inside-a-space-that-would-fit-within-the-sun/</link>
-    <description>A small red star is pulling gas from a brown dwarf as the pair circles every 87 minutes, packed into an orbit that could fit inside the Sun. Material strikes the star’s surface and lights up a hot spot, marking a meal that could continue for billions of years. The system, ZTF J0440+2325, lies a […]
-The post A small star is eating a brown dwarf so slowly that the meal could last billions of years, and the two orbit each other every 87 minutes inside a space that would fit within the Sun appeared first on Space Daily.</description>
-  </item>
-  <item>
     <title>GraphQL para Iniciantes: Guia Completo com .NET</title>
     <link>https://dev.to/lzocate-li/graphql-para-iniciantes-guia-completo-com-net-1id1</link>
     <description>Aprenda como GraphQL organiza schemas, queries e resolvers, execute uma API com .NET 10 e escolha entre GraphQL, REST e gRPC.</description>
   </item>
   <item>
-    <title>NASA Invites Media to Crew Completion of Yearlong Mars Simulation</title>
-    <link>https://www.nasa.gov/news-release/nasa-invites-media-to-crew-completion-of-yearlong-mars-simulation/</link>
-    <description>The four volunteers who lived and worked in a simulated NASA Mars mission for more than a year will exit their habitat on Saturday, Oct. 31, after 378 days of isolation in a facility at the agency’s Johnson Space Center in Houston. Health and performance data collected from the simulation can help NASA develop methods […]</description>
-  </item>
-  <item>
     <title>Como eliminamos o viés de ancoragem em reuniões de Sprint com WebSockets e Voto Cego Real</title>
     <link>https://dev.to/geekecia/como-eliminamos-o-vies-de-ancoragem-em-reunioes-de-sprint-com-websockets-e-voto-cego-real-3c5a</link>
     <description>Entenda como construímos uma ferramenta de Planning Poker em tempo real com Next.js, sub-100ms e isolamento de votos antes do reveal.</description>
+  </item>
+  <item>
+    <title>Curiosity Blog, Sols 5043-5049: Preparing to Drill at ‘Nazca’</title>
+    <link>https://science.nasa.gov/blog/curiosity-blog-sols-5043-5049-preparing-to-drill-at-nazca/</link>
+    <description>Written by Lucy Lim, Planetary Scientist at NASA’s Goddard Space Flight Center Earth planning date: Friday, Oct. 16, 2026 Following the Basque Lakes drill campaign, Curiosity has returned to a spot just a few meters away from the “Chiu Chiu” block to conduct our next drill campaign. “Chiu Chiu” itself wasn’t a good candidate for […]</description>
+  </item>
+  <item>
+    <title>The Land of the Standing-Up Rocks</title>
+    <link>https://science.nasa.gov/earth/earth-observatory/the-land-of-the-standing-up-rocks/</link>
+    <description>A national monument since the 1920s, Chiricahua is America’s newest national park.</description>
+  </item>
+  <item>
+    <title>Ukrainian startup, GomSpace test satellite for future communications network</title>
+    <link>https://spacenews.com/ukrainian-startup-gomspace-test-satellite-for-future-communications-network/</link>
+    <description>
+The companies said the experimental spacecraft, launched Oct. 1, could lead to a Ukrainian-controlled satellite network 
+The post Ukrainian startup, GomSpace test satellite for future communications network appeared first on SpaceNews.</description>
   </item>
   <item>
     <title>Como reduzir o tempo da Sprint Planning pela metade com estimativas em tempo real</title>
@@ -64,9 +63,9 @@ The post A small star is eating a brown dwarf so slowly that the meal could last
     <description>Como simplificar a dinâmica de estimativa de histórias de usuário em reuniões remotas sem exigir cadastro ou licenças por assento.</description>
   </item>
   <item>
-    <title>NASA’s Neo Surveyor Sunshade</title>
-    <link>https://www.nasa.gov/image-article/nasas-neo-surveyor-sunshade/</link>
-    <description>A technician inspects the large sunshade of NASA’s Near-Earth Object (NEO) Surveyor mission in this image released on Oct. 26, 2026. The sunshade structure, which stands 20 feet (6 meters) tall and measures 8 feet (2.4 meters) wide at its base, will keep the infrared space telescope cool as it searches for near-Earth asteroids and […]</description>
+    <title>TipTools: Por que e como construímos +100 ferramentas para devs 100% client-side</title>
+    <link>https://dev.to/geekecia/tiptools-por-que-e-como-construimos-100-ferramentas-para-devs-100-client-side-5hmk</link>
+    <description>Quantas vezes você já precisou formatar um JSON com dados sensíveis de produção, visualizar um...</description>
   </item>
 </channel>
 </rss>
