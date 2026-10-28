@@ -9,3 +9,4 @@ Como reduzir o tempo da Sprint Planning pela metade com estimativas em tempo rea
 gRPC sem mistério: o que é e quando usar no .NET 10
 Story Points vs Horas: por que o debate de estimativa se perde e como o consenso real resolve
 TipTools: Por que e como construímos +100 ferramentas para devs 100% client-side
+Ukrainian startup, GomSpace test satellite for future communications network
