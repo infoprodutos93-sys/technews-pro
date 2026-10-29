@@ -14,3 +14,4 @@ APOD: 2026 October 28 – The Mutual Occultation of Ganymede and Io
 Como eliminamos o viés de ancoragem em reuniões de Sprint com WebSockets e Voto Cego Real
 Novo CNPJ Alfanumérico da Receita Federal: Como preparar seus testes e sistemas
 NASA Welcomes Vietnam as Newest Artemis Accords Signatory
+Arnab Strikes India
