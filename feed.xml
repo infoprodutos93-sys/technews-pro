@@ -6,29 +6,14 @@
   <description>Notícias em tempo real sobre Inteligência Artificial, Tecnologia, Ciência e Mercado Financeiro.</description>
   <language>pt-BR</language>
   <item>
-    <title>Spacewalking astronauts unfurl upgraded solar array to boost space station power</title>
-    <link>https://spaceflightnow.com/2026/10/29/spacewalking-astronauts-unfurl-upgraded-solar-array-to-boost-space-station-power/</link>
-    <description>NASA astronaut Anil Menon and Canadian Space Agency astronaut Joshua Kutryk successfully installed and unfurled the seventh of eight new solar panels designed to power the outpost through its retirement in 2030. </description>
+    <title>November’s Night Sky Notes: Light-Day Away</title>
+    <link>https://science.nasa.gov/solar-system/skywatching/night-sky-network/novembers-night-sky-notes-light-day-away/</link>
+    <description>Twin Travelers In 1977, NASA launched twin spacecraft Voyager 1 and 2, taking advantage of a once-every-175-year planetary alignment of the four largest planets in our solar system: Jupiter, Saturn, Uranus, and Neptune. Using six gravity assists between them, this Grand Tour gave us up-close views of the gas and ice giants, including several moons. […]</description>
   </item>
   <item>
-    <title>GraphQL para Iniciantes: Guia Completo com .NET</title>
-    <link>https://dev.to/lzocate-li/graphql-para-iniciantes-guia-completo-com-net-1id1</link>
-    <description>Aprenda como GraphQL organiza schemas, queries e resolvers, execute uma API com .NET 10 e escolha entre GraphQL, REST e gRPC.</description>
-  </item>
-  <item>
-    <title>Novo CNPJ Alfanumérico da Receita Federal: Como preparar seus testes e sistemas</title>
-    <link>https://dev.to/geekecia/novo-cnpj-alfanumerico-da-receita-federal-como-preparar-seus-testes-e-sistemas-6mm</link>
-    <description>A transição para o CNPJ Alfanumérico regulamentada pela Receita Federal é uma das mudanças...</description>
-  </item>
-  <item>
-    <title>Planning Poker em chamadas do Teams, Meet ou Slack: como estimar sem atrito</title>
-    <link>https://dev.to/geekecia/planning-poker-em-chamadas-do-teams-meet-ou-slack-como-estimar-sem-atrito-180d</link>
-    <description>Como simplificar a dinâmica de estimativa de histórias de usuário em reuniões remotas sem exigir cadastro ou licenças por assento.</description>
-  </item>
-  <item>
-    <title>gRPC sem mistério: o que é e quando usar no .NET 10</title>
-    <link>https://dev.to/lzocate-li/grpc-sem-misterio-o-que-e-e-quando-usar-no-net-10-1fjk</link>
-    <description>Entenda gRPC no .NET 10, Protocol Buffers, streaming e critérios para escolher o protocolo certo entre serviços.</description>
+    <title>TipTools: Por que e como construímos +100 ferramentas para devs 100% client-side</title>
+    <link>https://dev.to/geekecia/tiptools-por-que-e-como-construimos-100-ferramentas-para-devs-100-client-side-5hmk</link>
+    <description>Quantas vezes você já precisou formatar um JSON com dados sensíveis de produção, visualizar um...</description>
   </item>
   <item>
     <title>Story Points vs Horas: por que o debate de estimativa se perde e como o consenso real resolve</title>
@@ -41,9 +26,30 @@
     <description>Entenda como construímos uma ferramenta de Planning Poker em tempo real com Next.js, sub-100ms e isolamento de votos antes do reveal.</description>
   </item>
   <item>
-    <title>As it happened: spacewalkers install new solar array</title>
-    <link>https://spaceflightnow.com/2026/10/29/as-it-happened-spacewalkers-install-new-solar-array/</link>
-    <description>NASA astronaut Anil Menon and Canadian Space Agency astronaut Joshua Kutryk are performing a spacewalk to install the 7th of 8 ISS Roll-Out Solar Arrays (iROSA) to upgrade the orbiting outpost&#x27;s power system. </description>
+    <title>Novo CNPJ Alfanumérico da Receita Federal: Como preparar seus testes e sistemas</title>
+    <link>https://dev.to/geekecia/novo-cnpj-alfanumerico-da-receita-federal-como-preparar-seus-testes-e-sistemas-6mm</link>
+    <description>A transição para o CNPJ Alfanumérico regulamentada pela Receita Federal é uma das mudanças...</description>
+  </item>
+  <item>
+    <title>APOD: 2026 October 30 – Haunting the Cepheus Flare</title>
+    <link>https://science.nasa.gov/image-article/apod-2026-october-30-haunting-the-cepheus-flare/</link>
+    <description>APOD Science APOD APOD: 2026 October 30 –… Today’s APOD Archive Submissions Index Search Calendar RSS Education About Discuss   APOD Astronomy Picture of the Day Discover the cosmos! Each day a different image or photograph of our fascinating universe is featured, along with a brief explanation written by a professional astronomer. Haunting the Cepheus […]</description>
+  </item>
+  <item>
+    <title>GraphQL para Iniciantes: Guia Completo com .NET</title>
+    <link>https://dev.to/lzocate-li/graphql-para-iniciantes-guia-completo-com-net-1id1</link>
+    <description>Aprenda como GraphQL organiza schemas, queries e resolvers, execute uma API com .NET 10 e escolha entre GraphQL, REST e gRPC.</description>
+  </item>
+  <item>
+    <title>gRPC sem mistério: o que é e quando usar no .NET 10</title>
+    <link>https://dev.to/lzocate-li/grpc-sem-misterio-o-que-e-e-quando-usar-no-net-10-1fjk</link>
+    <description>Entenda gRPC no .NET 10, Protocol Buffers, streaming e critérios para escolher o protocolo certo entre serviços.</description>
+  </item>
+  <item>
+    <title>Ground Qualification Testing Begins for Callisto Reusable Rocket Demonstrator</title>
+    <link>https://europeanspaceflight.com/ground-qualification-testing-begins-for-callisto-reusable-rocket-demonstrator/</link>
+    <description>The French space agency CNES has announced the start of ground qualification testing for the Callisto reusable rocket demonstrator at the Guiana Space Centre. A full-scale mockup of the vehicle has been erected at the space centre’s former Diamant launch facility, which is being redeveloped to support the programme. In a 29 October announcement, CNES […]
+The post Ground Qualification Testing Begins for Callisto Reusable Rocket Demonstrator appeared first on European Spaceflight.</description>
   </item>
   <item>
     <title>Como reduzir o tempo da Sprint Planning pela metade com estimativas em tempo real</title>
@@ -51,19 +57,14 @@
     <description>Dicas práticas e decisões de arquitetura em Next.js para transformar reuniões de estimativa arrastadas em alinhamentos técnicos ágeis e eficientes.</description>
   </item>
   <item>
-    <title>Map Showing Potential Origins of Martian Meteorite Teghaza 001</title>
-    <link>https://science.nasa.gov/photojournal/map-showing-potential-origins-of-martian-meteorite-teghaza-001/</link>
-    <description>Description This global map of Mars shows 13 locations that match the mineralogy and chemistry of Teghaza 001, one of the most ancient Martian meteorites ever found on Earth. While scientists can never know for sure where a Martian meteorite originated, Teghaza 001 includes clues that link it to highlands in the southern hemisphere of […]</description>
+    <title>Earth from Space: Champi’s eerie eye</title>
+    <link>https://www.esa.int/ESA_Multimedia/Images/2026/10/Earth_from_Space_Champi_s_eerie_eye</link>
+    <description>From the ESA Blogs.</description>
   </item>
   <item>
-    <title>TipTools: Por que e como construímos +100 ferramentas para devs 100% client-side</title>
-    <link>https://dev.to/geekecia/tiptools-por-que-e-como-construimos-100-ferramentas-para-devs-100-client-side-5hmk</link>
-    <description>Quantas vezes você já precisou formatar um JSON com dados sensíveis de produção, visualizar um...</description>
-  </item>
-  <item>
-    <title>Slice of Martian Meteorite Teghaza 001</title>
-    <link>https://science.nasa.gov/photojournal/slice-of-martian-meteorite-teghaza-001/</link>
-    <description>Description This slice of Teghaza 001, one of the most ancient Martian meteorites ever found on Earth, was used to determine the age of the rock. Reflected light images like these serve as a scientist’s road map, helping them find minerals of interest to analyze by different instruments. Figure A is the same image with […]</description>
+    <title>Planning Poker em chamadas do Teams, Meet ou Slack: como estimar sem atrito</title>
+    <link>https://dev.to/geekecia/planning-poker-em-chamadas-do-teams-meet-ou-slack-como-estimar-sem-atrito-180d</link>
+    <description>Como simplificar a dinâmica de estimativa de histórias de usuário em reuniões remotas sem exigir cadastro ou licenças por assento.</description>
   </item>
 </channel>
 </rss>
