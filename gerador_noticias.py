@@ -1,16 +1,37 @@
 import os
 import sys
 import re
+import io
 import html
-import requests
-import json
+import math
+import wave
+import struct
 import random
+import json
+import textwrap
+import requests
+import xml.etree.ElementTree as ET
 from datetime import datetime
+
+# Importações seguras para a Fábrica de Vídeos (Pillow + MoviePy)
+try:
+    from PIL import Image, ImageDraw, ImageFont, ImageEnhance
+    PIL_DISPONIVEL = True
+except ImportError:
+    PIL_DISPONIVEL = False
+
+try:
+    from moviepy.editor import ImageClip, AudioFileClip
+    MOVIEPY_DISPONIVEL = True
+except ImportError:
+    MOVIEPY_DISPONIVEL = False
 
 # ==============================================================================
 # CONFIGURAÇÃO DE CHAVES E SEGURANÇA (GITHUB SECRETS)
 # ==============================================================================
 NEWS_API_KEY = os.getenv("NEWS_API_KEY", "4e42db8a8a6645fbad1039ba84a6ea4f")
+NEWSDATA_API_KEY = os.getenv("NEWSDATA_API_KEY", "")
+API_FUTEBOL_KEY = os.getenv("API_FUTEBOL_KEY", "")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
 
 # CHAVES DA META (FACEBOOK)
@@ -31,7 +52,7 @@ ARQUIVO_FILA_POST = ".fila_post_meta.json"
 ARQUIVO_GOOGLE_VERIF = "google28d5384ab7e71bf6.html"
 
 # ==============================================================================
-# LINKS OFICIAIS DE MONETIZAÇÃO E FUNIL (100% PRESERVADOS)
+# LINKS OFICIAIS DE MONETIZAÇÃO E FUNIL (100% INTACTOS)
 # ==============================================================================
 URL_PORTAL_OFICIAL = "https://infoprodutos93-sys.github.io/technews-pro/"
 SMARTLINK_ADSTERRA = "https://asiafilm.org/4/78ed9deb10feac05c15347b414e171ab"
@@ -43,14 +64,14 @@ LINK_KIWIFY_2 = "https://pay.kiwify.com.br/YUDgPja?afid=yt5zIWrU"
 LINK_KIWIFY_3 = "https://kiwify.app/ek8xMMl?afid=1rxg1P58"
 
 # ==============================================================================
-# TEMPLATE PRINCIPAL: INDEX.HTML (MONETIZAÇÃO, ÁUDIO, MODAIS E ABAS CORRIGIDAS)
+# TEMPLATE PRINCIPAL: INDEX.HTML (MONETIZAÇÃO, ÁUDIO, MODAIS, ABAS E FUTEBOL)
 # ==============================================================================
 HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
 <html lang="pt-BR" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Terminal avançado de notícias sobre Inteligência Artificial, Tecnologia, Ciência e Mercado Financeiro em tempo real.">
+    <meta name="description" content="Terminal avançado de notícias sobre Inteligência Artificial, Tecnologia, Política, Futebol, Celebridades e Mercado Financeiro em tempo real.">
     
     <!-- REGRA DE OURO GOOGLE DISCOVER (IMAGENS GIGANTES NO MOBILE) -->
     <meta name="robots" content="max-image-preview:large, index, follow">
@@ -67,7 +88,7 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
 
-    <title>TechNews PRO | Terminal de Inteligência, IA & Mercado</title>
+    <title>TechNews PRO | Terminal de Inteligência, IA, Esportes & Mercado</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 
     <!-- ONESIGNAL WEB PUSH SDK -->
@@ -129,16 +150,16 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
         .logo span { color: var(--primary); }
         .logo-badge { font-size: 0.65rem; background: rgba(239, 68, 68, 0.15); color: var(--primary); border: 1px solid var(--primary); padding: 2px 6px; border-radius: 4px; font-weight: 800; letter-spacing: 0.5px; }
 
-        .nav-links { display: flex; gap: 0.4rem; list-style: none; background: rgba(255,255,255,0.03); padding: 5px; border-radius: 10px; border: 1px solid var(--border); align-items: center; flex-wrap: wrap; }
-        .nav-links button, .nav-links a { background: none; border: none; color: var(--text-muted); font-weight: 700; font-size: 0.84rem; cursor: pointer; padding: 0.45rem 0.85rem; border-radius: 7px; transition: 0.2s; text-decoration: none; }
+        .nav-links { display: flex; gap: 0.35rem; list-style: none; background: rgba(255,255,255,0.03); padding: 5px; border-radius: 10px; border: 1px solid var(--border); align-items: center; flex-wrap: wrap; }
+        .nav-links button, .nav-links a { background: none; border: none; color: var(--text-muted); font-weight: 700; font-size: 0.81rem; cursor: pointer; padding: 0.42rem 0.75rem; border-radius: 7px; transition: 0.2s; text-decoration: none; }
         .nav-links button:hover, .nav-links a:hover { color: var(--text-main); }
         .nav-links button.active { background: var(--primary); color: #fff; box-shadow: 0 4px 12px rgba(239, 68, 68, 0.35); }
         .nav-links a.hub-link { color: var(--neon); border: 1px solid rgba(0, 242, 254, 0.25); }
 
         .header-actions { display: flex; align-items: center; gap: 0.8rem; }
         .search-box { position: relative; }
-        .search-box input { background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: var(--text-main); padding: 0.5rem 1rem 0.5rem 2.2rem; border-radius: 8px; font-size: 0.85rem; width: 175px; outline: none; transition: 0.3s; }
-        .search-box input:focus { width: 220px; border-color: var(--primary); }
+        .search-box input { background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: var(--text-main); padding: 0.5rem 1rem 0.5rem 2.2rem; border-radius: 8px; font-size: 0.85rem; width: 165px; outline: none; transition: 0.3s; }
+        .search-box input:focus { width: 210px; border-color: var(--primary); }
         .search-icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); font-size: 0.8rem; color: var(--text-muted); }
 
         .theme-btn { background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--text-main); padding: 0.45rem 0.85rem; border-radius: 8px; cursor: pointer; font-weight: 700; font-size: 0.85rem; display: flex; align-items: center; gap: 6px; }
@@ -187,11 +208,18 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
 
         .sidebar { display: flex; flex-direction: column; gap: 2rem; }
         .widget { background: var(--card-bg); border-radius: 14px; padding: 1.5rem; border: 1px solid var(--border); }
-        .widget-title { font-size: 1.05rem; font-weight: 900; margin-bottom: 1.2rem; padding-bottom: 0.6rem; border-bottom: 2px solid var(--primary); }
+        .widget-title { font-size: 1.05rem; font-weight: 900; margin-bottom: 1.2rem; padding-bottom: 0.6rem; border-bottom: 2px solid var(--primary); display: flex; justify-content: space-between; align-items: center; }
         .trending-list { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
         .trending-item { display: flex; gap: 0.9rem; align-items: flex-start; text-decoration: none; color: inherit; cursor: pointer; }
         .trending-num { font-size: 1.4rem; font-weight: 900; color: var(--primary); font-family: 'JetBrains Mono', monospace; }
         .trending-text { font-size: 0.88rem; font-weight: 700; line-height: 1.35; }
+
+        /* TABELA DO BRASILEIRÃO WIDGET */
+        .tabela-futebol { width: 100%; border-collapse: collapse; font-size: 0.8rem; font-family: 'JetBrains Mono', monospace; }
+        .tabela-futebol th { text-align: left; padding: 6px 4px; border-bottom: 1px solid var(--border); color: var(--text-muted); font-size: 0.72rem; }
+        .tabela-futebol td { padding: 7px 4px; border-bottom: 1px solid rgba(255,255,255,0.04); }
+        .g4-badge { color: #10b981; font-weight: 800; }
+        .z4-badge { color: #ef4444; font-weight: 800; }
 
         .newsletter-box { background: linear-gradient(135deg, #111827, #03060c); color: #fff; border-radius: 14px; padding: 1.8rem; text-align: center; border: 1px solid rgba(239, 68, 68, 0.35); }
         .newsletter-box input { width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.05); color: #fff; margin: 0.8rem 0; font-size: 0.88rem; }
@@ -278,7 +306,8 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
             {cotacoes_html}
         </div>
         <div>
-            <a href="cotacao-agora.html" style="color:var(--neon); text-decoration:underline; margin-right:12px;">📊 Abrir Dashboard de Cotações</a>
+            <a href="cotacao-agora.html" style="color:var(--neon); text-decoration:underline; margin-right:12px;">📊 Cotações</a>
+            <a href="futebol.html" style="color:#10b981; text-decoration:underline; margin-right:12px;">⚽ Brasileirão</a>
             <span>⚡ Sincronizado: {data_atualizacao}</span>
         </div>
     </div>
@@ -287,15 +316,17 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
         <div class="nav-container">
             <a class="logo" onclick="filtrarCategoria('todos', event)">
                 TechNews<span>.PRO</span>
-                <span class="logo-badge">IA v7.5</span>
+                <span class="logo-badge">IA v8.1</span>
             </a>
             <ul class="nav-links">
                 <li><button onclick="filtrarCategoria('todos', event)" class="active">🔥 Tudo</button></li>
                 <li><button onclick="filtrarCategoria('Tecnologia', event)">💻 Tech & IA</button></li>
                 <li><button onclick="filtrarCategoria('Finanças', event)">📈 Mercado</button></li>
+                <li><button onclick="filtrarCategoria('🏛️ Política', event)">🏛️ Política</button></li>
+                <li><button onclick="filtrarCategoria('⭐ Famosos', event)">⭐ Famosos</button></li>
                 <li><button onclick="filtrarCategoria('Ciência', event)">🚀 Ciência</button></li>
-                <li><a href="inteligencia-artificial.html" class="hub-link">🧠 Dossiê IA</a></li>
-                <li><a href="cotacao-agora.html" class="hub-link">💵 Cotações</a></li>
+                <li><a href="futebol.html" class="hub-link">⚽ Futebol</a></li>
+                <li><a href="inteligencia-artificial.html" class="hub-link">🧠 Hub IA</a></li>
             </ul>
             <div class="header-actions">
                 <div class="search-box">
@@ -312,10 +343,12 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
         <span style="font-size:0.75rem; font-weight:800; color:var(--primary); text-transform:uppercase;">Topic Clusters SEO:</span>
         <a href="inteligencia-artificial.html" class="tag-pill">#HubInteligênciaArtificial</a>
         <a href="cotacao-agora.html" class="tag-pill">#TerminalDólar&Bitcoin</a>
+        <a href="futebol.html" class="tag-pill">#TabelaBrasileirãoSérieA</a>
         <a href="bitcoin.html" class="tag-pill">#RadarBitcoin</a>
         <a href="chatgpt.html" class="tag-pill">#RadarChatGPT</a>
         <a href="startups.html" class="tag-pill">#RadarStartups</a>
-        <span class="tag-pill" onclick="filtrarPorPalavra('Python')">#Dev&Automação</span>
+        <span class="tag-pill" onclick="filtrarCategoria('🏛️ Política', event)">#PolíticaNacional</span>
+        <span class="tag-pill" onclick="filtrarCategoria('⭐ Famosos', event)">#Celebridades</span>
         <span class="tag-pill" onclick="filtrarCategoria('todos', event)">🔄 Mostrar Tudo</span>
     </div>
 
@@ -344,6 +377,15 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
         </div>
 
         <aside class="sidebar">
+            <!-- WIDGET BRASILEIRÃO SÉRIE A (G4 & Z4) -->
+            <div class="widget">
+                <div class="widget-title">
+                    <span>⚽ Brasileirão Série A</span>
+                    <a href="futebol.html" style="font-size:0.75rem; color:var(--neon); text-decoration:underline;">Tabela Completa &rarr;</a>
+                </div>
+                {widget_futebol_html}
+            </div>
+
             <div class="widget">
                 <div class="widget-title">🔥 Mais Lidas no Terminal</div>
                 <ul class="trending-list">{trending_section}</ul>
@@ -371,6 +413,7 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
                 <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.6rem;">🔗 <strong>Páginas Especiais & Clusters:</strong></p>
                 <p style="margin-bottom:6px;"><a href="inteligencia-artificial.html" style="color: var(--neon); font-size: 0.84rem; font-weight: 700; text-decoration: underline;">🧠 Enciclopédia & Hub de IA &rarr;</a></p>
                 <p style="margin-bottom:6px;"><a href="cotacao-agora.html" style="color: #10b981; font-size: 0.84rem; font-weight: 700; text-decoration: underline;">📊 Monitor de Cotações Ao Vivo &rarr;</a></p>
+                <p style="margin-bottom:6px;"><a href="futebol.html" style="color: #22c55e; font-size: 0.84rem; font-weight: 700; text-decoration: underline;">⚽ Central Brasileirão Série A &rarr;</a></p>
                 <p style="margin-bottom:6px;"><a href="bitcoin.html" style="color: #f59e0b; font-size: 0.84rem; font-weight: 700; text-decoration: underline;">₿ Radar Bitcoin & Cripto &rarr;</a></p>
                 <p><a href="chatgpt.html" style="color: #3b82f6; font-size: 0.84rem; font-weight: 700; text-decoration: underline;">🤖 Radar ChatGPT & OpenAI &rarr;</a></p>
             </div>
@@ -393,11 +436,12 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
     </main>
 
     <footer>
-        <p><strong>TechNews.PRO</strong> &copy; {ano_atual} — Ecossistema Automatizado via Python, Topic Clusters SEO, OpenAI, Telegram, OneSignal & Meta Graph API.</p>
+        <p><strong>TechNews.PRO</strong> &copy; {ano_atual} — Ecossistema Automatizado via Python, Topic Clusters SEO, OpenAI, Telegram, OneSignal & Meta Video API.</p>
         <p style="margin-top: 8px; font-size: 0.78rem;">
             <a href="index.html" style="color:#94a3b8; margin:0 8px;">Início</a> |
             <a href="inteligencia-artificial.html" style="color:#94a3b8; margin:0 8px;">Hub IA</a> |
             <a href="cotacao-agora.html" style="color:#94a3b8; margin:0 8px;">Cotações</a> |
+            <a href="futebol.html" style="color:#94a3b8; margin:0 8px;">Futebol</a> |
             <a href="bitcoin.html" style="color:#94a3b8; margin:0 8px;">Bitcoin</a> |
             <a href="chatgpt.html" style="color:#94a3b8; margin:0 8px;">ChatGPT</a> |
             <a href="startups.html" style="color:#94a3b8; margin:0 8px;">Startups</a> |
@@ -414,12 +458,12 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
             { badge: "Acesso Exclusivo", titulo: "⚡ Domine as Novas Tecnologias de 2026", desc: "Saia na frente de 99% do mercado aplicando estratégias validadas de negócios digitais.", url: "{link_kiwify_3}", cta: "Quero Garantir Minha Vaga &rarr;" }
         ];
 
-        // TEIA DE ARANHA SEO AUTOMÁTICA NOS TEXTOS
         function aplicarTeiaSEO(texto) {
             if (!texto) return "";
             let t = texto;
             t = t.replace(/\\b(inteligência artificial|IA)\\b/i, '<a href="inteligencia-artificial.html" class="seo-internal-link">$1</a>');
             t = t.replace(/\\b(dólar|euro|câmbio)\\b/i, '<a href="cotacao-agora.html" class="seo-internal-link">$1</a>');
+            t = t.replace(/\\b(brasileirão|futebol|série a)\\b/i, '<a href="futebol.html" class="seo-internal-link">$1</a>');
             t = t.replace(/\\b(bitcoin|criptomoedas|cripto)\\b/i, '<a href="bitcoin.html" class="seo-internal-link">$1</a>');
             t = t.replace(/\\b(chatgpt|openai)\\b/i, '<a href="chatgpt.html" class="seo-internal-link">$1</a>');
             t = t.replace(/\\b(startup|startups)\\b/i, '<a href="startups.html" class="seo-internal-link">$1</a>');
@@ -495,7 +539,7 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
 
             let feedHtml = '';
             let adCount = 0;
-            lista.slice(1, 11).forEach((art, idx) => {
+            lista.slice(1, 15).forEach((art, idx) => {
                 const globalIdx = todasNoticias.indexOf(art);
                 const zapTexto = encodeURIComponent("🚨 Olha essa notícia no TechNews PRO: " + art.title + " - " + window.location.href);
                 feedHtml += `
@@ -594,7 +638,7 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
 """
 
 # ==============================================================================
-# COTAÇÕES EM TEMPO REAL E UTILITÁRIOS DE SEO
+# COTAÇÕES EM TEMPO REAL E TEIA DE ARANHA SEO
 # ==============================================================================
 def obter_dados_cotacoes():
     dados_padrao = {
@@ -638,11 +682,143 @@ def aplicar_teia_seo_estatico(texto):
         novo, count=1
     )
     novo = re.sub(
+        r'(?i)\b(brasileirão|futebol|série a)\b',
+        f'<a href="{URL_PORTAL_OFICIAL}futebol.html" style="color:#22c55e; font-weight:700; text-decoration:underline;">\\1</a>',
+        novo, count=1
+    )
+    novo = re.sub(
         r'(?i)\b(bitcoin|criptomoedas|cripto)\b',
         f'<a href="{URL_PORTAL_OFICIAL}bitcoin.html" style="color:#f59e0b; font-weight:700; text-decoration:underline;">\\1</a>',
         novo, count=1
     )
     return novo
+
+# ==============================================================================
+# INTEGRAÇÃO API-FUTEBOL (TABELA BRASILEIRÃO SÉRIE A + WIDGET + HUB)
+# ==============================================================================
+TABELA_BRASILEIRAO_FALLBACK = [
+    {"posicao": 1, "time": "Palmeiras", "pontos": 70, "jogos": 34, "vitorias": 21},
+    {"posicao": 2, "time": "Flamengo", "pontos": 68, "jogos": 34, "vitorias": 20},
+    {"posicao": 3, "time": "Botafogo", "pontos": 67, "jogos": 34, "vitorias": 20},
+    {"posicao": 4, "time": "Fortaleza", "pontos": 64, "jogos": 34, "vitorias": 18},
+    {"posicao": 5, "time": "Internacional", "pontos": 62, "jogos": 34, "vitorias": 17},
+    {"posicao": 6, "time": "São Paulo", "pontos": 59, "jogos": 34, "vitorias": 17},
+    {"posicao": 7, "time": "Cruzeiro", "pontos": 52, "jogos": 34, "vitorias": 14},
+    {"posicao": 8, "time": "Bahia", "pontos": 50, "jogos": 34, "vitorias": 14},
+    {"posicao": 9, "time": "Corinthians", "pontos": 47, "jogos": 34, "vitorias": 12},
+    {"posicao": 10, "time": "Vasco da Gama", "pontos": 45, "jogos": 34, "vitorias": 13},
+    {"posicao": 17, "time": "Criciúma", "pontos": 38, "jogos": 34, "vitorias": 9},
+    {"posicao": 18, "time": "Red Bull Bragantino", "pontos": 37, "jogos": 34, "vitorias": 8},
+    {"posicao": 19, "time": "Cuiabá", "pontos": 30, "jogos": 34, "vitorias": 6},
+    {"posicao": 20, "time": "Atlético-GO", "pontos": 26, "jogos": 34, "vitorias": 6}
+]
+
+def obter_tabela_brasileirao():
+    if API_FUTEBOL_KEY:
+        try:
+            url = "https://api.api-futebol.com.br/v1/campeonatos/10/tabela"
+            headers = {"Authorization": f"Bearer {API_FUTEBOL_KEY.strip()}"}
+            r = requests.get(url, headers=headers, timeout=8)
+            if r.status_code == 200:
+                dados = r.json()
+                tabela_limpa = []
+                for item in dados:
+                    pos = item.get("posicao")
+                    time_nome = item.get("time", {}).get("nome_popular", "Clube")
+                    pts = item.get("pontos", 0)
+                    jgs = item.get("jogos", 0)
+                    vit = item.get("vitorias", 0)
+                    tabela_limpa.append({"posicao": pos, "time": time_nome, "pontos": pts, "jogos": jgs, "vitorias": vit})
+                if tabela_limpa:
+                    return tabela_limpa
+        except Exception as e:
+            print(f"Aviso API-Futebol: {e}")
+    return TABELA_BRASILEIRAO_FALLBACK
+
+def gerar_widget_futebol_html(tabela):
+    g4 = [t for t in tabela if t["posicao"] <= 4][:4]
+    z4 = [t for t in tabela if t["posicao"] >= 17][:4]
+    linhas = ""
+    for t in g4:
+        linhas += f'<tr><td class="g4-badge">{t["posicao"]}º</td><td>{t["time"]}</td><td><strong>{t["pontos"]}</strong></td><td>{t["jogos"]}</td></tr>'
+    linhas += '<tr><td colspan="4" style="text-align:center; color:#64748b; font-size:0.7rem; padding:4px;">••• Zona de Rebaixamento (Z4) •••</td></tr>'
+    for t in z4:
+        linhas += f'<tr><td class="z4-badge">{t["posicao"]}º</td><td>{t["time"]}</td><td><strong>{t["pontos"]}</strong></td><td>{t["jogos"]}</td></tr>'
+
+    return f"""
+    <table class="tabela-futebol">
+        <thead><tr><th>Pos</th><th>Clube</th><th>PTS</th><th>J</th></tr></thead>
+        <tbody>{linhas}</tbody>
+    </table>
+    """
+
+def gerar_pagina_futebol(tabela, todas_noticias, cotacoes_html, data_fmt, ano_fmt):
+    linhas_completas = ""
+    for t in tabela:
+        cor = "#10b981" if t["posicao"] <= 4 else ("#ef4444" if t["posicao"] >= 17 else "#f8fafc")
+        linhas_completas += f"""
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
+            <td style="padding:12px; font-weight:900; color:{cor};">{t['posicao']}º</td>
+            <td style="padding:12px; font-weight:700;">{t['time']}</td>
+            <td style="padding:12px; font-weight:900; color:#00f2fe;">{t['pontos']}</td>
+            <td style="padding:12px; color:#94a3b8;">{t['jogos']}</td>
+            <td style="padding:12px; color:#94a3b8;">{t['vitorias']}</td>
+        </tr>
+        """
+
+    html_fut = f"""<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tabela atualizada do Brasileirão Série A: Classificação completa, pontuação do G4, Z4 e notícias do futebol brasileiro ao vivo.">
+    <meta name="robots" content="max-image-preview:large, index, follow">
+    <link rel="canonical" href="{URL_PORTAL_OFICIAL}futebol.html">
+    <title>Tabela do Brasileirão Série A Atualizada | G4, Z4 e Jogos | TechNews PRO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        body {{ background:#070b14; color:#f8fafc; font-family:'Inter',sans-serif; margin:0; line-height:1.6; }}
+        header {{ background:#0f172a; padding:1rem 5%; border-bottom:1px solid rgba(255,255,255,0.08); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; }}
+        .container {{ max-width:1200px; margin:2.5rem auto; padding:0 5%; }}
+        table {{ width:100%; border-collapse:collapse; background:rgba(17,25,40,0.9); border-radius:14px; overflow:hidden; font-family:'JetBrains Mono',monospace; }}
+        th {{ background:#03060c; color:#94a3b8; text-align:left; padding:14px 12px; font-size:0.8rem; text-transform:uppercase; }}
+        footer {{ background:#03060c; color:#64748b; text-align:center; padding:3rem 5%; margin-top:4rem; border-top:1px solid rgba(255,255,255,0.08); }}
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" style="font-size:1.8rem; font-weight:900; color:#fff; text-decoration:none;">TechNews<span style="color:#ef4444;">.PRO</span></a>
+        <div style="display:flex; gap:14px; align-items:center; flex-wrap:wrap;">
+            <a href="index.html" style="color:#94a3b8; text-decoration:none; font-weight:700; font-size:0.88rem;">&larr; Voltar ao Portal</a>
+            <a href="cotacao-agora.html" style="color:#10b981; text-decoration:none; font-weight:700; font-size:0.88rem;">📊 Cotações</a>
+            <a href="{LINK_KIWIFY_1}" target="_blank" style="background:#ef4444; color:#fff; padding:0.55rem 1.1rem; border-radius:8px; font-weight:800; text-decoration:none; font-size:0.85rem;">💎 Área VIP</a>
+        </div>
+    </header>
+
+    <div style="text-align:center; margin:1.5rem auto;">
+        <script>atOptions={{'key':'06959dfe796ac17610a3027d9ede544f','format':'iframe','height':90,'width':728,'params':{{}}}};</script>
+        <script src="https://bicea.org/22/06959dfe796ac17610a3027d9ede544f"></script>
+    </div>
+
+    <main class="container">
+        <span style="background:rgba(16,185,129,0.15); color:#10b981; border:1px solid #10b981; padding:4px 12px; border-radius:20px; font-size:0.75rem; font-weight:800;">⚽ CENTRAL ESPORTIVA OFICIAL</span>
+        <h1 style="font-size:2.3rem; margin:0.8rem 0; font-weight:900;">Classificação do Brasileirão Série A — Tempo Real</h1>
+        <p style="color:#94a3b8; margin-bottom:2rem;">Acompanhe a disputa pelo título, vaga na Libertadores (G4) e luta contra o rebaixamento (Z4). Atualizado em: {data_fmt}.</p>
+        <table>
+            <thead>
+                <tr><th>Posição</th><th>Clube</th><th>Pontos</th><th>Jogos</th><th>Vitórias</th></tr>
+            </thead>
+            <tbody>{linhas_completas}</tbody>
+        </table>
+    </main>
+    <footer>
+        <p><strong>TechNews.PRO</strong> &copy; {ano_fmt} — Central de Esportes & Estatísticas.</p>
+    </footer>
+    <script data-cfasync="false" src="https://bicea.org/14/7843682dc41b2077e8d78d48efd6360a"></script>
+</body>
+</html>"""
+    with open("futebol.html", "w", encoding="utf-8") as f:
+        f.write(html_fut)
 
 # ==============================================================================
 # INTELIGÊNCIA ARTIFICIAL: DISSONÂNCIA COGNITIVA (DISCOVER) & TIME-TO-VALUE
@@ -659,7 +835,7 @@ def otimizar_noticia_com_ia(noticia):
             f"Título original: {titulo_orig}\nResumo original: {desc_orig}\n\n"
             "Retorne um JSON estrito com duas chaves: 'titulo' e 'resumo'.\n"
             "1. Em 'titulo': Reescreva o título para o Google Discover usando 'Dissonância Cognitiva' e curiosidade específica (quebrando a expectativa sem perder a verdade do fato, máx 110 caracteres).\n"
-            "2. Em 'resumo': Entregue o 'Time-to-Value' (a resposta direta e o impacto prático no bolso/carreira) logo na primeira frase e finalize com uma segunda frase analítica."
+            "2. Em 'resumo': Entregue o 'Time-to-Value' (a resposta direta e o impacto prático) logo na primeira frase e finalize com uma segunda frase analítica."
         )
         payload = {
             "model": "gpt-4o-mini",
@@ -683,11 +859,161 @@ def otimizar_noticia_com_ia(noticia):
     return noticia
 
 # ==============================================================================
-# AGENTES SOCIAIS: ONESIGNAL PUSH, TELEGRAM E FACEBOOK (COMPLETOS)
+# FÁBRICA DE VÍDEOS CURTOS / REELS AUTOMÁTICA (CORRIGIDA E BLINDADA V8.1)
+# ==============================================================================
+def obter_fonte_segura(tamanho):
+    caminhos_candidatos = [
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+        "/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf",
+        "C:/Windows/Fonts/arialbd.ttf",
+        "Roboto-Bold.ttf"
+    ]
+    for c in caminhos_candidatos:
+        if os.path.exists(c):
+            try:
+                return ImageFont.truetype(c, tamanho)
+            except:
+                pass
+    # Tenta baixar de um CDN confiável caso esteja em ambiente sem fontes Linux padrão
+    if not os.path.exists("Roboto-Bold.ttf"):
+        try:
+            r = requests.get("https://cdnjs.cloudflare.com/ajax/libs/ink/3.1.10/fonts/Roboto/roboto-bold-webfont.ttf", timeout=8)
+            if r.status_code == 200:
+                with open("Roboto-Bold.ttf", "wb") as f:
+                    f.write(r.content)
+                return ImageFont.truetype("Roboto-Bold.ttf", tamanho)
+        except:
+            pass
+    return ImageFont.load_default()
+
+def garantir_audio_alerta():
+    if os.path.exists("alerta.mp3"):
+        return "alerta.mp3"
+    caminho_wav = "alerta_plantao.wav"
+    if not os.path.exists(caminho_wav):
+        taxa_amostragem = 44100
+        duracao = 6.5
+        total_frames = int(taxa_amostragem * duracao)
+        with wave.open(caminho_wav, 'w') as wav_file:
+            wav_file.setparams((1, 2, taxa_amostragem, total_frames, 'NONE', 'not compressed'))
+            for i in range(total_frames):
+                t = i / taxa_amostragem
+                if t < 0.35 or (0.45 <= t < 0.8) or (0.9 <= t < 1.35):
+                    freq = 880.0 if int(t * 12) % 2 == 0 else 659.25
+                    val = int(16000 * math.sin(2 * math.pi * freq * t))
+                else:
+                    pulso = 0.5 + 0.5 * math.sin(2 * math.pi * 2.0 * t)
+                    val = int(9500 * pulso * math.sin(2 * math.pi * 110.0 * t))
+                wav_file.writeframesraw(struct.pack('<h', max(-32767, min(32767, val))))
+    return caminho_wav
+
+def limpar_emojis_para_pillow(texto):
+    # Remove emojis suplementares que causam quadrados vazios em fontes TrueType tradicionais
+    return re.sub(r'[^\x00-\x7F\xC0-\xFF\u2000-\u206F]+', '', texto).strip()
+
+def gerar_video_reel_noticia(noticia, caminho_saida="noticia_urgente.mp4"):
+    if not PIL_DISPONIVEL or not MOVIEPY_DISPONIVEL:
+        print("Fábrica de Vídeos: Pillow ou MoviePy não disponíveis. Pulando geração de vídeo.")
+        return None
+    try:
+        largura, altura = 1080, 1920
+        img_url = noticia.get("img", "")
+        fundo = None
+
+        if img_url and img_url.startswith("http"):
+            try:
+                r = requests.get(img_url, headers={'User-Agent': 'Mozilla/5.0'}, timeout=10)
+                if r.status_code == 200:
+                    fundo = Image.open(io.BytesIO(r.content)).convert("RGB")
+            except:
+                pass
+
+        if fundo is None:
+            fundo = Image.new("RGB", (largura, altura), (10, 15, 30))
+        else:
+            proporcao_alvo = largura / altura
+            proporcao_img = fundo.width / fundo.height
+            if proporcao_img > proporcao_alvo:
+                nova_altura = altura
+                nova_largura = int(altura * proporcao_img)
+            else:
+                nova_largura = largura
+                nova_altura = int(largura / proporcao_img)
+            resampler = getattr(Image, "Resampling", Image).LANCZOS
+            fundo = fundo.resize((nova_largura, nova_altura), resampler)
+            esq = (nova_largura - largura) // 2
+            topo = (nova_altura - altura) // 2
+            fundo = fundo.crop((esq, topo, esq + largura, topo + altura))
+            fundo = ImageEnhance.Brightness(fundo).enhance(0.40)
+
+        draw = ImageDraw.Draw(fundo, "RGBA")
+        # Máscara escura na metade inferior para legibilidade máxima
+        draw.rectangle([(0, 600), (largura, altura)], fill=(4, 8, 18, 220))
+        # Tarja Vermelha de Plantão no Topo + Indicador Gráfico Vetorial
+        draw.rectangle([(80, 210), (largura - 80, 335)], fill=(239, 68, 68, 255))
+        draw.ellipse([(115, 248), (165, 298)], fill=(255, 255, 255, 255))
+        draw.ellipse([(127, 260), (153, 286)], fill=(239, 68, 68, 255))
+
+        fonte_tarja = obter_fonte_segura(48)
+        fonte_titulo = obter_fonte_segura(60)
+        fonte_rodape = obter_fonte_segura(36)
+
+        draw.text((190, 245), "PLANTÃO TECHNEWS PRO", fill=(255, 255, 255, 255), font=fonte_tarja)
+
+        # Quebra de linha inteligente sem emojis quebrados
+        titulo_limpo = limpar_emojis_para_pillow(noticia.get("title", "Notícia Urgente em Tempo Real")).upper()
+        linhas = textwrap.wrap(titulo_limpo, width=22)[:7]
+        y_texto = 700
+        for idx_l, linha in enumerate(linhas):
+            cor_linha = (255, 230, 0, 255) if idx_l < 2 else (255, 255, 255, 255)
+            draw.text((85, y_texto), linha, fill=cor_linha, font=fonte_titulo)
+            y_texto += 88
+
+        # Rodapé de Chamada para Ação (CTA)
+        draw.rectangle([(80, 1550), (largura - 80, 1675)], fill=(16, 185, 129, 245))
+        draw.text((135, 1592), "LEIA COMPLETO NO LINK DA DESCRIÇÃO", fill=(255, 255, 255, 255), font=fonte_rodape)
+
+        caminho_frame = "frame_reel_temp.jpg"
+        fundo.save(caminho_frame, quality=92)
+
+        caminho_audio = garantir_audio_alerta()
+        audio_clip = AudioFileClip(caminho_audio)
+        duracao_final = min(7.0, audio_clip.duration) if audio_clip.duration else 6.5
+        audio_clip = audio_clip.subclip(0, duracao_final)
+
+        video_clip = ImageClip(caminho_frame).set_duration(duracao_final).set_audio(audio_clip)
+        video_clip.write_videofile(
+            caminho_saida,
+            fps=24,
+            codec="libx264",
+            audio_codec="aac",
+            preset="ultrafast",
+            ffmpeg_params=["-pix_fmt", "yuv420p"],
+            logger=None
+        )
+        video_clip.close()
+        audio_clip.close()
+        if os.path.exists(caminho_saida):
+            print(f"Fábrica de Vídeos: ✅ Vídeo Reel '{caminho_saida}' renderizado com sucesso!")
+            return caminho_saida
+    except Exception as e:
+        print(f"Fábrica de Vídeos Erro: {e}")
+    return None
+
+def limpar_arquivos_temporarios_midia():
+    for arq in ["noticia_urgente.mp4", "frame_reel_temp.jpg", "alerta_plantao.wav"]:
+        if os.path.exists(arq):
+            try:
+                os.remove(arq)
+            except:
+                pass
+
+# ==============================================================================
+# AGENTES SOCIAIS: ONESIGNAL PUSH, TELEGRAM E FACEBOOK (VÍDEO + LINK FALLBACK)
 # ==============================================================================
 def disparar_onesignal_push(noticia):
     if not ONESIGNAL_APP_ID or not ONESIGNAL_REST_KEY or not noticia:
-        print("Agente OneSignal: ONESIGNAL_APP_ID ou ONESIGNAL_REST_KEY ausentes nos Secrets. Pulando.")
+        print("Agente OneSignal: Chaves ausentes nos Secrets. Pulando.")
         return False
     try:
         titulo_curto = noticia['title'][:55] + "..." if len(noticia['title']) > 55 else noticia['title']
@@ -703,15 +1029,13 @@ def disparar_onesignal_push(noticia):
         if r.status_code == 200:
             print("Agente OneSignal: ✅ Notificação Web Push enviada para os subscritores!")
             return True
-        else:
-            print(f"Agente OneSignal Aviso ({r.status_code}): {r.text}")
     except Exception as e:
         print(f"Agente OneSignal Erro: {e}")
     return False
 
 def publicar_no_telegram(noticia):
     if not TELEGRAM_BOT_TOKEN or not TELEGRAM_CHAT_ID or not noticia:
-        print("Agente Telegram: TELEGRAM_BOT_TOKEN ou TELEGRAM_CHAT_ID ausentes nos Secrets. Pulando.")
+        print("Agente Telegram: Chaves ausentes nos Secrets. Pulando.")
         return False
     try:
         titulo_limpo = html.escape(noticia.get("title", ""))
@@ -736,10 +1060,8 @@ def publicar_no_telegram(noticia):
         }
         r = requests.post(url, json=payload, timeout=12)
         if r.status_code == 200:
-            print("Agente Telegram: ✅ Alerta Dark Social enviado com sucesso para o Canal VIP!")
+            print("Agente Telegram: ✅ Alerta Dark Social enviado com sucesso!")
             return True
-        else:
-            print(f"Agente Telegram Aviso ({r.status_code}): {r.text}")
     except Exception as e:
         print(f"Agente Telegram Erro: {e}")
     return False
@@ -750,8 +1072,8 @@ def gerar_copy_persuasiva_meta(noticia):
     cta_padrao = (
         f"\n\n👉 ACESSE A MATÉRIA COMPLETA AQUI:\n"
         f"🔗 {URL_PORTAL_OFICIAL}\n\n"
-        f"🛑 O detalhe mais importante (e como isso impacta o mercado) acabou de ser atualizado no nosso Terminal Oficial!\n\n"
-        f"👇 Clique no Card/Link acima ou comente 'LINK', 'QUERO' ou 'VIP' que te envio o acesso + uma Ferramenta Secreta direto no seu Direct! 🚀"
+        f"🛑 O detalhe mais importante acabou de ser atualizado no nosso Terminal Oficial!\n\n"
+        f"👇 Clique no link acima ou comente 'LINK', 'QUERO' ou 'VIP' que te envio o acesso + uma Ferramenta Secreta direto no seu Direct! 🚀"
     )
     if not OPENAI_API_KEY:
         return f"🚨 URGENTE: {titulo}!\n\n{resumo}{cta_padrao}"
@@ -765,12 +1087,12 @@ def gerar_copy_persuasiva_meta(noticia):
             "1. GANCHO EXPLOSIVO com emojis na primeira linha.\n"
             f"2. LOGO ABAIXO DO GANCHO, coloque: 👉 Leia completo no portal: {URL_PORTAL_OFICIAL}\n"
             "3. OPEN LOOP (Curiosidade): Conte o início da notícia de forma envolvente, mas pare no melhor momento dizendo que os detalhes completos estão no portal.\n"
-            f"4. FECHAMENTO: Convide a clicar na imagem/card abaixo ou no link ({URL_PORTAL_OFICIAL}) e peça também para comentarem 'LINK' ou 'VIP' para receberem uma ferramenta secreta no Direct."
+            f"4. FECHAMENTO: Convide a clicar no link ({URL_PORTAL_OFICIAL}) e peça também para comentarem 'LINK' ou 'VIP' para receberem uma ferramenta secreta no Direct."
         )
         payload = {
             "model": "gpt-4o-mini",
             "messages": [
-                {"role": "system", "content": "Você é um copywriter especialista em tráfego direto, retenção e cliques no Facebook."},
+                {"role": "system", "content": "Você é um copywriter especialista em tráfego viral e retenção no Facebook."},
                 {"role": "user", "content": prompt}
             ],
             "max_tokens": 250,
@@ -797,7 +1119,7 @@ def obter_credenciais_pagina(token_inicial):
                 return pagina.get("id"), pagina.get("access_token", token_inicial)
     except:
         pass
-    return "me", token_inicial
+    return (META_PAGE_ID if META_PAGE_ID else "me"), token_inicial
 
 def escolher_noticia_inedita(lista_noticias):
     historico = []
@@ -821,7 +1143,7 @@ def salvar_memoria_meta(titulo):
                 historico = [linha.strip() for linha in f.readlines() if linha.strip()]
         if titulo.strip() not in historico:
             historico.append(titulo.strip())
-        historico = historico[-20:]
+        historico = historico[-25:]
         with open(ARQUIVO_MEMORIA_META, "w", encoding="utf-8") as f:
             f.write("\n".join(historico))
     except:
@@ -834,20 +1156,48 @@ def publicar_no_facebook(noticia):
 
     alvo_id, token_pagina = obter_credenciais_pagina(META_ACCESS_TOKEN)
     mensagem = gerar_copy_persuasiva_meta(noticia)
-    img_url = noticia.get("img", "")
-
-    stamp = datetime.now().strftime("%Y%m%d%H%M")
-    link_com_cache_buster = f"{URL_PORTAL_OFICIAL}?v={stamp}"
-
-    try:
-        requests.post("https://graph.facebook.com/v20.0/", data={"id": link_com_cache_buster, "scrape": "true", "access_token": token_pagina}, timeout=10)
-        requests.post("https://graph.facebook.com/v20.0/", data={"id": URL_PORTAL_OFICIAL, "scrape": "true", "access_token": token_pagina}, timeout=10)
-    except:
-        pass
-
     alvos_tentativa = [alvo_id]
     if "me" not in alvos_tentativa:
         alvos_tentativa.append("me")
+
+    # 1. TENTA PUBLICAR COMO VÍDEO CURTO / REEL NATIVO (MAIOR ALCANCE ORGÂNICO)
+    caminho_video = gerar_video_reel_noticia(noticia)
+    if caminho_video and os.path.exists(caminho_video):
+        for alvo in alvos_tentativa:
+            try:
+                url_video = f"https://graph-video.facebook.com/v20.0/{alvo}/videos"
+                with open(caminho_video, "rb") as f_vid:
+                    files = {"source": ("noticia_urgente.mp4", f_vid, "video/mp4")}
+                    data_vid = {
+                        "title": noticia.get("title", "Plantão TechNews PRO")[:95],
+                        "description": mensagem,
+                        "access_token": token_pagina
+                    }
+                    r_vid = requests.post(url_video, data=data_vid, files=files, timeout=65)
+                if r_vid.status_code == 200:
+                    vid_id = r_vid.json().get("id")
+                    salvar_memoria_meta(noticia.get("title", ""))
+                    print(f"Agente Meta: ✅ VÍDEO/REEL NATIVO publicado com sucesso via '{alvo}'! ID: {vid_id}")
+                    try:
+                        requests.post(
+                            f"https://graph.facebook.com/v20.0/{vid_id}/comments",
+                            data={"message": f"📖 Leia a matéria completa e veja os detalhes aqui: {URL_PORTAL_OFICIAL}", "access_token": token_pagina},
+                            timeout=10
+                        )
+                    except:
+                        pass
+                    limpar_arquivos_temporarios_midia()
+                    return True
+                else:
+                    print(f"Aviso Upload Vídeo Meta ({r_vid.status_code}): {r_vid.text}")
+            except Exception as e:
+                print(f"Erro tentativa de vídeo Meta: {e}")
+
+    limpar_arquivos_temporarios_midia()
+
+    # 2. FALLBACK AUTOMÁTICO: CARD DE LINK CLICÁVEL OU FOTO SE O VÍDEO FALHAR
+    stamp = datetime.now().strftime("%Y%m%d%H%M")
+    link_com_cache_buster = f"{URL_PORTAL_OFICIAL}?v={stamp}"
 
     for alvo in alvos_tentativa:
         try:
@@ -861,6 +1211,7 @@ def publicar_no_facebook(noticia):
         except:
             pass
 
+    img_url = noticia.get("img", "")
     if img_url and img_url.startswith("http"):
         for alvo in alvos_tentativa:
             try:
@@ -875,36 +1226,150 @@ def publicar_no_facebook(noticia):
     return False
 
 # ==============================================================================
-# COLETA MULTI-APIS COM FILTRO DE NICHO E IMAGENS 1200PX
+# INGESTÃO HÍBRIDA: RSS MASSA (POLÍTICA/FAMOSOS) + NEWSDATA.IO + APIS TECH
 # ==============================================================================
 PALAVRAS_BLOQUEADAS = [
-    "futebol", "gol", "campeonato", "brasileirão", "z-4", "botafogo", "flamengo",
-    "corinthians", "palmeiras", "grêmio", "inter ", "internacional", "vinagre",
-    "limpar janela", "faxina", "receita caseira", "fofoca", "bbb", "novela",
-    "horóscopo", "astrologia", "manifestantes", "cacetadas"
+    "pornô", "porno", "sexo explícito", "onlyfans", "acompanhantes", "cassino ilegal",
+    "vinagre", "limpar janela", "faxina caseira", "horóscopo do dia"
 ]
 
-def noticia_relevante_nicho(titulo, desc=""):
+def noticia_segura_adsterra(titulo, desc=""):
     texto = f"{titulo} {desc}".lower()
     return not any(b in texto for b in PALAVRAS_BLOQUEADAS)
 
-def classificar_noticia(titulo):
+def classificar_noticia(titulo, categoria_padrao="Tecnologia"):
     t = titulo.lower()
-    if any(k in t for k in ["finança", "banco", "mercado", "ação", "investimento", "startup", "economia", "negócio", "dólar", "cripto", "bitcoin", "ibge", "cnpj", "receita federal", "imposto", "pib"]):
+    if any(k in t for k in ["lula", "bolsonaro", "stf", "senado", "câmara", "congresso", "ministro", "governo", "eleição", "prefeito", "deputado", "pec ", "planalto"]):
+        return "🏛️ Política"
+    elif any(k in t for k in ["famoso", "celebridade", "bbb", "atriz", "ator", "cantor", "influenciador", "separação", "namoro", "fofoca", "reality", "virginia", "neymar"]):
+        return "⭐ Famosos"
+    elif any(k in t for k in ["finança", "banco", "mercado", "ação", "investimento", "startup", "economia", "negócio", "dólar", "cripto", "bitcoin", "ibge", "cnpj", "receita federal", "imposto", "pib"]):
         return "Finanças"
     elif any(k in t for k in ["espaço", "nasa", "satélite", "ciência", "física", "astronomia", "foguete", "órbita"]):
         return "Ciência"
-    return "Tecnologia"
+    return categoria_padrao
+
+def limpar_html_rss(texto_bruto):
+    if not texto_bruto:
+        return ""
+    sem_tags = re.sub(r'<[^>]+>', ' ', texto_bruto)
+    limpo = html.unescape(sem_tags)
+    return re.sub(r'\s+', ' ', limpo).strip()[:240]
+
+def extrair_imagem_item_rss(item_xml, texto_bruto_html, fallback_img):
+    if item_xml is not None:
+        for elem in item_xml.iter():
+            tag_l = elem.tag.lower()
+            if "enclosure" in tag_l or "content" in tag_l or "thumbnail" in tag_l:
+                url_cand = elem.attrib.get("url") or elem.attrib.get("href")
+                if url_cand and url_cand.startswith("http") and any(ext in url_cand.lower() for ext in [".jpg", ".jpeg", ".png", ".webp"]):
+                    return url_cand
+    m = re.search(r'<img[^>]+src=["\'](https?://[^"\']+)["\']', texto_bruto_html or "", re.IGNORECASE)
+    if m:
+        return m.group(1)
+    return fallback_img
+
+def fetch_rss_massa():
+    feeds = [
+        {
+            "url": "https://www.metropoles.com/brasil/politica-brasil/feed",
+            "source": "Metrópoles Política",
+            "cat": "🏛️ Política",
+            "fallback_img": "https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=1200&q=85"
+        },
+        {
+            "url": "https://www.metropoles.com/colunas/leo-dias/feed",
+            "source": "Coluna Famosos",
+            "cat": "⭐ Famosos",
+            "fallback_img": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1200&q=85"
+        },
+        {
+            "url": "https://rss.uol.com.br/feed/splash.xml",
+            "source": "UOL Splash",
+            "cat": "⭐ Famosos",
+            "fallback_img": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=85"
+        }
+    ]
+    noticias = []
+    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/124.0.0.0"}
+    for f_cfg in feeds:
+        try:
+            r = requests.get(f_cfg["url"], headers=headers, timeout=8)
+            if r.status_code == 200:
+                conteudo_xml = r.content.strip()
+                root = ET.fromstring(conteudo_xml)
+                for item in root.findall(".//item")[:5]:
+                    tit_el = item.find("title")
+                    link_el = item.find("link")
+                    desc_el = item.find("description")
+                    titulo = (tit_el.text or "").strip() if tit_el is not None else ""
+                    link = (link_el.text or "#").strip() if link_el is not None else "#"
+                    desc_html = (desc_el.text or "") if desc_el is not None else ""
+                    for child in item:
+                        if "encoded" in child.tag.lower() and child.text:
+                            desc_html += " " + child.text
+
+                    desc_limpa = limpar_html_rss(desc_html) or "Confira todos os bastidores e detalhes atualizados na matéria completa."
+                    if titulo and noticia_segura_adsterra(titulo, desc_limpa):
+                        img_url = extrair_imagem_item_rss(item, desc_html, f_cfg["fallback_img"])
+                        noticias.append({
+                            "title": titulo,
+                            "desc": desc_limpa,
+                            "img": img_url,
+                            "url": link,
+                            "source": f_cfg["source"],
+                            "date": "Hoje",
+                            "categoria": f_cfg["cat"]
+                        })
+        except Exception as e:
+            print(f"Aviso RSS ({f_cfg['source']}): {e}")
+    return noticias
+
+def fetch_newsdata_rotativo():
+    noticias = []
+    if not NEWSDATA_API_KEY:
+        return noticias
+    termos_quentes = [
+        "inteligência artificial", "reforma tributária", "bitcoin", "stf", "brasileirão", "famosos"
+    ]
+    indice_ciclo = (datetime.now().hour // 6) % len(termos_quentes)
+    termo_atual = termos_quentes[indice_ciclo]
+    try:
+        url = "https://newsdata.io/api/1/news"
+        params = {
+            "apikey": NEWSDATA_API_KEY.strip(),
+            "country": "br",
+            "language": "pt",
+            "q": termo_atual
+        }
+        r = requests.get(url, params=params, timeout=8)
+        if r.status_code == 200:
+            for item in r.json().get("results", [])[:6]:
+                titulo = item.get("title") or ""
+                desc = item.get("description") or "Leia a cobertura completa e os desdobramentos no portal."
+                if titulo and noticia_segura_adsterra(titulo, desc):
+                    noticias.append({
+                        "title": titulo,
+                        "desc": limpar_html_rss(desc),
+                        "img": item.get("image_url") or "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1200&q=85",
+                        "url": item.get("link", "#"),
+                        "source": item.get("source_id", "Radar Brasil").upper(),
+                        "date": (item.get("pubDate") or "Hoje")[:10],
+                        "categoria": classificar_noticia(titulo)
+                    })
+    except Exception as e:
+        print(f"Aviso NewsData.io: {e}")
+    return noticias
 
 def fetch_ibge_noticias():
     noticias = []
     try:
-        r = requests.get("https://servicodados.ibge.gov.br/api/v3/noticias/?qtd=6", timeout=8)
+        r = requests.get("https://servicodados.ibge.gov.br/api/v3/noticias/?qtd=5", timeout=8)
         if r.status_code == 200:
             for item in r.json().get("items", []):
                 titulo = item.get("titulo", "")
                 desc = item.get("introducao", "Confira os dados completos divulgados pelo portal oficial.")
-                if not noticia_relevante_nicho(titulo, desc):
+                if not noticia_segura_adsterra(titulo, desc):
                     continue
                 img_url = "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=1200&q=85"
                 try:
@@ -916,7 +1381,7 @@ def fetch_ibge_noticias():
                 noticias.append({
                     "title": titulo, "desc": desc, "img": img_url,
                     "url": item.get("link", "#"), "source": "IBGE Oficial",
-                    "date": item.get("data_publicacao", "Hoje")[:10], "categoria": classificar_noticia(titulo)
+                    "date": item.get("data_publicacao", "Hoje")[:10], "categoria": classificar_noticia(titulo, "Finanças")
                 })
     except:
         pass
@@ -925,18 +1390,18 @@ def fetch_ibge_noticias():
 def fetch_devto_pt():
     noticias = []
     try:
-        r = requests.get("https://dev.to/api/articles?tag=portuguese&per_page=8", headers={'User-Agent': 'Mozilla/5.0'}, timeout=8)
+        r = requests.get("https://dev.to/api/articles?tag=portuguese&per_page=6", headers={'User-Agent': 'Mozilla/5.0'}, timeout=8)
         if r.status_code == 200:
             for item in r.json():
                 titulo = item.get("title", "")
                 desc = item.get("description") or "Artigo técnico sobre tecnologia e desenvolvimento."
-                if not noticia_relevante_nicho(titulo, desc):
+                if not noticia_segura_adsterra(titulo, desc):
                     continue
                 noticias.append({
                     "title": titulo, "desc": desc,
                     "img": item.get("cover_image") or item.get("social_image") or "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=85",
                     "url": item.get("url", "#"), "source": "Dev.to Brasil",
-                    "date": item.get("readable_publish_date", "Recente"), "categoria": classificar_noticia(titulo)
+                    "date": item.get("readable_publish_date", "Recente"), "categoria": "Tecnologia"
                 })
     except:
         pass
@@ -963,14 +1428,14 @@ def fetch_newsapi():
     if not NEWS_API_KEY:
         return noticias
     try:
-        query = '("inteligencia artificial" OR tecnologia OR ciberseguranca OR criptomoedas OR bitcoin OR startups OR software)'
+        query = '("inteligencia artificial" OR tecnologia OR politica OR economia OR bitcoin OR startups OR famosos)'
         url = f"https://newsapi.org/v2/everything?q={query}&language=pt&sortBy=publishedAt&pageSize=10&apiKey={NEWS_API_KEY}"
         r = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'}, timeout=8)
         if r.status_code == 200:
             for item in r.json().get("articles", []):
                 titulo = item.get("title") or ""
                 desc = item.get("description") or "Clique para ler a matéria completa na fonte oficial."
-                if titulo and titulo != "[Removed]" and noticia_relevante_nicho(titulo, desc):
+                if titulo and titulo != "[Removed]" and noticia_segura_adsterra(titulo, desc):
                     noticias.append({
                         "title": titulo, "desc": desc,
                         "img": item.get("urlToImage") or "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=85",
@@ -989,10 +1454,10 @@ FALLBACK_NEWS = [
         "url": "https://news.google.com", "source": "Destaque IA", "date": "Hoje", "categoria": "Tecnologia"
     },
     {
-        "title": "Fintechs brasileiras batem recorde de captação e expandem soluções de pagamento instantâneo",
-        "desc": "Novos relatórios apontam crescimento expressivo no setor financeiro digital com foco em crédito inteligente e dólar.",
-        "img": "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1200&q=85",
-        "url": "https://agenciadenoticias.ibge.gov.br", "source": "Finanças & Negócios", "date": "Hoje", "categoria": "Finanças"
+        "title": "Bastidores de Brasília: Novas medidas econômicas movimentam o Congresso e o mercado financeiro",
+        "desc": "Parlamentares debatem pacote fiscal e impactos diretos nas taxas de juros e investimentos no país.",
+        "img": "https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=1200&q=85",
+        "url": "https://www.metropoles.com", "source": "Política Nacional", "date": "Hoje", "categoria": "🏛️ Política"
     }
 ]
 
@@ -1013,12 +1478,12 @@ def gerar_rss(noticias):
     xml = f"""<?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0">
 <channel>
-  <title>TechNews PRO | Terminal de Inteligência, IA e Mercado</title>
+  <title>TechNews PRO | Terminal de Inteligência, IA, Esportes e Mercado</title>
   <link>{URL_PORTAL_OFICIAL}</link>
-  <description>Notícias em tempo real sobre Inteligência Artificial, Tecnologia, Ciência e Mercado Financeiro.</description>
+  <description>Notícias em tempo real sobre Inteligência Artificial, Tecnologia, Política, Famosos, Futebol e Finanças.</description>
   <language>pt-BR</language>
 """
-    for n in noticias[:15]:
+    for n in noticias[:20]:
         xml += f"""  <item>
     <title>{html.escape(n.get('title', ''))}</title>
     <link>{html.escape(n.get('url', URL_PORTAL_OFICIAL))}</link>
@@ -1082,7 +1547,6 @@ def gerar_hub_ia(todas_noticias, cotacoes_html, data_fmt, ano_fmt):
         </div>
     </header>
 
-    <!-- BANNER TOPO ADSTERRA -->
     <div style="text-align:center; margin:1.5rem auto;">
         <script>atOptions={{'key':'06959dfe796ac17610a3027d9ede544f','format':'iframe','height':90,'width':728,'params':{{}}}};</script>
         <script src="https://bicea.org/22/06959dfe796ac17610a3027d9ede544f"></script>
@@ -1149,7 +1613,6 @@ def gerar_pagina_cotacoes(dados_cot, cotacoes_html, data_fmt, ano_fmt):
         </div>
     </header>
 
-    <!-- BANNER TOPO ADSTERRA -->
     <div style="text-align:center; margin:1.5rem auto;">
         <script>atOptions={{'key':'06959dfe796ac17610a3027d9ede544f','format':'iframe','height':90,'width':728,'params':{{}}}};</script>
         <script src="https://bicea.org/22/06959dfe796ac17610a3027d9ede544f"></script>
@@ -1197,7 +1660,6 @@ def gerar_pagina_cotacoes(dados_cot, cotacoes_html, data_fmt, ano_fmt):
     with open("cotacao-agora.html", "w", encoding="utf-8") as f:
         f.write(html_cot)
 
-# SEO PROGRAMÁTICO EM ESCALA (CLUSTERS COM MONETIZAÇÃO INCLUÍDA)
 TAGS_SEO_DINAMICAS = {
     "bitcoin": {
         "titulo": "Radar Bitcoin & Criptomoedas em Tempo Real",
@@ -1269,7 +1731,6 @@ def gerar_paginas_programaticas(todas_noticias, cotacoes_html, data_fmt, ano_fmt
         </div>
     </header>
 
-    <!-- BANNER TOPO ADSTERRA -->
     <div style="text-align:center; margin:1.5rem auto;">
         <script>atOptions={{'key':'06959dfe796ac17610a3027d9ede544f','format':'iframe','height':90,'width':728,'params':{{}}}};</script>
         <script src="https://bicea.org/22/06959dfe796ac17610a3027d9ede544f"></script>
@@ -1298,7 +1759,8 @@ def gerar_sitemap_xml(urls_extras):
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>{URL_PORTAL_OFICIAL}</loc><lastmod>{hoje}</lastmod><changefreq>hourly</changefreq><priority>1.0</priority></url>
   <url><loc>{URL_PORTAL_OFICIAL}inteligencia-artificial.html</loc><lastmod>{hoje}</lastmod><changefreq>hourly</changefreq><priority>0.9</priority></url>
-  <url><loc>{URL_PORTAL_OFICIAL}cotacao-agora.html</loc><lastmod>{hoje}</lastmod><changefreq>hourly</changefreq><priority>0.9</priority></url>"""
+  <url><loc>{URL_PORTAL_OFICIAL}cotacao-agora.html</loc><lastmod>{hoje}</lastmod><changefreq>hourly</changefreq><priority>0.9</priority></url>
+  <url><loc>{URL_PORTAL_OFICIAL}futebol.html</loc><lastmod>{hoje}</lastmod><changefreq>hourly</changefreq><priority>0.9</priority></url>"""
     for u in urls_extras:
         xml += f"\n  <url><loc>{URL_PORTAL_OFICIAL}{u}</loc><lastmod>{hoje}</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>"
     xml += "\n</urlset>"
@@ -1314,6 +1776,8 @@ def garantir_verificacao_google():
 # ==============================================================================
 def gerar_portal(apenas_site=False):
     brutas = []
+    brutas.extend(fetch_rss_massa())
+    brutas.extend(fetch_newsdata_rotativo())
     brutas.extend(fetch_devto_pt())
     brutas.extend(fetch_newsapi())
     brutas.extend(fetch_ibge_noticias())
@@ -1355,11 +1819,13 @@ def gerar_portal(apenas_site=False):
     data_fmt = agora.strftime("%d/%m/%Y às %H:%M")
     ano_fmt = str(agora.year)
     cotacoes_html, dados_cot = obter_dados_cotacoes()
+    tabela_futebol = obter_tabela_brasileirao()
+    widget_futebol_html = gerar_widget_futebol_html(tabela_futebol)
     noticias_json_str = json.dumps(todas_noticias, ensure_ascii=False)
 
     destaque = todas_noticias[0]
     og_title = destaque.get("title", "TechNews PRO | Terminal de Inteligência, IA & Mercado").replace('"', '&quot;')
-    og_desc = destaque.get("desc", "Acompanhe em tempo real as notícias mais impactantes de Tecnologia, IA e Finanças.").replace('"', '&quot;')
+    og_desc = destaque.get("desc", "Acompanhe em tempo real as notícias mais impactantes de Tecnologia, Política, Futebol e Finanças.").replace('"', '&quot;')
     og_img = destaque.get("img", "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=85")
 
     html_index = (
@@ -1369,6 +1835,7 @@ def gerar_portal(apenas_site=False):
         .replace("{og_img}", og_img)
         .replace("{url_portal}", URL_PORTAL_OFICIAL)
         .replace("{cotacoes_html}", cotacoes_html)
+        .replace("{widget_futebol_html}", widget_futebol_html)
         .replace("{trending_section}", trending_html)
         .replace("{noticias_json}", noticias_json_str)
         .replace("{data_atualizacao}", data_fmt)
@@ -1386,12 +1853,13 @@ def gerar_portal(apenas_site=False):
 
     gerar_hub_ia(todas_noticias, cotacoes_html, data_fmt, ano_fmt)
     gerar_pagina_cotacoes(dados_cot, cotacoes_html, data_fmt, ano_fmt)
+    gerar_pagina_futebol(tabela_futebol, todas_noticias, cotacoes_html, data_fmt, ano_fmt)
     urls_extras = gerar_paginas_programaticas(todas_noticias, cotacoes_html, data_fmt, ano_fmt)
     gerar_sitemap_xml(urls_extras)
     gerar_rss(todas_noticias)
     garantir_verificacao_google()
 
-    print("✅ Ecossistema v7.5 Master gerado com 100% da monetização, SEO Clusters, RSS e Sitemap!")
+    print("✅ Ecossistema v8.1 Blindado gerado com sucesso!")
 
     if not apenas_site:
         publicar_no_facebook(todas_noticias[0])
@@ -1402,13 +1870,17 @@ if __name__ == "__main__":
     if "--gerar-site" in sys.argv:
         gerar_portal(apenas_site=True)
     elif "--postar-redes" in sys.argv or "--postar-meta" in sys.argv:
+        noticia_pronta = None
         if os.path.exists(ARQUIVO_FILA_POST):
-            with open(ARQUIVO_FILA_POST, "r", encoding="utf-8") as f:
-                noticia_pronta = json.load(f)
-            publicar_no_facebook(noticia_pronta)
-            publicar_no_telegram(noticia_pronta)
-            disparar_onesignal_push(noticia_pronta)
-        else:
-            print("Agentes Sociais: Fila de postagem não encontrada.")
+            try:
+                with open(ARQUIVO_FILA_POST, "r", encoding="utf-8") as f:
+                    noticia_pronta = json.load(f)
+            except:
+                pass
+        if not noticia_pronta:
+            noticia_pronta = FALLBACK_NEWS[0]
+        publicar_no_facebook(noticia_pronta)
+        publicar_no_telegram(noticia_pronta)
+        disparar_onesignal_push(noticia_pronta)
     else:
         gerar_portal(apenas_site=False)
