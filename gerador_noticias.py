@@ -12,7 +12,10 @@ import textwrap
 import urllib.parse
 import requests
 import xml.etree.ElementTree as ET
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
+
+# Fuso Horário Oficial de Brasília (BRT / UTC-3) para precisão em servidores Cloud
+FUSO_BRASIL = timezone(timedelta(hours=-3))
 
 # Importações seguras + Patch de compatibilidade Pillow 10+ com MoviePy 1.x
 try:
@@ -53,15 +56,16 @@ ONESIGNAL_REST_KEY = os.getenv("ONESIGNAL_REST_KEY", "")
 ARQUIVO_MEMORIA_META = ".ultimo_post_meta.txt"
 ARQUIVO_FILA_POST = ".fila_post_meta.json"
 ARQUIVO_GOOGLE_VERIF = "google28d5384ab7e71bf6.html"
+CAMINHO_API_JSON = "api/v1/noticias.json"
 
 # ==============================================================================
-# LINKS OFICIAIS DE MONETIZAÇÃO E FUNIL (ATUALIZADOS E AUDITADOS V8.6)
+# LINKS OFICIAIS DE MONETIZAÇÃO E FUNIL (ATUALIZADOS E AUDITADOS V9.1)
 # ==============================================================================
 URL_PORTAL_OFICIAL = "https://infoprodutos93-sys.github.io/technews-pro/"
 SMARTLINK_ADSTERRA = "https://asiafilm.org/4/78ed9deb10feac05c15347b414e171ab"
 SYSTEME_OPTIN_URL = "https://devanildobeeny146.systeme.io/3ed9605c"
 
-# NOVOS LINKS OFICIAIS KIWIFY
+# LINKS OFICIAIS KIWIFY
 # 1. Desenvolvimento Pessoal & Mentalidade PRO (Botão Área VIP Global, Back-Redirect, Telegram VIP, Quiz 1)
 LINK_KIWIFY_1 = "https://pay.kiwify.com.br/TO0iLa6"
 # 2. LUMI - Ofertas com Inteligência (Widget Lateral PRO, Cards Nativos Feed, Quiz 2)
@@ -80,7 +84,7 @@ IMAGENS_FALLBACK_CATEGORIA = {
 }
 
 # ==============================================================================
-# TEMPLATE PRINCIPAL: INDEX.HTML (V8.6 - QUIZ, BACK-REDIRECT, GEO & MOBILE)
+# TEMPLATE PRINCIPAL: INDEX.HTML (V9.1 - GSAP SAFE CAROUSEL, LIQUID NAV, OPT-IN)
 # ==============================================================================
 HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
 <html lang="pt-BR" data-theme="dark">
@@ -105,8 +109,11 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
 
-    <title>TechNews PRO | Terminal de Inteligência, IA, Esportes & Mercado</title>
+    <title>TechNews PRO | Terminal Cinematográfico de IA, Esportes & Mercado</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- CDN GSAP PARA ANIMAÇÕES AWWWARDS E CARROSSEL BASEADO EM PROMISES -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
 
     <!-- GEO (GENERATIVE ENGINE OPTIMIZATION) SCHEMA.ORG JSON-LD -->
     {schema_json_ld}
@@ -172,11 +179,12 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
         .logo span { color: var(--primary); }
         .logo-badge { font-size: 0.62rem; background: rgba(239, 68, 68, 0.15); color: var(--primary); border: 1px solid var(--primary); padding: 2px 6px; border-radius: 4px; font-weight: 800; letter-spacing: 0.5px; }
 
-        .nav-links { display: flex; gap: 0.35rem; list-style: none; background: rgba(255,255,255,0.03); padding: 5px; border-radius: 10px; border: 1px solid var(--border); align-items: center; overflow-x: auto; max-width: 100%; white-space: nowrap; -webkit-overflow-scrolling: touch; }
-        .nav-links button, .nav-links a { background: none; border: none; color: var(--text-muted); font-weight: 700; font-size: 0.8rem; cursor: pointer; padding: 0.42rem 0.72rem; border-radius: 7px; transition: 0.2s; text-decoration: none; flex-shrink: 0; }
-        .nav-links button:hover, .nav-links a:hover { color: var(--text-main); }
-        .nav-links button.active { background: var(--primary); color: #fff; box-shadow: 0 4px 12px rgba(239, 68, 68, 0.35); }
-        .nav-links a.hub-link { color: var(--neon); border: 1px solid rgba(0, 242, 254, 0.25); }
+        /* MENU COM EFEITO LIQUID / GOOEY (SVG FILTER + GPU ACCELERATION) */
+        .nav-links { display: flex; gap: 0.4rem; list-style: none; background: rgba(255,255,255,0.03); padding: 6px; border-radius: 12px; border: 1px solid var(--border); align-items: center; overflow-x: auto; max-width: 100%; white-space: nowrap; -webkit-overflow-scrolling: touch; filter: url('#liquid-gooey'); }
+        .nav-links button, .nav-links a { position: relative; background: none; border: none; color: var(--text-muted); font-weight: 700; font-size: 0.8rem; cursor: pointer; padding: 0.45rem 0.78rem; border-radius: 9px; transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), background-color 0.25s, color 0.2s; text-decoration: none; flex-shrink: 0; will-change: transform; }
+        .nav-links button:hover, .nav-links a:hover { color: var(--text-main); transform: scale(1.06); background: rgba(239, 68, 68, 0.16); }
+        .nav-links button.active { background: linear-gradient(135deg, var(--primary), #dc2626); color: #fff; box-shadow: 0 6px 18px rgba(239, 68, 68, 0.45); transform: scale(1.05); }
+        .nav-links a.hub-link { color: var(--neon); border: 1px solid rgba(0, 242, 254, 0.28); }
 
         .header-actions { display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
         .search-box { position: relative; flex-grow: 1; }
@@ -196,12 +204,20 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
         .main-container { max-width: 1440px; margin: 0 auto 4rem auto; padding: 0 4%; display: grid; grid-template-columns: 7.2fr 2.8fr; gap: 2.2rem; width: 100%; }
         .content-column, .sidebar { min-width: 0; max-width: 100%; }
 
-        /* HERO CARD ADAPTATIVO (DESKTOP OVERLAY + MOBILE EMPILHADO LIMPO) */
-        .hero-card { position: relative; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.35); margin-bottom: 2.2rem; display: flex; flex-direction: column; border: 1px solid var(--border); background: #070b14; }
-        .hero-card img { width: 100%; height: 450px; object-fit: cover; opacity: 0.78; transition: transform 0.6s ease; }
-        .hero-card:hover img { transform: scale(1.02); }
-        .hero-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(3,6,12,0.98) 18%, rgba(3,6,12,0.72) 68%, transparent 100%); padding: 2.2rem; color: #fff; }
-        .badge-source { background: var(--primary); color: #fff; padding: 5px 12px; border-radius: 6px; font-size: 0.7rem; font-weight: 900; text-transform: uppercase; display: inline-block; margin-bottom: 0.7rem; }
+        /* HERO CARROSSEL CINEMATOGRÁFICO GSAP (AWWWARDS STYLE) */
+        .hero-card { position: relative; border-radius: 18px; overflow: hidden; box-shadow: 0 24px 48px rgba(0,0,0,0.45); margin-bottom: 2.2rem; display: flex; flex-direction: column; border: 1px solid var(--border); background: #070b14; }
+        .hero-progress-wrap { position: absolute; top: 0; left: 0; right: 0; height: 4px; background: rgba(255,255,255,0.12); z-index: 20; }
+        .hero-progress-bar { height: 100%; width: 0%; background: linear-gradient(90deg, var(--primary), var(--neon)); box-shadow: 0 0 12px var(--neon); }
+        .hero-card img { width: 100%; height: 460px; object-fit: cover; opacity: 0.8; will-change: transform, opacity; }
+        .hero-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(3,6,12,0.98) 18%, rgba(3,6,12,0.75) 68%, transparent 100%); padding: 2.2rem; color: #fff; z-index: 10; }
+        .hero-top-meta { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 0.7rem; flex-wrap: wrap; }
+        .badge-source { background: var(--primary); color: #fff; padding: 5px 12px; border-radius: 6px; font-size: 0.7rem; font-weight: 900; text-transform: uppercase; display: inline-block; }
+        .hero-nav-controls { display: flex; align-items: center; gap: 8px; }
+        .hero-nav-btn { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.22); color: #fff; width: 34px; height: 34px; border-radius: 50%; cursor: pointer; font-weight: 900; display: inline-flex; align-items: center; justify-content: center; backdrop-filter: blur(6px); transition: 0.2s; }
+        .hero-nav-btn:hover { background: var(--primary); border-color: var(--primary); transform: scale(1.08); }
+        .hero-slide-dots { display: flex; gap: 6px; align-items: center; margin: 0 6px; }
+        .hero-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.3); cursor: pointer; transition: 0.25s; }
+        .hero-dot.active { width: 22px; border-radius: 10px; background: var(--neon); }
         .hero-overlay h1 { font-size: clamp(1.35rem, 3vw, 2.15rem); line-height: 1.25; margin-bottom: 0.75rem; font-weight: 900; }
         .hero-overlay p { color: #cbd5e1; font-size: clamp(0.88rem, 2vw, 1.02rem); margin-bottom: 1.1rem; }
         .hero-actions { display: flex; gap: 0.7rem; flex-wrap: wrap; }
@@ -253,9 +269,16 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
         .g4-badge { color: #10b981; font-weight: 800; }
         .z4-badge { color: #ef4444; font-weight: 800; }
 
-        .newsletter-box { background: linear-gradient(135deg, #111827, #03060c); color: #fff; border-radius: 14px; padding: 1.6rem; text-align: center; border: 1px solid rgba(239, 68, 68, 0.35); }
-        .newsletter-box input { width: 100%; padding: 0.78rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.05); color: #fff; margin: 0.75rem 0; font-size: 0.86rem; }
-        .newsletter-box button { width: 100%; padding: 0.82rem; background: var(--primary); color: #fff; border: none; border-radius: 8px; font-weight: 800; cursor: pointer; }
+        /* OPT-IN VIP ANIMADO E LÚDICO (SYSTEME.IO) */
+        .newsletter-box { background: linear-gradient(135deg, #111827, #03060c); color: #fff; border-radius: 16px; padding: 1.6rem; text-align: center; border: 1px solid rgba(239, 68, 68, 0.4); position: relative; overflow: hidden; transition: border-color 0.3s, box-shadow 0.3s; }
+        .newsletter-box.focused { border-color: var(--neon); box-shadow: 0 0 25px rgba(0, 242, 254, 0.25); }
+        .optin-avatar { width: 58px; height: 58px; margin: 0 auto 0.65rem auto; border-radius: 50%; background: rgba(255,255,255,0.06); border: 2px solid var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1.7rem; transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.3s; }
+        .newsletter-box.focused .optin-avatar { transform: scale(1.14) rotate(-6deg); border-color: var(--neon); }
+        .optin-status { font-size: 0.72rem; font-family: 'JetBrains Mono', monospace; color: var(--neon); margin-bottom: 0.4rem; min-height: 18px; }
+        .newsletter-box input { width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.18); background: rgba(255,255,255,0.06); color: #fff; margin: 0.6rem 0; font-size: 0.86rem; outline: none; transition: 0.25s; }
+        .newsletter-box input:focus { border-color: var(--neon); background: rgba(0, 242, 254, 0.06); }
+        .newsletter-box button { width: 100%; padding: 0.84rem; background: linear-gradient(135deg, var(--primary), #b91c1c); color: #fff; border: none; border-radius: 8px; font-weight: 800; cursor: pointer; transition: transform 0.2s; }
+        .newsletter-box button:hover { transform: translateY(-2px); }
 
         #reader-modal, #exit-modal, #adblock-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(3, 6, 12, 0.9); z-index: 9999; justify-content: center; align-items: center; backdrop-filter: blur(8px); padding: 1rem; }
         .reader-box { background: var(--bg-color); border: 1px solid var(--border); width: 100%; max-width: 680px; border-radius: 16px; overflow: hidden; max-height: 90vh; display: flex; flex-direction: column; }
@@ -279,10 +302,11 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
         @media (max-width: 768px) {
             .market-ticker { flex-direction: column; align-items: flex-start; padding: 0.5rem 4%; gap: 6px; }
             .nav-container { flex-direction: column; align-items: stretch; gap: 0.65rem; }
+            .nav-links { filter: none; }
             .header-actions { width: 100%; justify-content: space-between; }
             .search-box { flex: 1; }
             .search-box input, .search-box input:focus { width: 100%; }
-            .hero-card img { height: 230px; opacity: 1; }
+            .hero-card img { height: 235px; opacity: 1; }
             .hero-overlay { position: relative; background: #0b1120; padding: 1.35rem; }
             .hero-actions { flex-direction: column; width: 100%; }
             .hero-actions .cta-btn, .hero-actions .btn-outline { width: 100%; justify-content: center; }
@@ -291,6 +315,17 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
     </style>
 </head>
 <body>
+    <!-- FILTRO SVG LIQUID GOOEY PARA NAVEGAÇÃO INTERATIVA -->
+    <svg style="position:absolute; width:0; height:0; pointer-events:none;" aria-hidden="true">
+        <defs>
+            <filter id="liquid-gooey">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="0.4" result="blur" />
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+                <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+            </filter>
+        </defs>
+    </svg>
+
     <div id="progress-bar"></div>
     <div id="ad-honeypot" class="ad-banner adsbox doubleclick sponsor" style="position:absolute; top:-999px; left:-999px; width:10px; height:10px;"></div>
 
@@ -298,7 +333,7 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
     <div id="adblock-modal">
         <div class="adblock-content">
             <h3 style="font-size:1.3rem; font-weight:900; margin-bottom:0.6rem;">Acesso Restrito pelo AdBlock 🛡️</h3>
-            <p style="font-size:0.88rem; color:var(--text-muted);">O <strong>TechNews.PRO</strong> mantém servidores de IA gratuitos graças aos patrocinadores. Desative seu bloqueador para liberar o terminal completo.</p>
+            <p style="font-size:0.88rem; color:var(--text-muted);">O <strong>TechNews.PRO</strong> mantém servidores de IA e API pública gratuitos graças aos patrocinadores. Desative seu bloqueador para liberar o terminal completo.</p>
             <button class="adblock-btn" onclick="location.reload()">Já desativei! Liberar Terminal &rarr;</button>
             <button class="adblock-close" onclick="document.getElementById('adblock-modal').style.display='none'">Continuar leitura limitada (Fechar)</button>
         </div>
@@ -356,7 +391,8 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
         <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap; font-size:0.74rem;">
             <a href="cotacao-agora.html" style="color:var(--neon); text-decoration:underline;">📊 Calculadora & Cotações</a>
             <a href="futebol.html" style="color:#10b981; text-decoration:underline;">⚽ Brasileirão</a>
-            <span>⚡ {data_atualizacao}</span>
+            <a href="api/v1/noticias.json" target="_blank" style="color:#f59e0b; text-decoration:underline;">🔌 API v1 JSON</a>
+            <span>⚡ {data_atualizacao} (BRT)</span>
         </div>
     </div>
 
@@ -365,7 +401,7 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
             <div style="display:flex; justify-content:space-between; align-items:center;">
                 <a class="logo" onclick="filtrarCategoria('todos', event)">
                     TechNews<span>.PRO</span>
-                    <span class="logo-badge">v8.6</span>
+                    <span class="logo-badge">v9.1</span>
                 </a>
             </div>
             <ul class="nav-links">
@@ -377,7 +413,7 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
                 <li><button onclick="filtrarCategoria('⚽ Esportes', event)">⚽ Esportes</button></li>
                 <li><button onclick="filtrarCategoria('Ciência', event)">🚀 Ciência</button></li>
                 <li><a href="futebol.html" class="hub-link">🏆 Tabela</a></li>
-                <li><a href="inteligencia-artificial.html" class="hub-link">🧠 Hub IA</a></li>
+                <li><a href="inteligencia-artificial.html" class="hub-link">🧠 Hub IA 3D</a></li>
             </ul>
             <div class="header-actions">
                 <div class="search-box">
@@ -392,15 +428,13 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
 
     <div class="tags-bar">
         <span style="font-size:0.72rem; font-weight:800; color:var(--primary); text-transform:uppercase; flex-shrink:0;">Clusters SEO:</span>
-        <a href="inteligencia-artificial.html" class="tag-pill">#HubIA</a>
+        <a href="inteligencia-artificial.html" class="tag-pill">#HubIA3D</a>
         <a href="cotacao-agora.html" class="tag-pill">#CalculadoraCâmbio</a>
         <a href="futebol.html" class="tag-pill">#BrasileirãoSérieA</a>
         <a href="bitcoin.html" class="tag-pill">#RadarBitcoin</a>
         <a href="chatgpt.html" class="tag-pill">#RadarChatGPT</a>
         <a href="startups.html" class="tag-pill">#RadarStartups</a>
-        <span class="tag-pill" onclick="filtrarCategoria('🏛️ Política', event)">#Política</span>
-        <span class="tag-pill" onclick="filtrarCategoria('⭐ Famosos', event)">#Famosos</span>
-        <span class="tag-pill" onclick="filtrarCategoria('⚽ Esportes', event)">#Futebol</span>
+        <a href="api/v1/noticias.json" target="_blank" class="tag-pill">#OpenAPI</a>
         <a href="{smartlink_url}" target="_blank" class="tag-pill" style="border-color:var(--neon); color:var(--neon);">⚡ Recursos Patrocinados</a>
     </div>
 
@@ -420,7 +454,9 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
 
     <main class="main-container">
         <div class="content-column">
+            <!-- HERO SECTION CARROSSEL GSAP -->
             <div id="hero-container"></div>
+
             <h2 class="section-title">
                 <span id="titulo-secao">Radar Global em Tempo Real</span>
                 <span style="font-size:0.74rem; color:var(--text-muted); font-weight:600;">🔊 Ouça as matérias em áudio</span>
@@ -454,22 +490,25 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
                 <a href="{smartlink_url}" target="_blank" rel="noopener noreferrer" style="font-size:0.74rem; color:var(--text-muted); text-decoration:underline;">Explorar Ferramentas Patrocinadas &rarr;</a>
             </div>
 
-            <!-- CAPTURA DE LEADS SYSTEME.IO -->
-            <div class="newsletter-box" id="newsletter">
+            <!-- CAPTURA DE LEADS ANIMADA E LÚDICA (SYSTEME.IO) -->
+            <div class="newsletter-box" id="newsletter-box">
+                <div class="optin-avatar" id="optin-avatar">🤖</div>
+                <div class="optin-status" id="optin-status">AGUARDANDO CREDENCIAIS VIP...</div>
                 <h3>💰 Briefing Matinal VIP</h3>
                 <p style="font-size:0.82rem; color:#94a3b8;">Receba os insights de IA, Negócios e Ferramentas Secretas no seu e-mail.</p>
                 <form action="{systeme_url}" method="GET" target="_blank">
-                    <input type="email" name="email" placeholder="Digite seu melhor e-mail..." required>
+                    <input type="email" id="optin-email-input" name="email" placeholder="Digite seu melhor e-mail..." required
+                           onfocus="animarOptinFoco(true)" onblur="animarOptinFoco(false)" oninput="animarOptinDigitacao(this.value)">
                     <button type="submit">Liberar Acesso Gratuito &rarr;</button>
                 </form>
             </div>
 
             <div class="widget" style="text-align: center; padding: 1.2rem;">
-                <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.6rem;">🔗 <strong>Páginas Especiais & Clusters:</strong></p>
-                <p style="margin-bottom:6px;"><a href="inteligencia-artificial.html" style="color: var(--neon); font-size: 0.84rem; font-weight: 700; text-decoration: underline;">🧠 Enciclopédia & Hub de IA &rarr;</a></p>
+                <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.6rem;">🔗 <strong>Infraestrutura & Clusters:</strong></p>
+                <p style="margin-bottom:6px;"><a href="inteligencia-artificial.html" style="color: var(--neon); font-size: 0.84rem; font-weight: 700; text-decoration: underline;">🧠 Hub IA 3D (WebGL Neural) &rarr;</a></p>
                 <p style="margin-bottom:6px;"><a href="cotacao-agora.html" style="color: #10b981; font-size: 0.84rem; font-weight: 700; text-decoration: underline;">📊 Calculadora & Cotações Ao Vivo &rarr;</a></p>
                 <p style="margin-bottom:6px;"><a href="futebol.html" style="color: #22c55e; font-size: 0.84rem; font-weight: 700; text-decoration: underline;">⚽ Central Brasileirão Série A &rarr;</a></p>
-                <p style="margin-bottom:6px;"><a href="bitcoin.html" style="color: #f59e0b; font-size: 0.84rem; font-weight: 700; text-decoration: underline;">₿ Radar Bitcoin & Cripto &rarr;</a></p>
+                <p style="margin-bottom:6px;"><a href="api/v1/noticias.json" target="_blank" style="color: #f59e0b; font-size: 0.84rem; font-weight: 700; text-decoration: underline;">🔌 API Pública JSON (/api/v1/) &rarr;</a></p>
                 <p><a href="chatgpt.html" style="color: #3b82f6; font-size: 0.84rem; font-weight: 700; text-decoration: underline;">🤖 Radar ChatGPT & OpenAI &rarr;</a></p>
             </div>
 
@@ -491,15 +530,16 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
     </main>
 
     <footer>
-        <p><strong>TechNews.PRO</strong> &copy; {ano_atual} — Ecossistema Automatizado via Python, Topic Clusters GEO, OpenAI, Telegram Video, OneSignal & Meta Video API.</p>
+        <p><strong>TechNews.PRO</strong> &copy; {ano_atual} — Ecossistema Automatizado v9.1 (Awwwards GSAP, Three.js WebGL, API Pública v1, OpenAI, Telegram Video & Meta Video API).</p>
         <p style="margin-top: 8px; font-size: 0.76rem; line-height: 1.8;">
             <a href="index.html" style="color:#94a3b8; margin:0 6px;">Início</a> |
-            <a href="inteligencia-artificial.html" style="color:#94a3b8; margin:0 6px;">Hub IA</a> |
+            <a href="inteligencia-artificial.html" style="color:#94a3b8; margin:0 6px;">Hub IA 3D</a> |
             <a href="cotacao-agora.html" style="color:#94a3b8; margin:0 6px;">Cotações</a> |
             <a href="futebol.html" style="color:#94a3b8; margin:0 6px;">Futebol</a> |
             <a href="bitcoin.html" style="color:#94a3b8; margin:0 6px;">Bitcoin</a> |
             <a href="chatgpt.html" style="color:#94a3b8; margin:0 6px;">ChatGPT</a> |
             <a href="startups.html" style="color:#94a3b8; margin:0 6px;">Startups</a> |
+            <a href="api/v1/noticias.json" style="color:#00f2fe; margin:0 6px;">API v1 JSON</a> |
             <a href="feed.xml" style="color:#94a3b8; margin:0 6px;">RSS Feed</a> |
             <a href="sitemap.xml" style="color:#94a3b8; margin:0 6px;">Sitemap XML</a>
         </p>
@@ -523,6 +563,40 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
                 }
             } catch (e) {}
         })();
+
+        /* MICRO-INTERAÇÃO LÚDICA DO OPT-IN VIP */
+        function animarOptinFoco(ativo) {
+            const box = document.getElementById('newsletter-box');
+            const avatar = document.getElementById('optin-avatar');
+            const status = document.getElementById('optin-status');
+            if (!box || !avatar || !status) return;
+            if (ativo) {
+                box.classList.add('focused');
+                avatar.innerText = '👀';
+                status.innerText = 'ANALISANDO DIGITAÇÃO...';
+            } else {
+                box.classList.remove('focused');
+                avatar.innerText = '🤖';
+                status.innerText = 'AGUARDANDO CREDENCIAIS VIP...';
+            }
+        }
+        function animarOptinDigitacao(valor) {
+            const avatar = document.getElementById('optin-avatar');
+            const status = document.getElementById('optin-status');
+            if (!avatar || !status) return;
+            if (valor.includes('@') && valor.includes('.')) {
+                avatar.innerText = '🚀';
+                status.innerText = 'E-MAIL VIP VALIDADO! CLIQUE PARA LIBERAR';
+                status.style.color = '#10b981';
+            } else if (valor.length > 2) {
+                avatar.innerText = '⚡';
+                status.innerText = 'SINCRONIZANDO TERMINAL...';
+                status.style.color = '#00f2fe';
+            } else {
+                avatar.innerText = '👀';
+                status.innerText = 'DIGITE SEU MELHOR E-MAIL...';
+            }
+        }
 
         function aplicarTeiaSEO(texto) {
             if (!texto) return "";
@@ -590,31 +664,115 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
             }, 450);
         }
 
+        /* ==================================================================
+           MOTOR DE CARROSSEL HERO GSAP BLINDADO CONTRA CORRIDA DE TIMERS
+        ================================================================== */
+        let heroSlides = [];
+        let heroIndex = 0;
+        let heroTimerTween = null;
+        let heroFallbackTimer = null;
+        let heroCycleId = 0;
+        let heroPausado = false;
+
+        function pararCicloHero() {
+            heroCycleId++;
+            if (heroTimerTween && heroTimerTween.kill) {
+                heroTimerTween.kill();
+                heroTimerTween = null;
+            }
+            if (heroFallbackTimer) {
+                clearTimeout(heroFallbackTimer);
+                heroFallbackTimer = null;
+            }
+        }
+
+        function renderizarSlideHero(idx, animarComGSAP = true) {
+            pararCicloHero();
+            if (!heroSlides || heroSlides.length === 0) return;
+            heroIndex = (idx + heroSlides.length) % heroSlides.length;
+            const slide = heroSlides[heroIndex];
+            const globalIdx = todasNoticias.indexOf(slide);
+            const container = document.getElementById('hero-container');
+            if (!container) return;
+
+            let dotsHtml = '';
+            heroSlides.forEach((_, dIdx) => {
+                dotsHtml += `<span class="hero-dot ${dIdx === heroIndex ? 'active' : ''}" onclick="irParaSlideHero(${dIdx})"></span>`;
+            });
+
+            container.innerHTML = `
+                <div class="hero-card" onmouseenter="pausarHero(true)" onmouseleave="pausarHero(false)">
+                    <div class="hero-progress-wrap"><div class="hero-progress-bar" id="hero-gsap-bar"></div></div>
+                    <img id="hero-gsap-img" src="${slide.img}" alt="Destaque" referrerpolicy="no-referrer" onerror="this.src='https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80'">
+                    <div class="hero-overlay" id="hero-gsap-content">
+                        <div class="hero-top-meta">
+                            <span class="badge-source">🔥 Destaque ${heroIndex + 1}/${heroSlides.length} • ${slide.source}</span>
+                            <div class="hero-nav-controls">
+                                <button class="hero-nav-btn" onclick="mudarSlideHero(-1)" title="Anterior">&larr;</button>
+                                <div class="hero-slide-dots">${dotsHtml}</div>
+                                <button class="hero-nav-btn" onclick="mudarSlideHero(1)" title="Próxima">&rarr;</button>
+                            </div>
+                        </div>
+                        <h1>${slide.title}</h1>
+                        <p>${aplicarTeiaSEO(slide.desc)}</p>
+                        <div class="hero-actions">
+                            <button onclick="abrirReader(${globalIdx})" class="cta-btn">⚡ Síntese Executiva IA</button>
+                            <button onclick="falarNoticia(${globalIdx}, event)" class="btn-outline" style="background:rgba(255,255,255,0.08); color:#fff;">🔊 Ouvir</button>
+                            <a href="${slide.url}" target="_blank" rel="noopener noreferrer" class="btn-outline" style="background:rgba(255,255,255,0.14); color:#fff;">Fonte Oficial &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            if (window.gsap && animarComGSAP) {
+                gsap.fromTo("#hero-gsap-img", { scale: 1.08, opacity: 0.35 }, { scale: 1, opacity: 0.82, duration: 0.75, ease: "power2.out" });
+                gsap.fromTo("#hero-gsap-content", { y: 18, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55, ease: "power2.out" });
+            }
+            iniciarCicloPromiseHero(heroCycleId);
+        }
+
+        function iniciarCicloPromiseHero(idAtual) {
+            const bar = document.getElementById('hero-gsap-bar');
+            if (!bar || heroSlides.length <= 1) return;
+
+            new Promise((resolve) => {
+                if (window.gsap) {
+                    heroTimerTween = gsap.fromTo(bar, { width: "0%" }, {
+                        width: "100%",
+                        duration: 6,
+                        ease: "none",
+                        paused: heroPausado,
+                        onComplete: resolve
+                    });
+                } else {
+                    heroFallbackTimer = setTimeout(resolve, 6000);
+                }
+            }).then(() => {
+                if (idAtual === heroCycleId && !heroPausado) {
+                    renderizarSlideHero(heroIndex + 1, true);
+                }
+            });
+        }
+
+        function mudarSlideHero(delta) { renderizarSlideHero(heroIndex + delta, true); }
+        function irParaSlideHero(idx) { renderizarSlideHero(idx, true); }
+        function pausarHero(estado) {
+            heroPausado = estado;
+            if (heroTimerTween && heroTimerTween.pause && heroTimerTween.play) {
+                estado ? heroTimerTween.pause() : heroTimerTween.play();
+            }
+        }
+
         function renderizarLista(lista) {
             if (!lista || lista.length === 0) {
+                pararCicloHero();
                 document.getElementById('hero-container').innerHTML = '';
                 document.getElementById('feed-container').innerHTML = '<div style="grid-column: 1 / -1; padding:2.5rem; text-align:center; color:var(--text-muted); background:var(--card-bg); border-radius:12px; border:1px solid var(--border);">🔍 Nenhuma notícia encontrada para este filtro no momento. Clique em "Tudo" ou aguarde a próxima varredura!</div>';
                 return;
             }
 
-            const hero = lista[0];
-            const heroIdx = todasNoticias.indexOf(hero);
-
-            document.getElementById('hero-container').innerHTML = `
-                <div class="hero-card">
-                    <img src="${hero.img}" alt="Destaque" referrerpolicy="no-referrer" onerror="this.src='https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80'">
-                    <div class="hero-overlay">
-                        <span class="badge-source">🔥 Manchete Principal • ${hero.source}</span>
-                        <h1>${hero.title}</h1>
-                        <p>${aplicarTeiaSEO(hero.desc)}</p>
-                        <div class="hero-actions">
-                            <button onclick="abrirReader(${heroIdx})" class="cta-btn">⚡ Síntese Executiva IA</button>
-                            <button onclick="falarNoticia(${heroIdx}, event)" class="btn-outline" style="background:rgba(255,255,255,0.08); color:#fff;">🔊 Ouvir</button>
-                            <a href="${hero.url}" target="_blank" rel="noopener noreferrer" class="btn-outline" style="background:rgba(255,255,255,0.14); color:#fff;">Fonte Oficial &rarr;</a>
-                        </div>
-                    </div>
-                </div>
-            `;
+            heroSlides = lista.slice(0, Math.min(4, lista.length));
+            renderizarSlideHero(0, false);
 
             let feedHtml = '';
             let adCount = 0;
@@ -762,7 +920,7 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
 """
 
 # ==============================================================================
-# COTAÇÕES EM TEMPO REAL, SCHEMA.ORG (GEO) E TEIA DE ARANHA SEO
+# COTAÇÕES EM TEMPO REAL, SCHEMA.ORG (GEO), API PÚBLICA V1 & TEIA DE ARANHA SEO
 # ==============================================================================
 def obter_dados_cotacoes():
     dados_padrao = {
@@ -791,6 +949,30 @@ def obter_dados_cotacoes():
         for v in dados_padrao.values()
     ]
     return " • ".join(itens_ticker), dados_padrao
+
+def exportar_api_publica_json(todas_noticias, dados_cot, tabela_futebol, data_iso):
+    try:
+        os.makedirs("api/v1", exist_ok=True)
+        payload_api = {
+            "status": "ok",
+            "version": "9.1",
+            "portal": "TechNews PRO",
+            "documentation_and_source": URL_PORTAL_OFICIAL,
+            "updated_at_brt": data_iso,
+            "market_rates": {
+                "USD_BRL": dados_cot["USDBRL"]["raw"],
+                "EUR_BRL": dados_cot["EURBRL"]["raw"],
+                "BTC_BRL": dados_cot["BTCBRL"]["raw"]
+            },
+            "brasileirao_serie_a_top4": tabela_futebol[:4],
+            "total_articles": len(todas_noticias),
+            "articles": todas_noticias
+        }
+        with open(CAMINHO_API_JSON, "w", encoding="utf-8") as f:
+            json.dump(payload_api, f, ensure_ascii=False, indent=2)
+        print(f"API Pública: ✅ Endpoint '{CAMINHO_API_JSON}' exportado com sucesso!")
+    except Exception as e:
+        print(f"Erro ao exportar API JSON: {e}")
 
 def gerar_schema_json_ld(destaque, dados_cot, data_iso):
     usd_val = dados_cot["USDBRL"]["val"]
@@ -873,7 +1055,6 @@ def limpar_html_rss(texto_bruto):
         return ""
     sem_tags = re.sub(r'<[^>]+>', ' ', texto_bruto)
     limpo = html.unescape(sem_tags)
-    # Remove rodapés automáticos do WordPress que cortavam frases no Facebook
     limpo = re.sub(r'(?i)O post .*? apareceu primeiro em.*', '', limpo)
     limpo = re.sub(r'(?i)The post .*? appeared first on.*', '', limpo)
     limpo = re.sub(r'(?i)Leia mais em.*', '', limpo)
@@ -896,7 +1077,6 @@ def detectar_texto_em_ingles(texto):
     if not texto:
         return False
     t = f" {texto.lower()} "
-    # Se já possui caracteres típicos do português e palavras exclusivas PT-BR, não é inglês
     sinais_pt = ["ã", "õ", "ç", " não ", " para ", " mais ", " sobre ", " após ", " está ", " são "]
     pontos_pt = sum(1 for s in sinais_pt if s in t)
     marcadores_en = [
@@ -1068,7 +1248,7 @@ def gerar_pagina_futebol(tabela, todas_noticias, cotacoes_html, data_fmt, ano_fm
     <main class="container">
         <span style="background:rgba(16,185,129,0.15); color:#10b981; border:1px solid #10b981; padding:4px 12px; border-radius:20px; font-size:0.72rem; font-weight:800;">⚽ CENTRAL ESPORTIVA OFICIAL</span>
         <h1 style="font-size:clamp(1.5rem, 4vw, 2.3rem); margin:0.8rem 0; font-weight:900;">Classificação do Brasileirão Série A — Tempo Real</h1>
-        <p style="color:#94a3b8; margin-bottom:1.8rem; font-size:0.92rem;">Acompanhe a disputa pelo título, vaga na Libertadores (G4) e luta contra o rebaixamento (Z4). Atualizado em: {data_fmt}.</p>
+        <p style="color:#94a3b8; margin-bottom:1.8rem; font-size:0.92rem;">Acompanhe a disputa pelo título, vaga na Libertadores (G4) e luta contra o rebaixamento (Z4). Atualizado em: {data_fmt} (BRT).</p>
         <div class="table-wrap">
             <table>
                 <thead>
@@ -1106,8 +1286,8 @@ def otimizar_noticia_com_ia(noticia):
             f"Título original: {titulo_orig}\nResumo original: {desc_orig}\n\n"
             "Retorne um JSON estrito em Português do Brasil (PT-BR) com duas chaves: 'titulo' e 'resumo'.\n"
             "1. Se o conteúdo estiver em inglês ou outro idioma, traduza 100% para Português do Brasil.\n"
-            "2. Em 'titulo': Reescreva o título para o Google Discover usando curiosidade jornalística e clareza (máximo 100 caracteres, frase completa).\n"
-            "3. Em 'resumo': Entregue o 'Time-to-Value' (o fato principal e o impacto prático) em 2 frases completas e sem cortar palavras no final."
+            "2. Em 'titulo': Reescreva o título para o Google Discover usando Dissonância Cognitiva e curiosidade jornalística (máximo 100 caracteres, frase completa).\n"
+            "3. Em 'resumo': Entregue o 'Time-to-Value' (o fato principal e o impacto prático imediato) em 2 frases completas e sem cortar palavras no final."
         )
         payload = {
             "model": "gpt-4o-mini",
@@ -1131,7 +1311,7 @@ def otimizar_noticia_com_ia(noticia):
     return noticia
 
 # ==============================================================================
-# FÁBRICA DE VÍDEOS 9:16 SPLIT-SCREEN (ZERO ESPAÇO AZUL + MARGENS LARGAS V8.6)
+# FÁBRICA DE VÍDEOS 9:16 SPLIT-SCREEN (ZERO ESPAÇO AZUL + MARGENS LARGAS V9.1)
 # ==============================================================================
 def obter_fonte_segura(tamanho):
     caminhos_candidatos = [
@@ -1175,7 +1355,7 @@ def baixar_imagem_validada(url):
         "Referer": "https://www.google.com/"
     }
     try:
-        r = requests.get(url, headers=headers_img, timeout=10)
+        r = requests.get(url, headers=headers_img, timeout=10, allow_redirects=True)
         if r.status_code == 200 and len(r.content) > 2500:
             im = Image.open(io.BytesIO(r.content)).convert("RGB")
             if im.width >= 150 and im.height >= 150:
@@ -1413,7 +1593,7 @@ def publicar_no_telegram(noticia, caminho_video=None):
     try:
         titulo_pt = html.escape(garantir_portugues(noticia.get("title", ""))[:180])
         desc_pt = html.escape(limpar_html_rss(garantir_portugues(noticia.get("desc", "")))[:260])
-        stamp = datetime.now().strftime("%Y%m%d%H%M")
+        stamp = datetime.now(FUSO_BRASIL).strftime("%Y%m%d%H%M")
         link_track = f"{URL_PORTAL_OFICIAL}?utm_source=telegram_vip&v={stamp}"
 
         texto_alerta = (
@@ -1426,7 +1606,6 @@ def publicar_no_telegram(noticia, caminho_video=None):
             f"🤖 <a href=\"{LINK_KIWIFY_2}\">Conhecer LUMI — Ofertas com IA</a>"
         )
 
-        # 1. Envia o vídeo .mp4 nativo do Reel para o canal/grupo do Telegram
         if caminho_video and os.path.exists(caminho_video):
             try:
                 url_vid = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendVideo"
@@ -1447,7 +1626,6 @@ def publicar_no_telegram(noticia, caminho_video=None):
             except Exception as e_vid:
                 print(f"Aviso envio de vídeo Telegram: {e_vid}")
 
-        # 2. Fallback para mensagem de texto caso o vídeo não esteja disponível
         url_msg = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
         payload = {
             "chat_id": TELEGRAM_CHAT_ID.strip(),
@@ -1557,7 +1735,6 @@ def publicar_no_facebook(noticia, caminho_video=None):
     if "me" not in alvos_tentativa:
         alvos_tentativa.append("me")
 
-    # 1. TENTA PUBLICAR COMO VÍDEO CURTO / REEL SPLIT-SCREEN 9:16 (SEM APAGAR O ARQUIVO ANTES DO TELEGRAM)
     if caminho_video and os.path.exists(caminho_video):
         for alvo in alvos_tentativa:
             try:
@@ -1588,8 +1765,7 @@ def publicar_no_facebook(noticia, caminho_video=None):
             except Exception as e:
                 print(f"Erro tentativa de vídeo Meta: {e}")
 
-    # 2. FALLBACK AUTOMÁTICO: CARD DE LINK CLICÁVEL OU FOTO SE O VÍDEO FALHAR
-    stamp = datetime.now().strftime("%Y%m%d%H%M")
+    stamp = datetime.now(FUSO_BRASIL).strftime("%Y%m%d%H%M")
     link_com_cache_buster = f"{URL_PORTAL_OFICIAL}?v={stamp}"
 
     for alvo in alvos_tentativa:
@@ -1747,7 +1923,7 @@ def fetch_newsdata_rotativo():
     termos_quentes = [
         "inteligência artificial", "reforma tributária", "bitcoin", "stf", "brasileirão", "famosos"
     ]
-    indice_ciclo = (datetime.now().hour // 6) % len(termos_quentes)
+    indice_ciclo = (datetime.now(FUSO_BRASIL).hour // 6) % len(termos_quentes)
     termo_atual = termos_quentes[indice_ciclo]
     try:
         url = "https://newsdata.io/api/1/news"
@@ -1891,7 +2067,7 @@ def deduplicar_noticias(lista):
     return unicas
 
 # ==============================================================================
-# GERAÇÃO DE RSS FEED, HUB IA, CALCULADORA DE COTAÇÕES, CLUSTERS SEO E SITEMAP
+# GERAÇÃO DE RSS FEED, HUB IA 3D (THREE.JS), CALCULADORA, CLUSTERS E SITEMAP
 # ==============================================================================
 def gerar_rss(noticias):
     xml = f"""<?xml version="1.0" encoding="UTF-8" ?>
@@ -1920,13 +2096,13 @@ def gerar_hub_ia(todas_noticias, cotacoes_html, data_fmt, ano_fmt, schema_ld):
 
     for art in noticias_ia[:8]:
         cards_ia += f"""
-        <article style="background:rgba(17,25,40,0.88); border:1px solid rgba(255,255,255,0.08); border-radius:14px; overflow:hidden; display:flex; flex-direction:column;">
+        <article style="background:rgba(17,25,40,0.86); backdrop-filter:blur(10px); border:1px solid rgba(0,242,254,0.18); border-radius:14px; overflow:hidden; display:flex; flex-direction:column; position:relative; z-index:2;">
             <img src="{art['img']}" alt="{html.escape(art['title'])}" referrerpolicy="no-referrer" style="width:100%; height:190px; object-fit:cover;" onerror="this.src='https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=85'">
             <div style="padding:1.3rem; display:flex; flex-direction:column; flex-grow:1;">
-                <span style="font-size:0.72rem; color:#ef4444; font-weight:800; text-transform:uppercase;">{art['source']} • {art['date']}</span>
+                <span style="font-size:0.72rem; color:#00f2fe; font-weight:800; text-transform:uppercase;">{art['source']} • {art['date']}</span>
                 <h3 style="font-size:1.1rem; margin:0.5rem 0 0.8rem 0; color:#f8fafc;">{art['title']}</h3>
-                <p style="font-size:0.86rem; color:#94a3b8; margin-bottom:1.2rem; flex-grow:1;">{aplicar_teia_seo_estatico(art['desc'])}</p>
-                <a href="{art['url']}" target="_blank" rel="noopener noreferrer" style="background:#ef4444; color:#fff; text-align:center; padding:0.65rem; border-radius:8px; font-weight:700; font-size:0.82rem; text-decoration:none;">Ler Relatório Completo &rarr;</a>
+                <p style="font-size:0.86rem; color:#cbd5e1; margin-bottom:1.2rem; flex-grow:1;">{aplicar_teia_seo_estatico(art['desc'])}</p>
+                <a href="{art['url']}" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg,#ef4444,#b91c1c); color:#fff; text-align:center; padding:0.65rem; border-radius:8px; font-weight:700; font-size:0.82rem; text-decoration:none;">Ler Relatório Completo &rarr;</a>
             </div>
         </article>
         """
@@ -1937,35 +2113,42 @@ def gerar_hub_ia(todas_noticias, cotacoes_html, data_fmt, ano_fmt, schema_ld):
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="no-referrer">
-    <meta name="description" content="Hub Oficial de Inteligência Artificial: Guia definitivo, ferramentas generativas, automação e notícias em tempo real sobre IA.">
+    <meta name="description" content="Hub Oficial 3D de Inteligência Artificial: Guia definitivo, ferramentas generativas, automação e notícias em tempo real sobre IA.">
     <meta name="robots" content="max-image-preview:large, index, follow">
     <link rel="canonical" href="{URL_PORTAL_OFICIAL}inteligencia-artificial.html">
-    <title>Inteligência Artificial (Hub Oficial) | Guia, Ferramentas & Notícias | TechNews PRO</title>
+    <title>Inteligência Artificial (Hub 3D WebGL) | Guia, Ferramentas & Notícias | TechNews PRO</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <!-- CDN THREE.JS PARA REDE NEURAL INTERATIVA WEBGL -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
     {schema_ld}
     <style>
         * {{ box-sizing: border-box; }}
-        body {{ background:#070b14; color:#f8fafc; font-family:'Inter',sans-serif; margin:0; line-height:1.65; overflow-x:hidden; }}
-        .ticker {{ background:#03060c; padding:0.5rem 4%; font-size:0.78rem; font-family:'JetBrains Mono',monospace; border-bottom:1px solid rgba(255,255,255,0.08); display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; }}
+        body {{ background:#050811; color:#f8fafc; font-family:'Inter',sans-serif; margin:0; line-height:1.65; overflow-x:hidden; position:relative; }}
+        #neural-webgl-canvas {{ position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:0; pointer-events:none; opacity:0.85; }}
+        .ticker {{ position:relative; z-index:2; background:rgba(3,6,12,0.9); padding:0.5rem 4%; font-size:0.78rem; font-family:'JetBrains Mono',monospace; border-bottom:1px solid rgba(255,255,255,0.08); display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; }}
         .up {{ color:#10b981; font-weight:700; }} .down {{ color:#ef4444; font-weight:700; }}
-        header {{ background:rgba(15,23,42,0.85); backdrop-filter:blur(12px); padding:1rem 4%; border-bottom:1px solid rgba(255,255,255,0.08); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; }}
-        .container {{ max-width:1360px; margin:2rem auto; padding:0 4%; }}
-        .pillar-box {{ background:linear-gradient(145deg, rgba(59,130,246,0.14), rgba(15,23,42,0.92)); border:1px solid rgba(59,130,246,0.4); border-radius:16px; padding:clamp(1.3rem, 4vw, 2.5rem); margin-bottom:2.2rem; }}
+        header {{ position:relative; z-index:2; background:rgba(15,23,42,0.82); backdrop-filter:blur(14px); padding:1rem 4%; border-bottom:1px solid rgba(255,255,255,0.08); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; }}
+        .container {{ position:relative; z-index:2; max-width:1360px; margin:2rem auto; padding:0 4%; }}
+        .pillar-box {{ background:linear-gradient(145deg, rgba(15,23,42,0.88), rgba(7,11,20,0.92)); backdrop-filter:blur(12px); border:1px solid rgba(0,242,254,0.4); border-radius:18px; padding:clamp(1.3rem, 4vw, 2.5rem); margin-bottom:2.2rem; box-shadow:0 20px 50px rgba(0,0,0,0.5); }}
         .grid {{ display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:1.5rem; }}
-        .ad-top {{ width:100%; overflow-x:auto; text-align:center; margin:1.2rem auto; padding:0 2%; }}
-        footer {{ background:#03060c; color:#64748b; text-align:center; padding:2.5rem 4%; margin-top:4rem; border-top:1px solid rgba(255,255,255,0.08); }}
+        .ad-top {{ position:relative; z-index:2; width:100%; overflow-x:auto; text-align:center; margin:1.2rem auto; padding:0 2%; }}
+        footer {{ position:relative; z-index:2; background:#03060c; color:#64748b; text-align:center; padding:2.5rem 4%; margin-top:4rem; border-top:1px solid rgba(255,255,255,0.08); }}
     </style>
 </head>
 <body>
+    <!-- CANVAS WEBGL THREE.JS (POINTER-EVENTS: NONE PARA NÃO BLOQUEAR LEITURA) -->
+    <canvas id="neural-webgl-canvas"></canvas>
+
     <div class="ticker">
         <div style="overflow-x:auto; white-space:nowrap; max-width:100%;">{cotacoes_html}</div>
-        <div>⚡ Atualizado: {data_fmt}</div>
+        <div>⚡ Atualizado: {data_fmt} (BRT)</div>
     </div>
     <header>
         <a href="index.html" style="font-size:1.6rem; font-weight:900; color:#fff; text-decoration:none;">TechNews<span style="color:#ef4444;">.PRO</span></a>
         <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
             <a href="index.html" style="color:#94a3b8; text-decoration:none; font-weight:700; font-size:0.85rem;">&larr; Radar Principal</a>
             <a href="cotacao-agora.html" style="color:#10b981; text-decoration:none; font-weight:700; font-size:0.85rem;">📊 Cotações</a>
+            <a href="api/v1/noticias.json" target="_blank" style="color:#00f2fe; text-decoration:none; font-weight:700; font-size:0.85rem;">🔌 API JSON</a>
             <a href="{LINK_KIWIFY_1}" target="_blank" style="background:#ef4444; color:#fff; padding:0.5rem 1rem; border-radius:8px; font-weight:800; text-decoration:none; font-size:0.82rem;">💎 Área VIP</a>
         </div>
     </header>
@@ -1977,9 +2160,9 @@ def gerar_hub_ia(todas_noticias, cotacoes_html, data_fmt, ano_fmt, schema_ld):
 
     <main class="container">
         <section class="pillar-box">
-            <span style="background:#3b82f6; color:#fff; padding:4px 12px; border-radius:20px; font-size:0.7rem; font-weight:900; text-transform:uppercase;">Topic Cluster • Enciclopédia & Hub Oficial</span>
+            <span style="background:linear-gradient(90deg,#3b82f6,#00f2fe); color:#03060c; padding:4px 12px; border-radius:20px; font-size:0.7rem; font-weight:900; text-transform:uppercase;">WebGL Neural Cluster • Enciclopédia & Hub Oficial</span>
             <h1 style="font-size:clamp(1.5rem, 4vw, 2.3rem); margin:0.8rem 0; font-weight:900;">Inteligência Artificial em 2026: O Guia Central de Automação e Disrupção</h1>
-            <p style="color:#cbd5e1; font-size:0.95rem; margin-bottom:1rem;">A <strong>Inteligência Artificial (IA)</strong> deixou de ser uma promessa futurista para se tornar a infraestrutura central da economia global. De Modelos de Linguagem de Grande Escala (LLMs) a agentes autônomos capazes de estruturar ofertas e negociar ativos no <a href="cotacao-agora.html" style="color:#00f2fe;">mercado financeiro</a>, dominar a IA é hoje o maior diferencial competitivo.</p>
+            <p style="color:#cbd5e1; font-size:0.95rem; margin-bottom:1rem;">A <strong>Inteligência Artificial (IA)</strong> deixou de ser uma promessa futurista para se tornar a infraestrutura central da economia global. Mova o cursor (ou toque na tela) para interagir com a malha neural 3D em tempo real enquanto explora os relatórios mais recentes do setor.</p>
             <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:1.3rem;">
                 <a href="{LINK_KIWIFY_2}" target="_blank" style="background:#ef4444; color:#fff; padding:0.7rem 1.2rem; border-radius:8px; font-weight:800; text-decoration:none; font-size:0.86rem;">🤖 Conhecer LUMI — Ofertas com IA &rarr;</a>
                 <a href="{LINK_KIWIFY_3}" target="_blank" style="background:#3b82f6; color:#fff; padding:0.7rem 1.2rem; border-radius:8px; font-weight:800; text-decoration:none; font-size:0.86rem;">🔥 Método Posts Virais © &rarr;</a>
@@ -1987,12 +2170,84 @@ def gerar_hub_ia(todas_noticias, cotacoes_html, data_fmt, ano_fmt, schema_ld):
             </div>
         </section>
 
-        <h2 style="font-size:1.3rem; margin-bottom:1.4rem; border-left:4px solid #ef4444; padding-left:12px;">Últimas Notícias e Descobertas de Inteligência Artificial</h2>
+        <h2 style="font-size:1.3rem; margin-bottom:1.4rem; border-left:4px solid #00f2fe; padding-left:12px;">Últimas Notícias e Descobertas de Inteligência Artificial</h2>
         <div class="grid">{cards_ia}</div>
     </main>
     <footer>
-        <p><strong>TechNews.PRO</strong> &copy; {ano_fmt} — Hub de Autoridade em Inteligência Artificial.</p>
+        <p><strong>TechNews.PRO</strong> &copy; {ano_fmt} — Hub Interativo 3D de Autoridade em Inteligência Artificial.</p>
     </footer>
+
+    <!-- SCRIPT THREE.JS REDE NEURAL 3D COM PAUSA AUTOMÁTICA DE BATERIA -->
+    <script>
+        window.addEventListener('DOMContentLoaded', function() {{
+            if (!window.THREE) return;
+            const canvas = document.getElementById('neural-webgl-canvas');
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(65, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera.position.z = 32;
+
+            const renderer = new THREE.WebGLRenderer({{ canvas: canvas, alpha: true, antialias: true }});
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+            const particleCount = 190;
+            const geometry = new THREE.BufferGeometry();
+            const positions = new Float32Array(particleCount * 3);
+            const colors = new Float32Array(particleCount * 3);
+
+            for (let i = 0; i < particleCount * 3; i += 3) {{
+                positions[i] = (Math.random() - 0.5) * 65;
+                positions[i + 1] = (Math.random() - 0.5) * 65;
+                positions[i + 2] = (Math.random() - 0.5) * 40;
+                if (i % 6 === 0) {{
+                    colors[i] = 0.0; colors[i + 1] = 0.95; colors[i + 2] = 1.0;
+                }} else {{
+                    colors[i] = 0.93; colors[i + 1] = 0.26; colors[i + 2] = 0.26;
+                }}
+            }}
+            geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+            geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+            const material = new THREE.PointsMaterial({{
+                size: 0.48,
+                vertexColors: true,
+                transparent: true,
+                opacity: 0.9
+            }});
+            const particles = new THREE.Points(geometry, material);
+            scene.add(particles);
+
+            const wireGeo = new THREE.IcosahedronGeometry(15, 1);
+            const wireMat = new THREE.MeshBasicMaterial({{ color: 0x00f2fe, wireframe: true, transparent: true, opacity: 0.12 }});
+            const wireMesh = new THREE.Mesh(wireGeo, wireMat);
+            scene.add(wireMesh);
+
+            let mouseX = 0, mouseY = 0;
+            window.addEventListener('mousemove', function(e) {{
+                mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+                mouseY = -(e.clientY / window.innerHeight - 0.5) * 2;
+            }});
+
+            window.addEventListener('resize', function() {{
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            }});
+
+            function animate() {{
+                requestAnimationFrame(animate);
+                if (document.hidden) return;
+                particles.rotation.y += 0.0018;
+                particles.rotation.x += 0.0008;
+                wireMesh.rotation.y -= 0.0022;
+                wireMesh.rotation.x += (mouseY * 0.4 - wireMesh.rotation.x) * 0.04;
+                particles.position.x += (mouseX * 4 - particles.position.x) * 0.04;
+                particles.position.y += (mouseY * 4 - particles.position.y) * 0.04;
+                renderer.render(scene, camera);
+            }}
+            animate();
+        }});
+    </script>
     <script data-cfasync="false" src="https://bicea.org/14/7843682dc41b2077e8d78d48efd6360a"></script>
 </body>
 </html>"""
@@ -2040,7 +2295,8 @@ def gerar_pagina_cotacoes(dados_cot, cotacoes_html, data_fmt, ano_fmt, schema_ld
         <a href="index.html" style="font-size:1.6rem; font-weight:900; color:#fff; text-decoration:none;">TechNews<span style="color:#ef4444;">.PRO</span></a>
         <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
             <a href="index.html" style="color:#94a3b8; text-decoration:none; font-weight:700; font-size:0.85rem;">&larr; Portal</a>
-            <a href="inteligencia-artificial.html" style="color:#00f2fe; text-decoration:none; font-weight:700; font-size:0.85rem;">🧠 Hub IA</a>
+            <a href="inteligencia-artificial.html" style="color:#00f2fe; text-decoration:none; font-weight:700; font-size:0.85rem;">🧠 Hub IA 3D</a>
+            <a href="api/v1/noticias.json" target="_blank" style="color:#f59e0b; text-decoration:none; font-weight:700; font-size:0.85rem;">🔌 API JSON</a>
             <a href="{LINK_KIWIFY_1}" target="_blank" style="background:#ef4444; color:#fff; padding:0.5rem 1rem; border-radius:8px; font-weight:800; text-decoration:none; font-size:0.82rem;">💎 Área VIP</a>
         </div>
     </header>
@@ -2054,7 +2310,7 @@ def gerar_pagina_cotacoes(dados_cot, cotacoes_html, data_fmt, ano_fmt, schema_ld
         <div style="text-align:center; max-width:780px; margin:0 auto;">
             <span style="background:rgba(16,185,129,0.15); color:#10b981; border:1px solid #10b981; padding:4px 12px; border-radius:20px; font-size:0.72rem; font-weight:800;">🟢 TERMINAL FINANCEIRO & CONVERSOR AO VIVO</span>
             <h1 style="font-size:clamp(1.6rem, 4vw, 2.5rem); margin:0.9rem 0 0.5rem 0; font-weight:900;">Cotação e Calculadora Hoje: Dólar, Euro e Bitcoin</h1>
-            <p style="color:#94a3b8; font-size:0.94rem;">Painel interativo sincronizado via API oficial de câmbio e criptoativos. Última aferição: <strong>{data_fmt}</strong>.</p>
+            <p style="color:#94a3b8; font-size:0.94rem;">Painel interativo sincronizado via API oficial de câmbio e criptoativos. Última aferição: <strong>{data_fmt} (BRT)</strong>.</p>
         </div>
 
         <div class="cards">
@@ -2100,9 +2356,9 @@ def gerar_pagina_cotacoes(dados_cot, cotacoes_html, data_fmt, ano_fmt, schema_ld
         </section>
 
         <div class="cite-box">
-            <h3 style="margin-bottom:0.4rem; font-size:1.05rem;">🔗 Ferramenta Pública para Jornalistas, Pesquisadores e Blogs</h3>
-            <p style="color:#94a3b8; font-size:0.85rem;">Utilize os dados deste painel em seus artigos ou relatórios incorporando o código de atribuição de fonte abaixo:</p>
-            <code id="embed-code">&lt;a href="{URL_PORTAL_OFICIAL}cotacao-agora.html" target="_blank"&gt;Fonte: Terminal de Cotações TechNews PRO&lt;/a&gt;</code>
+            <h3 style="margin-bottom:0.4rem; font-size:1.05rem;">🔗 API Pública Gratuita & Código de Citação para Desenvolvedores</h3>
+            <p style="color:#94a3b8; font-size:0.85rem;">Consuma nosso endpoint JSON gratuito (<code>{URL_PORTAL_OFICIAL}api/v1/noticias.json</code>) ou incorpore o código de atribuição abaixo:</p>
+            <code id="embed-code">&lt;a href="{URL_PORTAL_OFICIAL}cotacao-agora.html" target="_blank"&gt;Fonte: Terminal de Cotações &amp; API TechNews PRO&lt;/a&gt;</code>
             <br>
             <button onclick="navigator.clipboard.writeText(document.getElementById('embed-code').innerText); this.innerText='✅ Código Copiado!';" style="margin-top:8px; background:#3b82f6; color:#fff; border:none; padding:0.55rem 1.2rem; border-radius:6px; font-weight:700; cursor:pointer;">📋 Copiar Link de Citação</button>
         </div>
@@ -2204,7 +2460,7 @@ def gerar_paginas_programaticas(todas_noticias, cotacoes_html, data_fmt, ano_fmt
         <a href="index.html" style="font-size:1.6rem; font-weight:900; color:#fff; text-decoration:none;">TechNews<span style="color:#ef4444;">.PRO</span></a>
         <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
             <a href="index.html" style="color:#94a3b8; text-decoration:none; font-weight:700; font-size:0.85rem;">&larr; Radar Principal</a>
-            <a href="inteligencia-artificial.html" style="color:#00f2fe; text-decoration:none; font-weight:700; font-size:0.85rem;">🧠 Hub IA</a>
+            <a href="inteligencia-artificial.html" style="color:#00f2fe; text-decoration:none; font-weight:700; font-size:0.85rem;">🧠 Hub IA 3D</a>
             <a href="cotacao-agora.html" style="color:#10b981; text-decoration:none; font-weight:700; font-size:0.85rem;">📊 Cotações</a>
             <a href="{LINK_KIWIFY_1}" target="_blank" style="background:#ef4444; color:#fff; padding:0.5rem 1rem; border-radius:8px; font-weight:800; text-decoration:none; font-size:0.82rem;">💎 Área VIP</a>
         </div>
@@ -2217,7 +2473,7 @@ def gerar_paginas_programaticas(todas_noticias, cotacoes_html, data_fmt, ano_fmt
 
     <main class="container">
         <h1 style="font-size:clamp(1.5rem, 4vw, 2.2rem); margin-bottom:0.5rem; border-left:5px solid #ef4444; padding-left:14px;">{cfg['titulo']}</h1>
-        <p style="color:#94a3b8; margin-bottom:1.8rem; font-size:0.92rem;">{cfg['desc']} Atualizado em {data_fmt}.</p>
+        <p style="color:#94a3b8; margin-bottom:1.8rem; font-size:0.92rem;">{cfg['desc']} Atualizado em {data_fmt} (BRT).</p>
         <div class="grid">{cards}</div>
     </main>
     <footer>
@@ -2233,13 +2489,15 @@ def gerar_paginas_programaticas(todas_noticias, cotacoes_html, data_fmt, ano_fmt
     return urls_geradas
 
 def gerar_sitemap_xml(urls_extras):
-    hoje = datetime.now().strftime("%Y-%m-%d")
+    hoje = datetime.now(FUSO_BRASIL).strftime("%Y-%m-%d")
     xml = f"""<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>{URL_PORTAL_OFICIAL}</loc><lastmod>{hoje}</lastmod><changefreq>hourly</changefreq><priority>1.0</priority></url>
   <url><loc>{URL_PORTAL_OFICIAL}inteligencia-artificial.html</loc><lastmod>{hoje}</lastmod><changefreq>hourly</changefreq><priority>0.9</priority></url>
   <url><loc>{URL_PORTAL_OFICIAL}cotacao-agora.html</loc><lastmod>{hoje}</lastmod><changefreq>hourly</changefreq><priority>0.9</priority></url>
-  <url><loc>{URL_PORTAL_OFICIAL}futebol.html</loc><lastmod>{hoje}</lastmod><changefreq>hourly</changefreq><priority>0.9</priority></url>"""
+  <url><loc>{URL_PORTAL_OFICIAL}futebol.html</loc><lastmod>{hoje}</lastmod><changefreq>hourly</changefreq><priority>0.9</priority></url>
+  <url><loc>{URL_PORTAL_OFICIAL}api/v1/noticias.json</loc><lastmod>{hoje}</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
+  <url><loc>{URL_PORTAL_OFICIAL}feed.xml</loc><lastmod>{hoje}</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>"""
     for u in urls_extras:
         xml += f"\n  <url><loc>{URL_PORTAL_OFICIAL}{u}</loc><lastmod>{hoje}</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>"
     xml += "\n</urlset>"
@@ -2251,7 +2509,7 @@ def garantir_verificacao_google():
         f.write("google-site-verification: google28d5384ab7e71bf6.html")
 
 # ==============================================================================
-# FLUXO PRINCIPAL DE GERAÇÃO DO ECOSSISTEMA V8.6
+# FLUXO PRINCIPAL DE GERAÇÃO DO ECOSSISTEMA V9.1 MASTER
 # ==============================================================================
 def gerar_portal(apenas_site=False):
     brutas = []
@@ -2274,7 +2532,7 @@ def gerar_portal(apenas_site=False):
         todas_noticias.remove(noticia_destaque)
     todas_noticias.insert(0, noticia_destaque)
 
-    print("Traduzindo (PT-BR) e otimizando títulos/resumos com IA...")
+    print("Traduzindo (PT-BR) e enriquecendo títulos/resumos com IA (Dissonância Cognitiva & Time-to-Value)...")
     limite = min(len(todas_noticias), 8)
     for i in range(limite):
         todas_noticias[i] = otimizar_noticia_com_ia(todas_noticias[i])
@@ -2294,14 +2552,17 @@ def gerar_portal(apenas_site=False):
         </li>
         """
 
-    agora = datetime.now()
+    agora = datetime.now(FUSO_BRASIL)
     data_fmt = agora.strftime("%d/%m/%Y às %H:%M")
-    data_iso = agora.strftime("%Y-%m-%dT%H:%M:%SZ")
+    data_iso = agora.strftime("%Y-%m-%dT%H:%M:%S-03:00")
     ano_fmt = str(agora.year)
     cotacoes_html, dados_cot = obter_dados_cotacoes()
     tabela_futebol = obter_tabela_brasileirao()
     widget_futebol_html = gerar_widget_futebol_html(tabela_futebol)
     noticias_json_str = json.dumps(todas_noticias, ensure_ascii=False)
+
+    # Exporta a API Pública (/api/v1/noticias.json)
+    exportar_api_publica_json(todas_noticias, dados_cot, tabela_futebol, data_iso)
 
     destaque = todas_noticias[0]
     schema_ld = gerar_schema_json_ld(destaque, dados_cot, data_iso)
@@ -2342,7 +2603,7 @@ def gerar_portal(apenas_site=False):
     gerar_rss(todas_noticias)
     garantir_verificacao_google()
 
-    print("✅ Ecossistema v8.6 Auditado Linha por Linha gerado com sucesso!")
+    print("✅ Ecossistema v9.1 Master (Auditoria Completa, Fuso BRT, GSAP Safe, Three.js WebGL & API v1) gerado com sucesso!")
 
     if not apenas_site:
         disparar_redes_omnichannel(todas_noticias[0])
