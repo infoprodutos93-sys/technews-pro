@@ -27,7 +27,7 @@ jobs:
           pip install --upgrade pip
           pip install requests "Pillow>=10.0.0" "moviepy<2.0.0" imageio-ffmpeg
 
-      - name: 4. Gerar Ecossistema Web Completo (Index, Hubs SEO, Futebol, Cotações, Sitemap e RSS)
+      - name: 4. Gerar Ecossistema Web Completo (Index, Hubs SEO, GEO, Cotações, Futebol, Sitemap e RSS)
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}
@@ -41,7 +41,7 @@ jobs:
           git config --global user.name "Robô TechNews"
           git config --global user.email "bot@technews.pro"
           git add *.html *.xml .ultimo_post_meta.txt .fila_post_meta.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "🚀 Deploy Master v8.3: Portal Auditado, Split-Screen Centralizado & Mobile" && git pull --rebase origin main && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "🚀 Deploy Master v8.6: Auditoria Completa, Omnichannel Video & GEO" && git pull --rebase --autostash origin main && git push)
 
       - name: 6. Aguardar 45s para propagação e Disparar Vídeo Split-Screen no Facebook + Telegram + OneSignal
         env:
