@@ -40,10 +40,10 @@ jobs:
         run: |
           git config --global user.name "Robô TechNews"
           git config --global user.email "bot@technews.pro"
-          git add *.html *.xml .ultimo_post_meta.txt
-          git diff --quiet && git diff --staged --quiet || (git commit -m "🚀 Deploy Master v8.1: Portal Auditado, Futebol, RSS & Vídeo" && git push)
+          git add *.html *.xml .ultimo_post_meta.txt .fila_post_meta.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "🚀 Deploy Master v8.3: Portal Auditado, Split-Screen Centralizado & Mobile" && git pull --rebase origin main && git push)
 
-      - name: 6. Aguardar 45s para propagação e Disparar Vídeo no Facebook + Telegram + OneSignal
+      - name: 6. Aguardar 45s para propagação e Disparar Vídeo Split-Screen no Facebook + Telegram + OneSignal
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
