@@ -2,7 +2,8 @@
 <html lang="pt-BR" data-theme="dark">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="referrer" content="no-referrer">
     <meta name="description" content="Terminal avançado de notícias sobre Inteligência Artificial, Tecnologia, Política, Futebol, Celebridades e Mercado Financeiro em tempo real.">
     
     <!-- REGRA DE OURO GOOGLE DISCOVER (IMAGENS GIGANTES NO MOBILE) -->
@@ -11,9 +12,9 @@
     <link rel="alternate" type="application/rss+xml" title="TechNews PRO RSS Feed" href="https://infoprodutos93-sys.github.io/technews-pro/feed.xml">
 
     <!-- META TAGS OPEN GRAPH PARA CARD CLICÁVEL NO FACEBOOK E WHATSAPP -->
-    <meta property="og:title" content="NASA Releases MAX POWER Key Events for Media, Participants">
-    <meta property="og:description" content="America’s newest aerospace expo and air show – MAX POWER – is fast approaching, and NASA has announced key events beginning Friday, Nov. 6, and running through Sunday, Nov. 8, hosted on and near the agency’s Kennedy Space Center in Florida. Through multiple park experiences at MAX POWER, NASA and a variety of external collaborators […]">
-    <meta property="og:image" content="https://www.nasa.gov/wp-content/uploads/2026/10/grc-2026-c-06389large.jpg">
+    <meta property="og:title" content="De Zerbi vê um futuro promissor para Mateus Fernandes no Tottenham">
+    <meta property="og:description" content="Roberto De Zerbi, técnico do Tottenham, elogiou o potencial de Mateus Fernandes para se tornar uma peça importante nos Spurs, antes do confronto com o Crystal Palace pela Premier League. O post De Zerbi vê um futuro promissor para Mateus Fe">
+    <meta property="og:image" content="https://static.gazetaesportiva.com/uploads/2026/10/mr8hqeib-1920De-Zerbi.webp">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:url" content="https://infoprodutos93-sys.github.io/technews-pro/">
@@ -49,7 +50,7 @@
             --neon: #00f2fe;
             --dark-bar: #03060c;
             --border: rgba(255, 255, 255, 0.08);
-            --glass: rgba(15, 23, 42, 0.82);
+            --glass: rgba(15, 23, 42, 0.88);
         }
         :root[data-theme="light"] {
             --bg-color: #f1f5f9;
@@ -61,63 +62,68 @@
             --neon: #2563eb;
             --dark-bar: #0f172a;
             --border: #e2e8f0;
-            --glass: rgba(255, 255, 255, 0.92);
+            --glass: rgba(255, 255, 255, 0.94);
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; transition: background-color 0.25s, color 0.2s; }
-        body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
+        html, body { width: 100%; max-width: 100vw; overflow-x: hidden; background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; }
         #progress-bar { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, var(--primary), var(--neon)); width: 0%; z-index: 99999; }
 
-        .market-ticker { background: var(--dark-bar); color: #e2e8f0; padding: 0.45rem 5%; font-size: 0.8rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; font-family: 'JetBrains Mono', monospace; }
-        .market-items { display: flex; gap: 1.5rem; align-items: center; overflow-x: auto; white-space: nowrap; }
-        .market-item { display: flex; align-items: center; gap: 6px; }
+        /* TICKER DE COTAÇÕES BLINDADO PARA MOBILE */
+        .market-ticker { background: var(--dark-bar); color: #e2e8f0; padding: 0.5rem 4%; font-size: 0.78rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; font-family: 'JetBrains Mono', monospace; width: 100%; }
+        .market-items { display: flex; gap: 1.2rem; align-items: center; overflow-x: auto; white-space: nowrap; max-width: 100%; -webkit-overflow-scrolling: touch; padding-bottom: 2px; }
+        .market-items::-webkit-scrollbar { height: 3px; }
+        .market-item { display: inline-flex; align-items: center; gap: 6px; }
         .up { color: #10b981; font-weight: 700; }
         .down { color: #ef4444; font-weight: 700; }
-        .live-dot { width: 8px; height: 8px; background: #10b981; border-radius: 50%; display: inline-block; animation: blink 1.2s infinite; }
+        .live-dot { width: 8px; height: 8px; background: #10b981; border-radius: 50%; display: inline-block; animation: blink 1.2s infinite; flex-shrink: 0; }
         @keyframes blink { 0%, 100% { opacity: 1; box-shadow: 0 0 8px #10b981; } 50% { opacity: 0.3; } }
 
-        header { background: var(--glass); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); padding: 1rem 5%; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--border); }
-        .nav-container { max-width: 1440px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
-        .logo { font-size: 1.85rem; font-weight: 900; letter-spacing: -1px; color: var(--text-main); text-decoration: none; display: flex; align-items: center; gap: 6px; cursor: pointer; }
+        header { background: var(--glass); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); padding: 0.9rem 4%; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--border); width: 100%; }
+        .nav-container { max-width: 1440px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 0.8rem; flex-wrap: wrap; }
+        .logo { font-size: clamp(1.4rem, 4vw, 1.85rem); font-weight: 900; letter-spacing: -1px; color: var(--text-main); text-decoration: none; display: flex; align-items: center; gap: 6px; cursor: pointer; }
         .logo span { color: var(--primary); }
-        .logo-badge { font-size: 0.65rem; background: rgba(239, 68, 68, 0.15); color: var(--primary); border: 1px solid var(--primary); padding: 2px 6px; border-radius: 4px; font-weight: 800; letter-spacing: 0.5px; }
+        .logo-badge { font-size: 0.62rem; background: rgba(239, 68, 68, 0.15); color: var(--primary); border: 1px solid var(--primary); padding: 2px 6px; border-radius: 4px; font-weight: 800; letter-spacing: 0.5px; }
 
-        .nav-links { display: flex; gap: 0.35rem; list-style: none; background: rgba(255,255,255,0.03); padding: 5px; border-radius: 10px; border: 1px solid var(--border); align-items: center; flex-wrap: wrap; }
-        .nav-links button, .nav-links a { background: none; border: none; color: var(--text-muted); font-weight: 700; font-size: 0.81rem; cursor: pointer; padding: 0.42rem 0.75rem; border-radius: 7px; transition: 0.2s; text-decoration: none; }
+        .nav-links { display: flex; gap: 0.35rem; list-style: none; background: rgba(255,255,255,0.03); padding: 5px; border-radius: 10px; border: 1px solid var(--border); align-items: center; overflow-x: auto; max-width: 100%; white-space: nowrap; -webkit-overflow-scrolling: touch; }
+        .nav-links button, .nav-links a { background: none; border: none; color: var(--text-muted); font-weight: 700; font-size: 0.8rem; cursor: pointer; padding: 0.42rem 0.72rem; border-radius: 7px; transition: 0.2s; text-decoration: none; flex-shrink: 0; }
         .nav-links button:hover, .nav-links a:hover { color: var(--text-main); }
         .nav-links button.active { background: var(--primary); color: #fff; box-shadow: 0 4px 12px rgba(239, 68, 68, 0.35); }
         .nav-links a.hub-link { color: var(--neon); border: 1px solid rgba(0, 242, 254, 0.25); }
 
-        .header-actions { display: flex; align-items: center; gap: 0.8rem; }
-        .search-box { position: relative; }
-        .search-box input { background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: var(--text-main); padding: 0.5rem 1rem 0.5rem 2.2rem; border-radius: 8px; font-size: 0.85rem; width: 165px; outline: none; transition: 0.3s; }
-        .search-box input:focus { width: 210px; border-color: var(--primary); }
-        .search-icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); font-size: 0.8rem; color: var(--text-muted); }
+        .header-actions { display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
+        .search-box { position: relative; flex-grow: 1; }
+        .search-box input { background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: var(--text-main); padding: 0.48rem 0.9rem 0.48rem 2rem; border-radius: 8px; font-size: 0.84rem; width: 155px; outline: none; transition: 0.3s; }
+        .search-box input:focus { width: 195px; border-color: var(--primary); }
+        .search-icon { position: absolute; left: 9px; top: 50%; transform: translateY(-50%); font-size: 0.78rem; color: var(--text-muted); }
 
-        .theme-btn { background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--text-main); padding: 0.45rem 0.85rem; border-radius: 8px; cursor: pointer; font-weight: 700; font-size: 0.85rem; display: flex; align-items: center; gap: 6px; }
-        .cta-btn { background: linear-gradient(135deg, #ef4444, #b91c1c); color: #fff; border: none; padding: 0.55rem 1.2rem; border-radius: 8px; font-weight: 800; cursor: pointer; text-decoration: none; font-size: 0.85rem; box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3); display: inline-flex; align-items: center; gap: 6px; }
+        .theme-btn { background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--text-main); padding: 0.45rem 0.75rem; border-radius: 8px; cursor: pointer; font-weight: 700; font-size: 0.82rem; display: flex; align-items: center; gap: 5px; }
+        .cta-btn { background: linear-gradient(135deg, #ef4444, #b91c1c); color: #fff; border: none; padding: 0.5rem 1rem; border-radius: 8px; font-weight: 800; cursor: pointer; text-decoration: none; font-size: 0.82rem; box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3); display: inline-flex; align-items: center; justify-content: center; gap: 6px; }
 
-        .tags-bar { max-width: 1440px; margin: 1.2rem auto 0 auto; padding: 0 5%; display: flex; align-items: center; gap: 0.6rem; overflow-x: auto; white-space: nowrap; }
-        .tag-pill { background: var(--card-bg); border: 1px solid var(--border); color: var(--text-muted); padding: 4px 12px; border-radius: 20px; font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: 0.2s; text-decoration: none; }
+        .tags-bar { max-width: 1440px; margin: 1rem auto 0 auto; padding: 0 4%; display: flex; align-items: center; gap: 0.55rem; overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; }
+        .tag-pill { background: var(--card-bg); border: 1px solid var(--border); color: var(--text-muted); padding: 4px 12px; border-radius: 20px; font-size: 0.76rem; font-weight: 600; cursor: pointer; transition: 0.2s; text-decoration: none; flex-shrink: 0; }
         .tag-pill:hover { border-color: var(--primary); color: var(--text-main); }
 
-        .ad-banner-top { max-width: 970px; min-height: 90px; margin: 1.5rem auto; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
-        .main-container { max-width: 1440px; margin: 0 auto 4rem auto; padding: 0 5%; display: grid; grid-template-columns: 7.2fr 2.8fr; gap: 2.5rem; }
+        /* BANNER TOPO ADSTERRA BLINDADO CONTRA CORTE MOBILE */
+        .ad-banner-top { width: 100%; max-width: 970px; min-height: 90px; margin: 1.2rem auto; padding: 0 2%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+        .main-container { max-width: 1440px; margin: 0 auto 4rem auto; padding: 0 4%; display: grid; grid-template-columns: 7.2fr 2.8fr; gap: 2.2rem; width: 100%; }
+        .content-column, .sidebar { min-width: 0; max-width: 100%; }
 
-        .hero-card { position: relative; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.35); margin-bottom: 2.5rem; display: block; border: 1px solid var(--border); background: #000; }
-        .hero-card img { width: 100%; height: 470px; object-fit: cover; opacity: 0.75; transition: transform 0.6s ease; }
-        .hero-card:hover img { transform: scale(1.03); }
-        .hero-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(3,6,12,0.98) 15%, rgba(3,6,12,0.65) 65%, transparent 100%); padding: 2.5rem; color: #fff; }
-        .badge-source { background: var(--primary); color: #fff; padding: 5px 12px; border-radius: 6px; font-size: 0.72rem; font-weight: 900; text-transform: uppercase; display: inline-block; margin-bottom: 0.8rem; }
-        .hero-overlay h1 { font-size: 2.15rem; line-height: 1.2; margin-bottom: 0.8rem; font-weight: 900; }
-        .hero-overlay p { color: #cbd5e1; font-size: 1.02rem; margin-bottom: 1.2rem; }
-        .hero-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+        /* HERO CARD ADAPTATIVO (DESKTOP OVERLAY + MOBILE EMPILHADO LIMPO) */
+        .hero-card { position: relative; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.35); margin-bottom: 2.2rem; display: flex; flex-direction: column; border: 1px solid var(--border); background: #070b14; }
+        .hero-card img { width: 100%; height: 450px; object-fit: cover; opacity: 0.78; transition: transform 0.6s ease; }
+        .hero-card:hover img { transform: scale(1.02); }
+        .hero-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(3,6,12,0.98) 18%, rgba(3,6,12,0.72) 68%, transparent 100%); padding: 2.2rem; color: #fff; }
+        .badge-source { background: var(--primary); color: #fff; padding: 5px 12px; border-radius: 6px; font-size: 0.7rem; font-weight: 900; text-transform: uppercase; display: inline-block; margin-bottom: 0.7rem; }
+        .hero-overlay h1 { font-size: clamp(1.35rem, 3vw, 2.15rem); line-height: 1.25; margin-bottom: 0.75rem; font-weight: 900; }
+        .hero-overlay p { color: #cbd5e1; font-size: clamp(0.88rem, 2vw, 1.02rem); margin-bottom: 1.1rem; }
+        .hero-actions { display: flex; gap: 0.7rem; flex-wrap: wrap; }
 
-        .section-title { font-size: 1.35rem; font-weight: 900; margin-bottom: 1.5rem; border-left: 4px solid var(--primary); padding-left: 12px; display: flex; justify-content: space-between; align-items: center; }
-        .feed-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 1.8rem; }
+        .section-title { font-size: clamp(1.1rem, 2.5vw, 1.35rem); font-weight: 900; margin-bottom: 1.4rem; border-left: 4px solid var(--primary); padding-left: 12px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+        .feed-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; width: 100%; }
 
-        .news-card { background: var(--card-bg); border-radius: 14px; overflow: hidden; border: 1px solid var(--border); display: flex; flex-direction: column; transition: transform 0.25s ease; backdrop-filter: blur(10px); }
-        .news-card:hover { transform: translateY(-6px); border-color: rgba(239, 68, 68, 0.4); }
+        .news-card { background: var(--card-bg); border-radius: 14px; overflow: hidden; border: 1px solid var(--border); display: flex; flex-direction: column; transition: transform 0.25s ease; backdrop-filter: blur(10px); min-width: 0; }
+        .news-card:hover { transform: translateY(-5px); border-color: rgba(239, 68, 68, 0.4); }
         .card-img-wrapper { position: relative; width: 100%; height: 195px; overflow: hidden; background: #1e293b; }
         .card-img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
         .card-tag { position: absolute; top: 12px; left: 12px; background: rgba(3, 6, 12, 0.85); color: #fff; padding: 4px 10px; border-radius: 6px; font-size: 0.68rem; font-weight: 800; text-transform: uppercase; }
@@ -125,53 +131,70 @@
         .audio-btn { background: rgba(239, 68, 68, 0.92); color: #fff; border: none; padding: 5px 10px; border-radius: 20px; font-size: 0.72rem; font-weight: 700; cursor: pointer; }
         .zap-btn { background: rgba(16, 185, 129, 0.92); color: #fff; border: none; padding: 5px 9px; border-radius: 20px; font-size: 0.72rem; font-weight: 700; text-decoration: none; }
 
-        .card-body { padding: 1.4rem; display: flex; flex-direction: column; flex-grow: 1; }
-        .card-meta { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.6rem; display: flex; justify-content: space-between; font-weight: 600; }
-        .card-title { font-size: 1.12rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.75rem; line-height: 1.35; }
-        .card-desc { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.3rem; flex-grow: 1; }
+        .card-body { padding: 1.3rem; display: flex; flex-direction: column; flex-grow: 1; }
+        .card-meta { font-size: 0.74rem; color: var(--text-muted); margin-bottom: 0.55rem; display: flex; justify-content: space-between; font-weight: 600; flex-wrap: wrap; gap: 4px; }
+        .card-title { font-size: 1.08rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.7rem; line-height: 1.35; word-wrap: break-word; }
+        .card-desc { font-size: 0.86rem; color: var(--text-muted); margin-bottom: 1.2rem; flex-grow: 1; word-wrap: break-word; }
         .seo-internal-link { color: var(--neon); font-weight: 700; text-decoration: underline; }
 
-        .card-footer-btns { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-top: auto; }
-        .btn-outline { background: rgba(255,255,255,0.04); color: var(--text-main); border: 1px solid var(--border); padding: 0.65rem; border-radius: 8px; font-weight: 700; font-size: 0.8rem; cursor: pointer; text-align: center; text-decoration: none; }
-        .read-btn { background: var(--primary); color: #fff; font-weight: 700; font-size: 0.8rem; padding: 0.65rem; border-radius: 8px; text-decoration: none; text-align: center; }
+        .card-footer-btns { display: grid; grid-template-columns: 1fr 1fr; gap: 0.55rem; margin-top: auto; }
+        .btn-outline { background: rgba(255,255,255,0.05); color: var(--text-main); border: 1px solid var(--border); padding: 0.62rem; border-radius: 8px; font-weight: 700; font-size: 0.78rem; cursor: pointer; text-align: center; text-decoration: none; }
+        .read-btn { background: var(--primary); color: #fff; font-weight: 700; font-size: 0.78rem; padding: 0.62rem; border-radius: 8px; text-decoration: none; text-align: center; }
 
-        .native-ad-card { background: linear-gradient(145deg, rgba(239,68,68,0.14), rgba(15,23,42,0.92)); border: 2px solid rgba(239, 68, 68, 0.55); border-radius: 14px; padding: 1.8rem; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
-        .native-ad-card .ad-badge { background: var(--primary); color: #fff; font-size: 0.68rem; font-weight: 900; padding: 3px 10px; border-radius: 20px; text-transform: uppercase; margin-bottom: 1rem; }
+        .native-ad-card { background: linear-gradient(145deg, rgba(239,68,68,0.14), rgba(15,23,42,0.92)); border: 2px solid rgba(239, 68, 68, 0.55); border-radius: 14px; padding: 1.6rem; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        .native-ad-card .ad-badge { background: var(--primary); color: #fff; font-size: 0.68rem; font-weight: 900; padding: 3px 10px; border-radius: 20px; text-transform: uppercase; margin-bottom: 0.9rem; }
 
-        .sidebar { display: flex; flex-direction: column; gap: 2rem; }
-        .widget { background: var(--card-bg); border-radius: 14px; padding: 1.5rem; border: 1px solid var(--border); }
-        .widget-title { font-size: 1.05rem; font-weight: 900; margin-bottom: 1.2rem; padding-bottom: 0.6rem; border-bottom: 2px solid var(--primary); display: flex; justify-content: space-between; align-items: center; }
-        .trending-list { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
-        .trending-item { display: flex; gap: 0.9rem; align-items: flex-start; text-decoration: none; color: inherit; cursor: pointer; }
-        .trending-num { font-size: 1.4rem; font-weight: 900; color: var(--primary); font-family: 'JetBrains Mono', monospace; }
-        .trending-text { font-size: 0.88rem; font-weight: 700; line-height: 1.35; }
+        .sidebar { display: flex; flex-direction: column; gap: 1.8rem; }
+        .widget { background: var(--card-bg); border-radius: 14px; padding: 1.35rem; border: 1px solid var(--border); width: 100%; overflow: hidden; }
+        .widget-title { font-size: 1rem; font-weight: 900; margin-bottom: 1.1rem; padding-bottom: 0.55rem; border-bottom: 2px solid var(--primary); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px; }
+        .trending-list { list-style: none; display: flex; flex-direction: column; gap: 0.95rem; }
+        .trending-item { display: flex; gap: 0.85rem; align-items: flex-start; text-decoration: none; color: inherit; cursor: pointer; }
+        .trending-num { font-size: 1.3rem; font-weight: 900; color: var(--primary); font-family: 'JetBrains Mono', monospace; flex-shrink: 0; }
+        .trending-text { font-size: 0.86rem; font-weight: 700; line-height: 1.35; }
 
-        /* TABELA DO BRASILEIRÃO WIDGET */
-        .tabela-futebol { width: 100%; border-collapse: collapse; font-size: 0.8rem; font-family: 'JetBrains Mono', monospace; }
-        .tabela-futebol th { text-align: left; padding: 6px 4px; border-bottom: 1px solid var(--border); color: var(--text-muted); font-size: 0.72rem; }
+        /* TABELA DO BRASILEIRÃO WIDGET RESPONSIVO */
+        .table-responsive-wrapper { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+        .tabela-futebol { width: 100%; border-collapse: collapse; font-size: 0.78rem; font-family: 'JetBrains Mono', monospace; min-width: 240px; }
+        .tabela-futebol th { text-align: left; padding: 6px 4px; border-bottom: 1px solid var(--border); color: var(--text-muted); font-size: 0.7rem; }
         .tabela-futebol td { padding: 7px 4px; border-bottom: 1px solid rgba(255,255,255,0.04); }
         .g4-badge { color: #10b981; font-weight: 800; }
         .z4-badge { color: #ef4444; font-weight: 800; }
 
-        .newsletter-box { background: linear-gradient(135deg, #111827, #03060c); color: #fff; border-radius: 14px; padding: 1.8rem; text-align: center; border: 1px solid rgba(239, 68, 68, 0.35); }
-        .newsletter-box input { width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.05); color: #fff; margin: 0.8rem 0; font-size: 0.88rem; }
-        .newsletter-box button { width: 100%; padding: 0.85rem; background: var(--primary); color: #fff; border: none; border-radius: 8px; font-weight: 800; cursor: pointer; }
+        .newsletter-box { background: linear-gradient(135deg, #111827, #03060c); color: #fff; border-radius: 14px; padding: 1.6rem; text-align: center; border: 1px solid rgba(239, 68, 68, 0.35); }
+        .newsletter-box input { width: 100%; padding: 0.78rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.05); color: #fff; margin: 0.75rem 0; font-size: 0.86rem; }
+        .newsletter-box button { width: 100%; padding: 0.82rem; background: var(--primary); color: #fff; border: none; border-radius: 8px; font-weight: 800; cursor: pointer; }
 
         #reader-modal, #exit-modal, #adblock-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(3, 6, 12, 0.9); z-index: 9999; justify-content: center; align-items: center; backdrop-filter: blur(8px); padding: 1rem; }
         .reader-box { background: var(--bg-color); border: 1px solid var(--border); width: 100%; max-width: 680px; border-radius: 16px; overflow: hidden; max-height: 90vh; display: flex; flex-direction: column; }
-        .reader-img { width: 100%; height: 240px; object-fit: cover; }
-        .reader-body { padding: 2rem; overflow-y: auto; }
-        .reader-ai-box { background: rgba(59, 130, 246, 0.1); border-left: 4px solid var(--accent); padding: 1rem; border-radius: 6px; margin: 1.2rem 0; font-size: 0.92rem; }
-        .reader-promo { background: rgba(239, 68, 68, 0.1); border: 1px dashed var(--primary); padding: 1rem; border-radius: 8px; text-align: center; margin-top: 1.5rem; }
-        .adblock-content { background: var(--card-bg); color: var(--text-main); border: 1px solid rgba(239,68,68,0.45); width: 90%; max-width: 440px; border-radius: 20px; padding: 2.2rem 1.8rem; text-align: center; }
-        .adblock-btn { background: var(--primary); color: #fff; padding: 0.9rem; border-radius: 8px; font-weight: 800; width: 100%; border: none; cursor: pointer; margin-top: 1.2rem; }
-        .adblock-close { margin-top: 1rem; font-size: 0.8rem; color: var(--text-muted); text-decoration: underline; cursor: pointer; background: none; border: none; width: 100%; }
+        .reader-img { width: 100%; height: 220px; object-fit: cover; }
+        .reader-body { padding: 1.5rem; overflow-y: auto; }
+        .reader-ai-box { background: rgba(59, 130, 246, 0.1); border-left: 4px solid var(--accent); padding: 0.95rem; border-radius: 6px; margin: 1rem 0; font-size: 0.9rem; }
+        .reader-promo { background: rgba(239, 68, 68, 0.1); border: 1px dashed var(--primary); padding: 0.95rem; border-radius: 8px; text-align: center; margin-top: 1.2rem; }
+        .adblock-content { background: var(--card-bg); color: var(--text-main); border: 1px solid rgba(239,68,68,0.45); width: 95%; max-width: 430px; border-radius: 20px; padding: 1.8rem 1.4rem; text-align: center; }
+        .adblock-btn { background: var(--primary); color: #fff; padding: 0.85rem; border-radius: 8px; font-weight: 800; width: 100%; border: none; cursor: pointer; margin-top: 1.1rem; }
+        .adblock-close { margin-top: 0.9rem; font-size: 0.78rem; color: var(--text-muted); text-decoration: underline; cursor: pointer; background: none; border: none; width: 100%; }
 
-        #social-proof-toast { position: fixed; bottom: 20px; left: 20px; background: var(--card-bg); border: 1px solid var(--border); border-left: 4px solid #10b981; padding: 0.85rem 1.2rem; border-radius: 12px; z-index: 8000; display: flex; align-items: center; gap: 12px; font-size: 0.8rem; max-width: 340px; transform: translateY(150%); transition: transform 0.4s ease; cursor: pointer; }
+        #social-proof-toast { position: fixed; bottom: 16px; left: 16px; right: 16px; background: var(--card-bg); border: 1px solid var(--border); border-left: 4px solid #10b981; padding: 0.8rem 1rem; border-radius: 12px; z-index: 8000; display: flex; align-items: center; gap: 10px; font-size: 0.78rem; max-width: 330px; transform: translateY(150%); transition: transform 0.4s ease; cursor: pointer; }
         #social-proof-toast.show { transform: translateY(0); }
 
-        footer { background: var(--dark-bar); color: #64748b; text-align: center; padding: 3rem 5%; font-size: 0.85rem; border-top: 1px solid var(--border); }
-        @media (max-width: 992px) { .main-container { grid-template-columns: 1fr; } .hero-card img { height: 320px; } .hero-overlay h1 { font-size: 1.5rem; } }
+        footer { background: var(--dark-bar); color: #64748b; text-align: center; padding: 2.5rem 4%; font-size: 0.82rem; border-top: 1px solid var(--border); }
+
+        /* REGRAS ESPECÍFICAS DE PERFEIÇÃO MOBILE (ZERO CORTES) */
+        @media (max-width: 992px) {
+            .main-container { grid-template-columns: 1fr; gap: 1.8rem; }
+        }
+        @media (max-width: 768px) {
+            .market-ticker { flex-direction: column; align-items: flex-start; padding: 0.5rem 4%; gap: 6px; }
+            .nav-container { flex-direction: column; align-items: stretch; gap: 0.65rem; }
+            .header-actions { width: 100%; justify-content: space-between; }
+            .search-box { flex: 1; }
+            .search-box input, .search-box input:focus { width: 100%; }
+            .hero-card img { height: 230px; opacity: 1; }
+            .hero-overlay { position: relative; background: #0b1120; padding: 1.35rem; }
+            .hero-actions { flex-direction: column; width: 100%; }
+            .hero-actions .cta-btn, .hero-actions .btn-outline { width: 100%; justify-content: center; }
+            .feed-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
@@ -181,8 +204,8 @@
     <!-- MODAL ANTI-ADBLOCK -->
     <div id="adblock-modal">
         <div class="adblock-content">
-            <h3 style="font-size:1.35rem; font-weight:900; margin-bottom:0.6rem;">Acesso Restrito pelo AdBlock 🛡️</h3>
-            <p style="font-size:0.9rem; color:var(--text-muted);">O <strong>TechNews.PRO</strong> mantém servidores de IA gratuitos graças aos patrocinadores. Desative seu bloqueador para liberar o terminal completo.</p>
+            <h3 style="font-size:1.3rem; font-weight:900; margin-bottom:0.6rem;">Acesso Restrito pelo AdBlock 🛡️</h3>
+            <p style="font-size:0.88rem; color:var(--text-muted);">O <strong>TechNews.PRO</strong> mantém servidores de IA gratuitos graças aos patrocinadores. Desative seu bloqueador para liberar o terminal completo.</p>
             <button class="adblock-btn" onclick="location.reload()">Já desativei! Liberar Terminal &rarr;</button>
             <button class="adblock-close" onclick="document.getElementById('adblock-modal').style.display='none'">Continuar leitura limitada (Fechar)</button>
         </div>
@@ -192,9 +215,9 @@
     <div id="exit-modal" onclick="document.getElementById('exit-modal').style.display='none'">
         <div class="adblock-content" onclick="event.stopPropagation()">
             <span class="badge-source">⚡ ESPERE! NÃO SAIA DE MÃOS VAZIAS</span>
-            <h3 style="font-size:1.4rem; font-weight:900; margin-bottom:0.6rem;">Quer Automatizar sua Renda com IA?</h3>
-            <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:1.4rem;">Resgate seu acesso ao treinamento oficial que revela como criar máquinas automáticas de vendas e tráfego na internet.</p>
-            <a href="https://kiwify.app/ek8xMMl?afid=1rxg1P58" target="_blank" rel="noopener noreferrer" class="cta-btn" style="width:100%; justify-content:center; padding:0.9rem;">🎁 Resgatar Acesso VIP &rarr;</a>
+            <h3 style="font-size:1.35rem; font-weight:900; margin-bottom:0.6rem;">Quer Automatizar sua Renda com IA?</h3>
+            <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:1.3rem;">Resgate seu acesso ao treinamento oficial que revela como criar máquinas automáticas de vendas e tráfego na internet.</p>
+            <a href="https://kiwify.app/ek8xMMl?afid=1rxg1P58" target="_blank" rel="noopener noreferrer" class="cta-btn" style="width:100%; justify-content:center; padding:0.85rem;">🎁 Resgatar Acesso VIP &rarr;</a>
             <button class="adblock-close" onclick="document.getElementById('exit-modal').style.display='none'">Fechar janela</button>
         </div>
     </div>
@@ -202,21 +225,21 @@
     <!-- MODAL DE LEITURA RÁPIDA (TIME-TO-VALUE IA) -->
     <div id="reader-modal" onclick="fecharReader()">
         <div class="reader-box" onclick="event.stopPropagation()">
-            <img id="r-img" src="" class="reader-img" alt="Capa">
+            <img id="r-img" src="" class="reader-img" alt="Capa" referrerpolicy="no-referrer">
             <div class="reader-body">
                 <span id="r-source" class="badge-source">Fonte</span>
-                <h2 id="r-title" style="margin-bottom: 1rem; line-height: 1.3;">Título</h2>
+                <h2 id="r-title" style="margin-bottom: 0.9rem; line-height: 1.3; font-size: 1.25rem;">Título</h2>
                 <div class="reader-ai-box">
                     <strong>🤖 Síntese Executiva IA (Time-to-Value):</strong>
                     <p id="r-desc" style="margin-top: 6px;"></p>
                 </div>
-                <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:1.2rem;">
+                <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:1.1rem;">
                     <a id="r-url" href="#" target="_blank" rel="noopener noreferrer" class="cta-btn" style="flex:1; justify-content:center;">Ler Matéria Completa na Fonte &rarr;</a>
-                    <button onclick="fecharReader()" class="btn-outline" style="padding:0.6rem 1.2rem;">Fechar</button>
+                    <button onclick="fecharReader()" class="btn-outline" style="padding:0.6rem 1.1rem;">Fechar</button>
                 </div>
                 <div class="reader-promo">
-                    <p style="font-size:0.84rem; margin-bottom:8px;">🔥 <strong>Oportunidade Em Destaque:</strong> Domine as ferramentas de IA que estão gerando novos milionários digitais.</p>
-                    <a href="https://kiwify.app/ek8xMMl?afid=1rxg1P58" target="_blank" style="color:var(--primary); font-weight:800; font-size:0.88rem;">Desbloquear Método Oficial Agora &rarr;</a>
+                    <p style="font-size:0.82rem; margin-bottom:6px;">🔥 <strong>Oportunidade Em Destaque:</strong> Domine as ferramentas de IA que estão gerando novos milionários digitais.</p>
+                    <a href="https://kiwify.app/ek8xMMl?afid=1rxg1P58" target="_blank" style="color:var(--primary); font-weight:800; font-size:0.86rem;">Desbloquear Método Oficial Agora &rarr;</a>
                 </div>
             </div>
         </div>
@@ -224,10 +247,10 @@
 
     <!-- TOAST DE PROVA SOCIAL -->
     <div id="social-proof-toast" onclick="window.open('https://kiwify.app/bFEoJ38?afid=u7GyGPOM', '_blank')">
-        <span style="font-size:1.5rem;">🔥</span>
+        <span style="font-size:1.4rem;">🔥</span>
         <div>
             <div id="toast-text" style="font-weight:700; color:var(--text-main);">Alguém acabou de acessar a Área VIP</div>
-            <div style="font-size:0.72rem; color:var(--primary); font-weight:700;">Clique para ver a oferta em alta &rarr;</div>
+            <div style="font-size:0.7rem; color:var(--primary); font-weight:700;">Clique para ver a oferta em alta &rarr;</div>
         </div>
     </div>
 
@@ -235,29 +258,32 @@
     <div class="market-ticker">
         <div class="market-items">
             <span><span class="live-dot"></span> <strong>TERMINAL AO VIVO</strong></span>
-            <span class="market-item">💵 Dólar Comercial: <strong>R$ 5,70</strong> <span class="up">(+0.15%)</span></span> • <span class="market-item">💶 Euro Oficial: <strong>R$ 6,18</strong> <span class="up">(+0.10%)</span></span> • <span class="market-item">₿ Bitcoin (BTC): <strong>R$ 420.000</strong> <span class="up">(+1.25%)</span></span>
+            <span class="market-item">💵 Dólar: <strong>R$ 5,70</strong> <span class="up">(+0.15%)</span></span> • <span class="market-item">💶 Euro: <strong>R$ 6,18</strong> <span class="up">(+0.10%)</span></span> • <span class="market-item">₿ Bitcoin: <strong>R$ 420.000</strong> <span class="up">(+1.25%)</span></span>
         </div>
-        <div>
-            <a href="cotacao-agora.html" style="color:var(--neon); text-decoration:underline; margin-right:12px;">📊 Cotações</a>
-            <a href="futebol.html" style="color:#10b981; text-decoration:underline; margin-right:12px;">⚽ Brasileirão</a>
-            <span>⚡ Sincronizado: 31/10/2026 às 11:23</span>
+        <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap; font-size:0.74rem;">
+            <a href="cotacao-agora.html" style="color:var(--neon); text-decoration:underline;">📊 Cotações</a>
+            <a href="futebol.html" style="color:#10b981; text-decoration:underline;">⚽ Brasileirão</a>
+            <span>⚡ 31/10/2026 às 14:35</span>
         </div>
     </div>
 
     <header>
         <div class="nav-container">
-            <a class="logo" onclick="filtrarCategoria('todos', event)">
-                TechNews<span>.PRO</span>
-                <span class="logo-badge">IA v8.1</span>
-            </a>
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <a class="logo" onclick="filtrarCategoria('todos', event)">
+                    TechNews<span>.PRO</span>
+                    <span class="logo-badge">v8.3</span>
+                </a>
+            </div>
             <ul class="nav-links">
                 <li><button onclick="filtrarCategoria('todos', event)" class="active">🔥 Tudo</button></li>
                 <li><button onclick="filtrarCategoria('Tecnologia', event)">💻 Tech & IA</button></li>
                 <li><button onclick="filtrarCategoria('Finanças', event)">📈 Mercado</button></li>
                 <li><button onclick="filtrarCategoria('🏛️ Política', event)">🏛️ Política</button></li>
                 <li><button onclick="filtrarCategoria('⭐ Famosos', event)">⭐ Famosos</button></li>
+                <li><button onclick="filtrarCategoria('⚽ Esportes', event)">⚽ Esportes</button></li>
                 <li><button onclick="filtrarCategoria('Ciência', event)">🚀 Ciência</button></li>
-                <li><a href="futebol.html" class="hub-link">⚽ Futebol</a></li>
+                <li><a href="futebol.html" class="hub-link">🏆 Tabela</a></li>
                 <li><a href="inteligencia-artificial.html" class="hub-link">🧠 Hub IA</a></li>
             </ul>
             <div class="header-actions">
@@ -265,26 +291,27 @@
                     <span class="search-icon">🔍</span>
                     <input type="text" id="search-input" placeholder="Buscar notícia..." onkeyup="buscarNoticia()">
                 </div>
-                <button class="theme-btn" id="theme-toggle-btn" onclick="alternarTema()">🌙 Escuro</button>
-                <a href="https://asiafilm.org/4/78ed9deb10feac05c15347b414e171ab" target="_blank" rel="noopener noreferrer" class="cta-btn">💎 Área VIP</a>
+                <button class="theme-btn" id="theme-toggle-btn" onclick="alternarTema()">🌙</button>
+                <a href="https://asiafilm.org/4/78ed9deb10feac05c15347b414e171ab" target="_blank" rel="noopener noreferrer" class="cta-btn">💎 VIP</a>
             </div>
         </div>
     </header>
 
     <div class="tags-bar">
-        <span style="font-size:0.75rem; font-weight:800; color:var(--primary); text-transform:uppercase;">Topic Clusters SEO:</span>
-        <a href="inteligencia-artificial.html" class="tag-pill">#HubInteligênciaArtificial</a>
-        <a href="cotacao-agora.html" class="tag-pill">#TerminalDólar&Bitcoin</a>
-        <a href="futebol.html" class="tag-pill">#TabelaBrasileirãoSérieA</a>
+        <span style="font-size:0.72rem; font-weight:800; color:var(--primary); text-transform:uppercase; flex-shrink:0;">Clusters SEO:</span>
+        <a href="inteligencia-artificial.html" class="tag-pill">#HubIA</a>
+        <a href="cotacao-agora.html" class="tag-pill">#Dólar&Bitcoin</a>
+        <a href="futebol.html" class="tag-pill">#BrasileirãoSérieA</a>
         <a href="bitcoin.html" class="tag-pill">#RadarBitcoin</a>
         <a href="chatgpt.html" class="tag-pill">#RadarChatGPT</a>
         <a href="startups.html" class="tag-pill">#RadarStartups</a>
-        <span class="tag-pill" onclick="filtrarCategoria('🏛️ Política', event)">#PolíticaNacional</span>
-        <span class="tag-pill" onclick="filtrarCategoria('⭐ Famosos', event)">#Celebridades</span>
-        <span class="tag-pill" onclick="filtrarCategoria('todos', event)">🔄 Mostrar Tudo</span>
+        <span class="tag-pill" onclick="filtrarCategoria('🏛️ Política', event)">#Política</span>
+        <span class="tag-pill" onclick="filtrarCategoria('⭐ Famosos', event)">#Famosos</span>
+        <span class="tag-pill" onclick="filtrarCategoria('⚽ Esportes', event)">#Futebol</span>
+        <span class="tag-pill" onclick="filtrarCategoria('todos', event)">🔄 Tudo</span>
     </div>
 
-    <!-- BANNER TOPO ADSTERRA (728x90) -->
+    <!-- BANNER TOPO ADSTERRA (728x90) COM SCROLL TOUCH PROTEGIDO NO MOBILE -->
     <div class="ad-banner-top">
         <script>
           atOptions = {
@@ -303,7 +330,7 @@
             <div id="hero-container"></div>
             <h2 class="section-title">
                 <span id="titulo-secao">Radar Global em Tempo Real</span>
-                <span style="font-size:0.75rem; color:var(--text-muted); font-weight:600;">🔊 Ouça as matérias em áudio</span>
+                <span style="font-size:0.74rem; color:var(--text-muted); font-weight:600;">🔊 Ouça as matérias em áudio</span>
             </h2>
             <div class="feed-grid" id="feed-container"></div>
         </div>
@@ -313,14 +340,16 @@
             <div class="widget">
                 <div class="widget-title">
                     <span>⚽ Brasileirão Série A</span>
-                    <a href="futebol.html" style="font-size:0.75rem; color:var(--neon); text-decoration:underline;">Tabela Completa &rarr;</a>
+                    <a href="futebol.html" style="font-size:0.74rem; color:var(--neon); text-decoration:underline;">Tabela Completa &rarr;</a>
                 </div>
-                
+                <div class="table-responsive-wrapper">
+                    
     <table class="tabela-futebol">
         <thead><tr><th>Pos</th><th>Clube</th><th>PTS</th><th>J</th></tr></thead>
-        <tbody><tr><td class="g4-badge">1º</td><td>Palmeiras</td><td><strong>70</strong></td><td>34</td></tr><tr><td class="g4-badge">2º</td><td>Flamengo</td><td><strong>68</strong></td><td>34</td></tr><tr><td class="g4-badge">3º</td><td>Botafogo</td><td><strong>67</strong></td><td>34</td></tr><tr><td class="g4-badge">4º</td><td>Fortaleza</td><td><strong>64</strong></td><td>34</td></tr><tr><td colspan="4" style="text-align:center; color:#64748b; font-size:0.7rem; padding:4px;">••• Zona de Rebaixamento (Z4) •••</td></tr><tr><td class="z4-badge">17º</td><td>Criciúma</td><td><strong>38</strong></td><td>34</td></tr><tr><td class="z4-badge">18º</td><td>Red Bull Bragantino</td><td><strong>37</strong></td><td>34</td></tr><tr><td class="z4-badge">19º</td><td>Cuiabá</td><td><strong>30</strong></td><td>34</td></tr><tr><td class="z4-badge">20º</td><td>Atlético-GO</td><td><strong>26</strong></td><td>34</td></tr></tbody>
+        <tbody><tr><td class="g4-badge">1º</td><td>Palmeiras</td><td><strong>70</strong></td><td>34</td></tr><tr><td class="g4-badge">2º</td><td>Flamengo</td><td><strong>68</strong></td><td>34</td></tr><tr><td class="g4-badge">3º</td><td>Botafogo</td><td><strong>67</strong></td><td>34</td></tr><tr><td class="g4-badge">4º</td><td>Fortaleza</td><td><strong>64</strong></td><td>34</td></tr><tr><td colspan="4" style="text-align:center; color:#64748b; font-size:0.68rem; padding:4px;">••• Zona de Rebaixamento (Z4) •••</td></tr><tr><td class="z4-badge">17º</td><td>Criciúma</td><td><strong>38</strong></td><td>34</td></tr><tr><td class="z4-badge">18º</td><td>Red Bull Bragantino</td><td><strong>37</strong></td><td>34</td></tr><tr><td class="z4-badge">19º</td><td>Cuiabá</td><td><strong>30</strong></td><td>34</td></tr><tr><td class="z4-badge">20º</td><td>Atlético-GO</td><td><strong>26</strong></td><td>34</td></tr></tbody>
     </table>
     
+                </div>
             </div>
 
             <div class="widget">
@@ -329,35 +358,35 @@
         <li>
             <a onclick="abrirReader(1)" class="trending-item">
                 <span class="trending-num">01</span>
-                <span class="trending-text">GraphQL para Iniciantes: Guia Completo com .NET</span>
+                <span class="trending-text">Story Points vs Horas: por que o debate de estimativa se perde e como o consenso real resolve</span>
             </a>
         </li>
         
         <li>
             <a onclick="abrirReader(2)" class="trending-item">
                 <span class="trending-num">02</span>
-                <span class="trending-text">Como reduzir o tempo da Sprint Planning pela metade com estimativas em tempo real</span>
+                <span class="trending-text">Bastidores da vitória do Cruzeiro sobre o Atlético-MG na Arena MRV</span>
             </a>
         </li>
         
         <li>
             <a onclick="abrirReader(3)" class="trending-item">
                 <span class="trending-num">03</span>
-                <span class="trending-text">Na Bahia, Lula diz a aliados estar preocupado com crise no STF</span>
+                <span class="trending-text">O menu do dia em cinco minutos, com IA gratuita</span>
             </a>
         </li>
         
         <li>
             <a onclick="abrirReader(4)" class="trending-item">
                 <span class="trending-num">04</span>
-                <span class="trending-text">Planning Poker em chamadas do Teams, Meet ou Slack: como estimar sem atrito</span>
+                <span class="trending-text">Raul Gil é internado e passa por procedimento cirúrgico em SP</span>
             </a>
         </li>
         
         <li>
             <a onclick="abrirReader(5)" class="trending-item">
                 <span class="trending-num">05</span>
-                <span class="trending-text">Cinco dos sete candidatos ao governo do Rio Grande do Sul já foram às urnas</span>
+                <span class="trending-text">NASA Releases MAX POWER Key Events for Media, Participants</span>
             </a>
         </li>
         </ul>
@@ -366,7 +395,7 @@
             <!-- DESTAQUE LATERAL KIWIFY 2 -->
             <div class="widget" style="background: linear-gradient(135deg, rgba(239,68,68,0.16), rgba(15,23,42,0.95)); border-color: rgba(239,68,68,0.45); text-align: center;">
                 <span class="badge-source" style="margin-bottom:0.5rem;">🔥 Recomendação PRO</span>
-                <h3 style="margin-bottom: 0.5rem; font-size: 1.08rem;">⚡ Destrave Novas Fontes de Renda Digital</h3>
+                <h3 style="margin-bottom: 0.5rem; font-size: 1.05rem;">⚡ Destrave Novas Fontes de Renda Digital</h3>
                 <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1rem;">Acesse o sistema passo a passo mais recomendado pelos nossos leitores em 2026.</p>
                 <a href="https://pay.kiwify.com.br/YUDgPja?afid=yt5zIWrU" target="_blank" rel="noopener noreferrer" class="cta-btn" style="width: 100%; justify-content: center;">Conhecer Método Oficial &rarr;</a>
             </div>
@@ -374,7 +403,7 @@
             <!-- CAPTURA DE LEADS SYSTEME.IO -->
             <div class="newsletter-box" id="newsletter">
                 <h3>💰 Briefing Matinal VIP</h3>
-                <p style="font-size:0.84rem; color:#94a3b8;">Receba os insights de IA, Negócios e Ferramentas Secretas no seu e-mail.</p>
+                <p style="font-size:0.82rem; color:#94a3b8;">Receba os insights de IA, Negócios e Ferramentas Secretas no seu e-mail.</p>
                 <form action="https://devanildobeeny146.systeme.io/3ed9605c" method="GET" target="_blank">
                     <input type="email" name="email" placeholder="Digite seu melhor e-mail..." required>
                     <button type="submit">Liberar Acesso Gratuito &rarr;</button>
@@ -391,7 +420,7 @@
             </div>
 
             <!-- BANNER LATERAL ADSTERRA (300x250) -->
-            <div style="position: sticky; top: 90px; text-align: center;">
+            <div style="text-align: center; width: 100%; overflow: hidden;">
                 <span style="font-size: 0.7rem; color: var(--text-muted); display: block; margin-bottom: 5px;">Publicidade</span>
                 <script type="text/javascript">
                     atOptions = {
@@ -409,21 +438,21 @@
 
     <footer>
         <p><strong>TechNews.PRO</strong> &copy; 2026 — Ecossistema Automatizado via Python, Topic Clusters SEO, OpenAI, Telegram, OneSignal & Meta Video API.</p>
-        <p style="margin-top: 8px; font-size: 0.78rem;">
-            <a href="index.html" style="color:#94a3b8; margin:0 8px;">Início</a> |
-            <a href="inteligencia-artificial.html" style="color:#94a3b8; margin:0 8px;">Hub IA</a> |
-            <a href="cotacao-agora.html" style="color:#94a3b8; margin:0 8px;">Cotações</a> |
-            <a href="futebol.html" style="color:#94a3b8; margin:0 8px;">Futebol</a> |
-            <a href="bitcoin.html" style="color:#94a3b8; margin:0 8px;">Bitcoin</a> |
-            <a href="chatgpt.html" style="color:#94a3b8; margin:0 8px;">ChatGPT</a> |
-            <a href="startups.html" style="color:#94a3b8; margin:0 8px;">Startups</a> |
-            <a href="feed.xml" style="color:#94a3b8; margin:0 8px;">RSS Feed</a> |
-            <a href="sitemap.xml" style="color:#94a3b8; margin:0 8px;">Sitemap XML</a>
+        <p style="margin-top: 8px; font-size: 0.76rem; line-height: 1.8;">
+            <a href="index.html" style="color:#94a3b8; margin:0 6px;">Início</a> |
+            <a href="inteligencia-artificial.html" style="color:#94a3b8; margin:0 6px;">Hub IA</a> |
+            <a href="cotacao-agora.html" style="color:#94a3b8; margin:0 6px;">Cotações</a> |
+            <a href="futebol.html" style="color:#94a3b8; margin:0 6px;">Futebol</a> |
+            <a href="bitcoin.html" style="color:#94a3b8; margin:0 6px;">Bitcoin</a> |
+            <a href="chatgpt.html" style="color:#94a3b8; margin:0 6px;">ChatGPT</a> |
+            <a href="startups.html" style="color:#94a3b8; margin:0 6px;">Startups</a> |
+            <a href="feed.xml" style="color:#94a3b8; margin:0 6px;">RSS Feed</a> |
+            <a href="sitemap.xml" style="color:#94a3b8; margin:0 6px;">Sitemap XML</a>
         </p>
     </footer>
 
     <script>
-        const todasNoticias = [{"title": "NASA Releases MAX POWER Key Events for Media, Participants", "desc": "America’s newest aerospace expo and air show – MAX POWER – is fast approaching, and NASA has announced key events beginning Friday, Nov. 6, and running through Sunday, Nov. 8, hosted on and near the agency’s Kennedy Space Center in Florida. Through multiple park experiences at MAX POWER, NASA and a variety of external collaborators […]", "img": "https://www.nasa.gov/wp-content/uploads/2026/10/grc-2026-c-06389large.jpg", "url": "https://www.nasa.gov/news-release/nasa-releases-max-power-key-events-for-media-participants/", "source": "SpaceTech", "date": "2026-10-30", "categoria": "Ciência"}, {"title": "GraphQL para Iniciantes: Guia Completo com .NET", "desc": "Aprenda como GraphQL organiza schemas, queries e resolvers, execute uma API com .NET 10 e escolha entre GraphQL, REST e gRPC.", "img": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fzocate.li%2Fposts%2F2026%2Fgraphql-tutorial%2Fimages%2Fcover_hu_662274f337eb8622.jpg", "url": "https://dev.to/lzocate-li/graphql-para-iniciantes-guia-completo-com-net-1id1", "source": "Dev.to Brasil", "date": "Oct 26", "categoria": "Tecnologia"}, {"title": "Como reduzir o tempo da Sprint Planning pela metade com estimativas em tempo real", "desc": "Dicas práticas e decisões de arquitetura em Next.js para transformar reuniões de estimativa arrastadas em alinhamentos técnicos ágeis e eficientes.", "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F7mizvhzw7ziongg9l7ro.png", "url": "https://dev.to/geekecia/como-reduzir-o-tempo-da-sprint-planning-pela-metade-com-estimativas-em-tempo-real-2a6m", "source": "Dev.to Brasil", "date": "Oct 19", "categoria": "Tecnologia"}, {"title": "Na Bahia, Lula diz a aliados estar preocupado com crise no STF", "desc": "O presidente Lula participou de carreata em Salvador nesta terça-feira junto aos candidatos do PT ao Senado e ao Governo do estado O presidente Lula participou de carreata em Salvador nesta terça-feira junto aos candidatos do PT ao Senado e", "img": "https://images.metroimg.com/2026/09/foto-lula-salvaor-scaled.jpg", "url": "https://www.metropoles.com/brasil/na-bahia-lula-diz-a-aliados-estar-preocupado-com-crise-no-stf", "source": "Metrópoles Política", "date": "Hoje", "categoria": "🏛️ Política"}, {"title": "Planning Poker em chamadas do Teams, Meet ou Slack: como estimar sem atrito", "desc": "Como simplificar a dinâmica de estimativa de histórias de usuário em reuniões remotas sem exigir cadastro ou licenças por assento.", "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fxuqrfrmebqsh5bm6f60l.png", "url": "https://dev.to/geekecia/planning-poker-em-chamadas-do-teams-meet-ou-slack-como-estimar-sem-atrito-180d", "source": "Dev.to Brasil", "date": "Oct 23", "categoria": "Tecnologia"}, {"title": "Cinco dos sete candidatos ao governo do Rio Grande do Sul já foram às urnas", "desc": "Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das intenções de voto e Juliana Brizola, 35% Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das intenções de voto", "img": "https://images.metroimg.com/2026/07/rio-grande-do-sul.jpg", "url": "https://www.metropoles.com/brasil/politica-brasil/cinco-dos-sete-candidatos-ao-governo-do-rio-grande-do-sul-ja-foram-as-urnas", "source": "Metrópoles Política", "date": "Hoje", "categoria": "🏛️ Política"}, {"title": "Story Points vs Horas: por que o debate de estimativa se perde e como o consenso real resolve", "desc": "Por que times perdem tanto tempo debatendo números em Sprints e como focar em divergências técnicas acelera as cerimônias ágeis.", "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flgl5tv2oae3ec09v8apt.png", "url": "https://dev.to/geekecia/story-points-vs-horas-por-que-o-debate-de-estimativa-se-perde-e-como-o-consenso-real-resolve-51m1", "source": "Dev.to Brasil", "date": "Oct 27", "categoria": "Tecnologia"}, {"title": "Eleições 2026: brasileiros reclamam de filas para votar no exterior", "desc": "A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado (24/10) A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado (24/10) Brasileiro", "img": "https://images.metroimg.com/2026/10/filavotacaoparis.jpg", "url": "https://www.metropoles.com/brasil/eleicoes-2026-brasileiros-reclamam-de-filas-para-votar-no-exterior", "source": "Metrópoles Política", "date": "Hoje", "categoria": "🏛️ Política"}, {"title": "Filhos de Gugu divergem sobre união do pai com Rose Miriam", "desc": "Trechos do processo judicial mostram uma discussão entre os filhos do apresentador sobre o reconhecimento da união estável dos pais Trechos do processo judicial mostram uma discussão entre os filhos do apresentador sobre o reconhecimento da", "img": "https://images.metroimg.com/2022/08/09094552/Gugu-capa-1.jpg", "url": "https://www.metropoles.com/colunas/leo-dias/filhos-de-gugu-divergem-sobre-uniao-do-pai-com-rose-miriam", "source": "Coluna Famosos", "date": "Hoje", "categoria": "⭐ Famosos"}, {"title": "É hora de dizer até breve ao Metrópoles e partir para um novo desafio", "desc": "Amanhã (1º/6), estreia o LeoDias.com. A missão é gigantesca, mas nunca foi meu tipo fugir dos desafios da vida Amanhã (1º/6), estreia o LeoDias.com. A missão é gigantesca, mas nunca foi meu tipo fugir dos desafios da vida Começa aqui o últi", "img": "https://images.metroimg.com/2023/06/31214750/Design-sem-nome-2023-05-31T214746.841.jpg", "url": "https://www.metropoles.com/colunas/leo-dias/e-hora-de-dizer-ate-breve-ao-metropoles-e-partir-para-um-novo-desafio", "source": "Coluna Famosos", "date": "Hoje", "categoria": "⭐ Famosos"}, {"title": "Novo CNPJ Alfanumérico da Receita Federal: Como preparar seus testes e sistemas", "desc": "A transição para o CNPJ Alfanumérico regulamentada pela Receita Federal é uma das mudanças...", "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fc3smwggy9jpa9ypss802.png", "url": "https://dev.to/geekecia/novo-cnpj-alfanumerico-da-receita-federal-como-preparar-seus-testes-e-sistemas-6mm", "source": "Dev.to Brasil", "date": "Oct 22", "categoria": "Tecnologia"}, {"title": "João Gomes e Ary Mirelle curtem jantar romântico com Sthe Matos e Kevi Jonny", "desc": "O casal está em Barra de São Miguel acompanhados de Kevi Jonny e Sthe Matos O casal está em Barra de São Miguel acompanhados de Kevi Jonny e Sthe Matos Antes da maratona de shows do período junino, João Gomes e Ary Mirelle decidiram curtir ", "img": "https://images.metroimg.com/2023/05/31185334/Design-sem-nome-2023-05-31T185325.578.jpg", "url": "https://www.metropoles.com/colunas/leo-dias/joao-gomes-e-ary-curtem-jantar-romantico-com-sthe-matos-e-kevi-jonny", "source": "Coluna Famosos", "date": "Hoje", "categoria": "⭐ Famosos"}, {"title": "Raul Gil é internado e passa por procedimento cirúrgico em SP", "desc": "Essa é a segunda internação de Raul este ano, em fevereiro ele deu entrada no hospital para a realização de alguns exames Essa é a segunda internação de Raul este ano, em fevereiro ele deu entrada no hospital para a realização de alguns exa", "img": "https://images.metroimg.com/2018/11/23153705/Screenshot_12115.jpg", "url": "https://www.metropoles.com/colunas/leo-dias/raul-gil-e-internado-e-passa-por-procedimento-cirurgico-em-sp", "source": "Coluna Famosos", "date": "Hoje", "categoria": "⭐ Famosos"}, {"title": "Live coverage: SpaceX to close out October with Halloween eve Falcon 9 launch", "desc": "The Starlink 15-18 mission will add another 27 Starlink V2 Mini Optimized satellites to SpaceX’s megaconstellation. Liftoff from pad 4E at Vandenberg Space Force Base is scheduled for 9:02 p.m. PDT (12:02 a.m. EDT / 0402 UTC). ", "img": "https://spaceflightnow.com/wp-content/uploads/2026/03/20260326-Vandy-Starlink-File-Photo.jpg", "url": "https://spaceflightnow.com/2026/10/30/live-coverage-spacex-to-close-out-october-with-halloween-eve-falcon-9-launch/", "source": "SpaceTech", "date": "2026-10-30", "categoria": "Ciência"}, {"title": "APOD: 2026 October 31 – Night on a Spooky Planet", "desc": "APOD Science APOD APOD: 2026 October 31 –… Today’s APOD Archive Submissions Index Search Calendar RSS Education About Discuss   APOD Astronomy Picture of the Day Discover the cosmos! Each day a different image or photograph of our fascinating universe is featured, along with a brief explanation written by a professional astronomer. Night on a […]", "img": "https://assets.science.nasa.gov/dynamicimage/assets/science/cds/apod/apod/Hverir_Vetter_1300.jpg", "url": "https://science.nasa.gov/image-article/apod-2026-october-31-night-on-a-spooky-planet/", "source": "SpaceTech", "date": "2026-10-31", "categoria": "Ciência"}, {"title": "Virginia elege vestido luxuoso para festa de Maria Alice. Saiba valor!", "desc": "Além de ser um vestido repleto de detalhes sutis, a peça escolhida por Virginia segue a tendência do momento, o Whitecore Além de ser um vestido repleto de detalhes sutis, a peça escolhida por Virginia segue a tendência do momento, o Whitec", "img": "https://images.metroimg.com/2023/05/31152902/Design-sem-nome-2023-05-31T152810.884.jpg", "url": "https://www.metropoles.com/colunas/leo-dias/virginia-elege-vestido-luxuoso-para-festa-de-maria-alice-saiba-valor", "source": "Coluna Famosos", "date": "Hoje", "categoria": "⭐ Famosos"}, {"title": "O menu do dia em cinco minutos, com IA gratuita", "desc": "Como um café ou uma tasca pode escrever o quadro de giz, o aviso da porta e a mensagem de...", "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3i9x7328cqfy1thj8t87.png", "url": "https://dev.to/josemartinsiaaobalca/o-menu-do-dia-em-cinco-minutos-com-ia-gratuita-18h7", "source": "Dev.to Brasil", "date": "Oct 30", "categoria": "Tecnologia"}, {"title": "SpaceX Completes Three Static Fires in Three Days for Flight 15", "desc": "In eight days, SpaceX completed all engine testing for Flight 15, some cryo-proof and catch…\nThe post SpaceX Completes Three Static Fires in Three Days for Flight 15 appeared first on NASASpaceFlight.com.", "img": "https://www.nasaspaceflight.com/wp-content/uploads/2026/10/Booster-22-Static-fire-scaled.jpg", "url": "https://www.nasaspaceflight.com/2026/10/spacex-static-fires-flight-15/", "source": "SpaceTech", "date": "2026-10-30", "categoria": "Ciência"}, {"title": "PT prepara “festa do interior” para visita de Lula à Bahia", "desc": "Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em última rodada pelo Nordeste antes do 1º turno Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em última rodada pe", "img": "https://images.metroimg.com/2026/01/lula-bahia.jpg", "url": "https://www.metropoles.com/brasil/pt-prepara-festa-do-interior-para-visita-de-lula-a-bahia", "source": "Metrópoles Política", "date": "Hoje", "categoria": "🏛️ Política"}, {"title": "Erika Hilton recebe ameaça de morte e atrasa ida às urnas por segurança", "desc": "Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos A deputada federal e candidata à reeleição Erika H", "img": "https://images.metroimg.com/2026/07/sbt-lista-argumentos-para-derrubar-resposta-de-erika-hilton.jpg", "url": "https://www.metropoles.com/brasil/politica-brasil/erika-hilton-recebe-ameaca-de-morte-e-atrasa-ida-as-urnas-por-seguranca", "source": "Metrópoles Política", "date": "Hoje", "categoria": "🏛️ Política"}];
+        const todasNoticias = [{"title": "De Zerbi vê um futuro promissor para Mateus Fernandes no Tottenham", "desc": "Roberto De Zerbi, técnico do Tottenham, elogiou o potencial de Mateus Fernandes para se tornar uma peça importante nos Spurs, antes do confronto com o Crystal Palace pela Premier League. O post De Zerbi vê um futuro promissor para Mateus Fe", "img": "https://static.gazetaesportiva.com/uploads/2026/10/mr8hqeib-1920De-Zerbi.webp", "url": "https://www.gazetaesportiva.com/futebol/futebol-internacional/de-zerbi-ve-um-futuro-promissor-para-mateus-fernandes-no-tottenham/", "source": "Gazeta Esportiva", "date": "Hoje", "categoria": "⚽ Esportes"}, {"title": "Story Points vs Horas: por que o debate de estimativa se perde e como o consenso real resolve", "desc": "Por que times perdem tanto tempo debatendo números em Sprints e como focar em divergências técnicas acelera as cerimônias ágeis.", "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flgl5tv2oae3ec09v8apt.png", "url": "https://dev.to/geekecia/story-points-vs-horas-por-que-o-debate-de-estimativa-se-perde-e-como-o-consenso-real-resolve-51m1", "source": "Dev.to Brasil", "date": "Oct 27", "categoria": "Tecnologia"}, {"title": "Bastidores da vitória do Cruzeiro sobre o Atlético-MG na Arena MRV", "desc": "Confira os bastidores do triunfo celeste no clássico, com imagens da preparação, do vestiário e da comemoração após a vitória na Arena MRV. O post Bastidores da vitória do Cruzeiro sobre o Atlético-MG na Arena MRV apareceu primeiro em Gazet", "img": "https://static.gazetaesportiva.com/uploads/2026/10/abr4h2ws-1920Bastidores.webp", "url": "https://www.gazetaesportiva.com/todas-as-noticias/bastidores-da-vitoria-do-cruzeiro-sobre-o-atletico-mg-na-arena-mrv/", "source": "Gazeta Esportiva", "date": "Hoje", "categoria": "⚽ Esportes"}, {"title": "O menu do dia em cinco minutos, com IA gratuita", "desc": "Como um café ou uma tasca pode escrever o quadro de giz, o aviso da porta e a mensagem de...", "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3i9x7328cqfy1thj8t87.png", "url": "https://dev.to/josemartinsiaaobalca/o-menu-do-dia-em-cinco-minutos-com-ia-gratuita-18h7", "source": "Dev.to Brasil", "date": "Oct 30", "categoria": "Tecnologia"}, {"title": "Raul Gil é internado e passa por procedimento cirúrgico em SP", "desc": "Essa é a segunda internação de Raul este ano, em fevereiro ele deu entrada no hospital para a realização de alguns exames Essa é a segunda internação de Raul este ano, em fevereiro ele deu entrada no hospital para a realização de alguns exa", "img": "https://images.metroimg.com/2018/11/23153705/Screenshot_12115.jpg", "url": "https://www.metropoles.com/colunas/leo-dias/raul-gil-e-internado-e-passa-por-procedimento-cirurgico-em-sp", "source": "Coluna Famosos", "date": "Hoje", "categoria": "⭐ Famosos"}, {"title": "NASA Releases MAX POWER Key Events for Media, Participants", "desc": "America’s newest aerospace expo and air show – MAX POWER – is fast approaching, and NASA has announced key events beginning Friday, Nov. 6, and running through Sunday, Nov. 8, hosted on and near the agency’s Kennedy Space Center in Florida. Through multiple park experiences at MAX POWER, NASA and a variety of external collaborators […]", "img": "https://www.nasa.gov/wp-content/uploads/2026/10/grc-2026-c-06389large.jpg", "url": "https://www.nasa.gov/news-release/nasa-releases-max-power-key-events-for-media-participants/", "source": "SpaceTech", "date": "2026-10-30", "categoria": "Ciência"}, {"title": "PT prepara “festa do interior” para visita de Lula à Bahia", "desc": "Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em última rodada pelo Nordeste antes do 1º turno Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em última rodada pe", "img": "https://images.metroimg.com/2026/01/lula-bahia.jpg", "url": "https://www.metropoles.com/brasil/pt-prepara-festa-do-interior-para-visita-de-lula-a-bahia", "source": "Metrópoles Política", "date": "Hoje", "categoria": "🏛️ Política"}, {"title": "Abel Ferreira completa seis anos no comando do Palmeiras", "desc": "Técnico português celebra seis anos à frente do clube, período marcado por títulos, recordes e uma das passagens mais vitoriosas da história alviverde. O post Abel Ferreira completa seis anos no comando do Palmeiras apareceu primeiro em Gaz", "img": "https://static.gazetaesportiva.com/uploads/2026/10/9qop3mxv-1920Abel-Ferreira.webp", "url": "https://www.gazetaesportiva.com/todas-as-noticias/abel-ferreira-completa-seis-anos-no-comando-do-palmeiras/", "source": "Gazeta Esportiva", "date": "Hoje", "categoria": "⚽ Esportes"}, {"title": "Virginia elege vestido luxuoso para festa de Maria Alice. Saiba valor!", "desc": "Além de ser um vestido repleto de detalhes sutis, a peça escolhida por Virginia segue a tendência do momento, o Whitecore Além de ser um vestido repleto de detalhes sutis, a peça escolhida por Virginia segue a tendência do momento, o Whitec", "img": "https://images.metroimg.com/2023/05/31152902/Design-sem-nome-2023-05-31T152810.884.jpg", "url": "https://www.metropoles.com/colunas/leo-dias/virginia-elege-vestido-luxuoso-para-festa-de-maria-alice-saiba-valor", "source": "Coluna Famosos", "date": "Hoje", "categoria": "⭐ Famosos"}, {"title": "João Gomes e Ary Mirelle curtem jantar romântico com Sthe Matos e Kevi Jonny", "desc": "O casal está em Barra de São Miguel acompanhados de Kevi Jonny e Sthe Matos O casal está em Barra de São Miguel acompanhados de Kevi Jonny e Sthe Matos Antes da maratona de shows do período junino, João Gomes e Ary Mirelle decidiram curtir ", "img": "https://images.metroimg.com/2023/05/31185334/Design-sem-nome-2023-05-31T185325.578.jpg", "url": "https://www.metropoles.com/colunas/leo-dias/joao-gomes-e-ary-curtem-jantar-romantico-com-sthe-matos-e-kevi-jonny", "source": "Coluna Famosos", "date": "Hoje", "categoria": "⭐ Famosos"}, {"title": "APOD: 2026 October 31 – Night on a Spooky Planet", "desc": "APOD Science APOD APOD: 2026 October 31 –… Today’s APOD Archive Submissions Index Search Calendar RSS Education About Discuss   APOD Astronomy Picture of the Day Discover the cosmos! Each day a different image or photograph of our fascinating universe is featured, along with a brief explanation written by a professional astronomer. Night on a […]", "img": "https://assets.science.nasa.gov/dynamicimage/assets/science/cds/apod/apod/Hverir_Vetter_1300.jpg", "url": "https://science.nasa.gov/image-article/apod-2026-october-31-night-on-a-spooky-planet/", "source": "SpaceTech", "date": "2026-10-31", "categoria": "Ciência"}, {"title": "Cinco dos sete candidatos ao governo do Rio Grande do Sul já foram às urnas", "desc": "Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das intenções de voto e Juliana Brizola, 35% Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das intenções de voto", "img": "https://images.metroimg.com/2026/07/rio-grande-do-sul.jpg", "url": "https://www.metropoles.com/brasil/politica-brasil/cinco-dos-sete-candidatos-ao-governo-do-rio-grande-do-sul-ja-foram-as-urnas", "source": "Metrópoles Política", "date": "Hoje", "categoria": "🏛️ Política"}, {"title": "É hora de dizer até breve ao Metrópoles e partir para um novo desafio", "desc": "Amanhã (1º/6), estreia o LeoDias.com. A missão é gigantesca, mas nunca foi meu tipo fugir dos desafios da vida Amanhã (1º/6), estreia o LeoDias.com. A missão é gigantesca, mas nunca foi meu tipo fugir dos desafios da vida Começa aqui o últi", "img": "https://images.metroimg.com/2023/06/31214750/Design-sem-nome-2023-05-31T214746.841.jpg", "url": "https://www.metropoles.com/colunas/leo-dias/e-hora-de-dizer-ate-breve-ao-metropoles-e-partir-para-um-novo-desafio", "source": "Coluna Famosos", "date": "Hoje", "categoria": "⭐ Famosos"}, {"title": "GraphQL para Iniciantes: Guia Completo com .NET", "desc": "Aprenda como GraphQL organiza schemas, queries e resolvers, execute uma API com .NET 10 e escolha entre GraphQL, REST e gRPC.", "img": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fzocate.li%2Fposts%2F2026%2Fgraphql-tutorial%2Fimages%2Fcover_hu_662274f337eb8622.jpg", "url": "https://dev.to/lzocate-li/graphql-para-iniciantes-guia-completo-com-net-1id1", "source": "Dev.to Brasil", "date": "Oct 26", "categoria": "Tecnologia"}, {"title": "Eleições 2026: brasileiros reclamam de filas para votar no exterior", "desc": "A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado (24/10) A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado (24/10) Brasileiro", "img": "https://images.metroimg.com/2026/10/filavotacaoparis.jpg", "url": "https://www.metropoles.com/brasil/eleicoes-2026-brasileiros-reclamam-de-filas-para-votar-no-exterior", "source": "Metrópoles Política", "date": "Hoje", "categoria": "🏛️ Política"}, {"title": "Erika Hilton recebe ameaça de morte e atrasa ida às urnas por segurança", "desc": "Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos A deputada federal e candidata à reeleição Erika H", "img": "https://images.metroimg.com/2026/07/sbt-lista-argumentos-para-derrubar-resposta-de-erika-hilton.jpg", "url": "https://www.metropoles.com/brasil/politica-brasil/erika-hilton-recebe-ameaca-de-morte-e-atrasa-ida-as-urnas-por-seguranca", "source": "Metrópoles Política", "date": "Hoje", "categoria": "🏛️ Política"}, {"title": "Filhos de Gugu divergem sobre união do pai com Rose Miriam", "desc": "Trechos do processo judicial mostram uma discussão entre os filhos do apresentador sobre o reconhecimento da união estável dos pais Trechos do processo judicial mostram uma discussão entre os filhos do apresentador sobre o reconhecimento da", "img": "https://images.metroimg.com/2022/08/09094552/Gugu-capa-1.jpg", "url": "https://www.metropoles.com/colunas/leo-dias/filhos-de-gugu-divergem-sobre-uniao-do-pai-com-rose-miriam", "source": "Coluna Famosos", "date": "Hoje", "categoria": "⭐ Famosos"}, {"title": "Como reduzir o tempo da Sprint Planning pela metade com estimativas em tempo real", "desc": "Dicas práticas e decisões de arquitetura em Next.js para transformar reuniões de estimativa arrastadas em alinhamentos técnicos ágeis e eficientes.", "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F7mizvhzw7ziongg9l7ro.png", "url": "https://dev.to/geekecia/como-reduzir-o-tempo-da-sprint-planning-pela-metade-com-estimativas-em-tempo-real-2a6m", "source": "Dev.to Brasil", "date": "Oct 19", "categoria": "Tecnologia"}, {"title": "Na Bahia, Lula diz a aliados estar preocupado com crise no STF", "desc": "O presidente Lula participou de carreata em Salvador nesta terça-feira junto aos candidatos do PT ao Senado e ao Governo do estado O presidente Lula participou de carreata em Salvador nesta terça-feira junto aos candidatos do PT ao Senado e", "img": "https://images.metroimg.com/2026/09/foto-lula-salvaor-scaled.jpg", "url": "https://www.metropoles.com/brasil/na-bahia-lula-diz-a-aliados-estar-preocupado-com-crise-no-stf", "source": "Metrópoles Política", "date": "Hoje", "categoria": "🏛️ Política"}, {"title": "Planning Poker em chamadas do Teams, Meet ou Slack: como estimar sem atrito", "desc": "Como simplificar a dinâmica de estimativa de histórias de usuário em reuniões remotas sem exigir cadastro ou licenças por assento.", "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fxuqrfrmebqsh5bm6f60l.png", "url": "https://dev.to/geekecia/planning-poker-em-chamadas-do-teams-meet-ou-slack-como-estimar-sem-atrito-180d", "source": "Dev.to Brasil", "date": "Oct 23", "categoria": "Tecnologia"}, {"title": "SpaceX Completes Three Static Fires in Three Days for Flight 15", "desc": "In eight days, SpaceX completed all engine testing for Flight 15, some cryo-proof and catch…\nThe post SpaceX Completes Three Static Fires in Three Days for Flight 15 appeared first on NASASpaceFlight.com.", "img": "https://www.nasaspaceflight.com/wp-content/uploads/2026/10/Booster-22-Static-fire-scaled.jpg", "url": "https://www.nasaspaceflight.com/2026/10/spacex-static-fires-flight-15/", "source": "SpaceTech", "date": "2026-10-30", "categoria": "Ciência"}, {"title": "Novo CNPJ Alfanumérico da Receita Federal: Como preparar seus testes e sistemas", "desc": "A transição para o CNPJ Alfanumérico regulamentada pela Receita Federal é uma das mudanças...", "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fc3smwggy9jpa9ypss802.png", "url": "https://dev.to/geekecia/novo-cnpj-alfanumerico-da-receita-federal-como-preparar-seus-testes-e-sistemas-6mm", "source": "Dev.to Brasil", "date": "Oct 22", "categoria": "Tecnologia"}, {"title": "Jovens australianos participam do River Training Program", "desc": "O programa de treinamento de alto rendimento do River Plate realizou mais uma edição, recebendo uma delegação de jovens jogadores do Adelaide United. Como parte do River Training Program, um grupo de atletas da equipe australiana participou", "img": "https://static.gazetaesportiva.com/uploads/2026/10/bUbxFuYF-1920River-Training.webp", "url": "https://www.gazetaesportiva.com/todas-as-noticias/jovens-australianos-participam-do-river-training-program/", "source": "Gazeta Esportiva", "date": "Hoje", "categoria": "⚽ Esportes"}, {"title": "Estevão tem dois gols anulados, mas Chelsea vence Manchester United pelo Inglês", "desc": "O Chelsea venceu o Manchester United por 2 a 0 neste sábado, em Stamford Bridge, pela nona rodada da Premier League. Apesar de balançar as redes duas vezes, o brasileiro Estevão teve ambos os gols anulados. Morgan Rogers e Cole Palmer garan", "img": "https://static.gazetaesportiva.com/uploads/2026/10/AFP__20261031__D4ZJ9AU__v1__HighRes__FblEngPrChelseaManUtd.webp", "url": "https://www.gazetaesportiva.com/campeonatos/premier-league/chelsea-vence-manchester-united-gols-anulados-estevao/", "source": "Gazeta Esportiva", "date": "Hoje", "categoria": "⚽ Esportes"}, {"title": "Live coverage: SpaceX to close out October with Halloween eve Falcon 9 launch", "desc": "The Starlink 15-18 mission will add another 27 Starlink V2 Mini Optimized satellites to SpaceX’s megaconstellation. Liftoff from pad 4E at Vandenberg Space Force Base is scheduled for 9:02 p.m. PDT (12:02 a.m. EDT / 0402 UTC). ", "img": "https://spaceflightnow.com/wp-content/uploads/2026/03/20260326-Vandy-Starlink-File-Photo.jpg", "url": "https://spaceflightnow.com/2026/10/30/live-coverage-spacex-to-close-out-october-with-halloween-eve-falcon-9-launch/", "source": "SpaceTech", "date": "2026-10-30", "categoria": "Ciência"}];
         const ofertasKiwify = [
             { badge: "Destaque Patrocinado", titulo: "🚀 Método IA & Automação Lucrativa", desc: "Aprenda a construir sistemas automáticos na internet e escale resultados todos os dias.", url: "https://kiwify.app/bFEoJ38?afid=u7GyGPOM", cta: "Acessar Treinamento VIP &rarr;" },
             { badge: "Ferramenta Recomendada", titulo: "💎 Escale seus Resultados no Digital", desc: "O guia definitivo para transformar atenção e tecnologia em vendas recorrentes no piloto automático.", url: "https://pay.kiwify.com.br/YUDgPja?afid=yt5zIWrU", cta: "Desbloquear Oferta Especial &rarr;" },
@@ -453,7 +482,7 @@
             const btn = document.getElementById('theme-toggle-btn');
             const novo = htmlEl.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
             htmlEl.setAttribute('data-theme', novo);
-            btn.innerHTML = novo === 'dark' ? '🌙 Escuro' : '☀️ Claro';
+            btn.innerHTML = novo === 'dark' ? '🌙' : '☀️';
             localStorage.setItem('technews_theme', novo);
         }
 
@@ -486,7 +515,7 @@
         function renderizarLista(lista) {
             if (!lista || lista.length === 0) {
                 document.getElementById('hero-container').innerHTML = '';
-                document.getElementById('feed-container').innerHTML = '<div style="grid-column: 1 / -1; padding:3rem; text-align:center; color:var(--text-muted); background:var(--card-bg); border-radius:12px; border:1px solid var(--border);">🔍 Nenhuma notícia encontrada para este filtro no momento. Clique em "Mostrar Tudo" ou aguarde a próxima varredura!</div>';
+                document.getElementById('feed-container').innerHTML = '<div style="grid-column: 1 / -1; padding:2.5rem; text-align:center; color:var(--text-muted); background:var(--card-bg); border-radius:12px; border:1px solid var(--border);">🔍 Nenhuma notícia encontrada para este filtro no momento. Clique em "Tudo" ou aguarde a próxima varredura!</div>';
                 return;
             }
 
@@ -495,15 +524,15 @@
 
             document.getElementById('hero-container').innerHTML = `
                 <div class="hero-card">
-                    <img src="${hero.img}" alt="Destaque" onerror="this.src='https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80'">
+                    <img src="${hero.img}" alt="Destaque" referrerpolicy="no-referrer" onerror="this.src='https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80'">
                     <div class="hero-overlay">
                         <span class="badge-source">🔥 Manchete Principal • ${hero.source}</span>
                         <h1>${hero.title}</h1>
                         <p>${aplicarTeiaSEO(hero.desc)}</p>
                         <div class="hero-actions">
                             <button onclick="abrirReader(${heroIdx})" class="cta-btn">⚡ Síntese Executiva IA</button>
-                            <button onclick="falarNoticia(${heroIdx}, event)" class="btn-outline" style="background:rgba(0,0,0,0.65); color:#fff;">🔊 Ouvir</button>
-                            <a href="${hero.url}" target="_blank" rel="noopener noreferrer" class="btn-outline" style="background:rgba(255,255,255,0.12); color:#fff;">Fonte Oficial &rarr;</a>
+                            <button onclick="falarNoticia(${heroIdx}, event)" class="btn-outline" style="background:rgba(255,255,255,0.08); color:#fff;">🔊 Ouvir</button>
+                            <a href="${hero.url}" target="_blank" rel="noopener noreferrer" class="btn-outline" style="background:rgba(255,255,255,0.14); color:#fff;">Fonte Oficial &rarr;</a>
                         </div>
                     </div>
                 </div>
@@ -511,14 +540,14 @@
 
             let feedHtml = '';
             let adCount = 0;
-            lista.slice(1, 15).forEach((art, idx) => {
+            lista.slice(1, 16).forEach((art, idx) => {
                 const globalIdx = todasNoticias.indexOf(art);
                 const zapTexto = encodeURIComponent("🚨 Olha essa notícia no TechNews PRO: " + art.title + " - " + window.location.href);
                 feedHtml += `
                 <article class="news-card">
                     <div class="card-img-wrapper">
                         <span class="card-tag">${art.source}</span>
-                        <img src="${art.img}" alt="Capa" onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80'">
+                        <img src="${art.img}" alt="Capa" referrerpolicy="no-referrer" onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80'">
                         <div class="card-floating-btns">
                             <button class="audio-btn" onclick="falarNoticia(${globalIdx}, event)">🔊 Ouvir</button>
                             <a href="https://api.whatsapp.com/send?text=${zapTexto}" target="_blank" class="zap-btn" title="Compartilhar no WhatsApp">📲</a>
@@ -546,7 +575,7 @@
                     <div class="native-ad-card">
                         <span class="ad-badge">${oferta.badge}</span>
                         <h3 style="margin-bottom:0.6rem;">${oferta.titulo}</h3>
-                        <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:1.2rem;">${oferta.desc}</p>
+                        <p style="font-size:0.86rem; color:var(--text-muted); margin-bottom:1.1rem;">${oferta.desc}</p>
                         <a href="${oferta.url}" target="_blank" rel="noopener noreferrer" class="cta-btn" style="width: 100%; justify-content:center;">${oferta.cta}</a>
                     </div>
                     `;
@@ -594,11 +623,24 @@
             }
         });
 
-        setTimeout(function() {
+        const mensagensToast = [
+            "Lucas M. (SP) acabou de desbloquear o Treinamento VIP",
+            "Fernanda R. (RJ) acessou a Ferramenta Recomendada de IA",
+            "Mais de 140 leitores ativos no Terminal neste momento"
+        ];
+        let toastIdx = 0;
+        function dispararToastCiclo() {
             const toast = document.getElementById('social-proof-toast');
-            if (toast) toast.classList.add('show');
-            setTimeout(() => { if (toast) toast.classList.remove('show'); }, 6500);
-        }, 4000);
+            const txt = document.getElementById('toast-text');
+            if (toast && txt) {
+                txt.innerText = mensagensToast[toastIdx % mensagensToast.length];
+                toastIdx++;
+                toast.classList.add('show');
+                setTimeout(() => { toast.classList.remove('show'); }, 6000);
+            }
+        }
+        setTimeout(dispararToastCiclo, 4000);
+        setInterval(dispararToastCiclo, 28000);
 
         renderizarLista(todasNoticias);
     </script>

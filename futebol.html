@@ -9,151 +9,156 @@
     <title>Tabela do Brasileirão Série A Atualizada | G4, Z4 e Jogos | TechNews PRO</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
     <style>
-        body { background:#070b14; color:#f8fafc; font-family:'Inter',sans-serif; margin:0; line-height:1.6; }
-        header { background:#0f172a; padding:1rem 5%; border-bottom:1px solid rgba(255,255,255,0.08); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; }
-        .container { max-width:1200px; margin:2.5rem auto; padding:0 5%; }
-        table { width:100%; border-collapse:collapse; background:rgba(17,25,40,0.9); border-radius:14px; overflow:hidden; font-family:'JetBrains Mono',monospace; }
-        th { background:#03060c; color:#94a3b8; text-align:left; padding:14px 12px; font-size:0.8rem; text-transform:uppercase; }
-        footer { background:#03060c; color:#64748b; text-align:center; padding:3rem 5%; margin-top:4rem; border-top:1px solid rgba(255,255,255,0.08); }
+        * { box-sizing: border-box; }
+        body { background:#070b14; color:#f8fafc; font-family:'Inter',sans-serif; margin:0; line-height:1.6; overflow-x:hidden; }
+        header { background:#0f172a; padding:1rem 4%; border-bottom:1px solid rgba(255,255,255,0.08); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; }
+        .container { max-width:1200px; margin:2rem auto; padding:0 4%; }
+        .table-wrap { width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; border-radius:14px; border:1px solid rgba(255,255,255,0.08); }
+        table { width:100%; min-width:340px; border-collapse:collapse; background:rgba(17,25,40,0.9); font-family:'JetBrains Mono',monospace; font-size:0.86rem; }
+        th { background:#03060c; color:#94a3b8; text-align:left; padding:13px 11px; font-size:0.76rem; text-transform:uppercase; }
+        .ad-top { width:100%; overflow-x:auto; text-align:center; margin:1.2rem auto; padding:0 2%; }
+        footer { background:#03060c; color:#64748b; text-align:center; padding:2.5rem 4%; margin-top:4rem; border-top:1px solid rgba(255,255,255,0.08); }
     </style>
 </head>
 <body>
     <header>
-        <a href="index.html" style="font-size:1.8rem; font-weight:900; color:#fff; text-decoration:none;">TechNews<span style="color:#ef4444;">.PRO</span></a>
-        <div style="display:flex; gap:14px; align-items:center; flex-wrap:wrap;">
-            <a href="index.html" style="color:#94a3b8; text-decoration:none; font-weight:700; font-size:0.88rem;">&larr; Voltar ao Portal</a>
-            <a href="cotacao-agora.html" style="color:#10b981; text-decoration:none; font-weight:700; font-size:0.88rem;">📊 Cotações</a>
-            <a href="https://kiwify.app/bFEoJ38?afid=u7GyGPOM" target="_blank" style="background:#ef4444; color:#fff; padding:0.55rem 1.1rem; border-radius:8px; font-weight:800; text-decoration:none; font-size:0.85rem;">💎 Área VIP</a>
+        <a href="index.html" style="font-size:1.6rem; font-weight:900; color:#fff; text-decoration:none;">TechNews<span style="color:#ef4444;">.PRO</span></a>
+        <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+            <a href="index.html" style="color:#94a3b8; text-decoration:none; font-weight:700; font-size:0.85rem;">&larr; Voltar ao Portal</a>
+            <a href="cotacao-agora.html" style="color:#10b981; text-decoration:none; font-weight:700; font-size:0.85rem;">📊 Cotações</a>
+            <a href="https://kiwify.app/bFEoJ38?afid=u7GyGPOM" target="_blank" style="background:#ef4444; color:#fff; padding:0.5rem 1rem; border-radius:8px; font-weight:800; text-decoration:none; font-size:0.82rem;">💎 Área VIP</a>
         </div>
     </header>
 
-    <div style="text-align:center; margin:1.5rem auto;">
+    <div class="ad-top">
         <script>atOptions={'key':'06959dfe796ac17610a3027d9ede544f','format':'iframe','height':90,'width':728,'params':{}};</script>
         <script src="https://bicea.org/22/06959dfe796ac17610a3027d9ede544f"></script>
     </div>
 
     <main class="container">
-        <span style="background:rgba(16,185,129,0.15); color:#10b981; border:1px solid #10b981; padding:4px 12px; border-radius:20px; font-size:0.75rem; font-weight:800;">⚽ CENTRAL ESPORTIVA OFICIAL</span>
-        <h1 style="font-size:2.3rem; margin:0.8rem 0; font-weight:900;">Classificação do Brasileirão Série A — Tempo Real</h1>
-        <p style="color:#94a3b8; margin-bottom:2rem;">Acompanhe a disputa pelo título, vaga na Libertadores (G4) e luta contra o rebaixamento (Z4). Atualizado em: 31/10/2026 às 11:23.</p>
-        <table>
-            <thead>
-                <tr><th>Posição</th><th>Clube</th><th>Pontos</th><th>Jogos</th><th>Vitórias</th></tr>
-            </thead>
-            <tbody>
+        <span style="background:rgba(16,185,129,0.15); color:#10b981; border:1px solid #10b981; padding:4px 12px; border-radius:20px; font-size:0.72rem; font-weight:800;">⚽ CENTRAL ESPORTIVA OFICIAL</span>
+        <h1 style="font-size:clamp(1.5rem, 4vw, 2.3rem); margin:0.8rem 0; font-weight:900;">Classificação do Brasileirão Série A — Tempo Real</h1>
+        <p style="color:#94a3b8; margin-bottom:1.8rem; font-size:0.92rem;">Acompanhe a disputa pelo título, vaga na Libertadores (G4) e luta contra o rebaixamento (Z4). Atualizado em: 31/10/2026 às 14:35.</p>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Pos</th><th>Clube</th><th>PTS</th><th>J</th><th>VIT</th></tr>
+                </thead>
+                <tbody>
         <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
-            <td style="padding:12px; font-weight:900; color:#10b981;">1º</td>
-            <td style="padding:12px; font-weight:700;">Palmeiras</td>
-            <td style="padding:12px; font-weight:900; color:#00f2fe;">70</td>
-            <td style="padding:12px; color:#94a3b8;">34</td>
-            <td style="padding:12px; color:#94a3b8;">21</td>
+            <td style="padding:11px; font-weight:900; color:#10b981;">1º</td>
+            <td style="padding:11px; font-weight:700;">Palmeiras</td>
+            <td style="padding:11px; font-weight:900; color:#00f2fe;">70</td>
+            <td style="padding:11px; color:#94a3b8;">34</td>
+            <td style="padding:11px; color:#94a3b8;">21</td>
         </tr>
         
         <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
-            <td style="padding:12px; font-weight:900; color:#10b981;">2º</td>
-            <td style="padding:12px; font-weight:700;">Flamengo</td>
-            <td style="padding:12px; font-weight:900; color:#00f2fe;">68</td>
-            <td style="padding:12px; color:#94a3b8;">34</td>
-            <td style="padding:12px; color:#94a3b8;">20</td>
+            <td style="padding:11px; font-weight:900; color:#10b981;">2º</td>
+            <td style="padding:11px; font-weight:700;">Flamengo</td>
+            <td style="padding:11px; font-weight:900; color:#00f2fe;">68</td>
+            <td style="padding:11px; color:#94a3b8;">34</td>
+            <td style="padding:11px; color:#94a3b8;">20</td>
         </tr>
         
         <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
-            <td style="padding:12px; font-weight:900; color:#10b981;">3º</td>
-            <td style="padding:12px; font-weight:700;">Botafogo</td>
-            <td style="padding:12px; font-weight:900; color:#00f2fe;">67</td>
-            <td style="padding:12px; color:#94a3b8;">34</td>
-            <td style="padding:12px; color:#94a3b8;">20</td>
+            <td style="padding:11px; font-weight:900; color:#10b981;">3º</td>
+            <td style="padding:11px; font-weight:700;">Botafogo</td>
+            <td style="padding:11px; font-weight:900; color:#00f2fe;">67</td>
+            <td style="padding:11px; color:#94a3b8;">34</td>
+            <td style="padding:11px; color:#94a3b8;">20</td>
         </tr>
         
         <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
-            <td style="padding:12px; font-weight:900; color:#10b981;">4º</td>
-            <td style="padding:12px; font-weight:700;">Fortaleza</td>
-            <td style="padding:12px; font-weight:900; color:#00f2fe;">64</td>
-            <td style="padding:12px; color:#94a3b8;">34</td>
-            <td style="padding:12px; color:#94a3b8;">18</td>
+            <td style="padding:11px; font-weight:900; color:#10b981;">4º</td>
+            <td style="padding:11px; font-weight:700;">Fortaleza</td>
+            <td style="padding:11px; font-weight:900; color:#00f2fe;">64</td>
+            <td style="padding:11px; color:#94a3b8;">34</td>
+            <td style="padding:11px; color:#94a3b8;">18</td>
         </tr>
         
         <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
-            <td style="padding:12px; font-weight:900; color:#f8fafc;">5º</td>
-            <td style="padding:12px; font-weight:700;">Internacional</td>
-            <td style="padding:12px; font-weight:900; color:#00f2fe;">62</td>
-            <td style="padding:12px; color:#94a3b8;">34</td>
-            <td style="padding:12px; color:#94a3b8;">17</td>
+            <td style="padding:11px; font-weight:900; color:#f8fafc;">5º</td>
+            <td style="padding:11px; font-weight:700;">Internacional</td>
+            <td style="padding:11px; font-weight:900; color:#00f2fe;">62</td>
+            <td style="padding:11px; color:#94a3b8;">34</td>
+            <td style="padding:11px; color:#94a3b8;">17</td>
         </tr>
         
         <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
-            <td style="padding:12px; font-weight:900; color:#f8fafc;">6º</td>
-            <td style="padding:12px; font-weight:700;">São Paulo</td>
-            <td style="padding:12px; font-weight:900; color:#00f2fe;">59</td>
-            <td style="padding:12px; color:#94a3b8;">34</td>
-            <td style="padding:12px; color:#94a3b8;">17</td>
+            <td style="padding:11px; font-weight:900; color:#f8fafc;">6º</td>
+            <td style="padding:11px; font-weight:700;">São Paulo</td>
+            <td style="padding:11px; font-weight:900; color:#00f2fe;">59</td>
+            <td style="padding:11px; color:#94a3b8;">34</td>
+            <td style="padding:11px; color:#94a3b8;">17</td>
         </tr>
         
         <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
-            <td style="padding:12px; font-weight:900; color:#f8fafc;">7º</td>
-            <td style="padding:12px; font-weight:700;">Cruzeiro</td>
-            <td style="padding:12px; font-weight:900; color:#00f2fe;">52</td>
-            <td style="padding:12px; color:#94a3b8;">34</td>
-            <td style="padding:12px; color:#94a3b8;">14</td>
+            <td style="padding:11px; font-weight:900; color:#f8fafc;">7º</td>
+            <td style="padding:11px; font-weight:700;">Cruzeiro</td>
+            <td style="padding:11px; font-weight:900; color:#00f2fe;">52</td>
+            <td style="padding:11px; color:#94a3b8;">34</td>
+            <td style="padding:11px; color:#94a3b8;">14</td>
         </tr>
         
         <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
-            <td style="padding:12px; font-weight:900; color:#f8fafc;">8º</td>
-            <td style="padding:12px; font-weight:700;">Bahia</td>
-            <td style="padding:12px; font-weight:900; color:#00f2fe;">50</td>
-            <td style="padding:12px; color:#94a3b8;">34</td>
-            <td style="padding:12px; color:#94a3b8;">14</td>
+            <td style="padding:11px; font-weight:900; color:#f8fafc;">8º</td>
+            <td style="padding:11px; font-weight:700;">Bahia</td>
+            <td style="padding:11px; font-weight:900; color:#00f2fe;">50</td>
+            <td style="padding:11px; color:#94a3b8;">34</td>
+            <td style="padding:11px; color:#94a3b8;">14</td>
         </tr>
         
         <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
-            <td style="padding:12px; font-weight:900; color:#f8fafc;">9º</td>
-            <td style="padding:12px; font-weight:700;">Corinthians</td>
-            <td style="padding:12px; font-weight:900; color:#00f2fe;">47</td>
-            <td style="padding:12px; color:#94a3b8;">34</td>
-            <td style="padding:12px; color:#94a3b8;">12</td>
+            <td style="padding:11px; font-weight:900; color:#f8fafc;">9º</td>
+            <td style="padding:11px; font-weight:700;">Corinthians</td>
+            <td style="padding:11px; font-weight:900; color:#00f2fe;">47</td>
+            <td style="padding:11px; color:#94a3b8;">34</td>
+            <td style="padding:11px; color:#94a3b8;">12</td>
         </tr>
         
         <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
-            <td style="padding:12px; font-weight:900; color:#f8fafc;">10º</td>
-            <td style="padding:12px; font-weight:700;">Vasco da Gama</td>
-            <td style="padding:12px; font-weight:900; color:#00f2fe;">45</td>
-            <td style="padding:12px; color:#94a3b8;">34</td>
-            <td style="padding:12px; color:#94a3b8;">13</td>
+            <td style="padding:11px; font-weight:900; color:#f8fafc;">10º</td>
+            <td style="padding:11px; font-weight:700;">Vasco da Gama</td>
+            <td style="padding:11px; font-weight:900; color:#00f2fe;">45</td>
+            <td style="padding:11px; color:#94a3b8;">34</td>
+            <td style="padding:11px; color:#94a3b8;">13</td>
         </tr>
         
         <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
-            <td style="padding:12px; font-weight:900; color:#ef4444;">17º</td>
-            <td style="padding:12px; font-weight:700;">Criciúma</td>
-            <td style="padding:12px; font-weight:900; color:#00f2fe;">38</td>
-            <td style="padding:12px; color:#94a3b8;">34</td>
-            <td style="padding:12px; color:#94a3b8;">9</td>
+            <td style="padding:11px; font-weight:900; color:#ef4444;">17º</td>
+            <td style="padding:11px; font-weight:700;">Criciúma</td>
+            <td style="padding:11px; font-weight:900; color:#00f2fe;">38</td>
+            <td style="padding:11px; color:#94a3b8;">34</td>
+            <td style="padding:11px; color:#94a3b8;">9</td>
         </tr>
         
         <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
-            <td style="padding:12px; font-weight:900; color:#ef4444;">18º</td>
-            <td style="padding:12px; font-weight:700;">Red Bull Bragantino</td>
-            <td style="padding:12px; font-weight:900; color:#00f2fe;">37</td>
-            <td style="padding:12px; color:#94a3b8;">34</td>
-            <td style="padding:12px; color:#94a3b8;">8</td>
+            <td style="padding:11px; font-weight:900; color:#ef4444;">18º</td>
+            <td style="padding:11px; font-weight:700;">Red Bull Bragantino</td>
+            <td style="padding:11px; font-weight:900; color:#00f2fe;">37</td>
+            <td style="padding:11px; color:#94a3b8;">34</td>
+            <td style="padding:11px; color:#94a3b8;">8</td>
         </tr>
         
         <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
-            <td style="padding:12px; font-weight:900; color:#ef4444;">19º</td>
-            <td style="padding:12px; font-weight:700;">Cuiabá</td>
-            <td style="padding:12px; font-weight:900; color:#00f2fe;">30</td>
-            <td style="padding:12px; color:#94a3b8;">34</td>
-            <td style="padding:12px; color:#94a3b8;">6</td>
+            <td style="padding:11px; font-weight:900; color:#ef4444;">19º</td>
+            <td style="padding:11px; font-weight:700;">Cuiabá</td>
+            <td style="padding:11px; font-weight:900; color:#00f2fe;">30</td>
+            <td style="padding:11px; color:#94a3b8;">34</td>
+            <td style="padding:11px; color:#94a3b8;">6</td>
         </tr>
         
         <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
-            <td style="padding:12px; font-weight:900; color:#ef4444;">20º</td>
-            <td style="padding:12px; font-weight:700;">Atlético-GO</td>
-            <td style="padding:12px; font-weight:900; color:#00f2fe;">26</td>
-            <td style="padding:12px; color:#94a3b8;">34</td>
-            <td style="padding:12px; color:#94a3b8;">6</td>
+            <td style="padding:11px; font-weight:900; color:#ef4444;">20º</td>
+            <td style="padding:11px; font-weight:700;">Atlético-GO</td>
+            <td style="padding:11px; font-weight:900; color:#00f2fe;">26</td>
+            <td style="padding:11px; color:#94a3b8;">34</td>
+            <td style="padding:11px; color:#94a3b8;">6</td>
         </tr>
         </tbody>
-        </table>
+            </table>
+        </div>
     </main>
     <footer>
         <p><strong>TechNews.PRO</strong> &copy; 2026 — Central de Esportes & Estatísticas.</p>
