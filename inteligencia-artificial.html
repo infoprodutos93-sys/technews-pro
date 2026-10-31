@@ -4,35 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="no-referrer">
-    <meta name="description" content="Hub Oficial de Inteligência Artificial: Guia definitivo, ferramentas generativas, automação e notícias em tempo real sobre IA.">
+    <meta name="description" content="Hub Oficial 3D de Inteligência Artificial: Guia definitivo, ferramentas generativas, automação e notícias em tempo real sobre IA.">
     <meta name="robots" content="max-image-preview:large, index, follow">
     <link rel="canonical" href="https://infoprodutos93-sys.github.io/technews-pro/inteligencia-artificial.html">
-    <title>Inteligência Artificial (Hub Oficial) | Guia, Ferramentas & Notícias | TechNews PRO</title>
+    <title>Inteligência Artificial (Hub 3D WebGL) | Guia, Ferramentas & Notícias | TechNews PRO</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-    <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "name": "TechNews PRO", "url": "https://infoprodutos93-sys.github.io/technews-pro/", "description": "Terminal em tempo real de notícias sobre Inteligência Artificial, Economia, Política e Esportes."}, {"@type": "NewsArticle", "headline": "João Gomes e Ary Mirelle curtem jantar romântico com Sthe Matos e Kevi Jonny", "description": "O casal está em Barra de São Miguel acompanhados de Kevi Jonny e Sthe Matos O casal está em Barra de São Miguel acompanhados de Kevi Jonny e Sthe Matos Antes da maratona de shows do período junino, João Gomes e Ary Mirelle...", "image": ["https://images.metroimg.com/2023/05/31185334/Design-sem-nome-2023-05-31T185325.578.jpg"], "datePublished": "2026-10-31T20:47:18Z", "dateModified": "2026-10-31T20:47:18Z", "author": {"@type": "Organization", "name": "TechNews PRO"}, "publisher": {"@type": "Organization", "name": "TechNews PRO"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Qual a cotação do Dólar, Euro e Bitcoin hoje?", "acceptedAnswer": {"@type": "Answer", "text": "Hoje no terminal TechNews PRO, o Dólar comercial opera a R$ 5,70, o Euro está cotado a R$ 6,18 e o Bitcoin negocia em R$ 420.000."}}, {"@type": "Question", "name": "Qual a principal notícia do momento no radar TechNews PRO?", "acceptedAnswer": {"@type": "Answer", "text": "João Gomes e Ary Mirelle curtem jantar romântico com Sthe Matos e Kevi Jonny — O casal está em Barra de São Miguel acompanhados de Kevi Jonny e Sthe Matos O casal está em Barra de São Miguel acompanhados de Kevi Jonny e Sthe Matos Antes da maratona de shows do período junino, João Gomes e Ary Mirelle..."}}]}]}</script>
+    <!-- CDN THREE.JS PARA REDE NEURAL INTERATIVA WEBGL -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "name": "TechNews PRO", "url": "https://infoprodutos93-sys.github.io/technews-pro/", "description": "Terminal em tempo real de notícias sobre Inteligência Artificial, Economia, Política e Esportes."}, {"@type": "NewsArticle", "headline": "Planning Poker em chamadas do Teams, Meet ou Slack: como estimar sem atrito", "description": "Como simplificar a dinâmica de estimativa de histórias de usuário em reuniões remotas sem exigir cadastro ou licenças por assento.", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fxuqrfrmebqsh5bm6f60l.png"], "datePublished": "2026-10-31T20:44:48-03:00", "dateModified": "2026-10-31T20:44:48-03:00", "author": {"@type": "Organization", "name": "TechNews PRO"}, "publisher": {"@type": "Organization", "name": "TechNews PRO"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Qual a cotação do Dólar, Euro e Bitcoin hoje?", "acceptedAnswer": {"@type": "Answer", "text": "Hoje no terminal TechNews PRO, o Dólar comercial opera a R$ 5,70, o Euro está cotado a R$ 6,18 e o Bitcoin negocia em R$ 420.000."}}, {"@type": "Question", "name": "Qual a principal notícia do momento no radar TechNews PRO?", "acceptedAnswer": {"@type": "Answer", "text": "Planning Poker em chamadas do Teams, Meet ou Slack: como estimar sem atrito — Como simplificar a dinâmica de estimativa de histórias de usuário em reuniões remotas sem exigir cadastro ou licenças por assento."}}]}]}</script>
     <style>
         * { box-sizing: border-box; }
-        body { background:#070b14; color:#f8fafc; font-family:'Inter',sans-serif; margin:0; line-height:1.65; overflow-x:hidden; }
-        .ticker { background:#03060c; padding:0.5rem 4%; font-size:0.78rem; font-family:'JetBrains Mono',monospace; border-bottom:1px solid rgba(255,255,255,0.08); display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+        body { background:#050811; color:#f8fafc; font-family:'Inter',sans-serif; margin:0; line-height:1.65; overflow-x:hidden; position:relative; }
+        #neural-webgl-canvas { position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:0; pointer-events:none; opacity:0.85; }
+        .ticker { position:relative; z-index:2; background:rgba(3,6,12,0.9); padding:0.5rem 4%; font-size:0.78rem; font-family:'JetBrains Mono',monospace; border-bottom:1px solid rgba(255,255,255,0.08); display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; }
         .up { color:#10b981; font-weight:700; } .down { color:#ef4444; font-weight:700; }
-        header { background:rgba(15,23,42,0.85); backdrop-filter:blur(12px); padding:1rem 4%; border-bottom:1px solid rgba(255,255,255,0.08); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; }
-        .container { max-width:1360px; margin:2rem auto; padding:0 4%; }
-        .pillar-box { background:linear-gradient(145deg, rgba(59,130,246,0.14), rgba(15,23,42,0.92)); border:1px solid rgba(59,130,246,0.4); border-radius:16px; padding:clamp(1.3rem, 4vw, 2.5rem); margin-bottom:2.2rem; }
+        header { position:relative; z-index:2; background:rgba(15,23,42,0.82); backdrop-filter:blur(14px); padding:1rem 4%; border-bottom:1px solid rgba(255,255,255,0.08); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; }
+        .container { position:relative; z-index:2; max-width:1360px; margin:2rem auto; padding:0 4%; }
+        .pillar-box { background:linear-gradient(145deg, rgba(15,23,42,0.88), rgba(7,11,20,0.92)); backdrop-filter:blur(12px); border:1px solid rgba(0,242,254,0.4); border-radius:18px; padding:clamp(1.3rem, 4vw, 2.5rem); margin-bottom:2.2rem; box-shadow:0 20px 50px rgba(0,0,0,0.5); }
         .grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:1.5rem; }
-        .ad-top { width:100%; overflow-x:auto; text-align:center; margin:1.2rem auto; padding:0 2%; }
-        footer { background:#03060c; color:#64748b; text-align:center; padding:2.5rem 4%; margin-top:4rem; border-top:1px solid rgba(255,255,255,0.08); }
+        .ad-top { position:relative; z-index:2; width:100%; overflow-x:auto; text-align:center; margin:1.2rem auto; padding:0 2%; }
+        footer { position:relative; z-index:2; background:#03060c; color:#64748b; text-align:center; padding:2.5rem 4%; margin-top:4rem; border-top:1px solid rgba(255,255,255,0.08); }
     </style>
 </head>
 <body>
+    <!-- CANVAS WEBGL THREE.JS (POINTER-EVENTS: NONE PARA NÃO BLOQUEAR LEITURA) -->
+    <canvas id="neural-webgl-canvas"></canvas>
+
     <div class="ticker">
         <div style="overflow-x:auto; white-space:nowrap; max-width:100%;"><span class="market-item">💵 Dólar: <strong>R$ 5,70</strong> <span class="up">(+0.15%)</span></span> • <span class="market-item">💶 Euro: <strong>R$ 6,18</strong> <span class="up">(+0.10%)</span></span> • <span class="market-item">₿ Bitcoin: <strong>R$ 420.000</strong> <span class="up">(+1.25%)</span></span></div>
-        <div>⚡ Atualizado: 31/10/2026 às 20:47</div>
+        <div>⚡ Atualizado: 31/10/2026 às 20:44 (BRT)</div>
     </div>
     <header>
         <a href="index.html" style="font-size:1.6rem; font-weight:900; color:#fff; text-decoration:none;">TechNews<span style="color:#ef4444;">.PRO</span></a>
         <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
             <a href="index.html" style="color:#94a3b8; text-decoration:none; font-weight:700; font-size:0.85rem;">&larr; Radar Principal</a>
             <a href="cotacao-agora.html" style="color:#10b981; text-decoration:none; font-weight:700; font-size:0.85rem;">📊 Cotações</a>
+            <a href="api/v1/noticias.json" target="_blank" style="color:#00f2fe; text-decoration:none; font-weight:700; font-size:0.85rem;">🔌 API JSON</a>
             <a href="https://pay.kiwify.com.br/TO0iLa6" target="_blank" style="background:#ef4444; color:#fff; padding:0.5rem 1rem; border-radius:8px; font-weight:800; text-decoration:none; font-size:0.82rem;">💎 Área VIP</a>
         </div>
     </header>
@@ -44,9 +51,9 @@
 
     <main class="container">
         <section class="pillar-box">
-            <span style="background:#3b82f6; color:#fff; padding:4px 12px; border-radius:20px; font-size:0.7rem; font-weight:900; text-transform:uppercase;">Topic Cluster • Enciclopédia & Hub Oficial</span>
+            <span style="background:linear-gradient(90deg,#3b82f6,#00f2fe); color:#03060c; padding:4px 12px; border-radius:20px; font-size:0.7rem; font-weight:900; text-transform:uppercase;">WebGL Neural Cluster • Enciclopédia & Hub Oficial</span>
             <h1 style="font-size:clamp(1.5rem, 4vw, 2.3rem); margin:0.8rem 0; font-weight:900;">Inteligência Artificial em 2026: O Guia Central de Automação e Disrupção</h1>
-            <p style="color:#cbd5e1; font-size:0.95rem; margin-bottom:1rem;">A <strong>Inteligência Artificial (IA)</strong> deixou de ser uma promessa futurista para se tornar a infraestrutura central da economia global. De Modelos de Linguagem de Grande Escala (LLMs) a agentes autônomos capazes de estruturar ofertas e negociar ativos no <a href="cotacao-agora.html" style="color:#00f2fe;">mercado financeiro</a>, dominar a IA é hoje o maior diferencial competitivo.</p>
+            <p style="color:#cbd5e1; font-size:0.95rem; margin-bottom:1rem;">A <strong>Inteligência Artificial (IA)</strong> deixou de ser uma promessa futurista para se tornar a infraestrutura central da economia global. Mova o cursor (ou toque na tela) para interagir com a malha neural 3D em tempo real enquanto explora os relatórios mais recentes do setor.</p>
             <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:1.3rem;">
                 <a href="https://pay.kiwify.com.br/BZcBEAI?afid=WXidNwGv" target="_blank" style="background:#ef4444; color:#fff; padding:0.7rem 1.2rem; border-radius:8px; font-weight:800; text-decoration:none; font-size:0.86rem;">🤖 Conhecer LUMI — Ofertas com IA &rarr;</a>
                 <a href="https://pay.kiwify.com.br/jKot3Dn?afid=VDZB2ind" target="_blank" style="background:#3b82f6; color:#fff; padding:0.7rem 1.2rem; border-radius:8px; font-weight:800; text-decoration:none; font-size:0.86rem;">🔥 Método Posts Virais © &rarr;</a>
@@ -54,92 +61,164 @@
             </div>
         </section>
 
-        <h2 style="font-size:1.3rem; margin-bottom:1.4rem; border-left:4px solid #ef4444; padding-left:12px;">Últimas Notícias e Descobertas de Inteligência Artificial</h2>
+        <h2 style="font-size:1.3rem; margin-bottom:1.4rem; border-left:4px solid #00f2fe; padding-left:12px;">Últimas Notícias e Descobertas de Inteligência Artificial</h2>
         <div class="grid">
-        <article style="background:rgba(17,25,40,0.88); border:1px solid rgba(255,255,255,0.08); border-radius:14px; overflow:hidden; display:flex; flex-direction:column;">
-            <img src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F7mizvhzw7ziongg9l7ro.png" alt="Como reduzir o tempo da Sprint Planning pela metade com estimativas em tempo real" referrerpolicy="no-referrer" style="width:100%; height:190px; object-fit:cover;" onerror="this.src='https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=85'">
+        <article style="background:rgba(17,25,40,0.86); backdrop-filter:blur(10px); border:1px solid rgba(0,242,254,0.18); border-radius:14px; overflow:hidden; display:flex; flex-direction:column; position:relative; z-index:2;">
+            <img src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fxuqrfrmebqsh5bm6f60l.png" alt="Planning Poker em chamadas do Teams, Meet ou Slack: como estimar sem atrito" referrerpolicy="no-referrer" style="width:100%; height:190px; object-fit:cover;" onerror="this.src='https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=85'">
             <div style="padding:1.3rem; display:flex; flex-direction:column; flex-grow:1;">
-                <span style="font-size:0.72rem; color:#ef4444; font-weight:800; text-transform:uppercase;">Dev.to Brasil • Oct 19</span>
-                <h3 style="font-size:1.1rem; margin:0.5rem 0 0.8rem 0; color:#f8fafc;">Como reduzir o tempo da Sprint Planning pela metade com estimativas em tempo real</h3>
-                <p style="font-size:0.86rem; color:#94a3b8; margin-bottom:1.2rem; flex-grow:1;">Dicas práticas e decisões de arquitetura em Next.js para transformar reuniões de estimativa arrastadas em alinhamentos técnicos ágeis e eficientes.</p>
-                <a href="https://dev.to/geekecia/como-reduzir-o-tempo-da-sprint-planning-pela-metade-com-estimativas-em-tempo-real-2a6m" target="_blank" rel="noopener noreferrer" style="background:#ef4444; color:#fff; text-align:center; padding:0.65rem; border-radius:8px; font-weight:700; font-size:0.82rem; text-decoration:none;">Ler Relatório Completo &rarr;</a>
+                <span style="font-size:0.72rem; color:#00f2fe; font-weight:800; text-transform:uppercase;">Dev.to Brasil • Oct 23</span>
+                <h3 style="font-size:1.1rem; margin:0.5rem 0 0.8rem 0; color:#f8fafc;">Planning Poker em chamadas do Teams, Meet ou Slack: como estimar sem atrito</h3>
+                <p style="font-size:0.86rem; color:#cbd5e1; margin-bottom:1.2rem; flex-grow:1;">Como simplificar a dinâmica de estimativa de histórias de usuário em reuniões remotas sem exigir cadastro ou licenças por assento.</p>
+                <a href="https://dev.to/geekecia/planning-poker-em-chamadas-do-teams-meet-ou-slack-como-estimar-sem-atrito-180d" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg,#ef4444,#b91c1c); color:#fff; text-align:center; padding:0.65rem; border-radius:8px; font-weight:700; font-size:0.82rem; text-decoration:none;">Ler Relatório Completo &rarr;</a>
             </div>
         </article>
         
-        <article style="background:rgba(17,25,40,0.88); border:1px solid rgba(255,255,255,0.08); border-radius:14px; overflow:hidden; display:flex; flex-direction:column;">
-            <img src="https://images.metroimg.com/2023/05/31152902/Design-sem-nome-2023-05-31T152810.884.jpg" alt="Virginia elege vestido luxuoso para festa de Maria Alice. Saiba valor!" referrerpolicy="no-referrer" style="width:100%; height:190px; object-fit:cover;" onerror="this.src='https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=85'">
+        <article style="background:rgba(17,25,40,0.86); backdrop-filter:blur(10px); border:1px solid rgba(0,242,254,0.18); border-radius:14px; overflow:hidden; display:flex; flex-direction:column; position:relative; z-index:2;">
+            <img src="https://images.metroimg.com/2026/09/foto-lula-salvaor-scaled.jpg" alt="Na Bahia, Lula diz a aliados estar preocupado com crise no STF" referrerpolicy="no-referrer" style="width:100%; height:190px; object-fit:cover;" onerror="this.src='https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=85'">
             <div style="padding:1.3rem; display:flex; flex-direction:column; flex-grow:1;">
-                <span style="font-size:0.72rem; color:#ef4444; font-weight:800; text-transform:uppercase;">Coluna Famosos • Hoje</span>
-                <h3 style="font-size:1.1rem; margin:0.5rem 0 0.8rem 0; color:#f8fafc;">Virginia elege vestido luxuoso para festa de Maria Alice. Saiba valor!</h3>
-                <p style="font-size:0.86rem; color:#94a3b8; margin-bottom:1.2rem; flex-grow:1;">Além de ser um vestido repleto de detalhes sutis, a peça escolhida por Virginia segue a tendência do momento, o Whitecore Além de ser um vestido repleto de detalhes sutis, a peça escolhida por Virginia segue a tendência do...</p>
-                <a href="https://www.metropoles.com/colunas/leo-dias/virginia-elege-vestido-luxuoso-para-festa-de-maria-alice-saiba-valor" target="_blank" rel="noopener noreferrer" style="background:#ef4444; color:#fff; text-align:center; padding:0.65rem; border-radius:8px; font-weight:700; font-size:0.82rem; text-decoration:none;">Ler Relatório Completo &rarr;</a>
+                <span style="font-size:0.72rem; color:#00f2fe; font-weight:800; text-transform:uppercase;">Metrópoles Política • Hoje</span>
+                <h3 style="font-size:1.1rem; margin:0.5rem 0 0.8rem 0; color:#f8fafc;">Na Bahia, Lula diz a aliados estar preocupado com crise no STF</h3>
+                <p style="font-size:0.86rem; color:#cbd5e1; margin-bottom:1.2rem; flex-grow:1;">O presidente Lula participou de carreata em Salvador nesta terça-feira junto aos candidatos do PT ao Senado e ao Governo do estado O presidente Lula participou de carreata em Salvador nesta terça-feira junto aos candidatos do...</p>
+                <a href="https://www.metropoles.com/brasil/na-bahia-lula-diz-a-aliados-estar-preocupado-com-crise-no-stf" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg,#ef4444,#b91c1c); color:#fff; text-align:center; padding:0.65rem; border-radius:8px; font-weight:700; font-size:0.82rem; text-decoration:none;">Ler Relatório Completo &rarr;</a>
             </div>
         </article>
         
-        <article style="background:rgba(17,25,40,0.88); border:1px solid rgba(255,255,255,0.08); border-radius:14px; overflow:hidden; display:flex; flex-direction:column;">
+        <article style="background:rgba(17,25,40,0.86); backdrop-filter:blur(10px); border:1px solid rgba(0,242,254,0.18); border-radius:14px; overflow:hidden; display:flex; flex-direction:column; position:relative; z-index:2;">
             <img src="https://images.metroimg.com/2022/08/09094552/Gugu-capa-1.jpg" alt="Filhos de Gugu divergem sobre união do pai com Rose Miriam" referrerpolicy="no-referrer" style="width:100%; height:190px; object-fit:cover;" onerror="this.src='https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=85'">
             <div style="padding:1.3rem; display:flex; flex-direction:column; flex-grow:1;">
-                <span style="font-size:0.72rem; color:#ef4444; font-weight:800; text-transform:uppercase;">Coluna Famosos • Hoje</span>
+                <span style="font-size:0.72rem; color:#00f2fe; font-weight:800; text-transform:uppercase;">Coluna Famosos • Hoje</span>
                 <h3 style="font-size:1.1rem; margin:0.5rem 0 0.8rem 0; color:#f8fafc;">Filhos de Gugu divergem sobre união do pai com Rose Miriam</h3>
-                <p style="font-size:0.86rem; color:#94a3b8; margin-bottom:1.2rem; flex-grow:1;">Trechos do processo judicial mostram uma discussão entre os filhos do apresentador sobre o reconhecimento da união estável dos pais Trechos do processo judicial mostram uma discussão entre os filhos do apresentador sobre o...</p>
-                <a href="https://www.metropoles.com/colunas/leo-dias/filhos-de-gugu-divergem-sobre-uniao-do-pai-com-rose-miriam" target="_blank" rel="noopener noreferrer" style="background:#ef4444; color:#fff; text-align:center; padding:0.65rem; border-radius:8px; font-weight:700; font-size:0.82rem; text-decoration:none;">Ler Relatório Completo &rarr;</a>
+                <p style="font-size:0.86rem; color:#cbd5e1; margin-bottom:1.2rem; flex-grow:1;">Trechos do processo judicial mostram uma discussão entre os filhos do apresentador sobre o reconhecimento da união estável dos pais Trechos do processo judicial mostram uma discussão entre os filhos do apresentador sobre o...</p>
+                <a href="https://www.metropoles.com/colunas/leo-dias/filhos-de-gugu-divergem-sobre-uniao-do-pai-com-rose-miriam" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg,#ef4444,#b91c1c); color:#fff; text-align:center; padding:0.65rem; border-radius:8px; font-weight:700; font-size:0.82rem; text-decoration:none;">Ler Relatório Completo &rarr;</a>
             </div>
         </article>
         
-        <article style="background:rgba(17,25,40,0.88); border:1px solid rgba(255,255,255,0.08); border-radius:14px; overflow:hidden; display:flex; flex-direction:column;">
-            <img src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flgl5tv2oae3ec09v8apt.png" alt="Story Points vs Horas: por que o debate de estimativa se perde e como o consenso real resolve" referrerpolicy="no-referrer" style="width:100%; height:190px; object-fit:cover;" onerror="this.src='https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=85'">
-            <div style="padding:1.3rem; display:flex; flex-direction:column; flex-grow:1;">
-                <span style="font-size:0.72rem; color:#ef4444; font-weight:800; text-transform:uppercase;">Dev.to Brasil • Oct 27</span>
-                <h3 style="font-size:1.1rem; margin:0.5rem 0 0.8rem 0; color:#f8fafc;">Story Points vs Horas: por que o debate de estimativa se perde e como o consenso real resolve</h3>
-                <p style="font-size:0.86rem; color:#94a3b8; margin-bottom:1.2rem; flex-grow:1;">Por que times perdem tanto tempo debatendo números em Sprints e como focar em divergências técnicas acelera as cerimônias ágeis.</p>
-                <a href="https://dev.to/geekecia/story-points-vs-horas-por-que-o-debate-de-estimativa-se-perde-e-como-o-consenso-real-resolve-51m1" target="_blank" rel="noopener noreferrer" style="background:#ef4444; color:#fff; text-align:center; padding:0.65rem; border-radius:8px; font-weight:700; font-size:0.82rem; text-decoration:none;">Ler Relatório Completo &rarr;</a>
-            </div>
-        </article>
-        
-        <article style="background:rgba(17,25,40,0.88); border:1px solid rgba(255,255,255,0.08); border-radius:14px; overflow:hidden; display:flex; flex-direction:column;">
-            <img src="https://www.nasaspaceflight.com/wp-content/uploads/2026/10/Booster-22-Static-fire-scaled.jpg" alt="SpaceX conclui três incêndios estáticos em três dias para o voo 15" referrerpolicy="no-referrer" style="width:100%; height:190px; object-fit:cover;" onerror="this.src='https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=85'">
-            <div style="padding:1.3rem; display:flex; flex-direction:column; flex-grow:1;">
-                <span style="font-size:0.72rem; color:#ef4444; font-weight:800; text-transform:uppercase;">SpaceTech • 2026-10-30</span>
-                <h3 style="font-size:1.1rem; margin:0.5rem 0 0.8rem 0; color:#f8fafc;">SpaceX conclui três incêndios estáticos em três dias para o voo 15</h3>
-                <p style="font-size:0.86rem; color:#94a3b8; margin-bottom:1.2rem; flex-grow:1;">Em oito dias, a SpaceX concluiu todos os testes de motor do voo 15, alguns à prova de crio e captura… A postagem SpaceX conclui três incêndios estáticos em três dias para o vôo 15 apareceu pela primeira vez em NASASpaceFlight.com.</p>
-                <a href="https://www.nasaspaceflight.com/2026/10/spacex-static-fires-flight-15/" target="_blank" rel="noopener noreferrer" style="background:#ef4444; color:#fff; text-align:center; padding:0.65rem; border-radius:8px; font-weight:700; font-size:0.82rem; text-decoration:none;">Ler Relatório Completo &rarr;</a>
-            </div>
-        </article>
-        
-        <article style="background:rgba(17,25,40,0.88); border:1px solid rgba(255,255,255,0.08); border-radius:14px; overflow:hidden; display:flex; flex-direction:column;">
-            <img src="https://static.gazetaesportiva.com/uploads/2026/10/55623595276_cfa20462e1_k.webp" alt="Coritiba x Vitória: confira fotos do jogo pela 33ª rodada do Brasileirão" referrerpolicy="no-referrer" style="width:100%; height:190px; object-fit:cover;" onerror="this.src='https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=85'">
-            <div style="padding:1.3rem; display:flex; flex-direction:column; flex-grow:1;">
-                <span style="font-size:0.72rem; color:#ef4444; font-weight:800; text-transform:uppercase;">Gazeta Esportiva • Hoje</span>
-                <h3 style="font-size:1.1rem; margin:0.5rem 0 0.8rem 0; color:#f8fafc;">Coritiba x Vitória: confira fotos do jogo pela 33ª rodada do Brasileirão</h3>
-                <p style="font-size:0.86rem; color:#94a3b8; margin-bottom:1.2rem; flex-grow:1;">Confira todos os bastidores e detalhes atualizados na matéria completa.</p>
-                <a href="https://www.gazetaesportiva.com/campeonatos/brasileiro-serie-a/coritiba-x-vitoria-confira-fotos-do-jogo-pela-33a-rodada-do-brasileirao/" target="_blank" rel="noopener noreferrer" style="background:#ef4444; color:#fff; text-align:center; padding:0.65rem; border-radius:8px; font-weight:700; font-size:0.82rem; text-decoration:none;">Ler Relatório Completo &rarr;</a>
-            </div>
-        </article>
-        
-        <article style="background:rgba(17,25,40,0.88); border:1px solid rgba(255,255,255,0.08); border-radius:14px; overflow:hidden; display:flex; flex-direction:column;">
-            <img src="https://www.nasa.gov/wp-content/uploads/2026/10/grc-2026-c-06389large.jpg" alt="NASA lança eventos importantes do MAX POWER para mídia e participantes" referrerpolicy="no-referrer" style="width:100%; height:190px; object-fit:cover;" onerror="this.src='https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=85'">
-            <div style="padding:1.3rem; display:flex; flex-direction:column; flex-grow:1;">
-                <span style="font-size:0.72rem; color:#ef4444; font-weight:800; text-transform:uppercase;">SpaceTech • 2026-10-30</span>
-                <h3 style="font-size:1.1rem; margin:0.5rem 0 0.8rem 0; color:#f8fafc;">NASA lança eventos importantes do MAX POWER para mídia e participantes</h3>
-                <p style="font-size:0.86rem; color:#94a3b8; margin-bottom:1.2rem; flex-grow:1;">A mais nova exposição aeroespacial e show aéreo da América – MAX POWER – está se aproximando rapidamente, e a NASA anunciou eventos importantes que começam sexta-feira, 6 de novembro, e vão até domingo, 8 de novembro, realizados...</p>
-                <a href="https://www.nasa.gov/news-release/nasa-releases-max-power-key-events-for-media-participants/" target="_blank" rel="noopener noreferrer" style="background:#ef4444; color:#fff; text-align:center; padding:0.65rem; border-radius:8px; font-weight:700; font-size:0.82rem; text-decoration:none;">Ler Relatório Completo &rarr;</a>
-            </div>
-        </article>
-        
-        <article style="background:rgba(17,25,40,0.88); border:1px solid rgba(255,255,255,0.08); border-radius:14px; overflow:hidden; display:flex; flex-direction:column;">
+        <article style="background:rgba(17,25,40,0.86); backdrop-filter:blur(10px); border:1px solid rgba(0,242,254,0.18); border-radius:14px; overflow:hidden; display:flex; flex-direction:column; position:relative; z-index:2;">
             <img src="https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fzocate.li%2Fposts%2F2026%2Fgraphql-tutorial%2Fimages%2Fcover_hu_662274f337eb8622.jpg" alt="GraphQL para Iniciantes: Guia Completo com .NET" referrerpolicy="no-referrer" style="width:100%; height:190px; object-fit:cover;" onerror="this.src='https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=85'">
             <div style="padding:1.3rem; display:flex; flex-direction:column; flex-grow:1;">
-                <span style="font-size:0.72rem; color:#ef4444; font-weight:800; text-transform:uppercase;">Dev.to Brasil • Oct 26</span>
+                <span style="font-size:0.72rem; color:#00f2fe; font-weight:800; text-transform:uppercase;">Dev.to Brasil • Oct 26</span>
                 <h3 style="font-size:1.1rem; margin:0.5rem 0 0.8rem 0; color:#f8fafc;">GraphQL para Iniciantes: Guia Completo com .NET</h3>
-                <p style="font-size:0.86rem; color:#94a3b8; margin-bottom:1.2rem; flex-grow:1;">Aprenda como GraphQL organiza schemas, queries e resolvers, execute uma API com .NET 10 e escolha entre GraphQL, REST e gRPC.</p>
-                <a href="https://dev.to/lzocate-li/graphql-para-iniciantes-guia-completo-com-net-1id1" target="_blank" rel="noopener noreferrer" style="background:#ef4444; color:#fff; text-align:center; padding:0.65rem; border-radius:8px; font-weight:700; font-size:0.82rem; text-decoration:none;">Ler Relatório Completo &rarr;</a>
+                <p style="font-size:0.86rem; color:#cbd5e1; margin-bottom:1.2rem; flex-grow:1;">Aprenda como GraphQL organiza schemas, queries e resolvers, execute uma API com .NET 10 e escolha entre GraphQL, REST e gRPC.</p>
+                <a href="https://dev.to/lzocate-li/graphql-para-iniciantes-guia-completo-com-net-1id1" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg,#ef4444,#b91c1c); color:#fff; text-align:center; padding:0.65rem; border-radius:8px; font-weight:700; font-size:0.82rem; text-decoration:none;">Ler Relatório Completo &rarr;</a>
+            </div>
+        </article>
+        
+        <article style="background:rgba(17,25,40,0.86); backdrop-filter:blur(10px); border:1px solid rgba(0,242,254,0.18); border-radius:14px; overflow:hidden; display:flex; flex-direction:column; position:relative; z-index:2;">
+            <img src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F7mizvhzw7ziongg9l7ro.png" alt="Como reduzir o tempo da Sprint Planning pela metade com estimativas em tempo real" referrerpolicy="no-referrer" style="width:100%; height:190px; object-fit:cover;" onerror="this.src='https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=85'">
+            <div style="padding:1.3rem; display:flex; flex-direction:column; flex-grow:1;">
+                <span style="font-size:0.72rem; color:#00f2fe; font-weight:800; text-transform:uppercase;">Dev.to Brasil • Oct 19</span>
+                <h3 style="font-size:1.1rem; margin:0.5rem 0 0.8rem 0; color:#f8fafc;">Como reduzir o tempo da Sprint Planning pela metade com estimativas em tempo real</h3>
+                <p style="font-size:0.86rem; color:#cbd5e1; margin-bottom:1.2rem; flex-grow:1;">Dicas práticas e decisões de arquitetura em Next.js para transformar reuniões de estimativa arrastadas em alinhamentos técnicos ágeis e eficientes.</p>
+                <a href="https://dev.to/geekecia/como-reduzir-o-tempo-da-sprint-planning-pela-metade-com-estimativas-em-tempo-real-2a6m" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg,#ef4444,#b91c1c); color:#fff; text-align:center; padding:0.65rem; border-radius:8px; font-weight:700; font-size:0.82rem; text-decoration:none;">Ler Relatório Completo &rarr;</a>
+            </div>
+        </article>
+        
+        <article style="background:rgba(17,25,40,0.86); backdrop-filter:blur(10px); border:1px solid rgba(0,242,254,0.18); border-radius:14px; overflow:hidden; display:flex; flex-direction:column; position:relative; z-index:2;">
+            <img src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fc3smwggy9jpa9ypss802.png" alt="Novo CNPJ Alfanumérico da Receita Federal: Como preparar seus testes e sistemas" referrerpolicy="no-referrer" style="width:100%; height:190px; object-fit:cover;" onerror="this.src='https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=85'">
+            <div style="padding:1.3rem; display:flex; flex-direction:column; flex-grow:1;">
+                <span style="font-size:0.72rem; color:#00f2fe; font-weight:800; text-transform:uppercase;">Dev.to Brasil • Oct 22</span>
+                <h3 style="font-size:1.1rem; margin:0.5rem 0 0.8rem 0; color:#f8fafc;">Novo CNPJ Alfanumérico da Receita Federal: Como preparar seus testes e sistemas</h3>
+                <p style="font-size:0.86rem; color:#cbd5e1; margin-bottom:1.2rem; flex-grow:1;">A transição para o CNPJ Alfanumérico regulamentada pela Receita Federal é uma das mudanças...</p>
+                <a href="https://dev.to/geekecia/novo-cnpj-alfanumerico-da-receita-federal-como-preparar-seus-testes-e-sistemas-6mm" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg,#ef4444,#b91c1c); color:#fff; text-align:center; padding:0.65rem; border-radius:8px; font-weight:700; font-size:0.82rem; text-decoration:none;">Ler Relatório Completo &rarr;</a>
+            </div>
+        </article>
+        
+        <article style="background:rgba(17,25,40,0.86); backdrop-filter:blur(10px); border:1px solid rgba(0,242,254,0.18); border-radius:14px; overflow:hidden; display:flex; flex-direction:column; position:relative; z-index:2;">
+            <img src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flgl5tv2oae3ec09v8apt.png" alt="Story Points vs Horas: por que o debate de estimativa se perde e como o consenso real resolve" referrerpolicy="no-referrer" style="width:100%; height:190px; object-fit:cover;" onerror="this.src='https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=85'">
+            <div style="padding:1.3rem; display:flex; flex-direction:column; flex-grow:1;">
+                <span style="font-size:0.72rem; color:#00f2fe; font-weight:800; text-transform:uppercase;">Dev.to Brasil • Oct 27</span>
+                <h3 style="font-size:1.1rem; margin:0.5rem 0 0.8rem 0; color:#f8fafc;">Story Points vs Horas: por que o debate de estimativa se perde e como o consenso real resolve</h3>
+                <p style="font-size:0.86rem; color:#cbd5e1; margin-bottom:1.2rem; flex-grow:1;">Por que times perdem tanto tempo debatendo números em Sprints e como focar em divergências técnicas acelera as cerimônias ágeis.</p>
+                <a href="https://dev.to/geekecia/story-points-vs-horas-por-que-o-debate-de-estimativa-se-perde-e-como-o-consenso-real-resolve-51m1" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg,#ef4444,#b91c1c); color:#fff; text-align:center; padding:0.65rem; border-radius:8px; font-weight:700; font-size:0.82rem; text-decoration:none;">Ler Relatório Completo &rarr;</a>
+            </div>
+        </article>
+        
+        <article style="background:rgba(17,25,40,0.86); backdrop-filter:blur(10px); border:1px solid rgba(0,242,254,0.18); border-radius:14px; overflow:hidden; display:flex; flex-direction:column; position:relative; z-index:2;">
+            <img src="https://images.metroimg.com/2026/01/lula-bahia.jpg" alt="PT prepara “festa do interior” para visita de Lula à Bahia" referrerpolicy="no-referrer" style="width:100%; height:190px; object-fit:cover;" onerror="this.src='https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=85'">
+            <div style="padding:1.3rem; display:flex; flex-direction:column; flex-grow:1;">
+                <span style="font-size:0.72rem; color:#00f2fe; font-weight:800; text-transform:uppercase;">Metrópoles Política • Hoje</span>
+                <h3 style="font-size:1.1rem; margin:0.5rem 0 0.8rem 0; color:#f8fafc;">PT prepara “festa do interior” para visita de Lula à Bahia</h3>
+                <p style="font-size:0.86rem; color:#cbd5e1; margin-bottom:1.2rem; flex-grow:1;">Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em última rodada pelo Nordeste antes do 1º turno Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em...</p>
+                <a href="https://www.metropoles.com/brasil/pt-prepara-festa-do-interior-para-visita-de-lula-a-bahia" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg,#ef4444,#b91c1c); color:#fff; text-align:center; padding:0.65rem; border-radius:8px; font-weight:700; font-size:0.82rem; text-decoration:none;">Ler Relatório Completo &rarr;</a>
             </div>
         </article>
         </div>
     </main>
     <footer>
-        <p><strong>TechNews.PRO</strong> &copy; 2026 — Hub de Autoridade em Inteligência Artificial.</p>
+        <p><strong>TechNews.PRO</strong> &copy; 2026 — Hub Interativo 3D de Autoridade em Inteligência Artificial.</p>
     </footer>
+
+    <!-- SCRIPT THREE.JS REDE NEURAL 3D COM PAUSA AUTOMÁTICA DE BATERIA -->
+    <script>
+        window.addEventListener('DOMContentLoaded', function() {
+            if (!window.THREE) return;
+            const canvas = document.getElementById('neural-webgl-canvas');
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(65, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera.position.z = 32;
+
+            const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+            const particleCount = 190;
+            const geometry = new THREE.BufferGeometry();
+            const positions = new Float32Array(particleCount * 3);
+            const colors = new Float32Array(particleCount * 3);
+
+            for (let i = 0; i < particleCount * 3; i += 3) {
+                positions[i] = (Math.random() - 0.5) * 65;
+                positions[i + 1] = (Math.random() - 0.5) * 65;
+                positions[i + 2] = (Math.random() - 0.5) * 40;
+                if (i % 6 === 0) {
+                    colors[i] = 0.0; colors[i + 1] = 0.95; colors[i + 2] = 1.0;
+                } else {
+                    colors[i] = 0.93; colors[i + 1] = 0.26; colors[i + 2] = 0.26;
+                }
+            }
+            geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+            geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+            const material = new THREE.PointsMaterial({
+                size: 0.48,
+                vertexColors: true,
+                transparent: true,
+                opacity: 0.9
+            });
+            const particles = new THREE.Points(geometry, material);
+            scene.add(particles);
+
+            const wireGeo = new THREE.IcosahedronGeometry(15, 1);
+            const wireMat = new THREE.MeshBasicMaterial({ color: 0x00f2fe, wireframe: true, transparent: true, opacity: 0.12 });
+            const wireMesh = new THREE.Mesh(wireGeo, wireMat);
+            scene.add(wireMesh);
+
+            let mouseX = 0, mouseY = 0;
+            window.addEventListener('mousemove', function(e) {
+                mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+                mouseY = -(e.clientY / window.innerHeight - 0.5) * 2;
+            });
+
+            window.addEventListener('resize', function() {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            });
+
+            function animate() {
+                requestAnimationFrame(animate);
+                if (document.hidden) return;
+                particles.rotation.y += 0.0018;
+                particles.rotation.x += 0.0008;
+                wireMesh.rotation.y -= 0.0022;
+                wireMesh.rotation.x += (mouseY * 0.4 - wireMesh.rotation.x) * 0.04;
+                particles.position.x += (mouseX * 4 - particles.position.x) * 0.04;
+                particles.position.y += (mouseY * 4 - particles.position.y) * 0.04;
+                renderer.render(scene, camera);
+            }
+            animate();
+        });
+    </script>
     <script data-cfasync="false" src="https://bicea.org/14/7843682dc41b2077e8d78d48efd6360a"></script>
 </body>
 </html>
