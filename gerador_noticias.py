@@ -53,17 +53,17 @@ ARQUIVO_GOOGLE_VERIF = "google28d5384ab7e71bf6.html"
 CAMINHO_API_JSON = "api/v1/noticias.json"
 
 # ==============================================================================
-# LINKS OFICIAIS DE MONETIZAÇÃO E FUNIL (V10.2)
+# LINKS OFICIAIS DE MONETIZAÇÃO E FUNIL (V10.4)
 # ==============================================================================
 URL_PORTAL_OFICIAL = "https://infoprodutos93-sys.github.io/technews-pro/"
 SMARTLINK_ADSTERRA = "https://asiafilm.org/4/78ed9deb10feac05c15347b414e171ab"
 SYSTEME_OPTIN_URL = "https://devanildobeeny146.systeme.io/3ed9605c"
 
-# 1. Desenvolvimento Pessoal & Mentalidade PRO (Botão Área VIP Global, Back-Redirect, Telegram VIP, Quiz 1)
+# 1. Desenvolvimento Pessoal & Super Profissional IA (Botão Área VIP Global, Back-Redirect, FAQ 3, Quiz 1)
 LINK_KIWIFY_1 = "https://pay.kiwify.com.br/TO0iLa6"
-# 2. LUMI - Ofertas com Inteligência (Widget Lateral PRO, Cards Nativos Feed, Quiz 2)
+# 2. LUMI - Ofertas com Inteligência (Widget Lateral PRO, Cards Nativos Feed, FAQ 1, Quiz 2)
 LINK_KIWIFY_2 = "https://pay.kiwify.com.br/BZcBEAI?afid=WXidNwGv"
-# 3. Posts Virais © (Exit-Intent Modal, Modal Resumo IA, Quiz 3)
+# 3. Posts Virais © & Estratégia Digital (Exit-Intent Modal, Modal Resumo IA, FAQ 2, Quiz 3)
 LINK_KIWIFY_3 = "https://pay.kiwify.com.br/jKot3Dn?afid=VDZB2ind"
 
 IMAGENS_FALLBACK_CATEGORIA = {
@@ -76,7 +76,123 @@ IMAGENS_FALLBACK_CATEGORIA = {
 }
 
 # ==============================================================================
-# TEMPLATE PRINCIPAL: INDEX.HTML (V10.2 ULTIMATE AUDITADA)
+# ROUTER INTELIGENTE POR CATEGORIA (FIM DO LINK GENÉRICO NAS REDES SOCIAIS)
+# ==============================================================================
+def obter_url_hub_por_categoria(categoria):
+    c = (categoria or "").lower()
+    if "esporte" in c or "futebol" in c:
+        return f"{URL_PORTAL_OFICIAL}futebol.html"
+    elif "política" in c or "politica" in c:
+        return f"{URL_PORTAL_OFICIAL}politica.html"
+    elif "famosos" in c:
+        return f"{URL_PORTAL_OFICIAL}famosos.html"
+    elif "finanças" in c or "financas" in c or "mercado" in c:
+        return f"{URL_PORTAL_OFICIAL}cotacao-agora.html"
+    return f"{URL_PORTAL_OFICIAL}inteligencia-artificial.html"
+
+# ==============================================================================
+# GERADOR DINÂMICO DE FAQ (MÁQUINA DE VENDAS <DETAILS> + JSON-LD RICH SNIPPETS)
+# ==============================================================================
+def gerar_perguntas_faq_dinamicas(todas_noticias, dados_cot):
+    usd_val = dados_cot["USDBRL"]["val"]
+    btc_val = dados_cot["BTCBRL"]["val"]
+    faqs_padrao = [
+        {
+            "pergunta": "1. Como usar a Inteligência Artificial para criar ofertas lucrativas e vender todos os dias?",
+            "resposta": (
+                "A maior revolução da IA generativa não está apenas na criação de textos, mas na engenharia de ofertas de alta conversão. "
+                "A ferramenta LUMI automatiza esse processo de descoberta de nicho e estruturação de copy, permitindo que você lance produtos validados em dias, não meses."
+            ),
+            "cta_texto": "🚀 Acessar LUMI Agora",
+            "cta_link": LINK_KIWIFY_2,
+            "cta_estilo": "display:inline-block; margin-top:1rem; padding:0.8rem 1.5rem; background:var(--neon); color:#000; text-decoration:none; font-weight:bold; border-radius:8px;"
+        },
+        {
+            "pergunta": "2. Qual a melhor estratégia de investimento e tráfego para proteger patrimônio com IA e Ativos Digitais?",
+            "resposta": (
+                f"Com o Dólar comercial operando a {usd_val} e o Bitcoin em {btc_val}, o mercado financeiro e digital está sendo reescrito por algoritmos preditivos. "
+                "Para quem quer dominar a atenção nas redes e construir ativos digitais sólidos, é essencial entender os padrões virais e tendências macroeconômicas antes que se tornem mainstream. Nosso guia definitivo ensina exatamente isso."
+            ),
+            "cta_texto": "📊 Ver Estratégia & Método Oficial",
+            "cta_link": LINK_KIWIFY_3,
+            "cta_estilo": "display:inline-block; margin-top:1rem; padding:0.8rem 1.5rem; background:var(--card-bg); border:1px solid var(--neon); color:var(--neon); text-decoration:none; font-weight:bold; border-radius:8px;"
+        },
+        {
+            "pergunta": "3. Como a IA está impactando o mercado de trabalho e quais habilidades ter em 2026?",
+            "resposta": (
+                "Profissões inteiras estão desaparecendo enquanto outras surgem. Saber usar ferramentas de IA e desenvolver blindagem mental não é mais diferencial, é obrigação. "
+                "Descubra como se posicionar como um 'Super Profissional' capaz de gerar receita única com a produtividade de dez pessoas."
+            ),
+            "cta_texto": "💡 Garantir Minha Vaga",
+            "cta_link": LINK_KIWIFY_1,
+            "cta_estilo": "display:inline-block; margin-top:1rem; padding:0.8rem 1.5rem; background:var(--card-bg); border:1px solid var(--neon); color:var(--neon); text-decoration:none; font-weight:bold; border-radius:8px;"
+        }
+    ]
+
+    if OPENAI_API_KEY and todas_noticias:
+        try:
+            manchetes_contexto = " | ".join([n.get("title", "") for n in todas_noticias[:4]])
+            url = "https://api.openai.com/v1/chat/completions"
+            headers = {"Content-Type": "application/json", "Authorization": f"Bearer {OPENAI_API_KEY}"}
+            prompt = (
+                f"Manchetes de hoje: {manchetes_contexto}. Dólar: {usd_val}, Bitcoin: {btc_val}.\n"
+                "Gere um JSON com a chave 'faqs' contendo exatamente 3 objetos ('pergunta' e 'resposta') em Português do Brasil:\n"
+                "- Item 1: Pergunta de alta busca no Google conectando IA e criação de ofertas digitais, finalizando a resposta explicando como a ferramenta LUMI automatiza a descoberta de nicho e estruturação de copy em dias.\n"
+                "- Item 2: Pergunta sobre estratégia de patrimônio/tráfego com IA, câmbio e cripto, citando os dados do dia.\n"
+                "- Item 3: Pergunta sobre como a IA impacta o mercado de trabalho em 2026 e como se tornar um Super Profissional de alta performance."
+            )
+            payload = {
+                "model": "gpt-4o-mini",
+                "response_format": {"type": "json_object"},
+                "messages": [
+                    {"role": "system", "content": "Você é um especialista em SEO (GEO) e copywriting de resposta direta. Responda apenas em JSON válido."},
+                    {"role": "user", "content": prompt}
+                ],
+                "max_tokens": 420,
+                "temperature": 0.6
+            }
+            r = requests.post(url, headers=headers, json=payload, timeout=10)
+            if r.status_code == 200:
+                geradas = json.loads(r.json()["choices"][0]["message"]["content"]).get("faqs", [])
+                if len(geradas) == 3:
+                    for idx in range(3):
+                        if geradas[idx].get("pergunta") and geradas[idx].get("resposta"):
+                            faqs_padrao[idx]["pergunta"] = f"{idx + 1}. " + re.sub(r'^\d+\.\s*', '', geradas[idx]["pergunta"].strip())
+                            faqs_padrao[idx]["resposta"] = geradas[idx]["resposta"].strip()
+        except Exception as e:
+            print(f"Aviso geração FAQ IA: {e}")
+
+    return faqs_padrao
+
+def renderizar_bloco_faq_html(lista_faqs):
+    itens_html = ""
+    for i, item in enumerate(lista_faqs):
+        attr_open = " open" if i == 0 else ""
+        borda = "border-bottom: 1px solid var(--border);" if i < len(lista_faqs) - 1 else ""
+        itens_html += f"""
+        <details style="{borda} padding: 1rem 0; cursor: pointer;"{attr_open}>
+            <summary style="font-weight: 800; font-size: 1.02rem; color: var(--neon);">
+                {html.escape(item['pergunta'])}
+            </summary>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.7rem; line-height: 1.65;">
+                {html.escape(item['resposta'])}
+                <br>
+                <a href="{item['cta_link']}" target="_blank" rel="noopener noreferrer" class="cta-button" style="{item['cta_estilo']}">{item['cta_texto']}</a>
+            </p>
+        </details>
+        """
+    return f"""
+    <section class="faq-seo-section" style="margin-top: 3rem; background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 2rem;">
+        <span class="badge-source" style="background: #3b82f6;">📚 Guias Executivos &amp; Perguntas Frequentes (GEO)</span>
+        <h2 style="font-size: clamp(1.2rem, 3vw, 1.45rem); font-weight: 900; margin: 0.6rem 0 1.2rem 0;">
+            Como a Inteligência Artificial está Transformando o Mercado Financeiro e os Negócios em 2026
+        </h2>
+        {itens_html}
+    </section>
+    """
+
+# ==============================================================================
+# TEMPLATE PRINCIPAL: INDEX.HTML (V10.4 - HOME FOCADA EM IA & MERCADO + FAQ)
 # ==============================================================================
 HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
 <html lang="pt-BR" data-theme="dark">
@@ -84,14 +200,14 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <meta name="referrer" content="no-referrer">
-    <meta name="description" content="Terminal avançado de notícias sobre Inteligência Artificial, Tecnologia, Política, Futebol, Celebridades e Mercado Financeiro em tempo real.">
+    <meta name="description" content="Terminal especializado em Inteligência Artificial, Mercado Financeiro, Cotações Ao Vivo, Automação e Ciência. Análises e dados em tempo real.">
     <meta name="robots" content="max-image-preview:large, index, follow">
     <link rel="canonical" href="{url_portal}">
     <link rel="alternate" type="application/rss+xml" title="TechNews PRO RSS Feed" href="{url_portal}feed.xml">
 
-    <!-- OPEN GRAPH -->
-    <meta property="og:title" content="{og_title}">
-    <meta property="og:description" content="{og_desc}">
+    <!-- OPEN GRAPH INSTITUCIONAL ÚNICO DA HOME -->
+    <meta property="og:title" content="TechNews PRO | Terminal de Inteligência Artificial, Mercado & Inovação">
+    <meta property="og:description" content="Acompanhe análises de Inteligência Artificial, cotações de Dólar e Bitcoin ao vivo, ferramentas generativas e tendências do mercado financeiro.">
     <meta property="og:image" content="{og_img}">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -99,13 +215,13 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
 
-    <title>TechNews PRO | Terminal Cinematográfico de IA, Esportes & Mercado</title>
+    <title>TechNews PRO | Terminal de Inteligência Artificial, Mercado & Inovação</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 
     <!-- GSAP CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
 
-    <!-- SCHEMA JSON-LD -->
+    <!-- SCHEMA JSON-LD (WEBSITES + NEWSARTICLE + FAQPAGE SINCRONIZADO) -->
     {schema_json_ld}
 
     <!-- ONESIGNAL PUSH -->
@@ -140,7 +256,7 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
             --text-muted: #64748b;
             --primary: #ef4444;
             --accent: #2563eb;
-            --neon: #2563eb;
+            --neon: #0284c7;
             --dark-bar: #0f172a;
             --border: #e2e8f0;
             --glass: rgba(255, 255, 255, 0.94);
@@ -165,7 +281,7 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
         .logo span { color: var(--primary); }
         .logo-badge { font-size: 0.62rem; background: rgba(239, 68, 68, 0.15); color: var(--primary); border: 1px solid var(--primary); padding: 2px 6px; border-radius: 4px; font-weight: 800; letter-spacing: 0.5px; }
 
-        /* LIQUID GOOEY MENU LAYERED (FUNDO LÍQUIDO + TEXTO NÍTIDO + SCROLL OFFSET) */
+        /* LIQUID GOOEY MENU LAYERED */
         .gooey-nav-wrapper { position: relative; display: flex; align-items: center; background: rgba(255,255,255,0.03); border-radius: 12px; border: 1px solid var(--border); padding: 6px; overflow-x: auto; max-width: 100%; -webkit-overflow-scrolling: touch; scroll-behavior: smooth; }
         .gooey-filter-layer { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; filter: url('#gooey-effect'); }
         .gooey-blob { position: absolute; height: calc(100% - 12px); width: 80px; background: linear-gradient(135deg, var(--primary), #dc2626); border-radius: 9px; top: 6px; left: 6px; transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), width 0.3s cubic-bezier(0.2, 0.8, 0.2, 1); will-change: transform, width; box-shadow: 0 4px 14px rgba(239, 68, 68, 0.4); }
@@ -372,8 +488,9 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
             {cotacoes_html}
         </div>
         <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap; font-size:0.74rem;">
-            <a href="cotacao-agora.html" style="color:var(--neon); text-decoration:underline;">📊 Calculadora & Cotações</a>
-            <a href="futebol.html" style="color:#10b981; text-decoration:underline;">⚽ Brasileirão</a>
+            <a href="dolar-hoje.html" style="color:#10b981; text-decoration:underline;">💵 Dólar Hoje</a>
+            <a href="cotacao-agora.html" style="color:var(--neon); text-decoration:underline;">📊 Calculadora</a>
+            <a href="futebol.html" style="color:#22c55e; text-decoration:underline;">⚽ Brasileirão</a>
             <a href="api/v1/noticias.json" target="_blank" style="color:#f59e0b; text-decoration:underline;">🔌 API v1 JSON</a>
             <span>⚡ {data_atualizacao} (BRT)</span>
         </div>
@@ -381,22 +498,23 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
 
     <header>
         <div class="nav-container">
-            <a class="logo" onclick="filtrarCategoria('todos', event)">TechNews<span>.PRO</span> <span class="logo-badge">v10.2</span></a>
+            <a class="logo" onclick="filtrarCategoria('elite', event)">TechNews<span>.PRO</span> <span class="logo-badge">v10.4</span></a>
             
             <div class="gooey-nav-wrapper" id="main-nav-wrapper">
                 <div class="gooey-filter-layer">
                     <div class="gooey-blob" id="gooey-blob"></div>
                 </div>
                 <ul class="nav-links" id="nav-ul-links">
-                    <li><button onclick="filtrarCategoria('todos', event)" class="active">🔥 Tudo</button></li>
-                    <li><button onclick="filtrarCategoria('Tecnologia', event)">💻 Tech & IA</button></li>
-                    <li><button onclick="filtrarCategoria('Finanças', event)">📈 Mercado</button></li>
-                    <li><button onclick="filtrarCategoria('🏛️ Política', event)">🏛️ Política</button></li>
-                    <li><button onclick="filtrarCategoria('⭐ Famosos', event)">⭐ Famosos</button></li>
-                    <li><button onclick="filtrarCategoria('⚽ Esportes', event)">⚽ Esportes</button></li>
+                    <li><button onclick="filtrarCategoria('elite', event)" class="active">🧠 IA &amp; Mercado</button></li>
+                    <li><button onclick="filtrarCategoria('Tecnologia', event)">💻 Tech &amp; IA</button></li>
+                    <li><button onclick="filtrarCategoria('Finanças', event)">📈 Finanças</button></li>
                     <li><button onclick="filtrarCategoria('Ciência', event)">🚀 Ciência</button></li>
-                    <li><a href="futebol.html" class="hub-link">🏆 Tabela</a></li>
-                    <li><a href="inteligencia-artificial.html" class="hub-link">🧠 Hub IA 3D</a></li>
+                    <li><button onclick="filtrarCategoria('todos', event)">🔥 Giro Global</button></li>
+                    <li><a href="inteligencia-artificial.html" class="hub-link">🌐 Hub IA 3D</a></li>
+                    <li><a href="dolar-hoje.html" class="hub-link">💵 Dólar Hoje</a></li>
+                    <li><a href="futebol.html" class="hub-link">⚽ Futebol</a></li>
+                    <li><a href="politica.html" class="hub-link">🏛️ Política</a></li>
+                    <li><a href="famosos.html" class="hub-link">⭐ Famosos</a></li>
                 </ul>
             </div>
             
@@ -412,14 +530,16 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
     </header>
 
     <div class="tags-bar">
-        <span style="font-size:0.72rem; font-weight:800; color:var(--primary); text-transform:uppercase; flex-shrink:0;">Clusters SEO:</span>
+        <span style="font-size:0.72rem; font-weight:800; color:var(--primary); text-transform:uppercase; flex-shrink:0;">Silos de Autoridade SEO:</span>
         <a href="inteligencia-artificial.html" class="tag-pill">#HubIA3D</a>
+        <a href="dolar-hoje.html" class="tag-pill">#DólarHoje</a>
         <a href="cotacao-agora.html" class="tag-pill">#CalculadoraCâmbio</a>
-        <a href="futebol.html" class="tag-pill">#BrasileirãoSérieA</a>
         <a href="bitcoin.html" class="tag-pill">#RadarBitcoin</a>
         <a href="chatgpt.html" class="tag-pill">#RadarChatGPT</a>
         <a href="startups.html" class="tag-pill">#RadarStartups</a>
-        <a href="api/v1/noticias.json" target="_blank" class="tag-pill">#OpenAPI</a>
+        <a href="futebol.html" class="tag-pill">#TabelaBrasileirão</a>
+        <a href="politica.html" class="tag-pill">#RadarPolítica</a>
+        <a href="famosos.html" class="tag-pill">#GiroFamosos</a>
         <a href="{smartlink_url}" target="_blank" class="tag-pill" style="border-color:var(--neon); color:var(--neon);">⚡ Recursos Patrocinados</a>
     </div>
 
@@ -443,10 +563,13 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
             <div id="hero-container"></div>
 
             <h2 class="section-title">
-                <span id="titulo-secao">Radar Global em Tempo Real</span>
+                <span id="titulo-secao">Terminal de Inteligência Artificial, Finanças &amp; Ciência</span>
                 <span style="font-size:0.74rem; color:var(--text-muted); font-weight:600;">🔊 Ouça as matérias em áudio</span>
             </h2>
             <div class="feed-grid" id="feed-container"></div>
+
+            <!-- MÁQUINA DE VENDAS EM FAQ (<DETAILS> NATIVO + RICH SNIPPETS GOOGLE) -->
+            {faq_section_html}
         </div>
 
         <aside class="sidebar">
@@ -484,8 +607,8 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
                     </svg>
                 </div>
                 <div class="optin-status" id="optin-status">AGUARDANDO CREDENCIAIS VIP...</div>
-                <h3>💰 Briefing Matinal VIP</h3>
-                <p style="font-size:0.82rem; color:#94a3b8;">Receba os insights de IA, Negócios e Ferramentas Secretas no seu e-mail.</p>
+                <h3>💰 O Resumo TechNews VIP</h3>
+                <p style="font-size:0.82rem; color:#94a3b8;">Receba diariamente 3 análises de IA, 1 de Mercado e 1 de Esportes direto no seu e-mail.</p>
                 <form action="{systeme_url}" method="GET" target="_blank">
                     <input type="email" id="optin-email-input" name="email" placeholder="Digite seu melhor e-mail..." required
                            onfocus="animarOptinFoco(true)" onblur="animarOptinFoco(false)" oninput="animarOptinDigitacao(this.value)">
@@ -494,12 +617,14 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
             </div>
 
             <div class="widget" style="text-align: center; padding: 1.2rem;">
-                <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.6rem;">🔗 <strong>Infraestrutura & Clusters:</strong></p>
+                <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.6rem;">🔗 <strong>Silos &amp; Portais Verticais:</strong></p>
                 <p style="margin-bottom:6px;"><a href="inteligencia-artificial.html" style="color: var(--neon); font-size: 0.84rem; font-weight: 700; text-decoration: underline;">🧠 Hub IA 3D (WebGL Neural) &rarr;</a></p>
-                <p style="margin-bottom:6px;"><a href="cotacao-agora.html" style="color: #10b981; font-size: 0.84rem; font-weight: 700; text-decoration: underline;">📊 Calculadora & Cotações Ao Vivo &rarr;</a></p>
+                <p style="margin-bottom:6px;"><a href="dolar-hoje.html" style="color: #10b981; font-size: 0.84rem; font-weight: 700; text-decoration: underline;">💵 Cotação do Dólar Hoje &rarr;</a></p>
+                <p style="margin-bottom:6px;"><a href="cotacao-agora.html" style="color: #34d399; font-size: 0.84rem; font-weight: 700; text-decoration: underline;">📊 Calculadora Câmbio &amp; Cripto &rarr;</a></p>
                 <p style="margin-bottom:6px;"><a href="futebol.html" style="color: #22c55e; font-size: 0.84rem; font-weight: 700; text-decoration: underline;">⚽ Central Brasileirão Série A &rarr;</a></p>
-                <p style="margin-bottom:6px;"><a href="api/v1/noticias.json" target="_blank" style="color: #f59e0b; font-size: 0.84rem; font-weight: 700; text-decoration: underline;">🔌 API Pública JSON (/api/v1/) &rarr;</a></p>
-                <p><a href="chatgpt.html" style="color: #3b82f6; font-size: 0.84rem; font-weight: 700; text-decoration: underline;">🤖 Radar ChatGPT & OpenAI &rarr;</a></p>
+                <p style="margin-bottom:6px;"><a href="politica.html" style="color: #ef4444; font-size: 0.84rem; font-weight: 700; text-decoration: underline;">🏛️ Radar Política &amp; Brasília &rarr;</a></p>
+                <p style="margin-bottom:6px;"><a href="famosos.html" style="color: #d946ef; font-size: 0.84rem; font-weight: 700; text-decoration: underline;">⭐ Giro dos Famosos &rarr;</a></p>
+                <p><a href="api/v1/noticias.json" target="_blank" style="color: #f59e0b; font-size: 0.84rem; font-weight: 700; text-decoration: underline;">🔌 API Pública JSON (/api/v1/) &rarr;</a></p>
             </div>
 
             <div style="text-align: center; width: 100%; overflow: hidden;">
@@ -513,12 +638,15 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
     </main>
 
     <footer>
-        <p><strong>TechNews.PRO</strong> &copy; {ano_atual} — Ecossistema Automatizado v10.2 Ultimate (Awwwards UI, Three.js WebGL, API Pública v1, Telegram Video & Meta Video API).</p>
+        <p><strong>TechNews.PRO</strong> &copy; {ano_atual} — Ecossistema Automatizado v10.4 Master (Authority Silos, Dynamic FAQ, Three.js WebGL, API v1 &amp; Smart Social Router).</p>
         <p style="margin-top: 8px; font-size: 0.76rem; line-height: 1.8;">
             <a href="index.html" style="color:#94a3b8; margin:0 6px;">Início</a> |
             <a href="inteligencia-artificial.html" style="color:#94a3b8; margin:0 6px;">Hub IA 3D</a> |
+            <a href="dolar-hoje.html" style="color:#94a3b8; margin:0 6px;">Dólar Hoje</a> |
             <a href="cotacao-agora.html" style="color:#94a3b8; margin:0 6px;">Cotações</a> |
             <a href="futebol.html" style="color:#94a3b8; margin:0 6px;">Futebol</a> |
+            <a href="politica.html" style="color:#94a3b8; margin:0 6px;">Política</a> |
+            <a href="famosos.html" style="color:#94a3b8; margin:0 6px;">Famosos</a> |
             <a href="bitcoin.html" style="color:#94a3b8; margin:0 6px;">Bitcoin</a> |
             <a href="chatgpt.html" style="color:#94a3b8; margin:0 6px;">ChatGPT</a> |
             <a href="startups.html" style="color:#94a3b8; margin:0 6px;">Startups</a> |
@@ -530,6 +658,7 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
 
     <script>
         const todasNoticias = {noticias_json};
+        const categoriasEliteHome = ["Tecnologia", "Finanças", "Ciência"];
         const ofertasKiwify = [
             { badge: "Desenvolvimento Pessoal PRO", titulo: "🧠 Destrave Sua Mentalidade e Alta Performance", desc: "O guia prático de desenvolvimento pessoal para eliminar bloqueios, elevar seu foco e atingir resultados extraordinários.", url: "{link_kiwify_1}", cta: "Acessar Treinamento VIP &rarr;" },
             { badge: "LUMI • Inteligência Artificial", titulo: "🤖 LUMI: Crie Ofertas Lucrativas com IA", desc: "Descubra como usar Inteligência Artificial para modelar, estruturar e escalar ofertas de alta conversão no digital.", url: "{link_kiwify_2}", cta: "Desbloquear Acesso ao LUMI &rarr;" },
@@ -547,7 +676,6 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
             } catch (e) {}
         })();
 
-        /* LIQUID GOOEY MENU INTERACTION (COM OFFSET DE SCROLL SINCRONIZADO) */
         const navWrapper = document.getElementById('main-nav-wrapper');
         const navUl = document.getElementById('nav-ul-links');
 
@@ -570,9 +698,14 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
                 const activeBtn = navUl.querySelector('button.active') || navUl.querySelector('a.active');
                 if (activeBtn) moverGooeyBlob(activeBtn);
             });
+            if (document.fonts && document.fonts.ready) {
+                document.fonts.ready.then(function() {
+                    const activeBtn = navUl.querySelector('button.active') || navUl.querySelector('a.active');
+                    if (activeBtn) moverGooeyBlob(activeBtn);
+                });
+            }
         }
 
-        /* MICRO-INTERAÇÃO LÚDICA DO OPT-IN VIP (MATH AVATAR) */
         function animarOptinFoco(ativo) {
             const box = document.getElementById('newsletter-box');
             const status = document.getElementById('optin-status');
@@ -621,7 +754,8 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
             if (!texto) return "";
             let t = texto;
             t = t.replace(/\\b(inteligência artificial|IA)\\b/i, '<a href="inteligencia-artificial.html" class="seo-internal-link">$1</a>');
-            t = t.replace(/\\b(dólar|euro|câmbio)\\b/i, '<a href="cotacao-agora.html" class="seo-internal-link">$1</a>');
+            t = t.replace(/\\b(dólar)\\b/i, '<a href="dolar-hoje.html" class="seo-internal-link">$1</a>');
+            t = t.replace(/\\b(euro|câmbio)\\b/i, '<a href="cotacao-agora.html" class="seo-internal-link">$1</a>');
             t = t.replace(/\\b(brasileirão|futebol|série a)\\b/i, '<a href="futebol.html" class="seo-internal-link">$1</a>');
             t = t.replace(/\\b(bitcoin|criptomoedas|cripto)\\b/i, '<a href="bitcoin.html" class="seo-internal-link">$1</a>');
             t = t.replace(/\\b(chatgpt|openai)\\b/i, '<a href="chatgpt.html" class="seo-internal-link">$1</a>');
@@ -685,9 +819,6 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
             }, 450);
         }
 
-        /* ==================================================================
-           MOTOR DE CARROSSEL HERO GSAP COM SWIPE DETECTION (> 40px)
-        ================================================================== */
         let heroSlides = [];
         let heroIndex = 0;
         let mainHeroTimeline = null;
@@ -809,7 +940,7 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
             if (!lista || lista.length === 0) {
                 pararCicloHero();
                 document.getElementById('hero-container').innerHTML = '';
-                document.getElementById('feed-container').innerHTML = '<div style="grid-column: 1 / -1; padding:2.5rem; text-align:center; color:var(--text-muted); background:var(--card-bg); border-radius:12px; border:1px solid var(--border);">🔍 Nenhuma notícia encontrada para este filtro no momento. Clique em "Tudo" ou aguarde a próxima varredura!</div>';
+                document.getElementById('feed-container').innerHTML = '<div style="grid-column: 1 / -1; padding:2.5rem; text-align:center; color:var(--text-muted); background:var(--card-bg); border-radius:12px; border:1px solid var(--border);">🔍 Nenhuma notícia encontrada para este filtro no momento.</div>';
                 return;
             }
 
@@ -854,7 +985,7 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
                         <h3 style="font-size:1.05rem; margin-bottom:0.35rem;">Qual é a sua meta número #1 para os próximos 30 dias?</h3>
                         <p style="font-size:0.78rem; color:var(--text-muted); margin-bottom:0.6rem;">Toque na sua prioridade para destravar a ferramenta recomendada:</p>
                         <button class="quiz-btn" onclick="responderQuiz('{link_kiwify_1}', this)">
-                            <span>🧠 1. Destravar Mentalidade & Desenvolvimento Pessoal</span>
+                            <span>🧠 1. Destravar Mentalidade &amp; Super Profissional IA</span>
                             <span>&rarr;</span>
                         </button>
                         <button class="quiz-btn" onclick="responderQuiz('{link_kiwify_2}', this)">
@@ -885,6 +1016,11 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
             document.getElementById('feed-container').innerHTML = feedHtml;
         }
 
+        function obterNoticiasEliteHome() {
+            const elite = todasNoticias.filter(n => categoriasEliteHome.includes(n.categoria));
+            return elite.length >= 3 ? elite : todasNoticias;
+        }
+
         function filtrarCategoria(categoria, event) {
             if (event) {
                 event.preventDefault();
@@ -894,9 +1030,17 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
                     moverGooeyBlob(event.currentTarget);
                 }
             }
-            document.getElementById('titulo-secao').innerText = categoria === 'todos' ? 'Radar Global em Tempo Real' : 'Setor: ' + categoria;
-            const filtradas = categoria === 'todos' ? todasNoticias : todasNoticias.filter(n => n.categoria === categoria);
-            renderizarLista(filtradas);
+            if (categoria === 'elite') {
+                document.getElementById('titulo-secao').innerText = 'Terminal de Inteligência Artificial, Finanças & Ciência';
+                renderizarLista(obterNoticiasEliteHome());
+            } else if (categoria === 'todos') {
+                document.getElementById('titulo-secao').innerText = 'Giro Global em Tempo Real (Todas as Editorias)';
+                renderizarLista(todasNoticias);
+            } else {
+                document.getElementById('titulo-secao').innerText = 'Setor: ' + categoria;
+                const filtradas = todasNoticias.filter(n => n.categoria === categoria);
+                renderizarLista(filtradas);
+            }
         }
 
         function buscarNoticia() {
@@ -926,7 +1070,6 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
             }
         });
 
-        /* ESTRATÉGIA GRINGA 1: BACK-BUTTON REDIRECT SUAVE (1x POR SESSÃO) */
         (function() {
             try {
                 if (!sessionStorage.getItem('tn_back_vip')) {
@@ -960,7 +1103,8 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
         setTimeout(dispararToastCiclo, 4000);
         setInterval(dispararToastCiclo, 28000);
 
-        renderizarLista(todasNoticias);
+        // Inicializa a Home focada em IA, Tecnologia, Finanças e Ciência (Alto CPM)
+        renderizarLista(obterNoticiasEliteHome());
     </script>
 
     <!-- SOCIAL BAR FLUTUANTE ADSTERRA -->
@@ -1005,7 +1149,7 @@ def exportar_api_publica_json(todas_noticias, dados_cot, tabela_futebol, data_is
         os.makedirs("api/v1", exist_ok=True)
         payload_api = {
             "status": "ok",
-            "version": "10.2",
+            "version": "10.4",
             "portal": "TechNews PRO",
             "documentation_and_source": URL_PORTAL_OFICIAL,
             "updated_at_brt": data_iso,
@@ -1024,22 +1168,45 @@ def exportar_api_publica_json(todas_noticias, dados_cot, tabela_futebol, data_is
     except Exception as e:
         print(f"Erro ao exportar API JSON: {e}")
 
-def gerar_schema_json_ld(destaque, dados_cot, data_iso):
+def gerar_schema_json_ld(destaque, dados_cot, data_iso, lista_faqs=None, url_pagina=URL_PORTAL_OFICIAL, nome_pagina="TechNews PRO"):
     usd_val = dados_cot["USDBRL"]["val"]
     eur_val = dados_cot["EURBRL"]["val"]
     btc_val = dados_cot["BTCBRL"]["val"]
+
+    entidades_faq = [
+        {
+            "@type": "Question",
+            "name": "Qual a cotação do Dólar, Euro e Bitcoin hoje?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": f"Hoje no terminal TechNews PRO, o Dólar comercial opera a {usd_val}, o Euro está cotado a {eur_val} e o Bitcoin negocia em {btc_val}."
+            }
+        }
+    ]
+    if lista_faqs:
+        for item in lista_faqs:
+            entidades_faq.append({
+                "@type": "Question",
+                "name": item["pergunta"],
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": item["resposta"]
+                }
+            })
+
     schema_obj = {
         "@context": "https://schema.org",
         "@graph": [
             {
-                "@type": "WebSite",
-                "name": "TechNews PRO",
-                "url": URL_PORTAL_OFICIAL,
-                "description": "Terminal em tempo real de notícias sobre Inteligência Artificial, Economia, Política e Esportes."
+                "@type": "WebPage",
+                "name": nome_pagina,
+                "url": url_pagina,
+                "description": destaque.get("desc", "Terminal especializado em Inteligência Artificial, Mercado Financeiro, Ciência e Estatísticas em Tempo Real.")
             },
             {
                 "@type": "NewsArticle",
-                "headline": destaque.get("title", "Notícias em Tempo Real")[:110],
+                "mainEntityOfPage": url_pagina,
+                "headline": destaque.get("title", nome_pagina)[:110],
                 "description": destaque.get("desc", ""),
                 "image": [destaque.get("img", IMAGENS_FALLBACK_CATEGORIA["Tecnologia"])],
                 "datePublished": data_iso,
@@ -1049,24 +1216,7 @@ def gerar_schema_json_ld(destaque, dados_cot, data_iso):
             },
             {
                 "@type": "FAQPage",
-                "mainEntity": [
-                    {
-                        "@type": "Question",
-                        "name": "Qual a cotação do Dólar, Euro e Bitcoin hoje?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": f"Hoje no terminal TechNews PRO, o Dólar comercial opera a {usd_val}, o Euro está cotado a {eur_val} e o Bitcoin negocia em {btc_val}."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Qual a principal notícia do momento no radar TechNews PRO?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": f"{destaque.get('title', '')} — {destaque.get('desc', '')}"
-                        }
-                    }
-                ]
+                "mainEntity": entidades_faq
             }
         ]
     }
@@ -1076,7 +1226,8 @@ def aplicar_teia_seo_estatico(texto):
     if not texto:
         return ""
     novo = re.sub(r'(?i)\b(inteligência artificial|IA)\b', f'<a href="{URL_PORTAL_OFICIAL}inteligencia-artificial.html" style="color:#00f2fe; font-weight:700; text-decoration:underline;">\\1</a>', texto, count=1)
-    novo = re.sub(r'(?i)\b(dólar|euro|câmbio)\b', f'<a href="{URL_PORTAL_OFICIAL}cotacao-agora.html" style="color:#10b981; font-weight:700; text-decoration:underline;">\\1</a>', novo, count=1)
+    novo = re.sub(r'(?i)\b(dólar)\b', f'<a href="{URL_PORTAL_OFICIAL}dolar-hoje.html" style="color:#10b981; font-weight:700; text-decoration:underline;">\\1</a>', novo, count=1)
+    novo = re.sub(r'(?i)\b(euro|câmbio)\b', f'<a href="{URL_PORTAL_OFICIAL}cotacao-agora.html" style="color:#34d399; font-weight:700; text-decoration:underline;">\\1</a>', novo, count=1)
     novo = re.sub(r'(?i)\b(brasileirão|futebol|série a)\b', f'<a href="{URL_PORTAL_OFICIAL}futebol.html" style="color:#22c55e; font-weight:700; text-decoration:underline;">\\1</a>', novo, count=1)
     novo = re.sub(r'(?i)\b(bitcoin|criptomoedas|cripto)\b', f'<a href="{URL_PORTAL_OFICIAL}bitcoin.html" style="color:#f59e0b; font-weight:700; text-decoration:underline;">\\1</a>', novo, count=1)
     return novo
@@ -1223,7 +1374,7 @@ def gerar_widget_futebol_html(tabela):
 
     return f"""<table class="tabela-futebol"><thead><tr><th>Pos</th><th>Clube</th><th>PTS</th><th>J</th></tr></thead><tbody>{linhas}</tbody></table>"""
 
-def gerar_pagina_futebol(tabela, todas_noticias, cotacoes_html, data_fmt, ano_fmt, schema_ld):
+def gerar_pagina_futebol(tabela, todas_noticias, dados_cot, data_fmt, data_iso, ano_fmt, lista_faqs):
     linhas_completas = ""
     for t in tabela:
         cor = "#10b981" if t["posicao"] <= 4 else ("#ef4444" if t["posicao"] >= 17 else "#f8fafc")
@@ -1237,6 +1388,29 @@ def gerar_pagina_futebol(tabela, todas_noticias, cotacoes_html, data_fmt, ano_fm
         </tr>
         """
 
+    noticias_esporte = [n for n in todas_noticias if n.get("categoria") == "⚽ Esportes"]
+    if not noticias_esporte:
+        noticias_esporte = todas_noticias[:4]
+
+    cards_esporte = ""
+    for art in noticias_esporte[:6]:
+        cards_esporte += f"""
+        <article style="background:rgba(17,25,40,0.88); border:1px solid rgba(255,255,255,0.08); border-radius:14px; overflow:hidden; display:flex; flex-direction:column;">
+            <img src="{art['img']}" alt="{html.escape(art['title'])}" referrerpolicy="no-referrer" style="width:100%; height:180px; object-fit:cover;" onerror="this.src='{IMAGENS_FALLBACK_CATEGORIA['⚽ Esportes']}'">
+            <div style="padding:1.2rem; display:flex; flex-direction:column; flex-grow:1;">
+                <span style="font-size:0.7rem; color:#10b981; font-weight:800;">{art['source']} • {art['date']}</span>
+                <h3 style="font-size:1.05rem; margin:0.4rem 0 0.7rem 0; color:#f8fafc;">{art['title']}</h3>
+                <p style="font-size:0.84rem; color:#94a3b8; margin-bottom:1rem; flex-grow:1;">{art['desc']}</p>
+                <a href="{art['url']}" target="_blank" rel="noopener noreferrer" style="background:#10b981; color:#03060c; text-align:center; padding:0.6rem; border-radius:8px; font-weight:800; font-size:0.8rem; text-decoration:none;">Ler Cobertura Esportiva &rarr;</a>
+            </div>
+        </article>
+        """
+
+    destaque_fut = noticias_esporte[0] if noticias_esporte else {"title": "Tabela do Brasileirão Série A Atualizada", "desc": "Classificação completa do Brasileirão Série A.", "img": IMAGENS_FALLBACK_CATEGORIA["⚽ Esportes"]}
+    og_fut_title = destaque_fut["title"].replace('"', '&quot;')
+    og_fut_img = destaque_fut.get("img", IMAGENS_FALLBACK_CATEGORIA["⚽ Esportes"])
+    schema_ld_fut = gerar_schema_json_ld(destaque_fut, dados_cot, data_iso, lista_faqs, f"{URL_PORTAL_OFICIAL}futebol.html", "Tabela do Brasileirão Série A | TechNews PRO")
+
     html_fut = f"""<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -1245,17 +1419,23 @@ def gerar_pagina_futebol(tabela, todas_noticias, cotacoes_html, data_fmt, ano_fm
     <meta name="description" content="Tabela atualizada do Brasileirão Série A: Classificação completa, pontuação do G4, Z4 e notícias do futebol brasileiro ao vivo.">
     <meta name="robots" content="max-image-preview:large, index, follow">
     <link rel="canonical" href="{URL_PORTAL_OFICIAL}futebol.html">
+    <meta property="og:title" content="{og_fut_title}">
+    <meta property="og:description" content="Confira a classificação atualizada do Brasileirão Série A (G4 e Z4) e os últimos lances do futebol.">
+    <meta property="og:image" content="{og_fut_img}">
+    <meta property="og:url" content="{URL_PORTAL_OFICIAL}futebol.html">
+    <meta property="og:type" content="website">
     <title>Tabela do Brasileirão Série A Atualizada | G4, Z4 e Jogos | TechNews PRO</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-    {schema_ld}
+    {schema_ld_fut}
     <style>
         * {{ box-sizing: border-box; }}
         body {{ background:#070b14; color:#f8fafc; font-family:'Inter',sans-serif; margin:0; line-height:1.6; overflow-x:hidden; }}
         header {{ background:#0f172a; padding:1rem 4%; border-bottom:1px solid rgba(255,255,255,0.08); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; }}
         .container {{ max-width:1200px; margin:2rem auto; padding:0 4%; }}
-        .table-wrap {{ width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; border-radius:14px; border:1px solid rgba(255,255,255,0.08); }}
+        .table-wrap {{ width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; border-radius:14px; border:1px solid rgba(255,255,255,0.08); margin-bottom:2.5rem; }}
         table {{ width:100%; min-width:340px; border-collapse:collapse; background:rgba(17,25,40,0.9); font-family:'JetBrains Mono',monospace; font-size:0.86rem; }}
         th {{ background:#03060c; color:#94a3b8; text-align:left; padding:13px 11px; font-size:0.76rem; text-transform:uppercase; }}
+        .grid {{ display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:1.5rem; }}
         .ad-top {{ width:100%; overflow-x:auto; text-align:center; margin:1.2rem auto; padding:0 2%; }}
         footer {{ background:#03060c; color:#64748b; text-align:center; padding:2.5rem 4%; margin-top:4rem; border-top:1px solid rgba(255,255,255,0.08); }}
     </style>
@@ -1264,7 +1444,7 @@ def gerar_pagina_futebol(tabela, todas_noticias, cotacoes_html, data_fmt, ano_fm
     <header>
         <a href="index.html" style="font-size:1.6rem; font-weight:900; color:#fff; text-decoration:none;">TechNews<span style="color:#ef4444;">.PRO</span></a>
         <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
-            <a href="index.html" style="color:#94a3b8; text-decoration:none; font-weight:700; font-size:0.85rem;">&larr; Voltar ao Portal</a>
+            <a href="index.html" style="color:#94a3b8; text-decoration:none; font-weight:700; font-size:0.85rem;">&larr; Terminal IA &amp; Mercado</a>
             <a href="cotacao-agora.html" style="color:#10b981; text-decoration:none; font-weight:700; font-size:0.85rem;">📊 Cotações</a>
             <a href="{LINK_KIWIFY_1}" target="_blank" style="background:#ef4444; color:#fff; padding:0.5rem 1rem; border-radius:8px; font-weight:800; text-decoration:none; font-size:0.82rem;">💎 Área VIP</a>
         </div>
@@ -1287,15 +1467,110 @@ def gerar_pagina_futebol(tabela, todas_noticias, cotacoes_html, data_fmt, ano_fm
                 <tbody>{linhas_completas}</tbody>
             </table>
         </div>
+        <h2 style="font-size:1.3rem; margin-bottom:1.2rem; border-left:4px solid #10b981; padding-left:12px;">Últimas Notícias do Futebol</h2>
+        <div class="grid">{cards_esporte}</div>
     </main>
     <footer>
-        <p><strong>TechNews.PRO</strong> &copy; {ano_fmt} — Central de Esportes & Estatísticas.</p>
+        <p><strong>TechNews.PRO</strong> &copy; {ano_fmt} — Central de Esportes &amp; Estatísticas.</p>
     </footer>
     <script data-cfasync="false" src="https://bicea.org/14/7843682dc41b2077e8d78d48efd6360a"></script>
 </body>
 </html>"""
     with open("futebol.html", "w", encoding="utf-8") as f:
         f.write(html_fut)
+
+# ==============================================================================
+# PÁGINA DEDICADA DE DADOS: DOLAR-HOJE.HTML (COM SCHEMA EXCLUSIVO + FAQ)
+# ==============================================================================
+def gerar_pagina_dolar_hoje(dados_cot, data_fmt, data_iso, ano_fmt, lista_faqs, faq_section_html):
+    usd = dados_cot["USDBRL"]
+    eur = dados_cot["EURBRL"]
+    btc = dados_cot["BTCBRL"]
+
+    destaque_dolar = {
+        "title": f"Dólar Hoje opera a {usd['val']} ({usd['pct']}) — Cotação Comercial Ao Vivo",
+        "desc": f"Consulte a cotação comercial do Dólar ({usd['val']}), Euro ({eur['val']}) e Bitcoin ({btc['val']}) em tempo real.",
+        "img": IMAGENS_FALLBACK_CATEGORIA["Finanças"]
+    }
+    schema_ld_dolar = gerar_schema_json_ld(destaque_dolar, dados_cot, data_iso, lista_faqs, f"{URL_PORTAL_OFICIAL}dolar-hoje.html", "Dólar Hoje Ao Vivo | TechNews PRO")
+
+    html_dolar = f"""<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cotação do Dólar Hoje ({usd['val']}) em tempo real. Conversor atualizado de Dólar Comercial para Real (USD/BRL) e análise cambial.">
+    <meta name="robots" content="max-image-preview:large, index, follow">
+    <link rel="canonical" href="{URL_PORTAL_OFICIAL}dolar-hoje.html">
+    <meta property="og:title" content="Dólar Hoje: {usd['val']} ({usd['pct']}) | Cotação Ao Vivo e Conversor">
+    <meta property="og:description" content="Consulte o valor do Dólar Comercial agora e converta qualquer quantia instantaneamente.">
+    <meta property="og:image" content="{IMAGENS_FALLBACK_CATEGORIA['Finanças']}">
+    <meta property="og:url" content="{URL_PORTAL_OFICIAL}dolar-hoje.html">
+    <meta property="og:type" content="website">
+    <title>Dólar Hoje: {usd['val']} | Cotação Comercial Ao Vivo e Conversor | TechNews PRO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    {schema_ld_dolar}
+    <style>
+        :root {{ --card-bg: rgba(17, 25, 40, 0.88); --border: rgba(255, 255, 255, 0.12); --neon: #00f2fe; --text-muted: #cbd5e1; }}
+        * {{ box-sizing: border-box; }}
+        body {{ background:#070b14; color:#f8fafc; font-family:'Inter',sans-serif; margin:0; line-height:1.6; overflow-x:hidden; }}
+        header {{ background:#0f172a; padding:1rem 4%; border-bottom:1px solid rgba(255,255,255,0.08); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; }}
+        .container {{ max-width:980px; margin:2.5rem auto; padding:0 4%; }}
+        .hero-dolar {{ background:linear-gradient(145deg, rgba(16,185,129,0.16), rgba(15,23,42,0.95)); border:1px solid rgba(16,185,129,0.45); border-radius:18px; padding:2.2rem; text-align:center; }}
+        .big-val {{ font-size:clamp(2.4rem, 6vw, 3.6rem); font-weight:900; font-family:'JetBrains Mono',monospace; color:#10b981; margin:0.5rem 0; }}
+        .conv-row {{ display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:1rem; margin-top:1.5rem; }}
+        input {{ width:100%; padding:0.85rem; border-radius:10px; border:1px solid rgba(255,255,255,0.2); background:#03060c; color:#00f2fe; font-size:1.1rem; font-family:'JetBrains Mono',monospace; font-weight:700; }}
+        footer {{ background:#03060c; color:#64748b; text-align:center; padding:2.5rem 4%; margin-top:4rem; border-top:1px solid rgba(255,255,255,0.08); }}
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" style="font-size:1.6rem; font-weight:900; color:#fff; text-decoration:none;">TechNews<span style="color:#ef4444;">.PRO</span></a>
+        <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+            <a href="index.html" style="color:#94a3b8; text-decoration:none; font-weight:700; font-size:0.85rem;">&larr; Terminal IA &amp; Mercado</a>
+            <a href="cotacao-agora.html" style="color:#00f2fe; text-decoration:none; font-weight:700; font-size:0.85rem;">📊 Painel Multi-Moedas</a>
+            <a href="{LINK_KIWIFY_1}" target="_blank" style="background:#ef4444; color:#fff; padding:0.5rem 1rem; border-radius:8px; font-weight:800; text-decoration:none; font-size:0.82rem;">💎 Área VIP</a>
+        </div>
+    </header>
+    <main class="container">
+        <div class="hero-dolar">
+            <span style="background:#10b981; color:#03060c; padding:4px 12px; border-radius:20px; font-size:0.72rem; font-weight:900;">💵 CÂMBIO COMERCIAL AO VIVO</span>
+            <h1 style="font-size:clamp(1.5rem, 4vw, 2.2rem); margin-top:0.8rem;">Valor do Dólar Comercial Hoje (USD/BRL)</h1>
+            <div class="big-val">{usd['val']}</div>
+            <p style="color:#cbd5e1; font-weight:700;">Variação nas últimas 24h: <span style="color:#10b981;">{usd['pct']}</span> • Atualizado em {data_fmt} (BRT)</p>
+            <div class="conv-row">
+                <div>
+                    <label style="font-size:0.78rem; color:#94a3b8; display:block; margin-bottom:6px;">🇺🇸 Quantia em Dólar (USD)</label>
+                    <input type="number" id="usd-in" value="100" step="any" oninput="calcDolar(true)">
+                </div>
+                <div>
+                    <label style="font-size:0.78rem; color:#94a3b8; display:block; margin-bottom:6px;">🇧🇷 Valor Convertido em Reais (BRL)</label>
+                    <input type="number" id="brl-in" step="any" oninput="calcDolar(false)">
+                </div>
+            </div>
+            <p style="margin-top:1.4rem; font-size:0.84rem; color:#94a3b8;">Outras referências agora: Euro a <strong>{eur['val']}</strong> | Bitcoin a <strong>{btc['val']}</strong></p>
+        </div>
+        {faq_section_html}
+    </main>
+    <footer><p><strong>TechNews.PRO</strong> &copy; {ano_fmt} — Monitor Cambial Automatizado.</p></footer>
+    <script>
+        const tx = {usd['raw']};
+        function calcDolar(fromUsd) {{
+            const u = document.getElementById('usd-in');
+            const b = document.getElementById('brl-in');
+            if (fromUsd) {{
+                b.value = ((parseFloat(u.value) || 0) * tx).toFixed(2);
+            }} else {{
+                u.value = ((parseFloat(b.value) || 0) / tx).toFixed(2);
+            }}
+        }}
+        calcDolar(true);
+    </script>
+    <script data-cfasync="false" src="https://bicea.org/14/7843682dc41b2077e8d78d48efd6360a"></script>
+</body>
+</html>"""
+    with open("dolar-hoje.html", "w", encoding="utf-8") as f:
+        f.write(html_dolar)
 
 # ==============================================================================
 # INTELIGÊNCIA ARTIFICIAL: TRADUÇÃO PT-BR + DISCOVER + TIME-TO-VALUE
@@ -1493,9 +1768,6 @@ def gerar_video_reel_noticia(noticia, caminho_saida="noticia_urgente.mp4"):
         categoria_not = noticia.get("categoria", "Tecnologia")
         texto_tarja, cor_tarja = obter_config_visual_editoria(categoria_not)
 
-        # ------------------------------------------------------------------
-        # 1. METADE SUPERIOR (0 a 960px): DUPLO DOWNLOAD + FALLBACK GARANTIDO
-        # ------------------------------------------------------------------
         img_topo = baixar_imagem_validada(noticia.get("img", ""))
         if img_topo is None:
             url_reserva = IMAGENS_FALLBACK_CATEGORIA.get(categoria_not, IMAGENS_FALLBACK_CATEGORIA["Tecnologia"])
@@ -1522,9 +1794,6 @@ def gerar_video_reel_noticia(noticia, caminho_saida="noticia_urgente.mp4"):
 
         canvas.paste(img_topo, (0, 0))
 
-        # ------------------------------------------------------------------
-        # 2. METADE INFERIOR (960px a 1920px) + MARGENS LATERAIS AMPLAS
-        # ------------------------------------------------------------------
         draw = ImageDraw.Draw(canvas, "RGBA")
         draw.rectangle([(0, altura_metade), (largura, altura)], fill=(7, 11, 20, 255))
 
@@ -1550,7 +1819,6 @@ def gerar_video_reel_noticia(noticia, caminho_saida="noticia_urgente.mp4"):
             desenhar_texto_centralizado(draw, y_texto, linha, fonte_titulo, cor_linha, largura)
             y_texto += 78
 
-        # Botão de Rodapé Fixo Centralizado (1685px a 1800px)
         draw.rectangle([(85, 1685), (largura - 85, 1800)], fill=(16, 185, 129, 255))
         desenhar_texto_centralizado(draw, 1723, "LEIA COMPLETO NO LINK DOS COMENTÁRIOS", fonte_cta, (255, 255, 255, 255), largura)
 
@@ -1590,7 +1858,7 @@ def limpar_arquivos_temporarios_midia():
                 pass
 
 # ==============================================================================
-# AGENTES SOCIAIS OMNICHANNEL: ONESIGNAL, TELEGRAM VIDEO & FACEBOOK REELS
+# AGENTES SOCIAIS OMNICHANNEL COM ROUTER INTELIGENTE POR CATEGORIA
 # ==============================================================================
 def disparar_onesignal_push(noticia):
     if not ONESIGNAL_APP_ID or not ONESIGNAL_REST_KEY or not noticia:
@@ -1599,17 +1867,18 @@ def disparar_onesignal_push(noticia):
         titulo_pt = garantir_portugues(noticia.get("title", ""))
         desc_pt = limpar_html_rss(garantir_portugues(noticia.get("desc", "")))
         titulo_curto = titulo_pt[:55] + "..." if len(titulo_pt) > 55 else titulo_pt
+        url_destino = obter_url_hub_por_categoria(noticia.get("categoria", "Tecnologia"))
         payload = {
             "app_id": ONESIGNAL_APP_ID.strip(),
             "included_segments": ["Subscribed Users"],
             "headings": {"en": "🚨 URGENTE: " + titulo_curto, "pt": "🚨 URGENTE: " + titulo_curto},
             "contents": {"en": desc_pt[:110], "pt": desc_pt[:110]},
-            "url": URL_PORTAL_OFICIAL
+            "url": url_destino
         }
         headers = {"Authorization": f"Basic {ONESIGNAL_REST_KEY.strip()}", "Content-Type": "application/json"}
         r = requests.post("https://onesignal.com/api/v1/notifications", json=payload, headers=headers, timeout=10)
         if r.status_code == 200:
-            print("Agente OneSignal: ✅ Notificação enviada!")
+            print(f"Agente OneSignal: ✅ Push enviado para '{url_destino}'!")
             return True
     except Exception as e:
         print(f"Agente OneSignal Erro: {e}")
@@ -1622,15 +1891,16 @@ def publicar_no_telegram(noticia, caminho_video=None):
         titulo_pt = html.escape(garantir_portugues(noticia.get("title", ""))[:180])
         desc_pt = html.escape(limpar_html_rss(garantir_portugues(noticia.get("desc", "")))[:260])
         stamp = datetime.now(FUSO_BRASIL).strftime("%Y%m%d%H%M")
-        link_track = f"{URL_PORTAL_OFICIAL}?utm_source=telegram_vip&v={stamp}"
+        url_hub = obter_url_hub_por_categoria(noticia.get("categoria", "Tecnologia"))
+        link_track = f"{url_hub}?utm_source=telegram_vip&v={stamp}"
 
         texto_alerta = (
             f"🚨 <b>[URGENTE] Acabou de sair no Terminal:</b>\n\n"
             f"🔥 <b>{titulo_pt}</b>\n\n"
             f"💡 <i>{desc_pt}</i>\n\n"
-            f"👉 <b>Leia a cobertura completa no portal:</b>\n"
+            f"👉 <b>Acesse o Hub Oficial da Editoria:</b>\n"
             f"🔗 {link_track}\n\n"
-            f"💎 <a href=\"{LINK_KIWIFY_1}\">Acessar Área VIP: Desenvolvimento Pessoal PRO</a>\n"
+            f"💎 <a href=\"{LINK_KIWIFY_1}\">Acessar Área VIP: Super Profissional &amp; Alta Performance</a>\n"
             f"🤖 <a href=\"{LINK_KIWIFY_2}\">Conhecer LUMI — Ofertas com IA</a>"
         )
 
@@ -1647,7 +1917,7 @@ def publicar_no_telegram(noticia, caminho_video=None):
                     }
                     r_v = requests.post(url_vid, data=data_v, files=files, timeout=90)
                 if r_v.status_code == 200:
-                    print("Agente Telegram: ✅ VÍDEO NATIVO 9:16 enviado com sucesso!")
+                    print(f"Agente Telegram: ✅ VÍDEO NATIVO 9:16 enviado com link roteado ({url_hub})!")
                     return True
                 else:
                     print(f"Aviso Vídeo Telegram ({r_v.status_code}): {r_v.text}")
@@ -1667,9 +1937,10 @@ def publicar_no_telegram(noticia, caminho_video=None):
 def gerar_copy_persuasiva_meta(noticia):
     titulo = garantir_portugues(noticia.get("title", ""))
     resumo = limpar_html_rss(garantir_portugues(noticia.get("desc", "")))
+    url_hub = obter_url_hub_por_categoria(noticia.get("categoria", "Tecnologia"))
     cta_padrao = (
-        f"\n\n👉 ACESSE A MATÉRIA COMPLETA AQUI:\n"
-        f"🔗 {URL_PORTAL_OFICIAL}\n\n"
+        f"\n\n👉 ACESSE A COBERTURA COMPLETA NESTA EDITORIA:\n"
+        f"🔗 {url_hub}\n\n"
         f"🛑 O detalhe mais importante acabou de ser atualizado no nosso Terminal Oficial!\n\n"
         f"👇 Clique no link acima ou comente 'LINK', 'QUERO' ou 'VIP' que te envio o acesso + uma Ferramenta Secreta direto no seu Direct! 🚀"
     )
@@ -1680,12 +1951,12 @@ def gerar_copy_persuasiva_meta(noticia):
         headers = {"Content-Type": "application/json", "Authorization": f"Bearer {OPENAI_API_KEY}"}
         prompt = (
             f"Notícia: {titulo}. Resumo: {resumo}.\n"
-            f"Link Oficial do Portal: {URL_PORTAL_OFICIAL}\n\n"
+            f"Link Específico da Categoria: {url_hub}\n\n"
             "Crie uma legenda em Português do Brasil (PT-BR) altamente magnética para o Facebook seguindo esta estrutura exata e sem cortar frases no meio:\n"
             "1. GANCHO EXPLOSIVO com emojis na primeira linha (1 frase completa).\n"
-            f"2. LOGO ABAIXO DO GANCHO, coloque: 👉 Leia completo no portal: {URL_PORTAL_OFICIAL}\n"
+            f"2. LOGO ABAIXO DO GANCHO, coloque: 👉 Leia completo no portal: {url_hub}\n"
             "3. CURIOSIDADE (2 frases curtas e completas de até 260 caracteres no total): Contextualize o impacto da notícia sem jamais deixar palavras pela metade.\n"
-            f"4. FECHAMENTO: Convide a clicar no link ({URL_PORTAL_OFICIAL}) e peça para comentarem 'LINK' ou 'VIP' para receberem nossa ferramenta recomendada."
+            f"4. FECHAMENTO: Convide a clicar no link ({url_hub}) e peça para comentarem 'LINK' ou 'VIP' para receberem nossa ferramenta recomendada."
         )
         payload = {
             "model": "gpt-4o-mini",
@@ -1699,8 +1970,8 @@ def gerar_copy_persuasiva_meta(noticia):
         r = requests.post(url, headers=headers, json=payload, timeout=10)
         if r.status_code == 200:
             copy_ia = r.json()["choices"][0]["message"]["content"].strip().replace('"', '')
-            if URL_PORTAL_OFICIAL not in copy_ia:
-                copy_ia += f"\n\n👉 Acesse a matéria completa aqui: {URL_PORTAL_OFICIAL}"
+            if url_hub not in copy_ia:
+                copy_ia += f"\n\n👉 Acesse a matéria completa aqui: {url_hub}"
             return copy_ia
     except:
         pass
@@ -1754,6 +2025,7 @@ def publicar_no_facebook(noticia, caminho_video=None):
 
     alvo_id, token_pagina = obter_credenciais_pagina(META_ACCESS_TOKEN)
     mensagem = gerar_copy_persuasiva_meta(noticia)
+    url_hub = obter_url_hub_por_categoria(noticia.get("categoria", "Tecnologia"))
     alvos_tentativa = [alvo_id]
     if "me" not in alvos_tentativa:
         alvos_tentativa.append("me")
@@ -1777,7 +2049,7 @@ def publicar_no_facebook(noticia, caminho_video=None):
                     try:
                         requests.post(
                             f"https://graph.facebook.com/v20.0/{vid_id}/comments",
-                            data={"message": f"📖 Leia a matéria completa aqui: {URL_PORTAL_OFICIAL}\n💎 Conheça também nossa Área VIP: {LINK_KIWIFY_1}", "access_token": token_pagina},
+                            data={"message": f"📖 Leia a cobertura completa desta editoria aqui: {url_hub}\n💎 Conheça também nossa Área VIP: {LINK_KIWIFY_1}", "access_token": token_pagina},
                             timeout=10
                         )
                     except:
@@ -1789,7 +2061,7 @@ def publicar_no_facebook(noticia, caminho_video=None):
                 print(f"Erro tentativa de vídeo Meta: {e}")
 
     stamp = datetime.now(FUSO_BRASIL).strftime("%Y%m%d%H%M")
-    link_com_cache_buster = f"{URL_PORTAL_OFICIAL}?v={stamp}"
+    link_com_cache_buster = f"{url_hub}?v={stamp}"
 
     for alvo in alvos_tentativa:
         try:
@@ -1798,7 +2070,7 @@ def publicar_no_facebook(noticia, caminho_video=None):
             r_feed = requests.post(url_feed, data=payload_feed, timeout=15)
             if r_feed.status_code == 200:
                 salvar_memoria_meta(noticia.get("title", ""))
-                print(f"Agente Meta: ✅ Card de Link Clicável publicado via '{alvo}'!")
+                print(f"Agente Meta: ✅ Card de Link Roteado ({url_hub}) publicado via '{alvo}'!")
                 return True
         except:
             pass
@@ -1923,7 +2195,7 @@ def fetch_newsdata_rotativo():
     noticias = []
     if not NEWSDATA_API_KEY:
         return noticias
-    termos_quentes = ["inteligência artificial", "reforma tributária", "bitcoin", "stf", "brasileirão", "famosos"]
+    termos_quentes = ["inteligência artificial", "mercado financeiro", "bitcoin", "tecnologia", "economia", "startups"]
     indice_ciclo = (datetime.now(FUSO_BRASIL).hour // 6) % len(termos_quentes)
     termo_atual = termos_quentes[indice_ciclo]
     try:
@@ -2018,7 +2290,7 @@ def fetch_newsapi():
     if not NEWS_API_KEY:
         return noticias
     try:
-        query = '("inteligencia artificial" OR tecnologia OR politica OR economia OR bitcoin OR startups OR famosos)'
+        query = '("inteligencia artificial" OR tecnologia OR economia OR bitcoin OR startups OR ciencia)'
         url = f"https://newsapi.org/v2/everything?q={query}&language=pt&sortBy=publishedAt&pageSize=10&apiKey={NEWS_API_KEY}"
         r = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'}, timeout=8)
         if r.status_code == 200:
@@ -2045,10 +2317,10 @@ FALLBACK_NEWS = [
         "url": "https://news.google.com", "source": "Destaque IA", "date": "Hoje", "categoria": "Tecnologia"
     },
     {
-        "title": "Bastidores de Brasília: Novas medidas econômicas movimentam o Congresso e o mercado financeiro",
-        "desc": "Parlamentares debatem pacote fiscal e impactos diretos nas taxas de juros e investimentos no país.",
-        "img": IMAGENS_FALLBACK_CATEGORIA["🏛️ Política"],
-        "url": "https://www.metropoles.com", "source": "Política Nacional", "date": "Hoje", "categoria": "🏛️ Política"
+        "title": "Mercado Financeiro: Algoritmos preditivos e ativos digitais ganham espaço nas carteiras institucionais",
+        "desc": "Analistas apontam crescimento acelerado na integração entre ferramentas de IA e gestão de patrimônio.",
+        "img": IMAGENS_FALLBACK_CATEGORIA["Finanças"],
+        "url": "https://news.google.com", "source": "Radar Mercado", "date": "Hoje", "categoria": "Finanças"
     }
 ]
 
@@ -2069,9 +2341,9 @@ def gerar_rss(noticias):
     xml = f"""<?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0">
 <channel>
-  <title>TechNews PRO | Terminal de Inteligência, IA, Esportes e Mercado</title>
+  <title>TechNews PRO | Terminal de Inteligência Artificial, Finanças e Inovação</title>
   <link>{URL_PORTAL_OFICIAL}</link>
-  <description>Notícias em tempo real sobre Inteligência Artificial, Tecnologia, Política, Famosos, Futebol e Finanças.</description>
+  <description>Notícias em tempo real sobre Inteligência Artificial, Tecnologia, Mercado Financeiro, Esportes e Política.</description>
   <language>pt-BR</language>
 """
     for n in noticias[:20]:
@@ -2084,7 +2356,7 @@ def gerar_rss(noticias):
     with open("feed.xml", "w", encoding="utf-8") as f:
         f.write(xml)
 
-def gerar_hub_ia(todas_noticias, cotacoes_html, data_fmt, ano_fmt, schema_ld):
+def gerar_hub_ia(todas_noticias, dados_cot, cotacoes_html, data_fmt, data_iso, ano_fmt, lista_faqs, faq_section_html):
     cards_ia = ""
     noticias_ia = [n for n in todas_noticias if n.get("categoria") == "Tecnologia" or "ia" in n.get("title", "").lower()]
     if not noticias_ia:
@@ -2103,6 +2375,11 @@ def gerar_hub_ia(todas_noticias, cotacoes_html, data_fmt, ano_fmt, schema_ld):
         </article>
         """
 
+    destaque_ia = noticias_ia[0] if noticias_ia else todas_noticias[0]
+    og_ia_title = destaque_ia["title"].replace('"', '&quot;')
+    og_ia_img = destaque_ia.get("img", IMAGENS_FALLBACK_CATEGORIA["Tecnologia"])
+    schema_ld_ia = gerar_schema_json_ld(destaque_ia, dados_cot, data_iso, lista_faqs, f"{URL_PORTAL_OFICIAL}inteligencia-artificial.html", "Hub de Inteligência Artificial 3D | TechNews PRO")
+
     html_hub = f"""<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -2112,12 +2389,17 @@ def gerar_hub_ia(todas_noticias, cotacoes_html, data_fmt, ano_fmt, schema_ld):
     <meta name="description" content="Hub Oficial 3D de Inteligência Artificial: Guia definitivo, ferramentas generativas, automação e notícias em tempo real sobre IA.">
     <meta name="robots" content="max-image-preview:large, index, follow">
     <link rel="canonical" href="{URL_PORTAL_OFICIAL}inteligencia-artificial.html">
-    <title>Inteligência Artificial (Hub 3D WebGL) | Guia, Ferramentas & Notícias | TechNews PRO</title>
+    <meta property="og:title" content="{og_ia_title}">
+    <meta property="og:description" content="Explore relatórios sobre Inteligência Artificial, LLMs, automação de negócios e ferramentas generativas.">
+    <meta property="og:image" content="{og_ia_img}">
+    <meta property="og:url" content="{URL_PORTAL_OFICIAL}inteligencia-artificial.html">
+    <meta property="og:type" content="website">
+    <title>Inteligência Artificial (Hub 3D WebGL) | Guia, Ferramentas &amp; Notícias | TechNews PRO</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-    <!-- THREE.JS WEBGL NEURAL NETWORK -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
-    {schema_ld}
+    {schema_ld_ia}
     <style>
+        :root {{ --card-bg: rgba(17, 25, 40, 0.88); --border: rgba(255, 255, 255, 0.12); --neon: #00f2fe; --text-muted: #cbd5e1; }}
         * {{ box-sizing: border-box; }}
         body {{ background:#050811; color:#f8fafc; font-family:'Inter',sans-serif; margin:0; line-height:1.65; overflow-x:hidden; position:relative; touch-action: manipulation; }}
         #neural-webgl-canvas {{ position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:0; pointer-events:none; opacity:0.88; }}
@@ -2132,7 +2414,6 @@ def gerar_hub_ia(todas_noticias, cotacoes_html, data_fmt, ano_fmt, schema_ld):
     </style>
 </head>
 <body>
-    <!-- CANVAS WEBGL THREE.JS (POINTER-EVENTS: NONE + SUPORTE MOUSE & TOUCH) -->
     <canvas id="neural-webgl-canvas"></canvas>
 
     <div class="ticker">
@@ -2143,7 +2424,7 @@ def gerar_hub_ia(todas_noticias, cotacoes_html, data_fmt, ano_fmt, schema_ld):
         <a href="index.html" style="font-size:1.6rem; font-weight:900; color:#fff; text-decoration:none;">TechNews<span style="color:#ef4444;">.PRO</span></a>
         <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
             <a href="index.html" style="color:#94a3b8; text-decoration:none; font-weight:700; font-size:0.85rem;">&larr; Radar Principal</a>
-            <a href="cotacao-agora.html" style="color:#10b981; text-decoration:none; font-weight:700; font-size:0.85rem;">📊 Cotações</a>
+            <a href="dolar-hoje.html" style="color:#10b981; text-decoration:none; font-weight:700; font-size:0.85rem;">💵 Dólar Hoje</a>
             <a href="api/v1/noticias.json" target="_blank" style="color:#00f2fe; text-decoration:none; font-weight:700; font-size:0.85rem;">🔌 API JSON</a>
             <a href="{LINK_KIWIFY_1}" target="_blank" style="background:#ef4444; color:#fff; padding:0.5rem 1rem; border-radius:8px; font-weight:800; text-decoration:none; font-size:0.82rem;">💎 Área VIP</a>
         </div>
@@ -2168,12 +2449,13 @@ def gerar_hub_ia(todas_noticias, cotacoes_html, data_fmt, ano_fmt, schema_ld):
 
         <h2 style="font-size:1.3rem; margin-bottom:1.4rem; border-left:4px solid #00f2fe; padding-left:12px;">Últimas Notícias e Descobertas de Inteligência Artificial</h2>
         <div class="grid">{cards_ia}</div>
+
+        {faq_section_html}
     </main>
     <footer>
         <p><strong>TechNews.PRO</strong> &copy; {ano_fmt} — Hub Interativo 3D de Autoridade em Inteligência Artificial.</p>
     </footer>
 
-    <!-- SCRIPT THREE.JS NEURÔNIO PROCESSUAL EM NÉON (CATMULLROMCURVE3 + TOUCH & MOUSE) -->
     <script>
         window.addEventListener('DOMContentLoaded', function() {{
             if (!window.THREE) return;
@@ -2271,10 +2553,17 @@ def gerar_hub_ia(todas_noticias, cotacoes_html, data_fmt, ano_fmt, schema_ld):
     with open("inteligencia-artificial.html", "w", encoding="utf-8") as f:
         f.write(html_hub)
 
-def gerar_pagina_cotacoes(dados_cot, cotacoes_html, data_fmt, ano_fmt, schema_ld):
+def gerar_pagina_cotacoes(dados_cot, cotacoes_html, data_fmt, data_iso, ano_fmt, lista_faqs, faq_section_html):
     usd = dados_cot["USDBRL"]
     eur = dados_cot["EURBRL"]
     btc = dados_cot["BTCBRL"]
+
+    destaque_cot = {
+        "title": f"Cotação Dólar ({usd['val']}), Euro ({eur['val']}) e Bitcoin ({btc['val']}) Hoje Ao Vivo",
+        "desc": "Painel financeiro em tempo real e calculadora conversora instantânea de câmbio e criptoativos.",
+        "img": IMAGENS_FALLBACK_CATEGORIA["Finanças"]
+    }
+    schema_ld_cot = gerar_schema_json_ld(destaque_cot, dados_cot, data_iso, lista_faqs, f"{URL_PORTAL_OFICIAL}cotacao-agora.html", "Calculadora e Cotação Dólar, Euro e Bitcoin | TechNews PRO")
 
     html_cot = f"""<!DOCTYPE html>
 <html lang="pt-BR">
@@ -2284,10 +2573,16 @@ def gerar_pagina_cotacoes(dados_cot, cotacoes_html, data_fmt, ano_fmt, schema_ld
     <meta name="description" content="Calculadora e Conversor de Dólar, Euro e Bitcoin hoje em tempo real. Dashboard financeiro gratuito para investidores e analistas.">
     <meta name="robots" content="max-image-preview:large, index, follow">
     <link rel="canonical" href="{URL_PORTAL_OFICIAL}cotacao-agora.html">
+    <meta property="og:title" content="Cotação Dólar ({usd['val']}), Euro e Bitcoin Hoje Ao Vivo | TechNews PRO">
+    <meta property="og:description" content="Painel em tempo real e calculadora conversora de Dólar, Euro e Bitcoin para Real.">
+    <meta property="og:image" content="{IMAGENS_FALLBACK_CATEGORIA['Finanças']}">
+    <meta property="og:url" content="{URL_PORTAL_OFICIAL}cotacao-agora.html">
+    <meta property="og:type" content="website">
     <title>Calculadora e Cotação Dólar, Euro e Bitcoin Hoje Ao Vivo | TechNews PRO</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-    {schema_ld}
+    {schema_ld_cot}
     <style>
+        :root {{ --card-bg: rgba(17, 25, 40, 0.88); --border: rgba(255, 255, 255, 0.12); --neon: #00f2fe; --text-muted: #cbd5e1; }}
         * {{ box-sizing: border-box; }}
         body {{ background:#070b14; color:#f8fafc; font-family:'Inter',sans-serif; margin:0; line-height:1.6; overflow-x:hidden; }}
         header {{ background:rgba(15,23,42,0.9); padding:1rem 4%; border-bottom:1px solid rgba(255,255,255,0.08); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; }}
@@ -2312,8 +2607,8 @@ def gerar_pagina_cotacoes(dados_cot, cotacoes_html, data_fmt, ano_fmt, schema_ld
         <a href="index.html" style="font-size:1.6rem; font-weight:900; color:#fff; text-decoration:none;">TechNews<span style="color:#ef4444;">.PRO</span></a>
         <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
             <a href="index.html" style="color:#94a3b8; text-decoration:none; font-weight:700; font-size:0.85rem;">&larr; Portal</a>
+            <a href="dolar-hoje.html" style="color:#10b981; text-decoration:none; font-weight:700; font-size:0.85rem;">💵 Dólar Hoje</a>
             <a href="inteligencia-artificial.html" style="color:#00f2fe; text-decoration:none; font-weight:700; font-size:0.85rem;">🧠 Hub IA 3D</a>
-            <a href="api/v1/noticias.json" target="_blank" style="color:#f59e0b; text-decoration:none; font-weight:700; font-size:0.85rem;">🔌 API JSON</a>
             <a href="{LINK_KIWIFY_1}" target="_blank" style="background:#ef4444; color:#fff; padding:0.5rem 1rem; border-radius:8px; font-weight:800; text-decoration:none; font-size:0.82rem;">💎 Área VIP</a>
         </div>
     </header>
@@ -2325,7 +2620,7 @@ def gerar_pagina_cotacoes(dados_cot, cotacoes_html, data_fmt, ano_fmt, schema_ld
 
     <main class="container">
         <div style="text-align:center; max-width:780px; margin:0 auto;">
-            <span style="background:rgba(16,185,129,0.15); color:#10b981; border:1px solid #10b981; padding:4px 12px; border-radius:20px; font-size:0.72rem; font-weight:800;">🟢 TERMINAL FINANCEIRO & CONVERSOR AO VIVO</span>
+            <span style="background:rgba(16,185,129,0.15); color:#10b981; border:1px solid #10b981; padding:4px 12px; border-radius:20px; font-size:0.72rem; font-weight:800;">🟢 TERMINAL FINANCEIRO &amp; CONVERSOR AO VIVO</span>
             <h1 style="font-size:clamp(1.6rem, 4vw, 2.5rem); margin:0.9rem 0 0.5rem 0; font-weight:900;">Cotação e Calculadora Hoje: Dólar, Euro e Bitcoin</h1>
             <p style="color:#94a3b8; font-size:0.94rem;">Painel interativo sincronizado via API oficial de câmbio e criptoativos. Última aferição: <strong>{data_fmt} (BRT)</strong>.</p>
         </div>
@@ -2349,7 +2644,7 @@ def gerar_pagina_cotacoes(dados_cot, cotacoes_html, data_fmt, ano_fmt, schema_ld
         </div>
 
         <section class="calc-box">
-            <h2 style="font-size:1.25rem; font-weight:900; margin-bottom:0.3rem;">⚡ Calculadora Conversora Instantânea (Câmbio & Cripto)</h2>
+            <h2 style="font-size:1.25rem; font-weight:900; margin-bottom:0.3rem;">⚡ Calculadora Conversora Instantânea (Câmbio &amp; Cripto)</h2>
             <p style="font-size:0.84rem; color:#94a3b8;">Digite qualquer valor em Reais (BRL) ou Dólares (USD) para converter automaticamente na cotação oficial do dia:</p>
             <div class="calc-grid">
                 <div class="calc-input-group">
@@ -2371,8 +2666,10 @@ def gerar_pagina_cotacoes(dados_cot, cotacoes_html, data_fmt, ano_fmt, schema_ld
             </div>
         </section>
 
+        {faq_section_html}
+
         <div class="cite-box">
-            <h3 style="margin-bottom:0.4rem; font-size:1.05rem;">🔗 API Pública Gratuita & Código de Citação para Desenvolvedores</h3>
+            <h3 style="margin-bottom:0.4rem; font-size:1.05rem;">🔗 API Pública Gratuita &amp; Código de Citação para Desenvolvedores</h3>
             <p style="color:#94a3b8; font-size:0.85rem;">Consuma nosso endpoint JSON gratuito com cache-buster (<code>fetch('{URL_PORTAL_OFICIAL}api/v1/noticias.json?v=' + Date.now())</code>) ou incorpore o código abaixo:</p>
             <code id="embed-code">&lt;a href="{URL_PORTAL_OFICIAL}cotacao-agora.html" target="_blank"&gt;Fonte: Terminal de Cotações &amp; API TechNews PRO&lt;/a&gt;</code>
             <br>
@@ -2408,33 +2705,58 @@ def gerar_pagina_cotacoes(dados_cot, cotacoes_html, data_fmt, ano_fmt, schema_ld
     with open("cotacao-agora.html", "w", encoding="utf-8") as f:
         f.write(html_cot)
 
+# ==============================================================================
+# SILOS DE AUTORIDADE & CLUSTERS (BITCOIN, CHATGPT, STARTUPS, POLÍTICA, FAMOSOS)
+# ==============================================================================
 TAGS_SEO_DINAMICAS = {
     "bitcoin": {
-        "titulo": "Radar Bitcoin & Criptomoedas em Tempo Real",
-        "desc": "Acompanhe as últimas notícias, análises de mercado e movimentações sobre Bitcoin, Ethereum e ativos digitais.",
-        "kw": ["bitcoin", "cripto", "btc", "blockchain", "moeda", "dólar", "finança"]
+        "titulo": "Radar Bitcoin & Criptomoedas Hoje: Análises e Mercado",
+        "desc": "Acompanhe as últimas notícias, análises on-chain e movimentações sobre Bitcoin, Ethereum e ativos digitais.",
+        "kw": ["bitcoin", "cripto", "btc", "blockchain", "moeda", "dólar", "finança"],
+        "cat_alvo": "Finanças"
     },
     "chatgpt": {
         "titulo": "Radar ChatGPT, OpenAI & LLMs Generativos",
         "desc": "Cobertura completa sobre atualizações do ChatGPT, OpenAI, agentes autônomos e novas ferramentas de IA.",
-        "kw": ["chatgpt", "openai", "gpt", "ia", "inteligência", "algoritmo", "software"]
+        "kw": ["chatgpt", "openai", "gpt", "ia", "inteligência", "algoritmo", "software"],
+        "cat_alvo": "Tecnologia"
     },
     "startups": {
         "titulo": "Radar Startups, Fintechs & Negócios Digitais",
         "desc": "Inovação, rodadas de investimento, crescimento de fintechs e estratégias de negócios de alto impacto.",
-        "kw": ["startup", "fintech", "negócio", "empresa", "mercado", "investimento", "tecnologia"]
+        "kw": ["startup", "fintech", "negócio", "empresa", "mercado", "investimento", "tecnologia"],
+        "cat_alvo": "Finanças"
+    },
+    "politica": {
+        "titulo": "Radar Política Nacional: Brasília, Congresso e Bastidores",
+        "desc": "Cobertura em tempo real dos bastidores de Brasília, STF, Congresso Nacional e impactos políticos na economia.",
+        "kw": ["lula", "bolsonaro", "stf", "senado", "câmara", "congresso", "governo", "ministro", "política"],
+        "cat_alvo": "🏛️ Política"
+    },
+    "famosos": {
+        "titulo": "Giro dos Famosos: Celebridades, Bastidores e Entretenimento",
+        "desc": "As últimas notícias sobre celebridades, televisão, reality shows e bastidores do mundo do entretenimento.",
+        "kw": ["famoso", "celebridade", "bbb", "atriz", "ator", "cantor", "reality", "fofoca"],
+        "cat_alvo": "⭐ Famosos"
     }
 }
 
-def gerar_paginas_programaticas(todas_noticias, cotacoes_html, data_fmt, ano_fmt, schema_ld):
+def gerar_paginas_programaticas(todas_noticias, dados_cot, data_fmt, data_iso, ano_fmt, lista_faqs):
     urls_geradas = []
     for slug, cfg in TAGS_SEO_DINAMICAS.items():
         filtradas = [
             n for n in todas_noticias
-            if any(k in n.get('title', '').lower() or k in n.get('desc', '').lower() for k in cfg['kw'])
+            if n.get("categoria") == cfg.get("cat_alvo") or any(k in n.get('title', '').lower() or k in n.get('desc', '').lower() for k in cfg['kw'])
         ]
         if not filtradas:
             filtradas = todas_noticias[:6]
+
+        destaque_silo = filtradas[0] if filtradas else {"title": cfg["titulo"], "desc": cfg["desc"], "img": IMAGENS_FALLBACK_CATEGORIA.get(cfg.get("cat_alvo", "Tecnologia"), IMAGENS_FALLBACK_CATEGORIA["Tecnologia"])}
+        og_cluster_title = destaque_silo["title"].replace('"', '&quot;')
+        og_cluster_desc = destaque_silo["desc"].replace('"', '&quot;')
+        og_cluster_img = destaque_silo.get("img", IMAGENS_FALLBACK_CATEGORIA.get(cfg.get("cat_alvo", "Tecnologia"), IMAGENS_FALLBACK_CATEGORIA["Tecnologia"]))
+
+        schema_ld_silo = gerar_schema_json_ld(destaque_silo, dados_cot, data_iso, lista_faqs, f"{URL_PORTAL_OFICIAL}{slug}.html", f"{cfg['titulo']} | TechNews PRO")
 
         cards = ""
         for art in filtradas[:8]:
@@ -2459,9 +2781,14 @@ def gerar_paginas_programaticas(todas_noticias, cotacoes_html, data_fmt, ano_fmt
     <meta name="description" content="{cfg['desc']}">
     <meta name="robots" content="max-image-preview:large, index, follow">
     <link rel="canonical" href="{URL_PORTAL_OFICIAL}{slug}.html">
+    <meta property="og:title" content="{og_cluster_title}">
+    <meta property="og:description" content="{og_cluster_desc}">
+    <meta property="og:image" content="{og_cluster_img}">
+    <meta property="og:url" content="{URL_PORTAL_OFICIAL}{slug}.html">
+    <meta property="og:type" content="website">
     <title>{cfg['titulo']} | TechNews PRO</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
-    {schema_ld}
+    {schema_ld_silo}
     <style>
         * {{ box-sizing: border-box; }}
         body {{ background:#070b14; color:#f8fafc; font-family:'Inter',sans-serif; margin:0; line-height:1.6; overflow-x:hidden; }}
@@ -2476,9 +2803,9 @@ def gerar_paginas_programaticas(todas_noticias, cotacoes_html, data_fmt, ano_fmt
     <header>
         <a href="index.html" style="font-size:1.6rem; font-weight:900; color:#fff; text-decoration:none;">TechNews<span style="color:#ef4444;">.PRO</span></a>
         <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
-            <a href="index.html" style="color:#94a3b8; text-decoration:none; font-weight:700; font-size:0.85rem;">&larr; Radar Principal</a>
+            <a href="index.html" style="color:#94a3b8; text-decoration:none; font-weight:700; font-size:0.85rem;">&larr; Terminal IA &amp; Mercado</a>
             <a href="inteligencia-artificial.html" style="color:#00f2fe; text-decoration:none; font-weight:700; font-size:0.85rem;">🧠 Hub IA 3D</a>
-            <a href="cotacao-agora.html" style="color:#10b981; text-decoration:none; font-weight:700; font-size:0.85rem;">📊 Cotações</a>
+            <a href="dolar-hoje.html" style="color:#10b981; text-decoration:none; font-weight:700; font-size:0.85rem;">💵 Dólar Hoje</a>
             <a href="{LINK_KIWIFY_1}" target="_blank" style="background:#ef4444; color:#fff; padding:0.5rem 1rem; border-radius:8px; font-weight:800; text-decoration:none; font-size:0.82rem;">💎 Área VIP</a>
         </div>
     </header>
@@ -2494,7 +2821,7 @@ def gerar_paginas_programaticas(todas_noticias, cotacoes_html, data_fmt, ano_fmt
         <div class="grid">{cards}</div>
     </main>
     <footer>
-        <p><strong>TechNews.PRO</strong> &copy; {ano_fmt} — Topic Cluster Automatizado.</p>
+        <p><strong>TechNews.PRO</strong> &copy; {ano_fmt} — Silo Vertical Automatizado.</p>
     </footer>
     <script data-cfasync="false" src="https://bicea.org/14/7843682dc41b2077e8d78d48efd6360a"></script>
 </body>
@@ -2511,6 +2838,7 @@ def gerar_sitemap_xml(urls_extras):
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>{URL_PORTAL_OFICIAL}</loc><lastmod>{hoje}</lastmod><changefreq>hourly</changefreq><priority>1.0</priority></url>
   <url><loc>{URL_PORTAL_OFICIAL}inteligencia-artificial.html</loc><lastmod>{hoje}</lastmod><changefreq>hourly</changefreq><priority>0.9</priority></url>
+  <url><loc>{URL_PORTAL_OFICIAL}dolar-hoje.html</loc><lastmod>{hoje}</lastmod><changefreq>hourly</changefreq><priority>0.9</priority></url>
   <url><loc>{URL_PORTAL_OFICIAL}cotacao-agora.html</loc><lastmod>{hoje}</lastmod><changefreq>hourly</changefreq><priority>0.9</priority></url>
   <url><loc>{URL_PORTAL_OFICIAL}futebol.html</loc><lastmod>{hoje}</lastmod><changefreq>hourly</changefreq><priority>0.9</priority></url>
   <url><loc>{URL_PORTAL_OFICIAL}api/v1/noticias.json</loc><lastmod>{hoje}</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
@@ -2526,16 +2854,16 @@ def garantir_verificacao_google():
         f.write("google-site-verification: google28d5384ab7e71bf6.html")
 
 # ==============================================================================
-# FLUXO PRINCIPAL DE GERAÇÃO DO ECOSSISTEMA V10.2 ULTIMATE AUDITADA
+# FLUXO PRINCIPAL DE GERAÇÃO DO ECOSSISTEMA V10.4 MASTER AUDITADA
 # ==============================================================================
 def gerar_portal(apenas_site=False):
     brutas = []
-    brutas.extend(fetch_rss_massa())
-    brutas.extend(fetch_newsdata_rotativo())
     brutas.extend(fetch_devto_pt())
     brutas.extend(fetch_newsapi())
     brutas.extend(fetch_ibge_noticias())
     brutas.extend(fetch_spaceflight_news())
+    brutas.extend(fetch_newsdata_rotativo())
+    brutas.extend(fetch_rss_massa())
 
     todas_noticias = deduplicar_noticias(brutas)
 
@@ -2544,19 +2872,25 @@ def gerar_portal(apenas_site=False):
     else:
         random.shuffle(todas_noticias)
 
-    noticia_destaque = escolher_noticia_inedita(todas_noticias)
-    if noticia_destaque in todas_noticias:
-        todas_noticias.remove(noticia_destaque)
-    todas_noticias.insert(0, noticia_destaque)
+    # 1. Escolhe uma notícia inédita de QUALQUER editoria para o Disparo Viral Omnichannel (Facebook/Telegram/OneSignal)
+    noticia_social = escolher_noticia_inedita(todas_noticias)
+    if noticia_social in todas_noticias:
+        todas_noticias.remove(noticia_social)
+    todas_noticias.insert(0, noticia_social)
 
     print("Traduzindo (PT-BR) e enriquecendo títulos/resumos com IA...")
     limite = min(len(todas_noticias), 8)
     for i in range(limite):
         todas_noticias[i] = otimizar_noticia_com_ia(todas_noticias[i])
 
+    # Salva a notícia escolhida para o disparo social (que será roteada para o Silo correto)
     salvar_memoria_meta(todas_noticias[0].get("title", ""))
     with open(ARQUIVO_FILA_POST, "w", encoding="utf-8") as f:
         json.dump(todas_noticias[0], f, ensure_ascii=False)
+
+    # 2. Para o Schema e Open Graph da Home, seleciona a primeira notícia de Elite (IA/Finanças/Ciência)
+    noticias_elite = [n for n in todas_noticias if n.get("categoria") in ["Tecnologia", "Finanças", "Ciência"]]
+    destaque_home = noticias_elite[0] if noticias_elite else todas_noticias[0]
 
     trending_html = ""
     for idx, art in enumerate(todas_noticias[1:6], start=1):
@@ -2580,23 +2914,21 @@ def gerar_portal(apenas_site=False):
 
     exportar_api_publica_json(todas_noticias, dados_cot, tabela_futebol, data_iso)
 
-    destaque = todas_noticias[0]
-    schema_ld = gerar_schema_json_ld(destaque, dados_cot, data_iso)
+    lista_faqs = gerar_perguntas_faq_dinamicas(todas_noticias, dados_cot)
+    faq_section_html = renderizar_bloco_faq_html(lista_faqs)
+    schema_ld_home = gerar_schema_json_ld(destaque_home, dados_cot, data_iso, lista_faqs, URL_PORTAL_OFICIAL, "TechNews PRO | Terminal de IA & Mercado")
 
-    og_title = destaque.get("title", "TechNews PRO | Terminal de Inteligência, IA & Mercado").replace('"', '&quot;')
-    og_desc = destaque.get("desc", "Acompanhe em tempo real as notícias mais impactantes de Tecnologia, Política, Futebol e Finanças.").replace('"', '&quot;')
-    og_img = destaque.get("img", IMAGENS_FALLBACK_CATEGORIA["Tecnologia"])
+    og_img_home = destaque_home.get("img", IMAGENS_FALLBACK_CATEGORIA["Tecnologia"])
 
     html_index = (
         HTML_TEMPLATE_INDEX
-        .replace("{og_title}", og_title)
-        .replace("{og_desc}", og_desc)
-        .replace("{og_img}", og_img)
+        .replace("{og_img}", og_img_home)
         .replace("{url_portal}", URL_PORTAL_OFICIAL)
-        .replace("{schema_json_ld}", schema_ld)
+        .replace("{schema_json_ld}", schema_ld_home)
         .replace("{cotacoes_html}", cotacoes_html)
         .replace("{widget_futebol_html}", widget_futebol_html)
         .replace("{trending_section}", trending_html)
+        .replace("{faq_section_html}", faq_section_html)
         .replace("{noticias_json}", noticias_json_str)
         .replace("{data_atualizacao}", data_fmt)
         .replace("{ano_atual}", ano_fmt)
@@ -2611,15 +2943,16 @@ def gerar_portal(apenas_site=False):
     with open("index.html", "w", encoding="utf-8") as f:
         f.write(html_index)
 
-    gerar_hub_ia(todas_noticias, cotacoes_html, data_fmt, ano_fmt, schema_ld)
-    gerar_pagina_cotacoes(dados_cot, cotacoes_html, data_fmt, ano_fmt, schema_ld)
-    gerar_pagina_futebol(tabela_futebol, todas_noticias, cotacoes_html, data_fmt, ano_fmt, schema_ld)
-    urls_extras = gerar_paginas_programaticas(todas_noticias, cotacoes_html, data_fmt, ano_fmt, schema_ld)
+    gerar_hub_ia(todas_noticias, dados_cot, cotacoes_html, data_fmt, data_iso, ano_fmt, lista_faqs, faq_section_html)
+    gerar_pagina_cotacoes(dados_cot, cotacoes_html, data_fmt, data_iso, ano_fmt, lista_faqs, faq_section_html)
+    gerar_pagina_dolar_hoje(dados_cot, data_fmt, data_iso, ano_fmt, lista_faqs, faq_section_html)
+    gerar_pagina_futebol(tabela_futebol, todas_noticias, dados_cot, data_fmt, data_iso, ano_fmt, lista_faqs)
+    urls_extras = gerar_paginas_programaticas(todas_noticias, dados_cot, data_fmt, data_iso, ano_fmt, lista_faqs)
     gerar_sitemap_xml(urls_extras)
     gerar_rss(todas_noticias)
     garantir_verificacao_google()
 
-    print("✅ Ecossistema v10.2 Ultimate Auditado Linha por Linha gerado com sucesso!")
+    print("✅ Ecossistema v10.4 Master Auditado Linha por Linha gerado com sucesso!")
 
     if not apenas_site:
         disparar_redes_omnichannel(todas_noticias[0])
