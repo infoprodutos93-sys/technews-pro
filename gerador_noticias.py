@@ -53,14 +53,17 @@ ARQUIVO_GOOGLE_VERIF = "google28d5384ab7e71bf6.html"
 CAMINHO_API_JSON = "api/v1/noticias.json"
 
 # ==============================================================================
-# LINKS OFICIAIS DE MONETIZAÇÃO E FUNIL (V10.1)
+# LINKS OFICIAIS DE MONETIZAÇÃO E FUNIL (V10.2)
 # ==============================================================================
 URL_PORTAL_OFICIAL = "https://infoprodutos93-sys.github.io/technews-pro/"
 SMARTLINK_ADSTERRA = "https://asiafilm.org/4/78ed9deb10feac05c15347b414e171ab"
 SYSTEME_OPTIN_URL = "https://devanildobeeny146.systeme.io/3ed9605c"
 
+# 1. Desenvolvimento Pessoal & Mentalidade PRO (Botão Área VIP Global, Back-Redirect, Telegram VIP, Quiz 1)
 LINK_KIWIFY_1 = "https://pay.kiwify.com.br/TO0iLa6"
+# 2. LUMI - Ofertas com Inteligência (Widget Lateral PRO, Cards Nativos Feed, Quiz 2)
 LINK_KIWIFY_2 = "https://pay.kiwify.com.br/BZcBEAI?afid=WXidNwGv"
+# 3. Posts Virais © (Exit-Intent Modal, Modal Resumo IA, Quiz 3)
 LINK_KIWIFY_3 = "https://pay.kiwify.com.br/jKot3Dn?afid=VDZB2ind"
 
 IMAGENS_FALLBACK_CATEGORIA = {
@@ -73,7 +76,7 @@ IMAGENS_FALLBACK_CATEGORIA = {
 }
 
 # ==============================================================================
-# TEMPLATE PRINCIPAL: INDEX.HTML (V10.1 ULTIMATE)
+# TEMPLATE PRINCIPAL: INDEX.HTML (V10.2 ULTIMATE AUDITADA)
 # ==============================================================================
 HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
 <html lang="pt-BR" data-theme="dark">
@@ -109,166 +112,189 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
     <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
     <script>
       window.OneSignalDeferred = window.OneSignalDeferred || [];
-      OneSignalDeferred.push(async function(OneSignal) {{
+      OneSignalDeferred.push(async function(OneSignal) {
         const appId = "{onesignal_id}";
-        if (appId && appId.length > 10) {{
-          await OneSignal.init({{ appId: appId, notifyButton: {{ enable: true }} }});
-        }}
-      }});
+        if (appId && appId.length > 10) {
+          await OneSignal.init({ appId: appId, notifyButton: { enable: true } });
+        }
+      });
     </script>
 
     <style>
-        :root[data-theme="dark"] {{ --bg-color: #070b14; --card-bg: rgba(17, 25, 40, 0.88); --text-main: #f8fafc; --text-muted: #94a3b8; --primary: #ef4444; --accent: #3b82f6; --neon: #00f2fe; --dark-bar: #03060c; --border: rgba(255, 255, 255, 0.08); --glass: rgba(15, 23, 42, 0.88); }}
-        :root[data-theme="light"] {{ --bg-color: #f1f5f9; --card-bg: #ffffff; --text-main: #0f172a; --text-muted: #64748b; --primary: #ef4444; --accent: #2563eb; --neon: #2563eb; --dark-bar: #0f172a; --border: #e2e8f0; --glass: rgba(255, 255, 255, 0.94); }}
+        :root[data-theme="dark"] {
+            --bg-color: #070b14;
+            --card-bg: rgba(17, 25, 40, 0.88);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --primary: #ef4444;
+            --accent: #3b82f6;
+            --neon: #00f2fe;
+            --dark-bar: #03060c;
+            --border: rgba(255, 255, 255, 0.08);
+            --glass: rgba(15, 23, 42, 0.88);
+        }
+        :root[data-theme="light"] {
+            --bg-color: #f1f5f9;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --primary: #ef4444;
+            --accent: #2563eb;
+            --neon: #2563eb;
+            --dark-bar: #0f172a;
+            --border: #e2e8f0;
+            --glass: rgba(255, 255, 255, 0.94);
+        }
 
-        * {{ box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; transition: background-color 0.25s, color 0.2s; }}
-        html, body {{ width: 100%; max-width: 100vw; overflow-x: hidden; background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; touch-action: manipulation; }}
-        #progress-bar {{ position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, var(--primary), var(--neon)); width: 0%; z-index: 99999; }}
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; transition: background-color 0.25s, color 0.2s; }
+        html, body { width: 100%; max-width: 100vw; overflow-x: hidden; background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; touch-action: manipulation; }
+        #progress-bar { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, var(--primary), var(--neon)); width: 0%; z-index: 99999; }
 
-        .market-ticker {{ background: var(--dark-bar); color: #e2e8f0; padding: 0.5rem 4%; font-size: 0.78rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; font-family: 'JetBrains Mono', monospace; width: 100%; }}
-        .market-items {{ display: flex; gap: 1.2rem; align-items: center; overflow-x: auto; white-space: nowrap; max-width: 100%; -webkit-overflow-scrolling: touch; padding-bottom: 2px; }}
-        .market-items::-webkit-scrollbar {{ height: 3px; }}
-        .market-item {{ display: inline-flex; align-items: center; gap: 6px; }}
-        .up {{ color: #10b981; font-weight: 700; }}
-        .down {{ color: #ef4444; font-weight: 700; }}
-        .live-dot {{ width: 8px; height: 8px; background: #10b981; border-radius: 50%; display: inline-block; animation: blink 1.2s infinite; flex-shrink: 0; }}
-        @keyframes blink {{ 0%, 100% {{ opacity: 1; box-shadow: 0 0 8px #10b981; }} 50% {{ opacity: 0.3; }} }}
+        .market-ticker { background: var(--dark-bar); color: #e2e8f0; padding: 0.5rem 4%; font-size: 0.78rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; font-family: 'JetBrains Mono', monospace; width: 100%; }
+        .market-items { display: flex; gap: 1.2rem; align-items: center; overflow-x: auto; white-space: nowrap; max-width: 100%; -webkit-overflow-scrolling: touch; padding-bottom: 2px; }
+        .market-items::-webkit-scrollbar { height: 3px; }
+        .market-item { display: inline-flex; align-items: center; gap: 6px; }
+        .up { color: #10b981; font-weight: 700; }
+        .down { color: #ef4444; font-weight: 700; }
+        .live-dot { width: 8px; height: 8px; background: #10b981; border-radius: 50%; display: inline-block; animation: blink 1.2s infinite; flex-shrink: 0; }
+        @keyframes blink { 0%, 100% { opacity: 1; box-shadow: 0 0 8px #10b981; } 50% { opacity: 0.3; } }
 
-        header {{ background: var(--glass); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); padding: 0.9rem 4%; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--border); width: 100%; }}
-        .nav-container {{ max-width: 1440px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 0.8rem; flex-wrap: wrap; }}
-        .logo {{ font-size: clamp(1.4rem, 4vw, 1.85rem); font-weight: 900; letter-spacing: -1px; color: var(--text-main); text-decoration: none; display: flex; align-items: center; gap: 6px; cursor: pointer; }}
-        .logo span {{ color: var(--primary); }}
-        .logo-badge {{ font-size: 0.62rem; background: rgba(239, 68, 68, 0.15); color: var(--primary); border: 1px solid var(--primary); padding: 2px 6px; border-radius: 4px; font-weight: 800; letter-spacing: 0.5px; }}
+        header { background: var(--glass); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); padding: 0.9rem 4%; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--border); width: 100%; }
+        .nav-container { max-width: 1440px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 0.8rem; flex-wrap: wrap; }
+        .logo { font-size: clamp(1.4rem, 4vw, 1.85rem); font-weight: 900; letter-spacing: -1px; color: var(--text-main); text-decoration: none; display: flex; align-items: center; gap: 6px; cursor: pointer; }
+        .logo span { color: var(--primary); }
+        .logo-badge { font-size: 0.62rem; background: rgba(239, 68, 68, 0.15); color: var(--primary); border: 1px solid var(--primary); padding: 2px 6px; border-radius: 4px; font-weight: 800; letter-spacing: 0.5px; }
 
-        /* LIQUID GOOEY MENU LAYERED */
-        .gooey-nav-wrapper {{ position: relative; display: flex; align-items: center; background: rgba(255,255,255,0.03); border-radius: 12px; border: 1px solid var(--border); padding: 6px; overflow-x: auto; max-width: 100%; -webkit-overflow-scrolling: touch; scroll-behavior: smooth; }}
-        .gooey-filter-layer {{ position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; filter: url('#gooey-effect'); }}
-        .gooey-blob {{ position: absolute; height: calc(100% - 12px); width: 80px; background: var(--primary); border-radius: 9px; top: 6px; left: 6px; transition: transform 0.3s ease-out, width 0.3s ease-out; will-change: transform, width; }}
-        .nav-links {{ display: flex; gap: 0.4rem; list-style: none; margin: 0; padding: 0; position: relative; z-index: 2; }}
-        .nav-links button, .nav-links a {{ background: transparent; border: none; color: var(--text-muted); font-weight: 700; font-size: 0.8rem; cursor: pointer; padding: 0.45rem 0.78rem; border-radius: 9px; text-decoration: none; flex-shrink: 0; transition: color 0.3s; }}
-        .nav-links button:hover, .nav-links a:hover, .nav-links button.active, .nav-links a.active {{ color: #fff; }}
+        /* LIQUID GOOEY MENU LAYERED (FUNDO LÍQUIDO + TEXTO NÍTIDO + SCROLL OFFSET) */
+        .gooey-nav-wrapper { position: relative; display: flex; align-items: center; background: rgba(255,255,255,0.03); border-radius: 12px; border: 1px solid var(--border); padding: 6px; overflow-x: auto; max-width: 100%; -webkit-overflow-scrolling: touch; scroll-behavior: smooth; }
+        .gooey-filter-layer { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; filter: url('#gooey-effect'); }
+        .gooey-blob { position: absolute; height: calc(100% - 12px); width: 80px; background: linear-gradient(135deg, var(--primary), #dc2626); border-radius: 9px; top: 6px; left: 6px; transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), width 0.3s cubic-bezier(0.2, 0.8, 0.2, 1); will-change: transform, width; box-shadow: 0 4px 14px rgba(239, 68, 68, 0.4); }
+        .nav-links { display: flex; gap: 0.4rem; list-style: none; margin: 0; padding: 0; position: relative; z-index: 2; }
+        .nav-links button, .nav-links a { background: transparent; border: none; color: var(--text-muted); font-weight: 700; font-size: 0.8rem; cursor: pointer; padding: 0.45rem 0.78rem; border-radius: 9px; text-decoration: none; flex-shrink: 0; transition: color 0.25s; white-space: nowrap; }
+        .nav-links button:hover, .nav-links a:hover, .nav-links button.active, .nav-links a.active { color: #fff; }
+        .nav-links a.hub-link { color: var(--neon); border: 1px solid rgba(0, 242, 254, 0.28); }
 
-        .header-actions {{ display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }}
-        .search-box {{ position: relative; flex-grow: 1; }}
-        .search-box input {{ background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: var(--text-main); padding: 0.48rem 0.9rem 0.48rem 2rem; border-radius: 8px; font-size: 0.84rem; width: 155px; outline: none; transition: 0.3s; }}
-        .search-box input:focus {{ width: 195px; border-color: var(--primary); }}
-        .search-icon {{ position: absolute; left: 9px; top: 50%; transform: translateY(-50%); font-size: 0.78rem; color: var(--text-muted); }}
+        .header-actions { display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
+        .search-box { position: relative; flex-grow: 1; }
+        .search-box input { background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: var(--text-main); padding: 0.48rem 0.9rem 0.48rem 2rem; border-radius: 8px; font-size: 0.84rem; width: 155px; outline: none; transition: 0.3s; }
+        .search-box input:focus { width: 195px; border-color: var(--primary); }
+        .search-icon { position: absolute; left: 9px; top: 50%; transform: translateY(-50%); font-size: 0.78rem; color: var(--text-muted); }
 
-        .theme-btn {{ background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--text-main); padding: 0.45rem 0.75rem; border-radius: 8px; cursor: pointer; font-weight: 700; font-size: 0.82rem; display: flex; align-items: center; gap: 5px; }}
-        .cta-btn {{ background: linear-gradient(135deg, #ef4444, #b91c1c); color: #fff; border: none; padding: 0.5rem 1rem; border-radius: 8px; font-weight: 800; cursor: pointer; text-decoration: none; font-size: 0.82rem; box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3); display: inline-flex; align-items: center; justify-content: center; gap: 6px; }}
+        .theme-btn { background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--text-main); padding: 0.45rem 0.75rem; border-radius: 8px; cursor: pointer; font-weight: 700; font-size: 0.82rem; display: flex; align-items: center; gap: 5px; }
+        .cta-btn { background: linear-gradient(135deg, #ef4444, #b91c1c); color: #fff; border: none; padding: 0.5rem 1rem; border-radius: 8px; font-weight: 800; cursor: pointer; text-decoration: none; font-size: 0.82rem; box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3); display: inline-flex; align-items: center; justify-content: center; gap: 6px; }
 
-        .tags-bar {{ max-width: 1440px; margin: 1rem auto 0 auto; padding: 0 4%; display: flex; align-items: center; gap: 0.55rem; overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; }}
-        .tag-pill {{ background: var(--card-bg); border: 1px solid var(--border); color: var(--text-muted); padding: 4px 12px; border-radius: 20px; font-size: 0.76rem; font-weight: 600; cursor: pointer; transition: 0.2s; text-decoration: none; flex-shrink: 0; }}
-        .tag-pill:hover {{ border-color: var(--primary); color: var(--text-main); }}
+        .tags-bar { max-width: 1440px; margin: 1rem auto 0 auto; padding: 0 4%; display: flex; align-items: center; gap: 0.55rem; overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; }
+        .tag-pill { background: var(--card-bg); border: 1px solid var(--border); color: var(--text-muted); padding: 4px 12px; border-radius: 20px; font-size: 0.76rem; font-weight: 600; cursor: pointer; transition: 0.2s; text-decoration: none; flex-shrink: 0; }
+        .tag-pill:hover { border-color: var(--primary); color: var(--text-main); }
 
-        .ad-banner-top {{ width: 100%; max-width: 970px; min-height: 90px; margin: 1.2rem auto; padding: 0 2%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; overflow-x: auto; -webkit-overflow-scrolling: touch; }}
-        .main-container {{ max-width: 1440px; margin: 0 auto 4rem auto; padding: 0 4%; display: grid; grid-template-columns: 7.2fr 2.8fr; gap: 2.2rem; width: 100%; }}
-        .content-column, .sidebar {{ min-width: 0; max-width: 100%; }}
+        .ad-banner-top { width: 100%; max-width: 970px; min-height: 90px; margin: 1.2rem auto; padding: 0 2%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+        .main-container { max-width: 1440px; margin: 0 auto 4rem auto; padding: 0 4%; display: grid; grid-template-columns: 7.2fr 2.8fr; gap: 2.2rem; width: 100%; }
+        .content-column, .sidebar { min-width: 0; max-width: 100%; }
 
-        /* HERO CARROSSEL GSAP (COM SWIPE) */
-        .hero-card {{ position: relative; border-radius: 18px; overflow: hidden; box-shadow: 0 24px 48px rgba(0,0,0,0.45); margin-bottom: 2.2rem; display: flex; flex-direction: column; border: 1px solid var(--border); background: #070b14; touch-action: pan-y; }}
-        .hero-progress-wrap {{ position: absolute; top: 0; left: 0; right: 0; height: 4px; background: rgba(255,255,255,0.12); z-index: 20; }}
-        .hero-progress-bar {{ height: 100%; width: 0%; background: linear-gradient(90deg, var(--primary), var(--neon)); box-shadow: 0 0 12px var(--neon); }}
-        .hero-card img {{ width: 100%; height: 460px; object-fit: cover; opacity: 0.8; will-change: transform, opacity; }}
-        .hero-overlay {{ position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(3,6,12,0.98) 18%, rgba(3,6,12,0.75) 68%, transparent 100%); padding: 2.2rem; color: #fff; z-index: 10; pointer-events: none; }}
-        .hero-top-meta {{ display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 0.7rem; flex-wrap: wrap; pointer-events: auto; }}
-        .badge-source {{ background: var(--primary); color: #fff; padding: 5px 12px; border-radius: 6px; font-size: 0.7rem; font-weight: 900; text-transform: uppercase; display: inline-block; }}
-        .hero-nav-controls {{ display: flex; align-items: center; gap: 8px; }}
-        .hero-nav-btn {{ background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.22); color: #fff; width: 34px; height: 34px; border-radius: 50%; cursor: pointer; font-weight: 900; display: inline-flex; align-items: center; justify-content: center; backdrop-filter: blur(6px); transition: 0.2s; }}
-        .hero-nav-btn:hover {{ background: var(--primary); border-color: var(--primary); transform: scale(1.08); }}
-        .hero-slide-dots {{ display: flex; gap: 6px; align-items: center; margin: 0 6px; }}
-        .hero-dot {{ width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.3); cursor: pointer; transition: 0.25s; }}
-        .hero-dot.active {{ width: 22px; border-radius: 10px; background: var(--neon); }}
-        .hero-overlay h1 {{ font-size: clamp(1.35rem, 3vw, 2.15rem); line-height: 1.25; margin-bottom: 0.75rem; font-weight: 900; pointer-events: auto; }}
-        .hero-overlay p {{ color: #cbd5e1; font-size: clamp(0.88rem, 2vw, 1.02rem); margin-bottom: 1.1rem; pointer-events: auto; }}
-        .hero-actions {{ display: flex; gap: 0.7rem; flex-wrap: wrap; pointer-events: auto; }}
+        /* HERO CARROSSEL GSAP (COM DETECÇÃO DE SWIPE TOUCH) */
+        .hero-card { position: relative; border-radius: 18px; overflow: hidden; box-shadow: 0 24px 48px rgba(0,0,0,0.45); margin-bottom: 2.2rem; display: flex; flex-direction: column; border: 1px solid var(--border); background: #070b14; touch-action: pan-y; user-select: none; }
+        .hero-progress-wrap { position: absolute; top: 0; left: 0; right: 0; height: 4px; background: rgba(255,255,255,0.12); z-index: 20; }
+        .hero-progress-bar { height: 100%; width: 0%; background: linear-gradient(90deg, var(--primary), var(--neon)); box-shadow: 0 0 12px var(--neon); }
+        .hero-card img { width: 100%; height: 460px; object-fit: cover; opacity: 0.8; will-change: transform, opacity; }
+        .hero-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(3,6,12,0.98) 18%, rgba(3,6,12,0.75) 68%, transparent 100%); padding: 2.2rem; color: #fff; z-index: 10; }
+        .hero-top-meta { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 0.7rem; flex-wrap: wrap; }
+        .badge-source { background: var(--primary); color: #fff; padding: 5px 12px; border-radius: 6px; font-size: 0.7rem; font-weight: 900; text-transform: uppercase; display: inline-block; }
+        .hero-nav-controls { display: flex; align-items: center; gap: 8px; }
+        .hero-nav-btn { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.22); color: #fff; width: 34px; height: 34px; border-radius: 50%; cursor: pointer; font-weight: 900; display: inline-flex; align-items: center; justify-content: center; backdrop-filter: blur(6px); transition: 0.2s; }
+        .hero-nav-btn:hover { background: var(--primary); border-color: var(--primary); transform: scale(1.08); }
+        .hero-slide-dots { display: flex; gap: 6px; align-items: center; margin: 0 6px; }
+        .hero-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.3); cursor: pointer; transition: 0.25s; }
+        .hero-dot.active { width: 22px; border-radius: 10px; background: var(--neon); }
+        .hero-overlay h1 { font-size: clamp(1.35rem, 3vw, 2.15rem); line-height: 1.25; margin-bottom: 0.75rem; font-weight: 900; }
+        .hero-overlay p { color: #cbd5e1; font-size: clamp(0.88rem, 2vw, 1.02rem); margin-bottom: 1.1rem; }
+        .hero-actions { display: flex; gap: 0.7rem; flex-wrap: wrap; }
 
-        .section-title {{ font-size: clamp(1.1rem, 2.5vw, 1.35rem); font-weight: 900; margin-bottom: 1.4rem; border-left: 4px solid var(--primary); padding-left: 12px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }}
-        .feed-grid {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; width: 100%; }}
+        .section-title { font-size: clamp(1.1rem, 2.5vw, 1.35rem); font-weight: 900; margin-bottom: 1.4rem; border-left: 4px solid var(--primary); padding-left: 12px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+        .feed-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; width: 100%; }
 
-        .news-card {{ background: var(--card-bg); border-radius: 14px; overflow: hidden; border: 1px solid var(--border); display: flex; flex-direction: column; transition: transform 0.25s ease; backdrop-filter: blur(10px); min-width: 0; }}
-        .news-card:hover {{ transform: translateY(-5px); border-color: rgba(239, 68, 68, 0.4); }}
-        .card-img-wrapper {{ position: relative; width: 100%; height: 195px; overflow: hidden; background: #1e293b; }}
-        .card-img-wrapper img {{ width: 100%; height: 100%; object-fit: cover; }}
-        .card-tag {{ position: absolute; top: 12px; left: 12px; background: rgba(3, 6, 12, 0.85); color: #fff; padding: 4px 10px; border-radius: 6px; font-size: 0.68rem; font-weight: 800; text-transform: uppercase; }}
-        .card-floating-btns {{ position: absolute; bottom: 10px; right: 10px; display: flex; gap: 6px; }}
-        .audio-btn {{ background: rgba(239, 68, 68, 0.92); color: #fff; border: none; padding: 5px 10px; border-radius: 20px; font-size: 0.72rem; font-weight: 700; cursor: pointer; }}
-        .zap-btn {{ background: rgba(16, 185, 129, 0.92); color: #fff; border: none; padding: 5px 9px; border-radius: 20px; font-size: 0.72rem; font-weight: 700; text-decoration: none; }}
+        .news-card { background: var(--card-bg); border-radius: 14px; overflow: hidden; border: 1px solid var(--border); display: flex; flex-direction: column; transition: transform 0.25s ease; backdrop-filter: blur(10px); min-width: 0; }
+        .news-card:hover { transform: translateY(-5px); border-color: rgba(239, 68, 68, 0.4); }
+        .card-img-wrapper { position: relative; width: 100%; height: 195px; overflow: hidden; background: #1e293b; }
+        .card-img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+        .card-tag { position: absolute; top: 12px; left: 12px; background: rgba(3, 6, 12, 0.85); color: #fff; padding: 4px 10px; border-radius: 6px; font-size: 0.68rem; font-weight: 800; text-transform: uppercase; }
+        .card-floating-btns { position: absolute; bottom: 10px; right: 10px; display: flex; gap: 6px; }
+        .audio-btn { background: rgba(239, 68, 68, 0.92); color: #fff; border: none; padding: 5px 10px; border-radius: 20px; font-size: 0.72rem; font-weight: 700; cursor: pointer; }
+        .zap-btn { background: rgba(16, 185, 129, 0.92); color: #fff; border: none; padding: 5px 9px; border-radius: 20px; font-size: 0.72rem; font-weight: 700; text-decoration: none; }
 
-        .card-body {{ padding: 1.3rem; display: flex; flex-direction: column; flex-grow: 1; }}
-        .card-meta {{ font-size: 0.74rem; color: var(--text-muted); margin-bottom: 0.55rem; display: flex; justify-content: space-between; font-weight: 600; flex-wrap: wrap; gap: 4px; }}
-        .card-title {{ font-size: 1.08rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.7rem; line-height: 1.35; word-wrap: break-word; }}
-        .card-desc {{ font-size: 0.86rem; color: var(--text-muted); margin-bottom: 1.2rem; flex-grow: 1; word-wrap: break-word; }}
-        .seo-internal-link {{ color: var(--neon); font-weight: 700; text-decoration: underline; }}
+        .card-body { padding: 1.3rem; display: flex; flex-direction: column; flex-grow: 1; }
+        .card-meta { font-size: 0.74rem; color: var(--text-muted); margin-bottom: 0.55rem; display: flex; justify-content: space-between; font-weight: 600; flex-wrap: wrap; gap: 4px; }
+        .card-title { font-size: 1.08rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.7rem; line-height: 1.35; word-wrap: break-word; }
+        .card-desc { font-size: 0.86rem; color: var(--text-muted); margin-bottom: 1.2rem; flex-grow: 1; word-wrap: break-word; }
+        .seo-internal-link { color: var(--neon); font-weight: 700; text-decoration: underline; }
 
-        .card-footer-btns {{ display: grid; grid-template-columns: 1fr 1fr; gap: 0.55rem; margin-top: auto; }}
-        .btn-outline {{ background: rgba(255,255,255,0.05); color: var(--text-main); border: 1px solid var(--border); padding: 0.62rem; border-radius: 8px; font-weight: 700; font-size: 0.78rem; cursor: pointer; text-align: center; text-decoration: none; }}
-        .read-btn {{ background: var(--primary); color: #fff; font-weight: 700; font-size: 0.78rem; padding: 0.62rem; border-radius: 8px; text-decoration: none; text-align: center; }}
+        .card-footer-btns { display: grid; grid-template-columns: 1fr 1fr; gap: 0.55rem; margin-top: auto; }
+        .btn-outline { background: rgba(255,255,255,0.05); color: var(--text-main); border: 1px solid var(--border); padding: 0.62rem; border-radius: 8px; font-weight: 700; font-size: 0.78rem; cursor: pointer; text-align: center; text-decoration: none; }
+        .read-btn { background: var(--primary); color: #fff; font-weight: 700; font-size: 0.78rem; padding: 0.62rem; border-radius: 8px; text-decoration: none; text-align: center; }
 
-        .native-ad-card {{ background: linear-gradient(145deg, rgba(239,68,68,0.14), rgba(15,23,42,0.92)); border: 2px solid rgba(239, 68, 68, 0.55); border-radius: 14px; padding: 1.6rem; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }}
-        .native-ad-card .ad-badge {{ background: var(--primary); color: #fff; font-size: 0.68rem; font-weight: 900; padding: 3px 10px; border-radius: 20px; text-transform: uppercase; margin-bottom: 0.9rem; }}
+        .native-ad-card { background: linear-gradient(145deg, rgba(239,68,68,0.14), rgba(15,23,42,0.92)); border: 2px solid rgba(239, 68, 68, 0.55); border-radius: 14px; padding: 1.6rem; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        .native-ad-card .ad-badge { background: var(--primary); color: #fff; font-size: 0.68rem; font-weight: 900; padding: 3px 10px; border-radius: 20px; text-transform: uppercase; margin-bottom: 0.9rem; }
 
         /* MINI-QUIZ INTERATIVO */
-        .quiz-card {{ background: linear-gradient(145deg, rgba(59,130,246,0.18), rgba(15,23,42,0.96)); border: 2px solid rgba(0, 242, 254, 0.45); border-radius: 14px; padding: 1.5rem; display: flex; flex-direction: column; justify-content: center; }}
-        .quiz-badge {{ background: linear-gradient(90deg, #3b82f6, #06b6d4); color: #fff; font-size: 0.68rem; font-weight: 900; padding: 4px 10px; border-radius: 20px; text-transform: uppercase; align-self: flex-start; margin-bottom: 0.75rem; }}
-        .quiz-btn {{ width: 100%; text-align: left; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); color: var(--text-main); padding: 0.72rem 0.9rem; border-radius: 9px; font-size: 0.8rem; font-weight: 700; cursor: pointer; margin-top: 0.5rem; transition: 0.2s; display: flex; justify-content: space-between; align-items: center; }}
-        .quiz-btn:hover {{ background: var(--primary); color: #fff; border-color: var(--primary); transform: translateX(4px); }}
+        .quiz-card { background: linear-gradient(145deg, rgba(59,130,246,0.18), rgba(15,23,42,0.96)); border: 2px solid rgba(0, 242, 254, 0.45); border-radius: 14px; padding: 1.5rem; display: flex; flex-direction: column; justify-content: center; }
+        .quiz-badge { background: linear-gradient(90deg, #3b82f6, #06b6d4); color: #fff; font-size: 0.68rem; font-weight: 900; padding: 4px 10px; border-radius: 20px; text-transform: uppercase; align-self: flex-start; margin-bottom: 0.75rem; }
+        .quiz-btn { width: 100%; text-align: left; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); color: var(--text-main); padding: 0.72rem 0.9rem; border-radius: 9px; font-size: 0.8rem; font-weight: 700; cursor: pointer; margin-top: 0.5rem; transition: 0.2s; display: flex; justify-content: space-between; align-items: center; }
+        .quiz-btn:hover { background: var(--primary); color: #fff; border-color: var(--primary); transform: translateX(4px); }
 
-        .sidebar {{ display: flex; flex-direction: column; gap: 1.8rem; }}
-        .widget {{ background: var(--card-bg); border-radius: 14px; padding: 1.35rem; border: 1px solid var(--border); width: 100%; overflow: hidden; }}
-        .widget-title {{ font-size: 1rem; font-weight: 900; margin-bottom: 1.1rem; padding-bottom: 0.55rem; border-bottom: 2px solid var(--primary); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px; }}
-        .trending-list {{ list-style: none; display: flex; flex-direction: column; gap: 0.95rem; }}
-        .trending-item {{ display: flex; gap: 0.85rem; align-items: flex-start; text-decoration: none; color: inherit; cursor: pointer; }}
-        .trending-num {{ font-size: 1.3rem; font-weight: 900; color: var(--primary); font-family: 'JetBrains Mono', monospace; flex-shrink: 0; }}
-        .trending-text {{ font-size: 0.86rem; font-weight: 700; line-height: 1.35; }}
+        .sidebar { display: flex; flex-direction: column; gap: 1.8rem; }
+        .widget { background: var(--card-bg); border-radius: 14px; padding: 1.35rem; border: 1px solid var(--border); width: 100%; overflow: hidden; }
+        .widget-title { font-size: 1rem; font-weight: 900; margin-bottom: 1.1rem; padding-bottom: 0.55rem; border-bottom: 2px solid var(--primary); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px; }
+        .trending-list { list-style: none; display: flex; flex-direction: column; gap: 0.95rem; }
+        .trending-item { display: flex; gap: 0.85rem; align-items: flex-start; text-decoration: none; color: inherit; cursor: pointer; }
+        .trending-num { font-size: 1.3rem; font-weight: 900; color: var(--primary); font-family: 'JetBrains Mono', monospace; flex-shrink: 0; }
+        .trending-text { font-size: 0.86rem; font-weight: 700; line-height: 1.35; }
 
-        .table-responsive-wrapper {{ width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }}
-        .tabela-futebol {{ width: 100%; border-collapse: collapse; font-size: 0.78rem; font-family: 'JetBrains Mono', monospace; min-width: 240px; }}
-        .tabela-futebol th {{ text-align: left; padding: 6px 4px; border-bottom: 1px solid var(--border); color: var(--text-muted); font-size: 0.7rem; }}
-        .tabela-futebol td {{ padding: 7px 4px; border-bottom: 1px solid rgba(255,255,255,0.04); }}
-        .g4-badge {{ color: #10b981; font-weight: 800; }}
-        .z4-badge {{ color: #ef4444; font-weight: 800; }}
+        .table-responsive-wrapper { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+        .tabela-futebol { width: 100%; border-collapse: collapse; font-size: 0.78rem; font-family: 'JetBrains Mono', monospace; min-width: 240px; }
+        .tabela-futebol th { text-align: left; padding: 6px 4px; border-bottom: 1px solid var(--border); color: var(--text-muted); font-size: 0.7rem; }
+        .tabela-futebol td { padding: 7px 4px; border-bottom: 1px solid rgba(255,255,255,0.04); }
+        .g4-badge { color: #10b981; font-weight: 800; }
+        .z4-badge { color: #ef4444; font-weight: 800; }
 
         /* OPT-IN VIP LÚDICO SVG TRACKING */
-        .newsletter-box {{ background: linear-gradient(135deg, #111827, #03060c); color: #fff; border-radius: 16px; padding: 1.6rem; text-align: center; border: 1px solid rgba(239, 68, 68, 0.4); position: relative; overflow: hidden; transition: border-color 0.3s, box-shadow 0.3s; }}
-        .newsletter-box.focused {{ border-color: var(--neon); box-shadow: 0 0 25px rgba(0, 242, 254, 0.25); }}
-        .optin-avatar-wrap {{ width: 64px; height: 64px; margin: 0 auto 0.65rem auto; position: relative; }}
-        .optin-svg {{ width: 100%; height: 100%; transition: transform 0.3s; }}
-        .newsletter-box.focused .optin-svg {{ transform: scale(1.1); }}
-        .optin-status {{ font-size: 0.72rem; font-family: 'JetBrains Mono', monospace; color: var(--neon); margin-bottom: 0.4rem; min-height: 18px; }}
-        .newsletter-box input {{ width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.18); background: rgba(255,255,255,0.06); color: #fff; margin: 0.6rem 0; font-size: 0.86rem; outline: none; transition: 0.25s; position: relative; z-index: 2; }}
-        .newsletter-box input:focus {{ border-color: var(--neon); background: rgba(0, 242, 254, 0.06); }}
-        .newsletter-box button {{ width: 100%; padding: 0.84rem; background: linear-gradient(135deg, var(--primary), #b91c1c); color: #fff; border: none; border-radius: 8px; font-weight: 800; cursor: pointer; transition: transform 0.2s; position: relative; z-index: 2; }}
-        .newsletter-box button:hover {{ transform: translateY(-2px); }}
+        .newsletter-box { background: linear-gradient(135deg, #111827, #03060c); color: #fff; border-radius: 16px; padding: 1.6rem; text-align: center; border: 1px solid rgba(239, 68, 68, 0.4); position: relative; overflow: hidden; transition: border-color 0.3s, box-shadow 0.3s; }
+        .newsletter-box.focused { border-color: var(--neon); box-shadow: 0 0 25px rgba(0, 242, 254, 0.25); }
+        .optin-avatar-wrap { width: 64px; height: 64px; margin: 0 auto 0.65rem auto; position: relative; }
+        .optin-svg { width: 100%; height: 100%; transition: transform 0.3s; }
+        .newsletter-box.focused .optin-svg { transform: scale(1.1); }
+        .optin-status { font-size: 0.72rem; font-family: 'JetBrains Mono', monospace; color: var(--neon); margin-bottom: 0.4rem; min-height: 18px; }
+        .newsletter-box input { width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.18); background: rgba(255,255,255,0.06); color: #fff; margin: 0.6rem 0; font-size: 0.86rem; outline: none; transition: 0.25s; position: relative; z-index: 2; }
+        .newsletter-box input:focus { border-color: var(--neon); background: rgba(0, 242, 254, 0.06); }
+        .newsletter-box button { width: 100%; padding: 0.84rem; background: linear-gradient(135deg, var(--primary), #b91c1c); color: #fff; border: none; border-radius: 8px; font-weight: 800; cursor: pointer; transition: transform 0.2s; position: relative; z-index: 2; }
+        .newsletter-box button:hover { transform: translateY(-2px); }
 
-        #reader-modal, #exit-modal, #adblock-modal {{ display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(3, 6, 12, 0.9); z-index: 9999; justify-content: center; align-items: center; backdrop-filter: blur(8px); padding: 1rem; }}
-        .reader-box {{ background: var(--bg-color); border: 1px solid var(--border); width: 100%; max-width: 680px; border-radius: 16px; overflow: hidden; max-height: 90vh; display: flex; flex-direction: column; }}
-        .reader-img {{ width: 100%; height: 220px; object-fit: cover; }}
-        .reader-body {{ padding: 1.5rem; overflow-y: auto; }}
-        .reader-ai-box {{ background: rgba(59, 130, 246, 0.1); border-left: 4px solid var(--accent); padding: 0.95rem; border-radius: 6px; margin: 1rem 0; font-size: 0.9rem; }}
-        .reader-promo {{ background: rgba(239, 68, 68, 0.1); border: 1px dashed var(--primary); padding: 0.95rem; border-radius: 8px; text-align: center; margin-top: 1.2rem; }}
-        .adblock-content {{ background: var(--card-bg); color: var(--text-main); border: 1px solid rgba(239,68,68,0.45); width: 95%; max-width: 430px; border-radius: 20px; padding: 1.8rem 1.4rem; text-align: center; }}
-        .adblock-btn {{ background: var(--primary); color: #fff; padding: 0.85rem; border-radius: 8px; font-weight: 800; width: 100%; border: none; cursor: pointer; margin-top: 1.1rem; }}
-        .adblock-close {{ margin-top: 0.9rem; font-size: 0.78rem; color: var(--text-muted); text-decoration: underline; cursor: pointer; background: none; border: none; width: 100%; }}
+        #reader-modal, #exit-modal, #adblock-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(3, 6, 12, 0.9); z-index: 9999; justify-content: center; align-items: center; backdrop-filter: blur(8px); padding: 1rem; }
+        .reader-box { background: var(--bg-color); border: 1px solid var(--border); width: 100%; max-width: 680px; border-radius: 16px; overflow: hidden; max-height: 90vh; display: flex; flex-direction: column; }
+        .reader-img { width: 100%; height: 220px; object-fit: cover; }
+        .reader-body { padding: 1.5rem; overflow-y: auto; }
+        .reader-ai-box { background: rgba(59, 130, 246, 0.1); border-left: 4px solid var(--accent); padding: 0.95rem; border-radius: 6px; margin: 1rem 0; font-size: 0.9rem; }
+        .reader-promo { background: rgba(239, 68, 68, 0.1); border: 1px dashed var(--primary); padding: 0.95rem; border-radius: 8px; text-align: center; margin-top: 1.2rem; }
+        .adblock-content { background: var(--card-bg); color: var(--text-main); border: 1px solid rgba(239,68,68,0.45); width: 95%; max-width: 430px; border-radius: 20px; padding: 1.8rem 1.4rem; text-align: center; }
+        .adblock-btn { background: var(--primary); color: #fff; padding: 0.85rem; border-radius: 8px; font-weight: 800; width: 100%; border: none; cursor: pointer; margin-top: 1.1rem; }
+        .adblock-close { margin-top: 0.9rem; font-size: 0.78rem; color: var(--text-muted); text-decoration: underline; cursor: pointer; background: none; border: none; width: 100%; }
 
-        #social-proof-toast {{ position: fixed; bottom: 16px; left: 16px; right: 16px; background: var(--card-bg); border: 1px solid var(--border); border-left: 4px solid #10b981; padding: 0.8rem 1rem; border-radius: 12px; z-index: 8000; display: flex; align-items: center; gap: 10px; font-size: 0.78rem; max-width: 330px; transform: translateY(150%); transition: transform 0.4s ease; cursor: pointer; }}
-        #social-proof-toast.show {{ transform: translateY(0); }}
+        #social-proof-toast { position: fixed; bottom: 16px; left: 16px; right: 16px; background: var(--card-bg); border: 1px solid var(--border); border-left: 4px solid #10b981; padding: 0.8rem 1rem; border-radius: 12px; z-index: 8000; display: flex; align-items: center; gap: 10px; font-size: 0.78rem; max-width: 330px; transform: translateY(150%); transition: transform 0.4s ease; cursor: pointer; }
+        #social-proof-toast.show { transform: translateY(0); }
 
-        footer {{ background: var(--dark-bar); color: #64748b; text-align: center; padding: 2.5rem 4%; font-size: 0.82rem; border-top: 1px solid var(--border); }}
+        footer { background: var(--dark-bar); color: #64748b; text-align: center; padding: 2.5rem 4%; font-size: 0.82rem; border-top: 1px solid var(--border); }
 
-        @media (max-width: 992px) {{ .main-container {{ grid-template-columns: 1fr; gap: 1.8rem; }} }}
-        @media (max-width: 768px) {{
-            .market-ticker {{ flex-direction: column; align-items: flex-start; padding: 0.5rem 4%; gap: 6px; }}
-            .nav-container {{ flex-direction: column; align-items: stretch; gap: 0.65rem; }}
-            .header-actions {{ width: 100%; justify-content: space-between; }}
-            .search-box {{ flex: 1; }}
-            .search-box input, .search-box input:focus {{ width: 100%; }}
-            .hero-card img {{ height: 235px; opacity: 1; }}
-            .hero-overlay {{ position: relative; background: #0b1120; padding: 1.35rem; }}
-            .hero-actions {{ flex-direction: column; width: 100%; }}
-            .hero-actions .cta-btn, .hero-actions .btn-outline {{ width: 100%; justify-content: center; }}
-            .feed-grid {{ grid-template-columns: 1fr; }}
-        }}
+        @media (max-width: 992px) { .main-container { grid-template-columns: 1fr; gap: 1.8rem; } }
+        @media (max-width: 768px) {
+            .market-ticker { flex-direction: column; align-items: flex-start; padding: 0.5rem 4%; gap: 6px; }
+            .nav-container { flex-direction: column; align-items: stretch; gap: 0.65rem; }
+            .header-actions { width: 100%; justify-content: space-between; }
+            .search-box { flex: 1; }
+            .search-box input, .search-box input:focus { width: 100%; }
+            .hero-card img { height: 235px; opacity: 1; }
+            .hero-overlay { position: relative; background: #0b1120; padding: 1.35rem; }
+            .hero-actions { flex-direction: column; width: 100%; }
+            .hero-actions .cta-btn, .hero-actions .btn-outline { width: 100%; justify-content: center; }
+            .feed-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
@@ -286,11 +312,58 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
     <div id="progress-bar"></div>
     <div id="ad-honeypot" class="ad-banner adsbox doubleclick sponsor" style="position:absolute; top:-999px; left:-999px; width:10px; height:10px;"></div>
 
-    <!-- MODAIS E COMPONENTES OCULTOS... (Mantidos Intactos) -->
-    <div id="adblock-modal"><div class="adblock-content"><h3 style="font-size:1.3rem; font-weight:900; margin-bottom:0.6rem;">Acesso Restrito pelo AdBlock 🛡️</h3><p style="font-size:0.88rem; color:var(--text-muted);">O <strong>TechNews.PRO</strong> mantém servidores de IA e API pública gratuitos graças aos patrocinadores. Desative seu bloqueador para liberar o terminal completo.</p><button class="adblock-btn" onclick="location.reload()">Já desativei! Liberar Terminal &rarr;</button><button class="adblock-close" onclick="document.getElementById('adblock-modal').style.display='none'">Continuar leitura limitada (Fechar)</button></div></div>
-    <div id="exit-modal" onclick="document.getElementById('exit-modal').style.display='none'"><div class="adblock-content" onclick="event.stopPropagation()"><span class="badge-source">⚡ ESPERE! NÃO SAIA DE MÃOS VAZIAS</span><h3 style="font-size:1.35rem; font-weight:900; margin-bottom:0.6rem;">Quer Multiplicar seu Alcance com Posts Virais?</h3><p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:1.3rem;">Descubra a estrutura secreta dos Posts Virais © para atrair milhares de seguidores e vendas todos os dias nas redes sociais.</p><a href="{link_kiwify_3}" target="_blank" rel="noopener noreferrer" class="cta-btn" style="width:100%; justify-content:center; padding:0.85rem;">🎁 Desbloquear Posts Virais © Agora &rarr;</a><button class="adblock-close" onclick="document.getElementById('exit-modal').style.display='none'">Fechar janela</button></div></div>
-    <div id="reader-modal" onclick="fecharReader()"><div class="reader-box" onclick="event.stopPropagation()"><img id="r-img" src="" class="reader-img" alt="Capa" referrerpolicy="no-referrer"><div class="reader-body"><span id="r-source" class="badge-source">Fonte</span><h2 id="r-title" style="margin-bottom: 0.9rem; line-height: 1.3; font-size: 1.25rem;">Título</h2><div class="reader-ai-box"><strong>🤖 Síntese Executiva IA (Time-to-Value):</strong><p id="r-desc" style="margin-top: 6px;"></p></div><div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:1.1rem;"><a id="r-url" href="#" target="_blank" rel="noopener noreferrer" class="cta-btn" style="flex:1; justify-content:center;">Ler Matéria Completa na Fonte &rarr;</a><button onclick="fecharReader()" class="btn-outline" style="padding:0.6rem 1.1rem;">Fechar</button></div><div class="reader-promo"><p style="font-size:0.82rem; margin-bottom:6px;">🔥 <strong>Destaque PRO:</strong> Crie conteúdos magnéticos e escale vendas com a metodologia <strong>Posts Virais ©</strong>.</p><a href="{link_kiwify_3}" target="_blank" style="color:var(--primary); font-weight:800; font-size:0.86rem;">Acessar Método Oficial Agora &rarr;</a></div></div></div></div>
-    <div id="social-proof-toast" onclick="window.open('{link_kiwify_1}', '_blank')"><span style="font-size:1.4rem;">🔥</span><div><div id="toast-text" style="font-weight:700; color:var(--text-main);">Alguém acabou de acessar a Área VIP</div><div style="font-size:0.7rem; color:var(--primary); font-weight:700;">Clique para conhecer o treinamento &rarr;</div></div></div>
+    <!-- MODAL ANTI-ADBLOCK -->
+    <div id="adblock-modal">
+        <div class="adblock-content">
+            <h3 style="font-size:1.3rem; font-weight:900; margin-bottom:0.6rem;">Acesso Restrito pelo AdBlock 🛡️</h3>
+            <p style="font-size:0.88rem; color:var(--text-muted);">O <strong>TechNews.PRO</strong> mantém servidores de IA e API pública gratuitos graças aos patrocinadores. Desative seu bloqueador para liberar o terminal completo.</p>
+            <button class="adblock-btn" onclick="location.reload()">Já desativei! Liberar Terminal &rarr;</button>
+            <button class="adblock-close" onclick="document.getElementById('adblock-modal').style.display='none'">Continuar leitura limitada (Fechar)</button>
+        </div>
+    </div>
+
+    <!-- MODAL DE INTENÇÃO DE SAÍDA (POSTS VIRAIS KIWIFY 3) -->
+    <div id="exit-modal" onclick="document.getElementById('exit-modal').style.display='none'">
+        <div class="adblock-content" onclick="event.stopPropagation()">
+            <span class="badge-source">⚡ ESPERE! NÃO SAIA DE MÃOS VAZIAS</span>
+            <h3 style="font-size:1.35rem; font-weight:900; margin-bottom:0.6rem;">Quer Multiplicar seu Alcance com Posts Virais?</h3>
+            <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:1.3rem;">Descubra a estrutura secreta dos Posts Virais © para atrair milhares de seguidores e vendas todos os dias nas redes sociais.</p>
+            <a href="{link_kiwify_3}" target="_blank" rel="noopener noreferrer" class="cta-btn" style="width:100%; justify-content:center; padding:0.85rem;">🎁 Desbloquear Posts Virais © Agora &rarr;</a>
+            <button class="adblock-close" onclick="document.getElementById('exit-modal').style.display='none'">Fechar janela</button>
+        </div>
+    </div>
+
+    <!-- MODAL DE LEITURA RÁPIDA (TIME-TO-VALUE IA) -->
+    <div id="reader-modal" onclick="fecharReader()">
+        <div class="reader-box" onclick="event.stopPropagation()">
+            <img id="r-img" src="" class="reader-img" alt="Capa" referrerpolicy="no-referrer">
+            <div class="reader-body">
+                <span id="r-source" class="badge-source">Fonte</span>
+                <h2 id="r-title" style="margin-bottom: 0.9rem; line-height: 1.3; font-size: 1.25rem;">Título</h2>
+                <div class="reader-ai-box">
+                    <strong>🤖 Síntese Executiva IA (Time-to-Value):</strong>
+                    <p id="r-desc" style="margin-top: 6px;"></p>
+                </div>
+                <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:1.1rem;">
+                    <a id="r-url" href="#" target="_blank" rel="noopener noreferrer" class="cta-btn" style="flex:1; justify-content:center;">Ler Matéria Completa na Fonte &rarr;</a>
+                    <button onclick="fecharReader()" class="btn-outline" style="padding:0.6rem 1.1rem;">Fechar</button>
+                </div>
+                <div class="reader-promo">
+                    <p style="font-size:0.82rem; margin-bottom:6px;">🔥 <strong>Destaque PRO:</strong> Crie conteúdos magnéticos e escale vendas com a metodologia <strong>Posts Virais ©</strong>.</p>
+                    <a href="{link_kiwify_3}" target="_blank" style="color:var(--primary); font-weight:800; font-size:0.86rem;">Acessar Método Oficial Agora &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST DE PROVA SOCIAL -->
+    <div id="social-proof-toast" onclick="window.open('{link_kiwify_1}', '_blank')">
+        <span style="font-size:1.4rem;">🔥</span>
+        <div>
+            <div id="toast-text" style="font-weight:700; color:var(--text-main);">Alguém acabou de acessar a Área VIP</div>
+            <div style="font-size:0.7rem; color:var(--primary); font-weight:700;">Clique para conhecer o treinamento &rarr;</div>
+        </div>
+    </div>
 
     <!-- TICKER E HEADER -->
     <div class="market-ticker">
@@ -308,7 +381,7 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
 
     <header>
         <div class="nav-container">
-            <a class="logo" onclick="filtrarCategoria('todos', event)">TechNews<span>.PRO</span> <span class="logo-badge">v10.1</span></a>
+            <a class="logo" onclick="filtrarCategoria('todos', event)">TechNews<span>.PRO</span> <span class="logo-badge">v10.2</span></a>
             
             <div class="gooey-nav-wrapper" id="main-nav-wrapper">
                 <div class="gooey-filter-layer">
@@ -350,16 +423,16 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
         <a href="{smartlink_url}" target="_blank" class="tag-pill" style="border-color:var(--neon); color:var(--neon);">⚡ Recursos Patrocinados</a>
     </div>
 
-    <!-- BANNER TOPO ADSTERRA -->
+    <!-- BANNER TOPO ADSTERRA (728x90) MOBILE SAFE -->
     <div class="ad-banner-top">
         <script>
-          atOptions = {{
+          atOptions = {
             'key' : '06959dfe796ac17610a3027d9ede544f',
             'format' : 'iframe',
             'height' : 90,
             'width' : 728,
-            'params' : {{}}
-          }};
+            'params' : {}
+          };
         </script>
         <script src="https://bicea.org/22/06959dfe796ac17610a3027d9ede544f"></script>
     </div>
@@ -432,7 +505,7 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
             <div style="text-align: center; width: 100%; overflow: hidden;">
                 <span style="font-size: 0.7rem; color: var(--text-muted); display: block; margin-bottom: 5px;">Publicidade</span>
                 <script type="text/javascript">
-                    atOptions = {{ 'key' : '8169727725318cd706b493da46602d6f', 'format' : 'iframe', 'height' : 250, 'width' : 300, 'params' : {{}} }};
+                    atOptions = { 'key' : '8169727725318cd706b493da46602d6f', 'format' : 'iframe', 'height' : 250, 'width' : 300, 'params' : {} };
                 </script>
                 <script type="text/javascript" src="https://bicea.org/22/8169727725318cd706b493da46602d6f"></script>
             </div>
@@ -440,98 +513,111 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
     </main>
 
     <footer>
-        <p><strong>TechNews.PRO</strong> &copy; {ano_atual} — Ecossistema Automatizado v10.1 Ultimate (Awwwards UI, Three.js WebGL, API Pública v1, Telegram Video & Meta Video API).</p>
+        <p><strong>TechNews.PRO</strong> &copy; {ano_atual} — Ecossistema Automatizado v10.2 Ultimate (Awwwards UI, Three.js WebGL, API Pública v1, Telegram Video & Meta Video API).</p>
         <p style="margin-top: 8px; font-size: 0.76rem; line-height: 1.8;">
-            <a href="index.html" style="color:#94a3b8; margin:0 6px;">Início</a> | <a href="inteligencia-artificial.html" style="color:#94a3b8; margin:0 6px;">Hub IA 3D</a> | <a href="cotacao-agora.html" style="color:#94a3b8; margin:0 6px;">Cotações</a> | <a href="futebol.html" style="color:#94a3b8; margin:0 6px;">Futebol</a> | <a href="api/v1/noticias.json" style="color:#00f2fe; margin:0 6px;">API v1 JSON</a> | <a href="feed.xml" style="color:#94a3b8; margin:0 6px;">RSS Feed</a> | <a href="sitemap.xml" style="color:#94a3b8; margin:0 6px;">Sitemap XML</a>
+            <a href="index.html" style="color:#94a3b8; margin:0 6px;">Início</a> |
+            <a href="inteligencia-artificial.html" style="color:#94a3b8; margin:0 6px;">Hub IA 3D</a> |
+            <a href="cotacao-agora.html" style="color:#94a3b8; margin:0 6px;">Cotações</a> |
+            <a href="futebol.html" style="color:#94a3b8; margin:0 6px;">Futebol</a> |
+            <a href="bitcoin.html" style="color:#94a3b8; margin:0 6px;">Bitcoin</a> |
+            <a href="chatgpt.html" style="color:#94a3b8; margin:0 6px;">ChatGPT</a> |
+            <a href="startups.html" style="color:#94a3b8; margin:0 6px;">Startups</a> |
+            <a href="api/v1/noticias.json" style="color:#00f2fe; margin:0 6px;">API v1 JSON</a> |
+            <a href="feed.xml" style="color:#94a3b8; margin:0 6px;">RSS Feed</a> |
+            <a href="sitemap.xml" style="color:#94a3b8; margin:0 6px;">Sitemap XML</a>
         </p>
     </footer>
 
     <script>
         const todasNoticias = {noticias_json};
         const ofertasKiwify = [
-            {{ badge: "Desenvolvimento Pessoal PRO", titulo: "🧠 Destrave Sua Mentalidade e Alta Performance", desc: "O guia prático de desenvolvimento pessoal para eliminar bloqueios, elevar seu foco e atingir resultados extraordinários.", url: "{link_kiwify_1}", cta: "Acessar Treinamento VIP &rarr;" }},
-            {{ badge: "LUMI • Inteligência Artificial", titulo: "🤖 LUMI: Crie Ofertas Lucrativas com IA", desc: "Descubra como usar Inteligência Artificial para modelar, estruturar e escalar ofertas de alta conversão no digital.", url: "{link_kiwify_2}", cta: "Desbloquear Acesso ao LUMI &rarr;" }},
-            {{ badge: "Crescimento Acelerado", titulo: "🔥 Posts Virais © — Domine o Algoritmo", desc: "Copie e aplique os padrões exatos dos conteúdos mais virais da internet para atrair audiência qualificada e vender todos os dias.", url: "{link_kiwify_3}", cta: "Garantir Acesso aos Posts Virais &rarr;" }}
+            { badge: "Desenvolvimento Pessoal PRO", titulo: "🧠 Destrave Sua Mentalidade e Alta Performance", desc: "O guia prático de desenvolvimento pessoal para eliminar bloqueios, elevar seu foco e atingir resultados extraordinários.", url: "{link_kiwify_1}", cta: "Acessar Treinamento VIP &rarr;" },
+            { badge: "LUMI • Inteligência Artificial", titulo: "🤖 LUMI: Crie Ofertas Lucrativas com IA", desc: "Descubra como usar Inteligência Artificial para modelar, estruturar e escalar ofertas de alta conversão no digital.", url: "{link_kiwify_2}", cta: "Desbloquear Acesso ao LUMI &rarr;" },
+            { badge: "Crescimento Acelerado", titulo: "🔥 Posts Virais © — Domine o Algoritmo", desc: "Copie e aplique os padrões exatos dos conteúdos mais virais da internet para atrair audiência qualificada e vender todos os dias.", url: "{link_kiwify_3}", cta: "Garantir Acesso aos Posts Virais &rarr;" }
         ];
 
-        (function restaurarTemaSalvo() {{
-            try {{
+        (function restaurarTemaSalvo() {
+            try {
                 const salvo = localStorage.getItem('technews_theme');
-                if (salvo === 'light' || salvo === 'dark') {{
+                if (salvo === 'light' || salvo === 'dark') {
                     document.documentElement.setAttribute('data-theme', salvo);
                     const btn = document.getElementById('theme-toggle-btn');
                     if (btn) btn.innerHTML = salvo === 'dark' ? '🌙' : '☀️';
-                }}
-            }} catch (e) {{}}
-        }})();
+                }
+            } catch (e) {}
+        })();
 
-        /* LIQUID GOOEY MENU INTERACTION (COM SCROLL TRACKING MOBILE) */
+        /* LIQUID GOOEY MENU INTERACTION (COM OFFSET DE SCROLL SINCRONIZADO) */
         const navWrapper = document.getElementById('main-nav-wrapper');
         const navUl = document.getElementById('nav-ul-links');
-        
-        function moverGooeyBlob(btnTarget) {{
+
+        function moverGooeyBlob(btnTarget) {
             const blob = document.getElementById('gooey-blob');
-            if(!blob || !navWrapper || !btnTarget || window.innerWidth < 768) return;
+            if (!blob || !navWrapper || !btnTarget) return;
             const btnRect = btnTarget.getBoundingClientRect();
             const wrapRect = navWrapper.getBoundingClientRect();
-            const leftPos = btnRect.left - wrapRect.left + navWrapper.scrollLeft;
-            blob.style.transform = `translateX(${{leftPos - 6}}px)`;
-            blob.style.width = `${{btnRect.width}}px`;
-        }}
+            const leftPos = (btnRect.left - wrapRect.left) + navWrapper.scrollLeft;
+            blob.style.transform = `translateX(${leftPos - 6}px)`;
+            blob.style.width = `${btnRect.width}px`;
+        }
 
-        if(navWrapper) {{
-            navWrapper.addEventListener('scroll', () => {{
+        if (navWrapper && navUl) {
+            navWrapper.addEventListener('scroll', function() {
                 const activeBtn = navUl.querySelector('button.active') || navUl.querySelector('a.active');
-                if(activeBtn) moverGooeyBlob(activeBtn);
-            }}, {{ passive: true }});
-        }}
+                if (activeBtn) moverGooeyBlob(activeBtn);
+            }, { passive: true });
+            window.addEventListener('resize', function() {
+                const activeBtn = navUl.querySelector('button.active') || navUl.querySelector('a.active');
+                if (activeBtn) moverGooeyBlob(activeBtn);
+            });
+        }
 
         /* MICRO-INTERAÇÃO LÚDICA DO OPT-IN VIP (MATH AVATAR) */
-        function animarOptinFoco(ativo) {{
+        function animarOptinFoco(ativo) {
             const box = document.getElementById('newsletter-box');
             const status = document.getElementById('optin-status');
             const mouth = document.getElementById('mouth');
-            if (!box || !status) return;
-            if (ativo) {{
+            if (!box || !status || !mouth) return;
+            if (ativo) {
                 box.classList.add('focused');
                 status.innerText = 'ANALISANDO DIGITAÇÃO...';
                 mouth.setAttribute('d', 'M 35 75 Q 50 65 65 75');
-            }} else {{
+            } else {
                 box.classList.remove('focused');
                 status.innerText = 'AGUARDANDO CREDENCIAIS VIP...';
                 mouth.setAttribute('d', 'M 35 70 Q 50 80 65 70');
                 document.getElementById('pupil-l').setAttribute('cx', '35');
                 document.getElementById('pupil-r').setAttribute('cx', '65');
-            }}
-        }}
-        function animarOptinDigitacao(valor) {{
+            }
+        }
+        function animarOptinDigitacao(valor) {
             const status = document.getElementById('optin-status');
             const pL = document.getElementById('pupil-l');
             const pR = document.getElementById('pupil-r');
             const mouth = document.getElementById('mouth');
-            if (!status || !pL || !pR) return;
-            
+            if (!status || !pL || !pR || !mouth) return;
+
             const maxOffset = 6;
             const chars = Math.min(valor.length, 25);
             const offset = (chars / 25) * maxOffset * 2 - maxOffset;
             pL.setAttribute('cx', 35 + offset);
             pR.setAttribute('cx', 65 + offset);
 
-            if (valor.includes('@') && valor.includes('.')) {{
+            if (valor.includes('@') && valor.includes('.')) {
                 status.innerText = 'E-MAIL VIP VALIDADO! CLIQUE PARA LIBERAR';
                 status.style.color = '#10b981';
                 mouth.setAttribute('d', 'M 35 65 Q 50 85 65 65');
-            }} else if (valor.length > 2) {{
+            } else if (valor.length > 2) {
                 status.innerText = 'SINCRONIZANDO TERMINAL...';
                 status.style.color = '#00f2fe';
-                mouth.setAttribute('d', 'M 35 75 Q 50 65 65 75'); 
-            }} else {{
+                mouth.setAttribute('d', 'M 35 75 Q 50 65 65 75');
+            } else {
                 status.innerText = 'DIGITE SEU MELHOR E-MAIL...';
                 status.style.color = 'var(--neon)';
-            }}
-        }}
+            }
+        }
 
-        function aplicarTeiaSEO(texto) {{
+        function aplicarTeiaSEO(texto) {
             if (!texto) return "";
             let t = texto;
             t = t.replace(/\\b(inteligência artificial|IA)\\b/i, '<a href="inteligencia-artificial.html" class="seo-internal-link">$1</a>');
@@ -541,86 +627,92 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
             t = t.replace(/\\b(chatgpt|openai)\\b/i, '<a href="chatgpt.html" class="seo-internal-link">$1</a>');
             t = t.replace(/\\b(startup|startups)\\b/i, '<a href="startups.html" class="seo-internal-link">$1</a>');
             return t;
-        }}
+        }
 
-        window.onscroll = function() {{
+        window.onscroll = function() {
             var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
             var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
             document.getElementById("progress-bar").style.width = ((winScroll / height) * 100) + "%";
-        }};
+        };
 
-        function alternarTema() {{
+        function alternarTema() {
             const htmlEl = document.documentElement;
             const btn = document.getElementById('theme-toggle-btn');
             const novo = htmlEl.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
             htmlEl.setAttribute('data-theme', novo);
             btn.innerHTML = novo === 'dark' ? '🌙' : '☀️';
-            try {{ localStorage.setItem('technews_theme', novo); }} catch (e) {{}}
-        }}
+            try { localStorage.setItem('technews_theme', novo); } catch (e) {}
+        }
 
-        function falarNoticia(idx, event) {{
+        function falarNoticia(idx, event) {
             if (event) event.stopPropagation();
-            if ('speechSynthesis' in window) {{
+            if ('speechSynthesis' in window) {
                 window.speechSynthesis.cancel();
                 const art = todasNoticias[idx];
                 const msg = new SpeechSynthesisUtterance(art.title + ". " + art.desc);
                 msg.lang = 'pt-BR';
                 msg.rate = 1.08;
                 window.speechSynthesis.speak(msg);
-            }}
-        }}
+            }
+        }
 
-        function abrirReader(idx) {{
+        function abrirReader(idx) {
             const art = todasNoticias[idx];
+            pausarHero(true);
             document.getElementById('r-img').src = art.img;
             document.getElementById('r-source').innerText = art.source + " • " + art.categoria;
             document.getElementById('r-title').innerText = art.title;
             document.getElementById('r-desc').innerHTML = aplicarTeiaSEO(art.desc);
             document.getElementById('r-url').href = art.url;
             document.getElementById('reader-modal').style.display = 'flex';
-        }}
-        function fecharReader() {{
+        }
+        function fecharReader() {
             document.getElementById('reader-modal').style.display = 'none';
+            pausarHero(false);
             if ('speechSynthesis' in window) window.speechSynthesis.cancel();
-        }}
+        }
 
-        function responderQuiz(urlDestino, btnEl) {{
+        function responderQuiz(urlDestino, btnEl) {
             const originalText = btnEl.innerHTML;
             btnEl.innerHTML = "<span>⏳ Calculando sua rota ideal...</span>";
             btnEl.style.background = "#10b981";
             btnEl.style.color = "#fff";
-            setTimeout(function() {{
+            setTimeout(function() {
                 window.open(urlDestino, '_blank');
                 btnEl.innerHTML = originalText;
                 btnEl.style.background = "";
                 btnEl.style.color = "";
-            }}, 450);
-        }}
+            }, 450);
+        }
 
         /* ==================================================================
-           MOTOR DE CARROSSEL HERO GSAP COM SWIPE DETECTION
+           MOTOR DE CARROSSEL HERO GSAP COM SWIPE DETECTION (> 40px)
         ================================================================== */
         let heroSlides = [];
         let heroIndex = 0;
         let mainHeroTimeline = null;
+        let heroFallbackTimer = null;
         let heroCycleId = 0;
         let heroHoverPausado = false;
         let touchStartX = 0;
         let touchEndX = 0;
 
-        function pararCicloHero() {{
+        function pararCicloHero() {
             heroCycleId++;
-            if (mainHeroTimeline) {{
+            if (mainHeroTimeline) {
                 mainHeroTimeline.kill();
                 mainHeroTimeline = null;
-            }}
-            if(window.gsap) {{
+            }
+            if (heroFallbackTimer) {
+                clearTimeout(heroFallbackTimer);
+                heroFallbackTimer = null;
+            }
+            if (window.gsap) {
                 gsap.killTweensOf("#hero-gsap-bar");
-                gsap.set("#hero-gsap-bar", {clearProps: "all"});
-            }}
-        }}
+            }
+        }
 
-        function renderizarSlideHero(idx) {{
+        function renderizarSlideHero(idx) {
             pararCicloHero();
             if (!heroSlides || heroSlides.length === 0) return;
             heroIndex = (idx + heroSlides.length) % heroSlides.length;
@@ -630,12 +722,12 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
             if (!container) return;
 
             let dotsHtml = '';
-            heroSlides.forEach((_, dIdx) => {{
+            heroSlides.forEach((_, dIdx) => {
                 dotsHtml += `<span class="hero-dot ${dIdx === heroIndex ? 'active' : ''}" onclick="irParaSlideHero(${dIdx})"></span>`;
-            }});
+            });
 
             container.innerHTML = `
-                <div class="hero-card" id="hero-swipe-area" 
+                <div class="hero-card" id="hero-swipe-area"
                      onmouseenter="pausarHero(true)" onmouseleave="pausarHero(false)">
                     <div class="hero-progress-wrap"><div class="hero-progress-bar" id="hero-gsap-bar"></div></div>
                     <img id="hero-gsap-img" src="${slide.img}" alt="Destaque" referrerpolicy="no-referrer" onerror="this.src='https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80'">
@@ -660,70 +752,74 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
             `;
 
             const swipeArea = document.getElementById('hero-swipe-area');
-            if (swipeArea) {{
-                swipeArea.addEventListener('touchstart', e => {{
+            if (swipeArea) {
+                swipeArea.addEventListener('touchstart', function(e) {
                     touchStartX = e.changedTouches[0].screenX;
                     pausarHero(true);
-                }}, {{passive: true}});
-                swipeArea.addEventListener('touchend', e => {{
+                }, { passive: true });
+                swipeArea.addEventListener('touchend', function(e) {
                     touchEndX = e.changedTouches[0].screenX;
                     pausarHero(false);
-                    handleSwipe();
-                }}, {{passive: true}});
-            }}
+                    const deltaX = touchEndX - touchStartX;
+                    if (Math.abs(deltaX) > 40) {
+                        deltaX < 0 ? mudarSlideHero(1) : mudarSlideHero(-1);
+                    }
+                }, { passive: true });
+            }
 
             iniciarCicloTimelineHero(heroCycleId);
-        }}
+        }
 
-        function handleSwipe() {{
-            const swipeThreshold = 40;
-            if (touchEndX < touchStartX - swipeThreshold) mudarSlideHero(1); // Swipe Left
-            if (touchEndX > touchStartX + swipeThreshold) mudarSlideHero(-1); // Swipe Right
-        }}
-
-        function iniciarCicloTimelineHero(idAtual) {{
-            if (!window.gsap || heroSlides.length <= 1) return;
+        function iniciarCicloTimelineHero(idAtual) {
             const bar = document.getElementById('hero-gsap-bar');
-            if (!bar) return;
+            if (!bar || heroSlides.length <= 1) return;
 
-            gsap.fromTo("#hero-gsap-img", { scale: 1.08, opacity: 0.35 }, { scale: 1, opacity: 0.82, duration: 0.8, ease: "power2.out" });
-            gsap.fromTo("#hero-gsap-content", { y: 25, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power2.out" });
+            if (window.gsap) {
+                gsap.fromTo("#hero-gsap-img", { scale: 1.08, opacity: 0.35 }, { scale: 1, opacity: 0.82, duration: 0.8, ease: "power2.out" });
+                gsap.fromTo("#hero-gsap-content", { y: 25, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power2.out" });
 
-            mainHeroTimeline = gsap.timeline({
-                onComplete: () => {{
-                    if (idAtual === heroCycleId && !heroHoverPausado) {{
+                mainHeroTimeline = gsap.timeline({
+                    paused: heroHoverPausado,
+                    onComplete: function() {
+                        if (idAtual === heroCycleId && !heroHoverPausado) {
+                            renderizarSlideHero(heroIndex + 1);
+                        }
+                    }
+                });
+                mainHeroTimeline.fromTo(bar, { width: "0%" }, { width: "100%", duration: 5.5, ease: "none" });
+            } else {
+                heroFallbackTimer = setTimeout(function() {
+                    if (idAtual === heroCycleId && !heroHoverPausado) {
                         renderizarSlideHero(heroIndex + 1);
-                    }}
-                }},
-                paused: heroHoverPausado
-            });
+                    }
+                }, 5500);
+            }
+        }
 
-            mainHeroTimeline.fromTo(bar, { width: "0%" }, { width: "100%", duration: 5.5, ease: "none" });
-        }}
-
-        function mudarSlideHero(delta) {{ renderizarSlideHero(heroIndex + delta); }}
-        function irParaSlideHero(idx) {{ renderizarSlideHero(idx); }}
-        function pausarHero(estado) {{
+        function mudarSlideHero(delta) { renderizarSlideHero(heroIndex + delta); }
+        function irParaSlideHero(idx) { renderizarSlideHero(idx); }
+        function pausarHero(estado) {
             heroHoverPausado = estado;
-            if (mainHeroTimeline) {{
+            if (mainHeroTimeline) {
                 estado ? mainHeroTimeline.pause() : mainHeroTimeline.play();
-            }}
-        }}
+            }
+        }
 
-        function renderizarLista(lista) {{
-            if (!lista || lista.length === 0) {{
+        function renderizarLista(lista) {
+            if (!lista || lista.length === 0) {
                 pararCicloHero();
                 document.getElementById('hero-container').innerHTML = '';
                 document.getElementById('feed-container').innerHTML = '<div style="grid-column: 1 / -1; padding:2.5rem; text-align:center; color:var(--text-muted); background:var(--card-bg); border-radius:12px; border:1px solid var(--border);">🔍 Nenhuma notícia encontrada para este filtro no momento. Clique em "Tudo" ou aguarde a próxima varredura!</div>';
                 return;
-            }}
+            }
 
             heroSlides = lista.slice(0, Math.min(4, lista.length));
             renderizarSlideHero(0);
 
+            const inicioFeed = lista.length > 6 ? heroSlides.length : 1;
             let feedHtml = '';
             let adCount = 0;
-            lista.slice(1, 16).forEach((art, idx) => {{
+            lista.slice(inicioFeed, inicioFeed + 15).forEach((art, idx) => {
                 const globalIdx = todasNoticias.indexOf(art);
                 const zapTexto = encodeURIComponent("🚨 Olha essa notícia no TechNews PRO: " + art.title + " - " + window.location.href);
                 feedHtml += `
@@ -751,7 +847,7 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
                 </article>
                 `;
 
-                if (idx === 0) {{
+                if (idx === 0) {
                     feedHtml += `
                     <div class="quiz-card">
                         <span class="quiz-badge">🎯 Interativo • Recomendação IA</span>
@@ -771,9 +867,9 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
                         </button>
                     </div>
                     `;
-                }}
+                }
 
-                if (idx === 2 || idx === 5 || idx === 8) {{
+                if (idx === 2 || idx === 5 || idx === 8) {
                     const oferta = ofertasKiwify[adCount % ofertasKiwify.length];
                     adCount++;
                     feedHtml += `
@@ -784,61 +880,66 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
                         <a href="${oferta.url}" target="_blank" rel="noopener noreferrer" class="cta-btn" style="width: 100%; justify-content:center;">${oferta.cta}</a>
                     </div>
                     `;
-                }}
-            }});
+                }
+            });
             document.getElementById('feed-container').innerHTML = feedHtml;
-        }}
+        }
 
-        function filtrarCategoria(categoria, event) {{
-            if (event) {{
+        function filtrarCategoria(categoria, event) {
+            if (event) {
                 event.preventDefault();
                 document.querySelectorAll('.nav-links button').forEach(btn => btn.classList.remove('active'));
-                if (event.currentTarget && event.currentTarget.tagName === 'BUTTON') {{
+                if (event.currentTarget && event.currentTarget.tagName === 'BUTTON') {
                     event.currentTarget.classList.add('active');
                     moverGooeyBlob(event.currentTarget);
-                }}
-            }}
+                }
+            }
             document.getElementById('titulo-secao').innerText = categoria === 'todos' ? 'Radar Global em Tempo Real' : 'Setor: ' + categoria;
             const filtradas = categoria === 'todos' ? todasNoticias : todasNoticias.filter(n => n.categoria === categoria);
             renderizarLista(filtradas);
-        }}
+        }
 
-        function buscarNoticia() {{
+        function buscarNoticia() {
             const termo = document.getElementById('search-input').value.toLowerCase();
             const filtradas = todasNoticias.filter(n => n.title.toLowerCase().includes(termo) || n.desc.toLowerCase().includes(termo));
             renderizarLista(filtradas);
-        }}
+        }
 
-        setTimeout(function() {{
+        window.addEventListener('load', function() {
+            const btnInicial = document.querySelector('.nav-links button.active');
+            if (btnInicial) moverGooeyBlob(btnInicial);
+        });
+
+        setTimeout(function() {
             var honeypot = document.getElementById('ad-honeypot');
-            if (!honeypot || honeypot.offsetHeight === 0 || window.getComputedStyle(honeypot).display === 'none') {{
+            if (!honeypot || honeypot.offsetHeight === 0 || window.getComputedStyle(honeypot).display === 'none') {
                 document.getElementById('adblock-modal').style.display = 'flex';
-            }}
+            }
             moverGooeyBlob(document.querySelector('.nav-links button.active'));
-        }}, 1800);
+        }, 1800);
 
         let exitMostrado = false;
-        document.addEventListener('mouseleave', function(e) {{
-            if (e.clientY < 0 && !exitMostrado) {{
+        document.addEventListener('mouseleave', function(e) {
+            if (e.clientY < 0 && !exitMostrado) {
                 exitMostrado = true;
                 document.getElementById('exit-modal').style.display = 'flex';
-            }}
-        }});
+            }
+        });
 
         /* ESTRATÉGIA GRINGA 1: BACK-BUTTON REDIRECT SUAVE (1x POR SESSÃO) */
-        (function() {{
-            try {{
-                if (!sessionStorage.getItem('tn_back_vip')) {{
-                    window.history.pushState({{ page: 'tn_entry' }}, '', window.location.href);
-                    window.addEventListener('popstate', function() {{
-                        if (!sessionStorage.getItem('tn_back_vip')) {{
+        (function() {
+            try {
+                if (!sessionStorage.getItem('tn_back_vip')) {
+                    window.history.pushState({ page: 'tn_entry' }, '', window.location.href);
+                    window.addEventListener('popstate', function() {
+                        if (!sessionStorage.getItem('tn_back_vip')) {
                             sessionStorage.setItem('tn_back_vip', '1');
                             window.location.href = "{link_kiwify_1}";
-                        }}
-                    }});
-                }}
-            }} catch (e) {{}}
-        }})();
+                        }
+                    });
+                }
+            } catch (e) {}
+        })();
 
         const mensagensToast = [
             "Lucas M. (SP) acabou de acessar o treinamento de Desenvolvimento Pessoal",
@@ -846,16 +947,16 @@ HTML_TEMPLATE_INDEX = """<!DOCTYPE html>
             "Rafael S. (MG) garantiu acesso ao método Posts Virais ©"
         ];
         let toastIdx = 0;
-        function dispararToastCiclo() {{
+        function dispararToastCiclo() {
             const toast = document.getElementById('social-proof-toast');
             const txt = document.getElementById('toast-text');
-            if (toast && txt) {{
+            if (toast && txt) {
                 txt.innerText = mensagensToast[toastIdx % mensagensToast.length];
                 toastIdx++;
                 toast.classList.add('show');
-                setTimeout(() => {{ toast.classList.remove('show'); }}, 6000);
-            }}
-        }}
+                setTimeout(() => { toast.classList.remove('show'); }, 6000);
+            }
+        }
         setTimeout(dispararToastCiclo, 4000);
         setInterval(dispararToastCiclo, 28000);
 
@@ -904,7 +1005,7 @@ def exportar_api_publica_json(todas_noticias, dados_cot, tabela_futebol, data_is
         os.makedirs("api/v1", exist_ok=True)
         payload_api = {
             "status": "ok",
-            "version": "10.1",
+            "version": "10.2",
             "portal": "TechNews PRO",
             "documentation_and_source": URL_PORTAL_OFICIAL,
             "updated_at_brt": data_iso,
@@ -1555,7 +1656,7 @@ def publicar_no_telegram(noticia, caminho_video=None):
 
         url_msg = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
         payload = {"chat_id": TELEGRAM_CHAT_ID.strip(), "text": texto_alerta, "parse_mode": "HTML", "disable_web_page_preview": False}
-        r = requests.post(url_msg, json=payload, timeout=12)
+        r = requests.post(url_msg, json=payload, timeout=15)
         if r.status_code == 200:
             print("Agente Telegram: ✅ Alerta em texto enviado com sucesso!")
             return True
@@ -1778,7 +1879,7 @@ def extrair_imagem_item_rss(item_xml, texto_bruto_html, fallback_img):
 
 def fetch_rss_massa():
     feeds = [
-        {"url": "https://www.metropoles.com/brasil/politica-brasil/feed", "source": "Metrópoles", "cat": "🏛️ Política", "fallback_img": IMAGENS_FALLBACK_CATEGORIA["🏛️ Política"]},
+        {"url": "https://www.metropoles.com/brasil/politica-brasil/feed", "source": "Metrópoles Política", "cat": "🏛️ Política", "fallback_img": IMAGENS_FALLBACK_CATEGORIA["🏛️ Política"]},
         {"url": "https://www.metropoles.com/colunas/leo-dias/feed", "source": "Coluna Famosos", "cat": "⭐ Famosos", "fallback_img": IMAGENS_FALLBACK_CATEGORIA["⭐ Famosos"]},
         {"url": "https://rss.uol.com.br/feed/splash.xml", "source": "UOL Splash", "cat": "⭐ Famosos", "fallback_img": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=85"},
         {"url": "https://www.gazetaesportiva.com/feed/", "source": "Gazeta Esportiva", "cat": "⚽ Esportes", "fallback_img": IMAGENS_FALLBACK_CATEGORIA["⚽ Esportes"]}
@@ -1844,7 +1945,7 @@ def fetch_newsdata_rotativo():
                         "date": (item.get("pubDate") or "Hoje")[:10],
                         "categoria": cat_det
                     })
-    except Exception as e:
+    except Exception:
         pass
     return noticias
 
@@ -1962,7 +2063,7 @@ def deduplicar_noticias(lista):
     return unicas
 
 # ==============================================================================
-# GERAÇÃO DE RSS FEED, HUB IA 3D, CALCULADORA DE COTAÇÕES E SITEMAP
+# GERAÇÃO DE RSS FEED, HUB IA 3D (THREE.JS NEURON TOUCH), CALCULADORA E CLUSTERS
 # ==============================================================================
 def gerar_rss(noticias):
     xml = f"""<?xml version="1.0" encoding="UTF-8" ?>
@@ -2019,7 +2120,7 @@ def gerar_hub_ia(todas_noticias, cotacoes_html, data_fmt, ano_fmt, schema_ld):
     <style>
         * {{ box-sizing: border-box; }}
         body {{ background:#050811; color:#f8fafc; font-family:'Inter',sans-serif; margin:0; line-height:1.65; overflow-x:hidden; position:relative; touch-action: manipulation; }}
-        #neural-webgl-canvas {{ position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:0; pointer-events:none; opacity:0.85; }}
+        #neural-webgl-canvas {{ position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:0; pointer-events:none; opacity:0.88; }}
         .ticker {{ position:relative; z-index:2; background:rgba(3,6,12,0.9); padding:0.5rem 4%; font-size:0.78rem; font-family:'JetBrains Mono',monospace; border-bottom:1px solid rgba(255,255,255,0.08); display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; }}
         .up {{ color:#10b981; font-weight:700; }} .down {{ color:#ef4444; font-weight:700; }}
         header {{ position:relative; z-index:2; background:rgba(15,23,42,0.82); backdrop-filter:blur(14px); padding:1rem 4%; border-bottom:1px solid rgba(255,255,255,0.08); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; }}
@@ -2031,7 +2132,7 @@ def gerar_hub_ia(todas_noticias, cotacoes_html, data_fmt, ano_fmt, schema_ld):
     </style>
 </head>
 <body>
-    <!-- CANVAS WEBGL THREE.JS (INTERAÇÃO TOUCH & MOUSE) -->
+    <!-- CANVAS WEBGL THREE.JS (POINTER-EVENTS: NONE + SUPORTE MOUSE & TOUCH) -->
     <canvas id="neural-webgl-canvas"></canvas>
 
     <div class="ticker">
@@ -2055,9 +2156,9 @@ def gerar_hub_ia(todas_noticias, cotacoes_html, data_fmt, ano_fmt, schema_ld):
 
     <main class="container">
         <section class="pillar-box">
-            <span style="background:linear-gradient(90deg,#3b82f6,#00f2fe); color:#03060c; padding:4px 12px; border-radius:20px; font-size:0.7rem; font-weight:900; text-transform:uppercase;">WebGL Neural Cluster • Enciclopédia & Hub Oficial</span>
+            <span style="background:linear-gradient(90deg,#3b82f6,#00f2fe); color:#03060c; padding:4px 12px; border-radius:20px; font-size:0.7rem; font-weight:900; text-transform:uppercase;">WebGL Procedural Neuron • Hub Oficial</span>
             <h1 style="font-size:clamp(1.5rem, 4vw, 2.3rem); margin:0.8rem 0; font-weight:900;">Inteligência Artificial em 2026: O Guia Central de Automação e Disrupção</h1>
-            <p style="color:#cbd5e1; font-size:0.95rem; margin-bottom:1rem;">A <strong>Inteligência Artificial (IA)</strong> deixou de ser uma promessa futurista para se tornar a infraestrutura central da economia global. Mova o cursor (ou deslize na tela) para interagir com a malha neural 3D em tempo real enquanto explora os relatórios mais recentes do setor.</p>
+            <p style="color:#cbd5e1; font-size:0.95rem; margin-bottom:1rem;">A <strong>Inteligência Artificial (IA)</strong> é a infraestrutura central da economia global. Mova o cursor no desktop ou deslize o dedo na tela do celular para interagir com o neurônio processual em néon renderizado em tempo real via WebGL.</p>
             <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:1.3rem;">
                 <a href="{LINK_KIWIFY_2}" target="_blank" style="background:#ef4444; color:#fff; padding:0.7rem 1.2rem; border-radius:8px; font-weight:800; text-decoration:none; font-size:0.86rem;">🤖 Conhecer LUMI — Ofertas com IA &rarr;</a>
                 <a href="{LINK_KIWIFY_3}" target="_blank" style="background:#3b82f6; color:#fff; padding:0.7rem 1.2rem; border-radius:8px; font-weight:800; text-decoration:none; font-size:0.86rem;">🔥 Método Posts Virais © &rarr;</a>
@@ -2072,55 +2173,79 @@ def gerar_hub_ia(todas_noticias, cotacoes_html, data_fmt, ano_fmt, schema_ld):
         <p><strong>TechNews.PRO</strong> &copy; {ano_fmt} — Hub Interativo 3D de Autoridade em Inteligência Artificial.</p>
     </footer>
 
-    <!-- SCRIPT THREE.JS REDE NEURAL 3D INTERATIVA (MOUSE & TOUCH) -->
+    <!-- SCRIPT THREE.JS NEURÔNIO PROCESSUAL EM NÉON (CATMULLROMCURVE3 + TOUCH & MOUSE) -->
     <script>
         window.addEventListener('DOMContentLoaded', function() {{
             if (!window.THREE) return;
             const canvas = document.getElementById('neural-webgl-canvas');
             const scene = new THREE.Scene();
-            const camera = new THREE.PerspectiveCamera(65, window.innerWidth / window.innerHeight, 0.1, 1000);
-            camera.position.z = 32;
+            const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera.position.z = 34;
 
             const renderer = new THREE.WebGLRenderer({{ canvas: canvas, alpha: true, antialias: true }});
             renderer.setSize(window.innerWidth, window.innerHeight);
             renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-            const particleCount = 200;
-            const geometry = new THREE.BufferGeometry();
-            const positions = new Float32Array(particleCount * 3);
-            const colors = new Float32Array(particleCount * 3);
+            const neuronGroup = new THREE.Group();
+            scene.add(neuronGroup);
 
-            for (let i = 0; i < particleCount * 3; i += 3) {{
-                positions[i] = (Math.random() - 0.5) * 70;
-                positions[i + 1] = (Math.random() - 0.5) * 70;
-                positions[i + 2] = (Math.random() - 0.5) * 45;
-                if (i % 6 === 0) {{
-                    colors[i] = 0.0; colors[i + 1] = 0.95; colors[i + 2] = 1.0;
-                }} else {{
-                    colors[i] = 0.93; colors[i + 1] = 0.26; colors[i + 2] = 0.26;
+            function createDendritePath(start, dir, length, segments, jitter) {{
+                const pts = [start.clone()];
+                const curr = start.clone();
+                const cDir = dir.clone().normalize();
+                for (let i = 0; i < segments; i++) {{
+                    cDir.x += (Math.random() - 0.5) * jitter;
+                    cDir.y += (Math.random() - 0.5) * jitter;
+                    cDir.z += (Math.random() - 0.5) * jitter;
+                    cDir.normalize();
+                    curr.add(cDir.clone().multiplyScalar(length / segments));
+                    pts.push(curr.clone());
                 }}
+                return new THREE.CatmullRomCurve3(pts);
             }}
-            geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-            geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
-            const material = new THREE.PointsMaterial({{ size: 0.5, vertexColors: true, transparent: true, opacity: 0.9, blending: THREE.AdditiveBlending }});
-            const particles = new THREE.Points(geometry, material);
-            scene.add(particles);
+            const somaGeo = new THREE.SphereGeometry(2.2, 24, 24);
+            const somaMat = new THREE.MeshBasicMaterial({{ color: 0x00f2fe, wireframe: true, transparent: true, opacity: 0.35 }});
+            neuronGroup.add(new THREE.Mesh(somaGeo, somaMat));
 
-            const wireGeo = new THREE.IcosahedronGeometry(16, 1);
-            const wireMat = new THREE.MeshBasicMaterial({{ color: 0x00f2fe, wireframe: true, transparent: true, opacity: 0.15 }});
-            const wireMesh = new THREE.Mesh(wireGeo, wireMat);
-            scene.add(wireMesh);
-
-            let mouseX = 0, mouseY = 0;
-            function updateMousePos(clientX, clientY) {{
-                mouseX = (clientX / window.innerWidth - 0.5) * 2;
-                mouseY = -(clientY / window.innerHeight - 0.5) * 2;
+            const palette = [0x00f2fe, 0xef4444, 0x10b981, 0x3b82f6];
+            for (let b = 0; b < 28; b++) {{
+                const dir = new THREE.Vector3(Math.random() - 0.5, Math.random() - 0.5, Math.random() - 0.5);
+                const curve = createDendritePath(new THREE.Vector3(0, 0, 0), dir, 18 + Math.random() * 10, 14, 0.55);
+                const points = curve.getPoints(40);
+                const lineGeo = new THREE.BufferGeometry().setFromPoints(points);
+                const lineMat = new THREE.LineBasicMaterial({{
+                    color: palette[b % palette.length],
+                    transparent: true,
+                    opacity: 0.55
+                }});
+                neuronGroup.add(new THREE.Line(lineGeo, lineMat));
             }}
-            window.addEventListener('mousemove', e => updateMousePos(e.clientX, e.clientY));
-            window.addEventListener('touchmove', e => {{
-                if (e.touches.length > 0) updateMousePos(e.touches[0].clientX, e.touches[0].clientY);
-            }}, {{passive: true}});
+
+            const particleCount = 180;
+            const pGeo = new THREE.BufferGeometry();
+            const positions = new Float32Array(particleCount * 3);
+            for (let i = 0; i < particleCount * 3; i += 3) {{
+                positions[i] = (Math.random() - 0.5) * 65;
+                positions[i + 1] = (Math.random() - 0.5) * 65;
+                positions[i + 2] = (Math.random() - 0.5) * 45;
+            }}
+            pGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+            const pMat = new THREE.PointsMaterial({{ size: 0.45, color: 0x00f2fe, transparent: true, opacity: 0.85, blending: THREE.AdditiveBlending }});
+            const synapses = new THREE.Points(pGeo, pMat);
+            scene.add(synapses);
+
+            let pointerX = 0, pointerY = 0;
+            function updatePointer(clientX, clientY) {{
+                pointerX = (clientX / window.innerWidth - 0.5) * 2;
+                pointerY = -(clientY / window.innerHeight - 0.5) * 2;
+            }}
+            window.addEventListener('mousemove', function(e) {{ updatePointer(e.clientX, e.clientY); }});
+            window.addEventListener('touchmove', function(e) {{
+                if (e.touches && e.touches.length > 0) {{
+                    updatePointer(e.touches[0].clientX, e.touches[0].clientY);
+                }}
+            }}, {{ passive: true }});
 
             window.addEventListener('resize', function() {{
                 camera.aspect = window.innerWidth / window.innerHeight;
@@ -2128,21 +2253,13 @@ def gerar_hub_ia(todas_noticias, cotacoes_html, data_fmt, ano_fmt, schema_ld):
                 renderer.setSize(window.innerWidth, window.innerHeight);
             }});
 
-            let isRenderActive = true;
-            document.addEventListener('visibilitychange', function() {{ isRenderActive = !document.hidden; }});
-
             function animate() {{
                 requestAnimationFrame(animate);
-                if (!isRenderActive) return;
-                
-                particles.rotation.y += 0.0015;
-                particles.rotation.x += 0.0007;
-                wireMesh.rotation.y -= 0.0020;
-                
-                wireMesh.rotation.x += (mouseY * 0.4 - wireMesh.rotation.x) * 0.04;
-                particles.position.x += (mouseX * 4 - particles.position.x) * 0.04;
-                particles.position.y += (mouseY * 4 - particles.position.y) * 0.04;
-                
+                if (document.hidden) return;
+                neuronGroup.rotation.y += 0.0022;
+                neuronGroup.rotation.x += (pointerY * 0.5 - neuronGroup.rotation.x) * 0.05;
+                neuronGroup.position.x += (pointerX * 3.5 - neuronGroup.position.x) * 0.05;
+                synapses.rotation.y -= 0.0012;
                 renderer.render(scene, camera);
             }}
             animate();
@@ -2256,7 +2373,7 @@ def gerar_pagina_cotacoes(dados_cot, cotacoes_html, data_fmt, ano_fmt, schema_ld
 
         <div class="cite-box">
             <h3 style="margin-bottom:0.4rem; font-size:1.05rem;">🔗 API Pública Gratuita & Código de Citação para Desenvolvedores</h3>
-            <p style="color:#94a3b8; font-size:0.85rem;">Consuma nosso endpoint JSON gratuito (<code>{URL_PORTAL_OFICIAL}api/v1/noticias.json</code>) ou incorpore o código de atribuição abaixo:</p>
+            <p style="color:#94a3b8; font-size:0.85rem;">Consuma nosso endpoint JSON gratuito com cache-buster (<code>fetch('{URL_PORTAL_OFICIAL}api/v1/noticias.json?v=' + Date.now())</code>) ou incorpore o código abaixo:</p>
             <code id="embed-code">&lt;a href="{URL_PORTAL_OFICIAL}cotacao-agora.html" target="_blank"&gt;Fonte: Terminal de Cotações &amp; API TechNews PRO&lt;/a&gt;</code>
             <br>
             <button onclick="navigator.clipboard.writeText(document.getElementById('embed-code').innerText); this.innerText='✅ Código Copiado!';" style="margin-top:8px; background:#3b82f6; color:#fff; border:none; padding:0.55rem 1.2rem; border-radius:6px; font-weight:700; cursor:pointer;">📋 Copiar Link de Citação</button>
@@ -2291,20 +2408,97 @@ def gerar_pagina_cotacoes(dados_cot, cotacoes_html, data_fmt, ano_fmt, schema_ld
     with open("cotacao-agora.html", "w", encoding="utf-8") as f:
         f.write(html_cot)
 
-def gerar_paginas_programaticas(todas_noticias, cotacoes_html, data_fmt, ano_fmt):
-    urls_geradas = []
-    TAGS_SEO = {
-        "bitcoin": {"titulo": "Radar Bitcoin & Criptomoedas em Tempo Real", "kw": ["bitcoin", "cripto", "btc", "blockchain"]},
-        "chatgpt": {"titulo": "Radar ChatGPT, OpenAI & LLMs", "kw": ["chatgpt", "openai", "gpt", "ia"]},
-        "startups": {"titulo": "Radar Startups & Fintechs", "kw": ["startup", "fintech", "negócio", "empresa"]}
+TAGS_SEO_DINAMICAS = {
+    "bitcoin": {
+        "titulo": "Radar Bitcoin & Criptomoedas em Tempo Real",
+        "desc": "Acompanhe as últimas notícias, análises de mercado e movimentações sobre Bitcoin, Ethereum e ativos digitais.",
+        "kw": ["bitcoin", "cripto", "btc", "blockchain", "moeda", "dólar", "finança"]
+    },
+    "chatgpt": {
+        "titulo": "Radar ChatGPT, OpenAI & LLMs Generativos",
+        "desc": "Cobertura completa sobre atualizações do ChatGPT, OpenAI, agentes autônomos e novas ferramentas de IA.",
+        "kw": ["chatgpt", "openai", "gpt", "ia", "inteligência", "algoritmo", "software"]
+    },
+    "startups": {
+        "titulo": "Radar Startups, Fintechs & Negócios Digitais",
+        "desc": "Inovação, rodadas de investimento, crescimento de fintechs e estratégias de negócios de alto impacto.",
+        "kw": ["startup", "fintech", "negócio", "empresa", "mercado", "investimento", "tecnologia"]
     }
-    for slug, cfg in TAGS_SEO.items():
-        filtradas = [n for n in todas_noticias if any(k in n.get('title', '').lower() for k in cfg['kw'])]
-        if not filtradas: filtradas = todas_noticias[:6]
-        
-        cards = "".join([f"""<article style="background:rgba(17,25,40,0.88); border:1px solid rgba(255,255,255,0.08); border-radius:14px; overflow:hidden; display:flex; flex-direction:column;"><img src="{art['img']}" alt="{html.escape(art['title'])}" referrerpolicy="no-referrer" style="width:100%; height:185px; object-fit:cover;" onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=85'"><div style="padding:1.3rem; display:flex; flex-direction:column; flex-grow:1;"><span style="font-size:0.72rem; color:#ef4444; font-weight:800;">{art['source']} • {art['date']}</span><h3 style="font-size:1.08rem; margin:0.5rem 0 0.8rem 0; color:#f8fafc;">{art['title']}</h3><p style="font-size:0.85rem; color:#94a3b8; margin-bottom:1.1rem; flex-grow:1;">{art['desc']}</p><a href="{art['url']}" target="_blank" class="read-btn" style="background:#ef4444; color:#fff; text-align:center; padding:0.65rem; border-radius:8px; font-weight:700; text-decoration:none;">Ler Matéria Completa &rarr;</a></div></article>""" for art in filtradas[:8]])
-        
-        html_cluster = f"""<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>{cfg['titulo']} | TechNews PRO</title><style>* {{ box-sizing: border-box; }} body {{ background:#070b14; color:#f8fafc; font-family:sans-serif; margin:0; line-height:1.6; overflow-x:hidden; }} header {{ background:#0f172a; padding:1rem 4%; display:flex; justify-content:space-between; flex-wrap:wrap; gap:1rem; }} .container {{ max-width:1360px; margin:2rem auto; padding:0 4%; }} .grid {{ display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:1.5rem; }}</style></head><body><header><a href="index.html" style="font-size:1.6rem; font-weight:900; color:#fff; text-decoration:none;">TechNews<span style="color:#ef4444;">.PRO</span></a><div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;"><a href="index.html" style="color:#94a3b8; text-decoration:none;">&larr; Voltar</a><a href="{LINK_KIWIFY_1}" target="_blank" style="background:#ef4444; color:#fff; padding:0.5rem 1rem; border-radius:8px; text-decoration:none;">💎 Área VIP</a></div></header><main class="container"><h1 style="font-size:clamp(1.5rem, 4vw, 2.2rem); border-left:5px solid #ef4444; padding-left:14px;">{cfg['titulo']}</h1><div class="grid">{cards}</div></main></body></html>"""
+}
+
+def gerar_paginas_programaticas(todas_noticias, cotacoes_html, data_fmt, ano_fmt, schema_ld):
+    urls_geradas = []
+    for slug, cfg in TAGS_SEO_DINAMICAS.items():
+        filtradas = [
+            n for n in todas_noticias
+            if any(k in n.get('title', '').lower() or k in n.get('desc', '').lower() for k in cfg['kw'])
+        ]
+        if not filtradas:
+            filtradas = todas_noticias[:6]
+
+        cards = ""
+        for art in filtradas[:8]:
+            cards += f"""
+            <article style="background:rgba(17,25,40,0.88); border:1px solid rgba(255,255,255,0.08); border-radius:14px; overflow:hidden; display:flex; flex-direction:column;">
+                <img src="{art['img']}" alt="{html.escape(art['title'])}" referrerpolicy="no-referrer" style="width:100%; height:185px; object-fit:cover;" onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=85'">
+                <div style="padding:1.3rem; display:flex; flex-direction:column; flex-grow:1;">
+                    <span style="font-size:0.72rem; color:#ef4444; font-weight:800;">{art['source']} • {art['date']}</span>
+                    <h3 style="font-size:1.08rem; margin:0.5rem 0 0.8rem 0; color:#f8fafc;">{art['title']}</h3>
+                    <p style="font-size:0.85rem; color:#94a3b8; margin-bottom:1.1rem; flex-grow:1;">{aplicar_teia_seo_estatico(art['desc'])}</p>
+                    <a href="{art['url']}" target="_blank" rel="noopener noreferrer" style="background:#ef4444; color:#fff; text-align:center; padding:0.65rem; border-radius:8px; font-weight:700; font-size:0.82rem; text-decoration:none;">Ler Matéria Completa &rarr;</a>
+                </div>
+            </article>
+            """
+
+        html_cluster = f"""<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <meta name="description" content="{cfg['desc']}">
+    <meta name="robots" content="max-image-preview:large, index, follow">
+    <link rel="canonical" href="{URL_PORTAL_OFICIAL}{slug}.html">
+    <title>{cfg['titulo']} | TechNews PRO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    {schema_ld}
+    <style>
+        * {{ box-sizing: border-box; }}
+        body {{ background:#070b14; color:#f8fafc; font-family:'Inter',sans-serif; margin:0; line-height:1.6; overflow-x:hidden; }}
+        header {{ background:#0f172a; padding:1rem 4%; border-bottom:1px solid rgba(255,255,255,0.08); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; }}
+        .container {{ max-width:1360px; margin:2rem auto; padding:0 4%; }}
+        .grid {{ display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:1.5rem; }}
+        .ad-top {{ width:100%; overflow-x:auto; text-align:center; margin:1.2rem auto; padding:0 2%; }}
+        footer {{ background:#03060c; color:#64748b; text-align:center; padding:2.5rem 4%; margin-top:4rem; border-top:1px solid rgba(255,255,255,0.08); }}
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" style="font-size:1.6rem; font-weight:900; color:#fff; text-decoration:none;">TechNews<span style="color:#ef4444;">.PRO</span></a>
+        <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+            <a href="index.html" style="color:#94a3b8; text-decoration:none; font-weight:700; font-size:0.85rem;">&larr; Radar Principal</a>
+            <a href="inteligencia-artificial.html" style="color:#00f2fe; text-decoration:none; font-weight:700; font-size:0.85rem;">🧠 Hub IA 3D</a>
+            <a href="cotacao-agora.html" style="color:#10b981; text-decoration:none; font-weight:700; font-size:0.85rem;">📊 Cotações</a>
+            <a href="{LINK_KIWIFY_1}" target="_blank" style="background:#ef4444; color:#fff; padding:0.5rem 1rem; border-radius:8px; font-weight:800; text-decoration:none; font-size:0.82rem;">💎 Área VIP</a>
+        </div>
+    </header>
+
+    <div class="ad-top">
+        <script>atOptions={{'key':'06959dfe796ac17610a3027d9ede544f','format':'iframe','height':90,'width':728,'params':{{}}}};</script>
+        <script src="https://bicea.org/22/06959dfe796ac17610a3027d9ede544f"></script>
+    </div>
+
+    <main class="container">
+        <h1 style="font-size:clamp(1.5rem, 4vw, 2.2rem); margin-bottom:0.5rem; border-left:5px solid #ef4444; padding-left:14px;">{cfg['titulo']}</h1>
+        <p style="color:#94a3b8; margin-bottom:1.8rem; font-size:0.92rem;">{cfg['desc']} Atualizado em {data_fmt} (BRT).</p>
+        <div class="grid">{cards}</div>
+    </main>
+    <footer>
+        <p><strong>TechNews.PRO</strong> &copy; {ano_fmt} — Topic Cluster Automatizado.</p>
+    </footer>
+    <script data-cfasync="false" src="https://bicea.org/14/7843682dc41b2077e8d78d48efd6360a"></script>
+</body>
+</html>"""
         nome_arq = f"{slug}.html"
         with open(nome_arq, "w", encoding="utf-8") as f:
             f.write(html_cluster)
@@ -2332,7 +2526,7 @@ def garantir_verificacao_google():
         f.write("google-site-verification: google28d5384ab7e71bf6.html")
 
 # ==============================================================================
-# FLUXO PRINCIPAL DE GERAÇÃO DO ECOSSISTEMA V10.1 ULTIMATE
+# FLUXO PRINCIPAL DE GERAÇÃO DO ECOSSISTEMA V10.2 ULTIMATE AUDITADA
 # ==============================================================================
 def gerar_portal(apenas_site=False):
     brutas = []
@@ -2355,7 +2549,7 @@ def gerar_portal(apenas_site=False):
         todas_noticias.remove(noticia_destaque)
     todas_noticias.insert(0, noticia_destaque)
 
-    print("Traduzindo e enriquecendo títulos com IA...")
+    print("Traduzindo (PT-BR) e enriquecendo títulos/resumos com IA...")
     limite = min(len(todas_noticias), 8)
     for i in range(limite):
         todas_noticias[i] = otimizar_noticia_com_ia(todas_noticias[i])
@@ -2382,15 +2576,15 @@ def gerar_portal(apenas_site=False):
     cotacoes_html, dados_cot = obter_dados_cotacoes()
     tabela_futebol = obter_tabela_brasileirao()
     widget_futebol_html = gerar_widget_futebol_html(tabela_futebol)
-    noticias_json_str = json.dumps(todas_noticias, ensure_ascii=False)
+    noticias_json_str = json.dumps(todas_noticias, ensure_ascii=False).replace("</", "<\\/")
 
     exportar_api_publica_json(todas_noticias, dados_cot, tabela_futebol, data_iso)
 
     destaque = todas_noticias[0]
     schema_ld = gerar_schema_json_ld(destaque, dados_cot, data_iso)
 
-    og_title = destaque.get("title", "TechNews PRO").replace('"', '&quot;')
-    og_desc = destaque.get("desc", "").replace('"', '&quot;')
+    og_title = destaque.get("title", "TechNews PRO | Terminal de Inteligência, IA & Mercado").replace('"', '&quot;')
+    og_desc = destaque.get("desc", "Acompanhe em tempo real as notícias mais impactantes de Tecnologia, Política, Futebol e Finanças.").replace('"', '&quot;')
     og_img = destaque.get("img", IMAGENS_FALLBACK_CATEGORIA["Tecnologia"])
 
     html_index = (
@@ -2420,12 +2614,12 @@ def gerar_portal(apenas_site=False):
     gerar_hub_ia(todas_noticias, cotacoes_html, data_fmt, ano_fmt, schema_ld)
     gerar_pagina_cotacoes(dados_cot, cotacoes_html, data_fmt, ano_fmt, schema_ld)
     gerar_pagina_futebol(tabela_futebol, todas_noticias, cotacoes_html, data_fmt, ano_fmt, schema_ld)
-    urls_extras = gerar_paginas_programaticas(todas_noticias, cotacoes_html, data_fmt, ano_fmt)
+    urls_extras = gerar_paginas_programaticas(todas_noticias, cotacoes_html, data_fmt, ano_fmt, schema_ld)
     gerar_sitemap_xml(urls_extras)
     gerar_rss(todas_noticias)
     garantir_verificacao_google()
 
-    print("✅ Ecossistema v10.1 Ultimate (Awwwards UI, Three.js Touch, GSAP Swipe, API & GEO) gerado com sucesso!")
+    print("✅ Ecossistema v10.2 Ultimate Auditado Linha por Linha gerado com sucesso!")
 
     if not apenas_site:
         disparar_redes_omnichannel(todas_noticias[0])
