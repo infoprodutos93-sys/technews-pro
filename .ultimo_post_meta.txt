@@ -1,4 +1,3 @@
-TipTools: Por que e como construímos +100 ferramentas para devs 100% client-side
 Ukrainian startup, GomSpace test satellite for future communications network
 APOD: 2026 October 28 – The Mutual Occultation of Ganymede and Io
 Como eliminamos o viés de ancoragem em reuniões de Sprint com WebSockets e Voto Cego Real
@@ -23,3 +22,4 @@ NASA lança eventos importantes do MAX POWER para mídia e participantes
 Corinthians perde do Cruzeiro nos pênaltis e fica com vice da Libertadores feminina
 Na Bahia, Lula diz a aliados estar preocupado com crise no STF
 Isaacman descreve a sequência de checkout de vários lançamentos do Artemis III e a prioridade do Blue Origin
+Eleições 2026: brasileiros reclamam de filas para votar no exterior
