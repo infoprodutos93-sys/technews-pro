@@ -27,7 +27,7 @@ jobs:
           pip install --upgrade pip
           pip install requests "Pillow>=10.0.0" "moviepy<2.0.0" imageio-ffmpeg
 
-      - name: 4. Gerar Ecossistema Web v9.1 (Awwwards UI, API Pública JSON, Three.js, GSAP, GEO & Sitemap)
+      - name: 4. Gerar Ecossistema Web v10.1 (Awwwards UI, WebGL Touch, GSAP Swipe, API & GEO)
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}
@@ -36,14 +36,14 @@ jobs:
           ONESIGNAL_APP_ID: ${{ secrets.ONESIGNAL_APP_ID }}
         run: python gerador_noticias.py --gerar-site
 
-      - name: 5. Publicar páginas HTML, API Pública (/api/v1/noticias.json), Sitemap e RSS no GitHub Pages
+      - name: 5. Publicar páginas HTML, API Pública, Sitemap e RSS no GitHub Pages
         run: |
           git config --global user.name "Robô TechNews"
           git config --global user.email "bot@technews.pro"
           git add *.html *.xml api/v1/noticias.json .ultimo_post_meta.txt .fila_post_meta.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "🚀 Deploy Master v9.1: Auditoria Completa, Fuso BRT, GSAP Safe & API v1" && git pull --rebase --autostash origin main && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "🚀 Deploy Ultimate v10.1: Touch WebGL, Swipe GSAP, Gooey Scroll & API JSON" && git pull --rebase --autostash origin main && git push)
 
-      - name: 6. Aguardar 45s para propagação e Disparar Vídeo Split-Screen no Facebook + Telegram + OneSignal
+      - name: 6. Aguardar 45s e Disparar Vídeo Split-Screen no Facebook + Telegram + OneSignal
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
@@ -53,6 +53,6 @@ jobs:
           ONESIGNAL_APP_ID: ${{ secrets.ONESIGNAL_APP_ID }}
           ONESIGNAL_REST_KEY: ${{ secrets.ONESIGNAL_REST_KEY }}
         run: |
-          echo "Aguardando 45 segundos para o GitHub Pages atualizar as tags Open Graph e a API..."
+          echo "Aguardando 45 segundos para propagação das tags Open Graph..."
           sleep 45
           python gerador_noticias.py --postar-redes
