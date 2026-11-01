@@ -3,7 +3,7 @@
   "version": "10.4",
   "portal": "TechNews PRO",
   "documentation_and_source": "https://infoprodutos93-sys.github.io/technews-pro/",
-  "updated_at_brt": "2026-11-01T10:08:47-03:00",
+  "updated_at_brt": "2026-11-01T11:57:15-03:00",
   "market_rates": {
     "USD_BRL": 5.7,
     "EUR_BRL": 6.18,
@@ -42,6 +42,24 @@
   "total_articles": 25,
   "articles": [
     {
+      "title": "Fábio Silva fala após empate dramático no Der Klassiker",
+      "desc": "O atacante português demonstrou orgulho pela mentalidade do Borussia Dortmund e falou sobre suas emoções após marcar o gol de empate aos 44 minutos do segundo tempo contra o Bayern de Munique.",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/lc9851v3-1920Fabio-Silva.webp",
+      "url": "https://www.gazetaesportiva.com/todas-as-noticias/fabio-silva-fala-apos-empate-dramatico-no-der-klassiker/",
+      "source": "Gazeta Esportiva",
+      "date": "Hoje",
+      "categoria": "⚽ Esportes"
+    },
+    {
+      "title": "Como reduzir o tempo da Sprint Planning pela metade com estimativas em tempo real",
+      "desc": "Dicas práticas e decisões de arquitetura em Next.js para transformar reuniões de estimativa arrastadas em alinhamentos técnicos ágeis e eficientes.",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F7mizvhzw7ziongg9l7ro.png",
+      "url": "https://dev.to/geekecia/como-reduzir-o-tempo-da-sprint-planning-pela-metade-com-estimativas-em-tempo-real-2a6m",
+      "source": "Dev.to Brasil",
+      "date": "Oct 19",
+      "categoria": "Tecnologia"
+    },
+    {
       "title": "Eleições 2026: brasileiros reclamam de filas para votar no exterior",
       "desc": "A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado (24/10) A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado...",
       "img": "https://images.metroimg.com/2026/10/filavotacaoparis.jpg",
@@ -49,42 +67,6 @@
       "source": "Metrópoles Política",
       "date": "Hoje",
       "categoria": "🏛️ Política"
-    },
-    {
-      "title": "Gabigol celebra título do Cruzeiro contra o Corinthians na Libertadores Feminina",
-      "desc": "Gabigol comemorou nas redes sociais o título inédito do Cruzeiro na Libertadores Feminina. A Raposa superou o Corinthians nos pênaltis após empate por 4 a 4 e conquistou a competição continental pela primeira vez em sua história.",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/10/AFP__20261101__D62U7EK__v1__HighRes__FblWomenLibertadoresCruzeiroCorinthians.webp",
-      "url": "https://www.gazetaesportiva.com/times/cruzeiro/gabigol-celebra-titulo-do-cruzeiro-contra-o-corinthians-na-libertadores-feminina/",
-      "source": "Gazeta Esportiva",
-      "date": "Hoje",
-      "categoria": "⚽ Esportes"
-    },
-    {
-      "title": "Story Points vs Horas: por que o debate de estimativa se perde e como o consenso real resolve",
-      "desc": "Por que times perdem tanto tempo debatendo números em Sprints e como focar em divergências técnicas acelera as cerimônias ágeis.",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flgl5tv2oae3ec09v8apt.png",
-      "url": "https://dev.to/geekecia/story-points-vs-horas-por-que-o-debate-de-estimativa-se-perde-e-como-o-consenso-real-resolve-51m1",
-      "source": "Dev.to Brasil",
-      "date": "Oct 27",
-      "categoria": "Tecnologia"
-    },
-    {
-      "title": "Isaacman descreve a sequência de checkout de vários lançamentos do Artemis III e a prioridade do Blue Origin",
-      "desc": "O administrador da NASA, Jared Isaacman, falou sobre a arquitetura planejada e as contingências para o Artemis… A postagem Isaacman descreve a sequência de verificação de vários lançamentos do Artemis III e a prioridade do Blue...",
-      "img": "https://www.nasaspaceflight.com/wp-content/uploads/2026/10/NSF-2026-11-01-03-15-37-109-wmarked.jpg",
-      "url": "https://www.nasaspaceflight.com/2026/10/isaacman-artemis-launch-sequence-blue-priority/",
-      "source": "SpaceTech",
-      "date": "2026-11-01",
-      "categoria": "Ciência"
-    },
-    {
-      "title": "Filhos de Gugu divergem sobre união do pai com Rose Miriam",
-      "desc": "Trechos do processo judicial mostram uma discussão entre os filhos do apresentador sobre o reconhecimento da união estável dos pais Trechos do processo judicial mostram uma discussão entre os filhos do apresentador sobre o...",
-      "img": "https://images.metroimg.com/2022/08/09094552/Gugu-capa-1.jpg",
-      "url": "https://www.metropoles.com/colunas/leo-dias/filhos-de-gugu-divergem-sobre-uniao-do-pai-com-rose-miriam",
-      "source": "Coluna Famosos",
-      "date": "Hoje",
-      "categoria": "⭐ Famosos"
     },
     {
       "title": "Cinco dos sete candidatos ao governo do Rio Grande do Sul já foram às urnas",
@@ -96,10 +78,28 @@
       "categoria": "🏛️ Política"
     },
     {
-      "title": "Na Bahia, Lula diz a aliados estar preocupado com crise no STF",
-      "desc": "O presidente Lula participou de carreata em Salvador nesta terça-feira junto aos candidatos do PT ao Senado e ao Governo do estado O presidente Lula participou de carreata em Salvador nesta terça-feira junto aos candidatos do...",
-      "img": "https://images.metroimg.com/2026/09/foto-lula-salvaor-scaled.jpg",
-      "url": "https://www.metropoles.com/brasil/na-bahia-lula-diz-a-aliados-estar-preocupado-com-crise-no-stf",
+      "title": "Timber e Merino parecem prontos para o confronto com o Liverpool em Anfield",
+      "desc": "Confira o último treino do Arsenal antes do duelo fora de casa contra o Liverpool pela Premier League. Confira o último treino do Arsenal antes do duelo fora de casa contra o Liverpool pela Premier League.",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/qf3b3av8-1920Timber.webp",
+      "url": "https://www.gazetaesportiva.com/todas-as-noticias/timber-e-merino-parecem-prontos-para-o-confronto-com-o-liverpool-em-anfield/",
+      "source": "Gazeta Esportiva",
+      "date": "Hoje",
+      "categoria": "⚽ Esportes"
+    },
+    {
+      "title": "Virginia elege vestido luxuoso para festa de Maria Alice. Saiba valor!",
+      "desc": "Além de ser um vestido repleto de detalhes sutis, a peça escolhida por Virginia segue a tendência do momento, o Whitecore Além de ser um vestido repleto de detalhes sutis, a peça escolhida por Virginia segue a tendência do...",
+      "img": "https://images.metroimg.com/2023/05/31152902/Design-sem-nome-2023-05-31T152810.884.jpg",
+      "url": "https://www.metropoles.com/colunas/leo-dias/virginia-elege-vestido-luxuoso-para-festa-de-maria-alice-saiba-valor",
+      "source": "Coluna Famosos",
+      "date": "Hoje",
+      "categoria": "⭐ Famosos"
+    },
+    {
+      "title": "PT prepara “festa do interior” para visita de Lula à Bahia",
+      "desc": "Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em última rodada pelo Nordeste antes do 1º turno Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em...",
+      "img": "https://images.metroimg.com/2026/01/lula-bahia.jpg",
+      "url": "https://www.metropoles.com/brasil/pt-prepara-festa-do-interior-para-visita-de-lula-a-bahia",
       "source": "Metrópoles Política",
       "date": "Hoje",
       "categoria": "🏛️ Política"
@@ -114,58 +114,13 @@
       "categoria": "Tecnologia"
     },
     {
-      "title": "PT prepara “festa do interior” para visita de Lula à Bahia",
-      "desc": "Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em última rodada pelo Nordeste antes do 1º turno Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em...",
-      "img": "https://images.metroimg.com/2026/01/lula-bahia.jpg",
-      "url": "https://www.metropoles.com/brasil/pt-prepara-festa-do-interior-para-visita-de-lula-a-bahia",
-      "source": "Metrópoles Política",
-      "date": "Hoje",
-      "categoria": "🏛️ Política"
-    },
-    {
-      "title": "Virginia elege vestido luxuoso para festa de Maria Alice. Saiba valor!",
-      "desc": "Além de ser um vestido repleto de detalhes sutis, a peça escolhida por Virginia segue a tendência do momento, o Whitecore Além de ser um vestido repleto de detalhes sutis, a peça escolhida por Virginia segue a tendência do...",
-      "img": "https://images.metroimg.com/2023/05/31152902/Design-sem-nome-2023-05-31T152810.884.jpg",
-      "url": "https://www.metropoles.com/colunas/leo-dias/virginia-elege-vestido-luxuoso-para-festa-de-maria-alice-saiba-valor",
-      "source": "Coluna Famosos",
-      "date": "Hoje",
-      "categoria": "⭐ Famosos"
-    },
-    {
-      "title": "APOD: 2026 October 31 – Night on a Spooky Planet",
-      "desc": "APOD Science APOD APOD: 2026 31 de outubro –… Arquivo APOD de hoje Índice de envios Pesquisar Calendário RSS Educação Sobre Discutir APOD Astronomia Imagem do dia Descubra o cosmos!",
-      "img": "https://assets.science.nasa.gov/dynamicimage/assets/science/cds/apod/apod/Hverir_Vetter_1300.jpg",
-      "url": "https://science.nasa.gov/image-article/apod-2026-october-31-night-on-a-spooky-planet/",
-      "source": "SpaceTech",
-      "date": "2026-10-31",
-      "categoria": "Ciência"
-    },
-    {
-      "title": "Em dia de semifinal, veja fotos da virada do Vasco sobre o Palmeiras pela Mercosul 2000",
-      "desc": "\"A Virada do Século\": relembre o duelo entre Palmeiras x Vasco, pela Copa Mercosul de 2000",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/10/20261030T163609754Z-000000000576.webp",
-      "url": "https://www.gazetaesportiva.com/todas-as-noticias/em-dia-de-semifinal-veja-fotos-da-virada-do-vasco-sobre-o-palmeiras-pela-mercosul-2000/",
-      "source": "Gazeta Esportiva",
-      "date": "Hoje",
-      "categoria": "⚽ Esportes"
-    },
-    {
-      "title": "Canadian MDA Space garante contrato de antena IRIS2 de € 64 milhões",
-      "desc": "A empresa canadense de tecnologia espacial MDA Space assinou um acordo com a Thales Alenia Space para começar a trabalhar em antenas digitais para os primeiros 66 satélites da constelação de conectividade segura IRIS2 da União...",
-      "img": "https://europeanspaceflight.com/wp-content/uploads/2026/11/Canadian-MDA-Space-Secures-64-Million-Euros-IRIS2-Antenna-Agreement.webp",
-      "url": "https://europeanspaceflight.com/canadian-mda-space-secures-e64-million-iris2-antenna-agreement/",
-      "source": "SpaceTech",
-      "date": "2026-11-01",
-      "categoria": "Ciência"
-    },
-    {
-      "title": "Erika Hilton recebe ameaça de morte e atrasa ida às urnas por segurança",
-      "desc": "Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos A deputada federal e candidata à...",
-      "img": "https://images.metroimg.com/2026/07/sbt-lista-argumentos-para-derrubar-resposta-de-erika-hilton.jpg",
-      "url": "https://www.metropoles.com/brasil/politica-brasil/erika-hilton-recebe-ameaca-de-morte-e-atrasa-ida-as-urnas-por-seguranca",
-      "source": "Metrópoles Política",
-      "date": "Hoje",
-      "categoria": "🏛️ Política"
+      "title": "GraphQL para Iniciantes: Guia Completo com .NET",
+      "desc": "Aprenda como GraphQL organiza schemas, queries e resolvers, execute uma API com .NET 10 e escolha entre GraphQL, REST e gRPC.",
+      "img": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fzocate.li%2Fposts%2F2026%2Fgraphql-tutorial%2Fimages%2Fcover_hu_662274f337eb8622.jpg",
+      "url": "https://dev.to/lzocate-li/graphql-para-iniciantes-guia-completo-com-net-1id1",
+      "source": "Dev.to Brasil",
+      "date": "Oct 26",
+      "categoria": "Tecnologia"
     },
     {
       "title": "APOD: 1º de novembro de 2026 – Cores da Lua",
@@ -177,22 +132,49 @@
       "categoria": "Ciência"
     },
     {
-      "title": "João Gomes e Ary Mirelle curtem jantar romântico com Sthe Matos e Kevi Jonny",
-      "desc": "O casal está em Barra de São Miguel acompanhados de Kevi Jonny e Sthe Matos O casal está em Barra de São Miguel acompanhados de Kevi Jonny e Sthe Matos Antes da maratona de shows do período junino, João Gomes e Ary Mirelle...",
-      "img": "https://images.metroimg.com/2023/05/31185334/Design-sem-nome-2023-05-31T185325.578.jpg",
-      "url": "https://www.metropoles.com/colunas/leo-dias/joao-gomes-e-ary-curtem-jantar-romantico-com-sthe-matos-e-kevi-jonny",
+      "title": "De Zerbi exalta Tonali contra o Palace: “Parecia que eram dois jogadores”",
+      "desc": "Roberto De Zerbi elogiou Sandro Tonali e outros jogadores do Tottenham após a vitória por 2 a 0 sobre o Crystal Palace pela Premier League.",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/ykj8hjte-1920Zerbi.webp",
+      "url": "https://www.gazetaesportiva.com/todas-as-noticias/de-zerbi-exalta-tonali-contra-o-palace-parecia-que-eram-dois-jogadores/",
+      "source": "Gazeta Esportiva",
+      "date": "Hoje",
+      "categoria": "⚽ Esportes"
+    },
+    {
+      "title": "Filhos de Gugu divergem sobre união do pai com Rose Miriam",
+      "desc": "Trechos do processo judicial mostram uma discussão entre os filhos do apresentador sobre o reconhecimento da união estável dos pais Trechos do processo judicial mostram uma discussão entre os filhos do apresentador sobre o...",
+      "img": "https://images.metroimg.com/2022/08/09094552/Gugu-capa-1.jpg",
+      "url": "https://www.metropoles.com/colunas/leo-dias/filhos-de-gugu-divergem-sobre-uniao-do-pai-com-rose-miriam",
       "source": "Coluna Famosos",
       "date": "Hoje",
       "categoria": "⭐ Famosos"
     },
     {
-      "title": "Palmeiras defende tabu de 11 anos contra o Vasco na semifinal da Copa do Brasil",
-      "desc": "Palmeiras defende invencibilidade de quase 11 anos contra o Vasco em casa na semifinal da Copa do Brasil. Verdão soma seis vitórias e dois empates no período.",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/10/23082026_cg_palmeiras_5109_102.webp",
-      "url": "https://www.gazetaesportiva.com/times/palmeiras/palmeiras-defende-tabu-de-11-anos-contra-o-vasco-na-semifinal-da-copa-do-brasil/",
-      "source": "Gazeta Esportiva",
-      "date": "Hoje",
-      "categoria": "⚽ Esportes"
+      "title": "Planning Poker em chamadas do Teams, Meet ou Slack: como estimar sem atrito",
+      "desc": "Como simplificar a dinâmica de estimativa de histórias de usuário em reuniões remotas sem exigir cadastro ou licenças por assento.",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fxuqrfrmebqsh5bm6f60l.png",
+      "url": "https://dev.to/geekecia/planning-poker-em-chamadas-do-teams-meet-ou-slack-como-estimar-sem-atrito-180d",
+      "source": "Dev.to Brasil",
+      "date": "Oct 23",
+      "categoria": "Tecnologia"
+    },
+    {
+      "title": "APOD: 2026 October 31 – Night on a Spooky Planet",
+      "desc": "APOD Science APOD APOD: 2026 31 de outubro –… Arquivo APOD de hoje Índice de envios Pesquisar Calendário RSS Educação Sobre Discutir APOD Astronomia Imagem do dia Descubra o cosmos!",
+      "img": "https://assets.science.nasa.gov/dynamicimage/assets/science/cds/apod/apod/Hverir_Vetter_1300.jpg",
+      "url": "https://science.nasa.gov/image-article/apod-2026-october-31-night-on-a-spooky-planet/",
+      "source": "SpaceTech",
+      "date": "2026-10-31",
+      "categoria": "Ciência"
+    },
+    {
+      "title": "Story Points vs Horas: por que o debate de estimativa se perde e como o consenso real resolve",
+      "desc": "Por que times perdem tanto tempo debatendo números em Sprints e como focar em divergências técnicas acelera as cerimônias ágeis.",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flgl5tv2oae3ec09v8apt.png",
+      "url": "https://dev.to/geekecia/story-points-vs-horas-por-que-o-debate-de-estimativa-se-perde-e-como-o-consenso-real-resolve-51m1",
+      "source": "Dev.to Brasil",
+      "date": "Oct 27",
+      "categoria": "Tecnologia"
     },
     {
       "title": "O menu do dia em cinco minutos, com IA gratuita",
@@ -201,42 +183,6 @@
       "url": "https://dev.to/josemartinsiaaobalca/o-menu-do-dia-em-cinco-minutos-com-ia-gratuita-18h7",
       "source": "Dev.to Brasil",
       "date": "Oct 30",
-      "categoria": "Tecnologia"
-    },
-    {
-      "title": "Corinthians terá novembro com clássico e decisões pelo Brasileirão",
-      "desc": "O Corinthians terá um mês movimentado em novembro, com quatro compromissos pelo Campeonato Brasileiro. Na reta final da competição, o Timão enfrentará São Paulo, Botafogo, Atlético-MG e Grêmio, em uma sequência importante na luta...",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/10/AFP__20261031__marina_uezima_brazil_photo_press_20611__v1__HighRes__CorinthiansAndMi.webp",
-      "url": "https://www.gazetaesportiva.com/times/corinthians/veja-o-que-o-corinthians-precisa-para-sair-do-z4-na-proxima-rodada-do-brasileirao/",
-      "source": "Gazeta Esportiva",
-      "date": "Hoje",
-      "categoria": "⚽ Esportes"
-    },
-    {
-      "title": "Motivação a mais? Como o São Paulo encara o clássico com o Corinthians no Z4",
-      "desc": "A cinco rodadas do fim do Campeonato Brasileiro, o São Paulo tem a possibilidade de piorar a situação do rival Corinthians na briga contra o rebaixamento.",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/55621955259_dd71bbf8c0_4k.webp",
-      "url": "https://www.gazetaesportiva.com/times/sao-paulo/chance-de-afundar-rival-pesa-como-o-sao-paulo-encara-classico-contra-o-corinthians/",
-      "source": "Gazeta Esportiva",
-      "date": "Hoje",
-      "categoria": "⚽ Esportes"
-    },
-    {
-      "title": "É hora de dizer até breve ao Metrópoles e partir para um novo desafio",
-      "desc": "Amanhã (1º/6), estreia o LeoDias.com. A missão é gigantesca, mas nunca foi meu tipo fugir dos desafios da vida Amanhã (1º/6), estreia o LeoDias.com.",
-      "img": "https://images.metroimg.com/2023/06/31214750/Design-sem-nome-2023-05-31T214746.841.jpg",
-      "url": "https://www.metropoles.com/colunas/leo-dias/e-hora-de-dizer-ate-breve-ao-metropoles-e-partir-para-um-novo-desafio",
-      "source": "Coluna Famosos",
-      "date": "Hoje",
-      "categoria": "⭐ Famosos"
-    },
-    {
-      "title": "GraphQL para Iniciantes: Guia Completo com .NET",
-      "desc": "Aprenda como GraphQL organiza schemas, queries e resolvers, execute uma API com .NET 10 e escolha entre GraphQL, REST e gRPC.",
-      "img": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fzocate.li%2Fposts%2F2026%2Fgraphql-tutorial%2Fimages%2Fcover_hu_662274f337eb8622.jpg",
-      "url": "https://dev.to/lzocate-li/graphql-para-iniciantes-guia-completo-com-net-1id1",
-      "source": "Dev.to Brasil",
-      "date": "Oct 26",
       "categoria": "Tecnologia"
     },
     {
@@ -249,22 +195,76 @@
       "categoria": "⭐ Famosos"
     },
     {
-      "title": "Como reduzir o tempo da Sprint Planning pela metade com estimativas em tempo real",
-      "desc": "Dicas práticas e decisões de arquitetura em Next.js para transformar reuniões de estimativa arrastadas em alinhamentos técnicos ágeis e eficientes.",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F7mizvhzw7ziongg9l7ro.png",
-      "url": "https://dev.to/geekecia/como-reduzir-o-tempo-da-sprint-planning-pela-metade-com-estimativas-em-tempo-real-2a6m",
-      "source": "Dev.to Brasil",
-      "date": "Oct 19",
-      "categoria": "Tecnologia"
+      "title": "João Gomes e Ary Mirelle curtem jantar romântico com Sthe Matos e Kevi Jonny",
+      "desc": "O casal está em Barra de São Miguel acompanhados de Kevi Jonny e Sthe Matos O casal está em Barra de São Miguel acompanhados de Kevi Jonny e Sthe Matos Antes da maratona de shows do período junino, João Gomes e Ary Mirelle...",
+      "img": "https://images.metroimg.com/2023/05/31185334/Design-sem-nome-2023-05-31T185325.578.jpg",
+      "url": "https://www.metropoles.com/colunas/leo-dias/joao-gomes-e-ary-curtem-jantar-romantico-com-sthe-matos-e-kevi-jonny",
+      "source": "Coluna Famosos",
+      "date": "Hoje",
+      "categoria": "⭐ Famosos"
     },
     {
-      "title": "Planning Poker em chamadas do Teams, Meet ou Slack: como estimar sem atrito",
-      "desc": "Como simplificar a dinâmica de estimativa de histórias de usuário em reuniões remotas sem exigir cadastro ou licenças por assento.",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fxuqrfrmebqsh5bm6f60l.png",
-      "url": "https://dev.to/geekecia/planning-poker-em-chamadas-do-teams-meet-ou-slack-como-estimar-sem-atrito-180d",
-      "source": "Dev.to Brasil",
-      "date": "Oct 23",
-      "categoria": "Tecnologia"
+      "title": "Erika Hilton recebe ameaça de morte e atrasa ida às urnas por segurança",
+      "desc": "Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos A deputada federal e candidata à...",
+      "img": "https://images.metroimg.com/2026/07/sbt-lista-argumentos-para-derrubar-resposta-de-erika-hilton.jpg",
+      "url": "https://www.metropoles.com/brasil/politica-brasil/erika-hilton-recebe-ameaca-de-morte-e-atrasa-ida-as-urnas-por-seguranca",
+      "source": "Metrópoles Política",
+      "date": "Hoje",
+      "categoria": "🏛️ Política"
+    },
+    {
+      "title": "É hora de dizer até breve ao Metrópoles e partir para um novo desafio",
+      "desc": "Amanhã (1º/6), estreia o LeoDias.com. A missão é gigantesca, mas nunca foi meu tipo fugir dos desafios da vida Amanhã (1º/6), estreia o LeoDias.com.",
+      "img": "https://images.metroimg.com/2023/06/31214750/Design-sem-nome-2023-05-31T214746.841.jpg",
+      "url": "https://www.metropoles.com/colunas/leo-dias/e-hora-de-dizer-ate-breve-ao-metropoles-e-partir-para-um-novo-desafio",
+      "source": "Coluna Famosos",
+      "date": "Hoje",
+      "categoria": "⭐ Famosos"
+    },
+    {
+      "title": "Lewandowski completa uma bela jogada coletiva com uma finalização de categoria; assista ao gol",
+      "desc": "Lewandowski completa uma bela jogada coletiva com uma finalização de categoria; assista ao gol Lewandowski completa uma bela jogada coletiva com uma finalização de categoria; assista ao gol",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/imila9x9-1920Lewandowski.webp",
+      "url": "https://www.gazetaesportiva.com/todas-as-noticias/lewandowski-completa-uma-bela-jogada-coletiva-com-uma-finalizacao-de-categoria-assista-ao-gol/",
+      "source": "Gazeta Esportiva",
+      "date": "Hoje",
+      "categoria": "⚽ Esportes"
+    },
+    {
+      "title": "Isaacman descreve a sequência de checkout de vários lançamentos do Artemis III e a prioridade do Blue Origin",
+      "desc": "O administrador da NASA, Jared Isaacman, falou sobre a arquitetura planejada e as contingências para o Artemis… A postagem Isaacman descreve a sequência de verificação de vários lançamentos do Artemis III e a prioridade do Blue...",
+      "img": "https://www.nasaspaceflight.com/wp-content/uploads/2026/10/NSF-2026-11-01-03-15-37-109-wmarked.jpg",
+      "url": "https://www.nasaspaceflight.com/2026/10/isaacman-artemis-launch-sequence-blue-priority/",
+      "source": "SpaceTech",
+      "date": "2026-11-01",
+      "categoria": "Ciência"
+    },
+    {
+      "title": "Canadian MDA Space garante contrato de antena IRIS2 de € 64 milhões",
+      "desc": "A empresa canadense de tecnologia espacial MDA Space assinou um acordo com a Thales Alenia Space para começar a trabalhar em antenas digitais para os primeiros 66 satélites da constelação de conectividade segura IRIS2 da União...",
+      "img": "https://europeanspaceflight.com/wp-content/uploads/2026/11/Canadian-MDA-Space-Secures-64-Million-Euros-IRIS2-Antenna-Agreement.webp",
+      "url": "https://europeanspaceflight.com/canadian-mda-space-secures-e64-million-iris2-antenna-agreement/",
+      "source": "SpaceTech",
+      "date": "2026-11-01",
+      "categoria": "Ciência"
+    },
+    {
+      "title": "Na Bahia, Lula diz a aliados estar preocupado com crise no STF",
+      "desc": "O presidente Lula participou de carreata em Salvador nesta terça-feira junto aos candidatos do PT ao Senado e ao Governo do estado O presidente Lula participou de carreata em Salvador nesta terça-feira junto aos candidatos do PT...",
+      "img": "https://images.metroimg.com/2026/09/foto-lula-salvaor-scaled.jpg",
+      "url": "https://www.metropoles.com/brasil/na-bahia-lula-diz-a-aliados-estar-preocupado-com-crise-no-stf",
+      "source": "Metrópoles Política",
+      "date": "Hoje",
+      "categoria": "🏛️ Política"
+    },
+    {
+      "title": "Melhores momentos: Colorado Rapids 2 x 4 Chicago Fire FC pela MLS",
+      "desc": "Melhores momentos: Colorado Rapids 2 x 4 Chicago Fire FC pela MLS Melhores momentos: Colorado Rapids 2 x 4 Chicago Fire FC pela MLS",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/pvhp5s6z-1920Rapids.webp",
+      "url": "https://www.gazetaesportiva.com/todas-as-noticias/melhores-momentos-colorado-rapids-2-x-4-chicago-fire-fc-pela-mls/",
+      "source": "Gazeta Esportiva",
+      "date": "Hoje",
+      "categoria": "⚽ Esportes"
     }
   ]
 }
