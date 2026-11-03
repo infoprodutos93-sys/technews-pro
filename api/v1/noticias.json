@@ -3,7 +3,7 @@
   "version": "10.4",
   "portal": "TechNews PRO",
   "documentation_and_source": "https://infoprodutos93-sys.github.io/technews-pro/",
-  "updated_at_brt": "2026-11-03T10:13:45-03:00",
+  "updated_at_brt": "2026-11-03T19:41:39-03:00",
   "market_rates": {
     "USD_BRL": 5.7,
     "EUR_BRL": 6.18,
@@ -42,40 +42,13 @@
   "total_articles": 25,
   "articles": [
     {
-      "title": "Evitar uma reentrada descontrolada; impulsione o Hubble e mantenha a ciência – Isaacman",
-      "desc": "O administrador da NASA, Jared Isaacman, abordou o debate em andamento sobre o longo prazo do Telescópio Espacial Hubble… O post Evitando uma reentrada descontrolada; impulsione o Hubble e mantenha a ciência – Isaacman apareceu...",
-      "img": "https://www.nasaspaceflight.com/wp-content/uploads/2026/11/NSF-2026-11-03-03-55-27-762.jpg",
-      "url": "https://www.nasaspaceflight.com/2026/11/uncontrolled-reentry-boost-hubble-science-isaacman/",
-      "source": "SpaceTech",
-      "date": "2026-11-03",
-      "categoria": "Ciência"
-    },
-    {
-      "title": "Gabriel Medina vence nas Filipinas e sobe para vice-liderança da WSL",
-      "desc": "Gabriel Medina voltou a conquistar uma etapa do Circuito Mundial da WSL após mais de três anos. O tricampeão mundial derrotou o australiano Jack Robinson na final disputada em Cloud 9, nas Filipinas, e encerrou um longo jejum...",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/gabriel-medina-surfe-wsl.webp",
-      "url": "https://www.gazetaesportiva.com/mais-esportes/surfe/gabriel-medina-volta-a-vencer-na-wsl-e-assume-vice-lideranca-do-ranking/",
-      "source": "Gazeta Esportiva",
-      "date": "Hoje",
-      "categoria": "⚽ Esportes"
-    },
-    {
-      "title": "Novo CNPJ Alfanumérico da Receita Federal: Como preparar seus testes e sistemas",
-      "desc": "A transição para o CNPJ Alfanumérico regulamentada pela Receita Federal é uma das mudanças...",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fc3smwggy9jpa9ypss802.png",
-      "url": "https://dev.to/geekecia/novo-cnpj-alfanumerico-da-receita-federal-como-preparar-seus-testes-e-sistemas-6mm",
+      "title": "A Fadiga da Sprint Planning: por que reuniões de estimativa cansam tanto e como resolver",
+      "desc": "Como o viés de ancoragem e ferramentas burocráticas desgastam o time ágil durante a Sprint Planning e como restaurar estimativas rápidas.",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fbau52jmvkjj3kgdgj8dt.png",
+      "url": "https://dev.to/geekecia/a-fadiga-da-sprint-planning-por-que-reunioes-de-estimativa-cansam-tanto-e-como-resolver-57h1",
       "source": "Dev.to Brasil",
-      "date": "Oct 22",
+      "date": "Nov 2",
       "categoria": "Tecnologia"
-    },
-    {
-      "title": "Ex-técnico do Corinthians, Lucas Piccinato comandará o time feminino do Valencia",
-      "desc": "O Valencia Feminino anunciou a contratação de Lucas Piccinato como novo treinador da equipe principal. Ex-comandante do Corinthians, o brasileiro de 36 anos assinou contrato até junho de 2028 e terá sua primeira experiência no...",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/6ae882af4a92c.webp",
-      "url": "https://www.gazetaesportiva.com/futebol-feminino/lucas-piccinato-e-anunciado-pelo-valencia-feminino/",
-      "source": "Gazeta Esportiva",
-      "date": "Hoje",
-      "categoria": "⚽ Esportes"
     },
     {
       "title": "Raul Gil é internado e passa por procedimento cirúrgico em SP",
@@ -87,105 +60,6 @@
       "categoria": "⭐ Famosos"
     },
     {
-      "title": "PT prepara “festa do interior” para visita de Lula à Bahia",
-      "desc": "Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em última rodada pelo Nordeste antes do 1º turno Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em...",
-      "img": "https://images.metroimg.com/2026/01/lula-bahia.jpg",
-      "url": "https://www.metropoles.com/brasil/pt-prepara-festa-do-interior-para-visita-de-lula-a-bahia",
-      "source": "Metrópoles Política",
-      "date": "Hoje",
-      "categoria": "🏛️ Política"
-    },
-    {
-      "title": "Filhos de Gugu divergem sobre união do pai com Rose Miriam",
-      "desc": "Trechos do processo judicial mostram uma discussão entre os filhos do apresentador sobre o reconhecimento da união estável dos pais Trechos do processo judicial mostram uma discussão entre os filhos do apresentador sobre o...",
-      "img": "https://images.metroimg.com/2022/08/09094552/Gugu-capa-1.jpg",
-      "url": "https://www.metropoles.com/colunas/leo-dias/filhos-de-gugu-divergem-sobre-uniao-do-pai-com-rose-miriam",
-      "source": "Coluna Famosos",
-      "date": "Hoje",
-      "categoria": "⭐ Famosos"
-    },
-    {
-      "title": "APOD: 3 de novembro de 2026 – Cometa PanSTARRs e Rainbow Meteor",
-      "desc": "APOD Science APOD APOD: 2026 3 de novembro –… Arquivo APOD de hoje Índice de envios Pesquisar Calendário RSS Educação Sobre Discutir APOD Astronomia Imagem do dia Descubra o cosmos!",
-      "img": "https://assets.science.nasa.gov/dynamicimage/assets/science/cds/apod/apod/2026/november/CometMeteor_Metais_1934.jpg",
-      "url": "https://science.nasa.gov/image-article/apod-2026-november-3-comet-panstarrs-and-rainbow-meteor/",
-      "source": "SpaceTech",
-      "date": "2026-11-03",
-      "categoria": "Ciência"
-    },
-    {
-      "title": "Como reduzir o tempo da Sprint Planning pela metade com estimativas em tempo real",
-      "desc": "Dicas práticas e decisões de arquitetura em Next.js para transformar reuniões de estimativa arrastadas em alinhamentos técnicos ágeis e eficientes.",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F7mizvhzw7ziongg9l7ro.png",
-      "url": "https://dev.to/geekecia/como-reduzir-o-tempo-da-sprint-planning-pela-metade-com-estimativas-em-tempo-real-2a6m",
-      "source": "Dev.to Brasil",
-      "date": "Oct 19",
-      "categoria": "Tecnologia"
-    },
-    {
-      "title": "O menu do dia em cinco minutos, com IA gratuita",
-      "desc": "Como um café ou uma tasca pode escrever o quadro de giz, o aviso da porta e a mensagem de...",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3i9x7328cqfy1thj8t87.png",
-      "url": "https://dev.to/josemartinsiaaobalca/o-menu-do-dia-em-cinco-minutos-com-ia-gratuita-18h7",
-      "source": "Dev.to Brasil",
-      "date": "Oct 30",
-      "categoria": "Tecnologia"
-    },
-    {
-      "title": "GraphQL para Iniciantes: Guia Completo com .NET",
-      "desc": "Aprenda como GraphQL organiza schemas, queries e resolvers, execute uma API com .NET 10 e escolha entre GraphQL, REST e gRPC.",
-      "img": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fzocate.li%2Fposts%2F2026%2Fgraphql-tutorial%2Fimages%2Fcover_hu_662274f337eb8622.jpg",
-      "url": "https://dev.to/lzocate-li/graphql-para-iniciantes-guia-completo-com-net-1id1",
-      "source": "Dev.to Brasil",
-      "date": "Oct 26",
-      "categoria": "Tecnologia"
-    },
-    {
-      "title": "GP São Paulo de F1 terá Trem Expresso para Interlagos durante o fim de semana da corrida",
-      "desc": "A ViaMobilidade terá uma operação especial do Trem Expresso para o GP São Paulo de Fórmula 1. O serviço funcionará entre os dias 6 e 8 de novembro, com partidas a cada 30 minutos das estações Villa-Lobos–Jaguaré, Pinheiros e...",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/GettyImages-2182376520-1140x760-1.avif",
-      "url": "https://www.gazetaesportiva.com/motor/formula-1/trem-expresso-gp-sao-paulo-f1-interlagos/",
-      "source": "Gazeta Esportiva",
-      "date": "Hoje",
-      "categoria": "⚽ Esportes"
-    },
-    {
-      "title": "Eleições 2026: brasileiros reclamam de filas para votar no exterior",
-      "desc": "A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado (24/10) A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado (24/10)...",
-      "img": "https://images.metroimg.com/2026/10/filavotacaoparis.jpg",
-      "url": "https://www.metropoles.com/brasil/eleicoes-2026-brasileiros-reclamam-de-filas-para-votar-no-exterior",
-      "source": "Metrópoles Política",
-      "date": "Hoje",
-      "categoria": "🏛️ Política"
-    },
-    {
-      "title": "Cuca explica gol contra de Rodinei e questiona VAR por pênalti em Rony",
-      "desc": "Cuca explica gol contra de Rodinei e questiona VAR por pênalti em Rony Treinador do Peixe analisa lances capitais no revés da equipe para o RB Bragantino, fora de casa, pelo returno do Brasileirão.",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/10/rb11fk5y-1920Cuca.webp",
-      "url": "https://www.gazetaesportiva.com/times/santos/cuca-explica-gol-contra-de-rodinei-e-questiona-var-por-penalti-em-rony/",
-      "source": "Gazeta Esportiva",
-      "date": "Hoje",
-      "categoria": "⚽ Esportes"
-    },
-    {
-      "title": "Cinco dos sete candidatos ao governo do Rio Grande do Sul já foram às urnas",
-      "desc": "Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das intenções de voto e Juliana Brizola, 35% Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das...",
-      "img": "https://images.metroimg.com/2026/07/rio-grande-do-sul.jpg",
-      "url": "https://www.metropoles.com/brasil/politica-brasil/cinco-dos-sete-candidatos-ao-governo-do-rio-grande-do-sul-ja-foram-as-urnas",
-      "source": "Metrópoles Política",
-      "date": "Hoje",
-      "categoria": "🏛️ Política"
-    },
-    {
-      "title": "Na Bahia, Lula diz a aliados estar preocupado com crise no STF",
-      "desc": "O presidente Lula participou de carreata em Salvador nesta terça-feira junto aos candidatos do PT ao Senado e ao Governo do estado O presidente Lula participou de carreata em Salvador nesta terça-feira junto aos candidatos do PT...",
-      "img": "https://images.metroimg.com/2026/09/foto-lula-salvaor-scaled.jpg",
-      "url": "https://www.metropoles.com/brasil/na-bahia-lula-diz-a-aliados-estar-preocupado-com-crise-no-stf",
-      "source": "Metrópoles Política",
-      "date": "Hoje",
-      "categoria": "🏛️ Política"
-    },
-    {
       "title": "Erika Hilton recebe ameaça de morte e atrasa ida às urnas por segurança",
       "desc": "Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos A deputada federal e candidata à...",
       "img": "https://images.metroimg.com/2026/07/sbt-lista-argumentos-para-derrubar-resposta-de-erika-hilton.jpg",
@@ -195,19 +69,37 @@
       "categoria": "🏛️ Política"
     },
     {
-      "title": "Story Points vs Horas: por que o debate de estimativa se perde e como o consenso real resolve",
-      "desc": "Por que times perdem tanto tempo debatendo números em Sprints e como focar em divergências técnicas acelera as cerimônias ágeis.",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flgl5tv2oae3ec09v8apt.png",
-      "url": "https://dev.to/geekecia/story-points-vs-horas-por-que-o-debate-de-estimativa-se-perde-e-como-o-consenso-real-resolve-51m1",
+      "title": "Haas demite Ocon e Rafael Câmara vai substituí-lo no GP do Brasil de F1",
+      "desc": "O piloto francês Esteban Ocon foi demitido nesta terça-feira (3) da Haas, que decidiu substituí-lo pelo jovem brasileiro Rafael Câmara já no próximo fim de semana, no Grande Prêmio do Brasil de Fórmula 1.",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/10/1603814-1280.webp",
+      "url": "https://www.gazetaesportiva.com/motor/formula-1/haas-demite-ocon-e-rafael-camara-vai-substitui-lo-no-gp-do-brasil-de-f1/",
+      "source": "Gazeta Esportiva",
+      "date": "Hoje",
+      "categoria": "⚽ Esportes"
+    },
+    {
+      "title": "SignalR no .NET: do primeiro Hub à produção",
+      "desc": "Guia de SignalR no .NET 10: Hubs, cliente Angular, autorização, reconexão, grupos e escala sem tratar notificações como estado durável.",
+      "img": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fzocate.li%2Fposts%2F2026%2Fsignalr-aspnet-core-guia%2Fimages%2Fcover_hu_4dc1d2c448c3e56c.jpg",
+      "url": "https://dev.to/lzocate-li/signalr-no-net-do-primeiro-hub-a-producao-4n92",
       "source": "Dev.to Brasil",
-      "date": "Oct 27",
+      "date": "Nov 2",
       "categoria": "Tecnologia"
     },
     {
-      "title": "China Plans “Two Launches, Lunar Orbit Rendezvous” to Land Taikonauts on Moon",
-      "desc": "A China está compartilhando mais informações sobre como planeja pousar taikonautas na Lua até 2030. Desenvolvimento do foguete Longa Marcha-10, da espaçonave tripulada Mengzhou e do módulo lunar Lanyue [...]",
-      "img": "https://spacepolicyonline.com/wp-content/uploads/2026/11/Mengzhou-launch-abort-test-wikimedia-300x168.jpg",
-      "url": "https://spacepolicyonline.com/news/china-plans-two-launches-lunar-orbit-rendezvous-to-land-taikonauts-on-moon/",
+      "title": "Virginia elege vestido luxuoso para festa de Maria Alice. Saiba valor!",
+      "desc": "Além de ser um vestido repleto de detalhes sutis, a peça escolhida por Virginia segue a tendência do momento, o Whitecore Além de ser um vestido repleto de detalhes sutis, a peça escolhida por Virginia segue a tendência do...",
+      "img": "https://images.metroimg.com/2023/05/31152902/Design-sem-nome-2023-05-31T152810.884.jpg",
+      "url": "https://www.metropoles.com/colunas/leo-dias/virginia-elege-vestido-luxuoso-para-festa-de-maria-alice-saiba-valor",
+      "source": "Coluna Famosos",
+      "date": "Hoje",
+      "categoria": "⭐ Famosos"
+    },
+    {
+      "title": "Astronauta e Terra",
+      "desc": "O astronauta da CSA (Agência Espacial Canadense), Joshua Kutryk, é retratado durante a caminhada espacial de 29 de outubro de 2026.",
+      "img": "https://www.nasa.gov/wp-content/uploads/2026/11/iss075e0253663orig.jpg",
+      "url": "https://www.nasa.gov/image-article/astronaut-and-earth/",
       "source": "SpaceTech",
       "date": "2026-11-03",
       "categoria": "Ciência"
@@ -222,22 +114,76 @@
       "categoria": "⭐ Famosos"
     },
     {
-      "title": "É hora de dizer até breve ao Metrópoles e partir para um novo desafio",
-      "desc": "Amanhã (1º/6), estreia o LeoDias.com. A missão é gigantesca, mas nunca foi meu tipo fugir dos desafios da vida Amanhã (1º/6), estreia o LeoDias.com.",
-      "img": "https://images.metroimg.com/2023/06/31214750/Design-sem-nome-2023-05-31T214746.841.jpg",
-      "url": "https://www.metropoles.com/colunas/leo-dias/e-hora-de-dizer-ate-breve-ao-metropoles-e-partir-para-um-novo-desafio",
-      "source": "Coluna Famosos",
+      "title": "Eleições 2026: brasileiros reclamam de filas para votar no exterior",
+      "desc": "A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado (24/10) A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado (24/10)...",
+      "img": "https://images.metroimg.com/2026/10/filavotacaoparis.jpg",
+      "url": "https://www.metropoles.com/brasil/eleicoes-2026-brasileiros-reclamam-de-filas-para-votar-no-exterior",
+      "source": "Metrópoles Política",
       "date": "Hoje",
-      "categoria": "⭐ Famosos"
+      "categoria": "🏛️ Política"
     },
     {
-      "title": "Virginia elege vestido luxuoso para festa de Maria Alice. Saiba valor!",
-      "desc": "Além de ser um vestido repleto de detalhes sutis, a peça escolhida por Virginia segue a tendência do momento, o Whitecore Além de ser um vestido repleto de detalhes sutis, a peça escolhida por Virginia segue a tendência do...",
-      "img": "https://images.metroimg.com/2023/05/31152902/Design-sem-nome-2023-05-31T152810.884.jpg",
-      "url": "https://www.metropoles.com/colunas/leo-dias/virginia-elege-vestido-luxuoso-para-festa-de-maria-alice-saiba-valor",
-      "source": "Coluna Famosos",
+      "title": "GraphQL para Iniciantes: Guia Completo com .NET",
+      "desc": "Aprenda como GraphQL organiza schemas, queries e resolvers, execute uma API com .NET 10 e escolha entre GraphQL, REST e gRPC.",
+      "img": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fzocate.li%2Fposts%2F2026%2Fgraphql-tutorial%2Fimages%2Fcover_hu_662274f337eb8622.jpg",
+      "url": "https://dev.to/lzocate-li/graphql-para-iniciantes-guia-completo-com-net-1id1",
+      "source": "Dev.to Brasil",
+      "date": "Oct 26",
+      "categoria": "Tecnologia"
+    },
+    {
+      "title": "Cinco dos sete candidatos ao governo do Rio Grande do Sul já foram às urnas",
+      "desc": "Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das intenções de voto e Juliana Brizola, 35% Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das...",
+      "img": "https://images.metroimg.com/2026/07/rio-grande-do-sul.jpg",
+      "url": "https://www.metropoles.com/brasil/politica-brasil/cinco-dos-sete-candidatos-ao-governo-do-rio-grande-do-sul-ja-foram-as-urnas",
+      "source": "Metrópoles Política",
       "date": "Hoje",
-      "categoria": "⭐ Famosos"
+      "categoria": "🏛️ Política"
+    },
+    {
+      "title": "O menu do dia em cinco minutos, com IA gratuita",
+      "desc": "Como um café ou uma tasca pode escrever o quadro de giz, o aviso da porta e a mensagem de...",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3i9x7328cqfy1thj8t87.png",
+      "url": "https://dev.to/josemartinsiaaobalca/o-menu-do-dia-em-cinco-minutos-com-ia-gratuita-18h7",
+      "source": "Dev.to Brasil",
+      "date": "Oct 30",
+      "categoria": "Tecnologia"
+    },
+    {
+      "title": "Esta empresa espacial aposta o seu futuro num propulsor disponível em todo o lado",
+      "desc": "Isso é água na sua espaçonave ou você está feliz em ver o delta-V.",
+      "img": "https://cdn.arstechnica.net/wp-content/uploads/2026/11/Argonaut-Transit-to-Moon-16x9-1.jpg",
+      "url": "https://arstechnica.com/space/2026/11/this-space-company-is-betting-its-future-on-a-propellant-available-everywhere/",
+      "source": "SpaceTech",
+      "date": "2026-11-03",
+      "categoria": "Ciência"
+    },
+    {
+      "title": "Story Points vs Horas: por que o debate de estimativa se perde e como o consenso real resolve",
+      "desc": "Por que times perdem tanto tempo debatendo números em Sprints e como focar em divergências técnicas acelera as cerimônias ágeis.",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flgl5tv2oae3ec09v8apt.png",
+      "url": "https://dev.to/geekecia/story-points-vs-horas-por-que-o-debate-de-estimativa-se-perde-e-como-o-consenso-real-resolve-51m1",
+      "source": "Dev.to Brasil",
+      "date": "Oct 27",
+      "categoria": "Tecnologia"
+    },
+    {
+      "title": "Yuri Alberto exalta Seedorf e reforça compromisso no Timão: ‘Não abandono nunca’",
+      "desc": "Atacante do Corinthians diz que treinador está lhe dando confiança e está feliz de poder voltar a ajudar o time em momento crucial da temporada.",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/m78b2bn0-1920yu.webp",
+      "url": "https://www.gazetaesportiva.com/todas-as-noticias/yuri-alberto-exalta-seedorf-e-reforca-compromisso-no-timao-nao-abandono-nunca/",
+      "source": "Gazeta Esportiva",
+      "date": "Hoje",
+      "categoria": "⚽ Esportes"
+    },
+    {
+      "title": "Seedorf blinda elenco do Corinthians: ‘A gente não quer falar do passado’",
+      "desc": "Na véspera do Majestoso, treinador diz que objetivo é manter o foco da equipe após debater pergunta feita por jornalista a Memphis Depay.",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/2l0duomu-1920Seedorf.webp",
+      "url": "https://www.gazetaesportiva.com/todas-as-noticias/seedorf-blinda-elenco-do-corinthians-a-gente-nao-quer-falar-do-passado/",
+      "source": "Gazeta Esportiva",
+      "date": "Hoje",
+      "categoria": "⚽ Esportes"
     },
     {
       "title": "Planning Poker em chamadas do Teams, Meet ou Slack: como estimar sem atrito",
@@ -249,22 +195,76 @@
       "categoria": "Tecnologia"
     },
     {
-      "title": "A movimentada temporada de tempestades no Pacífico",
-      "desc": "O Super Tufão In-fa desenvolveu um olho incomumente grande, e os remanescentes do Tufão Champi fizeram a transição para uma tempestade extratropical que atingiu o Alasca.",
-      "img": "https://assets.science.nasa.gov/dynamicimage/assets/science/esd/eo/images/iotd/2026/the-pacific's-busy-storm-season/storm_infa_epic_20261029.jpg",
-      "url": "https://science.nasa.gov/earth/earth-observatory/the-pacifics-busy-storm-season/",
+      "title": "Simera Sense e Spacemanic colaborarão em uma nova solução completa de missão de dupla utilização",
+      "desc": "A empresa checa Spacemanic e o líder óptico belga Simera Sense estão a unir-se para fornecer uma nova solução de satélite de dupla utilização que possa competir com satélites maiores e mais pesados.",
+      "img": "https://i0.wp.com/spacenews.com/wp-content/uploads/2026/11/simera-space.png?fit=1024%2C1024&ssl=1",
+      "url": "https://spacenews.com/simera-sense-and-spacemanic-to-collaborate-on-a-new-complete-dual-use-mission-solution/",
       "source": "SpaceTech",
       "date": "2026-11-03",
       "categoria": "Ciência"
     },
     {
-      "title": "Fabián Ruiz e João Neves finalizam a preparação do PSG no Estádio de la Cerâmica",
-      "desc": "Fabián Ruiz e João Neves finalizam a preparação do PSG no Estádio de la Cerâmica Confira o último treino oficial do Paris Saint-Germain antes da partida fora de casa contra o Villarreal pela Champions League.",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/Fabian-R.webp",
-      "url": "https://www.gazetaesportiva.com/times/paris-saint-germain/fabian-ruiz-e-joao-neves-finalizam-a-preparacao-do-psg-no-estadio-de-la-ceramica/",
+      "title": "Filhos de Gugu divergem sobre união do pai com Rose Miriam",
+      "desc": "Trechos do processo judicial mostram uma discussão entre os filhos do apresentador sobre o reconhecimento da união estável dos pais Trechos do processo judicial mostram uma discussão entre os filhos do apresentador sobre o...",
+      "img": "https://images.metroimg.com/2022/08/09094552/Gugu-capa-1.jpg",
+      "url": "https://www.metropoles.com/colunas/leo-dias/filhos-de-gugu-divergem-sobre-uniao-do-pai-com-rose-miriam",
+      "source": "Coluna Famosos",
+      "date": "Hoje",
+      "categoria": "⭐ Famosos"
+    },
+    {
+      "title": "Jódar perde para Ruud em Paris e se complica na luta por vaga no ATP Finals",
+      "desc": "O espanhol Rafael Jódar (10º do mundo) não depende mais de si mesmo para se classificar para o ATP Finals de fim de temporada, após perder nesta terça-feira (3), na segunda rodada em Paris, para o norueguês Casper Ruud (23º).",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/AFP__20261103__D6C37AU__v1__HighRes__TennisAtpTour2026ParisMastersDay2.webp",
+      "url": "https://www.gazetaesportiva.com/mais-esportes/tenis/jodar-perde-para-ruud-em-paris-e-se-complica-na-luta-por-vaga-no-atp-finals/",
       "source": "Gazeta Esportiva",
       "date": "Hoje",
       "categoria": "⚽ Esportes"
+    },
+    {
+      "title": "PT prepara “festa do interior” para visita de Lula à Bahia",
+      "desc": "Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em última rodada pelo Nordeste antes do 1º turno Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em...",
+      "img": "https://images.metroimg.com/2026/01/lula-bahia.jpg",
+      "url": "https://www.metropoles.com/brasil/pt-prepara-festa-do-interior-para-visita-de-lula-a-bahia",
+      "source": "Metrópoles Política",
+      "date": "Hoje",
+      "categoria": "🏛️ Política"
+    },
+    {
+      "title": "Na Bahia, Lula diz a aliados estar preocupado com crise no STF",
+      "desc": "O presidente Lula participou de carreata em Salvador nesta terça-feira junto aos candidatos do PT ao Senado e ao Governo do estado O presidente Lula participou de carreata em Salvador nesta terça-feira junto aos candidatos do PT...",
+      "img": "https://images.metroimg.com/2026/09/foto-lula-salvaor-scaled.jpg",
+      "url": "https://www.metropoles.com/brasil/na-bahia-lula-diz-a-aliados-estar-preocupado-com-crise-no-stf",
+      "source": "Metrópoles Política",
+      "date": "Hoje",
+      "categoria": "🏛️ Política"
+    },
+    {
+      "title": "É hora de dizer até breve ao Metrópoles e partir para um novo desafio",
+      "desc": "Amanhã (1º/6), estreia o LeoDias.com. A missão é gigantesca, mas nunca foi meu tipo fugir dos desafios da vida Amanhã (1º/6), estreia o LeoDias.com.",
+      "img": "https://images.metroimg.com/2023/06/31214750/Design-sem-nome-2023-05-31T214746.841.jpg",
+      "url": "https://www.metropoles.com/colunas/leo-dias/e-hora-de-dizer-ate-breve-ao-metropoles-e-partir-para-um-novo-desafio",
+      "source": "Coluna Famosos",
+      "date": "Hoje",
+      "categoria": "⭐ Famosos"
+    },
+    {
+      "title": "Memphis fala sobre má fase no Corinthians e faz autocrítica",
+      "desc": "Atacante neerlandês marcou apenas um gol nesta temporada e está à disposição do técnico Clarence Seedorf para entrar em campo no clássico contra o São Paulo.",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/xeqmx0on-1920Memphis.webp",
+      "url": "https://www.gazetaesportiva.com/todas-as-noticias/memphis-fala-sobre-ma-fase-no-corinthians-e-faz-autocritica/",
+      "source": "Gazeta Esportiva",
+      "date": "Hoje",
+      "categoria": "⚽ Esportes"
+    },
+    {
+      "title": "TB 26-10 Printed Circuit Board Assembly Chip Resistor Body Cracking",
+      "desc": "Para obter mais informações, entre em contato com Joel W. Sills, Centro de Pesquisa Langley, joel.w.sills@nasa.gov.",
+      "img": "https://www.nasa.gov/wp-content/uploads/2015/04/tb-26-10-fig-1.png",
+      "url": "https://www.nasa.gov/centers-and-facilities/nesc/tb-26-10-printed-circuit-board-assembly-chip-resistor-body-cracking/",
+      "source": "SpaceTech",
+      "date": "2026-11-03",
+      "categoria": "Ciência"
     }
   ]
 }
