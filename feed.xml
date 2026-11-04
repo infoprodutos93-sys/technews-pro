@@ -6,94 +6,9 @@
   <description>Notícias em tempo real sobre Inteligência Artificial, Tecnologia, Mercado Financeiro, Esportes e Política.</description>
   <language>pt-BR</language>
   <item>
-    <title>A Fadiga da Sprint Planning: por que reuniões de estimativa cansam tanto e como resolver</title>
-    <link>https://dev.to/geekecia/a-fadiga-da-sprint-planning-por-que-reunioes-de-estimativa-cansam-tanto-e-como-resolver-57h1</link>
-    <description>Como o viés de ancoragem e ferramentas burocráticas desgastam o time ágil durante a Sprint Planning e como restaurar estimativas rápidas.</description>
-  </item>
-  <item>
-    <title>Raul Gil é internado e passa por procedimento cirúrgico em SP</title>
-    <link>https://www.metropoles.com/colunas/leo-dias/raul-gil-e-internado-e-passa-por-procedimento-cirurgico-em-sp</link>
-    <description>Essa é a segunda internação de Raul este ano, em fevereiro ele deu entrada no hospital para a realização de alguns exames Essa é a segunda internação de Raul este ano, em fevereiro ele deu entrada no hospital para a realização...</description>
-  </item>
-  <item>
-    <title>Erika Hilton recebe ameaça de morte e atrasa ida às urnas por segurança</title>
-    <link>https://www.metropoles.com/brasil/politica-brasil/erika-hilton-recebe-ameaca-de-morte-e-atrasa-ida-as-urnas-por-seguranca</link>
-    <description>Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos A deputada federal e candidata à...</description>
-  </item>
-  <item>
-    <title>Haas demite Ocon e Rafael Câmara vai substituí-lo no GP do Brasil de F1</title>
-    <link>https://www.gazetaesportiva.com/motor/formula-1/haas-demite-ocon-e-rafael-camara-vai-substitui-lo-no-gp-do-brasil-de-f1/</link>
-    <description>O piloto francês Esteban Ocon foi demitido nesta terça-feira (3) da Haas, que decidiu substituí-lo pelo jovem brasileiro Rafael Câmara já no próximo fim de semana, no Grande Prêmio do Brasil de Fórmula 1.</description>
-  </item>
-  <item>
-    <title>SignalR no .NET: do primeiro Hub à produção</title>
-    <link>https://dev.to/lzocate-li/signalr-no-net-do-primeiro-hub-a-producao-4n92</link>
-    <description>Guia de SignalR no .NET 10: Hubs, cliente Angular, autorização, reconexão, grupos e escala sem tratar notificações como estado durável.</description>
-  </item>
-  <item>
-    <title>Virginia elege vestido luxuoso para festa de Maria Alice. Saiba valor!</title>
-    <link>https://www.metropoles.com/colunas/leo-dias/virginia-elege-vestido-luxuoso-para-festa-de-maria-alice-saiba-valor</link>
-    <description>Além de ser um vestido repleto de detalhes sutis, a peça escolhida por Virginia segue a tendência do momento, o Whitecore Além de ser um vestido repleto de detalhes sutis, a peça escolhida por Virginia segue a tendência do...</description>
-  </item>
-  <item>
-    <title>Astronauta e Terra</title>
-    <link>https://www.nasa.gov/image-article/astronaut-and-earth/</link>
-    <description>O astronauta da CSA (Agência Espacial Canadense), Joshua Kutryk, é retratado durante a caminhada espacial de 29 de outubro de 2026.</description>
-  </item>
-  <item>
-    <title>João Gomes e Ary Mirelle curtem jantar romântico com Sthe Matos e Kevi Jonny</title>
-    <link>https://www.metropoles.com/colunas/leo-dias/joao-gomes-e-ary-curtem-jantar-romantico-com-sthe-matos-e-kevi-jonny</link>
-    <description>O casal está em Barra de São Miguel acompanhados de Kevi Jonny e Sthe Matos O casal está em Barra de São Miguel acompanhados de Kevi Jonny e Sthe Matos Antes da maratona de shows do período junino, João Gomes e Ary Mirelle...</description>
-  </item>
-  <item>
-    <title>Eleições 2026: brasileiros reclamam de filas para votar no exterior</title>
-    <link>https://www.metropoles.com/brasil/eleicoes-2026-brasileiros-reclamam-de-filas-para-votar-no-exterior</link>
-    <description>A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado (24/10) A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado (24/10)...</description>
-  </item>
-  <item>
-    <title>GraphQL para Iniciantes: Guia Completo com .NET</title>
-    <link>https://dev.to/lzocate-li/graphql-para-iniciantes-guia-completo-com-net-1id1</link>
-    <description>Aprenda como GraphQL organiza schemas, queries e resolvers, execute uma API com .NET 10 e escolha entre GraphQL, REST e gRPC.</description>
-  </item>
-  <item>
-    <title>Cinco dos sete candidatos ao governo do Rio Grande do Sul já foram às urnas</title>
-    <link>https://www.metropoles.com/brasil/politica-brasil/cinco-dos-sete-candidatos-ao-governo-do-rio-grande-do-sul-ja-foram-as-urnas</link>
-    <description>Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das intenções de voto e Juliana Brizola, 35% Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das...</description>
-  </item>
-  <item>
-    <title>O menu do dia em cinco minutos, com IA gratuita</title>
-    <link>https://dev.to/josemartinsiaaobalca/o-menu-do-dia-em-cinco-minutos-com-ia-gratuita-18h7</link>
-    <description>Como um café ou uma tasca pode escrever o quadro de giz, o aviso da porta e a mensagem de...</description>
-  </item>
-  <item>
-    <title>Esta empresa espacial aposta o seu futuro num propulsor disponível em todo o lado</title>
-    <link>https://arstechnica.com/space/2026/11/this-space-company-is-betting-its-future-on-a-propellant-available-everywhere/</link>
-    <description>Isso é água na sua espaçonave ou você está feliz em ver o delta-V.</description>
-  </item>
-  <item>
-    <title>Story Points vs Horas: por que o debate de estimativa se perde e como o consenso real resolve</title>
-    <link>https://dev.to/geekecia/story-points-vs-horas-por-que-o-debate-de-estimativa-se-perde-e-como-o-consenso-real-resolve-51m1</link>
-    <description>Por que times perdem tanto tempo debatendo números em Sprints e como focar em divergências técnicas acelera as cerimônias ágeis.</description>
-  </item>
-  <item>
-    <title>Yuri Alberto exalta Seedorf e reforça compromisso no Timão: ‘Não abandono nunca’</title>
-    <link>https://www.gazetaesportiva.com/todas-as-noticias/yuri-alberto-exalta-seedorf-e-reforca-compromisso-no-timao-nao-abandono-nunca/</link>
-    <description>Atacante do Corinthians diz que treinador está lhe dando confiança e está feliz de poder voltar a ajudar o time em momento crucial da temporada.</description>
-  </item>
-  <item>
-    <title>Seedorf blinda elenco do Corinthians: ‘A gente não quer falar do passado’</title>
-    <link>https://www.gazetaesportiva.com/todas-as-noticias/seedorf-blinda-elenco-do-corinthians-a-gente-nao-quer-falar-do-passado/</link>
-    <description>Na véspera do Majestoso, treinador diz que objetivo é manter o foco da equipe após debater pergunta feita por jornalista a Memphis Depay.</description>
-  </item>
-  <item>
-    <title>Planning Poker em chamadas do Teams, Meet ou Slack: como estimar sem atrito</title>
-    <link>https://dev.to/geekecia/planning-poker-em-chamadas-do-teams-meet-ou-slack-como-estimar-sem-atrito-180d</link>
-    <description>Como simplificar a dinâmica de estimativa de histórias de usuário em reuniões remotas sem exigir cadastro ou licenças por assento.</description>
-  </item>
-  <item>
-    <title>Simera Sense e Spacemanic colaborarão em uma nova solução completa de missão de dupla utilização</title>
-    <link>https://spacenews.com/simera-sense-and-spacemanic-to-collaborate-on-a-new-complete-dual-use-mission-solution/</link>
-    <description>A empresa checa Spacemanic e o líder óptico belga Simera Sense estão a unir-se para fornecer uma nova solução de satélite de dupla utilização que possa competir com satélites maiores e mais pesados.</description>
+    <title>Corinthians perde do Cruzeiro, mas fica com título inédito do Brasileiro sub-17</title>
+    <link>https://www.gazetaesportiva.com/times/corinthians/corinthians-perde-do-cruzeiro-mas-fica-com-titulo-inedito-do-brasileiro-sub-17/</link>
+    <description>O Corinthians é campeão inédito do Campeonato Brasileiro sub-17. Nesta terça-feira, o Timãozinho perdeu para o Cruzeiro por 3 a 1, na Arena Independência, em Belo Horizonte, mas mesmo assim ficou com o título devido ao placar...</description>
   </item>
   <item>
     <title>Filhos de Gugu divergem sobre união do pai com Rose Miriam</title>
@@ -101,9 +16,94 @@
     <description>Trechos do processo judicial mostram uma discussão entre os filhos do apresentador sobre o reconhecimento da união estável dos pais Trechos do processo judicial mostram uma discussão entre os filhos do apresentador sobre o...</description>
   </item>
   <item>
-    <title>Jódar perde para Ruud em Paris e se complica na luta por vaga no ATP Finals</title>
-    <link>https://www.gazetaesportiva.com/mais-esportes/tenis/jodar-perde-para-ruud-em-paris-e-se-complica-na-luta-por-vaga-no-atp-finals/</link>
-    <description>O espanhol Rafael Jódar (10º do mundo) não depende mais de si mesmo para se classificar para o ATP Finals de fim de temporada, após perder nesta terça-feira (3), na segunda rodada em Paris, para o norueguês Casper Ruud (23º).</description>
+    <title>Astronauta e Terra</title>
+    <link>https://www.nasa.gov/image-article/astronaut-and-earth/</link>
+    <description>O astronauta da CSA (Agência Espacial Canadense), Joshua Kutryk, é retratado durante a caminhada espacial de 29 de outubro de 2026.</description>
+  </item>
+  <item>
+    <title>Eleições 2026: brasileiros reclamam de filas para votar no exterior</title>
+    <link>https://www.metropoles.com/brasil/eleicoes-2026-brasileiros-reclamam-de-filas-para-votar-no-exterior</link>
+    <description>A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado (24/10) A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado...</description>
+  </item>
+  <item>
+    <title>Alerrandro celebra gol decisivo e fala sobre críticas após momento ruim no Internacional</title>
+    <link>https://www.gazetaesportiva.com/times/internacional/alerrandro-celebra-gol-decisivo-e-fala-sobre-criticas-apos-momento-ruim-no-internacional/</link>
+    <description>O Internacional venceu o Coritiba por 1 a 0, nesta terça-feira, no Beira-Rio, pela 34ª rodada do Campeonato Brasileiro.</description>
+  </item>
+  <item>
+    <title>Erika Hilton recebe ameaça de morte e atrasa ida às urnas por segurança</title>
+    <link>https://www.metropoles.com/brasil/politica-brasil/erika-hilton-recebe-ameaca-de-morte-e-atrasa-ida-as-urnas-por-seguranca</link>
+    <description>Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos A deputada federal e candidata à...</description>
+  </item>
+  <item>
+    <title>Virginia elege vestido luxuoso para festa de Maria Alice. Saiba valor!</title>
+    <link>https://www.metropoles.com/colunas/leo-dias/virginia-elege-vestido-luxuoso-para-festa-de-maria-alice-saiba-valor</link>
+    <description>Além de ser um vestido repleto de detalhes sutis, a peça escolhida por Virginia segue a tendência do momento, o Whitecore Além de ser um vestido repleto de detalhes sutis, a peça escolhida por Virginia segue a tendência do...</description>
+  </item>
+  <item>
+    <title>Melhores momentos: Internacional 1 x 0 Coritiba pelo Brasileirão</title>
+    <link>https://www.gazetaesportiva.com/times/internacional/melhores-momentos-internacional-1-x-0-coritiba-pelo-brasileirao/</link>
+    <description>Acompanhe os melhores momentos de Internacional 1 x 0 Coritiba, duelo válido pela 34ª rodada do Campeonato Brasileiro, disputado na noite desta terça-feira, no Beira-Rio, em Porto Alegre.</description>
+  </item>
+  <item>
+    <title>GraphQL para Iniciantes: Guia Completo com .NET</title>
+    <link>https://dev.to/lzocate-li/graphql-para-iniciantes-guia-completo-com-net-1id1</link>
+    <description>Aprenda como GraphQL organiza schemas, queries e resolvers, execute uma API com .NET 10 e escolha entre GraphQL, REST e gRPC.</description>
+  </item>
+  <item>
+    <title>Inter bate Coritiba com gol no fim, deixa Z4 e afunda o Corinthians</title>
+    <link>https://www.gazetaesportiva.com/times/internacional/inter-bate-coritiba-com-gol-no-fim-deixa-z4-e-afunda-o-corinthians/</link>
+    <description>Nesta terça-feira, com gol no fim, o Internacional venceu o Coritiba por 1 a 0, no Beira-Rio, em Porto Alegre, pela 34ª rodada do Campeonato Brasileiro, deixou a zona de rebaixamento e afundou o Corinthians no Z4 da competição...</description>
+  </item>
+  <item>
+    <title>Story Points vs Horas: por que o debate de estimativa se perde e como o consenso real resolve</title>
+    <link>https://dev.to/geekecia/story-points-vs-horas-por-que-o-debate-de-estimativa-se-perde-e-como-o-consenso-real-resolve-51m1</link>
+    <description>Por que times perdem tanto tempo debatendo números em Sprints e como focar em divergências técnicas acelera as cerimônias ágeis.</description>
+  </item>
+  <item>
+    <title>SignalR no .NET: do primeiro Hub à produção</title>
+    <link>https://dev.to/lzocate-li/signalr-no-net-do-primeiro-hub-a-producao-4n92</link>
+    <description>Guia de SignalR no .NET 10: Hubs, cliente Angular, autorização, reconexão, grupos e escala sem tratar notificações como estado durável.</description>
+  </item>
+  <item>
+    <title>A Fadiga da Sprint Planning: por que reuniões de estimativa cansam tanto e como resolver</title>
+    <link>https://dev.to/geekecia/a-fadiga-da-sprint-planning-por-que-reunioes-de-estimativa-cansam-tanto-e-como-resolver-57h1</link>
+    <description>Como o viés de ancoragem e ferramentas burocráticas desgastam o time ágil durante a Sprint Planning e como restaurar estimativas rápidas.</description>
+  </item>
+  <item>
+    <title>PT prepara “festa do interior” para visita de Lula à Bahia</title>
+    <link>https://www.metropoles.com/brasil/pt-prepara-festa-do-interior-para-visita-de-lula-a-bahia</link>
+    <description>Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em última rodada pelo Nordeste antes do 1º turno Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em...</description>
+  </item>
+  <item>
+    <title>João Gomes e Ary Mirelle curtem jantar romântico com Sthe Matos e Kevi Jonny</title>
+    <link>https://www.metropoles.com/colunas/leo-dias/joao-gomes-e-ary-curtem-jantar-romantico-com-sthe-matos-e-kevi-jonny</link>
+    <description>O casal está em Barra de São Miguel acompanhados de Kevi Jonny e Sthe Matos O casal está em Barra de São Miguel acompanhados de Kevi Jonny e Sthe Matos Antes da maratona de shows do período junino, João Gomes e Ary Mirelle...</description>
+  </item>
+  <item>
+    <title>Cinco dos sete candidatos ao governo do Rio Grande do Sul já foram às urnas</title>
+    <link>https://www.metropoles.com/brasil/politica-brasil/cinco-dos-sete-candidatos-ao-governo-do-rio-grande-do-sul-ja-foram-as-urnas</link>
+    <description>Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das intenções de voto e Juliana Brizola, 35% Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das...</description>
+  </item>
+  <item>
+    <title>É hora de dizer até breve ao Metrópoles e partir para um novo desafio</title>
+    <link>https://www.metropoles.com/colunas/leo-dias/e-hora-de-dizer-ate-breve-ao-metropoles-e-partir-para-um-novo-desafio</link>
+    <description>Amanhã (1º/6), estreia o LeoDias.com. A missão é gigantesca, mas nunca foi meu tipo fugir dos desafios da vida Amanhã (1º/6), estreia o LeoDias.com.</description>
+  </item>
+  <item>
+    <title>Esta empresa espacial aposta o seu futuro num propulsor disponível em todo o lado</title>
+    <link>https://arstechnica.com/space/2026/11/this-space-company-is-betting-its-future-on-a-propellant-available-everywhere/</link>
+    <description>Isso é água na sua espaçonave ou você está feliz em ver o delta-V.</description>
+  </item>
+  <item>
+    <title>Raul Gil é internado e passa por procedimento cirúrgico em SP</title>
+    <link>https://www.metropoles.com/colunas/leo-dias/raul-gil-e-internado-e-passa-por-procedimento-cirurgico-em-sp</link>
+    <description>Essa é a segunda internação de Raul este ano, em fevereiro ele deu entrada no hospital para a realização de alguns exames Essa é a segunda internação de Raul este ano, em fevereiro ele deu entrada no hospital para a realização de...</description>
+  </item>
+  <item>
+    <title>Planning Poker em chamadas do Teams, Meet ou Slack: como estimar sem atrito</title>
+    <link>https://dev.to/geekecia/planning-poker-em-chamadas-do-teams-meet-ou-slack-como-estimar-sem-atrito-180d</link>
+    <description>Como simplificar a dinâmica de estimativa de histórias de usuário em reuniões remotas sem exigir cadastro ou licenças por assento.</description>
   </item>
 </channel>
 </rss>
