@@ -1,4 +1,3 @@
-Spacewalking astronauts unfurl upgraded solar array to boost space station power
 November’s Night Sky Notes: Light-Day Away
 Turkey aims for first Moon-orbiting mission in 2027
 PT prepara “festa do interior” para visita de Lula à Bahia
@@ -23,3 +22,4 @@ SignalR no .NET: do primeiro Hub à produção
 Evitar uma reentrada descontrolada; impulsione o Hubble e mantenha a ciência – Isaacman
 A Fadiga da Sprint Planning: por que reuniões de estimativa cansam tanto e como resolver
 Corinthians perde do Cruzeiro, mas fica com título inédito do Brasileiro sub-17
+Antes do Amanhecer no Coração da América
