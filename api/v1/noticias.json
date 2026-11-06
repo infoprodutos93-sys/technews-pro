@@ -3,7 +3,7 @@
   "version": "10.4",
   "portal": "TechNews PRO",
   "documentation_and_source": "https://infoprodutos93-sys.github.io/technews-pro/",
-  "updated_at_brt": "2026-11-06T10:25:56-03:00",
+  "updated_at_brt": "2026-11-06T19:42:01-03:00",
   "market_rates": {
     "USD_BRL": 5.7,
     "EUR_BRL": 6.18,
@@ -42,76 +42,22 @@
   "total_articles": 25,
   "articles": [
     {
-      "title": "Raul Gil é internado e passa por procedimento cirúrgico em SP",
-      "desc": "Essa é a segunda internação de Raul este ano, em fevereiro ele deu entrada no hospital para a realização de alguns exames Essa é a segunda internação de Raul este ano, em fevereiro ele deu entrada no hospital para a realização...",
-      "img": "https://images.metroimg.com/2018/11/23153705/Screenshot_12115.jpg",
-      "url": "https://www.metropoles.com/colunas/leo-dias/raul-gil-e-internado-e-passa-por-procedimento-cirurgico-em-sp",
-      "source": "Coluna Famosos",
+      "title": "Toulouse vence o Strasbourg em casa e sobe na tabela do Campeonato Francês",
+      "desc": "O Toulouse venceu o Strasbourg por 3 a 1 nesta sexta-feira, no Stadium Municipal, pela 10ª rodada do Campeonato Francês.",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/AFP__20261106__D6PU2CR__v1__HighRes__FblFraLigue1ToulouseStrasbourg.webp",
+      "url": "https://www.gazetaesportiva.com/toulouse/toulouse-vence-strasbourg-e-sobe-na-tabela-do-campeonato-frances/",
+      "source": "Gazeta Esportiva",
       "date": "Hoje",
-      "categoria": "⭐ Famosos"
+      "categoria": "⚽ Esportes"
     },
     {
-      "title": "O menu do dia em cinco minutos, com IA gratuita",
-      "desc": "Como um café ou uma tasca pode escrever o quadro de giz, o aviso da porta e a mensagem de...",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3i9x7328cqfy1thj8t87.png",
-      "url": "https://dev.to/josemartinsiaaobalca/o-menu-do-dia-em-cinco-minutos-com-ia-gratuita-18h7",
+      "title": "SignalR no .NET: do primeiro Hub à produção",
+      "desc": "Guia de SignalR no .NET 10: Hubs, cliente Angular, autorização, reconexão, grupos e escala sem tratar notificações como estado durável.",
+      "img": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fzocate.li%2Fposts%2F2026%2Fsignalr-aspnet-core-guia%2Fimages%2Fcover_hu_4dc1d2c448c3e56c.jpg",
+      "url": "https://dev.to/lzocate-li/signalr-no-net-do-primeiro-hub-a-producao-4n92",
       "source": "Dev.to Brasil",
-      "date": "Oct 30",
+      "date": "Nov 2",
       "categoria": "Tecnologia"
-    },
-    {
-      "title": "É hora de dizer até breve ao Metrópoles e partir para um novo desafio",
-      "desc": "Amanhã (1º/6), estreia o LeoDias.com. A missão é gigantesca, mas nunca foi meu tipo fugir dos desafios da vida Amanhã (1º/6), estreia o LeoDias.com.",
-      "img": "https://images.metroimg.com/2023/06/31214750/Design-sem-nome-2023-05-31T214746.841.jpg",
-      "url": "https://www.metropoles.com/colunas/leo-dias/e-hora-de-dizer-ate-breve-ao-metropoles-e-partir-para-um-novo-desafio",
-      "source": "Coluna Famosos",
-      "date": "Hoje",
-      "categoria": "⭐ Famosos"
-    },
-    {
-      "title": "Abel elogia rival na disputa pelo título e manda recado: “Pé no acelerador”",
-      "desc": "Abel elogia rival na disputa pelo título e manda recado: 'Pé no acelerador' Após golear o Remo em casa, técnico do Palmeiras apontou o rival Flamengo favorito no Brasileirão e disse que seu time vai manter o ritmo forte em...",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/ijn32ngm-1920Abel-Ferreira.webp",
-      "url": "https://www.gazetaesportiva.com/times/palmeiras/abel-elogia-rival-na-disputa-pelo-titulo-e-manda-recado-pe-no-acelerador/",
-      "source": "Gazeta Esportiva",
-      "date": "Hoje",
-      "categoria": "⚽ Esportes"
-    },
-    {
-      "title": "Qual é o melhor app grátis para esconder Reels e Shorts no iPhone sem perder as DMs? (2026)",
-      "desc": "O melhor app grátis para esconder os Reels do Instagram e os Shorts do YouTube no iPhone sem perder...",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fdwkfe91l7k9khd934qi0.png",
-      "url": "https://dev.to/ayumu_kitabayashi_8e0de96/qual-e-o-melhor-app-gratis-para-esconder-reels-e-shorts-no-iphone-sem-perder-as-dms-2026-15hp",
-      "source": "Dev.to Brasil",
-      "date": "Nov 5",
-      "categoria": "Tecnologia"
-    },
-    {
-      "title": "APOD: 2026 November 6 – A Farewell to Swift",
-      "desc": "APOD Science APOD APOD: 2026 6 de novembro – A… Arquivo APOD de hoje Índice de envios Pesquisar Calendário RSS Educação Sobre Discutir APOD Astronomia Imagem do dia Descubra o cosmos!",
-      "img": "https://assets.science.nasa.gov/dynamicimage/assets/science/cds/apod/apod/2026/november/Swift_Millionth_Image_Mosaic.jpg",
-      "url": "https://science.nasa.gov/image-article/apod-2026-november-6-a-farewell-to-swift/",
-      "source": "SpaceTech",
-      "date": "2026-11-06",
-      "categoria": "Ciência"
-    },
-    {
-      "title": "Com jogadores de Palmeiras, Flamengo e Fluminense, Uruguai anuncia convocação para amistosos",
-      "desc": "O técnico Diego Forlán convocou 28 jogadores para os amistosos do Uruguai contra Argentina e República Dominicana, em novembro.",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/09/HTTNfXfbcAAUXpE.webp",
-      "url": "https://www.gazetaesportiva.com/times/uruguai/com-jogadores-de-palmeiras-flamengo-e-fluminense-uruguai-anuncia-convocacao-para-amistosos/",
-      "source": "Gazeta Esportiva",
-      "date": "Hoje",
-      "categoria": "⚽ Esportes"
-    },
-    {
-      "title": "Inglaterra terá irmãos Bellingham juntos pela primeira vez na seleção principal",
-      "desc": "A Inglaterra terá pela primeira vez os irmãos Jude e Jobe Bellingham juntos no elenco principal. Nesta sexta-feira, o técnico Thomas Tuchel convocou o meio-campista de 21 anos, que atua no Borussia Dortmund, para os próximos...",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/07/AFP__20260706__B9C77N9__v1__MidRes__FblWc2026Match92MexEng.webp",
-      "url": "https://www.gazetaesportiva.com/times/inglaterra/inglaterra-convoca-jobe-bellingham/",
-      "source": "Gazeta Esportiva",
-      "date": "Hoje",
-      "categoria": "⚽ Esportes"
     },
     {
       "title": "Filhos de Gugu divergem sobre união do pai com Rose Miriam",
@@ -123,15 +69,6 @@
       "categoria": "⭐ Famosos"
     },
     {
-      "title": "Cinco dos sete candidatos ao governo do Rio Grande do Sul já foram às urnas",
-      "desc": "Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das intenções de voto e Juliana Brizola, 35% Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das...",
-      "img": "https://images.metroimg.com/2026/07/rio-grande-do-sul.jpg",
-      "url": "https://www.metropoles.com/brasil/politica-brasil/cinco-dos-sete-candidatos-ao-governo-do-rio-grande-do-sul-ja-foram-as-urnas",
-      "source": "Metrópoles Política",
-      "date": "Hoje",
-      "categoria": "🏛️ Política"
-    },
-    {
       "title": "Erika Hilton recebe ameaça de morte e atrasa ida às urnas por segurança",
       "desc": "Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos A deputada federal e candidata à...",
       "img": "https://images.metroimg.com/2026/07/sbt-lista-argumentos-para-derrubar-resposta-de-erika-hilton.jpg",
@@ -141,28 +78,28 @@
       "categoria": "🏛️ Política"
     },
     {
-      "title": "Flamengo dispara nas projeções e amplia vantagem sobre o Palmeiras na corrida pelo título",
-      "desc": "O Flamengo segue como favorito ao título do Campeonato Brasileiro de 2026. De acordo com estudo da UFMG, o Rubro-Negro possui 87,2% de probabilidade de levantar a taça, enquanto o Palmeiras aparece com 12,8%.",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/WhatsApp-Image-2026-11-04-at-20.32.38.webp",
-      "url": "https://www.gazetaesportiva.com/campeonatos/brasileiro-serie-a/flamengo-favorito-titulo-brasileirao-projecoes-ufmg/",
-      "source": "Gazeta Esportiva",
-      "date": "Hoje",
-      "categoria": "⚽ Esportes"
+      "title": "O menu do dia em cinco minutos, com IA gratuita",
+      "desc": "Como um café ou uma tasca pode escrever o quadro de giz, o aviso da porta e a mensagem de...",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3i9x7328cqfy1thj8t87.png",
+      "url": "https://dev.to/josemartinsiaaobalca/o-menu-do-dia-em-cinco-minutos-com-ia-gratuita-18h7",
+      "source": "Dev.to Brasil",
+      "date": "Oct 30",
+      "categoria": "Tecnologia"
     },
     {
-      "title": "Taking a Gander at Utah’s Goosenecks",
-      "desc": "O rio San Juan esculpiu meandros profundos e improvavelmente curvos na paisagem do deserto.",
-      "img": "https://assets.science.nasa.gov/dynamicimage/assets/science/esd/eo/images/iotd/2026/taking-a-gander-at-utah%E2%80%99s-goosenecks/ISS075-E-188830.jpg",
-      "url": "https://science.nasa.gov/earth/earth-observatory/taking-a-gander-at-utahs-goosenecks/",
-      "source": "SpaceTech",
-      "date": "2026-11-06",
-      "categoria": "Ciência"
+      "title": "Story Points vs Horas: por que o debate de estimativa se perde e como o consenso real resolve",
+      "desc": "Por que times perdem tanto tempo debatendo números em Sprints e como focar em divergências técnicas acelera as cerimônias ágeis.",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flgl5tv2oae3ec09v8apt.png",
+      "url": "https://dev.to/geekecia/story-points-vs-horas-por-que-o-debate-de-estimativa-se-perde-e-como-o-consenso-real-resolve-51m1",
+      "source": "Dev.to Brasil",
+      "date": "Oct 27",
+      "categoria": "Tecnologia"
     },
     {
-      "title": "Avio Scales Back Demonstrator Programme Amid Technical Challenges",
-      "desc": "O fabricante italiano de foguetes Avio reduziu os planos de desenvolver dois demonstradores de foguetes movidos a combustível líquido destinados a validar tecnologias para um futuro veículo de lançamento reutilizável.",
-      "img": "https://europeanspaceflight.com/wp-content/uploads/2026/11/Avio-Scales-Back-Demonstrator-Programme-Amid-Technical-Challenges.webp",
-      "url": "https://europeanspaceflight.com/avio-scales-back-demonstrator-programme-amid-technical-challenges/",
+      "title": "Falcon 9 será lançado da Califórnia em missão secreta para a Força Espacial dos EUA",
+      "desc": "A decolagem da plataforma 4E na Base da Força Espacial de Vandenberg está agendada para 16h48. PST (19h48 EST / 0048 UTC). Acredita-se que a missão transporte satélites baseados na plataforma Starshield da SpaceX.",
+      "img": "https://spaceflightnow.com/wp-content/uploads/2026/11/20261106-F9-File-Feature-Image.jpg",
+      "url": "https://spaceflightnow.com/2026/11/06/falcon-9-to-launch-from-california-on-classified-mission-for-u-s-space-force/",
       "source": "SpaceTech",
       "date": "2026-11-06",
       "categoria": "Ciência"
@@ -186,15 +123,6 @@
       "categoria": "⭐ Famosos"
     },
     {
-      "title": "Astronautas da ISS instalam painel solar iROSA final para aumentar sistemas de energia antigos da ISS",
-      "desc": "O programa da Estação Espacial Internacional concluiu uma atualização crítica de energia que estava em andamento há… A postagem dos astronautas da ISS instalam o painel solar iROSA final para aumentar os sistemas de energia...",
-      "img": "https://www.nasaspaceflight.com/wp-content/uploads/2026/11/IMG_9798.jpeg",
-      "url": "https://www.nasaspaceflight.com/2026/11/final-irosa-install-iss/",
-      "source": "SpaceTech",
-      "date": "2026-11-06",
-      "categoria": "Ciência"
-    },
-    {
       "title": "A Fadiga da Sprint Planning: por que reuniões de estimativa cansam tanto e como resolver",
       "desc": "Como o viés de ancoragem e ferramentas burocráticas desgastam o time ágil durante a Sprint Planning e como restaurar estimativas rápidas.",
       "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fbau52jmvkjj3kgdgj8dt.png",
@@ -204,31 +132,49 @@
       "categoria": "Tecnologia"
     },
     {
-      "title": "SignalR no .NET: do primeiro Hub à produção",
-      "desc": "Guia de SignalR no .NET 10: Hubs, cliente Angular, autorização, reconexão, grupos e escala sem tratar notificações como estado durável.",
-      "img": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fzocate.li%2Fposts%2F2026%2Fsignalr-aspnet-core-guia%2Fimages%2Fcover_hu_4dc1d2c448c3e56c.jpg",
-      "url": "https://dev.to/lzocate-li/signalr-no-net-do-primeiro-hub-a-producao-4n92",
+      "title": "Raul Gil é internado e passa por procedimento cirúrgico em SP",
+      "desc": "Essa é a segunda internação de Raul este ano, em fevereiro ele deu entrada no hospital para a realização de alguns exames Essa é a segunda internação de Raul este ano, em fevereiro ele deu entrada no hospital para a realização de...",
+      "img": "https://images.metroimg.com/2018/11/23153705/Screenshot_12115.jpg",
+      "url": "https://www.metropoles.com/colunas/leo-dias/raul-gil-e-internado-e-passa-por-procedimento-cirurgico-em-sp",
+      "source": "Coluna Famosos",
+      "date": "Hoje",
+      "categoria": "⭐ Famosos"
+    },
+    {
+      "title": "Qual é o melhor app grátis para esconder Reels e Shorts no iPhone sem perder as DMs? (2026)",
+      "desc": "O melhor app grátis para esconder os Reels do Instagram e os Shorts do YouTube no iPhone sem perder...",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fdwkfe91l7k9khd934qi0.png",
+      "url": "https://dev.to/ayumu_kitabayashi_8e0de96/qual-e-o-melhor-app-gratis-para-esconder-reels-e-shorts-no-iphone-sem-perder-as-dms-2026-15hp",
       "source": "Dev.to Brasil",
-      "date": "Nov 2",
+      "date": "Nov 5",
       "categoria": "Tecnologia"
     },
     {
-      "title": "PT prepara “festa do interior” para visita de Lula à Bahia",
-      "desc": "Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em última rodada pelo Nordeste antes do 1º turno Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em...",
-      "img": "https://images.metroimg.com/2026/01/lula-bahia.jpg",
-      "url": "https://www.metropoles.com/brasil/pt-prepara-festa-do-interior-para-visita-de-lula-a-bahia",
+      "title": "Cinco dos sete candidatos ao governo do Rio Grande do Sul já foram às urnas",
+      "desc": "Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das intenções de voto e Juliana Brizola, 35% Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das...",
+      "img": "https://images.metroimg.com/2026/07/rio-grande-do-sul.jpg",
+      "url": "https://www.metropoles.com/brasil/politica-brasil/cinco-dos-sete-candidatos-ao-governo-do-rio-grande-do-sul-ja-foram-as-urnas",
       "source": "Metrópoles Política",
       "date": "Hoje",
       "categoria": "🏛️ Política"
     },
     {
-      "title": "Qual app usar para parar de ver Reels e Shorts à noite no iPhone, sem bloquear as DMs (2026)",
-      "desc": "O app para parar de ver Reels e Shorts à noite no iPhone sem bloquear as DMs é o minulo: ocultar os...",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fkmcsh8mgpom8bemh7cvf.png",
-      "url": "https://dev.to/ayumu_kitabayashi_8e0de96/qual-app-usar-para-parar-de-ver-reels-e-shorts-a-noite-no-iphone-sem-bloquear-as-dms-2026-4n96",
-      "source": "Dev.to Brasil",
-      "date": "Nov 4",
-      "categoria": "Tecnologia"
+      "title": "É hora de dizer até breve ao Metrópoles e partir para um novo desafio",
+      "desc": "Amanhã (1º/6), estreia o LeoDias.com. A missão é gigantesca, mas nunca foi meu tipo fugir dos desafios da vida Amanhã (1º/6), estreia o LeoDias.com.",
+      "img": "https://images.metroimg.com/2023/06/31214750/Design-sem-nome-2023-05-31T214746.841.jpg",
+      "url": "https://www.metropoles.com/colunas/leo-dias/e-hora-de-dizer-ate-breve-ao-metropoles-e-partir-para-um-novo-desafio",
+      "source": "Coluna Famosos",
+      "date": "Hoje",
+      "categoria": "⭐ Famosos"
+    },
+    {
+      "title": "WTA pede desculpas a Pegula por incidente com microfones abertos",
+      "desc": "A diretora da WTA, Valerie Camillo, pediu desculpas após um microfone aberto captar comentários críticos da americana Jessica Pegula sobre a russa Mirra Andreeva e sua treinadora, Conchita Martínez, durante treinos do WTA Finals.",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/AFP__20261106__2303863450__v1__HighRes__FageWtaFinalsIndianWells2026Previews.webp",
+      "url": "https://www.gazetaesportiva.com/mais-esportes/tenis/wta-pede-desculpas-a-pegula-por-incidente-com-microfones-abertos/",
+      "source": "Gazeta Esportiva",
+      "date": "Hoje",
+      "categoria": "⚽ Esportes"
     },
     {
       "title": "Eleições 2026: brasileiros reclamam de filas para votar no exterior",
@@ -240,24 +186,6 @@
       "categoria": "🏛️ Política"
     },
     {
-      "title": "Story Points vs Horas: por que o debate de estimativa se perde e como o consenso real resolve",
-      "desc": "Por que times perdem tanto tempo debatendo números em Sprints e como focar em divergências técnicas acelera as cerimônias ágeis.",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flgl5tv2oae3ec09v8apt.png",
-      "url": "https://dev.to/geekecia/story-points-vs-horas-por-que-o-debate-de-estimativa-se-perde-e-como-o-consenso-real-resolve-51m1",
-      "source": "Dev.to Brasil",
-      "date": "Oct 27",
-      "categoria": "Tecnologia"
-    },
-    {
-      "title": "Eleição no Santos: Wladimir Mattos desiste de candidatura e será vice de Ivan Luduvice",
-      "desc": "Wladimir Mattos desistiu de concorrer à presidência do Santos e será candidato a vice na chapa de Ivan Luduvice.",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/HWZdy99W8AACLru.webp",
-      "url": "https://www.gazetaesportiva.com/times/santos/eleicao-santos-wladimir-mattos-vice-ivan-luduvice/",
-      "source": "Gazeta Esportiva",
-      "date": "Hoje",
-      "categoria": "⚽ Esportes"
-    },
-    {
       "title": "Na Bahia, Lula diz a aliados estar preocupado com crise no STF",
       "desc": "O presidente Lula participou de carreata em Salvador nesta terça-feira junto aos candidatos do PT ao Senado e ao Governo do estado O presidente Lula participou de carreata em Salvador nesta terça-feira junto aos candidatos do PT...",
       "img": "https://images.metroimg.com/2026/09/foto-lula-salvaor-scaled.jpg",
@@ -265,6 +193,78 @@
       "source": "Metrópoles Política",
       "date": "Hoje",
       "categoria": "🏛️ Política"
+    },
+    {
+      "title": "Everton vira sobre Coventry City e encosta no G4 do Inglês",
+      "desc": "Nesta sexta-feira, o Everton venceu o Coventry City de virada por 2 a 1, no Hill Dickinson Stadium, em Liverpool, pela décima rodada do Campeonato Inglês e encostou no G4 da competição nacional.",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/AFP__20261106__D6PX29H__v1__HighRes__FblEngPrEvertonCoventry.webp",
+      "url": "https://www.gazetaesportiva.com/campeonatos/premier-league/everton-vira-sobre-coventry-city-e-encosta-no-g4-do-ingles/",
+      "source": "Gazeta Esportiva",
+      "date": "Hoje",
+      "categoria": "⚽ Esportes"
+    },
+    {
+      "title": "PT prepara “festa do interior” para visita de Lula à Bahia",
+      "desc": "Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em última rodada pelo Nordeste antes do 1º turno Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em...",
+      "img": "https://images.metroimg.com/2026/01/lula-bahia.jpg",
+      "url": "https://www.metropoles.com/brasil/pt-prepara-festa-do-interior-para-visita-de-lula-a-bahia",
+      "source": "Metrópoles Política",
+      "date": "Hoje",
+      "categoria": "🏛️ Política"
+    },
+    {
+      "title": "F1: Bortoleto destaca sexta-feira positiva após treinos para o GP de São Paulo",
+      "desc": "Gabriel Bortoleto avaliou de forma positiva o primeiro dia de treinos livres para o GP de São Paulo de Fórmula 1.",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/WhatsApp-Image-2026-11-06-at-18.46.24.webp",
+      "url": "https://www.gazetaesportiva.com/motor/formula-1/f1-bortoleto-destaca-sexta-feira-positiva-apos-treinos-para-o-gp-de-sao-paulo/",
+      "source": "Gazeta Esportiva",
+      "date": "Hoje",
+      "categoria": "⚽ Esportes"
+    },
+    {
+      "title": "Sevilla perde pênalti e fica no empate sem gols com o Alavés pelo Espanhol",
+      "desc": "Sevilla e Alavés empataram sem gols em partida válida pelo Campeonato Espanhol. O confronto foi marcado por oportunidades desperdiçadas dos donos da casa, incluindo um pênalti perdido por Rúben Vargas, defendido por Antonio...",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/1519361062-Rq2zdOX6BjqcTELgM2cuUeI-1200x840@diario_abc.webp",
+      "url": "https://www.gazetaesportiva.com/times/sevilla/sevilla-perde-penalti-e-fica-no-empate-sem-gols-com-o-alaves-pelo-espanhol/",
+      "source": "Gazeta Esportiva",
+      "date": "Hoje",
+      "categoria": "⚽ Esportes"
+    },
+    {
+      "title": "M30’s Sparkling Stars",
+      "desc": "Esta imagem do Telescópio Espacial Hubble da NASA/ESA, divulgada em 5 de novembro de 2026, fornece uma lição de história galáctica.",
+      "img": "https://www.nasa.gov/wp-content/uploads/2026/11/hubble-m30-potm2610a.jpg",
+      "url": "https://www.nasa.gov/image-article/m30s-sparkling-stars/",
+      "source": "SpaceTech",
+      "date": "2026-11-06",
+      "categoria": "Ciência"
+    },
+    {
+      "title": "Stoke Space avaliando expansão do local do Cabo para o segundo bloco Nova",
+      "desc": "Stoke Space recebeu direito de entrada do Space Launch Delta 45 para propriedade… A postagem Stoke Space avaliando a expansão do site do Cabo para o segundo bloco Nova apareceu pela primeira vez em NASASpaceFlight.com.",
+      "img": "https://www.nasaspaceflight.com/wp-content/uploads/2026/11/NSF-2026-11-06-20-58-09-237.jpg",
+      "url": "https://www.nasaspaceflight.com/2026/11/stoke-expansion-cape-second-nova/",
+      "source": "SpaceTech",
+      "date": "2026-11-06",
+      "categoria": "Ciência"
+    },
+    {
+      "title": "Qual app usar para parar de ver Reels e Shorts à noite no iPhone, sem bloquear as DMs (2026)",
+      "desc": "O app para parar de ver Reels e Shorts à noite no iPhone sem bloquear as DMs é o minulo: ocultar os...",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fkmcsh8mgpom8bemh7cvf.png",
+      "url": "https://dev.to/ayumu_kitabayashi_8e0de96/qual-app-usar-para-parar-de-ver-reels-e-shorts-a-noite-no-iphone-sem-bloquear-as-dms-2026-4n96",
+      "source": "Dev.to Brasil",
+      "date": "Nov 4",
+      "categoria": "Tecnologia"
+    },
+    {
+      "title": "AST SpaceMobile está tão desesperado para o lançamento que está construindo seu próprio foguete",
+      "desc": "“O foguete Blacklift é o trampolim para expandir significativamente nosso mercado total endereçável.”",
+      "img": "https://cdn.arstechnica.net/wp-content/uploads/2026/11/Abel__Jason.jpg",
+      "url": "https://arstechnica.com/space/2026/11/ast-spacemobile-is-so-desperate-for-launch-theyre-building-their-own-rocket/",
+      "source": "SpaceTech",
+      "date": "2026-11-06",
+      "categoria": "Ciência"
     }
   ]
 }
