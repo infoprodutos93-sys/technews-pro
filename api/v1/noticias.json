@@ -3,7 +3,7 @@
   "version": "10.4",
   "portal": "TechNews PRO",
   "documentation_and_source": "https://infoprodutos93-sys.github.io/technews-pro/",
-  "updated_at_brt": "2026-11-06T19:42:01-03:00",
+  "updated_at_brt": "2026-11-07T00:39:19-03:00",
   "market_rates": {
     "USD_BRL": 5.7,
     "EUR_BRL": 6.18,
@@ -42,13 +42,94 @@
   "total_articles": 25,
   "articles": [
     {
-      "title": "Toulouse vence o Strasbourg em casa e sobe na tabela do Campeonato Francês",
-      "desc": "O Toulouse venceu o Strasbourg por 3 a 1 nesta sexta-feira, no Stadium Municipal, pela 10ª rodada do Campeonato Francês.",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/AFP__20261106__D6PU2CR__v1__HighRes__FblFraLigue1ToulouseStrasbourg.webp",
-      "url": "https://www.gazetaesportiva.com/toulouse/toulouse-vence-strasbourg-e-sobe-na-tabela-do-campeonato-frances/",
+      "title": "Stoke Space avaliando expansão do local do Cabo para o segundo bloco Nova",
+      "desc": "Stoke Space recebeu direito de entrada do Space Launch Delta 45 para propriedade… A postagem Stoke Space avaliando a expansão do site do Cabo para o segundo bloco Nova apareceu pela primeira vez em NASASpaceFlight.com.",
+      "img": "https://www.nasaspaceflight.com/wp-content/uploads/2026/11/NSF-2026-11-06-20-58-09-237.jpg",
+      "url": "https://www.nasaspaceflight.com/2026/11/stoke-expansion-cape-second-nova/",
+      "source": "SpaceTech",
+      "date": "2026-11-06",
+      "categoria": "Ciência"
+    },
+    {
+      "title": "PT prepara “festa do interior” para visita de Lula à Bahia",
+      "desc": "Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em última rodada pelo Nordeste antes do 1º turno Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em...",
+      "img": "https://images.metroimg.com/2026/01/lula-bahia.jpg",
+      "url": "https://www.metropoles.com/brasil/pt-prepara-festa-do-interior-para-visita-de-lula-a-bahia",
+      "source": "Metrópoles Política",
+      "date": "Hoje",
+      "categoria": "🏛️ Política"
+    },
+    {
+      "title": "Renato Kayzer lamenta má fase do Vitória e opina sobre demissão de Jair Ventura: “Temos culpa”",
+      "desc": "O Vitória vive um momento crítico no Brasileirão após perder por 3 a 0 para o Fluminense no Barradão. A equipe chegou a cinco jogos sem vitória e está apenas um ponto acima da zona de rebaixamento, com quatro rodadas restantes.",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/55623248042_c0684961d5_o.webp",
+      "url": "https://www.gazetaesportiva.com/times/vitoria/renato-kayzer-lamenta-ma-fase-do-vitoria-e-opina-sobre-demissao-de-jair-ventura-temos-culpa/",
       "source": "Gazeta Esportiva",
       "date": "Hoje",
       "categoria": "⚽ Esportes"
+    },
+    {
+      "title": "AST SpaceMobile revela acordo de motor de US$ 1,3 bilhão com a Firefly Aerospace para alimentar novo foguete de carga pesada",
+      "desc": "A empresa por trás da constelação de satélites diretos para células Bluebird disse que a adição de seu próprio foguete de carga pesada é a peça final de seus planos de integração vertical.",
+      "img": "https://spaceflightnow.com/wp-content/uploads/2026/11/20261106_AST_rocket_rendering.jpg",
+      "url": "https://spaceflightnow.com/2026/11/07/ast-spacemobile-unveils-1-3-billion-engine-deal-with-firefly-aerospace-to-power-new-heavy-lift-rocket/",
+      "source": "SpaceTech",
+      "date": "2026-11-07",
+      "categoria": "Ciência"
+    },
+    {
+      "title": "Falcon 9 será lançado da Califórnia em missão secreta para a Força Espacial dos EUA",
+      "desc": "A decolagem da plataforma 4E na Base da Força Espacial de Vandenberg está agendada para 16h48. PST (19h48 EST / 0048 UTC). Acredita-se que a missão transporte satélites baseados na plataforma Starshield da SpaceX.",
+      "img": "https://spaceflightnow.com/wp-content/uploads/2026/11/20261106-F9-File-Feature-Image.jpg",
+      "url": "https://spaceflightnow.com/2026/11/06/falcon-9-to-launch-from-california-on-classified-mission-for-u-s-space-force/",
+      "source": "SpaceTech",
+      "date": "2026-11-06",
+      "categoria": "Ciência"
+    },
+    {
+      "title": "Story Points vs Horas: por que o debate de estimativa se perde e como o consenso real resolve",
+      "desc": "Por que times perdem tanto tempo debatendo números em Sprints e como focar em divergências técnicas acelera as cerimônias ágeis.",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flgl5tv2oae3ec09v8apt.png",
+      "url": "https://dev.to/geekecia/story-points-vs-horas-por-que-o-debate-de-estimativa-se-perde-e-como-o-consenso-real-resolve-51m1",
+      "source": "Dev.to Brasil",
+      "date": "Oct 27",
+      "categoria": "Tecnologia"
+    },
+    {
+      "title": "Virginia elege vestido luxuoso para festa de Maria Alice. Saiba valor!",
+      "desc": "Além de ser um vestido repleto de detalhes sutis, a peça escolhida por Virginia segue a tendência do momento, o Whitecore Além de ser um vestido repleto de detalhes sutis, a peça escolhida por Virginia segue a tendência do...",
+      "img": "https://images.metroimg.com/2023/05/31152902/Design-sem-nome-2023-05-31T152810.884.jpg",
+      "url": "https://www.metropoles.com/colunas/leo-dias/virginia-elege-vestido-luxuoso-para-festa-de-maria-alice-saiba-valor",
+      "source": "Coluna Famosos",
+      "date": "Hoje",
+      "categoria": "⭐ Famosos"
+    },
+    {
+      "title": "Veja fotos de Vitória x Fluminense pelo Brasileirão",
+      "desc": "Confira todos os bastidores e detalhes atualizados na matéria completa.",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/55637116081_5188ea8a6c_o.webp",
+      "url": "https://www.gazetaesportiva.com/fotos/veja-fotos-de-vitoria-x-fluminense-pelo-brasileirao/",
+      "source": "Gazeta Esportiva",
+      "date": "Hoje",
+      "categoria": "⚽ Esportes"
+    },
+    {
+      "title": "É hora de dizer até breve ao Metrópoles e partir para um novo desafio",
+      "desc": "Amanhã (1º/6), estreia o LeoDias.com. A missão é gigantesca, mas nunca foi meu tipo fugir dos desafios da vida Amanhã (1º/6), estreia o LeoDias.com.",
+      "img": "https://images.metroimg.com/2023/06/31214750/Design-sem-nome-2023-05-31T214746.841.jpg",
+      "url": "https://www.metropoles.com/colunas/leo-dias/e-hora-de-dizer-ate-breve-ao-metropoles-e-partir-para-um-novo-desafio",
+      "source": "Coluna Famosos",
+      "date": "Hoje",
+      "categoria": "⭐ Famosos"
+    },
+    {
+      "title": "AST SpaceMobile está tão desesperado para o lançamento que está construindo seu próprio foguete",
+      "desc": "“O foguete Blacklift é o trampolim para expandir significativamente nosso mercado total endereçável.”",
+      "img": "https://cdn.arstechnica.net/wp-content/uploads/2026/11/Abel__Jason.jpg",
+      "url": "https://arstechnica.com/space/2026/11/ast-spacemobile-is-so-desperate-for-launch-theyre-building-their-own-rocket/",
+      "source": "SpaceTech",
+      "date": "2026-11-06",
+      "categoria": "Ciência"
     },
     {
       "title": "SignalR no .NET: do primeiro Hub à produção",
@@ -60,6 +141,42 @@
       "categoria": "Tecnologia"
     },
     {
+      "title": "Raul Gil é internado e passa por procedimento cirúrgico em SP",
+      "desc": "Essa é a segunda internação de Raul este ano, em fevereiro ele deu entrada no hospital para a realização de alguns exames Essa é a segunda internação de Raul este ano, em fevereiro ele deu entrada no hospital para a realização de...",
+      "img": "https://images.metroimg.com/2018/11/23153705/Screenshot_12115.jpg",
+      "url": "https://www.metropoles.com/colunas/leo-dias/raul-gil-e-internado-e-passa-por-procedimento-cirurgico-em-sp",
+      "source": "Coluna Famosos",
+      "date": "Hoje",
+      "categoria": "⭐ Famosos"
+    },
+    {
+      "title": "Eleições 2026: brasileiros reclamam de filas para votar no exterior",
+      "desc": "A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado (24/10) A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado (24/10)...",
+      "img": "https://images.metroimg.com/2026/10/filavotacaoparis.jpg",
+      "url": "https://www.metropoles.com/brasil/eleicoes-2026-brasileiros-reclamam-de-filas-para-votar-no-exterior",
+      "source": "Metrópoles Política",
+      "date": "Hoje",
+      "categoria": "🏛️ Política"
+    },
+    {
+      "title": "Fluminense vence no Barradão, e Vitória se aproxima do Z4 do Brasileirão",
+      "desc": "O Fluminense venceu o Vitória por 3 a 0 no Barradão, pela 34ª rodada do Campeonato Brasileiro, e se manteve firme no G4 da Série A. Os gols da partida foram marcados por Savarino, Canobbio e Castillo.",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/55637121536_cf621058fd_o.webp",
+      "url": "https://www.gazetaesportiva.com/campeonatos/brasileiro-serie-a/fluminense-vence-no-barradao-e-vitoria-se-aproxima-do-z4-do-brasileirao/",
+      "source": "Gazeta Esportiva",
+      "date": "Hoje",
+      "categoria": "⚽ Esportes"
+    },
+    {
+      "title": "Qual app usar para parar de ver Reels e Shorts à noite no iPhone, sem bloquear as DMs (2026)",
+      "desc": "O app para parar de ver Reels e Shorts à noite no iPhone sem bloquear as DMs é o minulo: ocultar os...",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fkmcsh8mgpom8bemh7cvf.png",
+      "url": "https://dev.to/ayumu_kitabayashi_8e0de96/qual-app-usar-para-parar-de-ver-reels-e-shorts-a-noite-no-iphone-sem-bloquear-as-dms-2026-4n96",
+      "source": "Dev.to Brasil",
+      "date": "Nov 4",
+      "categoria": "Tecnologia"
+    },
+    {
       "title": "Filhos de Gugu divergem sobre união do pai com Rose Miriam",
       "desc": "Trechos do processo judicial mostram uma discussão entre os filhos do apresentador sobre o reconhecimento da união estável dos pais Trechos do processo judicial mostram uma discussão entre os filhos do apresentador sobre o...",
       "img": "https://images.metroimg.com/2022/08/09094552/Gugu-capa-1.jpg",
@@ -67,6 +184,24 @@
       "source": "Coluna Famosos",
       "date": "Hoje",
       "categoria": "⭐ Famosos"
+    },
+    {
+      "title": "João Gomes e Ary Mirelle curtem jantar romântico com Sthe Matos e Kevi Jonny",
+      "desc": "O casal está em Barra de São Miguel acompanhados de Kevi Jonny e Sthe Matos O casal está em Barra de São Miguel acompanhados de Kevi Jonny e Sthe Matos Antes da maratona de shows do período junino, João Gomes e Ary Mirelle...",
+      "img": "https://images.metroimg.com/2023/05/31185334/Design-sem-nome-2023-05-31T185325.578.jpg",
+      "url": "https://www.metropoles.com/colunas/leo-dias/joao-gomes-e-ary-curtem-jantar-romantico-com-sthe-matos-e-kevi-jonny",
+      "source": "Coluna Famosos",
+      "date": "Hoje",
+      "categoria": "⭐ Famosos"
+    },
+    {
+      "title": "São Paulo enfrenta o Noroeste em amistoso durante Data Fifa",
+      "desc": "O São Paulo terá um compromisso fora do calendário oficial durante a pausa do Campeonatgo Brasileiro para a Data Fifa deste mês.",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/55633220429_fb0aea3f7a_o.webp",
+      "url": "https://www.gazetaesportiva.com/times/sao-paulo/sao-paulo-enfrenta-o-noroeste-em-amistoso-durante-data-fifa/",
+      "source": "Gazeta Esportiva",
+      "date": "Hoje",
+      "categoria": "⚽ Esportes"
     },
     {
       "title": "Erika Hilton recebe ameaça de morte e atrasa ida às urnas por segurança",
@@ -87,40 +222,22 @@
       "categoria": "Tecnologia"
     },
     {
-      "title": "Story Points vs Horas: por que o debate de estimativa se perde e como o consenso real resolve",
-      "desc": "Por que times perdem tanto tempo debatendo números em Sprints e como focar em divergências técnicas acelera as cerimônias ágeis.",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flgl5tv2oae3ec09v8apt.png",
-      "url": "https://dev.to/geekecia/story-points-vs-horas-por-que-o-debate-de-estimativa-se-perde-e-como-o-consenso-real-resolve-51m1",
-      "source": "Dev.to Brasil",
-      "date": "Oct 27",
-      "categoria": "Tecnologia"
-    },
-    {
-      "title": "Falcon 9 será lançado da Califórnia em missão secreta para a Força Espacial dos EUA",
-      "desc": "A decolagem da plataforma 4E na Base da Força Espacial de Vandenberg está agendada para 16h48. PST (19h48 EST / 0048 UTC). Acredita-se que a missão transporte satélites baseados na plataforma Starshield da SpaceX.",
-      "img": "https://spaceflightnow.com/wp-content/uploads/2026/11/20261106-F9-File-Feature-Image.jpg",
-      "url": "https://spaceflightnow.com/2026/11/06/falcon-9-to-launch-from-california-on-classified-mission-for-u-s-space-force/",
-      "source": "SpaceTech",
-      "date": "2026-11-06",
-      "categoria": "Ciência"
-    },
-    {
-      "title": "João Gomes e Ary Mirelle curtem jantar romântico com Sthe Matos e Kevi Jonny",
-      "desc": "O casal está em Barra de São Miguel acompanhados de Kevi Jonny e Sthe Matos O casal está em Barra de São Miguel acompanhados de Kevi Jonny e Sthe Matos Antes da maratona de shows do período junino, João Gomes e Ary Mirelle...",
-      "img": "https://images.metroimg.com/2023/05/31185334/Design-sem-nome-2023-05-31T185325.578.jpg",
-      "url": "https://www.metropoles.com/colunas/leo-dias/joao-gomes-e-ary-curtem-jantar-romantico-com-sthe-matos-e-kevi-jonny",
-      "source": "Coluna Famosos",
+      "title": "Cinco dos sete candidatos ao governo do Rio Grande do Sul já foram às urnas",
+      "desc": "Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das intenções de voto e Juliana Brizola, 35% Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das...",
+      "img": "https://images.metroimg.com/2026/07/rio-grande-do-sul.jpg",
+      "url": "https://www.metropoles.com/brasil/politica-brasil/cinco-dos-sete-candidatos-ao-governo-do-rio-grande-do-sul-ja-foram-as-urnas",
+      "source": "Metrópoles Política",
       "date": "Hoje",
-      "categoria": "⭐ Famosos"
+      "categoria": "🏛️ Política"
     },
     {
-      "title": "Virginia elege vestido luxuoso para festa de Maria Alice. Saiba valor!",
-      "desc": "Além de ser um vestido repleto de detalhes sutis, a peça escolhida por Virginia segue a tendência do momento, o Whitecore Além de ser um vestido repleto de detalhes sutis, a peça escolhida por Virginia segue a tendência do...",
-      "img": "https://images.metroimg.com/2023/05/31152902/Design-sem-nome-2023-05-31T152810.884.jpg",
-      "url": "https://www.metropoles.com/colunas/leo-dias/virginia-elege-vestido-luxuoso-para-festa-de-maria-alice-saiba-valor",
-      "source": "Coluna Famosos",
+      "title": "Sport perde do Operário-PR e se complica na briga pelo acesso à Série A",
+      "desc": "Nesta sexta-feira, o Sport perdeu de virada para o Operário-PR por 3 a 2, Estádio Germano Krüger, em Ponta Grossa, pela 36ª rodada da Série B do Campeonato Brasileiro e desperdiçou a oportunidade de entrar no G6 da competição...",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/55637245613_e13b2780a1_o.webp",
+      "url": "https://www.gazetaesportiva.com/times/sport/sport-perde-do-operario-pr-e-se-complica-na-briga-pelo-acesso-a-serie-a/",
+      "source": "Gazeta Esportiva",
       "date": "Hoje",
-      "categoria": "⭐ Famosos"
+      "categoria": "⚽ Esportes"
     },
     {
       "title": "A Fadiga da Sprint Planning: por que reuniões de estimativa cansam tanto e como resolver",
@@ -132,15 +249,6 @@
       "categoria": "Tecnologia"
     },
     {
-      "title": "Raul Gil é internado e passa por procedimento cirúrgico em SP",
-      "desc": "Essa é a segunda internação de Raul este ano, em fevereiro ele deu entrada no hospital para a realização de alguns exames Essa é a segunda internação de Raul este ano, em fevereiro ele deu entrada no hospital para a realização de...",
-      "img": "https://images.metroimg.com/2018/11/23153705/Screenshot_12115.jpg",
-      "url": "https://www.metropoles.com/colunas/leo-dias/raul-gil-e-internado-e-passa-por-procedimento-cirurgico-em-sp",
-      "source": "Coluna Famosos",
-      "date": "Hoje",
-      "categoria": "⭐ Famosos"
-    },
-    {
       "title": "Qual é o melhor app grátis para esconder Reels e Shorts no iPhone sem perder as DMs? (2026)",
       "desc": "O melhor app grátis para esconder os Reels do Instagram e os Shorts do YouTube no iPhone sem perder...",
       "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fdwkfe91l7k9khd934qi0.png",
@@ -150,42 +258,6 @@
       "categoria": "Tecnologia"
     },
     {
-      "title": "Cinco dos sete candidatos ao governo do Rio Grande do Sul já foram às urnas",
-      "desc": "Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das intenções de voto e Juliana Brizola, 35% Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das...",
-      "img": "https://images.metroimg.com/2026/07/rio-grande-do-sul.jpg",
-      "url": "https://www.metropoles.com/brasil/politica-brasil/cinco-dos-sete-candidatos-ao-governo-do-rio-grande-do-sul-ja-foram-as-urnas",
-      "source": "Metrópoles Política",
-      "date": "Hoje",
-      "categoria": "🏛️ Política"
-    },
-    {
-      "title": "É hora de dizer até breve ao Metrópoles e partir para um novo desafio",
-      "desc": "Amanhã (1º/6), estreia o LeoDias.com. A missão é gigantesca, mas nunca foi meu tipo fugir dos desafios da vida Amanhã (1º/6), estreia o LeoDias.com.",
-      "img": "https://images.metroimg.com/2023/06/31214750/Design-sem-nome-2023-05-31T214746.841.jpg",
-      "url": "https://www.metropoles.com/colunas/leo-dias/e-hora-de-dizer-ate-breve-ao-metropoles-e-partir-para-um-novo-desafio",
-      "source": "Coluna Famosos",
-      "date": "Hoje",
-      "categoria": "⭐ Famosos"
-    },
-    {
-      "title": "WTA pede desculpas a Pegula por incidente com microfones abertos",
-      "desc": "A diretora da WTA, Valerie Camillo, pediu desculpas após um microfone aberto captar comentários críticos da americana Jessica Pegula sobre a russa Mirra Andreeva e sua treinadora, Conchita Martínez, durante treinos do WTA Finals.",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/AFP__20261106__2303863450__v1__HighRes__FageWtaFinalsIndianWells2026Previews.webp",
-      "url": "https://www.gazetaesportiva.com/mais-esportes/tenis/wta-pede-desculpas-a-pegula-por-incidente-com-microfones-abertos/",
-      "source": "Gazeta Esportiva",
-      "date": "Hoje",
-      "categoria": "⚽ Esportes"
-    },
-    {
-      "title": "Eleições 2026: brasileiros reclamam de filas para votar no exterior",
-      "desc": "A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado (24/10) A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado (24/10)...",
-      "img": "https://images.metroimg.com/2026/10/filavotacaoparis.jpg",
-      "url": "https://www.metropoles.com/brasil/eleicoes-2026-brasileiros-reclamam-de-filas-para-votar-no-exterior",
-      "source": "Metrópoles Política",
-      "date": "Hoje",
-      "categoria": "🏛️ Política"
-    },
-    {
       "title": "Na Bahia, Lula diz a aliados estar preocupado com crise no STF",
       "desc": "O presidente Lula participou de carreata em Salvador nesta terça-feira junto aos candidatos do PT ao Senado e ao Governo do estado O presidente Lula participou de carreata em Salvador nesta terça-feira junto aos candidatos do PT...",
       "img": "https://images.metroimg.com/2026/09/foto-lula-salvaor-scaled.jpg",
@@ -193,78 +265,6 @@
       "source": "Metrópoles Política",
       "date": "Hoje",
       "categoria": "🏛️ Política"
-    },
-    {
-      "title": "Everton vira sobre Coventry City e encosta no G4 do Inglês",
-      "desc": "Nesta sexta-feira, o Everton venceu o Coventry City de virada por 2 a 1, no Hill Dickinson Stadium, em Liverpool, pela décima rodada do Campeonato Inglês e encostou no G4 da competição nacional.",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/AFP__20261106__D6PX29H__v1__HighRes__FblEngPrEvertonCoventry.webp",
-      "url": "https://www.gazetaesportiva.com/campeonatos/premier-league/everton-vira-sobre-coventry-city-e-encosta-no-g4-do-ingles/",
-      "source": "Gazeta Esportiva",
-      "date": "Hoje",
-      "categoria": "⚽ Esportes"
-    },
-    {
-      "title": "PT prepara “festa do interior” para visita de Lula à Bahia",
-      "desc": "Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em última rodada pelo Nordeste antes do 1º turno Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em...",
-      "img": "https://images.metroimg.com/2026/01/lula-bahia.jpg",
-      "url": "https://www.metropoles.com/brasil/pt-prepara-festa-do-interior-para-visita-de-lula-a-bahia",
-      "source": "Metrópoles Política",
-      "date": "Hoje",
-      "categoria": "🏛️ Política"
-    },
-    {
-      "title": "F1: Bortoleto destaca sexta-feira positiva após treinos para o GP de São Paulo",
-      "desc": "Gabriel Bortoleto avaliou de forma positiva o primeiro dia de treinos livres para o GP de São Paulo de Fórmula 1.",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/WhatsApp-Image-2026-11-06-at-18.46.24.webp",
-      "url": "https://www.gazetaesportiva.com/motor/formula-1/f1-bortoleto-destaca-sexta-feira-positiva-apos-treinos-para-o-gp-de-sao-paulo/",
-      "source": "Gazeta Esportiva",
-      "date": "Hoje",
-      "categoria": "⚽ Esportes"
-    },
-    {
-      "title": "Sevilla perde pênalti e fica no empate sem gols com o Alavés pelo Espanhol",
-      "desc": "Sevilla e Alavés empataram sem gols em partida válida pelo Campeonato Espanhol. O confronto foi marcado por oportunidades desperdiçadas dos donos da casa, incluindo um pênalti perdido por Rúben Vargas, defendido por Antonio...",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/1519361062-Rq2zdOX6BjqcTELgM2cuUeI-1200x840@diario_abc.webp",
-      "url": "https://www.gazetaesportiva.com/times/sevilla/sevilla-perde-penalti-e-fica-no-empate-sem-gols-com-o-alaves-pelo-espanhol/",
-      "source": "Gazeta Esportiva",
-      "date": "Hoje",
-      "categoria": "⚽ Esportes"
-    },
-    {
-      "title": "M30’s Sparkling Stars",
-      "desc": "Esta imagem do Telescópio Espacial Hubble da NASA/ESA, divulgada em 5 de novembro de 2026, fornece uma lição de história galáctica.",
-      "img": "https://www.nasa.gov/wp-content/uploads/2026/11/hubble-m30-potm2610a.jpg",
-      "url": "https://www.nasa.gov/image-article/m30s-sparkling-stars/",
-      "source": "SpaceTech",
-      "date": "2026-11-06",
-      "categoria": "Ciência"
-    },
-    {
-      "title": "Stoke Space avaliando expansão do local do Cabo para o segundo bloco Nova",
-      "desc": "Stoke Space recebeu direito de entrada do Space Launch Delta 45 para propriedade… A postagem Stoke Space avaliando a expansão do site do Cabo para o segundo bloco Nova apareceu pela primeira vez em NASASpaceFlight.com.",
-      "img": "https://www.nasaspaceflight.com/wp-content/uploads/2026/11/NSF-2026-11-06-20-58-09-237.jpg",
-      "url": "https://www.nasaspaceflight.com/2026/11/stoke-expansion-cape-second-nova/",
-      "source": "SpaceTech",
-      "date": "2026-11-06",
-      "categoria": "Ciência"
-    },
-    {
-      "title": "Qual app usar para parar de ver Reels e Shorts à noite no iPhone, sem bloquear as DMs (2026)",
-      "desc": "O app para parar de ver Reels e Shorts à noite no iPhone sem bloquear as DMs é o minulo: ocultar os...",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fkmcsh8mgpom8bemh7cvf.png",
-      "url": "https://dev.to/ayumu_kitabayashi_8e0de96/qual-app-usar-para-parar-de-ver-reels-e-shorts-a-noite-no-iphone-sem-bloquear-as-dms-2026-4n96",
-      "source": "Dev.to Brasil",
-      "date": "Nov 4",
-      "categoria": "Tecnologia"
-    },
-    {
-      "title": "AST SpaceMobile está tão desesperado para o lançamento que está construindo seu próprio foguete",
-      "desc": "“O foguete Blacklift é o trampolim para expandir significativamente nosso mercado total endereçável.”",
-      "img": "https://cdn.arstechnica.net/wp-content/uploads/2026/11/Abel__Jason.jpg",
-      "url": "https://arstechnica.com/space/2026/11/ast-spacemobile-is-so-desperate-for-launch-theyre-building-their-own-rocket/",
-      "source": "SpaceTech",
-      "date": "2026-11-06",
-      "categoria": "Ciência"
     }
   ]
 }
