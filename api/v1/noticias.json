@@ -3,7 +3,7 @@
   "version": "10.4",
   "portal": "TechNews PRO",
   "documentation_and_source": "https://infoprodutos93-sys.github.io/technews-pro/",
-  "updated_at_brt": "2026-11-10T10:56:10-03:00",
+  "updated_at_brt": "2026-11-10T19:39:00-03:00",
   "market_rates": {
     "USD_BRL": 5.7,
     "EUR_BRL": 6.18,
@@ -42,94 +42,13 @@
   "total_articles": 25,
   "articles": [
     {
-      "title": "Como tirar os Shorts do YouTube no iPhone mas continuar vendo vídeos normais: o minulo e o que o limite em 0 não resolve (2026)",
-      "desc": "O minulo (app para iPhone) tira a seção de Shorts e a aba Shorts do YouTube e mantém os vídeos...",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fh51yajdo3gohnwywbu2q.png",
-      "url": "https://dev.to/ayumu_kitabayashi_8e0de96/como-tirar-os-shorts-do-youtube-no-iphone-mas-continuar-vendo-videos-normais-o-minulo-e-o-que-o-3f0h",
-      "source": "Dev.to Brasil",
-      "date": "Nov 7",
-      "categoria": "Tecnologia"
-    },
-    {
-      "title": "O trabalho em grupo da faculdade é combinado nas DMs do Instagram: como responder sem cair nos Reels no iPhone (2026)",
-      "desc": "O minulo é um app para iPhone que deixa os grupos e as DMs do Instagram funcionando e oculta Reels,...",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Feaz4oq1a8pu5tsrrn1de.png",
-      "url": "https://dev.to/ayumu_kitabayashi_8e0de96/o-trabalho-em-grupo-da-faculdade-e-combinado-nas-dms-do-instagram-como-responder-sem-cair-nos-1nbe",
-      "source": "Dev.to Brasil",
-      "date": "Nov 6",
-      "categoria": "Tecnologia"
-    },
-    {
-      "title": "Cinco dos sete candidatos ao governo do Rio Grande do Sul já foram às urnas",
-      "desc": "Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das intenções de voto e Juliana Brizola, 35% Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das...",
-      "img": "https://images.metroimg.com/2026/07/rio-grande-do-sul.jpg",
-      "url": "https://www.metropoles.com/brasil/politica-brasil/cinco-dos-sete-candidatos-ao-governo-do-rio-grande-do-sul-ja-foram-as-urnas",
+      "title": "Na Bahia, Lula diz a aliados estar preocupado com crise no STF",
+      "desc": "O presidente Lula participou de carreata em Salvador nesta terça-feira junto aos candidatos do PT ao Senado e ao Governo do estado O presidente Lula participou de carreata em Salvador nesta terça-feira junto aos candidatos do...",
+      "img": "https://images.metroimg.com/2026/09/foto-lula-salvaor-scaled.jpg",
+      "url": "https://www.metropoles.com/brasil/na-bahia-lula-diz-a-aliados-estar-preocupado-com-crise-no-stf",
       "source": "Metrópoles Política",
       "date": "Hoje",
       "categoria": "🏛️ Política"
-    },
-    {
-      "title": "Assista ao golaço de Alajbegovic, da Juventus, em seu primeiro gol no Italiano",
-      "desc": "Assista ao golaço de Alajbegovic, da Juventus, em seu primeiro gol no Italiano Assista ao golaço de Alajbegovic, da Juventus, em seu primeiro gol no Italiano",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/Juv.webp",
-      "url": "https://www.gazetaesportiva.com/todas-as-noticias/assista-ao-golaco-de-alajbegovic-da-juventus-em-seu-primeiro-gol-no-italiano/",
-      "source": "Gazeta Esportiva",
-      "date": "Hoje",
-      "categoria": "⚽ Esportes"
-    },
-    {
-      "title": "Erika Hilton recebe ameaça de morte e atrasa ida às urnas por segurança",
-      "desc": "Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos A deputada federal e candidata à...",
-      "img": "https://images.metroimg.com/2026/07/sbt-lista-argumentos-para-derrubar-resposta-de-erika-hilton.jpg",
-      "url": "https://www.metropoles.com/brasil/politica-brasil/erika-hilton-recebe-ameaca-de-morte-e-atrasa-ida-as-urnas-por-seguranca",
-      "source": "Metrópoles Política",
-      "date": "Hoje",
-      "categoria": "🏛️ Política"
-    },
-    {
-      "title": "Autumn Mornings Bring Valley Fog",
-      "desc": "Nuvens baixas traçam os vales ramificados do Planalto Apalaches e do Rio Cumberland, e depois desaparecem à tarde.",
-      "img": "https://assets.science.nasa.gov/dynamicimage/assets/science/esd/eo/images/iotd/2026/autumn-mornings-bring-valley-fog/usvalleyfog_tmo_20261108.jpg",
-      "url": "https://science.nasa.gov/earth/earth-observatory/autumn-mornings-bring-valley-fog/",
-      "source": "SpaceTech",
-      "date": "2026-11-10",
-      "categoria": "Ciência"
-    },
-    {
-      "title": "Alternativas ao SocialLite para iPhone",
-      "desc": "A alternativa ao SocialLite mais parecida no iPhone é o minulo: como o SocialLite, ele oculta Reels e...",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fk2hvdruwugerp28q1b2m.png",
-      "url": "https://dev.to/ayumu_kitabayashi_8e0de96/alternativas-ao-sociallite-para-iphone-4o71",
-      "source": "Dev.to Brasil",
-      "date": "Nov 8",
-      "categoria": "Tecnologia"
-    },
-    {
-      "title": "Bastidores da classificação do Palmeiras sobre o Vasco na Copa do Brasil",
-      "desc": "Bastidores da classificação do Palmeiras sobre o Vasco na Copa do Brasil Confira os bastidores da classificação alviverde, com imagens da preparação, do vestiário e da comemoração após a vaga garantida diante do Vasco.",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/opa.webp",
-      "url": "https://www.gazetaesportiva.com/times/palmeiras/bastidores-da-classificacao-do-palmeiras-sobre-o-vasco-na-copa-do-brasil/",
-      "source": "Gazeta Esportiva",
-      "date": "Hoje",
-      "categoria": "⚽ Esportes"
-    },
-    {
-      "title": "Filhos de Gugu divergem sobre união do pai com Rose Miriam",
-      "desc": "Trechos do processo judicial mostram uma discussão entre os filhos do apresentador sobre o reconhecimento da união estável dos pais Trechos do processo judicial mostram uma discussão entre os filhos do apresentador sobre o...",
-      "img": "https://images.metroimg.com/2022/08/09094552/Gugu-capa-1.jpg",
-      "url": "https://www.metropoles.com/colunas/leo-dias/filhos-de-gugu-divergem-sobre-uniao-do-pai-com-rose-miriam",
-      "source": "Coluna Famosos",
-      "date": "Hoje",
-      "categoria": "⭐ Famosos"
-    },
-    {
-      "title": "Como esconder o Para você do TikTok no iPhone e continuar recebendo as mensagens (2026)",
-      "desc": "O iOS não deixa nenhum app mudar o app oficial do TikTok, então o jeito de tirar o feed Para você no...",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fa7uonb9yecre1eimevq2.png",
-      "url": "https://dev.to/ayumu_kitabayashi_8e0de96/como-esconder-o-para-voce-do-tiktok-no-iphone-e-continuar-recebendo-as-mensagens-2026-119h",
-      "source": "Dev.to Brasil",
-      "date": "Nov 8",
-      "categoria": "Tecnologia"
     },
     {
       "title": "É hora de dizer até breve ao Metrópoles e partir para um novo desafio",
@@ -150,22 +69,49 @@
       "categoria": "Tecnologia"
     },
     {
-      "title": "Eleições 2026: brasileiros reclamam de filas para votar no exterior",
-      "desc": "A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado (24/10) A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado (24/10)...",
-      "img": "https://images.metroimg.com/2026/10/filavotacaoparis.jpg",
-      "url": "https://www.metropoles.com/brasil/eleicoes-2026-brasileiros-reclamam-de-filas-para-votar-no-exterior",
+      "title": "Paulistão 2027 terá intervalo maior e mantém formato de disputa",
+      "desc": "FPF confirma intervalo de 18 minutos nos jogos do Paulistão 2027. Formato com 16 clubes, oito rodadas na primeira fase e mata-mata segue mantido para a próxima edição.",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/WhatsApp-Image-2026-11-10-at-18.30.52.webp",
+      "url": "https://www.gazetaesportiva.com/campeonatos/paulista/paulistao-2027-tera-intervalo-maior-e-mantem-formato-de-disputa/",
+      "source": "Gazeta Esportiva",
+      "date": "Hoje",
+      "categoria": "⚽ Esportes"
+    },
+    {
+      "title": "Cinco dos sete candidatos ao governo do Rio Grande do Sul já foram às urnas",
+      "desc": "Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das intenções de voto e Juliana Brizola, 35% Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das...",
+      "img": "https://images.metroimg.com/2026/07/rio-grande-do-sul.jpg",
+      "url": "https://www.metropoles.com/brasil/politica-brasil/cinco-dos-sete-candidatos-ao-governo-do-rio-grande-do-sul-ja-foram-as-urnas",
       "source": "Metrópoles Política",
       "date": "Hoje",
       "categoria": "🏛️ Política"
     },
     {
-      "title": "APOD: 2026, 10 de novembro – Saturno atrás da Lua",
-      "desc": "APOD Science APOD APOD: 2026 10 de novembro –… Arquivo APOD de hoje Índice de envios Pesquisar Calendário RSS Educação Sobre Discutir APOD Astronomia Imagem do dia Descubra o cosmos!",
-      "img": "https://assets.science.nasa.gov/dynamicimage/assets/science/cds/apod/apod/2026/november/Moonsaturn6_Ortu_2124.jpg",
-      "url": "https://science.nasa.gov/image-article/apod-2026-november-10-saturn-behind-the-moon/",
+      "title": "Erika Hilton recebe ameaça de morte e atrasa ida às urnas por segurança",
+      "desc": "Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos A deputada federal e candidata à...",
+      "img": "https://images.metroimg.com/2026/07/sbt-lista-argumentos-para-derrubar-resposta-de-erika-hilton.jpg",
+      "url": "https://www.metropoles.com/brasil/politica-brasil/erika-hilton-recebe-ameaca-de-morte-e-atrasa-ida-as-urnas-por-seguranca",
+      "source": "Metrópoles Política",
+      "date": "Hoje",
+      "categoria": "🏛️ Política"
+    },
+    {
+      "title": "NASA Invites Media, Public to Join Voyager 1 One-Light Day Activities",
+      "desc": "Launched nearly 50 years ago in 1977, NASA’s Voyager 1 on Wednesday, Nov. 18 will have traveled one light-day from Earth, which is more than 16 billion miles (25.9 billion kilometers).",
+      "img": "https://www.nasa.gov/wp-content/uploads/2026/11/voyager-1-advisory-image-2-nov-10.jpg",
+      "url": "https://www.nasa.gov/news-release/nasa-invites-media-public-to-join-voyager-1-one-light-day-activities/",
       "source": "SpaceTech",
       "date": "2026-11-10",
       "categoria": "Ciência"
+    },
+    {
+      "title": "Valência goleia time da sexta divisão e avança na Copa do Rei",
+      "desc": "O Valência goleou o Tavernes por 6 a 0, no Mestalla, pela primeira fase da Copa do Rei. Com o resultado, a equipe garantiu vaga na segunda fase da competição.",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/SnapDownloader.App_895903005_18657092287033641_2383449425373573360_n.webp",
+      "url": "https://www.gazetaesportiva.com/campeonatos/laliga/valencia-goleia-time-da-sexta-divisao-e-avanca-na-copa-do-rei/",
+      "source": "Gazeta Esportiva",
+      "date": "Hoje",
+      "categoria": "⚽ Esportes"
     },
     {
       "title": "Raul Gil é internado e passa por procedimento cirúrgico em SP",
@@ -177,51 +123,6 @@
       "categoria": "⭐ Famosos"
     },
     {
-      "title": "Isar Aerospace pode lançar terceiro foguete de espectro já em 26 de novembro",
-      "desc": "A empresa de lançamento alemã Isar Aerospace poderá tentar o terceiro voo do seu foguete Spectrum a partir do porto espacial de Andøya, na Noruega, já em 26 de novembro, de acordo com um aviso de aviação publicado em 28 de...",
-      "img": "https://europeanspaceflight.com/wp-content/uploads/2026/11/Isar-Could-Launch-Third-Spectrum-Rocket-as-Early-as-26-November.webp",
-      "url": "https://europeanspaceflight.com/isar-aerospace-could-launch-third-spectrum-rocket-as-early-as-26-november/",
-      "source": "SpaceTech",
-      "date": "2026-11-10",
-      "categoria": "Ciência"
-    },
-    {
-      "title": "Neymar desperdiça pênalti presidente na Kings League; assista ao vídeo",
-      "desc": "Neymar desperdiça pênalti presidente na Kings League; assista ao vídeo Craque bate com a canhota e perde pênalti em jogo da Kings League Brasil.",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/ney.webp",
-      "url": "https://www.gazetaesportiva.com/times/santos/neymar-desperdica-penalti-presidente-na-kings-league-assista-ao-video/",
-      "source": "Gazeta Esportiva",
-      "date": "Hoje",
-      "categoria": "⚽ Esportes"
-    },
-    {
-      "title": "Na Bahia, Lula diz a aliados estar preocupado com crise no STF",
-      "desc": "O presidente Lula participou de carreata em Salvador nesta terça-feira junto aos candidatos do PT ao Senado e ao Governo do estado O presidente Lula participou de carreata em Salvador nesta terça-feira junto aos candidatos do PT...",
-      "img": "https://images.metroimg.com/2026/09/foto-lula-salvaor-scaled.jpg",
-      "url": "https://www.metropoles.com/brasil/na-bahia-lula-diz-a-aliados-estar-preocupado-com-crise-no-stf",
-      "source": "Metrópoles Política",
-      "date": "Hoje",
-      "categoria": "🏛️ Política"
-    },
-    {
-      "title": "João Gomes e Ary Mirelle curtem jantar romântico com Sthe Matos e Kevi Jonny",
-      "desc": "O casal está em Barra de São Miguel acompanhados de Kevi Jonny e Sthe Matos O casal está em Barra de São Miguel acompanhados de Kevi Jonny e Sthe Matos Antes da maratona de shows do período junino, João Gomes e Ary Mirelle...",
-      "img": "https://images.metroimg.com/2023/05/31185334/Design-sem-nome-2023-05-31T185325.578.jpg",
-      "url": "https://www.metropoles.com/colunas/leo-dias/joao-gomes-e-ary-curtem-jantar-romantico-com-sthe-matos-e-kevi-jonny",
-      "source": "Coluna Famosos",
-      "date": "Hoje",
-      "categoria": "⭐ Famosos"
-    },
-    {
-      "title": "Seleção espanhola presta homenagem a Jesús de Miguel com minuto de silêncio",
-      "desc": "Seleção espanhola presta homenagem a Jesús de Miguel com minuto de silêncio A seleção espanhola fez um minuto de silêncio em memória de Jesús de Miguel na Ciudad del Fútbol, em Las Rozas.",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/anho.webp",
-      "url": "https://www.gazetaesportiva.com/times/espanha/selecao-espanhola-presta-homenagem-a-jesus-de-miguel-com-minuto-de-silencio/",
-      "source": "Gazeta Esportiva",
-      "date": "Hoje",
-      "categoria": "⚽ Esportes"
-    },
-    {
       "title": "PT prepara “festa do interior” para visita de Lula à Bahia",
       "desc": "Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em última rodada pelo Nordeste antes do 1º turno Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em...",
       "img": "https://images.metroimg.com/2026/01/lula-bahia.jpg",
@@ -229,6 +130,24 @@
       "source": "Metrópoles Política",
       "date": "Hoje",
       "categoria": "🏛️ Política"
+    },
+    {
+      "title": "Filhos de Gugu divergem sobre união do pai com Rose Miriam",
+      "desc": "Trechos do processo judicial mostram uma discussão entre os filhos do apresentador sobre o reconhecimento da união estável dos pais Trechos do processo judicial mostram uma discussão entre os filhos do apresentador sobre o...",
+      "img": "https://images.metroimg.com/2022/08/09094552/Gugu-capa-1.jpg",
+      "url": "https://www.metropoles.com/colunas/leo-dias/filhos-de-gugu-divergem-sobre-uniao-do-pai-com-rose-miriam",
+      "source": "Coluna Famosos",
+      "date": "Hoje",
+      "categoria": "⭐ Famosos"
+    },
+    {
+      "title": "Como esconder o Para você do TikTok no iPhone e continuar recebendo as mensagens (2026)",
+      "desc": "O iOS não deixa nenhum app mudar o app oficial do TikTok, então o jeito de tirar o feed Para você no...",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fa7uonb9yecre1eimevq2.png",
+      "url": "https://dev.to/ayumu_kitabayashi_8e0de96/como-esconder-o-para-voce-do-tiktok-no-iphone-e-continuar-recebendo-as-mensagens-2026-119h",
+      "source": "Dev.to Brasil",
+      "date": "Nov 8",
+      "categoria": "Tecnologia"
     },
     {
       "title": "Virginia elege vestido luxuoso para festa de Maria Alice. Saiba valor!",
@@ -240,22 +159,94 @@
       "categoria": "⭐ Famosos"
     },
     {
-      "title": "Vitória anuncia Rafael Lacerda como novo técnico até o fim de 2027",
-      "desc": "O Vitória anunciou nesta terça-feira a contratação de Rafael Lacerda como novo técnico da equipe. O treinador de 40 anos chega para substituir Jair Ventura e assinou contrato válido até o fim de 2027.",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/SaveClip.App_893975121_18645481375029656_4982146245704585707_n-1.webp",
-      "url": "https://www.gazetaesportiva.com/times/vitoria/vitoria-anuncia-rafael-lacerda-como-novo-tecnico-ate-2027/",
+      "title": "Alison dos Santos disputa prêmio de Melhor Atleta do Ano do atletismo mundial",
+      "desc": "Alison dos Santos, conhecido como Piu, está entre os três finalistas ao prêmio de Melhor Atleta do Ano do atletismo mundial, anunciado pela World Athletics nesta terça-feira.",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/AFP__20260913__C87Q74H__v1__HighRes__AthleticsWorldChampionship2026.webp",
+      "url": "https://www.gazetaesportiva.com/mais-esportes/atletismo/alison-dos-santos-disputa-premio-de-melhor-atleta-do-ano-do-atletismo-mundial/",
       "source": "Gazeta Esportiva",
       "date": "Hoje",
       "categoria": "⚽ Esportes"
     },
     {
-      "title": "ESCAPADE a caminho de Marte após sobrevoos pela Terra",
-      "desc": "Dois pequenos satélites da NASA estão indo em direção a Marte depois de completar sobrevôos pela Terra quase um ano após seu lançamento.",
-      "img": "https://i0.wp.com/spacenews.com/wp-content/uploads/2025/11/escapade_twins_Mars.jpg?fit=1024%2C482&ssl=1",
-      "url": "https://spacenews.com/escapade-on-its-way-to-mars-after-earth-flybys/",
+      "title": "O trabalho em grupo da faculdade é combinado nas DMs do Instagram: como responder sem cair nos Reels no iPhone (2026)",
+      "desc": "O minulo é um app para iPhone que deixa os grupos e as DMs do Instagram funcionando e oculta Reels,...",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Feaz4oq1a8pu5tsrrn1de.png",
+      "url": "https://dev.to/ayumu_kitabayashi_8e0de96/o-trabalho-em-grupo-da-faculdade-e-combinado-nas-dms-do-instagram-como-responder-sem-cair-nos-1nbe",
+      "source": "Dev.to Brasil",
+      "date": "Nov 6",
+      "categoria": "Tecnologia"
+    },
+    {
+      "title": "NASA to Welcome Expedition 74 Astronauts Home at Space Center Houston",
+      "desc": "NASA will welcome home the Expedition 74 crew during a public event at Space Center Houston following their return from a long-duration mission aboard the International Space Station.",
+      "img": "https://www.nasa.gov/wp-content/uploads/2026/11/expedition-74-picture.jpg",
+      "url": "https://www.nasa.gov/news-release/nasa-to-welcome-expedition-74-astronauts-home-at-space-center-houston/",
       "source": "SpaceTech",
       "date": "2026-11-10",
       "categoria": "Ciência"
+    },
+    {
+      "title": "Paulistão 2027: veja como ficaram os confrontos da primeira fase",
+      "desc": "A FPF sorteia nesta terça-feira os confrontos da primeira fase do Paulistão 2027. Corinthians, Palmeiras, Santos e São Paulo estão no mesmo pote e terão os clássicos garantidos na fase inicial.",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/WhatsApp-Image-2026-11-10-at-18.30.52.webp",
+      "url": "https://www.gazetaesportiva.com/campeonatos/paulista/paulistao-2027-grupos-confrontos-primeira-fase/",
+      "source": "Gazeta Esportiva",
+      "date": "Hoje",
+      "categoria": "⚽ Esportes"
+    },
+    {
+      "title": "One space station company sues another for copying its work",
+      "desc": "\"NASA advised that Vast’s submission in some locations substituted 'the PAM Provider' for Axiom\"",
+      "img": "https://cdn.arstechnica.net/wp-content/uploads/2026/11/KSC-20230521-PH-CSH01_0001large.jpg",
+      "url": "https://arstechnica.com/space/2026/11/one-space-station-company-sues-another-for-copying-its-work/",
+      "source": "SpaceTech",
+      "date": "2026-11-10",
+      "categoria": "Ciência"
+    },
+    {
+      "title": "Real Madrid bate Paris FC e conquista sua primeira vitória na Champions feminina",
+      "desc": "O Real Madrid feminino conquistou sua primeira vitória na Liga dos Campeões da Europa de 2026 ao derrotar o Paris FC por 3 a 0 no estádio Alfredo Di Stéfano.",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/AFP__20261110__D73Z3UV__v1__HighRes__FblEurC1WomenRealMadridParis.webp",
+      "url": "https://www.gazetaesportiva.com/times/real-madrid/real-madrid-bate-paris-fc-e-conquista-sua-primeira-vitoria-na-champions-feminina/",
+      "source": "Gazeta Esportiva",
+      "date": "Hoje",
+      "categoria": "⚽ Esportes"
+    },
+    {
+      "title": "Como tirar os Shorts do YouTube no iPhone mas continuar vendo vídeos normais: o minulo e o que o limite em 0 não resolve (2026)",
+      "desc": "O minulo (app para iPhone) tira a seção de Shorts e a aba Shorts do YouTube e mantém os vídeos...",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fh51yajdo3gohnwywbu2q.png",
+      "url": "https://dev.to/ayumu_kitabayashi_8e0de96/como-tirar-os-shorts-do-youtube-no-iphone-mas-continuar-vendo-videos-normais-o-minulo-e-o-que-o-3f0h",
+      "source": "Dev.to Brasil",
+      "date": "Nov 7",
+      "categoria": "Tecnologia"
+    },
+    {
+      "title": "NASA Scientists Show How Gravitational Waves Can Reveal New Worlds",
+      "desc": "The LISA (Laser Interferometer Space Antenna) observatory, now in development, will detect gravitational waves, the tiny ripples in space-time caused by orbiting masses.",
+      "img": "https://assets.science.nasa.gov/dynamicimage/assets/science/cds/ciencia/2023/06/s/stsci-j-p2223a_0.jpeg",
+      "url": "https://science.nasa.gov/missions/lisa/gravitational-waves-can-reveal-new-worlds/",
+      "source": "SpaceTech",
+      "date": "2026-11-10",
+      "categoria": "Ciência"
+    },
+    {
+      "title": "Alternativas ao SocialLite para iPhone",
+      "desc": "A alternativa ao SocialLite mais parecida no iPhone é o minulo: como o SocialLite, ele oculta Reels e...",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fk2hvdruwugerp28q1b2m.png",
+      "url": "https://dev.to/ayumu_kitabayashi_8e0de96/alternativas-ao-sociallite-para-iphone-4o71",
+      "source": "Dev.to Brasil",
+      "date": "Nov 8",
+      "categoria": "Tecnologia"
+    },
+    {
+      "title": "João Gomes e Ary Mirelle curtem jantar romântico com Sthe Matos e Kevi Jonny",
+      "desc": "O casal está em Barra de São Miguel acompanhados de Kevi Jonny e Sthe Matos O casal está em Barra de São Miguel acompanhados de Kevi Jonny e Sthe Matos Antes da maratona de shows do período junino, João Gomes e Ary Mirelle...",
+      "img": "https://images.metroimg.com/2023/05/31185334/Design-sem-nome-2023-05-31T185325.578.jpg",
+      "url": "https://www.metropoles.com/colunas/leo-dias/joao-gomes-e-ary-curtem-jantar-romantico-com-sthe-matos-e-kevi-jonny",
+      "source": "Coluna Famosos",
+      "date": "Hoje",
+      "categoria": "⭐ Famosos"
     },
     {
       "title": "Como parar de ver Reels e Shorts à noite no iPhone: o minulo, o Repouso e o que cada um bloqueia (2026)",
@@ -265,6 +256,15 @@
       "source": "Dev.to Brasil",
       "date": "Nov 7",
       "categoria": "Tecnologia"
+    },
+    {
+      "title": "Eleições 2026: brasileiros reclamam de filas para votar no exterior",
+      "desc": "A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado (24/10) A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado (24/10)...",
+      "img": "https://images.metroimg.com/2026/10/filavotacaoparis.jpg",
+      "url": "https://www.metropoles.com/brasil/eleicoes-2026-brasileiros-reclamam-de-filas-para-votar-no-exterior",
+      "source": "Metrópoles Política",
+      "date": "Hoje",
+      "categoria": "🏛️ Política"
     }
   ]
 }
