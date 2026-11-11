@@ -3,7 +3,7 @@
   "version": "10.4",
   "portal": "TechNews PRO",
   "documentation_and_source": "https://infoprodutos93-sys.github.io/technews-pro/",
-  "updated_at_brt": "2026-11-10T19:39:00-03:00",
+  "updated_at_brt": "2026-11-11T00:40:38-03:00",
   "market_rates": {
     "USD_BRL": 5.7,
     "EUR_BRL": 6.18,
@@ -42,10 +42,37 @@
   "total_articles": 25,
   "articles": [
     {
+      "title": "O trabalho em grupo da faculdade é combinado nas DMs do Instagram: como responder sem cair nos Reels no iPhone (2026)",
+      "desc": "O minulo é um app para iPhone que deixa os grupos e as DMs do Instagram funcionando e oculta Reels,...",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Feaz4oq1a8pu5tsrrn1de.png",
+      "url": "https://dev.to/ayumu_kitabayashi_8e0de96/o-trabalho-em-grupo-da-faculdade-e-combinado-nas-dms-do-instagram-como-responder-sem-cair-nos-1nbe",
+      "source": "Dev.to Brasil",
+      "date": "Nov 6",
+      "categoria": "Tecnologia"
+    },
+    {
       "title": "Na Bahia, Lula diz a aliados estar preocupado com crise no STF",
       "desc": "O presidente Lula participou de carreata em Salvador nesta terça-feira junto aos candidatos do PT ao Senado e ao Governo do estado O presidente Lula participou de carreata em Salvador nesta terça-feira junto aos candidatos do...",
       "img": "https://images.metroimg.com/2026/09/foto-lula-salvaor-scaled.jpg",
       "url": "https://www.metropoles.com/brasil/na-bahia-lula-diz-a-aliados-estar-preocupado-com-crise-no-stf",
+      "source": "Metrópoles Política",
+      "date": "Hoje",
+      "categoria": "🏛️ Política"
+    },
+    {
+      "title": "NASA to Welcome Expedition 74 Astronauts Home at Space Center Houston",
+      "desc": "NASA will welcome home the Expedition 74 crew during a public event at Space Center Houston following their return from a long-duration mission aboard the International Space Station.",
+      "img": "https://www.nasa.gov/wp-content/uploads/2026/11/expedition-74-picture.jpg",
+      "url": "https://www.nasa.gov/news-release/nasa-to-welcome-expedition-74-astronauts-home-at-space-center-houston/",
+      "source": "SpaceTech",
+      "date": "2026-11-10",
+      "categoria": "Ciência"
+    },
+    {
+      "title": "Erika Hilton recebe ameaça de morte e atrasa ida às urnas por segurança",
+      "desc": "Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos A deputada federal e candidata à...",
+      "img": "https://images.metroimg.com/2026/07/sbt-lista-argumentos-para-derrubar-resposta-de-erika-hilton.jpg",
+      "url": "https://www.metropoles.com/brasil/politica-brasil/erika-hilton-recebe-ameaca-de-morte-e-atrasa-ida-as-urnas-por-seguranca",
       "source": "Metrópoles Política",
       "date": "Hoje",
       "categoria": "🏛️ Política"
@@ -60,73 +87,73 @@
       "categoria": "⭐ Famosos"
     },
     {
-      "title": "Como usar o Instagram só para o Direct no iPhone",
-      "desc": "O iOS não deixa nenhum app mudar o app oficial do Instagram, então o jeito de usar o Instagram só...",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fpniimp23h3iqrgj608i7.png",
-      "url": "https://dev.to/ayumu_kitabayashi_8e0de96/como-usar-o-instagram-so-para-o-direct-no-iphone-b48",
+      "title": "Diretor do Corinthians evita prazo para quitar atrasados e projeta volta por cima de Memphis",
+      "desc": "Júlio César reconheceu pendências salariais no Corinthians e evitou estabelecer um prazo para a regularização. O gerente de futebol também comentou a recuperação de Memphis Depay e demonstrou expectativa de contar com o...",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/WhatsApp-Image-2026-11-10-at-22.01.41.webp",
+      "url": "https://www.gazetaesportiva.com/times/corinthians/corinthians-salarios-atrasados-julio-cesar-memphis-depay/",
+      "source": "Gazeta Esportiva",
+      "date": "Hoje",
+      "categoria": "⚽ Esportes"
+    },
+    {
+      "title": "Como esconder o Para você do TikTok no iPhone e continuar recebendo as mensagens (2026)",
+      "desc": "O iOS não deixa nenhum app mudar o app oficial do TikTok, então o jeito de tirar o feed Para você no...",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fa7uonb9yecre1eimevq2.png",
+      "url": "https://dev.to/ayumu_kitabayashi_8e0de96/como-esconder-o-para-voce-do-tiktok-no-iphone-e-continuar-recebendo-as-mensagens-2026-119h",
       "source": "Dev.to Brasil",
       "date": "Nov 8",
       "categoria": "Tecnologia"
     },
     {
-      "title": "Paulistão 2027 terá intervalo maior e mantém formato de disputa",
-      "desc": "FPF confirma intervalo de 18 minutos nos jogos do Paulistão 2027. Formato com 16 clubes, oito rodadas na primeira fase e mata-mata segue mantido para a próxima edição.",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/WhatsApp-Image-2026-11-10-at-18.30.52.webp",
-      "url": "https://www.gazetaesportiva.com/campeonatos/paulista/paulistao-2027-tera-intervalo-maior-e-mantem-formato-de-disputa/",
+      "title": "Alternativas ao SocialLite para iPhone",
+      "desc": "A alternativa ao SocialLite mais parecida no iPhone é o minulo: como o SocialLite, ele oculta Reels e...",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fk2hvdruwugerp28q1b2m.png",
+      "url": "https://dev.to/ayumu_kitabayashi_8e0de96/alternativas-ao-sociallite-para-iphone-4o71",
+      "source": "Dev.to Brasil",
+      "date": "Nov 8",
+      "categoria": "Tecnologia"
+    },
+    {
+      "title": "One space station company sues another for copying its work",
+      "desc": "\"NASA advised that Vast’s submission in some locations substituted 'the PAM Provider' for Axiom\"",
+      "img": "https://cdn.arstechnica.net/wp-content/uploads/2026/11/KSC-20230521-PH-CSH01_0001large.jpg",
+      "url": "https://arstechnica.com/space/2026/11/one-space-station-company-sues-another-for-copying-its-work/",
+      "source": "SpaceTech",
+      "date": "2026-11-10",
+      "categoria": "Ciência"
+    },
+    {
+      "title": "Como parar de ver Reels e Shorts à noite no iPhone: o minulo, o Repouso e o que cada um bloqueia (2026)",
+      "desc": "O minulo (app para iPhone) abre o Instagram e o YouTube sem Reels e sem Shorts, inclusive à noite, e...",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flee7leg1vs37fy3grgft.png",
+      "url": "https://dev.to/ayumu_kitabayashi_8e0de96/como-parar-de-ver-reels-e-shorts-a-noite-no-iphone-o-minulo-o-repouso-e-o-que-cada-um-bloqueia-49g7",
+      "source": "Dev.to Brasil",
+      "date": "Nov 7",
+      "categoria": "Tecnologia"
+    },
+    {
+      "title": "Flamengo perde do Sesi Franca e encerra série de vitórias no NBB",
+      "desc": "Vindo de uma sequência de cinco vitórias consecutivas no NBB, o Flamengo acabou derrotado pelo Sesi Franca na noite desta terça-feira, por 84 a 73. O palco do confronto foi o Maracanãzinho, no Rio de Janeiro.",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/WhatsApp-Image-2026-11-10-at-22.28.00.webp",
+      "url": "https://www.gazetaesportiva.com/campeonatos/nbb-novo-basquete-brasil/flamengo-perde-do-sesi-franca-e-encerra-serie-de-vitorias-no-nbb/",
       "source": "Gazeta Esportiva",
       "date": "Hoje",
       "categoria": "⚽ Esportes"
+    },
+    {
+      "title": "Eleições 2026: brasileiros reclamam de filas para votar no exterior",
+      "desc": "A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado (24/10) A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado (24/10)...",
+      "img": "https://images.metroimg.com/2026/10/filavotacaoparis.jpg",
+      "url": "https://www.metropoles.com/brasil/eleicoes-2026-brasileiros-reclamam-de-filas-para-votar-no-exterior",
+      "source": "Metrópoles Política",
+      "date": "Hoje",
+      "categoria": "🏛️ Política"
     },
     {
       "title": "Cinco dos sete candidatos ao governo do Rio Grande do Sul já foram às urnas",
       "desc": "Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das intenções de voto e Juliana Brizola, 35% Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das...",
       "img": "https://images.metroimg.com/2026/07/rio-grande-do-sul.jpg",
       "url": "https://www.metropoles.com/brasil/politica-brasil/cinco-dos-sete-candidatos-ao-governo-do-rio-grande-do-sul-ja-foram-as-urnas",
-      "source": "Metrópoles Política",
-      "date": "Hoje",
-      "categoria": "🏛️ Política"
-    },
-    {
-      "title": "Erika Hilton recebe ameaça de morte e atrasa ida às urnas por segurança",
-      "desc": "Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos A deputada federal e candidata à...",
-      "img": "https://images.metroimg.com/2026/07/sbt-lista-argumentos-para-derrubar-resposta-de-erika-hilton.jpg",
-      "url": "https://www.metropoles.com/brasil/politica-brasil/erika-hilton-recebe-ameaca-de-morte-e-atrasa-ida-as-urnas-por-seguranca",
-      "source": "Metrópoles Política",
-      "date": "Hoje",
-      "categoria": "🏛️ Política"
-    },
-    {
-      "title": "NASA Invites Media, Public to Join Voyager 1 One-Light Day Activities",
-      "desc": "Launched nearly 50 years ago in 1977, NASA’s Voyager 1 on Wednesday, Nov. 18 will have traveled one light-day from Earth, which is more than 16 billion miles (25.9 billion kilometers).",
-      "img": "https://www.nasa.gov/wp-content/uploads/2026/11/voyager-1-advisory-image-2-nov-10.jpg",
-      "url": "https://www.nasa.gov/news-release/nasa-invites-media-public-to-join-voyager-1-one-light-day-activities/",
-      "source": "SpaceTech",
-      "date": "2026-11-10",
-      "categoria": "Ciência"
-    },
-    {
-      "title": "Valência goleia time da sexta divisão e avança na Copa do Rei",
-      "desc": "O Valência goleou o Tavernes por 6 a 0, no Mestalla, pela primeira fase da Copa do Rei. Com o resultado, a equipe garantiu vaga na segunda fase da competição.",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/SnapDownloader.App_895903005_18657092287033641_2383449425373573360_n.webp",
-      "url": "https://www.gazetaesportiva.com/campeonatos/laliga/valencia-goleia-time-da-sexta-divisao-e-avanca-na-copa-do-rei/",
-      "source": "Gazeta Esportiva",
-      "date": "Hoje",
-      "categoria": "⚽ Esportes"
-    },
-    {
-      "title": "Raul Gil é internado e passa por procedimento cirúrgico em SP",
-      "desc": "Essa é a segunda internação de Raul este ano, em fevereiro ele deu entrada no hospital para a realização de alguns exames Essa é a segunda internação de Raul este ano, em fevereiro ele deu entrada no hospital para a realização de...",
-      "img": "https://images.metroimg.com/2018/11/23153705/Screenshot_12115.jpg",
-      "url": "https://www.metropoles.com/colunas/leo-dias/raul-gil-e-internado-e-passa-por-procedimento-cirurgico-em-sp",
-      "source": "Coluna Famosos",
-      "date": "Hoje",
-      "categoria": "⭐ Famosos"
-    },
-    {
-      "title": "PT prepara “festa do interior” para visita de Lula à Bahia",
-      "desc": "Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em última rodada pelo Nordeste antes do 1º turno Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em...",
-      "img": "https://images.metroimg.com/2026/01/lula-bahia.jpg",
-      "url": "https://www.metropoles.com/brasil/pt-prepara-festa-do-interior-para-visita-de-lula-a-bahia",
       "source": "Metrópoles Política",
       "date": "Hoje",
       "categoria": "🏛️ Política"
@@ -141,13 +168,13 @@
       "categoria": "⭐ Famosos"
     },
     {
-      "title": "Como esconder o Para você do TikTok no iPhone e continuar recebendo as mensagens (2026)",
-      "desc": "O iOS não deixa nenhum app mudar o app oficial do TikTok, então o jeito de tirar o feed Para você no...",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fa7uonb9yecre1eimevq2.png",
-      "url": "https://dev.to/ayumu_kitabayashi_8e0de96/como-esconder-o-para-voce-do-tiktok-no-iphone-e-continuar-recebendo-as-mensagens-2026-119h",
-      "source": "Dev.to Brasil",
-      "date": "Nov 8",
-      "categoria": "Tecnologia"
+      "title": "NASA Scientists Show How Gravitational Waves Can Reveal New Worlds",
+      "desc": "The LISA (Laser Interferometer Space Antenna) observatory, now in development, will detect gravitational waves, the tiny ripples in space-time caused by orbiting masses.",
+      "img": "https://assets.science.nasa.gov/dynamicimage/assets/science/cds/ciencia/2023/06/s/stsci-j-p2223a_0.jpeg",
+      "url": "https://science.nasa.gov/missions/lisa/gravitational-waves-can-reveal-new-worlds/",
+      "source": "SpaceTech",
+      "date": "2026-11-10",
+      "categoria": "Ciência"
     },
     {
       "title": "Virginia elege vestido luxuoso para festa de Maria Alice. Saiba valor!",
@@ -159,55 +186,46 @@
       "categoria": "⭐ Famosos"
     },
     {
-      "title": "Alison dos Santos disputa prêmio de Melhor Atleta do Ano do atletismo mundial",
-      "desc": "Alison dos Santos, conhecido como Piu, está entre os três finalistas ao prêmio de Melhor Atleta do Ano do atletismo mundial, anunciado pela World Athletics nesta terça-feira.",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/AFP__20260913__C87Q74H__v1__HighRes__AthleticsWorldChampionship2026.webp",
-      "url": "https://www.gazetaesportiva.com/mais-esportes/atletismo/alison-dos-santos-disputa-premio-de-melhor-atleta-do-ano-do-atletismo-mundial/",
-      "source": "Gazeta Esportiva",
-      "date": "Hoje",
-      "categoria": "⚽ Esportes"
-    },
-    {
-      "title": "O trabalho em grupo da faculdade é combinado nas DMs do Instagram: como responder sem cair nos Reels no iPhone (2026)",
-      "desc": "O minulo é um app para iPhone que deixa os grupos e as DMs do Instagram funcionando e oculta Reels,...",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Feaz4oq1a8pu5tsrrn1de.png",
-      "url": "https://dev.to/ayumu_kitabayashi_8e0de96/o-trabalho-em-grupo-da-faculdade-e-combinado-nas-dms-do-instagram-como-responder-sem-cair-nos-1nbe",
+      "title": "Como usar o Instagram só para o Direct no iPhone",
+      "desc": "O iOS não deixa nenhum app mudar o app oficial do Instagram, então o jeito de usar o Instagram só...",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fpniimp23h3iqrgj608i7.png",
+      "url": "https://dev.to/ayumu_kitabayashi_8e0de96/como-usar-o-instagram-so-para-o-direct-no-iphone-b48",
       "source": "Dev.to Brasil",
-      "date": "Nov 6",
+      "date": "Nov 8",
       "categoria": "Tecnologia"
     },
     {
-      "title": "NASA to Welcome Expedition 74 Astronauts Home at Space Center Houston",
-      "desc": "NASA will welcome home the Expedition 74 crew during a public event at Space Center Houston following their return from a long-duration mission aboard the International Space Station.",
-      "img": "https://www.nasa.gov/wp-content/uploads/2026/11/expedition-74-picture.jpg",
-      "url": "https://www.nasa.gov/news-release/nasa-to-welcome-expedition-74-astronauts-home-at-space-center-houston/",
+      "title": "PT prepara “festa do interior” para visita de Lula à Bahia",
+      "desc": "Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em última rodada pelo Nordeste antes do 1º turno Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em...",
+      "img": "https://images.metroimg.com/2026/01/lula-bahia.jpg",
+      "url": "https://www.metropoles.com/brasil/pt-prepara-festa-do-interior-para-visita-de-lula-a-bahia",
+      "source": "Metrópoles Política",
+      "date": "Hoje",
+      "categoria": "🏛️ Política"
+    },
+    {
+      "title": "NASA Invites Media, Public to Join Voyager 1 One-Light Day Activities",
+      "desc": "Launched nearly 50 years ago in 1977, NASA’s Voyager 1 on Wednesday, Nov. 18 will have traveled one light-day from Earth, which is more than 16 billion miles (25.9 billion kilometers).",
+      "img": "https://www.nasa.gov/wp-content/uploads/2026/11/voyager-1-advisory-image-2-nov-10.jpg",
+      "url": "https://www.nasa.gov/news-release/nasa-invites-media-public-to-join-voyager-1-one-light-day-activities/",
       "source": "SpaceTech",
       "date": "2026-11-10",
       "categoria": "Ciência"
     },
     {
-      "title": "Paulistão 2027: veja como ficaram os confrontos da primeira fase",
-      "desc": "A FPF sorteia nesta terça-feira os confrontos da primeira fase do Paulistão 2027. Corinthians, Palmeiras, Santos e São Paulo estão no mesmo pote e terão os clássicos garantidos na fase inicial.",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/WhatsApp-Image-2026-11-10-at-18.30.52.webp",
-      "url": "https://www.gazetaesportiva.com/campeonatos/paulista/paulistao-2027-grupos-confrontos-primeira-fase/",
+      "title": "Fortaleza anuncia o retorno de Vojvoda sem custos para reta final da Série B",
+      "desc": "O Fortaleza anunciou nesta terça-feira o retorno do técnico Juan Pablo Vojvoda. O treinador argentino assume o comando da equipe sem custos de contrato nas três últimas rodadas da Série B do Campeonato Brasileiro, com a missão de...",
+      "img": "https://static.gazetaesportiva.com/uploads/2024/10/IMG_9558.webp",
+      "url": "https://www.gazetaesportiva.com/times/fortaleza/fortaleza-anuncia-o-retorno-de-vojvoda-sem-custos-para-reta-final-da-serie-b/",
       "source": "Gazeta Esportiva",
       "date": "Hoje",
       "categoria": "⚽ Esportes"
     },
     {
-      "title": "One space station company sues another for copying its work",
-      "desc": "\"NASA advised that Vast’s submission in some locations substituted 'the PAM Provider' for Axiom\"",
-      "img": "https://cdn.arstechnica.net/wp-content/uploads/2026/11/KSC-20230521-PH-CSH01_0001large.jpg",
-      "url": "https://arstechnica.com/space/2026/11/one-space-station-company-sues-another-for-copying-its-work/",
-      "source": "SpaceTech",
-      "date": "2026-11-10",
-      "categoria": "Ciência"
-    },
-    {
-      "title": "Real Madrid bate Paris FC e conquista sua primeira vitória na Champions feminina",
-      "desc": "O Real Madrid feminino conquistou sua primeira vitória na Liga dos Campeões da Europa de 2026 ao derrotar o Paris FC por 3 a 0 no estádio Alfredo Di Stéfano.",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/AFP__20261110__D73Z3UV__v1__HighRes__FblEurC1WomenRealMadridParis.webp",
-      "url": "https://www.gazetaesportiva.com/times/real-madrid/real-madrid-bate-paris-fc-e-conquista-sua-primeira-vitoria-na-champions-feminina/",
+      "title": "Cruzeiro vence Norde, assume liderança e segue 100% na Superliga",
+      "desc": "Na noite desta terça-feira, o Sada Cruzeiro conquistou sua quarta vitória na Superliga de vôlei masculina ao vencer o Norde Vôlei por 3 sets a 0 no Ginásio Paulo Sarasate, mantendo assim 100% de aproveitamento no torneio até o...",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/WhatsApp-Image-2026-11-10-at-23.06.50.webp",
+      "url": "https://www.gazetaesportiva.com/campeonatos/superliga-masculina-de-volei/cruzeiro-vence-norde-assume-lideranca-e-segue-100-na-superliga/",
       "source": "Gazeta Esportiva",
       "date": "Hoje",
       "categoria": "⚽ Esportes"
@@ -222,22 +240,13 @@
       "categoria": "Tecnologia"
     },
     {
-      "title": "NASA Scientists Show How Gravitational Waves Can Reveal New Worlds",
-      "desc": "The LISA (Laser Interferometer Space Antenna) observatory, now in development, will detect gravitational waves, the tiny ripples in space-time caused by orbiting masses.",
-      "img": "https://assets.science.nasa.gov/dynamicimage/assets/science/cds/ciencia/2023/06/s/stsci-j-p2223a_0.jpeg",
-      "url": "https://science.nasa.gov/missions/lisa/gravitational-waves-can-reveal-new-worlds/",
-      "source": "SpaceTech",
-      "date": "2026-11-10",
-      "categoria": "Ciência"
-    },
-    {
-      "title": "Alternativas ao SocialLite para iPhone",
-      "desc": "A alternativa ao SocialLite mais parecida no iPhone é o minulo: como o SocialLite, ele oculta Reels e...",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fk2hvdruwugerp28q1b2m.png",
-      "url": "https://dev.to/ayumu_kitabayashi_8e0de96/alternativas-ao-sociallite-para-iphone-4o71",
-      "source": "Dev.to Brasil",
-      "date": "Nov 8",
-      "categoria": "Tecnologia"
+      "title": "Raul Gil é internado e passa por procedimento cirúrgico em SP",
+      "desc": "Essa é a segunda internação de Raul este ano, em fevereiro ele deu entrada no hospital para a realização de alguns exames Essa é a segunda internação de Raul este ano, em fevereiro ele deu entrada no hospital para a realização de...",
+      "img": "https://images.metroimg.com/2018/11/23153705/Screenshot_12115.jpg",
+      "url": "https://www.metropoles.com/colunas/leo-dias/raul-gil-e-internado-e-passa-por-procedimento-cirurgico-em-sp",
+      "source": "Coluna Famosos",
+      "date": "Hoje",
+      "categoria": "⭐ Famosos"
     },
     {
       "title": "João Gomes e Ary Mirelle curtem jantar romântico com Sthe Matos e Kevi Jonny",
@@ -249,22 +258,13 @@
       "categoria": "⭐ Famosos"
     },
     {
-      "title": "Como parar de ver Reels e Shorts à noite no iPhone: o minulo, o Repouso e o que cada um bloqueia (2026)",
-      "desc": "O minulo (app para iPhone) abre o Instagram e o YouTube sem Reels e sem Shorts, inclusive à noite, e...",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flee7leg1vs37fy3grgft.png",
-      "url": "https://dev.to/ayumu_kitabayashi_8e0de96/como-parar-de-ver-reels-e-shorts-a-noite-no-iphone-o-minulo-o-repouso-e-o-que-cada-um-bloqueia-49g7",
-      "source": "Dev.to Brasil",
-      "date": "Nov 7",
-      "categoria": "Tecnologia"
-    },
-    {
-      "title": "Eleições 2026: brasileiros reclamam de filas para votar no exterior",
-      "desc": "A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado (24/10) A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado (24/10)...",
-      "img": "https://images.metroimg.com/2026/10/filavotacaoparis.jpg",
-      "url": "https://www.metropoles.com/brasil/eleicoes-2026-brasileiros-reclamam-de-filas-para-votar-no-exterior",
-      "source": "Metrópoles Política",
+      "title": "Rafinha avalia trabalho no São Paulo e desabafa: “Era muito fácil pular do barco”",
+      "desc": "Rafinha avaliou seu trabalho como executivo de futebol do São Paulo, revelou que outros profissionais recusaram o cargo e comentou seu futuro no clube, a renovação de Lucas Moura e os desafios do Paulistão 2027.",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/IMG_5859.webp",
+      "url": "https://www.gazetaesportiva.com/times/sao-paulo/rafinha-avalia-trabalho-sao-paulo-desabafa/",
+      "source": "Gazeta Esportiva",
       "date": "Hoje",
-      "categoria": "🏛️ Política"
+      "categoria": "⚽ Esportes"
     }
   ]
 }
