@@ -1,4 +1,3 @@
-SignalR no .NET: do primeiro Hub à produção
 Evitar uma reentrada descontrolada; impulsione o Hubble e mantenha a ciência – Isaacman
 A Fadiga da Sprint Planning: por que reuniões de estimativa cansam tanto e como resolver
 Corinthians perde do Cruzeiro, mas fica com título inédito do Brasileiro sub-17
@@ -23,3 +22,4 @@ Como tirar os Shorts do YouTube no iPhone mas continuar vendo vídeos normais: o
 Na Bahia, Lula diz a aliados estar preocupado com crise no STF
 O trabalho em grupo da faculdade é combinado nas DMs do Instagram: como responder sem cair nos Reels no iPhone (2026)
 João Gomes e Ary Mirelle curtem jantar romântico com Sthe Matos e Kevi Jonny
+Alternativas ao SocialLite para iPhone
