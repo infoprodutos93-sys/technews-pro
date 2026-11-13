@@ -3,7 +3,7 @@
   "version": "10.4",
   "portal": "TechNews PRO",
   "documentation_and_source": "https://infoprodutos93-sys.github.io/technews-pro/",
-  "updated_at_brt": "2026-11-13T10:36:41-03:00",
+  "updated_at_brt": "2026-11-13T20:00:07-03:00",
   "market_rates": {
     "USD_BRL": 5.7,
     "EUR_BRL": 6.18,
@@ -42,31 +42,94 @@
   "total_articles": 25,
   "articles": [
     {
-      "title": "Como usar o Instagram só para o Direct no iPhone",
-      "desc": "O iOS não deixa nenhum app mudar o app oficial do Instagram, então o jeito de usar o Instagram só...",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fpniimp23h3iqrgj608i7.png",
-      "url": "https://dev.to/ayumu_kitabayashi_8e0de96/como-usar-o-instagram-so-para-o-direct-no-iphone-b48",
-      "source": "Dev.to Brasil",
-      "date": "Nov 8",
-      "categoria": "Tecnologia"
-    },
-    {
-      "title": "APOD: 13 de novembro de 2026 – NGC 206 e as nuvens estelares de Andrômeda",
-      "desc": "APOD Science APOD APOD: 2026 13 de novembro – NGC… Arquivo APOD de hoje Índice de envios Pesquisar Calendário RSS Educação Sobre Discutir APOD Astronomia Imagem do dia Descubra o cosmos!",
-      "img": "https://assets.science.nasa.gov/content/dam/science/cds/apod/apod/2026/november/Andromeda_closeupCruz4096.jpg/jcr:content/renditions/cq5dam.web.1280.1280.jpeg",
-      "url": "https://science.nasa.gov/image-article/apod-2026-november-13-ngc-206-and-the-star-clouds-of-andromeda/",
+      "title": "Live Coverage: Starship Flight 15 attempts to recover full vehicle in double launch pad catch",
+      "desc": "Liftoff of the integrated Starship vehicle from Starbase in Texas is scheduled during a 75-minute launch window that opens at 4:45 p.m. CST (5:45 p.m. EST / 2245 UTC) on Friday, Nov. 13.",
+      "img": "https://spaceflightnow.com/wp-content/uploads/2026/11/20261113-Starship-wide.jpg",
+      "url": "https://spaceflightnow.com/2026/11/13/live-coverage-starship-flight-15-attempts-to-recover-full-vehicle-in-double-launch-pad-catch/",
       "source": "SpaceTech",
       "date": "2026-11-13",
       "categoria": "Ciência"
     },
     {
-      "title": "Alternativas ao SocialLite para iPhone",
-      "desc": "A alternativa ao SocialLite mais parecida no iPhone é o minulo: como o SocialLite, ele oculta Reels e...",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fk2hvdruwugerp28q1b2m.png",
-      "url": "https://dev.to/ayumu_kitabayashi_8e0de96/alternativas-ao-sociallite-para-iphone-4o71",
-      "source": "Dev.to Brasil",
-      "date": "Nov 8",
-      "categoria": "Tecnologia"
+      "title": "Celta de Vigo goleia Salamanca e avança na Copa do Rei",
+      "desc": "O Celta Vigo goleou o Salamanca por 5 a 0 no Estádio Helmántico e garantiu vaga na segunda rodada da Copa do Rei.",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/HXCIXzbWMAAeyAq.webp",
+      "url": "https://www.gazetaesportiva.com/campeonatos/laliga/celta-de-vigo-goleia-salamanca-e-avanca-na-copa-do-rei/",
+      "source": "Gazeta Esportiva",
+      "date": "Hoje",
+      "categoria": "⚽ Esportes"
+    },
+    {
+      "title": "Gemini Astronaut Photos Inspired Early Earth Observation Program",
+      "desc": "Astronauts James A. Lovell Jr. and Edwin E. “Buzz” Aldrin Jr. orbited Earth from November 11 to 15, 1966, on Gemini XII, the final mission of NASA’s Gemini program.",
+      "img": "https://www.nasa.gov/wp-content/uploads/2026/11/s66-63535-f.png",
+      "url": "https://www.nasa.gov/image-article/gemini-astronaut-photos-inspired-early-earth-observation-program/",
+      "source": "SpaceTech",
+      "date": "2026-11-13",
+      "categoria": "Ciência"
+    },
+    {
+      "title": "É hora de dizer até breve ao Metrópoles e partir para um novo desafio",
+      "desc": "Amanhã (1º/6), estreia o LeoDias.com. A missão é gigantesca, mas nunca foi meu tipo fugir dos desafios da vida Amanhã (1º/6), estreia o LeoDias.com.",
+      "img": "https://images.metroimg.com/2023/06/31214750/Design-sem-nome-2023-05-31T214746.841.jpg",
+      "url": "https://www.metropoles.com/colunas/leo-dias/e-hora-de-dizer-ate-breve-ao-metropoles-e-partir-para-um-novo-desafio",
+      "source": "Coluna Famosos",
+      "date": "Hoje",
+      "categoria": "⭐ Famosos"
+    },
+    {
+      "title": "João Gomes e Ary Mirelle curtem jantar romântico com Sthe Matos e Kevi Jonny",
+      "desc": "O casal está em Barra de São Miguel acompanhados de Kevi Jonny e Sthe Matos O casal está em Barra de São Miguel acompanhados de Kevi Jonny e Sthe Matos Antes da maratona de shows do período junino, João Gomes e Ary Mirelle...",
+      "img": "https://images.metroimg.com/2023/05/31185334/Design-sem-nome-2023-05-31T185325.578.jpg",
+      "url": "https://www.metropoles.com/colunas/leo-dias/joao-gomes-e-ary-curtem-jantar-romantico-com-sthe-matos-e-kevi-jonny",
+      "source": "Coluna Famosos",
+      "date": "Hoje",
+      "categoria": "⭐ Famosos"
+    },
+    {
+      "title": "Raul Gil é internado e passa por procedimento cirúrgico em SP",
+      "desc": "Essa é a segunda internação de Raul este ano, em fevereiro ele deu entrada no hospital para a realização de alguns exames Essa é a segunda internação de Raul este ano, em fevereiro ele deu entrada no hospital para a realização...",
+      "img": "https://images.metroimg.com/2018/11/23153705/Screenshot_12115.jpg",
+      "url": "https://www.metropoles.com/colunas/leo-dias/raul-gil-e-internado-e-passa-por-procedimento-cirurgico-em-sp",
+      "source": "Coluna Famosos",
+      "date": "Hoje",
+      "categoria": "⭐ Famosos"
+    },
+    {
+      "title": "PT prepara “festa do interior” para visita de Lula à Bahia",
+      "desc": "Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em última rodada pelo Nordeste antes do 1º turno Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em...",
+      "img": "https://images.metroimg.com/2026/01/lula-bahia.jpg",
+      "url": "https://www.metropoles.com/brasil/pt-prepara-festa-do-interior-para-visita-de-lula-a-bahia",
+      "source": "Metrópoles Política",
+      "date": "Hoje",
+      "categoria": "🏛️ Política"
+    },
+    {
+      "title": "Mesa Redonda promove debate com candidatos à presidência do Corinthians",
+      "desc": "Neste domingo (15), a partir das 21h, o futuro do Corinthians entra em campo no Mesa Redonda. A TV Gazeta vai exibir o debate entre os candidatos à presidência do clube, que vai às urnas no dia 28 de novembro.",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/Screenshot_2.webp",
+      "url": "https://www.gazetaesportiva.com/todas-as-noticias/mesa-redonda-promove-debate-com-candidatos-a-presidencia-do-corinthians/",
+      "source": "Gazeta Esportiva",
+      "date": "Hoje",
+      "categoria": "⚽ Esportes"
+    },
+    {
+      "title": "Filhos de Gugu divergem sobre união do pai com Rose Miriam",
+      "desc": "Trechos do processo judicial mostram uma discussão entre os filhos do apresentador sobre o reconhecimento da união estável dos pais Trechos do processo judicial mostram uma discussão entre os filhos do apresentador sobre o...",
+      "img": "https://images.metroimg.com/2022/08/09094552/Gugu-capa-1.jpg",
+      "url": "https://www.metropoles.com/colunas/leo-dias/filhos-de-gugu-divergem-sobre-uniao-do-pai-com-rose-miriam",
+      "source": "Coluna Famosos",
+      "date": "Hoje",
+      "categoria": "⭐ Famosos"
+    },
+    {
+      "title": "Holanda faz sete na Grécia e segue invicta na Liga das Nações",
+      "desc": "Na tarde desta sexta-feira, na Johan Cruijff Arena, em Amsterdam (HOL), a Holanda goleou a Grécia por 7 a 0 pela 5ª rodada do Grupo A2 da Liga das Nações.",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/AFP__20261113__D7F6868__v1__HighRes__FblEurNationsNedGre.webp",
+      "url": "https://www.gazetaesportiva.com/times/holanda/holanda-faz-sete-na-grecia-e-segue-invicta-na-liga-das-nacoes/",
+      "source": "Gazeta Esportiva",
+      "date": "Hoje",
+      "categoria": "⚽ Esportes"
     },
     {
       "title": "Cortar antes de comprimir: por que vídeos longos do celular ficam melhores assim",
@@ -78,6 +141,33 @@
       "categoria": "Tecnologia"
     },
     {
+      "title": "Como usar o Instagram só para o Direct no iPhone",
+      "desc": "O iOS não deixa nenhum app mudar o app oficial do Instagram, então o jeito de usar o Instagram só...",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fpniimp23h3iqrgj608i7.png",
+      "url": "https://dev.to/ayumu_kitabayashi_8e0de96/como-usar-o-instagram-so-para-o-direct-no-iphone-b48",
+      "source": "Dev.to Brasil",
+      "date": "Nov 8",
+      "categoria": "Tecnologia"
+    },
+    {
+      "title": "Alternativas ao SocialLite para iPhone",
+      "desc": "A alternativa ao SocialLite mais parecida no iPhone é o minulo: como o SocialLite, ele oculta Reels e...",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fk2hvdruwugerp28q1b2m.png",
+      "url": "https://dev.to/ayumu_kitabayashi_8e0de96/alternativas-ao-sociallite-para-iphone-4o71",
+      "source": "Dev.to Brasil",
+      "date": "Nov 8",
+      "categoria": "Tecnologia"
+    },
+    {
+      "title": "Outbursts from a Massive Star",
+      "desc": "Using NASA’s Chandra X-ray Observatory, astronomers have discovered what is triggering repeated outbursts from a giant, unstable star located in the galaxy shown in this image released on Nov. 9, 2026.",
+      "img": "https://www.nasa.gov/wp-content/uploads/2026/11/at2016blu.jpg",
+      "url": "https://www.nasa.gov/image-article/outbursts-from-a-massive-star/",
+      "source": "SpaceTech",
+      "date": "2026-11-13",
+      "categoria": "Ciência"
+    },
+    {
       "title": "Cinco dos sete candidatos ao governo do Rio Grande do Sul já foram às urnas",
       "desc": "Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das intenções de voto e Juliana Brizola, 35% Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das...",
       "img": "https://images.metroimg.com/2026/07/rio-grande-do-sul.jpg",
@@ -87,10 +177,19 @@
       "categoria": "🏛️ Política"
     },
     {
-      "title": "Raphinha diz que nunca abriu mão da Seleção e explica declaração sobre minutagem",
-      "desc": "Raphinha comentou a repercussão de suas declarações sobre os minutos em campo pela Seleção Brasileira, falou sobre as críticas recebidas, revelou conversa com Carlo Ancelotti e relembrou a lesão durante a Copa do Mundo de 2026.",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/coletiva_raphinha_13112026_high_versao_mais_recente_d1f6ce6170.webp",
-      "url": "https://www.gazetaesportiva.com/times/brasil/raphinha-declaracoes-selecao-brasileira-ancelotti/",
+      "title": "Erika Hilton recebe ameaça de morte e atrasa ida às urnas por segurança",
+      "desc": "Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos A deputada federal e candidata à...",
+      "img": "https://images.metroimg.com/2026/07/sbt-lista-argumentos-para-derrubar-resposta-de-erika-hilton.jpg",
+      "url": "https://www.metropoles.com/brasil/politica-brasil/erika-hilton-recebe-ameaca-de-morte-e-atrasa-ida-as-urnas-por-seguranca",
+      "source": "Metrópoles Política",
+      "date": "Hoje",
+      "categoria": "🏛️ Política"
+    },
+    {
+      "title": "Bernardo Silva acredita que Portugal pode lidar com pressão de jogar sem CR7",
+      "desc": "Bernardo Silva afirmou que Portugal está preparado para lidar com a pressão após a aposentadoria de Cristiano Ronaldo da seleção.",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/AFP__20261113__D7F8399__v1__HighRes__FblEurNationsPorPresser.webp",
+      "url": "https://www.gazetaesportiva.com/times/portugal/bernardo-silva-acredita-que-portugal-pode-lidar-com-pressao-de-jogar-sem-cr7/",
       "source": "Gazeta Esportiva",
       "date": "Hoje",
       "categoria": "⚽ Esportes"
@@ -105,49 +204,22 @@
       "categoria": "Tecnologia"
     },
     {
-      "title": "É hora de dizer até breve ao Metrópoles e partir para um novo desafio",
-      "desc": "Amanhã (1º/6), estreia o LeoDias.com. A missão é gigantesca, mas nunca foi meu tipo fugir dos desafios da vida Amanhã (1º/6), estreia o LeoDias.com.",
-      "img": "https://images.metroimg.com/2023/06/31214750/Design-sem-nome-2023-05-31T214746.841.jpg",
-      "url": "https://www.metropoles.com/colunas/leo-dias/e-hora-de-dizer-ate-breve-ao-metropoles-e-partir-para-um-novo-desafio",
+      "title": "Virginia elege vestido luxuoso para festa de Maria Alice. Saiba valor!",
+      "desc": "Além de ser um vestido repleto de detalhes sutis, a peça escolhida por Virginia segue a tendência do momento, o Whitecore Além de ser um vestido repleto de detalhes sutis, a peça escolhida por Virginia segue a tendência do...",
+      "img": "https://images.metroimg.com/2023/05/31152902/Design-sem-nome-2023-05-31T152810.884.jpg",
+      "url": "https://www.metropoles.com/colunas/leo-dias/virginia-elege-vestido-luxuoso-para-festa-de-maria-alice-saiba-valor",
       "source": "Coluna Famosos",
       "date": "Hoje",
       "categoria": "⭐ Famosos"
     },
     {
-      "title": "ESA Confirms Latest Prometheus Tests Not Connected to Themis Hop Preparations",
-      "desc": "A Agência Espacial Europeia (ESA) e o ArianeGroup confirmaram que os testes do motor Prometheus realizados em Lampoldshausen em outubro foram realizados independentemente dos preparativos para o voo inaugural, há muito adiado, do...",
-      "img": "https://europeanspaceflight.com/wp-content/uploads/2026/11/ESA-Confirms-Latest-Prometheus-Tests-Not-Connected-to-Themis-Hop-Preparations.webp",
-      "url": "https://europeanspaceflight.com/esa-confirms-latest-prometheus-tests-not-connected-to-themis-hop-preparations/",
-      "source": "SpaceTech",
-      "date": "2026-11-13",
-      "categoria": "Ciência"
-    },
-    {
-      "title": "Raphinha: “Sempre vou estar disponível para representar o Brasil”",
-      "desc": "Raphinha: \"Sempre vou estar disponível para representar o Brasil\" Na concentração da Seleção Brasileira, o atacante do Barcelona esclarece sua fala recente, destaca a recuperação de três lesões e reforça a vontade de disputar...",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/Raphinha.webp",
-      "url": "https://www.gazetaesportiva.com/todas-as-noticias/raphinha-sempre-vou-estar-disponivel-para-representar-o-brasil/",
+      "title": "Alemanha bate a Sérvia e mantém chances de classificar na Liga das Nações",
+      "desc": "A Alemanha venceu a Sérvia por 3 a 1 nesta sexta-feira, em Belgrado, pela quinta rodada da Liga das Nações. Com gols de Srdan Babic contra, Florian Wirtz e Brajan Gruda, a equipe comandada por Jurgen Klopp conquistou um resultado...",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/AFP__20261113__D7F63DE__v1__HighRes__FblEurNationsSrbGer.webp",
+      "url": "https://www.gazetaesportiva.com/times/alemanha/alemanha-vence-servia-fora-de-casa-e-segue-viva-na-liga-das-nacoes/",
       "source": "Gazeta Esportiva",
       "date": "Hoje",
       "categoria": "⚽ Esportes"
-    },
-    {
-      "title": "Erika Hilton recebe ameaça de morte e atrasa ida às urnas por segurança",
-      "desc": "Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos A deputada federal e candidata à...",
-      "img": "https://images.metroimg.com/2026/07/sbt-lista-argumentos-para-derrubar-resposta-de-erika-hilton.jpg",
-      "url": "https://www.metropoles.com/brasil/politica-brasil/erika-hilton-recebe-ameaca-de-morte-e-atrasa-ida-as-urnas-por-seguranca",
-      "source": "Metrópoles Política",
-      "date": "Hoje",
-      "categoria": "🏛️ Política"
-    },
-    {
-      "title": "Relatório de foguete: nave estelar preparada para voo de teste histórico; um século de elétron",
-      "desc": "\"You can simplify it as a big tank feeding engines.\"",
-      "img": "https://cdn.arstechnica.net/wp-content/uploads/2026/11/electron-livery.jpeg",
-      "url": "https://arstechnica.com/space/2026/11/rocket-report-starship-set-for-historic-test-flight-a-century-of-electron/",
-      "source": "SpaceTech",
-      "date": "2026-11-13",
-      "categoria": "Ciência"
     },
     {
       "title": "Na Bahia, Lula diz a aliados estar preocupado com crise no STF",
@@ -159,24 +231,6 @@
       "categoria": "🏛️ Política"
     },
     {
-      "title": "João Gomes e Ary Mirelle curtem jantar romântico com Sthe Matos e Kevi Jonny",
-      "desc": "O casal está em Barra de São Miguel acompanhados de Kevi Jonny e Sthe Matos O casal está em Barra de São Miguel acompanhados de Kevi Jonny e Sthe Matos Antes da maratona de shows do período junino, João Gomes e Ary Mirelle...",
-      "img": "https://images.metroimg.com/2023/05/31185334/Design-sem-nome-2023-05-31T185325.578.jpg",
-      "url": "https://www.metropoles.com/colunas/leo-dias/joao-gomes-e-ary-curtem-jantar-romantico-com-sthe-matos-e-kevi-jonny",
-      "source": "Coluna Famosos",
-      "date": "Hoje",
-      "categoria": "⭐ Famosos"
-    },
-    {
-      "title": "GP de São Paulo de Fórmula 1 bate recordes em 2026; veja os números",
-      "desc": "GP de São Paulo 2026 movimenta R$ 2,63 bilhões, gera 28 mil empregos e bate recorde de público com mais de 317 mil espectadores.",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/formula1_sao_paulo_2026_1311.webp",
-      "url": "https://www.gazetaesportiva.com/motor/formula-1/gp-de-sao-paulo-de-formula-1-bate-recordes-em-2026-veja-os-numeros/",
-      "source": "Gazeta Esportiva",
-      "date": "Hoje",
-      "categoria": "⚽ Esportes"
-    },
-    {
       "title": "Como esconder o Para você do TikTok no iPhone e continuar recebendo as mensagens (2026)",
       "desc": "O iOS não deixa nenhum app mudar o app oficial do TikTok, então o jeito de tirar o feed Para você no...",
       "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fa7uonb9yecre1eimevq2.png",
@@ -184,51 +238,6 @@
       "source": "Dev.to Brasil",
       "date": "Nov 8",
       "categoria": "Tecnologia"
-    },
-    {
-      "title": "Filhos de Gugu divergem sobre união do pai com Rose Miriam",
-      "desc": "Trechos do processo judicial mostram uma discussão entre os filhos do apresentador sobre o reconhecimento da união estável dos pais Trechos do processo judicial mostram uma discussão entre os filhos do apresentador sobre o...",
-      "img": "https://images.metroimg.com/2022/08/09094552/Gugu-capa-1.jpg",
-      "url": "https://www.metropoles.com/colunas/leo-dias/filhos-de-gugu-divergem-sobre-uniao-do-pai-com-rose-miriam",
-      "source": "Coluna Famosos",
-      "date": "Hoje",
-      "categoria": "⭐ Famosos"
-    },
-    {
-      "title": "Chapecoense anuncia a contratação do técnico Vinicius Bergantin",
-      "desc": "Chapecoense oficializa a contratação de Vinicius Bergantin, de 46 anos, como novo treinador. Técnico chega após passagem pelo São Bernardo e assina até novembro de 2027.",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/VINICIUS-SITE.png.webp",
-      "url": "https://www.gazetaesportiva.com/times/chapecoense/chapecoense-anuncia-a-contratacao-do-tecnico-vinicius-bergantin/",
-      "source": "Gazeta Esportiva",
-      "date": "Hoje",
-      "categoria": "⚽ Esportes"
-    },
-    {
-      "title": "PT prepara “festa do interior” para visita de Lula à Bahia",
-      "desc": "Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em última rodada pelo Nordeste antes do 1º turno Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em...",
-      "img": "https://images.metroimg.com/2026/01/lula-bahia.jpg",
-      "url": "https://www.metropoles.com/brasil/pt-prepara-festa-do-interior-para-visita-de-lula-a-bahia",
-      "source": "Metrópoles Política",
-      "date": "Hoje",
-      "categoria": "🏛️ Política"
-    },
-    {
-      "title": "Eleições 2026: brasileiros reclamam de filas para votar no exterior",
-      "desc": "A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado (24/10) A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado (24/10)...",
-      "img": "https://images.metroimg.com/2026/10/filavotacaoparis.jpg",
-      "url": "https://www.metropoles.com/brasil/eleicoes-2026-brasileiros-reclamam-de-filas-para-votar-no-exterior",
-      "source": "Metrópoles Política",
-      "date": "Hoje",
-      "categoria": "🏛️ Política"
-    },
-    {
-      "title": "Virginia elege vestido luxuoso para festa de Maria Alice. Saiba valor!",
-      "desc": "Além de ser um vestido repleto de detalhes sutis, a peça escolhida por Virginia segue a tendência do momento, o Whitecore Além de ser um vestido repleto de detalhes sutis, a peça escolhida por Virginia segue a tendência do...",
-      "img": "https://images.metroimg.com/2023/05/31152902/Design-sem-nome-2023-05-31T152810.884.jpg",
-      "url": "https://www.metropoles.com/colunas/leo-dias/virginia-elege-vestido-luxuoso-para-festa-de-maria-alice-saiba-valor",
-      "source": "Coluna Famosos",
-      "date": "Hoje",
-      "categoria": "⭐ Famosos"
     },
     {
       "title": "Como manter um aplicativo Android WebView com apenas 21 KB (HTML5 Fullscreen e Smart TV)",
@@ -240,31 +249,22 @@
       "categoria": "Tecnologia"
     },
     {
-      "title": "Raul Gil é internado e passa por procedimento cirúrgico em SP",
-      "desc": "Essa é a segunda internação de Raul este ano, em fevereiro ele deu entrada no hospital para a realização de alguns exames Essa é a segunda internação de Raul este ano, em fevereiro ele deu entrada no hospital para a realização de...",
-      "img": "https://images.metroimg.com/2018/11/23153705/Screenshot_12115.jpg",
-      "url": "https://www.metropoles.com/colunas/leo-dias/raul-gil-e-internado-e-passa-por-procedimento-cirurgico-em-sp",
-      "source": "Coluna Famosos",
-      "date": "Hoje",
-      "categoria": "⭐ Famosos"
-    },
-    {
-      "title": "Ancelotti indica fim de testes e fala em ‘grupo fechado’ na Seleção",
-      "desc": "Ancelotti indica fim de testes e fala em ‘grupo fechado’ na Seleção O técnico Carlo Ancelotti afirma que o período de observações na Seleção Brasileira termina nesta Data FIFA, elogia a qualidade dos jovens convocados e indica...",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/coletiva_carlo_ancelotti_13112026_high_versao_mais_recente_f17a7ae821.webp",
-      "url": "https://www.gazetaesportiva.com/times/brasil/ancelotti-indica-fim-de-testes-e-fala-em-grupo-fechado-na-selecao/",
-      "source": "Gazeta Esportiva",
-      "date": "Hoje",
-      "categoria": "⚽ Esportes"
-    },
-    {
-      "title": "O foguete Vulcan da ULA planeja voltar a voar com o lançamento de 40 satélites Leo para a Amazon",
-      "desc": "A decolagem do Complexo de Lançamento Espacial 41 na Estação da Força Espacial de Cabo Canaveral está marcada para 12h54. EST (1754 UTC), na abertura de uma janela de 29 minutos.",
-      "img": "https://spaceflightnow.com/wp-content/uploads/2026/11/20261113-Vulcan-LV-01-Pad-logos.jpg",
-      "url": "https://spaceflightnow.com/2026/11/13/ulas-vulcan-rocket-plans-return-to-flight-with-launch-of-40-leo-satellites-for-amazon/",
+      "title": "Commercial Space Federation Welcomes CesiumAstro as a New Associate Member",
+      "desc": "November 13, 2026— Washington, D.C.—The Commercial Space Federation (CSF) is pleased to welcome CesiumAstro as its newest Associate Member. A global leader in advanced connectivity solutions for the space and […]",
+      "img": "https://i0.wp.com/spacenews.com/wp-content/uploads/2026/05/Anniversary-Logo.jpg?fit=1024%2C883&ssl=1",
+      "url": "https://spacenews.com/commercial-space-federation-welcomes-cesiumastro-as-a-new-associate-member/",
       "source": "SpaceTech",
       "date": "2026-11-13",
       "categoria": "Ciência"
+    },
+    {
+      "title": "Eleições 2026: brasileiros reclamam de filas para votar no exterior",
+      "desc": "A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado (24/10) A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado (24/10)...",
+      "img": "https://images.metroimg.com/2026/10/filavotacaoparis.jpg",
+      "url": "https://www.metropoles.com/brasil/eleicoes-2026-brasileiros-reclamam-de-filas-para-votar-no-exterior",
+      "source": "Metrópoles Política",
+      "date": "Hoje",
+      "categoria": "🏛️ Política"
     }
   ]
 }
