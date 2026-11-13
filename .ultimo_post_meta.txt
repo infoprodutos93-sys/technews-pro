@@ -1,4 +1,3 @@
-GraphQL para Iniciantes: Guia Completo com .NET
 Farewell Swift
 O menu do dia em cinco minutos, com IA gratuita
 Qual app usar para parar de ver Reels e Shorts à noite no iPhone, sem bloquear as DMs (2026)
@@ -23,3 +22,4 @@ Filhos de Gugu divergem sobre união do pai com Rose Miriam
 Cortar antes de comprimir: por que vídeos longos do celular ficam melhores assim
 Santos segue a preparação para o confronto contra o Coritiba
 Como manter um aplicativo Android WebView com apenas 21 KB (HTML5 Fullscreen e Smart TV)
+Como usar o Instagram só para o Direct no iPhone
