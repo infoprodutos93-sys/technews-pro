@@ -3,7 +3,7 @@
   "version": "10.4",
   "portal": "TechNews PRO",
   "documentation_and_source": "https://infoprodutos93-sys.github.io/technews-pro/",
-  "updated_at_brt": "2026-11-12T19:58:17-03:00",
+  "updated_at_brt": "2026-11-13T00:59:20-03:00",
   "market_rates": {
     "USD_BRL": 5.7,
     "EUR_BRL": 6.18,
@@ -42,130 +42,13 @@
   "total_articles": 25,
   "articles": [
     {
-      "title": "Santos segue a preparação para o confronto contra o Coritiba",
-      "desc": "Elenco do Peixe segue focado no retorno do Campeonato Brasileiro, que será pela 35ª rodada, no estádio Couto Pereira.",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/55645847352_086c49eb3d_3k.webp",
-      "url": "https://www.gazetaesportiva.com/todas-as-noticias/santos-segue-a-preparacao-para-o-confronto-contra-o-coritiba/",
-      "source": "Gazeta Esportiva",
-      "date": "Hoje",
-      "categoria": "⚽ Esportes"
-    },
-    {
-      "title": "João Gomes e Ary Mirelle curtem jantar romântico com Sthe Matos e Kevi Jonny",
-      "desc": "O casal está em Barra de São Miguel acompanhados de Kevi Jonny e Sthe Matos O casal está em Barra de São Miguel acompanhados de Kevi Jonny e Sthe Matos Antes da maratona de shows do período junino, João Gomes e Ary Mirelle...",
-      "img": "https://images.metroimg.com/2023/05/31185334/Design-sem-nome-2023-05-31T185325.578.jpg",
-      "url": "https://www.metropoles.com/colunas/leo-dias/joao-gomes-e-ary-curtem-jantar-romantico-com-sthe-matos-e-kevi-jonny",
-      "source": "Coluna Famosos",
-      "date": "Hoje",
-      "categoria": "⭐ Famosos"
-    },
-    {
-      "title": "Erika Hilton recebe ameaça de morte e atrasa ida às urnas por segurança",
-      "desc": "Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos A deputada federal e candidata à...",
-      "img": "https://images.metroimg.com/2026/07/sbt-lista-argumentos-para-derrubar-resposta-de-erika-hilton.jpg",
-      "url": "https://www.metropoles.com/brasil/politica-brasil/erika-hilton-recebe-ameaca-de-morte-e-atrasa-ida-as-urnas-por-seguranca",
-      "source": "Metrópoles Política",
-      "date": "Hoje",
-      "categoria": "🏛️ Política"
-    },
-    {
-      "title": "Vasco faz últimos ajustes no Rio de Janeiro antes de ir a Chapecó",
-      "desc": "O elenco do Vasco da Gama embarca nesta sexta-feira (12) rumo a Chapecó para o jogo atrasado do Brasileirão contra a Chapecoense.",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/5NJyvGfS-1920Vasco.webp",
-      "url": "https://www.gazetaesportiva.com/todas-as-noticias/vasco-faz-ultimos-ajustes-no-rio-de-janeiro-antes-de-ir-a-chapeco/",
-      "source": "Gazeta Esportiva",
-      "date": "Hoje",
-      "categoria": "⚽ Esportes"
-    },
-    {
-      "title": "Na Bahia, Lula diz a aliados estar preocupado com crise no STF",
-      "desc": "O presidente Lula participou de carreata em Salvador nesta terça-feira junto aos candidatos do PT ao Senado e ao Governo do estado O presidente Lula participou de carreata em Salvador nesta terça-feira junto aos candidatos do...",
-      "img": "https://images.metroimg.com/2026/09/foto-lula-salvaor-scaled.jpg",
-      "url": "https://www.metropoles.com/brasil/na-bahia-lula-diz-a-aliados-estar-preocupado-com-crise-no-stf",
-      "source": "Metrópoles Política",
-      "date": "Hoje",
-      "categoria": "🏛️ Política"
-    },
-    {
-      "title": "PT prepara “festa do interior” para visita de Lula à Bahia",
-      "desc": "Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em última rodada pelo Nordeste antes do 1º turno Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em...",
-      "img": "https://images.metroimg.com/2026/01/lula-bahia.jpg",
-      "url": "https://www.metropoles.com/brasil/pt-prepara-festa-do-interior-para-visita-de-lula-a-bahia",
-      "source": "Metrópoles Política",
-      "date": "Hoje",
-      "categoria": "🏛️ Política"
-    },
-    {
-      "title": "Qual o papel que a indústria desempenha no impulso à soberania espacial da Europa?",
-      "desc": "Neste episódio, Jason Rainbow da SpaceNews entrevista Atle Woello, CEO e vice-presidente sênior da unidade de negócios de sistemas espaciais e vigilância da Kongsberg NanoAvionics. Eles discutem o papel [...]",
-      "img": "https://i0.wp.com/spacenews.com/wp-content/uploads/2026/11/space-minds-podcast-KNA-2000-1500.jpg?fit=1024%2C768&ssl=1",
-      "url": "https://spacenews.com/what-role-does-industry-play-in-europes-space-sovereignty-push/",
-      "source": "SpaceTech",
-      "date": "2026-11-12",
-      "categoria": "Ciência"
-    },
-    {
-      "title": "Filhos de Gugu divergem sobre união do pai com Rose Miriam",
-      "desc": "Trechos do processo judicial mostram uma discussão entre os filhos do apresentador sobre o reconhecimento da união estável dos pais Trechos do processo judicial mostram uma discussão entre os filhos do apresentador sobre o...",
-      "img": "https://images.metroimg.com/2022/08/09094552/Gugu-capa-1.jpg",
-      "url": "https://www.metropoles.com/colunas/leo-dias/filhos-de-gugu-divergem-sobre-uniao-do-pai-com-rose-miriam",
-      "source": "Coluna Famosos",
-      "date": "Hoje",
-      "categoria": "⭐ Famosos"
-    },
-    {
-      "title": "Rodrygo visita CT do Santos e recebe recado de Neymar: “A casa é sua”",
-      "desc": "Rodrygo, atacante do Real Madrid, visitou o CT Rei Pelé nesta quinta-feira (12) e conversou com Neymar por telefone.",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/SnapInsta.to_707490963_18589014685031991_271975893553538284_n.webp",
-      "url": "https://www.gazetaesportiva.com/times/santos/rodrygo-visita-ct-santos-ligacao-neymar/",
-      "source": "Gazeta Esportiva",
-      "date": "Hoje",
-      "categoria": "⚽ Esportes"
-    },
-    {
-      "title": "Story Points Não São Horas: por que converter pontos em tempo destrói a Sprint Planning",
-      "desc": "Por que transformar story points em horas gera estimativas falsas e como a estimativa relativa em tempo real acelera entregas da squad.",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flmj56yebweo71l7qw7gb.png",
-      "url": "https://dev.to/geekecia/story-points-nao-sao-horas-por-que-converter-pontos-em-tempo-destroi-a-sprint-planning-3ghm",
+      "title": "Como manter um aplicativo Android WebView com apenas 21 KB (HTML5 Fullscreen e Smart TV)",
+      "desc": "Quando pensamos em criar um ponto de acesso dedicado no Android para um catálogo web responsivo, a...",
+      "img": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fydw5xqemkxij7iho9c6v.jpg",
+      "url": "https://dev.to/noveflixapp/como-manter-um-aplicativo-android-webview-com-apenas-21-kb-html5-fullscreen-e-smart-tv-4oel",
       "source": "Dev.to Brasil",
       "date": "Nov 10",
       "categoria": "Tecnologia"
-    },
-    {
-      "title": "Coração no céu na NASA Kennedy",
-      "desc": "Os Thunderbirds da Força Aérea dos EUA criam uma trilha de fumaça em forma de coração durante uma manobra de vôo perto do Vehicle Assembly Building da NASA durante a exposição e show aéreo MAX POWER da agência no domingo, 8 de...",
-      "img": "https://www.nasa.gov/wp-content/uploads/2026/11/55640210122-dae9d5e6b9-o.jpg",
-      "url": "https://www.nasa.gov/image-article/heart-in-the-sky-at-nasa-kennedy/",
-      "source": "SpaceTech",
-      "date": "2026-11-12",
-      "categoria": "Ciência"
-    },
-    {
-      "title": "I Am Artemis Katie Spicer",
-      "desc": "Para Katie Spicer, abraçar oportunidades e desafios levou a saltos gigantescos durante seu tempo na NASA. Agora, como líder de integração do módulo de pouso da NASA para o módulo de pouso Blue Moon Mark 2 da Blue Origin, um dos...",
-      "img": "https://www.nasa.gov/wp-content/uploads/2026/11/jsc2026e402724-i-am-artemis-katie.jpeg",
-      "url": "https://www.nasa.gov/missions/artemis/i-am-artemis-katie-spicer/",
-      "source": "SpaceTech",
-      "date": "2026-11-12",
-      "categoria": "Ciência"
-    },
-    {
-      "title": "Murilo supera 250 jogos no Palmeiras e mostra otimismo por títulos: “Será o melhor ano”",
-      "desc": "O zagueiro Murilo recebeu, nesta quinta-feira, uma homenagem pelos 250 jogos no Palmeiras, marca alcançada no último dia 24 de outubro, na vitória por 2 a 0 sobre o Red Bull Bragantino, pela 32ª rodada do Campeonato Brasileiro.",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/12112026_cg_palmeiras_m_4144_15.webp",
-      "url": "https://www.gazetaesportiva.com/times/palmeiras/murilo-250-jogos-otimismo-titulos-palmeiras/",
-      "source": "Gazeta Esportiva",
-      "date": "Hoje",
-      "categoria": "⚽ Esportes"
-    },
-    {
-      "title": "Espanha vence Tchéquia e mantém liderança do grupo na Liga das Nações com 100%",
-      "desc": "Pela quinta rodada da Liga das Nações, a Espanha venceu a Tchéquia por 2 a 0 na tarde desta quinta-feira e alcançou sua quinta vitória na competição, com 100% de aproveitamento.",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/AFP__20261112__D7BV8N6__v1__HighRes__FblEurNationsCzeEsp.webp",
-      "url": "https://www.gazetaesportiva.com/times/espanha/espanha-vence-tchequia-e-mantem-lideranca-do-grupo-na-liga-das-nacoes-com-100/",
-      "source": "Gazeta Esportiva",
-      "date": "Hoje",
-      "categoria": "⚽ Esportes"
     },
     {
       "title": "Cortar antes de comprimir: por que vídeos longos do celular ficam melhores assim",
@@ -177,31 +60,22 @@
       "categoria": "Tecnologia"
     },
     {
-      "title": "Cinco dos sete candidatos ao governo do Rio Grande do Sul já foram às urnas",
-      "desc": "Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das intenções de voto e Juliana Brizola, 35% Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das...",
-      "img": "https://images.metroimg.com/2026/07/rio-grande-do-sul.jpg",
-      "url": "https://www.metropoles.com/brasil/politica-brasil/cinco-dos-sete-candidatos-ao-governo-do-rio-grande-do-sul-ja-foram-as-urnas",
+      "title": "PT prepara “festa do interior” para visita de Lula à Bahia",
+      "desc": "Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em última rodada pelo Nordeste antes do 1º turno Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em...",
+      "img": "https://images.metroimg.com/2026/01/lula-bahia.jpg",
+      "url": "https://www.metropoles.com/brasil/pt-prepara-festa-do-interior-para-visita-de-lula-a-bahia",
       "source": "Metrópoles Política",
       "date": "Hoje",
       "categoria": "🏛️ Política"
     },
     {
-      "title": "É hora de dizer até breve ao Metrópoles e partir para um novo desafio",
-      "desc": "Amanhã (1º/6), estreia o LeoDias.com. A missão é gigantesca, mas nunca foi meu tipo fugir dos desafios da vida Amanhã (1º/6), estreia o LeoDias.com.",
-      "img": "https://images.metroimg.com/2023/06/31214750/Design-sem-nome-2023-05-31T214746.841.jpg",
-      "url": "https://www.metropoles.com/colunas/leo-dias/e-hora-de-dizer-ate-breve-ao-metropoles-e-partir-para-um-novo-desafio",
-      "source": "Coluna Famosos",
+      "title": "Seedorf valoriza treinos, mas alerta: ‘O resultado final nunca está nas nossas mãos’",
+      "desc": "O Corinthians vem aproveitando a pausa do Campeonato Brasileiro durante a Data Fifa para aprimorar questões físicas, técnicas e táticas sob o comando de Clarence Seedorf.",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/10/seedorf-treino-corinthians.webp",
+      "url": "https://www.gazetaesportiva.com/todas-as-noticias/seedorf-valoriza-treinos-mas-alerta-o-resultado-final-nunca-esta-nas-nossas-maos/",
+      "source": "Gazeta Esportiva",
       "date": "Hoje",
-      "categoria": "⭐ Famosos"
-    },
-    {
-      "title": "UARX Space marca um marco para a indústria espacial espanhola com o voo inaugural do OSSIE-D, apresentando um subsistema de energia completo fornecido pela tecnologia DHV",
-      "desc": "Nigrán, Espanha | 12 de novembro de 2026 – A UARX Space alcançou um marco importante para a indústria espacial espanhola com a implantação do OSSIE-D, um Veículo de Transferência Orbital (OTV) projetado e […] A postagem Espaço...",
-      "img": "https://i0.wp.com/spacenews.com/wp-content/uploads/2026/11/Logos.png?fit=1024%2C1024&ssl=1",
-      "url": "https://spacenews.com/uarx-space-marks-a-milestone-for-spains-space-industry-with-the-maiden-flight-of-ossie-d-featuring-a-complete-power-subsystem-supplied-by-dhv-technology/",
-      "source": "SpaceTech",
-      "date": "2026-11-12",
-      "categoria": "Ciência"
+      "categoria": "⚽ Esportes"
     },
     {
       "title": "Alternativas ao SocialLite para iPhone",
@@ -213,6 +87,60 @@
       "categoria": "Tecnologia"
     },
     {
+      "title": "Corinthians leva virada no terceiro quarto e perde para o Pinheiros em casa pelo NBB",
+      "desc": "O Corinthians foi derrotado de virada pelo Pinheiros por 91 a 79 nesta quinta-feira, no Ginásio Wlamir Marques, pela fase de classificação do NBB 2026/2027.",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/HW95_M3WoAEExia.webp",
+      "url": "https://www.gazetaesportiva.com/campeonatos/nbb-novo-basquete-brasil/corinthians-leva-virada-no-terceiro-quarto-e-perde-para-o-pinheiros-em-casa-pelo-nbb/",
+      "source": "Gazeta Esportiva",
+      "date": "Hoje",
+      "categoria": "⚽ Esportes"
+    },
+    {
+      "title": "I Am Artemis Katie Spicer",
+      "desc": "Para Katie Spicer, abraçar oportunidades e desafios levou a saltos gigantescos durante seu tempo na NASA. Agora, como líder de integração do módulo de pouso da NASA para o módulo de pouso Blue Moon Mark 2 da Blue Origin, um dos...",
+      "img": "https://www.nasa.gov/wp-content/uploads/2026/11/jsc2026e402724-i-am-artemis-katie.jpeg",
+      "url": "https://www.nasa.gov/missions/artemis/i-am-artemis-katie-spicer/",
+      "source": "SpaceTech",
+      "date": "2026-11-12",
+      "categoria": "Ciência"
+    },
+    {
+      "title": "São Bernardo e Athletic ficam no empate pela última rodada da Série B",
+      "desc": "Na despedida do Campeonato Brasileiro Série B, São Bernardo e Athletic empataram em 2 a 2 nesta quinta-feira (12), no Estádio Primeiro de Maio.",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/WhatsApp-Image-2026-11-12-at-22.31.44.webp",
+      "url": "https://www.gazetaesportiva.com/campeonatos/brasileiro-serie-b/sao-bernardo-e-athletic-ficam-no-empate-pela-ultima-rodada-da-serie-b/",
+      "source": "Gazeta Esportiva",
+      "date": "Hoje",
+      "categoria": "⚽ Esportes"
+    },
+    {
+      "title": "Na Bahia, Lula diz a aliados estar preocupado com crise no STF",
+      "desc": "O presidente Lula participou de carreata em Salvador nesta terça-feira junto aos candidatos do PT ao Senado e ao Governo do estado O presidente Lula participou de carreata em Salvador nesta terça-feira junto aos candidatos do PT...",
+      "img": "https://images.metroimg.com/2026/09/foto-lula-salvaor-scaled.jpg",
+      "url": "https://www.metropoles.com/brasil/na-bahia-lula-diz-a-aliados-estar-preocupado-com-crise-no-stf",
+      "source": "Metrópoles Política",
+      "date": "Hoje",
+      "categoria": "🏛️ Política"
+    },
+    {
+      "title": "Filhos de Gugu divergem sobre união do pai com Rose Miriam",
+      "desc": "Trechos do processo judicial mostram uma discussão entre os filhos do apresentador sobre o reconhecimento da união estável dos pais Trechos do processo judicial mostram uma discussão entre os filhos do apresentador sobre o...",
+      "img": "https://images.metroimg.com/2022/08/09094552/Gugu-capa-1.jpg",
+      "url": "https://www.metropoles.com/colunas/leo-dias/filhos-de-gugu-divergem-sobre-uniao-do-pai-com-rose-miriam",
+      "source": "Coluna Famosos",
+      "date": "Hoje",
+      "categoria": "⭐ Famosos"
+    },
+    {
+      "title": "Flamengo vence Fluminense e mantém 100% de aproveitamento na Superliga feminina",
+      "desc": "Em duelo carioca nesta quinta-feira pela quinta rodada da Superliga Feminina de vôlei, o Sesc Flamengo confirmou o favoritismo e venceu o Fluminense por 3 sets a 0, com parciais de 25/22, 25/18 e 25/23.",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/HW9pbsPXwAAbYs-.webp",
+      "url": "https://www.gazetaesportiva.com/mais-esportes/volei/superliga-rodada-5-flamengo-fluminense/",
+      "source": "Gazeta Esportiva",
+      "date": "Hoje",
+      "categoria": "⚽ Esportes"
+    },
+    {
       "title": "Eleições 2026: brasileiros reclamam de filas para votar no exterior",
       "desc": "A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado (24/10) A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado (24/10)...",
       "img": "https://images.metroimg.com/2026/10/filavotacaoparis.jpg",
@@ -220,6 +148,51 @@
       "source": "Metrópoles Política",
       "date": "Hoje",
       "categoria": "🏛️ Política"
+    },
+    {
+      "title": "Erika Hilton recebe ameaça de morte e atrasa ida às urnas por segurança",
+      "desc": "Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos A deputada federal e candidata à...",
+      "img": "https://images.metroimg.com/2026/07/sbt-lista-argumentos-para-derrubar-resposta-de-erika-hilton.jpg",
+      "url": "https://www.metropoles.com/brasil/politica-brasil/erika-hilton-recebe-ameaca-de-morte-e-atrasa-ida-as-urnas-por-seguranca",
+      "source": "Metrópoles Política",
+      "date": "Hoje",
+      "categoria": "🏛️ Política"
+    },
+    {
+      "title": "Virginia elege vestido luxuoso para festa de Maria Alice. Saiba valor!",
+      "desc": "Além de ser um vestido repleto de detalhes sutis, a peça escolhida por Virginia segue a tendência do momento, o Whitecore Além de ser um vestido repleto de detalhes sutis, a peça escolhida por Virginia segue a tendência do...",
+      "img": "https://images.metroimg.com/2023/05/31152902/Design-sem-nome-2023-05-31T152810.884.jpg",
+      "url": "https://www.metropoles.com/colunas/leo-dias/virginia-elege-vestido-luxuoso-para-festa-de-maria-alice-saiba-valor",
+      "source": "Coluna Famosos",
+      "date": "Hoje",
+      "categoria": "⭐ Famosos"
+    },
+    {
+      "title": "João Gomes e Ary Mirelle curtem jantar romântico com Sthe Matos e Kevi Jonny",
+      "desc": "O casal está em Barra de São Miguel acompanhados de Kevi Jonny e Sthe Matos O casal está em Barra de São Miguel acompanhados de Kevi Jonny e Sthe Matos Antes da maratona de shows do período junino, João Gomes e Ary Mirelle...",
+      "img": "https://images.metroimg.com/2023/05/31185334/Design-sem-nome-2023-05-31T185325.578.jpg",
+      "url": "https://www.metropoles.com/colunas/leo-dias/joao-gomes-e-ary-curtem-jantar-romantico-com-sthe-matos-e-kevi-jonny",
+      "source": "Coluna Famosos",
+      "date": "Hoje",
+      "categoria": "⭐ Famosos"
+    },
+    {
+      "title": "Story Points Não São Horas: por que converter pontos em tempo destrói a Sprint Planning",
+      "desc": "Por que transformar story points em horas gera estimativas falsas e como a estimativa relativa em tempo real acelera entregas da squad.",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flmj56yebweo71l7qw7gb.png",
+      "url": "https://dev.to/geekecia/story-points-nao-sao-horas-por-que-converter-pontos-em-tempo-destroi-a-sprint-planning-3ghm",
+      "source": "Dev.to Brasil",
+      "date": "Nov 10",
+      "categoria": "Tecnologia"
+    },
+    {
+      "title": "AST SpaceMobile defende o desenvolvimento de seu próprio veículo de lançamento",
+      "desc": "Os executivos da AST SpaceMobile expressaram confiança na capacidade da empresa de colocar em campo um novo veículo de lançamento reutilizável em apenas dois anos, apesar do ceticismo generalizado da indústria.",
+      "img": "https://i0.wp.com/spacenews.com/wp-content/uploads/2026/11/blacklift2.jpeg?fit=1024%2C577&ssl=1",
+      "url": "https://spacenews.com/ast-spacemobile-presses-case-for-developing-own-launch-vehicle/",
+      "source": "SpaceTech",
+      "date": "2026-11-13",
+      "categoria": "Ciência"
     },
     {
       "title": "Raul Gil é internado e passa por procedimento cirúrgico em SP",
@@ -231,22 +204,31 @@
       "categoria": "⭐ Famosos"
     },
     {
-      "title": "Como manter um aplicativo Android WebView com apenas 21 KB (HTML5 Fullscreen e Smart TV)",
-      "desc": "Quando pensamos em criar um ponto de acesso dedicado no Android para um catálogo web responsivo, a...",
-      "img": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fydw5xqemkxij7iho9c6v.jpg",
-      "url": "https://dev.to/noveflixapp/como-manter-um-aplicativo-android-webview-com-apenas-21-kb-html5-fullscreen-e-smart-tv-4oel",
-      "source": "Dev.to Brasil",
-      "date": "Nov 10",
-      "categoria": "Tecnologia"
+      "title": "Cinco dos sete candidatos ao governo do Rio Grande do Sul já foram às urnas",
+      "desc": "Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das intenções de voto e Juliana Brizola, 35% Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das...",
+      "img": "https://images.metroimg.com/2026/07/rio-grande-do-sul.jpg",
+      "url": "https://www.metropoles.com/brasil/politica-brasil/cinco-dos-sete-candidatos-ao-governo-do-rio-grande-do-sul-ja-foram-as-urnas",
+      "source": "Metrópoles Política",
+      "date": "Hoje",
+      "categoria": "🏛️ Política"
     },
     {
-      "title": "Como esconder o Para você do TikTok no iPhone e continuar recebendo as mensagens (2026)",
-      "desc": "O iOS não deixa nenhum app mudar o app oficial do TikTok, então o jeito de tirar o feed Para você no...",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fa7uonb9yecre1eimevq2.png",
-      "url": "https://dev.to/ayumu_kitabayashi_8e0de96/como-esconder-o-para-voce-do-tiktok-no-iphone-e-continuar-recebendo-as-mensagens-2026-119h",
-      "source": "Dev.to Brasil",
-      "date": "Nov 8",
-      "categoria": "Tecnologia"
+      "title": "NASA procura novas maneiras de devolver amostras do Perseverance de Marte",
+      "desc": "Em janeiro, a NASA começará a avaliar novas estratégias para devolver à Terra as amostras agora coletadas pelo rover Mars Perseverance. A agência encerrou um retorno anterior de amostra de Marte [...]",
+      "img": "https://spacepolicyonline.com/wp-content/uploads/2025/05/MSR-architecture-April-30-25-300x160.png",
+      "url": "https://spacepolicyonline.com/news/nasa-looking-for-new-ways-to-return-perseverance-samples-from-mars/",
+      "source": "SpaceTech",
+      "date": "2026-11-13",
+      "categoria": "Ciência"
+    },
+    {
+      "title": "Rival do Palmeiras na Libertadores, Estudiantes vence na prorrogação e conquista Supercopa Argentina",
+      "desc": "Adversário do Palmeiras na final da Copa Libertadores, o Estudiantes conquistou o título da Supercopa Argentina nesta quinta-feira (12) ao vencer o Independiente Rivadavia por 3 a 2, na prorrogação, em Córdoba.",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/HW9ws9IWIAAWOns.webp",
+      "url": "https://www.gazetaesportiva.com/estudiantes-de-la-plata/rival-palmeiras-libertadores-estudiantes-supercopa-argentina/",
+      "source": "Gazeta Esportiva",
+      "date": "Hoje",
+      "categoria": "⚽ Esportes"
     },
     {
       "title": "Como usar o Instagram só para o Direct no iPhone",
@@ -258,13 +240,31 @@
       "categoria": "Tecnologia"
     },
     {
-      "title": "Virginia elege vestido luxuoso para festa de Maria Alice. Saiba valor!",
-      "desc": "Além de ser um vestido repleto de detalhes sutis, a peça escolhida por Virginia segue a tendência do momento, o Whitecore Além de ser um vestido repleto de detalhes sutis, a peça escolhida por Virginia segue a tendência do...",
-      "img": "https://images.metroimg.com/2023/05/31152902/Design-sem-nome-2023-05-31T152810.884.jpg",
-      "url": "https://www.metropoles.com/colunas/leo-dias/virginia-elege-vestido-luxuoso-para-festa-de-maria-alice-saiba-valor",
+      "title": "É hora de dizer até breve ao Metrópoles e partir para um novo desafio",
+      "desc": "Amanhã (1º/6), estreia o LeoDias.com. A missão é gigantesca, mas nunca foi meu tipo fugir dos desafios da vida Amanhã (1º/6), estreia o LeoDias.com.",
+      "img": "https://images.metroimg.com/2023/06/31214750/Design-sem-nome-2023-05-31T214746.841.jpg",
+      "url": "https://www.metropoles.com/colunas/leo-dias/e-hora-de-dizer-ate-breve-ao-metropoles-e-partir-para-um-novo-desafio",
       "source": "Coluna Famosos",
       "date": "Hoje",
       "categoria": "⭐ Famosos"
+    },
+    {
+      "title": "Como esconder o Para você do TikTok no iPhone e continuar recebendo as mensagens (2026)",
+      "desc": "O iOS não deixa nenhum app mudar o app oficial do TikTok, então o jeito de tirar o feed Para você no...",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fa7uonb9yecre1eimevq2.png",
+      "url": "https://dev.to/ayumu_kitabayashi_8e0de96/como-esconder-o-para-voce-do-tiktok-no-iphone-e-continuar-recebendo-as-mensagens-2026-119h",
+      "source": "Dev.to Brasil",
+      "date": "Nov 8",
+      "categoria": "Tecnologia"
+    },
+    {
+      "title": "UARX Space marca um marco para a indústria espacial espanhola com o voo inaugural do OSSIE-D, apresentando um subsistema de energia completo fornecido pela tecnologia DHV",
+      "desc": "Nigrán, Espanha | 12 de novembro de 2026 – A UARX Space alcançou um marco importante para a indústria espacial espanhola com a implantação do OSSIE-D, um Veículo de Transferência Orbital (OTV) projetado e […] A postagem Espaço...",
+      "img": "https://i0.wp.com/spacenews.com/wp-content/uploads/2026/11/Logos.png?fit=1024%2C1024&ssl=1",
+      "url": "https://spacenews.com/uarx-space-marks-a-milestone-for-spains-space-industry-with-the-maiden-flight-of-ossie-d-featuring-a-complete-power-subsystem-supplied-by-dhv-technology/",
+      "source": "SpaceTech",
+      "date": "2026-11-12",
+      "categoria": "Ciência"
     }
   ]
 }
