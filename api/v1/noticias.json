@@ -3,7 +3,7 @@
   "version": "10.4",
   "portal": "TechNews PRO",
   "documentation_and_source": "https://infoprodutos93-sys.github.io/technews-pro/",
-  "updated_at_brt": "2026-11-14T09:41:20-03:00",
+  "updated_at_brt": "2026-11-14T18:48:24-03:00",
   "market_rates": {
     "USD_BRL": 5.7,
     "EUR_BRL": 6.18,
@@ -42,10 +42,10 @@
   "total_articles": 25,
   "articles": [
     {
-      "title": "Há 31 anos, Djalminha chegava ao Palmeiras; relembre grandes jogos do ex-meia",
-      "desc": "Há 31 anos, Djalminha chegava ao Palmeiras; relembre fotos da carreira do craque",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/Djalminha-5-360x257-1.webp",
-      "url": "https://www.gazetaesportiva.com/todas-as-noticias/ha-31-anos-djalminha-chegava-ao-palmeiras-relembre-fotos-da-carreira-do-craque/",
+      "title": "Portugal decepciona e leva quatro da Dinamarca em dia de homenagem a CR7",
+      "desc": "Neste sábado, Portugal perdeu para a Dinamarca por 4 a 1, no Estádio Municipal de Braga, pela quinta rodada da fase de grupos da Liga das Nações. Esta foi a primeira derrota dos portugueses na competição.",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/AFP__20261114__D7H72TE__v1__HighRes__FblEurNationsPorDen.webp",
+      "url": "https://www.gazetaesportiva.com/times/portugal/portugal-decepciona-e-leva-quatro-da-dinamarca-em-dia-de-homenagem-a-cr7/",
       "source": "Gazeta Esportiva",
       "date": "Hoje",
       "categoria": "⚽ Esportes"
@@ -60,28 +60,10 @@
       "categoria": "🏛️ Política"
     },
     {
-      "title": "PT prepara “festa do interior” para visita de Lula à Bahia",
-      "desc": "Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em última rodada pelo Nordeste antes do 1º turno Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em...",
-      "img": "https://images.metroimg.com/2026/01/lula-bahia.jpg",
-      "url": "https://www.metropoles.com/brasil/pt-prepara-festa-do-interior-para-visita-de-lula-a-bahia",
-      "source": "Metrópoles Política",
-      "date": "Hoje",
-      "categoria": "🏛️ Política"
-    },
-    {
       "title": "Erika Hilton recebe ameaça de morte e atrasa ida às urnas por segurança",
       "desc": "Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos A deputada federal e candidata à...",
       "img": "https://images.metroimg.com/2026/07/sbt-lista-argumentos-para-derrubar-resposta-de-erika-hilton.jpg",
       "url": "https://www.metropoles.com/brasil/politica-brasil/erika-hilton-recebe-ameaca-de-morte-e-atrasa-ida-as-urnas-por-seguranca",
-      "source": "Metrópoles Política",
-      "date": "Hoje",
-      "categoria": "🏛️ Política"
-    },
-    {
-      "title": "Cinco dos sete candidatos ao governo do Rio Grande do Sul já foram às urnas",
-      "desc": "Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das intenções de voto e Juliana Brizola, 35% Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das...",
-      "img": "https://images.metroimg.com/2026/07/rio-grande-do-sul.jpg",
-      "url": "https://www.metropoles.com/brasil/politica-brasil/cinco-dos-sete-candidatos-ao-governo-do-rio-grande-do-sul-ja-foram-as-urnas",
       "source": "Metrópoles Política",
       "date": "Hoje",
       "categoria": "🏛️ Política"
@@ -96,28 +78,100 @@
       "categoria": "⭐ Famosos"
     },
     {
-      "title": "É hora de dizer até breve ao Metrópoles e partir para um novo desafio",
-      "desc": "Amanhã (1º/6), estreia o LeoDias.com. A missão é gigantesca, mas nunca foi meu tipo fugir dos desafios da vida Amanhã (1º/6), estreia o LeoDias.com.",
-      "img": "https://images.metroimg.com/2023/06/31214750/Design-sem-nome-2023-05-31T214746.841.jpg",
-      "url": "https://www.metropoles.com/colunas/leo-dias/e-hora-de-dizer-ate-breve-ao-metropoles-e-partir-para-um-novo-desafio",
+      "title": "Eleições 2026: brasileiros reclamam de filas para votar no exterior",
+      "desc": "A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado (24/10) A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado...",
+      "img": "https://images.metroimg.com/2026/10/filavotacaoparis.jpg",
+      "url": "https://www.metropoles.com/brasil/eleicoes-2026-brasileiros-reclamam-de-filas-para-votar-no-exterior",
+      "source": "Metrópoles Política",
+      "date": "Hoje",
+      "categoria": "🏛️ Política"
+    },
+    {
+      "title": "Live Coverage: Starship Flight 15 attempts to recover full vehicle in double launch pad catch",
+      "desc": "Liftoff of the integrated Starship vehicle from Starbase in Texas is scheduled during a 75-minute launch window that opens at 4:45 p.m. CST (5:45 p.m. EST / 2245 UTC) on Friday, Nov. 13.",
+      "img": "https://spaceflightnow.com/wp-content/uploads/2026/11/20261113-Starship-wide.jpg",
+      "url": "https://spaceflightnow.com/2026/11/13/live-coverage-starship-flight-15-attempts-to-recover-full-vehicle-in-double-launch-pad-catch/",
+      "source": "SpaceTech",
+      "date": "2026-11-13",
+      "categoria": "Ciência"
+    },
+    {
+      "title": "Como esconder o Para você do TikTok no iPhone e continuar recebendo as mensagens (2026)",
+      "desc": "O iOS não deixa nenhum app mudar o app oficial do TikTok, então o jeito de tirar o feed Para você no...",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fa7uonb9yecre1eimevq2.png",
+      "url": "https://dev.to/ayumu_kitabayashi_8e0de96/como-esconder-o-para-voce-do-tiktok-no-iphone-e-continuar-recebendo-as-mensagens-2026-119h",
+      "source": "Dev.to Brasil",
+      "date": "Nov 8",
+      "categoria": "Tecnologia"
+    },
+    {
+      "title": "Raul Gil é internado e passa por procedimento cirúrgico em SP",
+      "desc": "Essa é a segunda internação de Raul este ano, em fevereiro ele deu entrada no hospital para a realização de alguns exames Essa é a segunda internação de Raul este ano, em fevereiro ele deu entrada no hospital para a realização...",
+      "img": "https://images.metroimg.com/2018/11/23153705/Screenshot_12115.jpg",
+      "url": "https://www.metropoles.com/colunas/leo-dias/raul-gil-e-internado-e-passa-por-procedimento-cirurgico-em-sp",
       "source": "Coluna Famosos",
       "date": "Hoje",
       "categoria": "⭐ Famosos"
     },
     {
-      "title": "Cortar antes de comprimir: por que vídeos longos do celular ficam melhores assim",
-      "desc": "Transparência: eu faço parte da equipe do CompressVid, um compressor de vídeo online. Os exemplos...",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F98e1zx1egdymn8wdg3u7.png",
-      "url": "https://dev.to/compressvid/cortar-antes-de-comprimir-por-que-videos-longos-do-celular-ficam-melhores-assim-b0a",
+      "title": "Atlético-GO vence Cuiabá e conquista última vaga nos playoffs da Série B",
+      "desc": "Atlético-GO vence o Cuiabá por 1 a 0, com gol de Terans, garante a última vaga nos playoffs da Série B e terá o Vila Nova pela frente na fase eliminatória.",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/SnapDownloader.App_902503168_18650804641034115_1255063336778189545_n.webp",
+      "url": "https://www.gazetaesportiva.com/times/atletico-go/atletico-go-vence-cuiaba-e-conquista-ultima-vaga-nos-playoffs-da-serie-b/",
+      "source": "Gazeta Esportiva",
+      "date": "Hoje",
+      "categoria": "⚽ Esportes"
+    },
+    {
+      "title": "Alternativas ao SocialLite para iPhone",
+      "desc": "A alternativa ao SocialLite mais parecida no iPhone é o minulo: como o SocialLite, ele oculta Reels e...",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fk2hvdruwugerp28q1b2m.png",
+      "url": "https://dev.to/ayumu_kitabayashi_8e0de96/alternativas-ao-sociallite-para-iphone-4o71",
       "source": "Dev.to Brasil",
-      "date": "Nov 11",
+      "date": "Nov 8",
       "categoria": "Tecnologia"
     },
     {
-      "title": "Japão x Brasil: veja galeria de fotos do amistoso em Singapura",
-      "desc": "Brasil e Japão se enfrentaram neste sábado (14), no Estádio Nacional de Singapura, em amistoso da última Data Fifa de 2026. A partida marcou o reencontro das seleções após o duelo na Copa do Mundo.",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/AFP__20261114__D7G97CQ__v1__HighRes__FblSinBraJpn.webp",
-      "url": "https://www.gazetaesportiva.com/times/brasil/japao-brasil-galeria-fotos-amistoso-singapura-2026/",
+      "title": "Avaí vence América-MG, mas é rebaixado à Série C do Brasileiro",
+      "desc": "Avaí vence o América-MG por 2 a 0 na última rodada da Série B, mas termina em 17º lugar e é rebaixado à terceira divisão.",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/55653041759_a1a192f37b_o.jpg-1-1-1.webp",
+      "url": "https://www.gazetaesportiva.com/campeonatos/brasileiro-serie-b/avai-vence-america-mg-mas-e-rebaixado-serie-c/",
+      "source": "Gazeta Esportiva",
+      "date": "Hoje",
+      "categoria": "⚽ Esportes"
+    },
+    {
+      "title": "Next Vega C Launch Edges Closer to Christmas Day as Satellites Arrive Late",
+      "desc": "Italian rocket manufacturer Avio has revealed that delays in the delivery of customer satellites have pushed the third Vega C launch of 2026 back toward Christmas, several weeks later than previously planned.",
+      "img": "https://europeanspaceflight.com/wp-content/uploads/2026/11/Next-Vega-C-Launch-Edges-Closer-to-Christmas-Day-as-Satellites-Arrive-Late.webp",
+      "url": "https://europeanspaceflight.com/next-vega-c-launch-edges-closer-to-christmas-day-as-satellites-arrive-late/",
+      "source": "SpaceTech",
+      "date": "2026-11-14",
+      "categoria": "Ciência"
+    },
+    {
+      "title": "Story Points Não São Horas: por que converter pontos em tempo destrói a Sprint Planning",
+      "desc": "Por que transformar story points em horas gera estimativas falsas e como a estimativa relativa em tempo real acelera entregas da squad.",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flmj56yebweo71l7qw7gb.png",
+      "url": "https://dev.to/geekecia/story-points-nao-sao-horas-por-que-converter-pontos-em-tempo-destroi-a-sprint-planning-3ghm",
+      "source": "Dev.to Brasil",
+      "date": "Nov 10",
+      "categoria": "Tecnologia"
+    },
+    {
+      "title": "Starship flight 15 powers to orbit—setting up a possible catch on Saturday",
+      "desc": "One way or another, the company will get some more data on Saturday.",
+      "img": "https://cdn.arstechnica.net/wp-content/uploads/2026/11/GettyImages-2305018954.jpg",
+      "url": "https://arstechnica.com/space/2026/11/starship-flight-15-powers-to-orbit-setting-up-a-possible-catch-on-saturday/",
+      "source": "SpaceTech",
+      "date": "2026-11-14",
+      "categoria": "Ciência"
+    },
+    {
+      "title": "Ceará empata com CRB e escapa do rebaixamento na última rodada da Série B",
+      "desc": "Ceará empata com o CRB por 1 a 1, fora de casa, e garante a permanência na Série B do Campeonato Brasileiro. Neste sábado, o Ceará empatou com o CRB por 1 a 1 , no Estádio Rei Pelé, em Maceió, pela última rodada da Série B do...",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/55653302415_2de3292a6d_o.webp",
+      "url": "https://www.gazetaesportiva.com/campeonatos/brasileiro-serie-b/ceara-empata-crb-garante-permanencia-serie-b/",
       "source": "Gazeta Esportiva",
       "date": "Hoje",
       "categoria": "⚽ Esportes"
@@ -132,8 +186,17 @@
       "categoria": "Tecnologia"
     },
     {
+      "title": "É hora de dizer até breve ao Metrópoles e partir para um novo desafio",
+      "desc": "Amanhã (1º/6), estreia o LeoDias.com. A missão é gigantesca, mas nunca foi meu tipo fugir dos desafios da vida Amanhã (1º/6), estreia o LeoDias.com.",
+      "img": "https://images.metroimg.com/2023/06/31214750/Design-sem-nome-2023-05-31T214746.841.jpg",
+      "url": "https://www.metropoles.com/colunas/leo-dias/e-hora-de-dizer-ate-breve-ao-metropoles-e-partir-para-um-novo-desafio",
+      "source": "Coluna Famosos",
+      "date": "Hoje",
+      "categoria": "⭐ Famosos"
+    },
+    {
       "title": "Starship IFT-15 is in Orbit — Will it be “Caught” When It Returns to Earth?",
-      "desc": "A SpaceX lançou o 15º teste de voo integrado de nave estelar (IFT-15) no início desta noite em Starbase, Texas. Planos para trazer o primeiro estágio Booster de volta à torre de lançamento para uma “pega” […]",
+      "desc": "SpaceX launched the 15th Starship Integrated Flight Test (IFT-15) early this evening from Starbase, Texas. Plans to bring the first stage Booster back to the launch tower for a “catch” […]",
       "img": "https://spacepolicyonline.com/wp-content/uploads/2026/11/IFT-15-before-launch-3-278x300.jpg",
       "url": "https://spacepolicyonline.com/news/starship-ift-15-is-in-orbit-will-it-be-caught-when-it-returns-to-earth/",
       "source": "SpaceTech",
@@ -141,13 +204,22 @@
       "categoria": "Ciência"
     },
     {
-      "title": "Raul Gil é internado e passa por procedimento cirúrgico em SP",
-      "desc": "Essa é a segunda internação de Raul este ano, em fevereiro ele deu entrada no hospital para a realização de alguns exames Essa é a segunda internação de Raul este ano, em fevereiro ele deu entrada no hospital para a realização de...",
-      "img": "https://images.metroimg.com/2018/11/23153705/Screenshot_12115.jpg",
-      "url": "https://www.metropoles.com/colunas/leo-dias/raul-gil-e-internado-e-passa-por-procedimento-cirurgico-em-sp",
-      "source": "Coluna Famosos",
+      "title": "PT prepara “festa do interior” para visita de Lula à Bahia",
+      "desc": "Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em última rodada pelo Nordeste antes do 1º turno Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em...",
+      "img": "https://images.metroimg.com/2026/01/lula-bahia.jpg",
+      "url": "https://www.metropoles.com/brasil/pt-prepara-festa-do-interior-para-visita-de-lula-a-bahia",
+      "source": "Metrópoles Política",
       "date": "Hoje",
-      "categoria": "⭐ Famosos"
+      "categoria": "🏛️ Política"
+    },
+    {
+      "title": "Cinco dos sete candidatos ao governo do Rio Grande do Sul já foram às urnas",
+      "desc": "Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das intenções de voto e Juliana Brizola, 35% Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das...",
+      "img": "https://images.metroimg.com/2026/07/rio-grande-do-sul.jpg",
+      "url": "https://www.metropoles.com/brasil/politica-brasil/cinco-dos-sete-candidatos-ao-governo-do-rio-grande-do-sul-ja-foram-as-urnas",
+      "source": "Metrópoles Política",
+      "date": "Hoje",
+      "categoria": "🏛️ Política"
     },
     {
       "title": "Filhos de Gugu divergem sobre união do pai com Rose Miriam",
@@ -159,60 +231,6 @@
       "categoria": "⭐ Famosos"
     },
     {
-      "title": "Como esconder o Para você do TikTok no iPhone e continuar recebendo as mensagens (2026)",
-      "desc": "O iOS não deixa nenhum app mudar o app oficial do TikTok, então o jeito de tirar o feed Para você no...",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fa7uonb9yecre1eimevq2.png",
-      "url": "https://dev.to/ayumu_kitabayashi_8e0de96/como-esconder-o-para-voce-do-tiktok-no-iphone-e-continuar-recebendo-as-mensagens-2026-119h",
-      "source": "Dev.to Brasil",
-      "date": "Nov 8",
-      "categoria": "Tecnologia"
-    },
-    {
-      "title": "Brasil busca empate, mas leva gol polêmico no fim e perde do Japão",
-      "desc": "A Seleção Brasileira perdeu por 3 a 2 para o Japão neste sábado (14), em Singapura. Após sair atrás por dois gols, a equipe de Carlo Ancelotti reagiu com dois golaços de Vinicius Júnior e chegou ao empate.",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/AFP__20261114__D7G87G3__v1__HighRes__FblSinBraJpn.webp",
-      "url": "https://www.gazetaesportiva.com/times/brasil/japao-brasil-3-2-vini-jr-amistoso-2026/",
-      "source": "Gazeta Esportiva",
-      "date": "Hoje",
-      "categoria": "⚽ Esportes"
-    },
-    {
-      "title": "Cobertura ao vivo: Starship Flight 15 tenta recuperar o veículo completo em captura dupla da plataforma de lançamento",
-      "desc": "A decolagem do veículo Starship integrado da Starbase no Texas está programada durante uma janela de lançamento de 75 minutos que abre às 16h45. CST (17h45 EST / 2245 UTC) na sexta-feira, 13 de novembro.",
-      "img": "https://spaceflightnow.com/wp-content/uploads/2026/11/20261113-Starship-wide.jpg",
-      "url": "https://spaceflightnow.com/2026/11/13/live-coverage-starship-flight-15-attempts-to-recover-full-vehicle-in-double-launch-pad-catch/",
-      "source": "SpaceTech",
-      "date": "2026-11-13",
-      "categoria": "Ciência"
-    },
-    {
-      "title": "Rayssa Leal é vice-campeã da SLS Tóquio 2026",
-      "desc": "Rayssa Leal conquistou o segundo lugar na etapa de Tóquio do SLS Championship Tour 2026. A brasileira somou 31,1 pontos e garantiu mais um pódio na temporada, atrás apenas da australiana Chloe Covell.",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/WhatsApp-Image-2026-11-14-at-09.23.49.webp",
-      "url": "https://www.gazetaesportiva.com/mais-esportes/rayssa-leal-e-vice-campea-da-sls-toquio-2026/",
-      "source": "Gazeta Esportiva",
-      "date": "Hoje",
-      "categoria": "⚽ Esportes"
-    },
-    {
-      "title": "Story Points Não São Horas: por que converter pontos em tempo destrói a Sprint Planning",
-      "desc": "Por que transformar story points em horas gera estimativas falsas e como a estimativa relativa em tempo real acelera entregas da squad.",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flmj56yebweo71l7qw7gb.png",
-      "url": "https://dev.to/geekecia/story-points-nao-sao-horas-por-que-converter-pontos-em-tempo-destroi-a-sprint-planning-3ghm",
-      "source": "Dev.to Brasil",
-      "date": "Nov 10",
-      "categoria": "Tecnologia"
-    },
-    {
-      "title": "Seu upscale em 4K ficou pior porque você escolheu o preset errado — e não porque 4K é ruim",
-      "desc": "Quase todo mundo que diz \"o upscale com IA piorou meu vídeo\" está certo sobre o sintoma e errado...",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fezomoulwn3jr52dxk186.png",
-      "url": "https://dev.to/celticgemini001/seu-upscale-em-4k-ficou-pior-porque-voce-escolheu-o-preset-errado-e-nao-porque-4k-e-ruim-mg2",
-      "source": "Dev.to Brasil",
-      "date": "Nov 13",
-      "categoria": "Tecnologia"
-    },
-    {
       "title": "João Gomes e Ary Mirelle curtem jantar romântico com Sthe Matos e Kevi Jonny",
       "desc": "O casal está em Barra de São Miguel acompanhados de Kevi Jonny e Sthe Matos O casal está em Barra de São Miguel acompanhados de Kevi Jonny e Sthe Matos Antes da maratona de shows do período junino, João Gomes e Ary Mirelle...",
       "img": "https://images.metroimg.com/2023/05/31185334/Design-sem-nome-2023-05-31T185325.578.jpg",
@@ -222,13 +240,13 @@
       "categoria": "⭐ Famosos"
     },
     {
-      "title": "Eleições 2026: brasileiros reclamam de filas para votar no exterior",
-      "desc": "A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado (24/10) A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado (24/10)...",
-      "img": "https://images.metroimg.com/2026/10/filavotacaoparis.jpg",
-      "url": "https://www.metropoles.com/brasil/eleicoes-2026-brasileiros-reclamam-de-filas-para-votar-no-exterior",
-      "source": "Metrópoles Política",
+      "title": "Goiás joga mal, perde para o Sport e fica fora dos playoffs da Série B",
+      "desc": "Sport vence o Goiás por 3 a 0, com gols de Barletta e Perotti, e deixa o Esmeraldino fora dos playoffs de acesso à Série A. As equipes terminaram a Série B com 58 pontos.",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/55653212555_010d20ebb5_k.webp",
+      "url": "https://www.gazetaesportiva.com/times/sport/goias-joga-mal-perde-para-o-sport-e-fica-fora-dos-playoffs-da-serie-b/",
+      "source": "Gazeta Esportiva",
       "date": "Hoje",
-      "categoria": "🏛️ Política"
+      "categoria": "⚽ Esportes"
     },
     {
       "title": "Como usar o Instagram só para o Direct no iPhone",
@@ -240,31 +258,13 @@
       "categoria": "Tecnologia"
     },
     {
-      "title": "Raphinha se desculpa por expulsão, mas detona arbitragem em derrota do Brasil",
-      "desc": "Raphinha pediu desculpas por sua expulsão, mas criticou duramente a arbitragem após a derrota do Brasil por 3 a 2 para o Japão, neste sábado.",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/AFP__20261114__D7G8863__v1__HighRes__FblSinBraJpn.webp",
-      "url": "https://www.gazetaesportiva.com/times/brasil/raphinha-expulsao-critica-arbitragem-brasil-japao/",
-      "source": "Gazeta Esportiva",
-      "date": "Hoje",
-      "categoria": "⚽ Esportes"
-    },
-    {
-      "title": "Próximo lançamento do Vega C está mais perto do dia de Natal, pois os satélites chegam atrasados",
-      "desc": "O fabricante italiano de foguetes Avio revelou que atrasos na entrega de satélites aos clientes adiaram o terceiro lançamento do Vega C de 2026 para o Natal, várias semanas depois do planejado anteriormente.",
-      "img": "https://europeanspaceflight.com/wp-content/uploads/2026/11/Next-Vega-C-Launch-Edges-Closer-to-Christmas-Day-as-Satellites-Arrive-Late.webp",
-      "url": "https://europeanspaceflight.com/next-vega-c-launch-edges-closer-to-christmas-day-as-satellites-arrive-late/",
-      "source": "SpaceTech",
-      "date": "2026-11-14",
-      "categoria": "Ciência"
-    },
-    {
-      "title": "O voo 15 da nave estelar entra em órbita – estabelecendo uma possível captura no sábado",
-      "desc": "De uma forma ou de outra, a empresa obterá mais alguns dados no sábado.",
-      "img": "https://cdn.arstechnica.net/wp-content/uploads/2026/11/GettyImages-2305018954.jpg",
-      "url": "https://arstechnica.com/space/2026/11/starship-flight-15-powers-to-orbit-setting-up-a-possible-catch-on-saturday/",
-      "source": "SpaceTech",
-      "date": "2026-11-14",
-      "categoria": "Ciência"
+      "title": "Cortar antes de comprimir: por que vídeos longos do celular ficam melhores assim",
+      "desc": "Transparência: eu faço parte da equipe do CompressVid, um compressor de vídeo online. Os exemplos...",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F98e1zx1egdymn8wdg3u7.png",
+      "url": "https://dev.to/compressvid/cortar-antes-de-comprimir-por-que-videos-longos-do-celular-ficam-melhores-assim-b0a",
+      "source": "Dev.to Brasil",
+      "date": "Nov 11",
+      "categoria": "Tecnologia"
     }
   ]
 }
