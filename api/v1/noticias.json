@@ -3,7 +3,7 @@
   "version": "10.4",
   "portal": "TechNews PRO",
   "documentation_and_source": "https://infoprodutos93-sys.github.io/technews-pro/",
-  "updated_at_brt": "2026-11-15T00:41:39-03:00",
+  "updated_at_brt": "2026-11-15T10:08:04-03:00",
   "market_rates": {
     "USD_BRL": 5.7,
     "EUR_BRL": 6.18,
@@ -42,199 +42,19 @@
   "total_articles": 25,
   "articles": [
     {
-      "title": "SpaceX pega uma nave estelar",
-      "desc": "O 15º teste de voo integrado de nave estelar (IFT-15) da SpaceX retornou hoje à Terra e foi “capturado” de volta na torre de lançamento após orbitar a Terra 14 vezes. É uma conquista marcante para o [...]",
-      "img": "https://spacepolicyonline.com/wp-content/uploads/2026/11/IFT-15-before-launch-3-278x300.jpg",
-      "url": "https://spacepolicyonline.com/news/spacex-catches-a-starship/",
-      "source": "SpaceTech",
-      "date": "2026-11-14",
-      "categoria": "Ciência"
-    },
-    {
-      "title": "Com dois de Bruno Duarte, Vasco vence a Chape e se afasta do Z4 do Brasileirão",
-      "desc": "Com gol de Bruno Duarte, o Vasco bateu a Chapecoense por 2 a 0 na Arena Condá, chegou aos 44 pontos e ganhou tranquilidade na reta final do Brasileirão.",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/HXIAMmpXEAAE4OA-1.webp",
-      "url": "https://www.gazetaesportiva.com/times/vasco/com-dois-de-bruno-duarte-vasco-vence-a-chape-e-se-afasta-do-z4-do-brasileirao/",
+      "title": "Gabigol vive melhor temporada desde os tempos de Flamengo e se aproxima de marca no Santos",
+      "desc": "Artilheiro do Santos em 2026, Gabigol soma 25 gols e 10 assistências e está perto de repetir sua melhor temporada com a camisa do Peixe.",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/55649000706_83d588df60_o-1.webp",
+      "url": "https://www.gazetaesportiva.com/times/santos/gabigol-vive-melhor-temporada-desde-os-tempos-de-flamengo-e-se-aproxima-de-marca-no-santos/",
       "source": "Gazeta Esportiva",
       "date": "Hoje",
       "categoria": "⚽ Esportes"
-    },
-    {
-      "title": "Cortar antes de comprimir: por que vídeos longos do celular ficam melhores assim",
-      "desc": "Transparência: eu faço parte da equipe do CompressVid, um compressor de vídeo online. Os exemplos...",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F98e1zx1egdymn8wdg3u7.png",
-      "url": "https://dev.to/compressvid/cortar-antes-de-comprimir-por-que-videos-longos-do-celular-ficam-melhores-assim-b0a",
-      "source": "Dev.to Brasil",
-      "date": "Nov 11",
-      "categoria": "Tecnologia"
-    },
-    {
-      "title": "Loide Augusto celebra retorno ao Vasco e explica gesto polêmico",
-      "desc": "Loide Augusto voltou a jogar pelo Vasco após passagem pelo futebol turco, deu assistência contra a Chapecoense e afirmou sentir alívio pelo retorno.",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/HXIPqF3XMAAhxhr-1.webp",
-      "url": "https://www.gazetaesportiva.com/times/vasco/loide-augusto-celebra-retorno-ao-vasco-e-explica-gesto-polemico/",
-      "source": "Gazeta Esportiva",
-      "date": "Hoje",
-      "categoria": "⚽ Esportes"
-    },
-    {
-      "title": "Eleições 2026: brasileiros reclamam de filas para votar no exterior",
-      "desc": "A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado (24/10) A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado...",
-      "img": "https://images.metroimg.com/2026/10/filavotacaoparis.jpg",
-      "url": "https://www.metropoles.com/brasil/eleicoes-2026-brasileiros-reclamam-de-filas-para-votar-no-exterior",
-      "source": "Metrópoles Política",
-      "date": "Hoje",
-      "categoria": "🏛️ Política"
-    },
-    {
-      "title": "EUA goleiam Haiti com show de Pulisic e encaminham vaga na Liga das Nações da Concacaf",
-      "desc": "Com dois gols de Christian Pulisic, os Estados Unidos venceram o Haiti por 6 a 0 e encaminharam a classificação às semifinais da Liga das Nações da Concacaf.",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/AFP__20261114__2305143454__v1__HighRes__HaitiVUnitedStatesConcacafNationsLeagueQuart.webp",
-      "url": "https://www.gazetaesportiva.com/times/estados-unidos/eua-goleiam-haiti-com-show-de-pulisic-e-encaminham-vaga-na-liga-das-nacoes-da-concacaf/",
-      "source": "Gazeta Esportiva",
-      "date": "Hoje",
-      "categoria": "⚽ Esportes"
-    },
-    {
-      "title": "Como esconder o Para você do TikTok no iPhone e continuar recebendo as mensagens (2026)",
-      "desc": "O iOS não deixa nenhum app mudar o app oficial do TikTok, então o jeito de tirar o feed Para você no...",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fa7uonb9yecre1eimevq2.png",
-      "url": "https://dev.to/ayumu_kitabayashi_8e0de96/como-esconder-o-para-voce-do-tiktok-no-iphone-e-continuar-recebendo-as-mensagens-2026-119h",
-      "source": "Dev.to Brasil",
-      "date": "Nov 8",
-      "categoria": "Tecnologia"
-    },
-    {
-      "title": "O voo 15 da nave estelar entra em órbita – estabelecendo uma possível captura no sábado",
-      "desc": "De uma forma ou de outra, a empresa obterá mais alguns dados no sábado.",
-      "img": "https://cdn.arstechnica.net/wp-content/uploads/2026/11/GettyImages-2305018954.jpg",
-      "url": "https://arstechnica.com/space/2026/11/starship-flight-15-powers-to-orbit-setting-up-a-possible-catch-on-saturday/",
-      "source": "SpaceTech",
-      "date": "2026-11-14",
-      "categoria": "Ciência"
-    },
-    {
-      "title": "Próximo lançamento do Vega C está mais perto do dia de Natal, pois os satélites chegam atrasados",
-      "desc": "O fabricante italiano de foguetes Avio revelou que atrasos na entrega de satélites de clientes adiaram o terceiro lançamento do Vega C de 2026 para o Natal, várias semanas depois do planejado anteriormente.",
-      "img": "https://europeanspaceflight.com/wp-content/uploads/2026/11/Next-Vega-C-Launch-Edges-Closer-to-Christmas-Day-as-Satellites-Arrive-Late.webp",
-      "url": "https://europeanspaceflight.com/next-vega-c-launch-edges-closer-to-christmas-day-as-satellites-arrive-late/",
-      "source": "SpaceTech",
-      "date": "2026-11-14",
-      "categoria": "Ciência"
-    },
-    {
-      "title": "Como usar o Instagram só para o Direct no iPhone",
-      "desc": "O iOS não deixa nenhum app mudar o app oficial do Instagram, então o jeito de usar o Instagram só...",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fpniimp23h3iqrgj608i7.png",
-      "url": "https://dev.to/ayumu_kitabayashi_8e0de96/como-usar-o-instagram-so-para-o-direct-no-iphone-b48",
-      "source": "Dev.to Brasil",
-      "date": "Nov 8",
-      "categoria": "Tecnologia"
-    },
-    {
-      "title": "Svitolina atropela Noskova e vai lutar, contra Andreeva, por seu 2º título do WTA Finals",
-      "desc": "Svitolina, sexta colocada no ranking mundial, precisou de apenas 65 minutos para derrotar Noskova (8ª) por 6-2 e 6-1 na quadra central de Indian Wells, na Califórnia.",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/AFP__20261114__2305142149__v1__HighRes__FageWtaFinalsIndianWells2026Day7.webp",
-      "url": "https://www.gazetaesportiva.com/mais-esportes/tenis/svitolina-atropela-noskova-e-vai-lutar-contra-andreeva-por-seu-2o-titulo-do-wta-finals/",
-      "source": "Gazeta Esportiva",
-      "date": "Hoje",
-      "categoria": "⚽ Esportes"
-    },
-    {
-      "title": "Story Points Não São Horas: por que converter pontos em tempo destrói a Sprint Planning",
-      "desc": "Por que transformar story points em horas gera estimativas falsas e como a estimativa relativa em tempo real acelera entregas da squad.",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flmj56yebweo71l7qw7gb.png",
-      "url": "https://dev.to/geekecia/story-points-nao-sao-horas-por-que-converter-pontos-em-tempo-destroi-a-sprint-planning-3ghm",
-      "source": "Dev.to Brasil",
-      "date": "Nov 10",
-      "categoria": "Tecnologia"
-    },
-    {
-      "title": "Jorge Jesus responde se sentiu falta de Cristiano Ronaldo após derrota de Portugal: “Ele já decidiu”",
-      "desc": "Jorge Jesus foi questionado se Portugal sentiu falta de Cristiano Ronaldo na goleada por 4 a 1 sofrida para a Dinamarca, neste sábado, em Braga, e minimizou a ausência do craque.",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/AFP__20261114__D7H44KQ__v1__HighRes__FblEurNationsPorDen.webp",
-      "url": "https://www.gazetaesportiva.com/times/portugal/jorge-jesus-ausencia-cristiano-ronaldo-derrota-portugal/",
-      "source": "Gazeta Esportiva",
-      "date": "Hoje",
-      "categoria": "⚽ Esportes"
-    },
-    {
-      "title": "Erika Hilton recebe ameaça de morte e atrasa ida às urnas por segurança",
-      "desc": "Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos A deputada federal e candidata à...",
-      "img": "https://images.metroimg.com/2026/07/sbt-lista-argumentos-para-derrubar-resposta-de-erika-hilton.jpg",
-      "url": "https://www.metropoles.com/brasil/politica-brasil/erika-hilton-recebe-ameaca-de-morte-e-atrasa-ida-as-urnas-por-seguranca",
-      "source": "Metrópoles Política",
-      "date": "Hoje",
-      "categoria": "🏛️ Política"
-    },
-    {
-      "title": "Raul Gil é internado e passa por procedimento cirúrgico em SP",
-      "desc": "Essa é a segunda internação de Raul este ano, em fevereiro ele deu entrada no hospital para a realização de alguns exames Essa é a segunda internação de Raul este ano, em fevereiro ele deu entrada no hospital para a realização de...",
-      "img": "https://images.metroimg.com/2018/11/23153705/Screenshot_12115.jpg",
-      "url": "https://www.metropoles.com/colunas/leo-dias/raul-gil-e-internado-e-passa-por-procedimento-cirurgico-em-sp",
-      "source": "Coluna Famosos",
-      "date": "Hoje",
-      "categoria": "⭐ Famosos"
-    },
-    {
-      "title": "É hora de dizer até breve ao Metrópoles e partir para um novo desafio",
-      "desc": "Amanhã (1º/6), estreia o LeoDias.com. A missão é gigantesca, mas nunca foi meu tipo fugir dos desafios da vida Amanhã (1º/6), estreia o LeoDias.com.",
-      "img": "https://images.metroimg.com/2023/06/31214750/Design-sem-nome-2023-05-31T214746.841.jpg",
-      "url": "https://www.metropoles.com/colunas/leo-dias/e-hora-de-dizer-ate-breve-ao-metropoles-e-partir-para-um-novo-desafio",
-      "source": "Coluna Famosos",
-      "date": "Hoje",
-      "categoria": "⭐ Famosos"
-    },
-    {
-      "title": "Alternativas ao SocialLite para iPhone",
-      "desc": "A alternativa ao SocialLite mais parecida no iPhone é o minulo: como o SocialLite, ele oculta Reels e...",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fk2hvdruwugerp28q1b2m.png",
-      "url": "https://dev.to/ayumu_kitabayashi_8e0de96/alternativas-ao-sociallite-para-iphone-4o71",
-      "source": "Dev.to Brasil",
-      "date": "Nov 8",
-      "categoria": "Tecnologia"
-    },
-    {
-      "title": "Com captura de Starship, SpaceX ainda mostra que pode deslumbrar o mundo",
-      "desc": "Foi como entrar no futuro.",
-      "img": "https://cdn.arstechnica.net/wp-content/uploads/2026/11/GettyImages-2304631389.jpg",
-      "url": "https://arstechnica.com/space/2026/11/with-starship-catch-spacex-still-shows-it-can-dazzle-the-world/",
-      "source": "SpaceTech",
-      "date": "2026-11-15",
-      "categoria": "Ciência"
     },
     {
       "title": "Na Bahia, Lula diz a aliados estar preocupado com crise no STF",
-      "desc": "O presidente Lula participou de carreata em Salvador nesta terça-feira junto aos candidatos do PT ao Senado e ao Governo do estado O presidente Lula participou de carreata em Salvador nesta terça-feira junto aos candidatos do PT...",
+      "desc": "O presidente Lula participou de carreata em Salvador nesta terça-feira junto aos candidatos do PT ao Senado e ao Governo do estado O presidente Lula participou de carreata em Salvador nesta terça-feira junto aos candidatos do...",
       "img": "https://images.metroimg.com/2026/09/foto-lula-salvaor-scaled.jpg",
       "url": "https://www.metropoles.com/brasil/na-bahia-lula-diz-a-aliados-estar-preocupado-com-crise-no-stf",
-      "source": "Metrópoles Política",
-      "date": "Hoje",
-      "categoria": "🏛️ Política"
-    },
-    {
-      "title": "Virginia elege vestido luxuoso para festa de Maria Alice. Saiba valor!",
-      "desc": "Além de ser um vestido repleto de detalhes sutis, a peça escolhida por Virginia segue a tendência do momento, o Whitecore Além de ser um vestido repleto de detalhes sutis, a peça escolhida por Virginia segue a tendência do...",
-      "img": "https://images.metroimg.com/2023/05/31152902/Design-sem-nome-2023-05-31T152810.884.jpg",
-      "url": "https://www.metropoles.com/colunas/leo-dias/virginia-elege-vestido-luxuoso-para-festa-de-maria-alice-saiba-valor",
-      "source": "Coluna Famosos",
-      "date": "Hoje",
-      "categoria": "⭐ Famosos"
-    },
-    {
-      "title": "Filhos de Gugu divergem sobre união do pai com Rose Miriam",
-      "desc": "Trechos do processo judicial mostram uma discussão entre os filhos do apresentador sobre o reconhecimento da união estável dos pais Trechos do processo judicial mostram uma discussão entre os filhos do apresentador sobre o...",
-      "img": "https://images.metroimg.com/2022/08/09094552/Gugu-capa-1.jpg",
-      "url": "https://www.metropoles.com/colunas/leo-dias/filhos-de-gugu-divergem-sobre-uniao-do-pai-com-rose-miriam",
-      "source": "Coluna Famosos",
-      "date": "Hoje",
-      "categoria": "⭐ Famosos"
-    },
-    {
-      "title": "Cinco dos sete candidatos ao governo do Rio Grande do Sul já foram às urnas",
-      "desc": "Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das intenções de voto e Juliana Brizola, 35% Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das...",
-      "img": "https://images.metroimg.com/2026/07/rio-grande-do-sul.jpg",
-      "url": "https://www.metropoles.com/brasil/politica-brasil/cinco-dos-sete-candidatos-ao-governo-do-rio-grande-do-sul-ja-foram-as-urnas",
       "source": "Metrópoles Política",
       "date": "Hoje",
       "categoria": "🏛️ Política"
@@ -249,12 +69,84 @@
       "categoria": "⭐ Famosos"
     },
     {
+      "title": "Alternativas ao SocialLite para iPhone",
+      "desc": "A alternativa ao SocialLite mais parecida no iPhone é o minulo: como o SocialLite, ele oculta Reels e...",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fk2hvdruwugerp28q1b2m.png",
+      "url": "https://dev.to/ayumu_kitabayashi_8e0de96/alternativas-ao-sociallite-para-iphone-4o71",
+      "source": "Dev.to Brasil",
+      "date": "Nov 8",
+      "categoria": "Tecnologia"
+    },
+    {
+      "title": "SpaceX pega uma nave estelar",
+      "desc": "O 15º teste de voo integrado de nave estelar (IFT-15) da SpaceX retornou hoje à Terra e foi “capturado” de volta na torre de lançamento após orbitar a Terra 14 vezes. É uma conquista marcante para o [...]",
+      "img": "https://spacepolicyonline.com/wp-content/uploads/2026/11/IFT-15-before-launch-3-278x300.jpg",
+      "url": "https://spacepolicyonline.com/news/spacex-catches-a-starship/",
+      "source": "SpaceTech",
+      "date": "2026-11-14",
+      "categoria": "Ciência"
+    },
+    {
+      "title": "Com captura de Starship, SpaceX ainda mostra que pode deslumbrar o mundo",
+      "desc": "Foi como entrar no futuro.",
+      "img": "https://cdn.arstechnica.net/wp-content/uploads/2026/11/GettyImages-2304631389.jpg",
+      "url": "https://arstechnica.com/space/2026/11/with-starship-catch-spacex-still-shows-it-can-dazzle-the-world/",
+      "source": "SpaceTech",
+      "date": "2026-11-15",
+      "categoria": "Ciência"
+    },
+    {
+      "title": "APOD: 2026 November 15 – Leonid Meteors Through Orion",
+      "desc": "APOD Science APOD APOD: 2026 15 de novembro –… Arquivo APOD de hoje Índice de envios Pesquisar Calendário RSS Educação Sobre Discutir APOD Astronomia Imagem do dia Descubra o cosmos!",
+      "img": "https://assets.science.nasa.gov/dynamicimage/assets/science/cds/apod/apod/2026/november/Leonids2022_Hongyang_2880.jpg",
+      "url": "https://science.nasa.gov/image-article/apod-2026-november-15-leonid-meteors-through-orion/",
+      "source": "SpaceTech",
+      "date": "2026-11-15",
+      "categoria": "Ciência"
+    },
+    {
+      "title": "Erika Hilton recebe ameaça de morte e atrasa ida às urnas por segurança",
+      "desc": "Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos A deputada federal e candidata à...",
+      "img": "https://images.metroimg.com/2026/07/sbt-lista-argumentos-para-derrubar-resposta-de-erika-hilton.jpg",
+      "url": "https://www.metropoles.com/brasil/politica-brasil/erika-hilton-recebe-ameaca-de-morte-e-atrasa-ida-as-urnas-por-seguranca",
+      "source": "Metrópoles Política",
+      "date": "Hoje",
+      "categoria": "🏛️ Política"
+    },
+    {
       "title": "Como manter um aplicativo Android WebView com apenas 21 KB (HTML5 Fullscreen e Smart TV)",
       "desc": "Quando pensamos em criar um ponto de acesso dedicado no Android para um catálogo web responsivo, a...",
       "img": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fydw5xqemkxij7iho9c6v.jpg",
       "url": "https://dev.to/noveflixapp/como-manter-um-aplicativo-android-webview-com-apenas-21-kb-html5-fullscreen-e-smart-tv-4oel",
       "source": "Dev.to Brasil",
       "date": "Nov 10",
+      "categoria": "Tecnologia"
+    },
+    {
+      "title": "Virginia elege vestido luxuoso para festa de Maria Alice. Saiba valor!",
+      "desc": "Além de ser um vestido repleto de detalhes sutis, a peça escolhida por Virginia segue a tendência do momento, o Whitecore Além de ser um vestido repleto de detalhes sutis, a peça escolhida por Virginia segue a tendência do...",
+      "img": "https://images.metroimg.com/2023/05/31152902/Design-sem-nome-2023-05-31T152810.884.jpg",
+      "url": "https://www.metropoles.com/colunas/leo-dias/virginia-elege-vestido-luxuoso-para-festa-de-maria-alice-saiba-valor",
+      "source": "Coluna Famosos",
+      "date": "Hoje",
+      "categoria": "⭐ Famosos"
+    },
+    {
+      "title": "Cinco dos sete candidatos ao governo do Rio Grande do Sul já foram às urnas",
+      "desc": "Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das intenções de voto e Juliana Brizola, 35% Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das...",
+      "img": "https://images.metroimg.com/2026/07/rio-grande-do-sul.jpg",
+      "url": "https://www.metropoles.com/brasil/politica-brasil/cinco-dos-sete-candidatos-ao-governo-do-rio-grande-do-sul-ja-foram-as-urnas",
+      "source": "Metrópoles Política",
+      "date": "Hoje",
+      "categoria": "🏛️ Política"
+    },
+    {
+      "title": "Como usar o Instagram só para o Direct no iPhone",
+      "desc": "O iOS não deixa nenhum app mudar o app oficial do Instagram, então o jeito de usar o Instagram só...",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fpniimp23h3iqrgj608i7.png",
+      "url": "https://dev.to/ayumu_kitabayashi_8e0de96/como-usar-o-instagram-so-para-o-direct-no-iphone-b48",
+      "source": "Dev.to Brasil",
+      "date": "Nov 8",
       "categoria": "Tecnologia"
     },
     {
@@ -265,6 +157,114 @@
       "source": "Metrópoles Política",
       "date": "Hoje",
       "categoria": "🏛️ Política"
+    },
+    {
+      "title": "Eleições 2026: brasileiros reclamam de filas para votar no exterior",
+      "desc": "A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado (24/10) A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado (24/10)...",
+      "img": "https://images.metroimg.com/2026/10/filavotacaoparis.jpg",
+      "url": "https://www.metropoles.com/brasil/eleicoes-2026-brasileiros-reclamam-de-filas-para-votar-no-exterior",
+      "source": "Metrópoles Política",
+      "date": "Hoje",
+      "categoria": "🏛️ Política"
+    },
+    {
+      "title": "Lucas Pinheiro Braathen vence primeiro slalom da temporada da Copa do Mundo",
+      "desc": "Lucas Pinheiro Braathen vence o primeiro slalom da temporada da Copa do Mundo de esqui alpino, em Levi, na Finlândia.",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/AFP__20261115__D7J36KP__v1__MidRes__SkiAlpineWorldMenSlalom.webp",
+      "url": "https://www.gazetaesportiva.com/mais-esportes/lucas-pinheiro-braathen-vence-slalom-copa-do-mundo/",
+      "source": "Gazeta Esportiva",
+      "date": "Hoje",
+      "categoria": "⚽ Esportes"
+    },
+    {
+      "title": "Story Points Não São Horas: por que converter pontos em tempo destrói a Sprint Planning",
+      "desc": "Por que transformar story points em horas gera estimativas falsas e como a estimativa relativa em tempo real acelera entregas da squad.",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flmj56yebweo71l7qw7gb.png",
+      "url": "https://dev.to/geekecia/story-points-nao-sao-horas-por-que-converter-pontos-em-tempo-destroi-a-sprint-planning-3ghm",
+      "source": "Dev.to Brasil",
+      "date": "Nov 10",
+      "categoria": "Tecnologia"
+    },
+    {
+      "title": "Próximo lançamento do Vega C está mais perto do dia de Natal, pois os satélites chegam atrasados",
+      "desc": "O fabricante italiano de foguetes Avio revelou que atrasos na entrega de satélites de clientes adiaram o terceiro lançamento do Vega C de 2026 para o Natal, várias semanas depois do planejado anteriormente.",
+      "img": "https://europeanspaceflight.com/wp-content/uploads/2026/11/Next-Vega-C-Launch-Edges-Closer-to-Christmas-Day-as-Satellites-Arrive-Late.webp",
+      "url": "https://europeanspaceflight.com/next-vega-c-launch-edges-closer-to-christmas-day-as-satellites-arrive-late/",
+      "source": "SpaceTech",
+      "date": "2026-11-14",
+      "categoria": "Ciência"
+    },
+    {
+      "title": "Palmeiras e Flamengo terão confronto direto e adversários em comum na reta final do Brasileirão",
+      "desc": "Palmeiras e Flamengo disputam o título do Campeonato Brasileiro a quatro rodadas do fim. Com 76 pontos, o Rubro-Negro tem três de vantagem sobre o Verdão, que ainda terá um confronto direto contra o rival.",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/palfla.webp",
+      "url": "https://www.gazetaesportiva.com/times/palmeiras/palmeiras-e-flamengo-terao-confronto-direto-e-adversarios-em-comum-na-reta-final-do-brasileirao/",
+      "source": "Gazeta Esportiva",
+      "date": "Hoje",
+      "categoria": "⚽ Esportes"
+    },
+    {
+      "title": "Raul Gil é internado e passa por procedimento cirúrgico em SP",
+      "desc": "Essa é a segunda internação de Raul este ano, em fevereiro ele deu entrada no hospital para a realização de alguns exames Essa é a segunda internação de Raul este ano, em fevereiro ele deu entrada no hospital para a realização de...",
+      "img": "https://images.metroimg.com/2018/11/23153705/Screenshot_12115.jpg",
+      "url": "https://www.metropoles.com/colunas/leo-dias/raul-gil-e-internado-e-passa-por-procedimento-cirurgico-em-sp",
+      "source": "Coluna Famosos",
+      "date": "Hoje",
+      "categoria": "⭐ Famosos"
+    },
+    {
+      "title": "Pedrinho é reeleito presidente do Vasco até 2029",
+      "desc": "Pedrinho vence eleição com ampla vantagem e seguirá na presidência do Vasco associativo durante o triênio 2027-2029. Pedrinho seguirá à frente do Vasco associativo até 2029.",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/10/54140149321-051ef50d34-h.jpg.avif",
+      "url": "https://www.gazetaesportiva.com/times/vasco/pedrinho-reeleito-presidente-vasco-2029/",
+      "source": "Gazeta Esportiva",
+      "date": "Hoje",
+      "categoria": "⚽ Esportes"
+    },
+    {
+      "title": "É hora de dizer até breve ao Metrópoles e partir para um novo desafio",
+      "desc": "Amanhã (1º/6), estreia o LeoDias.com. A missão é gigantesca, mas nunca foi meu tipo fugir dos desafios da vida Amanhã (1º/6), estreia o LeoDias.com.",
+      "img": "https://images.metroimg.com/2023/06/31214750/Design-sem-nome-2023-05-31T214746.841.jpg",
+      "url": "https://www.metropoles.com/colunas/leo-dias/e-hora-de-dizer-ate-breve-ao-metropoles-e-partir-para-um-novo-desafio",
+      "source": "Coluna Famosos",
+      "date": "Hoje",
+      "categoria": "⭐ Famosos"
+    },
+    {
+      "title": "Cortar antes de comprimir: por que vídeos longos do celular ficam melhores assim",
+      "desc": "Transparência: eu faço parte da equipe do CompressVid, um compressor de vídeo online. Os exemplos...",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F98e1zx1egdymn8wdg3u7.png",
+      "url": "https://dev.to/compressvid/cortar-antes-de-comprimir-por-que-videos-longos-do-celular-ficam-melhores-assim-b0a",
+      "source": "Dev.to Brasil",
+      "date": "Nov 11",
+      "categoria": "Tecnologia"
+    },
+    {
+      "title": "Bruno Guimarães prevê mais oscilações e pede paciência com a Seleção de Ancelotti",
+      "desc": "Bruno Guimarães pediu paciência com a Seleção Brasileira após a derrota por 3 a 2 para o Japão, neste sábado, em Singapura.",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/AFP__20261114__D7G8863__v1__HighRes__FblSinBraJpn.webp",
+      "url": "https://www.gazetaesportiva.com/times/brasil/bruno-guimaraes-oscilacoes-paciencia-selecao-ancelotti/",
+      "source": "Gazeta Esportiva",
+      "date": "Hoje",
+      "categoria": "⚽ Esportes"
+    },
+    {
+      "title": "Filhos de Gugu divergem sobre união do pai com Rose Miriam",
+      "desc": "Trechos do processo judicial mostram uma discussão entre os filhos do apresentador sobre o reconhecimento da união estável dos pais Trechos do processo judicial mostram uma discussão entre os filhos do apresentador sobre o...",
+      "img": "https://images.metroimg.com/2022/08/09094552/Gugu-capa-1.jpg",
+      "url": "https://www.metropoles.com/colunas/leo-dias/filhos-de-gugu-divergem-sobre-uniao-do-pai-com-rose-miriam",
+      "source": "Coluna Famosos",
+      "date": "Hoje",
+      "categoria": "⭐ Famosos"
+    },
+    {
+      "title": "Como esconder o Para você do TikTok no iPhone e continuar recebendo as mensagens (2026)",
+      "desc": "O iOS não deixa nenhum app mudar o app oficial do TikTok, então o jeito de tirar o feed Para você no...",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fa7uonb9yecre1eimevq2.png",
+      "url": "https://dev.to/ayumu_kitabayashi_8e0de96/como-esconder-o-para-voce-do-tiktok-no-iphone-e-continuar-recebendo-as-mensagens-2026-119h",
+      "source": "Dev.to Brasil",
+      "date": "Nov 8",
+      "categoria": "Tecnologia"
     }
   ]
 }
