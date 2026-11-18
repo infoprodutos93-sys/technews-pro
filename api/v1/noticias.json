@@ -3,7 +3,7 @@
   "version": "10.4",
   "portal": "TechNews PRO",
   "documentation_and_source": "https://infoprodutos93-sys.github.io/technews-pro/",
-  "updated_at_brt": "2026-11-18T11:45:49-03:00",
+  "updated_at_brt": "2026-11-18T20:41:54-03:00",
   "market_rates": {
     "USD_BRL": 5.7,
     "EUR_BRL": 6.18,
@@ -42,121 +42,22 @@
   "total_articles": 30,
   "articles": [
     {
-      "title": "Espaço Juventude: estão abertas as inscrições para programação especial na conferência do IBGE",
-      "desc": "Para marcar a presença do Rio Grande do Norte nesse debate global, a Subsecretaria de Juventude do Estado do Rio Grande do Norte (SEJUV) promoverá o seminário “Juventudes no Centro”, e o Centro de Acesso a Direitos e Inclusão...",
-      "img": "https://agenciadenoticias.ibge.gov.br/images/agenciadenoticias/ibge/2026_11/museu-da-rampa-rn.jpeg",
-      "url": "http://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/48654-espaco-juventude-estao-abertas-as-inscricoes-para-programacao-especial-na-conferencia-do-ibge.html",
-      "source": "IBGE Oficial",
-      "date": "17/11/2026",
-      "categoria": "Finanças"
-    },
-    {
-      "title": "Na Bahia, Lula diz a aliados estar preocupado com crise no STF",
-      "desc": "O presidente Lula participou de carreata em Salvador nesta terça-feira junto aos candidatos do PT ao Senado e ao Governo do estado O presidente Lula participou de carreata em Salvador nesta terça-feira junto aos candidatos do...",
-      "img": "https://images.metroimg.com/2026/09/foto-lula-salvaor-scaled.jpg",
-      "url": "https://www.metropoles.com/brasil/na-bahia-lula-diz-a-aliados-estar-preocupado-com-crise-no-stf",
-      "source": "Metrópoles Política",
-      "date": "Hoje",
-      "categoria": "🏛️ Política"
-    },
-    {
-      "title": "Cortar antes de comprimir: por que vídeos longos do celular ficam melhores assim",
-      "desc": "Transparência: eu faço parte da equipe do CompressVid, um compressor de vídeo online. Os exemplos...",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F98e1zx1egdymn8wdg3u7.png",
-      "url": "https://dev.to/compressvid/cortar-antes-de-comprimir-por-que-videos-longos-do-celular-ficam-melhores-assim-b0a",
-      "source": "Dev.to Brasil",
-      "date": "Nov 11",
-      "categoria": "Tecnologia"
-    },
-    {
-      "title": "Eleições 2026: brasileiros reclamam de filas para votar no exterior",
-      "desc": "A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado (24/10) A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado...",
-      "img": "https://images.metroimg.com/2026/10/filavotacaoparis.jpg",
-      "url": "https://www.metropoles.com/brasil/eleicoes-2026-brasileiros-reclamam-de-filas-para-votar-no-exterior",
-      "source": "Metrópoles Política",
-      "date": "Hoje",
-      "categoria": "🏛️ Política"
-    },
-    {
-      "title": "É hora de dizer até breve ao Metrópoles e partir para um novo desafio",
-      "desc": "Amanhã (1º/6), estreia o LeoDias.com. A missão é gigantesca, mas nunca foi meu tipo fugir dos desafios da vida Amanhã (1º/6), estreia o LeoDias.com.",
-      "img": "https://images.metroimg.com/2023/06/31214750/Design-sem-nome-2023-05-31T214746.841.jpg",
-      "url": "https://www.metropoles.com/colunas/leo-dias/e-hora-de-dizer-ate-breve-ao-metropoles-e-partir-para-um-novo-desafio",
-      "source": "Coluna Famosos",
-      "date": "Hoje",
-      "categoria": "⭐ Famosos"
-    },
-    {
-      "title": "PLD Space Investor seleciona MIURA 5 para lançar missão de demonstração",
-      "desc": "A fabricante japonesa de satélites Mitsubishi Electric assinou um contrato com a construtora espanhola de foguetes PLD Space para lançar um pequeno satélite a bordo do segundo voo de teste MIURA 5 da empresa.",
-      "img": "https://europeanspaceflight.com/wp-content/uploads/2026/11/PLD-Space-Investor-Selects-MIURA-5-to-Launch-Demo-Mission.webp",
-      "url": "https://europeanspaceflight.com/pld-space-investor-selects-miura-5-to-launch-demo-mission/",
+      "title": "Vulcan failure investigation focuses on ‘inadequate fuel supply’ to booster engines",
+      "desc": "A United Launch Alliance disse na quarta-feira que uma revisão preliminar dos dados de voo aponta para um fornecimento inadequado de combustível para os motores de seu foguete Vulcan fabricados pela Blue Origin, em vez de um...",
+      "img": "https://spaceflightnow.com/wp-content/uploads/2026/11/20261118-Vulcan-Wide.jpg",
+      "url": "https://spaceflightnow.com/2026/11/18/vulcan-failure-investigation-focuses-on-inadequate-fuel-supply-to-booster-engines/",
       "source": "SpaceTech",
       "date": "2026-11-18",
       "categoria": "Ciência"
     },
     {
-      "title": "Desigualdade racial ainda marca acesso a emprego, educação, segurança e saneamento",
-      "desc": "Segundo a pesquisa, 33,4% das pessoas ocupadas brancas estavam em ocupações informais, entre as pretas esse percentual atingiu 42,6% e, entre as pardas, 45,4% em 2025 - Foto: Agência IBGE Notícias Trabalho e renda, educação...",
-      "img": "https://agenciadenoticias.ibge.gov.br/images/agenciadenoticias/estatisticas_economicas/2026_11/Desigualdades_foto_AgIBGE.jpg",
-      "url": "http://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/48656-desigualdade-racial-ainda-marca-acesso-a-emprego-educacao-seguranca-e-saneamento.html",
-      "source": "IBGE Oficial",
-      "date": "18/11/2026",
-      "categoria": "Finanças"
-    },
-    {
-      "title": "Corinthians inicia venda de ingressos para final do Paulista Sub-20 contra o Palmeiras",
-      "desc": "Corinthians inicia venda de ingressos para final do Paulista Sub-20 contra o Palmeiras O Corinthians iniciou nesta quarta-feira a venda de ingressos para o clássico contra o Palmeiras , pela partida de ida da final do...",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/03/HDob3xSXQAA5fK5.webp",
-      "url": "https://www.gazetaesportiva.com/times/corinthians/corinthians-inicia-venda-de-ingressos-para-final-do-paulista-sub-20-contra-o-palmeiras/",
+      "title": "Corinthians terá Memphis como titular contra o Botafogo; veja escalações",
+      "desc": "Corinthians terá Memphis titular contra o Botafogo; veja escalações O Corinthians está escalado para o duelo decisivo contra o Botafogo , nesta quarta-feira, pela 35ª rodada do Campeonato Brasileiro .",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/HXcLxUQWEAA8PdH.webp",
+      "url": "https://www.gazetaesportiva.com/times/corinthians/corinthians-escalacao-memphis-titular-botafogo-brasileirao/",
       "source": "Gazeta Esportiva",
       "date": "Hoje",
       "categoria": "⚽ Esportes"
-    },
-    {
-      "title": "PNAD Contínua Trimestral: desocupação cai em 8 das 27 UFs no 3° trimestre de 2026",
-      "desc": "A taxa de desocupação do país no terceiro trimestre de 2026 foi de 5,2%, redução de 0,2 ponto percentual em comparação com o 2º trimestre de 2026 (5,4%) e recuo de 0,4 ponto percentual frente ao 3º trimestre de 2025 (5,6%).",
-      "img": "https://agenciadenoticias.ibge.gov.br/images/agenciadenoticias/releases/PNAD_Tri_Release.png",
-      "url": "http://agenciadenoticias.ibge.gov.br/agencia-sala-de-imprensa/2013-agencia-de-noticias/releases/48657-pnad-continua-trimestral-desocupacao-cai-em-8-das-27-ufs-no-3-trimestre-de-2026.html",
-      "source": "IBGE Oficial",
-      "date": "18/11/2026",
-      "categoria": "Finanças"
-    },
-    {
-      "title": "Há 66 anos, Éder Jofre era campeão mundial dos pesos galos; veja fotos da vida e carreira do ex-boxeador",
-      "desc": "Há 66 anos, Éder Jofre era campeão mundial dos pesos galos; veja fotos da vida e carreira do ex-boxeador",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/00149184-214x360-1.webp",
-      "url": "https://www.gazetaesportiva.com/todas-as-noticias/ha-66-anos-eder-jofre-era-campeao-mundial-dos-pesos-galos-veja-fotos-da-vida-e-carreira-do-ex-boxeador/",
-      "source": "Gazeta Esportiva",
-      "date": "Hoje",
-      "categoria": "⚽ Esportes"
-    },
-    {
-      "title": "Filhos de Gugu divergem sobre união do pai com Rose Miriam",
-      "desc": "Trechos do processo judicial mostram uma discussão entre os filhos do apresentador sobre o reconhecimento da união estável dos pais Trechos do processo judicial mostram uma discussão entre os filhos do apresentador sobre o...",
-      "img": "https://images.metroimg.com/2022/08/09094552/Gugu-capa-1.jpg",
-      "url": "https://www.metropoles.com/colunas/leo-dias/filhos-de-gugu-divergem-sobre-uniao-do-pai-com-rose-miriam",
-      "source": "Coluna Famosos",
-      "date": "Hoje",
-      "categoria": "⭐ Famosos"
-    },
-    {
-      "title": "APOD: 2026 November 18 – An M-class Solar Flare",
-      "desc": "APOD Science APOD APOD: 2026 18 de novembro – An… Arquivo APOD de hoje Índice de envios Pesquisar Calendário RSS Educação Sobre Discutir APOD Astronomia Imagem do dia Descubra o cosmos!",
-      "img": "https://assets.science.nasa.gov/dynamicimage/assets/science/cds/apod/apod/2026/november/solar_M_flare.jpg",
-      "url": "https://science.nasa.gov/image-article/apod-2026-november-18-an-m-class-solar-flare/",
-      "source": "SpaceTech",
-      "date": "2026-11-18",
-      "categoria": "Ciência"
-    },
-    {
-      "title": "Erika Hilton recebe ameaça de morte e atrasa ida às urnas por segurança",
-      "desc": "Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos A deputada federal e candidata à...",
-      "img": "https://images.metroimg.com/2026/07/sbt-lista-argumentos-para-derrubar-resposta-de-erika-hilton.jpg",
-      "url": "https://www.metropoles.com/brasil/politica-brasil/erika-hilton-recebe-ameaca-de-morte-e-atrasa-ida-as-urnas-por-seguranca",
-      "source": "Metrópoles Política",
-      "date": "Hoje",
-      "categoria": "🏛️ Política"
     },
     {
       "title": "PT prepara “festa do interior” para visita de Lula à Bahia",
@@ -168,33 +69,6 @@
       "categoria": "🏛️ Política"
     },
     {
-      "title": "Raul Gil é internado e passa por procedimento cirúrgico em SP",
-      "desc": "Essa é a segunda internação de Raul este ano, em fevereiro ele deu entrada no hospital para a realização de alguns exames Essa é a segunda internação de Raul este ano, em fevereiro ele deu entrada no hospital para a realização de...",
-      "img": "https://images.metroimg.com/2018/11/23153705/Screenshot_12115.jpg",
-      "url": "https://www.metropoles.com/colunas/leo-dias/raul-gil-e-internado-e-passa-por-procedimento-cirurgico-em-sp",
-      "source": "Coluna Famosos",
-      "date": "Hoje",
-      "categoria": "⭐ Famosos"
-    },
-    {
-      "title": "Cinco dos sete candidatos ao governo do Rio Grande do Sul já foram às urnas",
-      "desc": "Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das intenções de voto e Juliana Brizola, 35% Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das...",
-      "img": "https://images.metroimg.com/2026/07/rio-grande-do-sul.jpg",
-      "url": "https://www.metropoles.com/brasil/politica-brasil/cinco-dos-sete-candidatos-ao-governo-do-rio-grande-do-sul-ja-foram-as-urnas",
-      "source": "Metrópoles Política",
-      "date": "Hoje",
-      "categoria": "🏛️ Política"
-    },
-    {
-      "title": "Story Points Não São Horas: por que converter pontos em tempo destrói a Sprint Planning",
-      "desc": "Por que transformar story points em horas gera estimativas falsas e como a estimativa relativa em tempo real acelera entregas da squad.",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flmj56yebweo71l7qw7gb.png",
-      "url": "https://dev.to/geekecia/story-points-nao-sao-horas-por-que-converter-pontos-em-tempo-destroi-a-sprint-planning-3ghm",
-      "source": "Dev.to Brasil",
-      "date": "Nov 10",
-      "categoria": "Tecnologia"
-    },
-    {
       "title": "IBGE recebe homenagem pelos seus 90 anos na Assembleia Legislativa da Bahia",
       "desc": "A Assembleia Legislativa da Bahia (ALBA) realizou, nesta segunda-feira (16), uma sessão especial em homenagem aos 90 anos do Instituto Brasileiro de Geografia e Estatística (IBGE), celebrados em 29 de maio.",
       "img": "https://agenciadenoticias.ibge.gov.br/images/agenciadenoticias/ibge/2026_11/bahia1.jpg",
@@ -204,64 +78,28 @@
       "categoria": "Finanças"
     },
     {
-      "title": "Goleiros de Palmeiras, Corinthians e Santos aparecem entre os 100 mais valiosos do mundo",
-      "desc": "Oito goleiros brasileiros aparecem entre os 100 mais valiosos do mundo; veja Os goleiros Carlos Miguel , do Palmeiras, Hugo Souza , do Corinthians, e Gabriel Brazão , do Santos, estão entre os 100 arqueiros mais valiosos do mundo...",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/pal2.webp",
-      "url": "https://www.gazetaesportiva.com/times/palmeiras/goleiros-de-palmeiras-corinthians-e-santos-aparecem-entre-os-100-mais-valiosos-do-mundo/",
+      "title": "Veja fotos do último treino do São Paulo antes de enfrentar o Fluminense",
+      "desc": "Confira todos os bastidores e detalhes atualizados na matéria completa.",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/img_9222-jpg-768x960-1.webp",
+      "url": "https://www.gazetaesportiva.com/times/sao-paulo/veja-fotos-do-ultimo-treino-do-sao-paulo-antes-de-enfrentar-o-fluminense-2/",
       "source": "Gazeta Esportiva",
       "date": "Hoje",
       "categoria": "⚽ Esportes"
     },
     {
-      "title": "CAGR vs. Média Simples em Código: Por Que a Média Aritmética Superestima o Retorno Real",
-      "desc": "Um dos erros conceituais mais frequentes em relatórios financeiros e scripts de análise de...",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fe0k8jw0gxj108vab6idi.png",
-      "url": "https://dev.to/miri-calc/cagr-vs-media-simples-em-codigo-por-que-a-media-aritmetica-superestima-o-retorno-real-18m5",
-      "source": "Dev.to Brasil",
-      "date": "Nov 15",
-      "categoria": "Tecnologia"
-    },
-    {
-      "title": "Virginia elege vestido luxuoso para festa de Maria Alice. Saiba valor!",
-      "desc": "Além de ser um vestido repleto de detalhes sutis, a peça escolhida por Virginia segue a tendência do momento, o Whitecore Além de ser um vestido repleto de detalhes sutis, a peça escolhida por Virginia segue a tendência do...",
-      "img": "https://images.metroimg.com/2023/05/31152902/Design-sem-nome-2023-05-31T152810.884.jpg",
-      "url": "https://www.metropoles.com/colunas/leo-dias/virginia-elege-vestido-luxuoso-para-festa-de-maria-alice-saiba-valor",
-      "source": "Coluna Famosos",
+      "title": "Na Bahia, Lula diz a aliados estar preocupado com crise no STF",
+      "desc": "O presidente Lula participou de carreata em Salvador nesta terça-feira junto aos candidatos do PT ao Senado e ao Governo do estado O presidente Lula participou de carreata em Salvador nesta terça-feira junto aos candidatos do...",
+      "img": "https://images.metroimg.com/2026/09/foto-lula-salvaor-scaled.jpg",
+      "url": "https://www.metropoles.com/brasil/na-bahia-lula-diz-a-aliados-estar-preocupado-com-crise-no-stf",
+      "source": "Metrópoles Política",
       "date": "Hoje",
-      "categoria": "⭐ Famosos"
+      "categoria": "🏛️ Política"
     },
     {
-      "title": "Sierra Snow Season Spins Up",
-      "desc": "A widespread, early-season snowstorm blanketed California’s mountains in white in mid-November 2026.",
-      "img": "https://assets.science.nasa.gov/dynamicimage/assets/science/esd/eo/images/iotd/2026/sierra-snow-season-spins-up/sierranevada_tmo_20261112.jpg",
-      "url": "https://science.nasa.gov/earth/earth-observatory/sierra-snow-season-spins-up/",
-      "source": "SpaceTech",
-      "date": "2026-11-18",
-      "categoria": "Ciência"
-    },
-    {
-      "title": "Santos anuncia retorno da CSU Digital como patrocinadora para reta final do Brasileirão",
-      "desc": "Santos anuncia retorno de patrocinadora para reta final do Brasileiro O Santos anunciou, nesta quarta-feira, a CSU Digital como sua nova patrocinadora.",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/55618565231_85dd048454_3k.webp",
-      "url": "https://www.gazetaesportiva.com/times/santos/santos-anuncia-csu-digital-patrocinadora/",
-      "source": "Gazeta Esportiva",
-      "date": "Hoje",
-      "categoria": "⚽ Esportes"
-    },
-    {
-      "title": "Refinamento de Backlog: o guia prático para nunca mais passar de 30 minutos na Sprint Planning",
-      "desc": "Como um refinamento eficiente e ferramentas de estimativa sem atrito reduzem a duração da Sprint Planning para menos de 30 minutos.",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fikqgfn0806ms0tfewlhc.png",
-      "url": "https://dev.to/geekecia/refinamento-de-backlog-o-guia-pratico-para-nunca-mais-passar-de-30-minutos-na-sprint-planning-1093",
-      "source": "Dev.to Brasil",
-      "date": "Nov 16",
-      "categoria": "Tecnologia"
-    },
-    {
-      "title": "Melhores momentos: G3X FC 2 x 5 Capim FC pela Kings League Brasil",
-      "desc": "Melhores momentos: G3X FC 2 x 5 Capim FC pela Kings League Brasil Melhores momentos: G3X FC 2 x 5 Capim FC pela Kings League Brasil",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/G3.webp",
-      "url": "https://www.gazetaesportiva.com/todas-as-noticias/melhores-momentos-g3x-fc-2-x-5-capim-fc-pela-kings-league-brasil-2/",
+      "title": "Palmeiras revela “inflamações persistentes” em Paulinho e não dá data para retorno",
+      "desc": "Palmeiras revela \"inflamações persistentes\" em Paulinho e não dá data para retorno O Palmeiras atualizou nesta quarta-feira o quadro clínico de Paulinho , que vem desfalcando a equipe comandada por Abel Ferreira há quase um mês...",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/21102026_cg_palmeiras_7047_86.avif",
+      "url": "https://www.gazetaesportiva.com/times/palmeiras/paulinho-palmeiras-recuperacao-lesao/",
       "source": "Gazeta Esportiva",
       "date": "Hoje",
       "categoria": "⚽ Esportes"
@@ -276,6 +114,159 @@
       "categoria": "⭐ Famosos"
     },
     {
+      "title": "Flexell Space e ALATYR assinam memorando de entendimento para explorar soluções de energia solar para data centers orbitais",
+      "desc": "– Colaboração para avaliar células solares ultraleves de próxima geração para infraestrutura de computação baseada no espaço – Parceria reúne tecnologia de energia espacial coreana e experiência francesa em infraestrutura orbital...",
+      "img": "https://i0.wp.com/spacenews.com/wp-content/uploads/2026/10/LOGO_FLEXELLBlack.png?fit=1024%2C1024&ssl=1",
+      "url": "https://spacenews.com/flexell-space-and-alatyr-sign-mou-to-explore-solar-power-solutions-for-orbital-data-centers/",
+      "source": "SpaceTech",
+      "date": "2026-11-18",
+      "categoria": "Ciência"
+    },
+    {
+      "title": "Virginia elege vestido luxuoso para festa de Maria Alice. Saiba valor!",
+      "desc": "Além de ser um vestido repleto de detalhes sutis, a peça escolhida por Virginia segue a tendência do momento, o Whitecore Além de ser um vestido repleto de detalhes sutis, a peça escolhida por Virginia segue a tendência do...",
+      "img": "https://images.metroimg.com/2023/05/31152902/Design-sem-nome-2023-05-31T152810.884.jpg",
+      "url": "https://www.metropoles.com/colunas/leo-dias/virginia-elege-vestido-luxuoso-para-festa-de-maria-alice-saiba-valor",
+      "source": "Coluna Famosos",
+      "date": "Hoje",
+      "categoria": "⭐ Famosos"
+    },
+    {
+      "title": "NASA define cobertura para lançamento e pré-lançamento do Northrop Grumman CRS-25",
+      "desc": "NASA, Northrop Grumman e SpaceX têm como meta o próximo lançamento, não antes das 10h47 EST, domingo, 29 de novembro, para o próximo lançamento, entregando investigações científicas, suprimentos e equipamentos para a Estação...",
+      "img": "https://www.nasa.gov/wp-content/uploads/2026/11/ksc-20260411-ph-nrg01-0009large.jpg",
+      "url": "https://www.nasa.gov/news-release/nasa-sets-coverage-for-northrop-grumman-crs-25-launch-prelaunch/",
+      "source": "SpaceTech",
+      "date": "2026-11-18",
+      "categoria": "Ciência"
+    },
+    {
+      "title": "Eleições 2026: brasileiros reclamam de filas para votar no exterior",
+      "desc": "A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado (24/10) A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado (24/10)...",
+      "img": "https://images.metroimg.com/2026/10/filavotacaoparis.jpg",
+      "url": "https://www.metropoles.com/brasil/eleicoes-2026-brasileiros-reclamam-de-filas-para-votar-no-exterior",
+      "source": "Metrópoles Política",
+      "date": "Hoje",
+      "categoria": "🏛️ Política"
+    },
+    {
+      "title": "Story Points Não São Horas: por que converter pontos em tempo destrói a Sprint Planning",
+      "desc": "Por que transformar story points em horas gera estimativas falsas e como a estimativa relativa em tempo real acelera entregas da squad.",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flmj56yebweo71l7qw7gb.png",
+      "url": "https://dev.to/geekecia/story-points-nao-sao-horas-por-que-converter-pontos-em-tempo-destroi-a-sprint-planning-3ghm",
+      "source": "Dev.to Brasil",
+      "date": "Nov 10",
+      "categoria": "Tecnologia"
+    },
+    {
+      "title": "Voyager 1 atinge um dia-luz quase 50 anos após o lançamento",
+      "desc": "Às 5h16h07 EST (10h16 UTC) do dia 18 de novembro e a uma distância de 26… A postagem Voyager 1 atinge um dia-luz quase 50 anos após o lançamento apareceu pela primeira vez em NASASpaceFlight.com.",
+      "img": "https://www.nasaspaceflight.com/wp-content/uploads/2024/12/voyager-scaled.jpg",
+      "url": "https://www.nasaspaceflight.com/2026/11/voyager-1-light-day/",
+      "source": "SpaceTech",
+      "date": "2026-11-18",
+      "categoria": "Ciência"
+    },
+    {
+      "title": "Cinco dos sete candidatos ao governo do Rio Grande do Sul já foram às urnas",
+      "desc": "Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das intenções de voto e Juliana Brizola, 35% Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das...",
+      "img": "https://images.metroimg.com/2026/07/rio-grande-do-sul.jpg",
+      "url": "https://www.metropoles.com/brasil/politica-brasil/cinco-dos-sete-candidatos-ao-governo-do-rio-grande-do-sul-ja-foram-as-urnas",
+      "source": "Metrópoles Política",
+      "date": "Hoje",
+      "categoria": "🏛️ Política"
+    },
+    {
+      "title": "Espaço Juventude: estão abertas as inscrições para programação especial na conferência do IBGE",
+      "desc": "Para marcar a presença do Rio Grande do Norte nesse debate global, a Subsecretaria de Juventude do Estado do Rio Grande do Norte (SEJUV) promoverá o seminário “Juventudes no Centro”, e o Centro de Acesso a Direitos e Inclusão...",
+      "img": "https://agenciadenoticias.ibge.gov.br/images/agenciadenoticias/ibge/2026_11/museu-da-rampa-rn.jpeg",
+      "url": "http://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/48654-espaco-juventude-estao-abertas-as-inscricoes-para-programacao-especial-na-conferencia-do-ibge.html",
+      "source": "IBGE Oficial",
+      "date": "17/11/2026",
+      "categoria": "Finanças"
+    },
+    {
+      "title": "Real Madrid e Manchester City vencem e entram na briga na Champions feminina",
+      "desc": "Real Madrid e Manchester City vencem e entram na briga na Champions feminina O Manchester City e o Real Madrid conquistaram, nesta quarta-feira, vitórias importantes para se manterem na cola de Lyon e Barcelona, líderes da Liga...",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/AFP__20261118__D7WT4HC__v1__MidRes__FblEurC1WomenRealMadridInterMilan.webp",
+      "url": "https://www.gazetaesportiva.com/times/real-madrid/real-madrid-e-manchester-city-vencem-e-entram-na-briga-na-champions-feminina/",
+      "source": "Gazeta Esportiva",
+      "date": "Hoje",
+      "categoria": "⚽ Esportes"
+    },
+    {
+      "title": "Cortar antes de comprimir: por que vídeos longos do celular ficam melhores assim",
+      "desc": "Transparência: eu faço parte da equipe do CompressVid, um compressor de vídeo online. Os exemplos...",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F98e1zx1egdymn8wdg3u7.png",
+      "url": "https://dev.to/compressvid/cortar-antes-de-comprimir-por-que-videos-longos-do-celular-ficam-melhores-assim-b0a",
+      "source": "Dev.to Brasil",
+      "date": "Nov 11",
+      "categoria": "Tecnologia"
+    },
+    {
+      "title": "Erika Hilton recebe ameaça de morte e atrasa ida às urnas por segurança",
+      "desc": "Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos A deputada federal e candidata à...",
+      "img": "https://images.metroimg.com/2026/07/sbt-lista-argumentos-para-derrubar-resposta-de-erika-hilton.jpg",
+      "url": "https://www.metropoles.com/brasil/politica-brasil/erika-hilton-recebe-ameaca-de-morte-e-atrasa-ida-as-urnas-por-seguranca",
+      "source": "Metrópoles Política",
+      "date": "Hoje",
+      "categoria": "🏛️ Política"
+    },
+    {
+      "title": "Refinamento de Backlog: o guia prático para nunca mais passar de 30 minutos na Sprint Planning",
+      "desc": "Como um refinamento eficiente e ferramentas de estimativa sem atrito reduzem a duração da Sprint Planning para menos de 30 minutos.",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fikqgfn0806ms0tfewlhc.png",
+      "url": "https://dev.to/geekecia/refinamento-de-backlog-o-guia-pratico-para-nunca-mais-passar-de-30-minutos-na-sprint-planning-1093",
+      "source": "Dev.to Brasil",
+      "date": "Nov 16",
+      "categoria": "Tecnologia"
+    },
+    {
+      "title": "Desigualdade racial ainda marca acesso a emprego, educação, segurança e saneamento",
+      "desc": "Segundo a pesquisa, 33,4% das pessoas ocupadas brancas estavam em ocupações informais, entre as pretas esse percentual atingiu 42,6% e, entre as pardas, 45,4% em 2025 - Foto: Agência IBGE Notícias Trabalho e renda, educação...",
+      "img": "https://agenciadenoticias.ibge.gov.br/images/agenciadenoticias/estatisticas_economicas/2026_11/Desigualdades_foto_AgIBGE.jpg",
+      "url": "http://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/48656-desigualdade-racial-ainda-marca-acesso-a-emprego-educacao-seguranca-e-saneamento.html",
+      "source": "IBGE Oficial",
+      "date": "18/11/2026",
+      "categoria": "Finanças"
+    },
+    {
+      "title": "Raul Gil é internado e passa por procedimento cirúrgico em SP",
+      "desc": "Essa é a segunda internação de Raul este ano, em fevereiro ele deu entrada no hospital para a realização de alguns exames Essa é a segunda internação de Raul este ano, em fevereiro ele deu entrada no hospital para a realização de...",
+      "img": "https://images.metroimg.com/2018/11/23153705/Screenshot_12115.jpg",
+      "url": "https://www.metropoles.com/colunas/leo-dias/raul-gil-e-internado-e-passa-por-procedimento-cirurgico-em-sp",
+      "source": "Coluna Famosos",
+      "date": "Hoje",
+      "categoria": "⭐ Famosos"
+    },
+    {
+      "title": "CAGR vs. Média Simples em Código: Por Que a Média Aritmética Superestima o Retorno Real",
+      "desc": "Um dos erros conceituais mais frequentes em relatórios financeiros e scripts de análise de...",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fe0k8jw0gxj108vab6idi.png",
+      "url": "https://dev.to/miri-calc/cagr-vs-media-simples-em-codigo-por-que-a-media-aritmetica-superestima-o-retorno-real-18m5",
+      "source": "Dev.to Brasil",
+      "date": "Nov 15",
+      "categoria": "Tecnologia"
+    },
+    {
+      "title": "É hora de dizer até breve ao Metrópoles e partir para um novo desafio",
+      "desc": "Amanhã (1º/6), estreia o LeoDias.com. A missão é gigantesca, mas nunca foi meu tipo fugir dos desafios da vida Amanhã (1º/6), estreia o LeoDias.com.",
+      "img": "https://images.metroimg.com/2023/06/31214750/Design-sem-nome-2023-05-31T214746.841.jpg",
+      "url": "https://www.metropoles.com/colunas/leo-dias/e-hora-de-dizer-ate-breve-ao-metropoles-e-partir-para-um-novo-desafio",
+      "source": "Coluna Famosos",
+      "date": "Hoje",
+      "categoria": "⭐ Famosos"
+    },
+    {
+      "title": "Como avaliar um router de LLM para produção",
+      "desc": "Comece com o tráfego que já tem Escolha um modelo de referência e meça o custo e a...",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fcjb1j201qdpn67n8bscj.png",
+      "url": "https://dev.to/ailoot-ai/como-avaliar-um-router-de-llm-para-producao-1oi6",
+      "source": "Dev.to Brasil",
+      "date": "Nov 16",
+      "categoria": "Tecnologia"
+    },
+    {
       "title": "Melhores LLM pequenas para executar localmente: um guia abrangente",
       "desc": "Escolha um modelo pequeno para as suas tarefas reais Comece por um modelo que aceite os...",
       "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fkn7vqdbwugbd7p6e1n11.png",
@@ -285,13 +276,22 @@
       "categoria": "Tecnologia"
     },
     {
-      "title": "ULA investiga baixo desempenho do booster em falha no lançamento do Vulcan",
-      "desc": "A United Launch Alliance disse hoje que o baixo desempenho de seu propulsor de primeiro estágio é suspeito de causar a falha do Vulcan Leo 1 no domingo. Foi o primeiro […]",
-      "img": "https://spacepolicyonline.com/wp-content/uploads/2026/11/Vulcan-liftoff-300x292.jpg",
-      "url": "https://spacepolicyonline.com/news/ula-investigating-low-booster-performance-in-vulcan-launch-failure/",
-      "source": "SpaceTech",
-      "date": "2026-11-18",
-      "categoria": "Ciência"
+      "title": "São Paulo x Fluminense pelo Brasileirão: onde assistir ao vivo, estatísticas, histórico e escalações",
+      "desc": "Nesta quinta-feira, o São Paulo encara o Fluminense, em jogo da 35ª rodada do Brasileirão. A partida será realizada às 21h30 (de Brasília), no Morumbis, em São Paulo (SP). Onde assistir ao vivo?",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/55274595606_6bd04317c8_o.webp",
+      "url": "https://www.gazetaesportiva.com/times/sao-paulo/sao-paulo-fluminense-pelo-brasileirao-onde-assistir-ao-vivo-estatisticas-historico-e-escalacoes/",
+      "source": "Gazeta Esportiva",
+      "date": "Hoje",
+      "categoria": "⚽ Esportes"
+    },
+    {
+      "title": "PNAD Contínua Trimestral: desocupação cai em 8 das 27 UFs no 3° trimestre de 2026",
+      "desc": "A taxa de desocupação do país no terceiro trimestre de 2026 foi de 5,2%, redução de 0,2 ponto percentual em comparação com o 2º trimestre de 2026 (5,4%) e recuo de 0,4 ponto percentual frente ao 3º trimestre de 2025 (5,6%).",
+      "img": "https://agenciadenoticias.ibge.gov.br/images/agenciadenoticias/releases/PNAD_Tri_Release.png",
+      "url": "http://agenciadenoticias.ibge.gov.br/agencia-sala-de-imprensa/2013-agencia-de-noticias/releases/48657-pnad-continua-trimestral-desocupacao-cai-em-8-das-27-ufs-no-3-trimestre-de-2026.html",
+      "source": "IBGE Oficial",
+      "date": "18/11/2026",
+      "categoria": "Finanças"
     },
     {
       "title": "Desocupação cai em oito estados e fica estável em 18 no terceiro trimestre",
@@ -303,13 +303,13 @@
       "categoria": "Finanças"
     },
     {
-      "title": "Como avaliar um router de LLM para produção",
-      "desc": "Comece com o tráfego que já tem Escolha um modelo de referência e meça o custo e a...",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fcjb1j201qdpn67n8bscj.png",
-      "url": "https://dev.to/ailoot-ai/como-avaliar-um-router-de-llm-para-producao-1oi6",
-      "source": "Dev.to Brasil",
-      "date": "Nov 16",
-      "categoria": "Tecnologia"
+      "title": "Filhos de Gugu divergem sobre união do pai com Rose Miriam",
+      "desc": "Trechos do processo judicial mostram uma discussão entre os filhos do apresentador sobre o reconhecimento da união estável dos pais Trechos do processo judicial mostram uma discussão entre os filhos do apresentador sobre o...",
+      "img": "https://images.metroimg.com/2022/08/09094552/Gugu-capa-1.jpg",
+      "url": "https://www.metropoles.com/colunas/leo-dias/filhos-de-gugu-divergem-sobre-uniao-do-pai-com-rose-miriam",
+      "source": "Coluna Famosos",
+      "date": "Hoje",
+      "categoria": "⭐ Famosos"
     }
   ]
 }
