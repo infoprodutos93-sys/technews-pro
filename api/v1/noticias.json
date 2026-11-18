@@ -3,7 +3,7 @@
   "version": "10.4",
   "portal": "TechNews PRO",
   "documentation_and_source": "https://infoprodutos93-sys.github.io/technews-pro/",
-  "updated_at_brt": "2026-11-17T12:07:07-03:00",
+  "updated_at_brt": "2026-11-17T21:11:16-03:00",
   "market_rates": {
     "USD_BRL": 5.7,
     "EUR_BRL": 6.18,
@@ -42,19 +42,10 @@
   "total_articles": 30,
   "articles": [
     {
-      "title": "Como avaliar um router de LLM para produção",
-      "desc": "Comece com o tráfego que já tem Escolha um modelo de referência e meça o custo e a...",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fcjb1j201qdpn67n8bscj.png",
-      "url": "https://dev.to/ailoot-ai/como-avaliar-um-router-de-llm-para-producao-1oi6",
-      "source": "Dev.to Brasil",
-      "date": "Nov 16",
-      "categoria": "Tecnologia"
-    },
-    {
-      "title": "APOD: 2026 November 17 – Milky Way versus Aurora",
-      "desc": "APOD Science APOD APOD: 2026 17 de novembro –… Arquivo APOD de hoje Índice de envios Pesquisar Calendário RSS Educação Sobre Discutir APOD Astronomia Imagem do dia Descubra o cosmos!",
-      "img": "https://assets.science.nasa.gov/content/dam/science/cds/apod/apod/2026/november/GalaxyVsAurora_Scheib_960.jpg/jcr:content/renditions/cq5dam.web.1280.1280.jpeg",
-      "url": "https://science.nasa.gov/image-article/apod-2026-november-17-milky-way-versus-aurora/",
+      "title": "BPS Digital AVATAR Challenge",
+      "desc": "O Programa de Biologia Espacial da NASA dentro da Divisão de Ciências Biológicas e Físicas (BPS) investiga como os sistemas vivos respondem em todo o espectro da organização biológica para avançar na compreensão de como os...",
+      "img": "https://images-assets.nasa.gov/image/EMU_CHIP_GLOVE_DYE_L2/EMU_CHIP_GLOVE_DYE_L2~large.jpg",
+      "url": "https://www.nasa.gov/directorates/stmd/prizes-challenges-crowdsourcing-program/center-of-excellence-for-collaborative-innovation-coeci/bps-digital-avatar-challenge/",
       "source": "SpaceTech",
       "date": "2026-11-17",
       "categoria": "Ciência"
@@ -78,67 +69,31 @@
       "categoria": "⭐ Famosos"
     },
     {
-      "title": "IBGE disponibiliza Agenda semanal com programações para os dias 16 a 22 de novembro",
-      "desc": "Agenda IBGE traz a programação do instituto para a semana - Foto: Bel Corção/Brasil com S O Instituto Brasileiro de Geografia e Estatística (IBGE) disponibilizou hoje (16) a Agenda IBGE para a semana de 16 a 22 de novembro.",
-      "img": "https://agenciadenoticias.ibge.gov.br/images/agenciadenoticias/ibge/2026_11/Agenda-IBGE_HOME.jpg",
-      "url": "http://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/48640-ibge-disponibiliza-agenda-semanal-com-programacoes-para-os-dias-16-a-22-de-novembro.html",
-      "source": "IBGE Oficial",
-      "date": "16/11/2026",
-      "categoria": "Finanças"
-    },
-    {
-      "title": "Virginia elege vestido luxuoso para festa de Maria Alice. Saiba valor!",
-      "desc": "Além de ser um vestido repleto de detalhes sutis, a peça escolhida por Virginia segue a tendência do momento, o Whitecore Além de ser um vestido repleto de detalhes sutis, a peça escolhida por Virginia segue a tendência do...",
-      "img": "https://images.metroimg.com/2023/05/31152902/Design-sem-nome-2023-05-31T152810.884.jpg",
-      "url": "https://www.metropoles.com/colunas/leo-dias/virginia-elege-vestido-luxuoso-para-festa-de-maria-alice-saiba-valor",
-      "source": "Coluna Famosos",
-      "date": "Hoje",
-      "categoria": "⭐ Famosos"
-    },
-    {
-      "title": "Comissão técnica do Brasil aprova Rayan como meia, mas pede calma: ‘Temos outros’",
-      "desc": "A comissão técnica da Seleção Brasileira aproveitou o amistoso desta terça-feira diante de Singapura para testar Rayan atuando como meia, criando jogadas para o ataque formado por Vini Jr., Endrick e Estêvão.",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/17NOV2026-BRASIL-X-SINGAPURA-51-POSADO.webp",
-      "url": "https://www.gazetaesportiva.com/todas-as-noticias/comissao-tecnica-do-brasil-aprova-rayan-como-meia-mas-pede-calma-temos-outros/",
-      "source": "Gazeta Esportiva",
-      "date": "Hoje",
-      "categoria": "⚽ Esportes"
-    },
-    {
-      "title": "IBGE recebe homenagem pelos seus 90 anos na Assembleia Legislativa da Bahia",
-      "desc": "A Assembleia Legislativa da Bahia (ALBA) realizou, nesta segunda-feira (16), uma sessão especial em homenagem aos 90 anos do Instituto Brasileiro de Geografia e Estatística (IBGE), celebrados em 29 de maio.",
-      "img": "https://agenciadenoticias.ibge.gov.br/images/agenciadenoticias/ibge/2026_11/bahia1.jpg",
-      "url": "http://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/48647-ibge-recebe-homenagem-pelos-seus-90-anos-na-assembleia-legislativa-da-bahia.html",
-      "source": "IBGE Oficial",
-      "date": "16/11/2026",
-      "categoria": "Finanças"
-    },
-    {
-      "title": "Cortar antes de comprimir: por que vídeos longos do celular ficam melhores assim",
-      "desc": "Transparência: eu faço parte da equipe do CompressVid, um compressor de vídeo online. Os exemplos...",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F98e1zx1egdymn8wdg3u7.png",
-      "url": "https://dev.to/compressvid/cortar-antes-de-comprimir-por-que-videos-longos-do-celular-ficam-melhores-assim-b0a",
+      "title": "CAGR vs. Média Simples em Código: Por Que a Média Aritmética Superestima o Retorno Real",
+      "desc": "Um dos erros conceituais mais frequentes em relatórios financeiros e scripts de análise de...",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fe0k8jw0gxj108vab6idi.png",
+      "url": "https://dev.to/miri-calc/cagr-vs-media-simples-em-codigo-por-que-a-media-aritmetica-superestima-o-retorno-real-18m5",
       "source": "Dev.to Brasil",
-      "date": "Nov 11",
+      "date": "Nov 15",
       "categoria": "Tecnologia"
     },
     {
-      "title": "Endrick revela nascimento do filho após goleada do Brasil e dedica gol a ele",
-      "desc": "Endrick revela nascimento do filho e dedica gol pela Seleção Brasileira a ele O atacante Endrick revelou, nesta terça-feira, que seu primeiro filho, Kendrick, nasceu.",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/17NOV2026-BRASIL-X-SINGAPURA-81-ENDRICK.webp",
-      "url": "https://www.gazetaesportiva.com/times/brasil/endrick-anuncia-nascimento-primeiro-filho/",
+      "title": "NASA lança concurso para estudantes de sistemas de energia nuclear",
+      "desc": "O desafio Power to Explore Student da NASA começou na terça-feira, 17 de novembro. O desafio de ciência, engenharia, tecnologia e matemática (STEM) convida alunos do jardim de infância ao 12º ano nos Estados Unidos a aprender...",
+      "img": "https://assets.science.nasa.gov/dynamicimage/assets/science/psd/planetary-science-division/radioisotope-power-systems/power-to-explore-contest/2027-power-to-explore/PTE_2026-2027_X%20-%201200x675-80.jpg",
+      "url": "https://science.nasa.gov/centers-and-facilities/glenn/nasa-launches-nuclear-power-systems-student-contest/",
+      "source": "SpaceTech",
+      "date": "2026-11-17",
+      "categoria": "Ciência"
+    },
+    {
+      "title": "São Paulo vence Santos no Pacaembu e abre vantagem no play-in do Paulistão F",
+      "desc": "São Paulo vence Santos e abre vantagem no Paulistão F O São Paulo venceu o Santos por 3 a 1 nesta terça-feira, na Mercado Livre Arena Pacaembu, pelo jogo de ida do play-in do Campeonato Paulista Feminino.",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/HXXbOAkW4AAgTIT.webp",
+      "url": "https://www.gazetaesportiva.com/times/sao-paulo/santos-sao-paulo-feminino-resultado-play-in-paulistao-2026/",
       "source": "Gazeta Esportiva",
       "date": "Hoje",
       "categoria": "⚽ Esportes"
-    },
-    {
-      "title": "Eleições 2026: brasileiros reclamam de filas para votar no exterior",
-      "desc": "A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado (24/10) A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado (24/10)...",
-      "img": "https://images.metroimg.com/2026/10/filavotacaoparis.jpg",
-      "url": "https://www.metropoles.com/brasil/eleicoes-2026-brasileiros-reclamam-de-filas-para-votar-no-exterior",
-      "source": "Metrópoles Política",
-      "date": "Hoje",
-      "categoria": "🏛️ Política"
     },
     {
       "title": "Em Mossoró (RN), instituições universitárias celebram participação na CONFEST/CONFEGE 2026",
@@ -150,112 +105,31 @@
       "categoria": "Finanças"
     },
     {
-      "title": "Cosmo Bee testará em vôo o propulsor Honeybee Hall com D-Orbit em 2027",
-      "desc": "Daejeon, República da Coreia – 14 de outubro de 2026: A startup sul-coreana de propulsão elétrica espacial Cosmo Bee planeja realizar um teste de voo em órbita de seu propulsor Honeybee Hall classe 10 mN […] A postagem Cosmo Bee...",
-      "img": "https://i0.wp.com/spacenews.com/wp-content/uploads/2026/11/cosmo-bee-scaled.jpg?fit=1024%2C1024&ssl=1",
-      "url": "https://spacenews.com/cosmo-bee-to-flight-test-honeybee-hall-thruster-with-d-orbit-in-2027/",
-      "source": "SpaceTech",
-      "date": "2026-11-17",
-      "categoria": "Ciência"
-    },
-    {
-      "title": "CAGR vs. Média Simples em Código: Por Que a Média Aritmética Superestima o Retorno Real",
-      "desc": "Um dos erros conceituais mais frequentes em relatórios financeiros e scripts de análise de...",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fe0k8jw0gxj108vab6idi.png",
-      "url": "https://dev.to/miri-calc/cagr-vs-media-simples-em-codigo-por-que-a-media-aritmetica-superestima-o-retorno-real-18m5",
+      "title": "Refinamento de Backlog: o guia prático para nunca mais passar de 30 minutos na Sprint Planning",
+      "desc": "Como um refinamento eficiente e ferramentas de estimativa sem atrito reduzem a duração da Sprint Planning para menos de 30 minutos.",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fikqgfn0806ms0tfewlhc.png",
+      "url": "https://dev.to/geekecia/refinamento-de-backlog-o-guia-pratico-para-nunca-mais-passar-de-30-minutos-na-sprint-planning-1093",
       "source": "Dev.to Brasil",
-      "date": "Nov 15",
+      "date": "Nov 16",
       "categoria": "Tecnologia"
     },
     {
-      "title": "É hora de dizer até breve ao Metrópoles e partir para um novo desafio",
-      "desc": "Amanhã (1º/6), estreia o LeoDias.com. A missão é gigantesca, mas nunca foi meu tipo fugir dos desafios da vida Amanhã (1º/6), estreia o LeoDias.com.",
-      "img": "https://images.metroimg.com/2023/06/31214750/Design-sem-nome-2023-05-31T214746.841.jpg",
-      "url": "https://www.metropoles.com/colunas/leo-dias/e-hora-de-dizer-ate-breve-ao-metropoles-e-partir-para-um-novo-desafio",
-      "source": "Coluna Famosos",
-      "date": "Hoje",
-      "categoria": "⭐ Famosos"
-    },
-    {
-      "title": "Na Bahia, Lula diz a aliados estar preocupado com crise no STF",
-      "desc": "O presidente Lula participou de carreata em Salvador nesta terça-feira junto aos candidatos do PT ao Senado e ao Governo do estado O presidente Lula participou de carreata em Salvador nesta terça-feira junto aos candidatos do PT...",
-      "img": "https://images.metroimg.com/2026/09/foto-lula-salvaor-scaled.jpg",
-      "url": "https://www.metropoles.com/brasil/na-bahia-lula-diz-a-aliados-estar-preocupado-com-crise-no-stf",
-      "source": "Metrópoles Política",
-      "date": "Hoje",
-      "categoria": "🏛️ Política"
-    },
-    {
-      "title": "Cinco dos sete candidatos ao governo do Rio Grande do Sul já foram às urnas",
-      "desc": "Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das intenções de voto e Juliana Brizola, 35% Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das...",
-      "img": "https://images.metroimg.com/2026/07/rio-grande-do-sul.jpg",
-      "url": "https://www.metropoles.com/brasil/politica-brasil/cinco-dos-sete-candidatos-ao-governo-do-rio-grande-do-sul-ja-foram-as-urnas",
-      "source": "Metrópoles Política",
-      "date": "Hoje",
-      "categoria": "🏛️ Política"
-    },
-    {
-      "title": "Jogando fogos de artifício de nuvem em nuvem",
-      "desc": "Para muitos astronautas, a visão espetacular dos relâmpagos se destaca quando olham para a Terra a partir da Estação Espacial Internacional.",
-      "img": "https://assets.science.nasa.gov/content/dam/science/esd/eo/images/iotd/2026/tossing-fireworks-from-cloud-to-cloud/ISS075-E-250951.jpg/jcr:content/renditions/cq5dam.web.1280.1280.jpeg",
-      "url": "https://science.nasa.gov/earth/earth-observatory/tossing-fireworks-from-cloud-to-cloud/",
+      "title": "Electron do Rocket Lab completa 100ª missão, Neutron avança em direção à missão de estreia",
+      "desc": "No fim de semana passado, o foguete Electron do Rocket Lab completou oficialmente sua 100ª missão, tornando-se o mais rápido… O posto Electron do Rocket Lab completa a 100ª missão, Neutron avança em direção à missão de estreia...",
+      "img": "https://www.nasaspaceflight.com/wp-content/uploads/2026/11/04020AD5-BE6D-4D2C-A1B6-15A4C73131D8-1.jpeg",
+      "url": "https://www.nasaspaceflight.com/2026/11/rocket-lab-update-1126/",
       "source": "SpaceTech",
       "date": "2026-11-17",
       "categoria": "Ciência"
     },
     {
-      "title": "Alagoas recebe seminários que celebram os 90 anos do IBGE no estado ",
-      "desc": "O estado de Alagoas recebe, no dia 18 de novembro, os seminários “Meu Parceiro, Meu Brasil, Nosso IBGE” e \"Meu Estado, Meu Brasil, Nosso IBGE\", como parte da programação comemorativa dos 90 anos do Instituto.",
-      "img": "https://agenciadenoticias.ibge.gov.br/images/agenciadenoticias/ibge/2026_10/norcon.jpg",
-      "url": "http://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/48373-alagoas-recebe-seminarios-que-celebram-os-90-anos-do-ibge-no-estado.html",
-      "source": "IBGE Oficial",
-      "date": "13/11/2026",
-      "categoria": "Finanças"
-    },
-    {
-      "title": "João Gomes e Ary Mirelle curtem jantar romântico com Sthe Matos e Kevi Jonny",
-      "desc": "O casal está em Barra de São Miguel acompanhados de Kevi Jonny e Sthe Matos O casal está em Barra de São Miguel acompanhados de Kevi Jonny e Sthe Matos Antes da maratona de shows do período junino, João Gomes e Ary Mirelle...",
-      "img": "https://images.metroimg.com/2023/05/31185334/Design-sem-nome-2023-05-31T185325.578.jpg",
-      "url": "https://www.metropoles.com/colunas/leo-dias/joao-gomes-e-ary-curtem-jantar-romantico-com-sthe-matos-e-kevi-jonny",
-      "source": "Coluna Famosos",
-      "date": "Hoje",
-      "categoria": "⭐ Famosos"
-    },
-    {
-      "title": "São Silvestre anuncia embaixadores para 101ª edição da corrida",
-      "desc": "São Silvestre anuncia embaixadores para 101ª edição da corrida A organização da Corrida Internacional de São Silvestre anunciou os embaixadores oficiais da 101ª edição, marcada para o dia 31 de dezembro, nas ruas de São Paulo.",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/3QZmpzMhNTMiFmOyJmLt92Yuw2YmBUYnVmci9mb0JnO3ADNzcDO0czN6cWZwpmL39GbjNDO5AzNhZWO2YzMzYGO4IjNxUGNhdDMjJGZkZGNkJjRyUCNkJjRyUCMGJTJykjMzQTN1AzMz8VL1ETLf9VLwITLfpTO.webp",
-      "url": "https://www.gazetaesportiva.com/sao-silvestre-conteudo/sao-silvestre-anuncia-embaixadores-ze-roberto/",
+      "title": "Barboza analisa impacto da data Fifa no Palmeiras e projeta duelo contra o Cruzeiro: “Será muito difícil”",
+      "desc": "Barboza analisa data Fifa e projeta Cruzeiro x Palmeiras: \"Jogo muito difícil\" Após dez dias de seu último jogo, o Palmeiras volta a campo nesta quarta-feira para enfrentar o Cruzeiro , pela 35ª rodada do Campeonato Brasileiro.",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/17112026_cg_palmeiras_0478_26.webp",
+      "url": "https://www.gazetaesportiva.com/times/palmeiras/barboza-palmeiras-trabalho-data-fifa-cruzeiro/",
       "source": "Gazeta Esportiva",
       "date": "Hoje",
       "categoria": "⚽ Esportes"
-    },
-    {
-      "title": "Melhores LLM pequenas para executar localmente: um guia abrangente",
-      "desc": "Escolha um modelo pequeno para as suas tarefas reais Comece por um modelo que aceite os...",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fkn7vqdbwugbd7p6e1n11.png",
-      "url": "https://dev.to/ailoot-ai/melhores-llm-pequenas-para-executar-localmente-um-guia-abrangente-94m",
-      "source": "Dev.to Brasil",
-      "date": "Nov 17",
-      "categoria": "Tecnologia"
-    },
-    {
-      "title": "Erika Hilton recebe ameaça de morte e atrasa ida às urnas por segurança",
-      "desc": "Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos A deputada federal e candidata à...",
-      "img": "https://images.metroimg.com/2026/07/sbt-lista-argumentos-para-derrubar-resposta-de-erika-hilton.jpg",
-      "url": "https://www.metropoles.com/brasil/politica-brasil/erika-hilton-recebe-ameaca-de-morte-e-atrasa-ida-as-urnas-por-seguranca",
-      "source": "Metrópoles Política",
-      "date": "Hoje",
-      "categoria": "🏛️ Política"
-    },
-    {
-      "title": "ICEYE lança oferta pública de aquisição de € 2,05 bilhões pela italiana Rocket Builder Avio",
-      "desc": "A construtora e operadora de satélites finlandesa ICEYE lançou uma oferta pública de aquisição de 2,05 mil milhões de euros pela Avio, com o objectivo de construir um “verdadeiro campeão europeu soberano do espaço e da defesa”.",
-      "img": "https://europeanspaceflight.com/wp-content/uploads/2026/11/ICEYE-Launches-2.05B-Euros-Takeover-Bid-for-Italian-Rocket-Builder-Avio.webp",
-      "url": "https://europeanspaceflight.com/iceye-launches-e2-05b-takeover-bid-for-italian-rocket-builder-avio/",
-      "source": "SpaceTech",
-      "date": "2026-11-17",
-      "categoria": "Ciência"
     },
     {
       "title": "Story Points Não São Horas: por que converter pontos em tempo destrói a Sprint Planning",
@@ -267,10 +141,19 @@
       "categoria": "Tecnologia"
     },
     {
-      "title": "Brasil aguarda para tentar amistosos contra rivais da Europa nas datas Fifa de 2027",
-      "desc": "O primeiro semestre de 2027 tem a previsão de duas pausas para Datas Fifa, em março e junho. E o Brasil espera ter a possibilidade de fazer amistosos contra seleções europeias, de forma a aumentar o nível de exigência nos testes...",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/17NOV2026-BRASIL-X-SINGAPURA-64-VINI-JR-ENDRICK.webp",
-      "url": "https://www.gazetaesportiva.com/todas-as-noticias/brasil-aguarda-para-tentar-amistosos-contra-rivais-da-europa-nas-datas-fifa-de-2027/",
+      "title": "Virginia elege vestido luxuoso para festa de Maria Alice. Saiba valor!",
+      "desc": "Além de ser um vestido repleto de detalhes sutis, a peça escolhida por Virginia segue a tendência do momento, o Whitecore Além de ser um vestido repleto de detalhes sutis, a peça escolhida por Virginia segue a tendência do...",
+      "img": "https://images.metroimg.com/2023/05/31152902/Design-sem-nome-2023-05-31T152810.884.jpg",
+      "url": "https://www.metropoles.com/colunas/leo-dias/virginia-elege-vestido-luxuoso-para-festa-de-maria-alice-saiba-valor",
+      "source": "Coluna Famosos",
+      "date": "Hoje",
+      "categoria": "⭐ Famosos"
+    },
+    {
+      "title": "Leila não assina carta por apoio do Governo após fim das bets e explica decisão: “Quero mais clareza”",
+      "desc": "Leila não assina carta com pedido de apoio ao Governo após fim das bets e explica decisão A Confederação Brasileira de Futebol (CBF) realizou nesta terça-feira a quinta reunião com representantes dos clubes das Séries A e B do...",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/25032026_cg_palmeiras_8621_16.webp",
+      "url": "https://www.gazetaesportiva.com/campeonatos/brasileiro-serie-a/leila-palmeiras-carta-ajuda-governo/",
       "source": "Gazeta Esportiva",
       "date": "Hoje",
       "categoria": "⚽ Esportes"
@@ -294,22 +177,139 @@
       "categoria": "🏛️ Política"
     },
     {
-      "title": "Refinamento de Backlog: o guia prático para nunca mais passar de 30 minutos na Sprint Planning",
-      "desc": "Como um refinamento eficiente e ferramentas de estimativa sem atrito reduzem a duração da Sprint Planning para menos de 30 minutos.",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fikqgfn0806ms0tfewlhc.png",
-      "url": "https://dev.to/geekecia/refinamento-de-backlog-o-guia-pratico-para-nunca-mais-passar-de-30-minutos-na-sprint-planning-1093",
+      "title": "São Paulo e Atlético-MG empatam na ida da semifinal da Copa do Brasil sub-20",
+      "desc": "São Paulo e Atlético-MG empatam na ida da semifinal da Copa do Brasil sub-20 Nesta terça-feira, na Arena MRV, em Belo Horizonte (MG), São Paulo e Atlético-MG empataram em 1 a 1 pelo jogo de ida das semifinais da Copa do Brasil...",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/imagem_2026-11-17_210222660.webp",
+      "url": "https://www.gazetaesportiva.com/times/sao-paulo/sao-paulo-e-atletico-mg-empatam-na-ida-da-semifinal-da-copa-do-brasil-sub-20/",
+      "source": "Gazeta Esportiva",
+      "date": "Hoje",
+      "categoria": "⚽ Esportes"
+    },
+    {
+      "title": "Alagoas recebe seminários que celebram os 90 anos do IBGE no estado ",
+      "desc": "O estado de Alagoas recebe, no dia 18 de novembro, os seminários “Meu Parceiro, Meu Brasil, Nosso IBGE” e \"Meu Estado, Meu Brasil, Nosso IBGE\", como parte da programação comemorativa dos 90 anos do Instituto.",
+      "img": "https://agenciadenoticias.ibge.gov.br/images/agenciadenoticias/ibge/2026_10/norcon.jpg",
+      "url": "http://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/48373-alagoas-recebe-seminarios-que-celebram-os-90-anos-do-ibge-no-estado.html",
+      "source": "IBGE Oficial",
+      "date": "13/11/2026",
+      "categoria": "Finanças"
+    },
+    {
+      "title": "Cinco dos sete candidatos ao governo do Rio Grande do Sul já foram às urnas",
+      "desc": "Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das intenções de voto e Juliana Brizola, 35% Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das...",
+      "img": "https://images.metroimg.com/2026/07/rio-grande-do-sul.jpg",
+      "url": "https://www.metropoles.com/brasil/politica-brasil/cinco-dos-sete-candidatos-ao-governo-do-rio-grande-do-sul-ja-foram-as-urnas",
+      "source": "Metrópoles Política",
+      "date": "Hoje",
+      "categoria": "🏛️ Política"
+    },
+    {
+      "title": "Eleições 2026: brasileiros reclamam de filas para votar no exterior",
+      "desc": "A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado (24/10) A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado (24/10)...",
+      "img": "https://images.metroimg.com/2026/10/filavotacaoparis.jpg",
+      "url": "https://www.metropoles.com/brasil/eleicoes-2026-brasileiros-reclamam-de-filas-para-votar-no-exterior",
+      "source": "Metrópoles Política",
+      "date": "Hoje",
+      "categoria": "🏛️ Política"
+    },
+    {
+      "title": "Erika Hilton recebe ameaça de morte e atrasa ida às urnas por segurança",
+      "desc": "Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos A deputada federal e candidata à...",
+      "img": "https://images.metroimg.com/2026/07/sbt-lista-argumentos-para-derrubar-resposta-de-erika-hilton.jpg",
+      "url": "https://www.metropoles.com/brasil/politica-brasil/erika-hilton-recebe-ameaca-de-morte-e-atrasa-ida-as-urnas-por-seguranca",
+      "source": "Metrópoles Política",
+      "date": "Hoje",
+      "categoria": "🏛️ Política"
+    },
+    {
+      "title": "É hora de dizer até breve ao Metrópoles e partir para um novo desafio",
+      "desc": "Amanhã (1º/6), estreia o LeoDias.com. A missão é gigantesca, mas nunca foi meu tipo fugir dos desafios da vida Amanhã (1º/6), estreia o LeoDias.com.",
+      "img": "https://images.metroimg.com/2023/06/31214750/Design-sem-nome-2023-05-31T214746.841.jpg",
+      "url": "https://www.metropoles.com/colunas/leo-dias/e-hora-de-dizer-ate-breve-ao-metropoles-e-partir-para-um-novo-desafio",
+      "source": "Coluna Famosos",
+      "date": "Hoje",
+      "categoria": "⭐ Famosos"
+    },
+    {
+      "title": "Desafio de aplicativos espaciais da NASA quebra recordes globais de hackathon",
+      "desc": "Nos dias 14 e 15 de novembro, a NASA realizou o Space Apps Challenge anual com um recorde de 181.835 participantes registrados em 593 eventos em todo o mundo.",
+      "img": "https://assets.science.nasa.gov/dynamicimage/assets/science/cds/open-science/Space%20Apps%20Challenge%202026%20Brazil.jpeg",
+      "url": "https://science.nasa.gov/open-science/nasa-space-apps-challenge-breaks-global-hackathon-records/",
+      "source": "SpaceTech",
+      "date": "2026-11-17",
+      "categoria": "Ciência"
+    },
+    {
+      "title": "IBGE disponibiliza Agenda semanal com programações para os dias 16 a 22 de novembro",
+      "desc": "Agenda IBGE traz a programação do instituto para a semana - Foto: Bel Corção/Brasil com S O Instituto Brasileiro de Geografia e Estatística (IBGE) disponibilizou hoje (16) a Agenda IBGE para a semana de 16 a 22 de novembro.",
+      "img": "https://agenciadenoticias.ibge.gov.br/images/agenciadenoticias/ibge/2026_11/Agenda-IBGE_HOME.jpg",
+      "url": "http://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/48640-ibge-disponibiliza-agenda-semanal-com-programacoes-para-os-dias-16-a-22-de-novembro.html",
+      "source": "IBGE Oficial",
+      "date": "16/11/2026",
+      "categoria": "Finanças"
+    },
+    {
+      "title": "Cruzeiro x Palmeiras pelo Brasileirão: onde assistir, estatísticas, histórico e prováveis escalações",
+      "desc": "Cruzeiro x Palmeiras pelo Brasileirão: onde assistir, estatísticas, histórico e prováveis escalações Cruzeiro e Palmeiras entram em campo na noite desta quarta-feira para duelo válido pela 35ª rodada do Campeonato Brasileiro .",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/16052026_cg_palmeiras_0667_83.webp",
+      "url": "https://www.gazetaesportiva.com/campeonatos/brasileiro-serie-a/cruzeiro-x-palmeiras-pelo-brasileirao-tudo-sobre-35-rodada/",
+      "source": "Gazeta Esportiva",
+      "date": "Hoje",
+      "categoria": "⚽ Esportes"
+    },
+    {
+      "title": "Cortar antes de comprimir: por que vídeos longos do celular ficam melhores assim",
+      "desc": "Transparência: eu faço parte da equipe do CompressVid, um compressor de vídeo online. Os exemplos...",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F98e1zx1egdymn8wdg3u7.png",
+      "url": "https://dev.to/compressvid/cortar-antes-de-comprimir-por-que-videos-longos-do-celular-ficam-melhores-assim-b0a",
+      "source": "Dev.to Brasil",
+      "date": "Nov 11",
+      "categoria": "Tecnologia"
+    },
+    {
+      "title": "Melhores LLM pequenas para executar localmente: um guia abrangente",
+      "desc": "Escolha um modelo pequeno para as suas tarefas reais Comece por um modelo que aceite os...",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fkn7vqdbwugbd7p6e1n11.png",
+      "url": "https://dev.to/ailoot-ai/melhores-llm-pequenas-para-executar-localmente-um-guia-abrangente-94m",
+      "source": "Dev.to Brasil",
+      "date": "Nov 17",
+      "categoria": "Tecnologia"
+    },
+    {
+      "title": "Na Bahia, Lula diz a aliados estar preocupado com crise no STF",
+      "desc": "O presidente Lula participou de carreata em Salvador nesta terça-feira junto aos candidatos do PT ao Senado e ao Governo do estado O presidente Lula participou de carreata em Salvador nesta terça-feira junto aos candidatos do PT...",
+      "img": "https://images.metroimg.com/2026/09/foto-lula-salvaor-scaled.jpg",
+      "url": "https://www.metropoles.com/brasil/na-bahia-lula-diz-a-aliados-estar-preocupado-com-crise-no-stf",
+      "source": "Metrópoles Política",
+      "date": "Hoje",
+      "categoria": "🏛️ Política"
+    },
+    {
+      "title": "IBGE recebe homenagem pelos seus 90 anos na Assembleia Legislativa da Bahia",
+      "desc": "A Assembleia Legislativa da Bahia (ALBA) realizou, nesta segunda-feira (16), uma sessão especial em homenagem aos 90 anos do Instituto Brasileiro de Geografia e Estatística (IBGE), celebrados em 29 de maio.",
+      "img": "https://agenciadenoticias.ibge.gov.br/images/agenciadenoticias/ibge/2026_11/bahia1.jpg",
+      "url": "http://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/48647-ibge-recebe-homenagem-pelos-seus-90-anos-na-assembleia-legislativa-da-bahia.html",
+      "source": "IBGE Oficial",
+      "date": "16/11/2026",
+      "categoria": "Finanças"
+    },
+    {
+      "title": "Como avaliar um router de LLM para produção",
+      "desc": "Comece com o tráfego que já tem Escolha um modelo de referência e meça o custo e a...",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fcjb1j201qdpn67n8bscj.png",
+      "url": "https://dev.to/ailoot-ai/como-avaliar-um-router-de-llm-para-producao-1oi6",
       "source": "Dev.to Brasil",
       "date": "Nov 16",
       "categoria": "Tecnologia"
     },
     {
-      "title": "Pochettino: “Estamos bem preparados”",
-      "desc": "Pochettino: “Estamos bem preparados” Mauricio Pochettino explicou como sua experiência o ajudou a manter o foco total contra o Haiti em Cincinnati antes de voltar as atenções para o Manchester United.",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/06/Pochettino.webp",
-      "url": "https://www.gazetaesportiva.com/times/manchester-united/pochettino-estamos-bem-preparados/",
-      "source": "Gazeta Esportiva",
+      "title": "João Gomes e Ary Mirelle curtem jantar romântico com Sthe Matos e Kevi Jonny",
+      "desc": "O casal está em Barra de São Miguel acompanhados de Kevi Jonny e Sthe Matos O casal está em Barra de São Miguel acompanhados de Kevi Jonny e Sthe Matos Antes da maratona de shows do período junino, João Gomes e Ary Mirelle...",
+      "img": "https://images.metroimg.com/2023/05/31185334/Design-sem-nome-2023-05-31T185325.578.jpg",
+      "url": "https://www.metropoles.com/colunas/leo-dias/joao-gomes-e-ary-curtem-jantar-romantico-com-sthe-matos-e-kevi-jonny",
+      "source": "Coluna Famosos",
       "date": "Hoje",
-      "categoria": "⚽ Esportes"
+      "categoria": "⭐ Famosos"
     }
   ]
 }
