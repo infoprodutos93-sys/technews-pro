@@ -3,7 +3,7 @@
   "version": "10.4",
   "portal": "TechNews PRO",
   "documentation_and_source": "https://infoprodutos93-sys.github.io/technews-pro/",
-  "updated_at_brt": "2026-11-22T00:56:53-03:00",
+  "updated_at_brt": "2026-11-22T10:45:18-03:00",
   "market_rates": {
     "USD_BRL": 5.7,
     "EUR_BRL": 6.18,
@@ -42,22 +42,13 @@
   "total_articles": 30,
   "articles": [
     {
-      "title": "Flamengo agradece Palmeiras por recepção e diz que “rivalidade deve ficar restrita às quatro linhas”",
-      "desc": "Flamengo agradece Palmeiras por recepção e \"cordialidade\" no Nubank Parque Pouco depois de confirmar o título do Campeonato Brasileiro ao empatar por 1 a 1 com o Palmeiras , na tarde deste sábado, o Flamengo agradeceu, em nota...",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/WhatsApp-Image-2026-11-21-at-6.48.29-PM.webp",
-      "url": "https://www.gazetaesportiva.com/times/flamengo/flamengo-agradece-palmeiras-por-recepcao-nubank-parque/",
-      "source": "Gazeta Esportiva",
-      "date": "Hoje",
-      "categoria": "⚽ Esportes"
-    },
-    {
-      "title": "IBGE leva capacitação sobre desastres a sete estados e mobiliza quase 300 participantes presencialmente",
-      "desc": "A quarta edição da capacitação do SINGED Lab Desastres, promovida pelo IBGE, mobilizou 293 participantes na modalidade presencial em sete estados brasileiros, ampliando o acesso a informações estatísticas, geográficas e...",
-      "img": "https://agenciadenoticias.ibge.gov.br/images/agenciadenoticias/ibge/2026_11/singed1.jpg",
-      "url": "http://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/48698-ibge-leva-capacitacao-sobre-desastres-a-sete-estados-e-mobiliza-quase-300-participantes-presencialmente.html",
-      "source": "IBGE Oficial",
-      "date": "19/11/2026",
-      "categoria": "Finanças"
+      "title": "Refinamento de Backlog: o guia prático para nunca mais passar de 30 minutos na Sprint Planning",
+      "desc": "Como um refinamento eficiente e ferramentas de estimativa sem atrito reduzem a duração da Sprint Planning para menos de 30 minutos.",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fikqgfn0806ms0tfewlhc.png",
+      "url": "https://dev.to/geekecia/refinamento-de-backlog-o-guia-pratico-para-nunca-mais-passar-de-30-minutos-na-sprint-planning-1093",
+      "source": "Dev.to Brasil",
+      "date": "Nov 16",
+      "categoria": "Tecnologia"
     },
     {
       "title": "Cinco dos sete candidatos ao governo do Rio Grande do Sul já foram às urnas",
@@ -69,6 +60,24 @@
       "categoria": "🏛️ Política"
     },
     {
+      "title": "APOD: 2026, 22 de novembro – Redemoinhos e cores em Júpiter de Juno",
+      "desc": "APOD Science APOD APOD: 2026 22 de novembro –… Arquivo APOD de hoje Índice de envios Pesquisar Calendário RSS Educação Sobre Discutir APOD Astronomia Imagem do dia Descubra o cosmos!",
+      "img": "https://assets.science.nasa.gov/dynamicimage/assets/science/cds/apod/apod/2026/november/JupiterSwirls_JunoBrealey_3709.jpg",
+      "url": "https://science.nasa.gov/image-article/apod-2026-november-22-swirls-and-colors-on-jupiter-from-juno/",
+      "source": "SpaceTech",
+      "date": "2026-11-22",
+      "categoria": "Ciência"
+    },
+    {
+      "title": "Quer trabalhar no IBGE? Live esclarece dúvidas sobre seleção com remuneração de até R$ 5.562/mês",
+      "desc": "As oportunidades estão distribuídas por municípios de todo o país e exigem ensino fundamental completo.- Foto: Equipe CCDI/CCS O Instituto Brasileiro de Geografia e Estatística (IBGE) realizará, no dia 23 de novembro, às 10h...",
+      "img": "https://agenciadenoticias.ibge.gov.br/images/agenciadenoticias/ibge/2026_10/censoexp-home.jpg",
+      "url": "http://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/48702-quer-trabalhar-no-ibge-live-esclarece-duvidas-sobre-selecao-com-remuneracao-de-ate-r-5-562-mes.html",
+      "source": "IBGE Oficial",
+      "date": "19/11/2026",
+      "categoria": "⚽ Esportes"
+    },
+    {
       "title": "É hora de dizer até breve ao Metrópoles e partir para um novo desafio",
       "desc": "Amanhã (1º/6), estreia o LeoDias.com. A missão é gigantesca, mas nunca foi meu tipo fugir dos desafios da vida Amanhã (1º/6), estreia o LeoDias.com.",
       "img": "https://images.metroimg.com/2023/06/31214750/Design-sem-nome-2023-05-31T214746.841.jpg",
@@ -78,22 +87,13 @@
       "categoria": "⭐ Famosos"
     },
     {
-      "title": "PT prepara “festa do interior” para visita de Lula à Bahia",
-      "desc": "Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em última rodada pelo Nordeste antes do 1º turno Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em...",
-      "img": "https://images.metroimg.com/2026/01/lula-bahia.jpg",
-      "url": "https://www.metropoles.com/brasil/pt-prepara-festa-do-interior-para-visita-de-lula-a-bahia",
-      "source": "Metrópoles Política",
-      "date": "Hoje",
-      "categoria": "🏛️ Política"
-    },
-    {
-      "title": "Brasil vence Canadá por 3 a 2 e vai aos qualifiers da Billie Jean King Cup de 2027",
-      "desc": "O Brasil garantiu neste sábado uma vaga nos qualifiers intercontinentais da Billie Jean King Cup de 2027. Nos duelos da repescagem contra o Canadá, disputados em Vitória (ES), a delegação brasileira venceu por 3 a 2 e se...",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/id14582_261121194745705033.webp",
-      "url": "https://www.gazetaesportiva.com/mais-esportes/tenis/brasil-vence-canada-por-3-a-2-e-vai-aos-qualifiers-da-billie-jean-king-cup-de-2027/",
-      "source": "Gazeta Esportiva",
-      "date": "Hoje",
-      "categoria": "⚽ Esportes"
+      "title": "Tirei meus arquivos da nuvem e escrevi um navegador de arquivos em um único binário",
+      "desc": "Sou o autor do projeto, então leiam como relato de construção, não como review independente. ...",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3vka03su0bgxd3cl5jin.png",
+      "url": "https://dev.to/_c5679ef7c86ab2dfdde7d/tirei-meus-arquivos-da-nuvem-e-escrevi-um-navegador-de-arquivos-em-um-unico-binario-16bm",
+      "source": "Dev.to Brasil",
+      "date": "Nov 20",
+      "categoria": "Tecnologia"
     },
     {
       "title": "Abate de bovinos tem queda anual no terceiro trimestre, enquanto o de suínos e frangos avança",
@@ -105,31 +105,40 @@
       "categoria": "Finanças"
     },
     {
-      "title": "Curiosity Spots Drifting Twilight Clouds",
-      "desc": "Description NASA’s Curiosity Mars rover captured these drifting clouds on Oct. 31, 2026, the 5,061st Martian day, or sol, of the mission.",
-      "img": "https://assets.science.nasa.gov/dynamicimage/assets/science/psd/photojournal/pia/pia26805/PIA26805.jpg",
-      "url": "https://science.nasa.gov/photojournal/curiosity-spots-drifting-twilight-clouds/",
-      "source": "SpaceTech",
-      "date": "2026-11-20",
-      "categoria": "Ciência"
+      "title": "IBGE realiza, em Brasília, coletiva pública para divulgar primeiros resultados da POF 2024-2025",
+      "desc": "O Instituto Brasileiro de Geografia e Estatística (IBGE) realizará, no dia 27 de novembro, às 10h, uma coletiva pública para divulgação da publicação Pesquisa de Orçamentos Familiares (POF) 2024-2025 - Primeiros Resultados.",
+      "img": "https://agenciadenoticias.ibge.gov.br/images/agenciadenoticias/ibge/2026_11/coletivapof.jpg",
+      "url": "http://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/48695-ibge-realiza-em-brasilia-coletiva-publica-para-divulgar-primeiros-resultados-da-pof-2024-2025.html",
+      "source": "IBGE Oficial",
+      "date": "19/11/2026",
+      "categoria": "Finanças"
     },
     {
-      "title": "Story Points Não São Horas: por que converter pontos em tempo destrói a Sprint Planning",
-      "desc": "Por que transformar story points em horas gera estimativas falsas e como a estimativa relativa em tempo real acelera entregas da squad.",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flmj56yebweo71l7qw7gb.png",
-      "url": "https://dev.to/geekecia/story-points-nao-sao-horas-por-que-converter-pontos-em-tempo-destroi-a-sprint-planning-3ghm",
-      "source": "Dev.to Brasil",
-      "date": "Nov 10",
-      "categoria": "Tecnologia"
-    },
-    {
-      "title": "João Gomes e Ary Mirelle curtem jantar romântico com Sthe Matos e Kevi Jonny",
-      "desc": "O casal está em Barra de São Miguel acompanhados de Kevi Jonny e Sthe Matos O casal está em Barra de São Miguel acompanhados de Kevi Jonny e Sthe Matos Antes da maratona de shows do período junino, João Gomes e Ary Mirelle...",
-      "img": "https://images.metroimg.com/2023/05/31185334/Design-sem-nome-2023-05-31T185325.578.jpg",
-      "url": "https://www.metropoles.com/colunas/leo-dias/joao-gomes-e-ary-curtem-jantar-romantico-com-sthe-matos-e-kevi-jonny",
+      "title": "Raul Gil é internado e passa por procedimento cirúrgico em SP",
+      "desc": "Essa é a segunda internação de Raul este ano, em fevereiro ele deu entrada no hospital para a realização de alguns exames Essa é a segunda internação de Raul este ano, em fevereiro ele deu entrada no hospital para a realização de...",
+      "img": "https://images.metroimg.com/2018/11/23153705/Screenshot_12115.jpg",
+      "url": "https://www.metropoles.com/colunas/leo-dias/raul-gil-e-internado-e-passa-por-procedimento-cirurgico-em-sp",
       "source": "Coluna Famosos",
       "date": "Hoje",
       "categoria": "⭐ Famosos"
+    },
+    {
+      "title": "Palmeiras amarga terceiro vice do Brasileiro com Abel e registra marca inédita na competição",
+      "desc": "Palmeiras amarga terceiro vice do Brasileiro com Abel e registra marca inédita O empate por 1 a 1 com o Flamengo na tarde do último sábado fez o Palmeiras amargar o terceiro vice consecutivo do Campeonato Brasileiro , registrando...",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/21112026_cg_palmeiras_3080_16.webp",
+      "url": "https://www.gazetaesportiva.com/times/palmeiras/palmeira-terceiro-vice-do-brasileiro-com-abel-marca-inedita/",
+      "source": "Gazeta Esportiva",
+      "date": "Hoje",
+      "categoria": "⚽ Esportes"
+    },
+    {
+      "title": "PT prepara “festa do interior” para visita de Lula à Bahia",
+      "desc": "Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em última rodada pelo Nordeste antes do 1º turno Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em...",
+      "img": "https://images.metroimg.com/2026/01/lula-bahia.jpg",
+      "url": "https://www.metropoles.com/brasil/pt-prepara-festa-do-interior-para-visita-de-lula-a-bahia",
+      "source": "Metrópoles Política",
+      "date": "Hoje",
+      "categoria": "🏛️ Política"
     },
     {
       "title": "Eleições 2026: brasileiros reclamam de filas para votar no exterior",
@@ -141,13 +150,49 @@
       "categoria": "🏛️ Política"
     },
     {
-      "title": "Cruzeiro bate rebaixada Chapecoense e chega à sexta vitória consecutiva no Brasileiro",
-      "desc": "Cruzeiro bate Chapecoense e chega à sexta vitória seguida no Brasileiro Neste sábado, o Cruzeiro venceu a Chapecoense por 2 a 1, pela 36ª rodada do Brasileirão, na Arena Condá, em Chapecó (SC).",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/55666871155_3671354ac0_o.webp",
-      "url": "https://www.gazetaesportiva.com/times/cruzeiro/cruzeiro-vence-chapecoense-sexta-vitoria-seguida-brasileirao/",
+      "title": "IBGE leva capacitação sobre desastres a sete estados e mobiliza quase 300 participantes presencialmente",
+      "desc": "A quarta edição da capacitação do SINGED Lab Desastres, promovida pelo IBGE, mobilizou 293 participantes na modalidade presencial em sete estados brasileiros, ampliando o acesso a informações estatísticas, geográficas e...",
+      "img": "https://agenciadenoticias.ibge.gov.br/images/agenciadenoticias/ibge/2026_11/singed1.jpg",
+      "url": "http://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/48698-ibge-leva-capacitacao-sobre-desastres-a-sete-estados-e-mobiliza-quase-300-participantes-presencialmente.html",
+      "source": "IBGE Oficial",
+      "date": "19/11/2026",
+      "categoria": "Finanças"
+    },
+    {
+      "title": "Veja fotos do Grande Prêmio de Las Vegas de Fórmula 1",
+      "desc": "O Grande Prêmio de Las Vegas de Fórmula 1 movimentou as ruas da cidade norte-americana neste domingo. Confira uma galeria de fotos com os principais momentos da corrida, que terminou com a vitória do holandês Max Verstappen, da...",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/AFP__20261122__D89Z3VQ__v1__HighRes__776433569.webp",
+      "url": "https://www.gazetaesportiva.com/motor/formula-1/veja-fotos-do-grande-premio-de-las-vegas-de-formula-1/",
       "source": "Gazeta Esportiva",
       "date": "Hoje",
       "categoria": "⚽ Esportes"
+    },
+    {
+      "title": "Amortização de empréstimo imobiliário em código: Cálculo exato no sistema francês (Tabela Price)",
+      "desc": "O cálculo das prestações de um empréstimo imobiliário pelo sistema francês de amortização (conhecido...",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fvqayjz16hnknzxfcebzy.png",
+      "url": "https://dev.to/miri-calc/amortizacao-de-emprestimo-imobiliario-em-codigo-calculo-exato-no-sistema-frances-tabela-price-3ibe",
+      "source": "Dev.to Brasil",
+      "date": "Nov 19",
+      "categoria": "Tecnologia"
+    },
+    {
+      "title": "Juventus goleia o Venezia em 18 minutos e sobe na tabela do Campeonato Italiano",
+      "desc": "A Juventus goleou o Venezia por 4 a 0 neste domingo, no Allianz Stadium, pela 12ª rodada do Campeonato Italiano.",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/SnapDownloader.App_922418044_18660692305013180_3366116289917941149_n.webp",
+      "url": "https://www.gazetaesportiva.com/times/juventus/juventus-goleia-o-venezia-em-18-minutos-e-sobe-na-tabela-do-campeonato-italiano/",
+      "source": "Gazeta Esportiva",
+      "date": "Hoje",
+      "categoria": "⚽ Esportes"
+    },
+    {
+      "title": "CAGR vs. Média Simples em Código: Por Que a Média Aritmética Superestima o Retorno Real",
+      "desc": "Um dos erros conceituais mais frequentes em relatórios financeiros e scripts de análise de...",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fe0k8jw0gxj108vab6idi.png",
+      "url": "https://dev.to/miri-calc/cagr-vs-media-simples-em-codigo-por-que-a-media-aritmetica-superestima-o-retorno-real-18m5",
+      "source": "Dev.to Brasil",
+      "date": "Nov 15",
+      "categoria": "Tecnologia"
     },
     {
       "title": "Filhos de Gugu divergem sobre união do pai com Rose Miriam",
@@ -159,10 +204,55 @@
       "categoria": "⭐ Famosos"
     },
     {
-      "title": "APOD: 2026 November 21 – Voyager’s Neptune",
-      "desc": "APOD Science APOD APOD: 2026 November 21 –… Today’s APOD Archive Submissions Index Search Calendar RSS Education About Discuss APOD Astronomy Picture of the Day Discover the cosmos!",
-      "img": "https://assets.science.nasa.gov/dynamicimage/assets/science/cds/apod/apod/2026/november/Neptune-South-Pole-Voyager-2_2327x1670.jpg",
-      "url": "https://science.nasa.gov/image-article/apod-2026-november-21-voyagers-neptune/",
+      "title": "Denmark’s GomSpace Secures €8M Contract for Blue Origin Moon Mission",
+      "desc": "O fabricante dinamarquês de satélites GomSpace garantiu um contrato de 8 milhões de euros para continuar a desenvolver duas naves espaciais para a missão de prospecção de recursos lunares da Blue Origin.",
+      "img": "https://europeanspaceflight.com/wp-content/uploads/2026/11/Denmarks-GomSpace-Secures-8-Million-Euro-Contract-for-Blue-Origin-Moon-Mission.webp",
+      "url": "https://europeanspaceflight.com/denmarks-gomspace-secures-e8m-contract-for-blue-origin-moon-mission/",
+      "source": "SpaceTech",
+      "date": "2026-11-21",
+      "categoria": "Ciência"
+    },
+    {
+      "title": "Na Bahia, Lula diz a aliados estar preocupado com crise no STF",
+      "desc": "O presidente Lula participou de carreata em Salvador nesta terça-feira junto aos candidatos do PT ao Senado e ao Governo do estado O presidente Lula participou de carreata em Salvador nesta terça-feira junto aos candidatos do PT...",
+      "img": "https://images.metroimg.com/2026/09/foto-lula-salvaor-scaled.jpg",
+      "url": "https://www.metropoles.com/brasil/na-bahia-lula-diz-a-aliados-estar-preocupado-com-crise-no-stf",
+      "source": "Metrópoles Política",
+      "date": "Hoje",
+      "categoria": "🏛️ Política"
+    },
+    {
+      "title": "Cortar antes de comprimir: por que vídeos longos do celular ficam melhores assim",
+      "desc": "Transparência: eu faço parte da equipe do CompressVid, um compressor de vídeo online. Os exemplos...",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F98e1zx1egdymn8wdg3u7.png",
+      "url": "https://dev.to/compressvid/cortar-antes-de-comprimir-por-que-videos-longos-do-celular-ficam-melhores-assim-b0a",
+      "source": "Dev.to Brasil",
+      "date": "Nov 11",
+      "categoria": "Tecnologia"
+    },
+    {
+      "title": "Story Points Não São Horas: por que converter pontos em tempo destrói a Sprint Planning",
+      "desc": "Por que transformar story points em horas gera estimativas falsas e como a estimativa relativa em tempo real acelera entregas da squad.",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flmj56yebweo71l7qw7gb.png",
+      "url": "https://dev.to/geekecia/story-points-nao-sao-horas-por-que-converter-pontos-em-tempo-destroi-a-sprint-planning-3ghm",
+      "source": "Dev.to Brasil",
+      "date": "Nov 10",
+      "categoria": "Tecnologia"
+    },
+    {
+      "title": "IBGE convida Federação dos Municípios do Rio Grande do Norte para a CONFEST/CONFEGE 2026",
+      "desc": "A superintendente do Instituto Brasileiro de Geografia e Estatística (IBGE) no Rio Grande do Norte, Fabiana Fábrega de Oliveira, reuniu-se nesta segunda-feira (16) com o presidente da Federação dos Municípios do Rio Grande do...",
+      "img": "https://agenciadenoticias.ibge.gov.br/images/agenciadenoticias/ibge/2026_11/encontrorn2.jpg",
+      "url": "http://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/48694-ibge-convida-federacao-dos-municipios-do-rio-grande-do-norte-para-a-confest-confege-2026.html",
+      "source": "IBGE Oficial",
+      "date": "19/11/2026",
+      "categoria": "Finanças"
+    },
+    {
+      "title": "Cobertura ao vivo: SpaceX lançará satélites de coleta de inteligência para o National Reconnaissance Office",
+      "desc": "A missão NROL-136 será o quarto lançamento do ano apoiando a constelação de satélites de arquitetura proliferada da agência em órbita baixa da Terra.",
+      "img": "https://spaceflightnow.com/wp-content/uploads/2026/04/20260414-Falcon-9-File.jpg",
+      "url": "https://spaceflightnow.com/2026/11/21/live-coverage-spacex-to-launch-intelligence-gathering-satellites-for-the-national-reconnaissance-office-3/",
       "source": "SpaceTech",
       "date": "2026-11-21",
       "categoria": "Ciência"
@@ -177,91 +267,10 @@
       "categoria": "🏛️ Política"
     },
     {
-      "title": "Denmark’s GomSpace Secures €8M Contract for Blue Origin Moon Mission",
-      "desc": "Danish satellite manufacturer GomSpace has secured an €8 million contract to continue developing two spacecraft for Blue Origin’s lunar resource prospecting mission.",
-      "img": "https://europeanspaceflight.com/wp-content/uploads/2026/11/Denmarks-GomSpace-Secures-8-Million-Euro-Contract-for-Blue-Origin-Moon-Mission.webp",
-      "url": "https://europeanspaceflight.com/denmarks-gomspace-secures-e8m-contract-for-blue-origin-moon-mission/",
-      "source": "SpaceTech",
-      "date": "2026-11-21",
-      "categoria": "Ciência"
-    },
-    {
-      "title": "Live coverage: SpaceX to launch intelligence-gathering satellites for the National Reconnaissance Office",
-      "desc": "The NROL-136 mission will be the fourth launch of the year supporting the agency’s proliferated architecture satellite constellation in low Earth orbit.",
-      "img": "https://spaceflightnow.com/wp-content/uploads/2026/04/20260414-Falcon-9-File.jpg",
-      "url": "https://spaceflightnow.com/2026/11/21/live-coverage-spacex-to-launch-intelligence-gathering-satellites-for-the-national-reconnaissance-office-3/",
-      "source": "SpaceTech",
-      "date": "2026-11-21",
-      "categoria": "Ciência"
-    },
-    {
-      "title": "CAGR vs. Média Simples em Código: Por Que a Média Aritmética Superestima o Retorno Real",
-      "desc": "Um dos erros conceituais mais frequentes em relatórios financeiros e scripts de análise de...",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fe0k8jw0gxj108vab6idi.png",
-      "url": "https://dev.to/miri-calc/cagr-vs-media-simples-em-codigo-por-que-a-media-aritmetica-superestima-o-retorno-real-18m5",
-      "source": "Dev.to Brasil",
-      "date": "Nov 15",
-      "categoria": "Tecnologia"
-    },
-    {
-      "title": "IBGE realiza, em Brasília, coletiva pública para divulgar primeiros resultados da POF 2024-2025",
-      "desc": "O Instituto Brasileiro de Geografia e Estatística (IBGE) realizará, no dia 27 de novembro, às 10h, uma coletiva pública para divulgação da publicação Pesquisa de Orçamentos Familiares (POF) 2024-2025 - Primeiros Resultados.",
-      "img": "https://agenciadenoticias.ibge.gov.br/images/agenciadenoticias/ibge/2026_11/coletivapof.jpg",
-      "url": "http://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/48695-ibge-realiza-em-brasilia-coletiva-publica-para-divulgar-primeiros-resultados-da-pof-2024-2025.html",
-      "source": "IBGE Oficial",
-      "date": "19/11/2026",
-      "categoria": "Finanças"
-    },
-    {
-      "title": "Amortização de empréstimo imobiliário em código: Cálculo exato no sistema francês (Tabela Price)",
-      "desc": "O cálculo das prestações de um empréstimo imobiliário pelo sistema francês de amortização (conhecido...",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fvqayjz16hnknzxfcebzy.png",
-      "url": "https://dev.to/miri-calc/amortizacao-de-emprestimo-imobiliario-em-codigo-calculo-exato-no-sistema-frances-tabela-price-3ibe",
-      "source": "Dev.to Brasil",
-      "date": "Nov 19",
-      "categoria": "Tecnologia"
-    },
-    {
-      "title": "Raul Gil é internado e passa por procedimento cirúrgico em SP",
-      "desc": "Essa é a segunda internação de Raul este ano, em fevereiro ele deu entrada no hospital para a realização de alguns exames Essa é a segunda internação de Raul este ano, em fevereiro ele deu entrada no hospital para a realização de...",
-      "img": "https://images.metroimg.com/2018/11/23153705/Screenshot_12115.jpg",
-      "url": "https://www.metropoles.com/colunas/leo-dias/raul-gil-e-internado-e-passa-por-procedimento-cirurgico-em-sp",
-      "source": "Coluna Famosos",
-      "date": "Hoje",
-      "categoria": "⭐ Famosos"
-    },
-    {
-      "title": "Quer trabalhar no IBGE? Live esclarece dúvidas sobre seleção com remuneração de até R$ 5.562/mês",
-      "desc": "As oportunidades estão distribuídas por municípios de todo o país e exigem ensino fundamental completo.- Foto: Equipe CCDI/CCS O Instituto Brasileiro de Geografia e Estatística (IBGE) realizará, no dia 23 de novembro, às 10h, uma...",
-      "img": "https://agenciadenoticias.ibge.gov.br/images/agenciadenoticias/ibge/2026_10/censoexp-home.jpg",
-      "url": "http://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/48702-quer-trabalhar-no-ibge-live-esclarece-duvidas-sobre-selecao-com-remuneracao-de-ate-r-5-562-mes.html",
-      "source": "IBGE Oficial",
-      "date": "19/11/2026",
-      "categoria": "⚽ Esportes"
-    },
-    {
-      "title": "Tirei meus arquivos da nuvem e escrevi um navegador de arquivos em um único binário",
-      "desc": "Sou o autor do projeto, então leiam como relato de construção, não como review independente. ...",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3vka03su0bgxd3cl5jin.png",
-      "url": "https://dev.to/_c5679ef7c86ab2dfdde7d/tirei-meus-arquivos-da-nuvem-e-escrevi-um-navegador-de-arquivos-em-um-unico-binario-16bm",
-      "source": "Dev.to Brasil",
-      "date": "Nov 20",
-      "categoria": "Tecnologia"
-    },
-    {
-      "title": "Flamengo provoca Palmeiras após título: “Primeiro Deca no campo”",
-      "desc": "Flamengo provoca Palmeiras após título: \"Primeiro Deca no campo\" Neste sábado, após o Flamengo confirmar a conquista do título brasileiro de 2026, o Rubro-Negro utilizou suas redes sociais para provocar o Palmeiras.",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/Captura-de-tela-2026-11-21-230531.webp",
-      "url": "https://www.gazetaesportiva.com/times/flamengo/flamengo-provoca-palmeiras-deca-no-campo-brasileirao-2026/",
-      "source": "Gazeta Esportiva",
-      "date": "Hoje",
-      "categoria": "⚽ Esportes"
-    },
-    {
-      "title": "Cruzeiro é superado pelo São José e perde invencibilidade na Superliga Masculina",
-      "desc": "Cruzeiro é superado pelo São José e perde invencibilidade na Superliga Masculina Neste sábado, o Sada Cruzeiro foi derrotado por 3 sets a 2 pelo São José, com parciais de 17/25, 27/25, 25/17, 19/25 e 14/16 pela quinta rodada da...",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/Jogo-VVSJ-x-Sada-Cruzeiro-Superliga-2026-27-6.webp",
-      "url": "https://www.gazetaesportiva.com/campeonatos/superliga-masculina-de-volei/cruzeiro-e-superado-pelo-sao-jose-e-perde-invencibilidade-na-superliga-masculina/",
+      "title": "Santos x Grêmio: saiba onde assistir ao jogo pela 36ª rodada do Brasileirão",
+      "desc": "Santos x Grêmio: saiba onde assistir ao jogo pela 36ª rodada do Brasileirão Santos e Grêmio se enfrentam nesta segunda-feira, pela 36ª rodada do Campeonato Brasileiro .",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/10/onde-assistir-palmeiras.webp",
+      "url": "https://www.gazetaesportiva.com/campeonatos/brasileiro-serie-a/santos-x-gremio-onde-assistir-brasileirao/",
       "source": "Gazeta Esportiva",
       "date": "Hoje",
       "categoria": "⚽ Esportes"
@@ -276,40 +285,31 @@
       "categoria": "⭐ Famosos"
     },
     {
-      "title": "Cortar antes de comprimir: por que vídeos longos do celular ficam melhores assim",
-      "desc": "Transparência: eu faço parte da equipe do CompressVid, um compressor de vídeo online. Os exemplos...",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F98e1zx1egdymn8wdg3u7.png",
-      "url": "https://dev.to/compressvid/cortar-antes-de-comprimir-por-que-videos-longos-do-celular-ficam-melhores-assim-b0a",
-      "source": "Dev.to Brasil",
-      "date": "Nov 11",
-      "categoria": "Tecnologia"
-    },
-    {
-      "title": "IBGE convida Federação dos Municípios do Rio Grande do Norte para a CONFEST/CONFEGE 2026",
-      "desc": "A superintendente do Instituto Brasileiro de Geografia e Estatística (IBGE) no Rio Grande do Norte, Fabiana Fábrega de Oliveira, reuniu-se nesta segunda-feira (16) com o presidente da Federação dos Municípios do Rio Grande do...",
-      "img": "https://agenciadenoticias.ibge.gov.br/images/agenciadenoticias/ibge/2026_11/encontrorn2.jpg",
-      "url": "http://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/48694-ibge-convida-federacao-dos-municipios-do-rio-grande-do-norte-para-a-confest-confege-2026.html",
-      "source": "IBGE Oficial",
-      "date": "19/11/2026",
-      "categoria": "Finanças"
-    },
-    {
-      "title": "Refinamento de Backlog: o guia prático para nunca mais passar de 30 minutos na Sprint Planning",
-      "desc": "Como um refinamento eficiente e ferramentas de estimativa sem atrito reduzem a duração da Sprint Planning para menos de 30 minutos.",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fikqgfn0806ms0tfewlhc.png",
-      "url": "https://dev.to/geekecia/refinamento-de-backlog-o-guia-pratico-para-nunca-mais-passar-de-30-minutos-na-sprint-planning-1093",
-      "source": "Dev.to Brasil",
-      "date": "Nov 16",
-      "categoria": "Tecnologia"
-    },
-    {
-      "title": "Na Bahia, Lula diz a aliados estar preocupado com crise no STF",
-      "desc": "O presidente Lula participou de carreata em Salvador nesta terça-feira junto aos candidatos do PT ao Senado e ao Governo do estado O presidente Lula participou de carreata em Salvador nesta terça-feira junto aos candidatos do PT...",
-      "img": "https://images.metroimg.com/2026/09/foto-lula-salvaor-scaled.jpg",
-      "url": "https://www.metropoles.com/brasil/na-bahia-lula-diz-a-aliados-estar-preocupado-com-crise-no-stf",
-      "source": "Metrópoles Política",
+      "title": "Max Verstappen vence GP de Las Vegas de Fórmula 1",
+      "desc": "Max Verstappen vence GP de Las Vegas de Fórmula 1 O piloto holandês Max Verstappen , da Red Bull, venceu o Grande Prêmio de Las Vegas de Fórmula 1 , disputado na madrugada deste domingo, e se consolidou na segunda posição do...",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/AFP__20261122__D89Z3VP__v1__HighRes__776433569.webp",
+      "url": "https://www.gazetaesportiva.com/motor/formula-1/max-verstappen-vence-gp-de-las-vegas-de-formula-1/",
+      "source": "Gazeta Esportiva",
       "date": "Hoje",
-      "categoria": "🏛️ Política"
+      "categoria": "⚽ Esportes"
+    },
+    {
+      "title": "APOD: 2026 November 21 – Voyager’s Neptune",
+      "desc": "APOD Science APOD APOD: 2026 21 de novembro –… Arquivo APOD de hoje Índice de envios Pesquisar Calendário RSS Educação Sobre Discutir APOD Astronomia Imagem do dia Descubra o cosmos!",
+      "img": "https://assets.science.nasa.gov/dynamicimage/assets/science/cds/apod/apod/2026/november/Neptune-South-Pole-Voyager-2_2327x1670.jpg",
+      "url": "https://science.nasa.gov/image-article/apod-2026-november-21-voyagers-neptune/",
+      "source": "SpaceTech",
+      "date": "2026-11-21",
+      "categoria": "Ciência"
+    },
+    {
+      "title": "João Gomes e Ary Mirelle curtem jantar romântico com Sthe Matos e Kevi Jonny",
+      "desc": "O casal está em Barra de São Miguel acompanhados de Kevi Jonny e Sthe Matos O casal está em Barra de São Miguel acompanhados de Kevi Jonny e Sthe Matos Antes da maratona de shows do período junino, João Gomes e Ary Mirelle...",
+      "img": "https://images.metroimg.com/2023/05/31185334/Design-sem-nome-2023-05-31T185325.578.jpg",
+      "url": "https://www.metropoles.com/colunas/leo-dias/joao-gomes-e-ary-curtem-jantar-romantico-com-sthe-matos-e-kevi-jonny",
+      "source": "Coluna Famosos",
+      "date": "Hoje",
+      "categoria": "⭐ Famosos"
     }
   ]
 }
