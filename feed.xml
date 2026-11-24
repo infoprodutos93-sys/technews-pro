@@ -6,29 +6,9 @@
   <description>Notícias em tempo real sobre Inteligência Artificial, Tecnologia, Mercado Financeiro, Esportes e Política.</description>
   <language>pt-BR</language>
   <item>
-    <title>A 15 dias do evento, IBGE prorroga inscrições da conferência em Natal, de 08 a 10/12</title>
-    <link>http://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/48710-a-15-dias-do-evento-ibge-prorroga-inscricoes-da-conferencia-em-natal-de-08-a-10-12.html</link>
-    <description>Com 40% das atividades esgotadas, a conferência internacional do IBGE está a duas semanas de seu início, com um reforço na divulgação para o público do Rio Grande do Norte.</description>
-  </item>
-  <item>
-    <title>IBGE disponibiliza Agenda semanal com programações para os dias 23 a 29 de novembro</title>
-    <link>http://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/48706-ibge-disponibiliza-agenda-semanal-com-programacoes-para-os-dias-23-a-29-de-novembro.html</link>
-    <description>Agenda IBGE traz a programação do instituto para a semana - Foto: Bel Corção/Brasil com S O Instituto Brasileiro de Geografia e Estatística (IBGE) divulgou hoje (23) a Agenda IBGE para a semana de 23 a 29 de novembro.</description>
-  </item>
-  <item>
-    <title>Braithwaite celebra vitória do Grêmio sobre o Santos e saída do Z4: “Vamos brigar até o fim”</title>
-    <link>https://www.gazetaesportiva.com/times/gremio/braithwaite-celebra-vitoria-do-gremio-sobre-o-santos-e-saida-do-z4-vamos-brigar-ate-o-fim/</link>
-    <description>Braithwaite celebra vitória do Grêmio sobre o Santos e saída do Z4: &quot;Vamos brigar até o fim&quot; O atacante Martin Braithwaite celebrou a vitória do Grêmio por 2 a 0 sobre o Santos , nesta segunda-feira, no Morumbis, pela 36ª...</description>
-  </item>
-  <item>
-    <title>Cortar antes de comprimir: por que vídeos longos do celular ficam melhores assim</title>
-    <link>https://dev.to/compressvid/cortar-antes-de-comprimir-por-que-videos-longos-do-celular-ficam-melhores-assim-b0a</link>
-    <description>Transparência: eu faço parte da equipe do CompressVid, um compressor de vídeo online. Os exemplos...</description>
-  </item>
-  <item>
-    <title>João Gomes e Ary Mirelle curtem jantar romântico com Sthe Matos e Kevi Jonny</title>
-    <link>https://www.metropoles.com/colunas/leo-dias/joao-gomes-e-ary-curtem-jantar-romantico-com-sthe-matos-e-kevi-jonny</link>
-    <description>O casal está em Barra de São Miguel acompanhados de Kevi Jonny e Sthe Matos O casal está em Barra de São Miguel acompanhados de Kevi Jonny e Sthe Matos Antes da maratona de shows do período junino, João Gomes e Ary Mirelle...</description>
+    <title>NASA pode receber aumento de US$ 2 bilhões enquanto a Casa Branca busca acelerar Artemis</title>
+    <link>https://arstechnica.com/space/2026/11/nasa-may-get-2-billion-boost-as-white-house-seeks-to-accelerate-artemis/</link>
+    <description>“Sem este financiamento, as atividades seriam adiadas”.</description>
   </item>
   <item>
     <title>Refinamento de Backlog: o guia prático para nunca mais passar de 30 minutos na Sprint Planning</title>
@@ -36,9 +16,24 @@
     <description>Como um refinamento eficiente e ferramentas de estimativa sem atrito reduzem a duração da Sprint Planning para menos de 30 minutos.</description>
   </item>
   <item>
-    <title>Singed Lab Desastres é apresentado a ministérios e órgãos em reunião no Palácio do Planalto</title>
-    <link>http://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/48711-singed-lab-desastres-e-apresentado-a-ministerios-e-orgaos-de-governo-em-reuniao-do-sistema-de-assessoramento-para-assuntos-federativo-sasf-no-palacio-do-planalto.html</link>
-    <description>O Singed Lab Desastres, solução voltada à integração e ao uso de dados do IBGE em situações de desastres, foi apresentado nesta quarta-feira (18), no Palácio do Planalto, durante reunião do Sistema de Assessoramento para...</description>
+    <title>Estação Espacial Tiangong receberá o primeiro visitante internacional</title>
+    <link>https://www.nasaspaceflight.com/2026/11/shenzhou-24/</link>
+    <description>A China está se preparando para lançar a espaçonave tripulada Shenzhou-24 ao espaço Tiangong (“palácio celestial”)… O posto Estação Espacial Tiangong receberá o primeiro visitante internacional apareceu primeiro em...</description>
+  </item>
+  <item>
+    <title>O helicóptero Dragonfly Dragonfly da NASA ganha destaque</title>
+    <link>https://science.nasa.gov/missions/dragonfly/nasas-titan-bound-dragonfly-rotorcraft-gets-its-eyes/</link>
+    <description>Os instrumentos científicos para o Dragonfly da NASA estão começando a chegar ao Laboratório de Física Aplicada (APL) da Johns Hopkins em Laurel, Maryland, onde o helicóptero do tamanho de um carro está se reunindo para sua...</description>
+  </item>
+  <item>
+    <title>É hora de dizer até breve ao Metrópoles e partir para um novo desafio</title>
+    <link>https://www.metropoles.com/colunas/leo-dias/e-hora-de-dizer-ate-breve-ao-metropoles-e-partir-para-um-novo-desafio</link>
+    <description>Amanhã (1º/6), estreia o LeoDias.com. A missão é gigantesca, mas nunca foi meu tipo fugir dos desafios da vida Amanhã (1º/6), estreia o LeoDias.com.</description>
+  </item>
+  <item>
+    <title>CAGR vs. Média Simples em Código: Por Que a Média Aritmética Superestima o Retorno Real</title>
+    <link>https://dev.to/miri-calc/cagr-vs-media-simples-em-codigo-por-que-a-media-aritmetica-superestima-o-retorno-real-18m5</link>
+    <description>Um dos erros conceituais mais frequentes em relatórios financeiros e scripts de análise de...</description>
   </item>
   <item>
     <title>Na Bahia, Lula diz a aliados estar preocupado com crise no STF</title>
@@ -46,14 +41,9 @@
     <description>O presidente Lula participou de carreata em Salvador nesta terça-feira junto aos candidatos do PT ao Senado e ao Governo do estado O presidente Lula participou de carreata em Salvador nesta terça-feira junto aos candidatos do...</description>
   </item>
   <item>
-    <title>Northrop books sixth Falcon 9 for Cygnus as Antares 330 waits</title>
-    <link>https://www.nasaspaceflight.com/2026/11/northrop-sixth-f9-cygnus-antares-waits/</link>
-    <description>A Northrop Grumman contratou um sexto lançamento do Falcon 9 para sua espaçonave de reabastecimento Cygnus, estendendo… A postagem Northrop reserva o sexto Falcon 9 para Cygnus enquanto o Antares 330 espera apareceu pela primeira...</description>
-  </item>
-  <item>
-    <title>PT prepara “festa do interior” para visita de Lula à Bahia</title>
-    <link>https://www.metropoles.com/brasil/pt-prepara-festa-do-interior-para-visita-de-lula-a-bahia</link>
-    <description>Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em última rodada pelo Nordeste antes do 1º turno Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em...</description>
+    <title>IBGE leva capacitação sobre desastres a sete estados e mobiliza quase 300 participantes presencialmente</title>
+    <link>http://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/48698-ibge-leva-capacitacao-sobre-desastres-a-sete-estados-e-mobiliza-quase-300-participantes-presencialmente.html</link>
+    <description>A quarta edição da capacitação do SINGED Lab Desastres, promovida pelo IBGE, mobilizou 293 participantes na modalidade presencial em sete estados brasileiros, ampliando o acesso a informações estatísticas, geográficas e...</description>
   </item>
   <item>
     <title>Story Points Não São Horas: por que converter pontos em tempo destrói a Sprint Planning</title>
@@ -61,29 +51,49 @@
     <description>Por que transformar story points em horas gera estimativas falsas e como a estimativa relativa em tempo real acelera entregas da squad.</description>
   </item>
   <item>
+    <title>PT prepara “festa do interior” para visita de Lula à Bahia</title>
+    <link>https://www.metropoles.com/brasil/pt-prepara-festa-do-interior-para-visita-de-lula-a-bahia</link>
+    <description>Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em última rodada pelo Nordeste antes do 1º turno Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em...</description>
+  </item>
+  <item>
+    <title>Filhos de Gugu divergem sobre união do pai com Rose Miriam</title>
+    <link>https://www.metropoles.com/colunas/leo-dias/filhos-de-gugu-divergem-sobre-uniao-do-pai-com-rose-miriam</link>
+    <description>Trechos do processo judicial mostram uma discussão entre os filhos do apresentador sobre o reconhecimento da união estável dos pais Trechos do processo judicial mostram uma discussão entre os filhos do apresentador sobre o...</description>
+  </item>
+  <item>
+    <title>A 15 dias do evento, IBGE prorroga inscrições da conferência em Natal, de 08 a 10/12</title>
+    <link>http://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/48710-a-15-dias-do-evento-ibge-prorroga-inscricoes-da-conferencia-em-natal-de-08-a-10-12.html</link>
+    <description>Com 40% das atividades esgotadas, a conferência internacional do IBGE está a duas semanas de seu início, com um reforço na divulgação para o público do Rio Grande do Norte.</description>
+  </item>
+  <item>
     <title>Cinco dos sete candidatos ao governo do Rio Grande do Sul já foram às urnas</title>
     <link>https://www.metropoles.com/brasil/politica-brasil/cinco-dos-sete-candidatos-ao-governo-do-rio-grande-do-sul-ja-foram-as-urnas</link>
     <description>Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das intenções de voto e Juliana Brizola, 35% Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das...</description>
   </item>
   <item>
-    <title>Santos 0 x 2 Grêmio: assista aos melhores momentos da partida pelo Brasileirão</title>
-    <link>https://www.gazetaesportiva.com/times/santos/veja-os-melhores-momentos-de-santos-0-x-2-gremio-pelo-brasileirao/</link>
-    <description>Santos 0 x 2 Grêmio: assista aos melhores momentos da partida pelo Brasileirão O Santos foi derrotado pelo Grêmio por 2 a 0 na noite desta segunda-feira, no Morumbis, em São Paulo (SP), pela 36ª rodada do Campeonato Brasileiro.</description>
+    <title>IBGE disponibiliza Agenda semanal com programações para os dias 23 a 29 de novembro</title>
+    <link>http://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/48706-ibge-disponibiliza-agenda-semanal-com-programacoes-para-os-dias-23-a-29-de-novembro.html</link>
+    <description>Agenda IBGE traz a programação do instituto para a semana - Foto: Bel Corção/Brasil com S O Instituto Brasileiro de Geografia e Estatística (IBGE) divulgou hoje (23) a Agenda IBGE para a semana de 23 a 29 de novembro.</description>
   </item>
   <item>
-    <title>Cuca critica arbitragem, admite erros do Santos e mantém esperança por Libertadores</title>
-    <link>https://www.gazetaesportiva.com/times/santos/cuca-critica-arbitragem-santos-gremio-libertadores/</link>
-    <description>Cuca critica arbitragem e admite erros do Santos contra o Grêmio O técnico Cuca lamentou a derrota do Santos por 2 a 0 para o Grêmio, nesta segunda-feira, no Morumbis, pela 36ª rodada do Campeonato Brasileiro.</description>
+    <title>São Paulo goleia Criciúma e estreia com vitória na Copinha Feminina</title>
+    <link>https://www.gazetaesportiva.com/campeonatos/copa-sao-paulo/sao-paulo-goleia-criciuma-estreia-copinha-feminina/</link>
+    <description>São Paulo goleia Criciúma e estreia com vitória na Copinha Feminina O São Paulo estreou com vitória na Copinha Feminina de 2026 .</description>
   </item>
   <item>
-    <title>Sesc Flamengo vence o Osasco, mantém 100% e assume a liderança da Superliga Feminina</title>
-    <link>https://www.gazetaesportiva.com/campeonatos/superliga-feminina-de-volei/sesc-flamengo-vence-o-osasco-e-assume-a-lideranca-da-superliga-feminina/</link>
-    <description>Sesc RJ Flamengo vence o Osasco e assume a liderança da Superliga Feminina Nesta segunda-feira, o Sesc RJ Flamengo venceu o Osasco São Cristóvão Saúde por 3 sets a 1 (parciais de 25/16, 30/28, 10/25 e 25/16), no Ginásio do...</description>
+    <title>Cortar antes de comprimir: por que vídeos longos do celular ficam melhores assim</title>
+    <link>https://dev.to/compressvid/cortar-antes-de-comprimir-por-que-videos-longos-do-celular-ficam-melhores-assim-b0a</link>
+    <description>Transparência: eu faço parte da equipe do CompressVid, um compressor de vídeo online. Os exemplos...</description>
   </item>
   <item>
-    <title>Raul Gil é internado e passa por procedimento cirúrgico em SP</title>
-    <link>https://www.metropoles.com/colunas/leo-dias/raul-gil-e-internado-e-passa-por-procedimento-cirurgico-em-sp</link>
-    <description>Essa é a segunda internação de Raul este ano, em fevereiro ele deu entrada no hospital para a realização de alguns exames Essa é a segunda internação de Raul este ano, em fevereiro ele deu entrada no hospital para a realização de...</description>
+    <title>R9 Competições chega como favorita ao título da Elite na Copa Truck em Brasília</title>
+    <link>https://www.gazetaesportiva.com/motor/r9-competicoes-chega-como-favorita-ao-titulo-da-elite-na-copa-truck-em-brasilia/</link>
+    <description>A R9 Competições entra na última etapa da Copa Truck, marcada para este domingo no Autódromo Internacional Nelson Piquet, em Brasília (DF), em busca de mais um título.</description>
+  </item>
+  <item>
+    <title>Lorena é cortada da Seleção Brasileira feminina, e Camila é convocada</title>
+    <link>https://www.gazetaesportiva.com/times/brasil/lorena-cortada-selecao-brasileira-camila-convocada/</link>
+    <description>Lorena é cortada da Seleção Brasileira feminina, e Camila é convocada A goleira Lorena, do Kansas City Current, foi cortada da Seleção Brasileira feminina para a última Data Fifa de 2026 .</description>
   </item>
   <item>
     <title>Tirei meus arquivos da nuvem e escrevi um navegador de arquivos em um único binário</title>
@@ -91,19 +101,9 @@
     <description>Sou o autor do projeto, então leiam como relato de construção, não como review independente. ...</description>
   </item>
   <item>
-    <title>Eleições 2026: brasileiros reclamam de filas para votar no exterior</title>
-    <link>https://www.metropoles.com/brasil/eleicoes-2026-brasileiros-reclamam-de-filas-para-votar-no-exterior</link>
-    <description>A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado (24/10) A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado (24/10)...</description>
-  </item>
-  <item>
-    <title>Amortização de empréstimo imobiliário em código: Cálculo exato no sistema francês (Tabela Price)</title>
-    <link>https://dev.to/miri-calc/amortizacao-de-emprestimo-imobiliario-em-codigo-calculo-exato-no-sistema-frances-tabela-price-3ibe</link>
-    <description>O cálculo das prestações de um empréstimo imobiliário pelo sistema francês de amortização (conhecido...</description>
-  </item>
-  <item>
-    <title>Cobertura ao vivo: SpaceX lançará carga útil classificada para a Força Espacial dos EUA</title>
-    <link>https://spaceflightnow.com/2026/11/23/live-coverage-spacex-to-launch-classified-payload-for-the-u-s-space-force-3/</link>
-    <description>A missão é a terceira de uma série de voos para a Força Espacial dos EUA com a designação ‘TH’ em registros públicos.</description>
+    <title>Erika Hilton recebe ameaça de morte e atrasa ida às urnas por segurança</title>
+    <link>https://www.metropoles.com/brasil/politica-brasil/erika-hilton-recebe-ameaca-de-morte-e-atrasa-ida-as-urnas-por-seguranca</link>
+    <description>Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos A deputada federal e candidata à...</description>
   </item>
 </channel>
 </rss>
