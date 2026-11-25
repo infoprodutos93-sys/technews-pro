@@ -3,7 +3,7 @@
   "version": "10.4",
   "portal": "TechNews PRO",
   "documentation_and_source": "https://infoprodutos93-sys.github.io/technews-pro/",
-  "updated_at_brt": "2026-11-24T22:44:29-03:00",
+  "updated_at_brt": "2026-11-25T13:24:47-03:00",
   "market_rates": {
     "USD_BRL": 5.7,
     "EUR_BRL": 6.18,
@@ -42,13 +42,67 @@
   "total_articles": 30,
   "articles": [
     {
-      "title": "Eleições 2026: brasileiros reclamam de filas para votar no exterior",
-      "desc": "A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado (24/10) A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado...",
-      "img": "https://images.metroimg.com/2026/10/filavotacaoparis.jpg",
-      "url": "https://www.metropoles.com/brasil/eleicoes-2026-brasileiros-reclamam-de-filas-para-votar-no-exterior",
+      "title": "IBGE faz coletiva em Caicó (RN) para divulgar conferência internacional no estado",
+      "desc": "Caicó (RN) sediará, no próximo dia 26 de novembro, às 10h, uma coletiva pública para apresentar a Conferência Nacional dos Produtores e Usuários de Informações Estatísticas, Geográficas, Geoespaciais e Ambientais...",
+      "img": "https://agenciadenoticias.ibge.gov.br/images/agenciadenoticias/ibge/2026_11/uern-campus-caico_1.jpg",
+      "url": "http://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/48721-ibge-faz-coletiva-em-caico-rn-para-divulgar-conferencia-internacional-no-estado-2.html",
+      "source": "IBGE Oficial",
+      "date": "24/11/2026",
+      "categoria": "Finanças"
+    },
+    {
+      "title": "Cinco dos sete candidatos ao governo do Rio Grande do Sul já foram às urnas",
+      "desc": "Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das intenções de voto e Juliana Brizola, 35% Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das...",
+      "img": "https://images.metroimg.com/2026/07/rio-grande-do-sul.jpg",
+      "url": "https://www.metropoles.com/brasil/politica-brasil/cinco-dos-sete-candidatos-ao-governo-do-rio-grande-do-sul-ja-foram-as-urnas",
       "source": "Metrópoles Política",
       "date": "Hoje",
       "categoria": "🏛️ Política"
+    },
+    {
+      "title": "João Gomes e Ary Mirelle curtem jantar romântico com Sthe Matos e Kevi Jonny",
+      "desc": "O casal está em Barra de São Miguel acompanhados de Kevi Jonny e Sthe Matos O casal está em Barra de São Miguel acompanhados de Kevi Jonny e Sthe Matos Antes da maratona de shows do período junino, João Gomes e Ary Mirelle...",
+      "img": "https://images.metroimg.com/2023/05/31185334/Design-sem-nome-2023-05-31T185325.578.jpg",
+      "url": "https://www.metropoles.com/colunas/leo-dias/joao-gomes-e-ary-curtem-jantar-romantico-com-sthe-matos-e-kevi-jonny",
+      "source": "Coluna Famosos",
+      "date": "Hoje",
+      "categoria": "⭐ Famosos"
+    },
+    {
+      "title": "Francisco Rocha tem desafio final na Europa em busca de novo pódio na temporada 2026",
+      "desc": "O kartódromo Leopard Circuit Viterbo, em Viterbo, na Itália, será o palco do último desafio europeu de 2026 para o brasileiro Francisco Rocha (Equipe: Forza Racing / Manager: Gastão Fráguas / Coaches: Claudio Dionisi e Lazzaro...",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/473534_1230499_wsk_lonato_261121_162713_al1_7080_web_.webp",
+      "url": "https://www.gazetaesportiva.com/motor/francisco-rocha-tem-desafio-final-na-europa-em-busca-de-novo-podio-na-temporada-2026/",
+      "source": "Gazeta Esportiva",
+      "date": "Hoje",
+      "categoria": "⚽ Esportes"
+    },
+    {
+      "title": "Story Points Não São Horas: por que converter pontos em tempo destrói a Sprint Planning",
+      "desc": "Por que transformar story points em horas gera estimativas falsas e como a estimativa relativa em tempo real acelera entregas da squad.",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flmj56yebweo71l7qw7gb.png",
+      "url": "https://dev.to/geekecia/story-points-nao-sao-horas-por-que-converter-pontos-em-tempo-destroi-a-sprint-planning-3ghm",
+      "source": "Dev.to Brasil",
+      "date": "Nov 10",
+      "categoria": "Tecnologia"
+    },
+    {
+      "title": "Cortar antes de comprimir: por que vídeos longos do celular ficam melhores assim",
+      "desc": "Transparência: eu faço parte da equipe do CompressVid, um compressor de vídeo online. Os exemplos...",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F98e1zx1egdymn8wdg3u7.png",
+      "url": "https://dev.to/compressvid/cortar-antes-de-comprimir-por-que-videos-longos-do-celular-ficam-melhores-assim-b0a",
+      "source": "Dev.to Brasil",
+      "date": "Nov 11",
+      "categoria": "Tecnologia"
+    },
+    {
+      "title": "Tirei meus arquivos da nuvem e escrevi um navegador de arquivos em um único binário",
+      "desc": "Sou o autor do projeto, então leiam como relato de construção, não como review independente. ...",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3vka03su0bgxd3cl5jin.png",
+      "url": "https://dev.to/_c5679ef7c86ab2dfdde7d/tirei-meus-arquivos-da-nuvem-e-escrevi-um-navegador-de-arquivos-em-um-unico-binario-16bm",
+      "source": "Dev.to Brasil",
+      "date": "Nov 20",
+      "categoria": "Tecnologia"
     },
     {
       "title": "CAGR vs. Média Simples em Código: Por Que a Média Aritmética Superestima o Retorno Real",
@@ -57,6 +111,24 @@
       "url": "https://dev.to/miri-calc/cagr-vs-media-simples-em-codigo-por-que-a-media-aritmetica-superestima-o-retorno-real-18m5",
       "source": "Dev.to Brasil",
       "date": "Nov 15",
+      "categoria": "Tecnologia"
+    },
+    {
+      "title": "PNSB: 97,4% dos municípios registram serviço de drenagem e manejo de águas pluviais",
+      "desc": "Dispositivos de macrodrenagens estão presentes em 76,3% dos municípios que possuem algum serviço de drenagem e manejo de águas pluviais - Foto: Prefeitura de Tupã / Divulgação O serviço de drenagem e manejo de águas pluviais foi...",
+      "img": "https://agenciadenoticias.ibge.gov.br/images/agenciadenoticias/estatisticas_sociais/2026_11/Drenagem_prefeituradeTupa-Divulgacao.jpg",
+      "url": "http://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/48720-pnsb-97-4-dos-municipios-registram-servico-de-drenagem-e-manejo-de-aguas-pluviais.html",
+      "source": "IBGE Oficial",
+      "date": "25/11/2026",
+      "categoria": "Finanças"
+    },
+    {
+      "title": "Refinamento de Backlog: o guia prático para nunca mais passar de 30 minutos na Sprint Planning",
+      "desc": "Como um refinamento eficiente e ferramentas de estimativa sem atrito reduzem a duração da Sprint Planning para menos de 30 minutos.",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fikqgfn0806ms0tfewlhc.png",
+      "url": "https://dev.to/geekecia/refinamento-de-backlog-o-guia-pratico-para-nunca-mais-passar-de-30-minutos-na-sprint-planning-1093",
+      "source": "Dev.to Brasil",
+      "date": "Nov 16",
       "categoria": "Tecnologia"
     },
     {
@@ -69,33 +141,6 @@
       "categoria": "Ciência"
     },
     {
-      "title": "IBGE faz coletiva em Caicó (RN) para divulgar conferência internacional no estado",
-      "desc": "Caicó (RN) sediará, no próximo dia 26 de novembro, às 10h, uma coletiva pública para apresentar a Conferência Nacional dos Produtores e Usuários de Informações Estatísticas, Geográficas, Geoespaciais e Ambientais...",
-      "img": "https://agenciadenoticias.ibge.gov.br/images/agenciadenoticias/ibge/2026_11/uern-campus-caico_1.jpg",
-      "url": "http://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/48721-ibge-faz-coletiva-em-caico-rn-para-divulgar-conferencia-internacional-no-estado-2.html",
-      "source": "IBGE Oficial",
-      "date": "24/11/2026",
-      "categoria": "Finanças"
-    },
-    {
-      "title": "Casa Branca solicita bilhões para NASA e Golden Dome no próximo CR",
-      "desc": "Ontem à noite, a Casa Branca enviou ao Congresso uma lista de financiamento que deseja incluir em uma nova Resolução Contínua (CR) que manteria o governo aberto após a atual CR […]",
-      "img": "https://spacepolicyonline.com/wp-content/uploads/2026/11/Moon-Base-Phase-1-NASA-300x169.jpg",
-      "url": "https://spacepolicyonline.com/news/white-house-requests-billions-for-nasa-golden-dome-in-next-cr/",
-      "source": "SpaceTech",
-      "date": "2026-11-24",
-      "categoria": "Ciência"
-    },
-    {
-      "title": "Erika Hilton recebe ameaça de morte e atrasa ida às urnas por segurança",
-      "desc": "Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos A deputada federal e candidata à...",
-      "img": "https://images.metroimg.com/2026/07/sbt-lista-argumentos-para-derrubar-resposta-de-erika-hilton.jpg",
-      "url": "https://www.metropoles.com/brasil/politica-brasil/erika-hilton-recebe-ameaca-de-morte-e-atrasa-ida-as-urnas-por-seguranca",
-      "source": "Metrópoles Política",
-      "date": "Hoje",
-      "categoria": "🏛️ Política"
-    },
-    {
       "title": "Virginia elege vestido luxuoso para festa de Maria Alice. Saiba valor!",
       "desc": "Além de ser um vestido repleto de detalhes sutis, a peça escolhida por Virginia segue a tendência do momento, o Whitecore Além de ser um vestido repleto de detalhes sutis, a peça escolhida por Virginia segue a tendência do...",
       "img": "https://images.metroimg.com/2023/05/31152902/Design-sem-nome-2023-05-31T152810.884.jpg",
@@ -103,141 +148,6 @@
       "source": "Coluna Famosos",
       "date": "Hoje",
       "categoria": "⭐ Famosos"
-    },
-    {
-      "title": "Story Points Não São Horas: por que converter pontos em tempo destrói a Sprint Planning",
-      "desc": "Por que transformar story points em horas gera estimativas falsas e como a estimativa relativa em tempo real acelera entregas da squad.",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flmj56yebweo71l7qw7gb.png",
-      "url": "https://dev.to/geekecia/story-points-nao-sao-horas-por-que-converter-pontos-em-tempo-destroi-a-sprint-planning-3ghm",
-      "source": "Dev.to Brasil",
-      "date": "Nov 10",
-      "categoria": "Tecnologia"
-    },
-    {
-      "title": "É hora de dizer até breve ao Metrópoles e partir para um novo desafio",
-      "desc": "Amanhã (1º/6), estreia o LeoDias.com. A missão é gigantesca, mas nunca foi meu tipo fugir dos desafios da vida Amanhã (1º/6), estreia o LeoDias.com.",
-      "img": "https://images.metroimg.com/2023/06/31214750/Design-sem-nome-2023-05-31T214746.841.jpg",
-      "url": "https://www.metropoles.com/colunas/leo-dias/e-hora-de-dizer-ate-breve-ao-metropoles-e-partir-para-um-novo-desafio",
-      "source": "Coluna Famosos",
-      "date": "Hoje",
-      "categoria": "⭐ Famosos"
-    },
-    {
-      "title": "João Gomes e Ary Mirelle curtem jantar romântico com Sthe Matos e Kevi Jonny",
-      "desc": "O casal está em Barra de São Miguel acompanhados de Kevi Jonny e Sthe Matos O casal está em Barra de São Miguel acompanhados de Kevi Jonny e Sthe Matos Antes da maratona de shows do período junino, João Gomes e Ary Mirelle...",
-      "img": "https://images.metroimg.com/2023/05/31185334/Design-sem-nome-2023-05-31T185325.578.jpg",
-      "url": "https://www.metropoles.com/colunas/leo-dias/joao-gomes-e-ary-curtem-jantar-romantico-com-sthe-matos-e-kevi-jonny",
-      "source": "Coluna Famosos",
-      "date": "Hoje",
-      "categoria": "⭐ Famosos"
-    },
-    {
-      "title": "A 15 dias do evento, IBGE prorroga inscrições da conferência em Natal, de 08 a 10/12",
-      "desc": "Com 40% das atividades esgotadas, a conferência internacional do IBGE está a duas semanas de seu início, com um reforço na divulgação para o público do Rio Grande do Norte.",
-      "img": "https://agenciadenoticias.ibge.gov.br/images/agenciadenoticias/ibge/2026_11/mapa-invertido-natal-conferencia-ibge.png",
-      "url": "http://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/48710-a-15-dias-do-evento-ibge-prorroga-inscricoes-da-conferencia-em-natal-de-08-a-10-12.html",
-      "source": "IBGE Oficial",
-      "date": "23/11/2026",
-      "categoria": "Finanças"
-    },
-    {
-      "title": "Filhos de Gugu divergem sobre união do pai com Rose Miriam",
-      "desc": "Trechos do processo judicial mostram uma discussão entre os filhos do apresentador sobre o reconhecimento da união estável dos pais Trechos do processo judicial mostram uma discussão entre os filhos do apresentador sobre o...",
-      "img": "https://images.metroimg.com/2022/08/09094552/Gugu-capa-1.jpg",
-      "url": "https://www.metropoles.com/colunas/leo-dias/filhos-de-gugu-divergem-sobre-uniao-do-pai-com-rose-miriam",
-      "source": "Coluna Famosos",
-      "date": "Hoje",
-      "categoria": "⭐ Famosos"
-    },
-    {
-      "title": "Com Garro, Corinthians chega em BH para duelo decisivo contra o Atlético-MG",
-      "desc": "Com Garro, Corinthians chega em BH para duelo decisivo contra o Atlético-MG Com a presença de Rodrigo Garro, a delegação do Corinthians chegou a Belo Horizonte na noite desta terça-feira, véspera do duelo contra o Atlético-MG...",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/imagem_2026-11-24_222427200.webp",
-      "url": "https://www.gazetaesportiva.com/times/corinthians/com-garro-corinthians-chega-a-bh-para-duelo-decisivo-contra-o-atletico-mg/",
-      "source": "Gazeta Esportiva",
-      "date": "Hoje",
-      "categoria": "⚽ Esportes"
-    },
-    {
-      "title": "IBGE disponibiliza Agenda semanal com programações para os dias 23 a 29 de novembro",
-      "desc": "Agenda IBGE traz a programação do instituto para a semana - Foto: Bel Corção/Brasil com S O Instituto Brasileiro de Geografia e Estatística (IBGE) divulgou hoje (23) a Agenda IBGE para a semana de 23 a 29 de novembro.",
-      "img": "https://agenciadenoticias.ibge.gov.br/images/agenciadenoticias/ibge/2026_11/Agenda-IBGE_HOME.jpg",
-      "url": "http://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/48706-ibge-disponibiliza-agenda-semanal-com-programacoes-para-os-dias-23-a-29-de-novembro.html",
-      "source": "IBGE Oficial",
-      "date": "23/11/2026",
-      "categoria": "Finanças"
-    },
-    {
-      "title": "Betis vence Slovan Bratislava e se aproxima das oitavas da Champions",
-      "desc": "Betis vence Slovan Bratislava e se aproxima das oitavas da Champions Dois gols de cabeça de Cucho Hernández garantiram a vitória do Betis sobre o Slovan Bratislava por 2 a 0, nesta terça-feira (24), pela quinta rodada da Liga dos...",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/AFP__20261124__D8J39QJ__v2__HighRes.webp",
-      "url": "https://www.gazetaesportiva.com/times/real-betis/betis-vence-slovan-bratislava-e-se-aproxima-das-oitavas-da-champions/",
-      "source": "Gazeta Esportiva",
-      "date": "Hoje",
-      "categoria": "⚽ Esportes"
-    },
-    {
-      "title": "PT prepara “festa do interior” para visita de Lula à Bahia",
-      "desc": "Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em última rodada pelo Nordeste antes do 1º turno Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em...",
-      "img": "https://images.metroimg.com/2026/01/lula-bahia.jpg",
-      "url": "https://www.metropoles.com/brasil/pt-prepara-festa-do-interior-para-visita-de-lula-a-bahia",
-      "source": "Metrópoles Política",
-      "date": "Hoje",
-      "categoria": "🏛️ Política"
-    },
-    {
-      "title": "Amortização de empréstimo imobiliário em código: Cálculo exato no sistema francês (Tabela Price)",
-      "desc": "O cálculo das prestações de um empréstimo imobiliário pelo sistema francês de amortização (conhecido...",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fvqayjz16hnknzxfcebzy.png",
-      "url": "https://dev.to/miri-calc/amortizacao-de-emprestimo-imobiliario-em-codigo-calculo-exato-no-sistema-frances-tabela-price-3ibe",
-      "source": "Dev.to Brasil",
-      "date": "Nov 19",
-      "categoria": "Tecnologia"
-    },
-    {
-      "title": "Veja as fotos de Palmeiras x Tarumã pela Copinha Feminina",
-      "desc": "Confira todos os bastidores e detalhes atualizados na matéria completa.",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/24112026_Palmeiras-x-Taruma_Copinha-F_19746122410.jpg.webp",
-      "url": "https://www.gazetaesportiva.com/times/palmeiras/veja-as-fotos-de-palmeiras-x-taruma-pela-copinha-feminina/",
-      "source": "Gazeta Esportiva",
-      "date": "Hoje",
-      "categoria": "⚽ Esportes"
-    },
-    {
-      "title": "Tirei meus arquivos da nuvem e escrevi um navegador de arquivos em um único binário",
-      "desc": "Sou o autor do projeto, então leiam como relato de construção, não como review independente. ...",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3vka03su0bgxd3cl5jin.png",
-      "url": "https://dev.to/_c5679ef7c86ab2dfdde7d/tirei-meus-arquivos-da-nuvem-e-escrevi-um-navegador-de-arquivos-em-um-unico-binario-16bm",
-      "source": "Dev.to Brasil",
-      "date": "Nov 20",
-      "categoria": "Tecnologia"
-    },
-    {
-      "title": "Singed Lab Desastres é apresentado a ministérios e órgãos de governo em reunião no Palácio do Planalto",
-      "desc": "O Singed Lab Desastres, solução voltada à integração e ao uso de dados do IBGE em situações de desastres, foi apresentado nesta quarta-feira (18), no Palácio do Planalto, durante reunião do Sistema de Assessoramento para Assuntos...",
-      "img": "https://agenciadenoticias.ibge.gov.br/images/agenciadenoticias/ibge/2026_11/foto_SASF_01.jpg",
-      "url": "http://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/48711-singed-lab-desastres-e-apresentado-a-ministerios-e-orgaos-de-governo-em-reuniao-no-palacio-do-planalto.html",
-      "source": "IBGE Oficial",
-      "date": "23/11/2026",
-      "categoria": "🏛️ Política"
-    },
-    {
-      "title": "Cinco dos sete candidatos ao governo do Rio Grande do Sul já foram às urnas",
-      "desc": "Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das intenções de voto e Juliana Brizola, 35% Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das...",
-      "img": "https://images.metroimg.com/2026/07/rio-grande-do-sul.jpg",
-      "url": "https://www.metropoles.com/brasil/politica-brasil/cinco-dos-sete-candidatos-ao-governo-do-rio-grande-do-sul-ja-foram-as-urnas",
-      "source": "Metrópoles Política",
-      "date": "Hoje",
-      "categoria": "🏛️ Política"
-    },
-    {
-      "title": "Refinamento de Backlog: o guia prático para nunca mais passar de 30 minutos na Sprint Planning",
-      "desc": "Como um refinamento eficiente e ferramentas de estimativa sem atrito reduzem a duração da Sprint Planning para menos de 30 minutos.",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fikqgfn0806ms0tfewlhc.png",
-      "url": "https://dev.to/geekecia/refinamento-de-backlog-o-guia-pratico-para-nunca-mais-passar-de-30-minutos-na-sprint-planning-1093",
-      "source": "Dev.to Brasil",
-      "date": "Nov 16",
-      "categoria": "Tecnologia"
     },
     {
       "title": "Novas cestas do IPCA e do INPC serão apresentadas pelo IBGE em 30 de novembro na Fiesp",
@@ -249,46 +159,73 @@
       "categoria": "Finanças"
     },
     {
-      "title": "Justiça condena dois réus a oito anos de prisão pela morte de jovens no CT do Flamengo",
-      "desc": "Justiça condena dois réus a oito anos de prisão pela morte de jovens no CT do Flamengo Dois engenheiros foram condenados, nesta terça-feira (24), a oito anos de prisão em regime semiaberto por sua responsabilidade em um incêndio...",
-      "img": "https://static.gazetaesportiva.com/uploads/imagem/2019/02/15/gilvan.jpg",
-      "url": "https://www.gazetaesportiva.com/times/flamengo/dois-reus-condenados-a-8-anos-de-prisao-pela-morte-de-10-promessas-do-flamengo-em-incendio/",
+      "title": "Na Bahia, Lula diz a aliados estar preocupado com crise no STF",
+      "desc": "O presidente Lula participou de carreata em Salvador nesta terça-feira junto aos candidatos do PT ao Senado e ao Governo do estado O presidente Lula participou de carreata em Salvador nesta terça-feira junto aos candidatos do PT...",
+      "img": "https://images.metroimg.com/2026/09/foto-lula-salvaor-scaled.jpg",
+      "url": "https://www.metropoles.com/brasil/na-bahia-lula-diz-a-aliados-estar-preocupado-com-crise-no-stf",
+      "source": "Metrópoles Política",
+      "date": "Hoje",
+      "categoria": "🏛️ Política"
+    },
+    {
+      "title": "Fórmula E destaca importância do Brasil e projeta crescimento do E-Prix de São Paulo em 2027",
+      "desc": "Longo destaca importância do Brasil para Fórmula E e projeta crescimento do E-Prix de São Paulo em 2027 *Por Bruno Martineli O Brasil é um mercado estratégico para a Fórmula E , que pretende ampliar cada vez mais o alcance do...",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/HXjcyFhWsAA0gUI.webp",
+      "url": "https://www.gazetaesportiva.com/motor/formula-e-brasil-mercado-estrategico-e-prix-sao-paulo-2027/",
       "source": "Gazeta Esportiva",
       "date": "Hoje",
       "categoria": "⚽ Esportes"
     },
     {
-      "title": "Primeiro astronauta paquistanês a caminho de Tiangong",
-      "desc": "A China lançou uma nova tripulação para a estação espacial Tiangong esta noite EST. Juntando-se a dois taikonautas chineses está o primeiro astronauta do Paquistão, Muhammad Zeeshan Ali. Esta é a primeira vez que a China [...]",
-      "img": "https://spacepolicyonline.com/wp-content/uploads/2026/11/shenzhou-24-liftoff-300x135.jpg",
-      "url": "https://spacepolicyonline.com/news/first-pakistani-astronaut-enroute-to-tiangong/",
+      "title": "Amortização de empréstimo imobiliário em código: Cálculo exato no sistema francês (Tabela Price)",
+      "desc": "O cálculo das prestações de um empréstimo imobiliário pelo sistema francês de amortização (conhecido...",
+      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fvqayjz16hnknzxfcebzy.png",
+      "url": "https://dev.to/miri-calc/amortizacao-de-emprestimo-imobiliario-em-codigo-calculo-exato-no-sistema-frances-tabela-price-3ibe",
+      "source": "Dev.to Brasil",
+      "date": "Nov 19",
+      "categoria": "Tecnologia"
+    },
+    {
+      "title": "Brasil sediará quatro etapas da Liga das Nações de Vôlei em 2027; veja os confrontos",
+      "desc": "A FIVB anunciou as sedes e os confrontos da Liga das Nações de Vôlei de 2027. O Brasil receberá quatro etapas da competição, duas do masculino e duas do feminino, e enfrentará a Rússia em ambas as categorias.",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/09/DSC07173.webp",
+      "url": "https://www.gazetaesportiva.com/mais-esportes/volei/brasil-sediara-quatro-etapas-da-liga-das-nacoes-de-volei-em-2027-veja-os-confrontos/",
+      "source": "Gazeta Esportiva",
+      "date": "Hoje",
+      "categoria": "⚽ Esportes"
+    },
+    {
+      "title": "Haaland processa eletricista após ter nome registrado como marca de lingerie",
+      "desc": "Erling Haaland está envolvido em uma disputa judicial com um eletricista polonês que registrou o sobrenome do atacante como marca na União Europeia em 16 categorias de produtos, incluindo lingeries femininas.",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/AFP__20261121__D88Q37N__v1__HighRes__FblEngPrManCityFulham.webp",
+      "url": "https://www.gazetaesportiva.com/erling-haaland/haaland-processa-eletricista-apos-ter-nome-registrado-como-marca-de-lingerie/",
+      "source": "Gazeta Esportiva",
+      "date": "Hoje",
+      "categoria": "⚽ Esportes"
+    },
+    {
+      "title": "Hubble da NASA vê oceano de estrelas como base para Roman",
+      "desc": "Estas observações do Hubble fazem parte de uma pesquisa que ajudará os investigadores a interpretar melhor as próximas observações do Telescópio Espacial Romano Nancy Grace, à medida que procuram caracterizar as estrelas e...",
+      "img": "https://assets.science.nasa.gov/dynamicimage/assets/science/missions/hubble/galaxies/milky-way/Hubble_GalacticBulge_HD70_1_FINAL.jpg",
+      "url": "https://science.nasa.gov/missions/hubble/nasas-hubble-views-ocean-of-stars-in-groundwork-for-roman/",
       "source": "SpaceTech",
       "date": "2026-11-25",
       "categoria": "Ciência"
     },
     {
-      "title": "Cortar antes de comprimir: por que vídeos longos do celular ficam melhores assim",
-      "desc": "Transparência: eu faço parte da equipe do CompressVid, um compressor de vídeo online. Os exemplos...",
-      "img": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F98e1zx1egdymn8wdg3u7.png",
-      "url": "https://dev.to/compressvid/cortar-antes-de-comprimir-por-que-videos-longos-do-celular-ficam-melhores-assim-b0a",
-      "source": "Dev.to Brasil",
-      "date": "Nov 11",
-      "categoria": "Tecnologia"
+      "title": "Coleta seletiva avança e atinge 48,1% dos municípios, mas lixões persistem pelo país",
+      "desc": "Segundo dados da Pesquisa Nacional de Saneamento Básico, 2.675 municípios possuem serviço de coleta seletiva - Foto: Marcos Oliveira/Agência Senado A coleta seletiva apresentou uma expansão significativa ao longo dos últimos 16...",
+      "img": "https://agenciadenoticias.ibge.gov.br/images/agenciadenoticias/estatisticas_sociais/2026_11/Coleta-seletiva_Marcos-Oliveira-Agencia-Senado.jpg",
+      "url": "http://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/48719-coleta-seletiva-avanca-e-atinge-48-1-dos-municipios-mas-lixoes-persistem-pelo-pais.html",
+      "source": "IBGE Oficial",
+      "date": "25/11/2026",
+      "categoria": "Finanças"
     },
     {
-      "title": "Organizada do Palmeiras convoca torcida para apoio ao time antes de embarque para final da Libertadores",
-      "desc": "Organizada do Palmeiras convoca torcida para apoio ao time antes de embarque para final Após fazer seu último jogo antes da final da Copa Libertadores, o Palmeiras foca 100% na decisão contra o Estudiantes, que acontece no...",
-      "img": "https://static.gazetaesportiva.com/uploads/2026/11/52301951606.avif",
-      "url": "https://www.gazetaesportiva.com/times/palmeiras/organizada-palmeiras-convoca-torcedores-festa-ct-libertadores/",
-      "source": "Gazeta Esportiva",
-      "date": "Hoje",
-      "categoria": "⚽ Esportes"
-    },
-    {
-      "title": "Na Bahia, Lula diz a aliados estar preocupado com crise no STF",
-      "desc": "O presidente Lula participou de carreata em Salvador nesta terça-feira junto aos candidatos do PT ao Senado e ao Governo do estado O presidente Lula participou de carreata em Salvador nesta terça-feira junto aos candidatos do PT...",
-      "img": "https://images.metroimg.com/2026/09/foto-lula-salvaor-scaled.jpg",
-      "url": "https://www.metropoles.com/brasil/na-bahia-lula-diz-a-aliados-estar-preocupado-com-crise-no-stf",
+      "title": "PT prepara “festa do interior” para visita de Lula à Bahia",
+      "desc": "Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em última rodada pelo Nordeste antes do 1º turno Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em...",
+      "img": "https://images.metroimg.com/2026/01/lula-bahia.jpg",
+      "url": "https://www.metropoles.com/brasil/pt-prepara-festa-do-interior-para-visita-de-lula-a-bahia",
       "source": "Metrópoles Política",
       "date": "Hoje",
       "categoria": "🏛️ Política"
@@ -303,13 +240,76 @@
       "categoria": "⭐ Famosos"
     },
     {
-      "title": "Conteúdo da NASA+ chegando à tela grande no Greenbelt, Maryland Cinema",
-      "desc": "A NASA anunciou na segunda-feira que o conteúdo da NASA + encontrou seu primeiro lar teatral no The Greenbelt Cinema em Greenbelt, Maryland, expandindo o alcance da agência nas principais plataformas de visualização e trazendo o...",
-      "img": "https://www.nasa.gov/wp-content/uploads/2026/11/nasa-promo-image-horizontal-1.jpg",
-      "url": "https://www.nasa.gov/nasa/nasa-content-coming-to-big-screen-at-greenbelt-maryland-cinema/",
+      "title": "Eleições 2026: brasileiros reclamam de filas para votar no exterior",
+      "desc": "A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado (24/10) A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado (24/10)...",
+      "img": "https://images.metroimg.com/2026/10/filavotacaoparis.jpg",
+      "url": "https://www.metropoles.com/brasil/eleicoes-2026-brasileiros-reclamam-de-filas-para-votar-no-exterior",
+      "source": "Metrópoles Política",
+      "date": "Hoje",
+      "categoria": "🏛️ Política"
+    },
+    {
+      "title": "APOD: 2026 November 25 – SPHEREx Seeing Through Dust",
+      "desc": "APOD Science APOD APOD: 2026 25 de novembro –… Arquivo APOD de hoje Índice de envios Pesquisar Calendário RSS Educação Sobre Discutir APOD Astronomia Imagem do dia Descubra o cosmos!",
+      "img": "https://blogs.nasa.gov/spacestation/wp-content/uploads/sites/240/2023/01/nasa-logo-web-rgb.png",
+      "url": "https://science.nasa.gov/image-article/apod-2026-november-25-spherex-seeing-through-dust/",
       "source": "SpaceTech",
-      "date": "2026-11-24",
+      "date": "2026-11-25",
       "categoria": "Ciência"
+    },
+    {
+      "title": "Georgia’s Pecan Belt",
+      "desc": "Desde o boom de plantio no início de 1900, os pomares ao longo do rio Flint, no sudoeste da Geórgia, tornaram-se um centro de produção de nozes nos EUA.",
+      "img": "https://assets.science.nasa.gov/dynamicimage/assets/science/esd/eo/images/iotd/2026/georgia%E2%80%99s-pecan-belt/georgiapecans_oli_20261023.jpg",
+      "url": "https://science.nasa.gov/earth/earth-observatory/georgias-pecan-belt/",
+      "source": "SpaceTech",
+      "date": "2026-11-25",
+      "categoria": "Ciência"
+    },
+    {
+      "title": "Simeone sobre sua paixão à beira do campo: “Ficar calmo me entedia”",
+      "desc": "O técnico do Atlético de Madrid, Diego Simeone, brincou que tenta controlar sua agitação à beira do gramado, mas admitiu que ficar calmo o entedia e suas reações são naturais.",
+      "img": "https://static.gazetaesportiva.com/uploads/2026/11/2dp4hpdb-1920si.webp",
+      "url": "https://www.gazetaesportiva.com/todas-as-noticias/simeone-sobre-sua-paixao-a-beira-do-campo-ficar-calmo-me-entedia/",
+      "source": "Gazeta Esportiva",
+      "date": "Hoje",
+      "categoria": "⚽ Esportes"
+    },
+    {
+      "title": "Filhos de Gugu divergem sobre união do pai com Rose Miriam",
+      "desc": "Trechos do processo judicial mostram uma discussão entre os filhos do apresentador sobre o reconhecimento da união estável dos pais Trechos do processo judicial mostram uma discussão entre os filhos do apresentador sobre o...",
+      "img": "https://images.metroimg.com/2022/08/09094552/Gugu-capa-1.jpg",
+      "url": "https://www.metropoles.com/colunas/leo-dias/filhos-de-gugu-divergem-sobre-uniao-do-pai-com-rose-miriam",
+      "source": "Coluna Famosos",
+      "date": "Hoje",
+      "categoria": "⭐ Famosos"
+    },
+    {
+      "title": "Singed Lab Desastres é apresentado a ministérios e órgãos de governo em reunião no Palácio do Planalto",
+      "desc": "O Singed Lab Desastres, solução voltada à integração e ao uso de dados do IBGE em situações de desastres, foi apresentado nesta quarta-feira (18), no Palácio do Planalto, durante reunião do Sistema de Assessoramento para Assuntos...",
+      "img": "https://agenciadenoticias.ibge.gov.br/images/agenciadenoticias/ibge/2026_11/foto_SASF_01.jpg",
+      "url": "http://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/48711-singed-lab-desastres-e-apresentado-a-ministerios-e-orgaos-de-governo-em-reuniao-no-palacio-do-planalto.html",
+      "source": "IBGE Oficial",
+      "date": "23/11/2026",
+      "categoria": "🏛️ Política"
+    },
+    {
+      "title": "Erika Hilton recebe ameaça de morte e atrasa ida às urnas por segurança",
+      "desc": "Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos A deputada federal e candidata à...",
+      "img": "https://images.metroimg.com/2026/07/sbt-lista-argumentos-para-derrubar-resposta-de-erika-hilton.jpg",
+      "url": "https://www.metropoles.com/brasil/politica-brasil/erika-hilton-recebe-ameaca-de-morte-e-atrasa-ida-as-urnas-por-seguranca",
+      "source": "Metrópoles Política",
+      "date": "Hoje",
+      "categoria": "🏛️ Política"
+    },
+    {
+      "title": "É hora de dizer até breve ao Metrópoles e partir para um novo desafio",
+      "desc": "Amanhã (1º/6), estreia o LeoDias.com. A missão é gigantesca, mas nunca foi meu tipo fugir dos desafios da vida Amanhã (1º/6), estreia o LeoDias.com.",
+      "img": "https://images.metroimg.com/2023/06/31214750/Design-sem-nome-2023-05-31T214746.841.jpg",
+      "url": "https://www.metropoles.com/colunas/leo-dias/e-hora-de-dizer-ate-breve-ao-metropoles-e-partir-para-um-novo-desafio",
+      "source": "Coluna Famosos",
+      "date": "Hoje",
+      "categoria": "⭐ Famosos"
     }
   ]
 }
