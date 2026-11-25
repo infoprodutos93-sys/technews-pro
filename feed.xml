@@ -6,29 +6,9 @@
   <description>Notícias em tempo real sobre Inteligência Artificial, Tecnologia, Mercado Financeiro, Esportes e Política.</description>
   <language>pt-BR</language>
   <item>
-    <title>NASA pode receber aumento de US$ 2 bilhões enquanto a Casa Branca busca acelerar Artemis</title>
-    <link>https://arstechnica.com/space/2026/11/nasa-may-get-2-billion-boost-as-white-house-seeks-to-accelerate-artemis/</link>
-    <description>“Sem este financiamento, as atividades seriam adiadas”.</description>
-  </item>
-  <item>
-    <title>Refinamento de Backlog: o guia prático para nunca mais passar de 30 minutos na Sprint Planning</title>
-    <link>https://dev.to/geekecia/refinamento-de-backlog-o-guia-pratico-para-nunca-mais-passar-de-30-minutos-na-sprint-planning-1093</link>
-    <description>Como um refinamento eficiente e ferramentas de estimativa sem atrito reduzem a duração da Sprint Planning para menos de 30 minutos.</description>
-  </item>
-  <item>
-    <title>Estação Espacial Tiangong receberá o primeiro visitante internacional</title>
-    <link>https://www.nasaspaceflight.com/2026/11/shenzhou-24/</link>
-    <description>A China está se preparando para lançar a espaçonave tripulada Shenzhou-24 ao espaço Tiangong (“palácio celestial”)… O posto Estação Espacial Tiangong receberá o primeiro visitante internacional apareceu primeiro em...</description>
-  </item>
-  <item>
-    <title>O helicóptero Dragonfly Dragonfly da NASA ganha destaque</title>
-    <link>https://science.nasa.gov/missions/dragonfly/nasas-titan-bound-dragonfly-rotorcraft-gets-its-eyes/</link>
-    <description>Os instrumentos científicos para o Dragonfly da NASA estão começando a chegar ao Laboratório de Física Aplicada (APL) da Johns Hopkins em Laurel, Maryland, onde o helicóptero do tamanho de um carro está se reunindo para sua...</description>
-  </item>
-  <item>
-    <title>É hora de dizer até breve ao Metrópoles e partir para um novo desafio</title>
-    <link>https://www.metropoles.com/colunas/leo-dias/e-hora-de-dizer-ate-breve-ao-metropoles-e-partir-para-um-novo-desafio</link>
-    <description>Amanhã (1º/6), estreia o LeoDias.com. A missão é gigantesca, mas nunca foi meu tipo fugir dos desafios da vida Amanhã (1º/6), estreia o LeoDias.com.</description>
+    <title>Eleições 2026: brasileiros reclamam de filas para votar no exterior</title>
+    <link>https://www.metropoles.com/brasil/eleicoes-2026-brasileiros-reclamam-de-filas-para-votar-no-exterior</link>
+    <description>A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado (24/10) A Nova Zelândia foi o primeiro local a iniciar a votação fora do Brasil: as urnas abriram às 16h de sábado...</description>
   </item>
   <item>
     <title>CAGR vs. Média Simples em Código: Por Que a Média Aritmética Superestima o Retorno Real</title>
@@ -36,14 +16,29 @@
     <description>Um dos erros conceituais mais frequentes em relatórios financeiros e scripts de análise de...</description>
   </item>
   <item>
-    <title>Na Bahia, Lula diz a aliados estar preocupado com crise no STF</title>
-    <link>https://www.metropoles.com/brasil/na-bahia-lula-diz-a-aliados-estar-preocupado-com-crise-no-stf</link>
-    <description>O presidente Lula participou de carreata em Salvador nesta terça-feira junto aos candidatos do PT ao Senado e ao Governo do estado O presidente Lula participou de carreata em Salvador nesta terça-feira junto aos candidatos do...</description>
+    <title>Prévia de lançamento: foguetes russos, chineses e SpaceX para lançar missões em estações espaciais</title>
+    <link>https://www.nasaspaceflight.com/2026/11/launch-preview-112426/</link>
+    <description>Dez foguetes estão programados para serem lançados na próxima semana, com três visitando dois diferentes… O post Prévia de lançamento: foguetes russos, chineses e SpaceX para lançar missões de estações espaciais apareceu pela...</description>
   </item>
   <item>
-    <title>IBGE leva capacitação sobre desastres a sete estados e mobiliza quase 300 participantes presencialmente</title>
-    <link>http://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/48698-ibge-leva-capacitacao-sobre-desastres-a-sete-estados-e-mobiliza-quase-300-participantes-presencialmente.html</link>
-    <description>A quarta edição da capacitação do SINGED Lab Desastres, promovida pelo IBGE, mobilizou 293 participantes na modalidade presencial em sete estados brasileiros, ampliando o acesso a informações estatísticas, geográficas e...</description>
+    <title>IBGE faz coletiva em Caicó (RN) para divulgar conferência internacional no estado</title>
+    <link>http://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/48721-ibge-faz-coletiva-em-caico-rn-para-divulgar-conferencia-internacional-no-estado-2.html</link>
+    <description>Caicó (RN) sediará, no próximo dia 26 de novembro, às 10h, uma coletiva pública para apresentar a Conferência Nacional dos Produtores e Usuários de Informações Estatísticas, Geográficas, Geoespaciais e Ambientais...</description>
+  </item>
+  <item>
+    <title>Casa Branca solicita bilhões para NASA e Golden Dome no próximo CR</title>
+    <link>https://spacepolicyonline.com/news/white-house-requests-billions-for-nasa-golden-dome-in-next-cr/</link>
+    <description>Ontem à noite, a Casa Branca enviou ao Congresso uma lista de financiamento que deseja incluir em uma nova Resolução Contínua (CR) que manteria o governo aberto após a atual CR […]</description>
+  </item>
+  <item>
+    <title>Erika Hilton recebe ameaça de morte e atrasa ida às urnas por segurança</title>
+    <link>https://www.metropoles.com/brasil/politica-brasil/erika-hilton-recebe-ameaca-de-morte-e-atrasa-ida-as-urnas-por-seguranca</link>
+    <description>Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos A deputada federal e candidata à...</description>
+  </item>
+  <item>
+    <title>Virginia elege vestido luxuoso para festa de Maria Alice. Saiba valor!</title>
+    <link>https://www.metropoles.com/colunas/leo-dias/virginia-elege-vestido-luxuoso-para-festa-de-maria-alice-saiba-valor</link>
+    <description>Além de ser um vestido repleto de detalhes sutis, a peça escolhida por Virginia segue a tendência do momento, o Whitecore Além de ser um vestido repleto de detalhes sutis, a peça escolhida por Virginia segue a tendência do...</description>
   </item>
   <item>
     <title>Story Points Não São Horas: por que converter pontos em tempo destrói a Sprint Planning</title>
@@ -51,14 +46,14 @@
     <description>Por que transformar story points em horas gera estimativas falsas e como a estimativa relativa em tempo real acelera entregas da squad.</description>
   </item>
   <item>
-    <title>PT prepara “festa do interior” para visita de Lula à Bahia</title>
-    <link>https://www.metropoles.com/brasil/pt-prepara-festa-do-interior-para-visita-de-lula-a-bahia</link>
-    <description>Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em última rodada pelo Nordeste antes do 1º turno Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em...</description>
+    <title>É hora de dizer até breve ao Metrópoles e partir para um novo desafio</title>
+    <link>https://www.metropoles.com/colunas/leo-dias/e-hora-de-dizer-ate-breve-ao-metropoles-e-partir-para-um-novo-desafio</link>
+    <description>Amanhã (1º/6), estreia o LeoDias.com. A missão é gigantesca, mas nunca foi meu tipo fugir dos desafios da vida Amanhã (1º/6), estreia o LeoDias.com.</description>
   </item>
   <item>
-    <title>Filhos de Gugu divergem sobre união do pai com Rose Miriam</title>
-    <link>https://www.metropoles.com/colunas/leo-dias/filhos-de-gugu-divergem-sobre-uniao-do-pai-com-rose-miriam</link>
-    <description>Trechos do processo judicial mostram uma discussão entre os filhos do apresentador sobre o reconhecimento da união estável dos pais Trechos do processo judicial mostram uma discussão entre os filhos do apresentador sobre o...</description>
+    <title>João Gomes e Ary Mirelle curtem jantar romântico com Sthe Matos e Kevi Jonny</title>
+    <link>https://www.metropoles.com/colunas/leo-dias/joao-gomes-e-ary-curtem-jantar-romantico-com-sthe-matos-e-kevi-jonny</link>
+    <description>O casal está em Barra de São Miguel acompanhados de Kevi Jonny e Sthe Matos O casal está em Barra de São Miguel acompanhados de Kevi Jonny e Sthe Matos Antes da maratona de shows do período junino, João Gomes e Ary Mirelle...</description>
   </item>
   <item>
     <title>A 15 dias do evento, IBGE prorroga inscrições da conferência em Natal, de 08 a 10/12</title>
@@ -66,9 +61,14 @@
     <description>Com 40% das atividades esgotadas, a conferência internacional do IBGE está a duas semanas de seu início, com um reforço na divulgação para o público do Rio Grande do Norte.</description>
   </item>
   <item>
-    <title>Cinco dos sete candidatos ao governo do Rio Grande do Sul já foram às urnas</title>
-    <link>https://www.metropoles.com/brasil/politica-brasil/cinco-dos-sete-candidatos-ao-governo-do-rio-grande-do-sul-ja-foram-as-urnas</link>
-    <description>Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das intenções de voto e Juliana Brizola, 35% Pesquisa da Quaest, divulgada no sábado (3/10), aponta que Leonardo Zucco (PL) tem 52% das...</description>
+    <title>Filhos de Gugu divergem sobre união do pai com Rose Miriam</title>
+    <link>https://www.metropoles.com/colunas/leo-dias/filhos-de-gugu-divergem-sobre-uniao-do-pai-com-rose-miriam</link>
+    <description>Trechos do processo judicial mostram uma discussão entre os filhos do apresentador sobre o reconhecimento da união estável dos pais Trechos do processo judicial mostram uma discussão entre os filhos do apresentador sobre o...</description>
+  </item>
+  <item>
+    <title>Com Garro, Corinthians chega em BH para duelo decisivo contra o Atlético-MG</title>
+    <link>https://www.gazetaesportiva.com/times/corinthians/com-garro-corinthians-chega-a-bh-para-duelo-decisivo-contra-o-atletico-mg/</link>
+    <description>Com Garro, Corinthians chega em BH para duelo decisivo contra o Atlético-MG Com a presença de Rodrigo Garro, a delegação do Corinthians chegou a Belo Horizonte na noite desta terça-feira, véspera do duelo contra o Atlético-MG...</description>
   </item>
   <item>
     <title>IBGE disponibiliza Agenda semanal com programações para os dias 23 a 29 de novembro</title>
@@ -76,24 +76,24 @@
     <description>Agenda IBGE traz a programação do instituto para a semana - Foto: Bel Corção/Brasil com S O Instituto Brasileiro de Geografia e Estatística (IBGE) divulgou hoje (23) a Agenda IBGE para a semana de 23 a 29 de novembro.</description>
   </item>
   <item>
-    <title>São Paulo goleia Criciúma e estreia com vitória na Copinha Feminina</title>
-    <link>https://www.gazetaesportiva.com/campeonatos/copa-sao-paulo/sao-paulo-goleia-criciuma-estreia-copinha-feminina/</link>
-    <description>São Paulo goleia Criciúma e estreia com vitória na Copinha Feminina O São Paulo estreou com vitória na Copinha Feminina de 2026 .</description>
+    <title>Betis vence Slovan Bratislava e se aproxima das oitavas da Champions</title>
+    <link>https://www.gazetaesportiva.com/times/real-betis/betis-vence-slovan-bratislava-e-se-aproxima-das-oitavas-da-champions/</link>
+    <description>Betis vence Slovan Bratislava e se aproxima das oitavas da Champions Dois gols de cabeça de Cucho Hernández garantiram a vitória do Betis sobre o Slovan Bratislava por 2 a 0, nesta terça-feira (24), pela quinta rodada da Liga dos...</description>
   </item>
   <item>
-    <title>Cortar antes de comprimir: por que vídeos longos do celular ficam melhores assim</title>
-    <link>https://dev.to/compressvid/cortar-antes-de-comprimir-por-que-videos-longos-do-celular-ficam-melhores-assim-b0a</link>
-    <description>Transparência: eu faço parte da equipe do CompressVid, um compressor de vídeo online. Os exemplos...</description>
+    <title>PT prepara “festa do interior” para visita de Lula à Bahia</title>
+    <link>https://www.metropoles.com/brasil/pt-prepara-festa-do-interior-para-visita-de-lula-a-bahia</link>
+    <description>Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em última rodada pelo Nordeste antes do 1º turno Presidente Lula participa de carreata em Feira de Santana (BA) na terça-feira (29/9), em...</description>
   </item>
   <item>
-    <title>R9 Competições chega como favorita ao título da Elite na Copa Truck em Brasília</title>
-    <link>https://www.gazetaesportiva.com/motor/r9-competicoes-chega-como-favorita-ao-titulo-da-elite-na-copa-truck-em-brasilia/</link>
-    <description>A R9 Competições entra na última etapa da Copa Truck, marcada para este domingo no Autódromo Internacional Nelson Piquet, em Brasília (DF), em busca de mais um título.</description>
+    <title>Amortização de empréstimo imobiliário em código: Cálculo exato no sistema francês (Tabela Price)</title>
+    <link>https://dev.to/miri-calc/amortizacao-de-emprestimo-imobiliario-em-codigo-calculo-exato-no-sistema-frances-tabela-price-3ibe</link>
+    <description>O cálculo das prestações de um empréstimo imobiliário pelo sistema francês de amortização (conhecido...</description>
   </item>
   <item>
-    <title>Lorena é cortada da Seleção Brasileira feminina, e Camila é convocada</title>
-    <link>https://www.gazetaesportiva.com/times/brasil/lorena-cortada-selecao-brasileira-camila-convocada/</link>
-    <description>Lorena é cortada da Seleção Brasileira feminina, e Camila é convocada A goleira Lorena, do Kansas City Current, foi cortada da Seleção Brasileira feminina para a última Data Fifa de 2026 .</description>
+    <title>Veja as fotos de Palmeiras x Tarumã pela Copinha Feminina</title>
+    <link>https://www.gazetaesportiva.com/times/palmeiras/veja-as-fotos-de-palmeiras-x-taruma-pela-copinha-feminina/</link>
+    <description>Confira todos os bastidores e detalhes atualizados na matéria completa.</description>
   </item>
   <item>
     <title>Tirei meus arquivos da nuvem e escrevi um navegador de arquivos em um único binário</title>
@@ -101,9 +101,9 @@
     <description>Sou o autor do projeto, então leiam como relato de construção, não como review independente. ...</description>
   </item>
   <item>
-    <title>Erika Hilton recebe ameaça de morte e atrasa ida às urnas por segurança</title>
-    <link>https://www.metropoles.com/brasil/politica-brasil/erika-hilton-recebe-ameaca-de-morte-e-atrasa-ida-as-urnas-por-seguranca</link>
-    <description>Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos Erika Hilton recebeu um e-mail na manhã deste domingo (4/10) com ofensas e ataques homofóbicos A deputada federal e candidata à...</description>
+    <title>Singed Lab Desastres é apresentado a ministérios e órgãos de governo em reunião no Palácio do Planalto</title>
+    <link>http://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/48711-singed-lab-desastres-e-apresentado-a-ministerios-e-orgaos-de-governo-em-reuniao-no-palacio-do-planalto.html</link>
+    <description>O Singed Lab Desastres, solução voltada à integração e ao uso de dados do IBGE em situações de desastres, foi apresentado nesta quarta-feira (18), no Palácio do Planalto, durante reunião do Sistema de Assessoramento para Assuntos...</description>
   </item>
 </channel>
 </rss>
